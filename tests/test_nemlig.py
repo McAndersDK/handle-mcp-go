@@ -181,6 +181,7 @@ async def test_search_parses_products(store, fake):
         "12 x 0,25 l / Classic",
     )
     assert not can.on_offer and can.available and can.ean is None
+    assert can.category == "Drikke"
     assert bottle.unit == "l" and bottle.on_offer and bottle.offer_text == "3 for 68.0 kr"
     assert not bottle.available
     search = next(r for r in fake.requests if r.url.path == "/searchgateway/api/search")

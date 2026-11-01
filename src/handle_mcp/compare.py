@@ -3,6 +3,9 @@
 Simple and explainable matching. No store-specific code here.
 - "2 x rugbrød" means quantity 2. A size like "1 l" or "500 g" in the item must match.
 - A product matches well when every word of the item is a whole word in its name.
+- A word only after "m.", "med", "i", "u." ... is a flavour, not the product: "Yoghurt m. banan"
+  is not a banana. Such products never win.
+- On the same name score, a product in a matching store category wins ("Fisk > Laks").
 - Then the right size wins, then the lowest price. Sold-out products never win.
 - Unsure matches and missing items are marked, so a human can check them.
 """
@@ -29,6 +32,7 @@ UNITS = {
 SIZE_RE = re.compile(
     r"(?:(\d+)\s*[x×]\s*)?(\d+(?:[.,]\d+)?)\s*(" + "|".join(UNITS) + r")\b", re.IGNORECASE
 )
+FLAVOUR_RE = re.compile(r"\s(?:m\.|med|i|u\.|uden|smag)\s", re.IGNORECASE)
 QTY_RE = re.compile(r"^\s*(\d+)\s*[x×]\s+(?=\D)", re.IGNORECASE)
 
 
@@ -92,17 +96,43 @@ def _words(text: str) -> list[str]:
 
 def _score(words: list[str], product: Any) -> float:
     """1.0 when every word is a whole word in the name. Half for a word inside another word,
-    or a Danish plural or singular ('bananer' ~ 'banan')."""
-    text = f"{_get(product, 'name')} {_get(product, 'brand') or ''}".lower()
-    tokens = set(_words(text))
-    hits = [
-        1.0 if w in tokens else 0.5 if w in text or _stem_hit(w, tokens) else 0.0 for w in words
-    ]
+    or a Danish plural or singular ('bananer' ~ 'banan'). A quarter for a word only in the
+    flavour part of the name ('Yoghurt m. banan')."""
+    name = _get(product, "name") or ""
+    head = f"{FLAVOUR_RE.split(name)[0]} {_get(product, 'brand') or ''}".lower()
+    tokens, tail = set(_words(head)), name.lower()
+    tail_tokens = set(_words(tail))
+    hits = []
+    for w in words:
+        if w in tokens:
+            hits.append(1.0)
+        elif w in head or _stem_hit(w, tokens):
+            hits.append(0.5)
+        else:
+            hits.append(0.25 if w in tail or _stem_hit(w, tail_tokens) else 0.0)
     return sum(hits) / len(hits) if hits else 0.0
+
+
+def _flavour_only(words: list[str], product: Any) -> bool:
+    """True when the item's words are only in the flavour part: 'Grøn te m. mandarin'."""
+    return _score(words, product) > 0 and all(_score([w], product) < 0.5 for w in words)
 
 
 def _stem_hit(word: str, tokens: set[str]) -> bool:
     return any(len(t) >= 4 and (word.startswith(t) or t.startswith(word)) for t in tokens)
+
+
+def _category_rank(words: list[str], product: Any) -> int:
+    """0 when an item word fits the store's category ('cherrytomater' ~ 'Tomater'), else 1."""
+    tokens = set(_words(_get(product, "category") or ""))
+    fits = _stem_hit if tokens else (lambda _w, _t: False)
+    return 0 if any(fits(w, tokens) or any(_suffix(w, t) for t in tokens) for w in words) else 1
+
+
+def _suffix(word: str, token: str) -> bool:
+    """Danish compound words: 'cherrytomater' ends with 'tomater'. Short tokens like 'ost' are too
+    loose ('post'), so both sides need 4+ letters."""
+    return len(token) >= 4 and len(word) >= 4 and (word.endswith(token) or token.endswith(word))
 
 
 def _size_ok(wanted: tuple[str, Decimal] | None, product: Any) -> bool | None:
@@ -122,16 +152,20 @@ def best_match(item: str, products: list[Any]) -> BasketLine:
         if _get(product, "available") and score >= 0.5:
             size_ok = _size_ok(size, product)
             size_rank = 0 if size_ok or not size else 1 if size_ok is None else 2
-            ranked.append((-score, size_rank, Decimal(_get(product, "price")), product))
+            price = Decimal(_get(product, "price"))
+            ranked.append((-score, _category_rank(words, product), size_rank, price, product))
     if not ranked:
         # The store's own top hit, e.g. "Penne" for "pasta". Never sure, but better than nothing.
-        top = next((x for x in products if _get(x, "available")), None)
+        # Never a flavour-only hit ("Grøn te m. mandarin" for "mandariner").
+        top = next(
+            (x for x in products if _get(x, "available") and not _flavour_only(words, x)), None
+        )
         if top is None:
             return BasketLine(item, quantity, None, Decimal(0), False, "Ikke fundet")
         price = Decimal(_get(top, "price"))
         note = "Butikkens bedste søgeresultat. Navnet matcher ikke. Tjek varen."
         return BasketLine(item, quantity, top, price * quantity, False, note, guess=True)
-    neg_score, size_rank, price, product = min(ranked, key=lambda r: r[:3])
+    neg_score, _cat, size_rank, price, product = min(ranked, key=lambda r: r[:4])
     sure = neg_score == -1.0 and size_rank == 0
     note = None
     if size_rank == 2:

@@ -215,7 +215,15 @@ class BilkaStore:
                 "hitsPerPage": limit,
                 "filters": f"isInAssortmentIn:{sid} AND nonsearchable:false",
                 "attributesToRetrieve": json.dumps(
-                    ["name", "brand", "gtin", "netcontent", f"storeData.{sid}"]
+                    [
+                        "name",
+                        "brand",
+                        "gtin",
+                        "netcontent",
+                        "productType",
+                        "deepestCategoryPath",
+                        f"storeData.{sid}",
+                    ]
                 ),
             }
         )
@@ -248,6 +256,10 @@ class BilkaStore:
             on_offer=bool(offer),
             offer_text=offer,
             available=bool(store.get("inStock")),
+            category=" > ".join(
+                x for x in (hit.get("deepestCategoryPath"), hit.get("productType")) if x
+            )
+            or None,
         )
 
     def _cart(self, data: dict) -> Cart:

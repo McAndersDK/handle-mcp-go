@@ -269,3 +269,57 @@ def test_guesses_stay_out_of_the_verdict():
     quotes["a"].lines[1] = compare.BasketLine("pasta", 1, good.product, Decimal(50), True)
     verdict = compare.verdict(quotes)
     assert verdict["comparable_totals"] == {"a": Decimal(20), "b": Decimal(20)}  # pasta left out
+
+
+def test_flavour_word_is_not_the_product():
+    """Seen live: Bilka 'banan' matched 'Yoghurt m. banan' as sure."""
+    yoghurt = p("x", "y", "Yoghurt m. banan", "12.00")
+    line = best_match("14 x banan", [yoghurt, p("x", "b", "Bananer", "2.75", "1 stk")])
+    assert line.product.id == "b"
+
+
+def test_flavour_only_hit_is_never_a_guess():
+    """Seen live: nemlig 'mandariner' matched 'Grøn te m. mandarin & appelsin'."""
+    line = best_match("mandariner 1 kg", [p("x", "t", "Grøn te m. mandarin & appelsin", "31.50")])
+    assert line.product is None and line.note == "Ikke fundet"
+
+
+def test_store_category_breaks_a_tie_on_the_name():
+    """Seen live: Bilka 'laks fersk' matched a nail polish."""
+    polish = p("x", "n", "Neglelak laks", "29.00")
+    polish.category = "Personlig pleje > Makeup > Neglelak"
+    salmon = p("x", "l", "Laks", "85.00", "600 g")
+    salmon.category = "Kød & fisk > Fisk > Laks"
+    assert best_match("laks fersk", [polish, salmon]).product.id == "l"
+
+
+def test_name_score_beats_the_category():
+    coffee = p("x", "k", "Kaffe", "45.00")
+    coffee.category = "Kolonial > Kaffe"
+    filters = p("x", "f", "Kaffe filter", "20.00")
+    filters.category = "Husholdning > Filtre"
+    assert best_match("kaffe filter", [coffee, filters]).product.id == "f"
+
+
+def test_partial_name_hit_is_still_a_guess():
+    line = best_match("kaffe filter brun", [p("x", "f", "Kaffefilter", "20.00")])
+    assert line.product.id == "f" and line.guess
+
+
+def test_category_fits_a_compound_word():
+    fresh = p("x", "f", "Cherrytomater", "15.00", "250 g")
+    fresh.category = "Frugt & grønt > Grøntsager > Tomater"
+    juice = p("x", "j", "Cherrytomater", "10.95", "400 g")
+    juice.category = "Kolonial > Konserves > Dåsemad"
+    assert best_match("cherrytomater", [juice, fresh]).product.id == "f"
+
+
+def test_and_joins_two_products_not_a_flavour():
+    line = best_match("peber", [p("x", "s", "Salt & peber", "15.00")])
+    assert line.product.id == "s" and line.sure
+
+
+def test_short_category_word_is_not_a_compound_hit():
+    cheese = p("x", "o", "Post-it", "10.00")
+    cheese.category = "Mejeri > Ost"
+    assert compare._category_rank(["post"], cheese) == 1

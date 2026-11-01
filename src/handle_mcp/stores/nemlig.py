@@ -219,6 +219,7 @@ class NemligStore:
             offer_text=_offer(hit.get("Campaign")),
             available=avail.get("IsDeliveryAvailable", True)
             and avail.get("IsAvailableInStock", True),
+            category=hit.get("Category") or None,
         )
 
     async def _basket(self) -> dict:

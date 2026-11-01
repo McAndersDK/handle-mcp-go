@@ -21,6 +21,7 @@ class Product:
     on_offer: bool = False
     offer_text: str | None = None
     available: bool = True
+    category: str | None = None  # the store's category path, e.g. "Frugt & grønt > Bananer"
 
 
 @dataclass
