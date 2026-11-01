@@ -1,0 +1,26 @@
+{
+  "BasketGuid": "00000000-0000-0000-0000-000000000000",
+  "InvoiceAddress": {
+    "FirstName": "Kunde", "LastName": "Eksempel", "StreetName": "Testvej", "HouseNumber": 1,
+    "PostalCode": 9999, "PostalDistrict": "Eksempelby", "MobileNumber": "+4598765432",
+    "Name": "Kunde Eksempel"
+  },
+  "DeliveryAddress": {"StreetName": "Testvej", "PostalCode": 9999, "Name": "Kunde Eksempel"},
+  "Email": "kunde@example.com",
+  "DoorCode": "kode-4711",
+  "UnattendedNotes": "Stil ved bagdøren",
+  "NumberOfProducts": 3,
+  "TotalProductsPrice": 147.45,
+  "TotalBagsPrice": 6.0,
+  "TotalDepositsPrice": 0.0,
+  "DeliveryPrice": 29.0,
+  "TotalPrice": 182.45,
+  "IsMinTotalValid": false,
+  "MinimumOrderTotal": 300.0,
+  "FormattedDeliveryTime": "Tirsdag 3. nov. kl. 17-20",
+  "ValidationFailures": [{"Message": "Minimumskøb er 300 kr."}],
+  "Lines": [
+    {"Id": "5064654", "Name": "Black Coffee Blend Supreme", "Quantity": 1, "ItemPrice": 99.95, "Price": 99.95},
+    {"Id": "701025", "Name": "Cocio kakaomælk", "Quantity": 2, "ItemPrice": 23.75, "Price": 47.5}
+  ]
+}

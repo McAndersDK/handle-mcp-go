@@ -1,0 +1,35 @@
+{
+  "Products": {
+    "Products": [
+      {
+        "Id": "5070417",
+        "Name": "Cocio kakaomælk (dåse)",
+        "Brand": "Cocio",
+        "Category": "Drikke",
+        "Url": "cocio-kakaomaelk-daase-5070417",
+        "Price": 119.0,
+        "UnitPriceCalc": 9.92,
+        "UnitPriceLabel": "kr/stk",
+        "Description": "12 x 0,25 l / Classic",
+        "Availability": {"IsDeliveryAvailable": true, "IsAvailableInStock": true},
+        "DiscountItem": false,
+        "Campaign": null
+      },
+      {
+        "Id": "701025",
+        "Name": "Cocio kakaomælk",
+        "Brand": "Cocio",
+        "Price": 23.75,
+        "UnitPriceCalc": 39.58,
+        "UnitPriceLabel": "kr./L.",
+        "Description": "0,60 l / Classic",
+        "Availability": {"IsDeliveryAvailable": true, "IsAvailableInStock": false},
+        "DiscountItem": false,
+        "Campaign": {"MinQuantity": 3, "TotalPrice": 68.0, "Type": "ProductCampaignMixOffer"}
+      }
+    ],
+    "Start": 0,
+    "NumFound": 2
+  },
+  "Recipes": []
+}

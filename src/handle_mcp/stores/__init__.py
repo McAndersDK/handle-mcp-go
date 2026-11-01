@@ -60,5 +60,8 @@ def load_login(store: str) -> dict[str, str]:
     return {"email": data["email"], "password": data["password"]}
 
 
-# Filled in step 3 (nemlig) and step 4 (bilkatogo).
-STORES: dict[str, type[Store]] = {}
+from handle_mcp.stores.nemlig import NemligStore
+
+STORES: dict[str, type[Store]] = {
+    "nemlig": NemligStore,
+}

@@ -1,0 +1,10 @@
+{
+  "Id": "900000000001",
+  "CustomerName": "Kunde Eksempel",
+  "OrderNumber": "9000000001",
+  "State": "Reorder",
+  "TimeSlot": {"Start": "2026-11-03T16:00:00Z", "End": "2026-11-03T19:00:00Z"},
+  "EditDeadline": "2026-11-02T23:00:00Z",
+  "DeliveryTime": null,
+  "DeliveryInterval": {"Start": "0001-01-01T00:00:00Z", "End": "9999-12-31T22:59:59Z"}
+}
