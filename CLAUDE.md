@@ -53,3 +53,23 @@ HANDLE_LIVE=1 uv run pytest -m live   # read-only smoke tests against real store
 ## Workflow
 
 Build in the steps from `CLAUDE_CODE_PROMPT.md`. After each step: run the tests, show the result, wait for OK.
+
+## Branches, commits and PRs (gitmoji)
+
+Branch name = type + short slug. The type says what the branch solves:
+
+| Type | Gitmoji | Use for |
+|---|---|---|
+| `feature/` | ✨ | new tool, store or behaviour |
+| `fix/` | 🐛 | bug fix |
+| `hotfix/` | 🚑️ | urgent fix on main |
+| `refactor/` | ♻️ | same behaviour, better code |
+| `docs/` | 📝 | docs only |
+| `test/` | ✅ | tests only |
+| `chore/` | 🔧 | config, CI, dependencies |
+
+Example: branch `feature/compare-basket`, PR title `✨ Compare a basket across stores`.
+
+- Start every commit message and PR title with the gitmoji ([gitmoji.dev](https://gitmoji.dev)).
+- No emoji in branch names: they break shells and URLs. The prefix is enough.
+- One type per branch. Split mixed work into two branches.
