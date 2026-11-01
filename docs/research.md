@@ -41,6 +41,12 @@ Krævede headers: `Platform: web`, `Device-Size: desktop`, `Version: <app-versio
 - Svaret har `Id` (nemligs varenummer), navn, brand, pris, `UnitPriceLabel` (fx "kr./Kg."), kampagne (`ProductCampaignBuyXForY`, `ProductCampaignMixOffer`).
 - **Ingen EAN/GTIN** i de kendte svar. **⚠ live:** tjek produktsiden (`/webapi/…/product`) for EAN. Ellers: match på navn + mængde + brand i v1. EAN-match bliver kun muligt for Bilka.
 
+**Tilbud (set live 2026-11-01):**
+- `DiscountItem: true` uden `Campaign` er nemligs faste "Discount"-mærke (står også i `Labels`). Det er ikke et tilbud.
+- `ProductCampaignDiscountPercent` og `ProductCampaignDiscount`: `Price` er prisen FØR tilbud. Du betaler `CampaignPrice`, og enhedsprisen er `CampaignUnitPrice`.
+- `ProductCampaignMixOffer` og `ProductCampaignBuyXForY`: `Price` er stykprisen. Tilbuddet er `MinQuantity` for `TotalPrice`.
+- Kampagner vises allerede aftenen før `IntervalStart`.
+
 ### Kurv
 - `GET /webapi/basket/GetBasket`. Svaret er stort (~1,5 KB pr. linje + analytics). Returnér kun udvalgte felter som standard (kraenhansen: `BASKET_FIELDS`).
 - Nyttige felter: `TotalPrice`, `DeliveryPrice`, `TotalBagsPrice`, `TotalDepositsPrice`, `MinimumOrderTotal`, `IsMinTotalValid`, `FormattedDeliveryTime`, `ValidationFailures`.
@@ -76,6 +82,13 @@ Nyttige felter pr. hit: `objectID` (varenummer til kurven), `gtin` (**EAN findes
 
 - Pris og lager afhænger af butik-id (`sid`). For hjemlevering: brug `sid` fra kurvens `deliveryAddress`.
 - Brug `objectID`, ikke `article`, som varenummer (nickknissen v0.3.0 breaking change).
+
+**Tilbud (set live 2026-11-01, beløb i øre):**
+- `storeData.<butik>.price` er det, du betaler. Top-feltet `price` er prisen uden tilbud. `beforePrice` er altid 0.
+- `unitsOfMeasurePrice` er enhedsprisen uden tilbud. `unitsOfMeasureShowPrice` er den med tilbud.
+- `offerDescription` "Se Her" er et avistilbud uden egen tekst. "Skarp pris" er også et tilbud med lavere pris.
+- `offerFrom` og `offerUntil` er altid tomme. Derfor kender vi ikke slutdatoen for et Bilka-tilbud, og et tilbud tæller med, selvom det slutter før levering.
+- Mængdetilbud på tværs af varer ("Mix 10 for 25" på bananer og pærer) regnes kun inden for én linje.
 
 ### Kurv
 - Læs: `GET shop/v6/Cart?u=w&extra=deliveryAddress,deliveryDate`. Tilføj `without_cache=1`, når du tjekker en ændring.

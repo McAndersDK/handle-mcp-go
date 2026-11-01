@@ -1,6 +1,7 @@
 """nemlig.com adapter against a fake backend (httpx.MockTransport). No network."""
 
 import json
+from datetime import date
 from decimal import Decimal
 from pathlib import Path
 
@@ -182,7 +183,7 @@ async def test_search_parses_products(store, fake):
     )
     assert not can.on_offer and can.available and can.ean is None
     assert can.category == "Drikke"
-    assert bottle.unit == "l" and bottle.on_offer and bottle.offer_text == "3 for 68.0 kr"
+    assert bottle.unit == "l" and bottle.on_offer and bottle.offer_text == "3 for 68 kr"
     assert not bottle.available
     search = next(r for r in fake.requests if r.url.path == "/searchgateway/api/search")
     assert search.url.params["timeslotUtc"] == "2026110316-60-180"
@@ -329,3 +330,77 @@ async def test_recipe_links_absolute_or_empty(store, monkeypatch):
     monkeypatch.setattr(store, "_search_settings", settings)
     (only,) = await store.recipes("x")
     assert only.url == "https://www.nemlig.com/opskrifter/a-1"
+
+
+# Shapes seen live 2026-11-01 (docs/research.md). Only the fields we read.
+def test_discount_campaign_pays_the_campaign_price(store):
+    hit = {
+        "Id": 1,
+        "Name": "Laksefilet m. skind",
+        "Price": 120.75,
+        "UnitPriceCalc": 201.25,
+        "Campaign": {
+            "Type": "ProductCampaignDiscountPercent",
+            "DiscountPercent": 30,
+            "CampaignPrice": 84.53,
+            "CampaignUnitPrice": 140.88,
+            "IntervalEnd": "2026-11-04T22:59:59Z",
+        },
+    }
+    p = store._product(hit)
+    assert (p.price, p.unit_price, p.before_price) == (
+        Decimal("84.53"),
+        Decimal("140.88"),
+        Decimal("120.75"),
+    )
+    assert p.on_offer and p.offer_text == "-30 %"
+    assert p.offer_until == date(2026, 11, 4)  # 22:59:59 UTC is the last minute of the day in DK
+
+
+def test_discount_label_alone_is_not_an_offer(store):
+    hit = {"Id": 2, "Name": "Letmælk 1,5%", "Price": 10.95, "Campaign": None, "DiscountItem": True}
+    p = store._product(hit)
+    assert (p.price, p.on_offer, p.offer_text, p.before_price) == (
+        Decimal("10.95"),
+        False,
+        None,
+        None,
+    )
+
+
+def test_multi_buy_keeps_the_single_price(store):
+    campaign = {"Type": "ProductCampaignMixOffer", "MinQuantity": 4, "TotalPrice": 50.0}
+    campaign["CampaignPrice"] = 50.0
+    p = store._product({"Id": 3, "Name": "Hakkede tomater", "Price": 13.95, "Campaign": campaign})
+    assert (p.price, p.offer_text, p.before_price) == (Decimal("13.95"), "4 for 50 kr", None)
+
+
+def test_campaign_we_cannot_describe_is_still_an_offer(store):
+    campaign = {"Type": "ProductCampaignBuyXForY", "MinQuantity": 3}  # no TotalPrice
+    p = store._product({"Id": 4, "Name": "Letmælk", "Price": 21.28, "Campaign": campaign})
+    assert (p.price, p.on_offer, p.offer_text) == (Decimal("21.28"), True, "Tilbud")
+
+
+def test_plain_discount_says_the_before_price(store):
+    campaign = {"Type": "ProductCampaignDiscount", "CampaignPrice": 79.95}
+    p = store._product({"Id": 5, "Name": "Laks - back loin", "Price": 98.75, "Campaign": campaign})
+    assert p.offer_text == "Tilbud, før 98,75 kr"
+
+
+def test_multi_buy_text_is_priced_by_compare(store):
+    from handle_mcp.compare import best_match
+
+    campaign = {"Type": "ProductCampaignMixOffer", "MinQuantity": 4, "TotalPrice": 50.0}
+    hit = {"Id": 6, "Name": "Hakkede tomater", "Price": 13.95, "Description": "400 g"}
+    p = store._product({**hit, "Campaign": campaign, "Availability": {}})
+    assert best_match("4 x hakkede tomater 400 g", [p]).line_total == Decimal(50)
+
+
+def test_offer_end_uses_danish_time(store):
+    summer = {
+        "Type": "ProductCampaignDiscount",
+        "CampaignPrice": 10,
+        "IntervalEnd": "2026-07-01T21:59:59Z",
+    }
+    p = store._product({"Id": 7, "Name": "Is", "Price": 20, "Campaign": summer})
+    assert p.offer_until == date(2026, 7, 1)  # 23:59:59 in DK summer time

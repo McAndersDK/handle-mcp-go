@@ -61,6 +61,9 @@ STATUS = {  # Bilka's codes → the words the website shows
 NOT_HOME = "Kurven er sat til afhentning, ikke hjemlevering. Vælg hjemlevering på bilkatogo.dk."
 
 
+GENERIC_OFFERS = {"Se Her"}  # offerDescription with no real text (docs/research.md)
+
+
 def _kr(ore: Any) -> Decimal:
     try:
         return Decimal(str(ore or 0)).scaleb(-2)
@@ -226,6 +229,7 @@ class BilkaStore:
                         "netcontent",
                         "productType",
                         "deepestCategoryPath",
+                        "price",  # the price without the offer
                         f"storeData.{sid}",
                     ]
                 ),
@@ -249,19 +253,27 @@ class BilkaStore:
         if not store:
             return None
         unit = (store.get("unitsOfMeasurePriceUnit") or "").rstrip(".").lower()
+        now, normal = _kr(store.get("price")), _kr(hit.get("price"))
+        before = normal if normal > now else None
         offer = store.get("offerDescription") or None
+        if offer in GENERIC_OFFERS:  # a leaflet offer with no text of its own
+            offer = f"Tilbud, før {before:.2f} kr".replace(".", ",") if before else "Tilbud"
+        shown = store.get(
+            "unitsOfMeasureShowPrice"
+        )  # with the offer; unitsOfMeasurePrice is without
         return Product(
             store=self.name,
             id=str(hit["objectID"]),
             name=hit.get("name", ""),
-            price=_kr(store.get("price")),  # what you pay now, offer included
+            price=now,  # what you pay now, offer included
             brand=hit.get("brand") or None,
             size=hit.get("netcontent") or None,
-            unit_price=_kr(store.get("unitsOfMeasurePrice")) if unit else None,
+            unit_price=_kr(shown or store.get("unitsOfMeasurePrice")) if unit else None,
             unit=UNITS.get(unit, unit or None),
             ean=hit.get("gtin") or None,
             on_offer=bool(offer),
             offer_text=offer,
+            before_price=before if offer else None,
             available=bool(store.get("inStock")),
             category=" > ".join(
                 x for x in (hit.get("deepestCategoryPath"), hit.get("productType")) if x

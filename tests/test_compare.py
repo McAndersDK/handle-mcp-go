@@ -1,5 +1,6 @@
 """compare_basket with a real week list against two fake stores. No network."""
 
+from datetime import date
 from decimal import Decimal
 from typing import ClassVar
 
@@ -7,7 +8,7 @@ import pytest
 
 from handle_mcp import compare, server
 from handle_mcp import stores as registry
-from handle_mcp.compare import best_match, parse_item, parse_size
+from handle_mcp.compare import _score, best_match, parse_item, parse_size
 from handle_mcp.models import DeliveryInfo, Product, StoreTerms
 
 WEEK_LIST = [
@@ -247,7 +248,7 @@ async def test_failing_delivery_info_keeps_the_prices(monkeypatch):
 
 def test_singular_and_plural_match():
     line = best_match("bananer", [p("x", "b", "Banan øko.", "3.00", "1 stk")])
-    assert line.product.id == "b" and not line.sure
+    assert line.product.id == "b" and line.sure  # singular and plural are the same product
 
 
 def test_store_top_hit_when_no_name_matches():
@@ -335,3 +336,133 @@ def test_relaxed_search_hit_is_marked_unsure():
 def test_relaxed_search_hit_without_brand_is_only_a_guess():
     line = best_match("cheasy skyr passionsfrugt", [p("x", "n", "Skyr naturel", "20.00", "1 kg")])
     assert line.product.id == "n" and line.guess and not line.sure
+
+
+def test_size_in_the_item_is_the_amount_wanted():
+    line = best_match("hakket oksekød 1,5 kg", [p("x", "s", "Hakket oksekød", "35.00", "400 g")])
+    assert (line.quantity, line.line_total, line.sure) == (4, Decimal("140.00"), True)
+
+
+def test_cheapest_for_the_amount_wins():
+    small = p("x", "s", "Laks", "30.00", "2 x 90 g")
+    big = p("x", "b", "Laks", "89.00", "600 g")
+    line = best_match("laks 600 g", [small, big])  # 4 small packs cost 120
+    assert (line.product.id, line.quantity, line.line_total) == ("b", 1, Decimal("89.00"))
+
+
+def test_quantity_without_size_picks_the_cheapest_line():
+    bag = p("x", "bag", "Pærer", "22.00", "1 kg")
+    one = p("x", "one", "Pære", "2.75", "1 stk")
+    line = best_match("4 x pærer", [bag, one])
+    assert (line.product.id, line.line_total) == ("one", Decimal("11.00"))
+
+
+def test_cheapest_wins_on_the_same_name():
+    eco = p("x", "eco", "Æg økologiske", "41.95", "10 stk")
+    cheap = p("x", "cheap", "Æg frilands", "25.00", "10 stk")
+    assert best_match("æg 10 stk", [eco, cheap]).product.id == "cheap"
+
+
+def test_compound_word_counts_but_whole_word_wins():
+    assert _score(["mælk"], p("x", "k", "Kakaomælk", "8.00")) == 0.75
+    whole = p("x", "m", "Mælk", "12.00", "1 l")
+    cocoa = p("x", "k", "Kakaomælk", "8.00", "1 l")
+    assert best_match("mælk 1 l", [cocoa, whole]).product.id == "m"
+
+
+def test_much_bigger_pack_is_marked():
+    line = best_match("kaffe 400 g", [p("x", "k", "Kaffe", "45.00", "500 g")])
+    assert not line.sure and "Anden størrelse" in line.note
+
+
+def test_whole_word_beats_cheaper_compound_word():
+    whole = p("x", "w", "Ris", "20.00", "1 kg")
+    compound = p("x", "c", "Kokosris", "10.00", "1 kg")
+    assert best_match("ris 1 kg", [compound, whole]).product.id == "w"
+
+
+def test_how_it_is_made_is_the_same_product():
+    eco = p("x", "eco", "Økologiske æg S", "13.95", "4 stk")
+    offer = p("x", "offer", "Frilandsæg", "25.00", "10 stk")
+    line = best_match("æg 10 stk", [eco, offer])  # 3 small packs would cost 41.85
+    assert (line.product.id, line.line_total, line.sure) == ("offer", Decimal("25.00"), True)
+
+
+def test_multi_buy_counts_in_the_line_total():
+    legs = p("x", "l", "Kyllingelår", "113.50", "600 g")
+    legs.offer_text = "2 for 175 kr"
+    line = best_match("kyllingelår 1,2 kg", [legs])
+    assert (line.quantity, line.line_total) == (2, Decimal(175))
+
+
+def test_offer_that_ends_before_delivery_does_not_count():
+    salmon = p("x", "s", "Laksefilet", "84.53", "600 g")
+    salmon.before_price, salmon.offer_until = Decimal("120.75"), date(2026, 11, 4)
+    line = best_match("laksefilet 600 g", [salmon], on=date(2026, 11, 9))
+    assert line.line_total == Decimal("120.75") and "slutter 04/11" in line.note
+    assert best_match("laksefilet 600 g", [salmon], on=date(2026, 11, 3)).line_total == Decimal(
+        "84.53"
+    )
+
+
+def test_fresh_beats_cheaper_frozen_or_canned():
+    frozen = p("x", "f", "Blåbær frost", "20.00", "300 g")
+    fresh = p("x", "b", "Blåbær", "25.00", "125 g")
+    assert best_match("blåbær", [frozen, fresh]).product.id == "b"
+    canned = p("x", "c", "Cherrytomater i tomatjuice", "8.00", "400 g")
+    canned.category = "Kolonial > Konserves"
+    tomato = p("x", "t", "Cherrytomater", "15.00", "250 g")
+    assert best_match("cherrytomater", [canned, tomato]).product.id == "t"
+    assert best_match("frosne blåbær", [frozen, fresh]).product.id == "f"
+
+
+def test_frozen_meat_offer_still_wins():
+    frozen = p("x", "f", "Hele kyllingelår m. rygben frost", "35.00", "1250 g")
+    frozen.category = "Frost > Kød og fjerkræ"
+    fresh = p("x", "k", "Hele kyllingelår", "64.95", "1.6 kg")
+    assert best_match("kyllingelår 1,25 kg", [fresh, frozen]).product.id == "f"
+
+
+def test_canned_by_name_or_category_loses():
+    canned = p("x", "c", "Cherrytomater i tomatjuice", "10.95", "400 g")
+    canned.category = "Kolonial > Konserves & dåsemad"
+    fresh = p("x", "t", "Cherrytomater", "12.00", "400 g")
+    assert best_match("cherrytomater 250 g", [canned, fresh]).product.id == "t"
+
+
+def test_c_and_k_and_short_plural():
+    assert best_match("klementiner", [p("x", "c", "Clementiner", "20.00")]).sure
+    assert best_match("peberfrugt rød", [p("x", "p", "Peberfrugter røde", "20.00")]).sure
+
+
+def test_canned_loses_even_when_fresh_has_no_fitting_category():
+    """Seen live at Bilka: the canned one sits in '... > Cherrytomater', the fresh one does not."""
+    canned = p("x", "c", "Cherrytomater i tomatjuice", "10.95", "400 g")
+    canned.category = "Kolonial > Konserves, bouillon & krydderier > Tomatprodukter > Cherrytomater"
+    fresh = p("x", "f", "Cherrytomater", "12.00", "400 g")
+    fresh.category = "Frugt & grønt > Grønt"
+    assert best_match("cherrytomater 250 g", [canned, fresh]).product.id == "f"
+
+
+def test_split_compound_is_the_same_word():
+    """Seen live at Bilka: every 'Cherrytomater' is canned; the fresh one is 'Cherry tomater øko'."""
+    canned = p("x", "c", "Cherrytomater", "12.00", "400 g")
+    canned.category = "Kolonial > Konserves > Flåede tomater"
+    fresh = p("x", "f", "Cherry tomater øko", "17.00", "250 g")
+    fresh.category = "Frugt & grønt > Grøntsager > Tomater > Cherrytomater"
+    line = best_match("cherrytomater 250 g", [canned, fresh])
+    assert line.product.id == "f" and line.sure
+
+
+def test_same_cost_more_food_wins():
+    small = p("x", "s", "Snackpeber mini", "22.00", "250 g")
+    big = p("x", "b", "Snackpeber", "22.00", "500 g")
+    assert best_match("snackpeber", [small, big]).product.id == "b"
+    assert best_match("snackpeber", [big, small]).product.id == "b"
+
+
+def test_delivery_day_is_danish():
+    from datetime import UTC, datetime
+
+    info = DeliveryInfo("x", chosen_start=datetime(2026, 11, 4, 23, 30, tzinfo=UTC))
+    assert compare._day(info) == date(2026, 11, 5)  # 00:30 in Denmark

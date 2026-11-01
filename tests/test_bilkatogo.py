@@ -290,3 +290,36 @@ def test_money_in_ore_is_robust():
     assert bilka_module._kr(None) == Decimal("0.00")
     with pytest.raises(StoreError, match="ukendt beløb"):
         bilka_module._kr("abc")
+
+
+# Shapes seen live 2026-11-01 (docs/research.md). Amounts in øre.
+def _hit(offer: str, price: int, now: int, show: int) -> dict:
+    data = {
+        "price": now,
+        "inStock": True,
+        "offerDescription": offer,
+        "unitsOfMeasurePrice": 6500,
+        "unitsOfMeasureShowPrice": show,
+        "unitsOfMeasurePriceUnit": "Kg.",
+    }
+    return {"objectID": "1", "name": "Hakket kyllingekød", "price": price, "storeData": {"s": data}}
+
+
+def test_offer_has_before_price_and_offer_unit_price(store):
+    p = store._product(_hit("Skarp pris", 6500, 3900, 3900), "s")
+    assert (p.price, p.unit_price, p.before_price) == (
+        Decimal("39.00"),
+        Decimal("39.00"),
+        Decimal("65.00"),
+    )
+    assert p.offer_text == "Skarp pris"
+
+
+def test_se_her_gets_a_real_text(store):
+    p = store._product(_hit("Se Her", 7495, 6900, 8625), "s")
+    assert p.offer_text == "Tilbud, før 74,95 kr" and p.on_offer
+
+
+def test_no_offer_has_no_before_price(store):
+    p = store._product(_hit("", 10995, 8500, 14167), "s")
+    assert (p.on_offer, p.before_price, p.unit_price) == (False, None, Decimal("141.67"))

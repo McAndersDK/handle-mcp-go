@@ -12,10 +12,11 @@ import logging
 import os
 import time
 import uuid
-from datetime import datetime
+from datetime import date, datetime
 from decimal import Decimal
 from typing import Any
 from urllib.parse import urljoin
+from zoneinfo import ZoneInfo
 
 import httpx
 
@@ -63,12 +64,37 @@ def _unit(label: str | None) -> str | None:
 
 
 def _offer(campaign: dict | None) -> str | None:
+    """Text for a real campaign. 'DiscountItem' alone is nemlig's everyday 'Discount' label,
+    not an offer, so it gives no text (docs/research.md)."""
     if not campaign:
         return None
-    qty, price = campaign.get("MinQuantity"), campaign.get("TotalPrice")
-    if qty and qty > 1 and price:
-        return f"{qty} for {price} kr"
-    return campaign.get("Type")
+    qty, total = campaign.get("MinQuantity"), _money(campaign.get("TotalPrice"))
+    if qty and qty > 1 and total:
+        return f"{qty} for {_kr(total)} kr"
+    if (pct := campaign.get("DiscountPercent")) and _discount_price(campaign):
+        return f"-{pct} %"
+    return "Tilbud" if campaign.get("Type") else None  # a campaign we cannot describe
+
+
+def _discount_price(campaign: dict | None) -> Decimal | None:
+    """Discount campaigns: the hit's Price is the price BEFORE the offer, CampaignPrice is what
+    you pay. Multi-buy campaigns (MinQuantity > 1) keep the single price."""
+    if not campaign or (campaign.get("MinQuantity") or 0) > 1:
+        return None
+    return _money(campaign.get("CampaignPrice")) or None
+
+
+DK = ZoneInfo("Europe/Copenhagen")
+
+
+def _until(campaign: dict | None) -> date | None:
+    """Last Danish day of the campaign. IntervalEnd is UTC, e.g. 22:59:59Z = 23:59:59 in DK."""
+    end = _time((campaign or {}).get("IntervalEnd"))
+    return end.astimezone(DK).date() if end and end.tzinfo else (end.date() if end else None)
+
+
+def _kr(value: Decimal) -> str:
+    return f"{value:.2f}".replace(".", ",").removesuffix(",00")
 
 
 class NemligStore:
@@ -227,18 +253,27 @@ class NemligStore:
 
     def _product(self, hit: dict) -> Product:
         avail = hit.get("Availability") or {}
+        campaign = hit.get("Campaign") or None
+        price = _money(hit.get("Price")) or Decimal(0)
+        now = _discount_price(campaign)
+        offer = _offer(campaign)
+        if offer == "Tilbud" and now and price > now:
+            offer = f"Tilbud, før {_kr(price)} kr"
         return Product(
             store=self.name,
             id=str(hit["Id"]),
             name=hit.get("Name", ""),
-            price=_money(hit.get("Price")) or Decimal(0),
+            price=now or price,
             brand=hit.get("Brand") or None,
             size=hit.get("Description") or None,
-            unit_price=_money(hit.get("UnitPriceCalc")),
+            unit_price=(now and _money(campaign.get("CampaignUnitPrice")))
+            or _money(hit.get("UnitPriceCalc")),
             unit=_unit(hit.get("UnitPriceLabel")),
             ean=None,  # not in nemlig's search answers (docs/research.md)
-            on_offer=bool(hit.get("Campaign") or hit.get("DiscountItem")),
-            offer_text=_offer(hit.get("Campaign")),
+            on_offer=bool(offer),
+            offer_text=offer,
+            before_price=price if now and price > now else None,
+            offer_until=_until(campaign),
             available=avail.get("IsDeliveryAvailable", True)
             and avail.get("IsAvailableInStock", True),
             category=hit.get("Category") or None,
