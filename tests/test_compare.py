@@ -323,3 +323,15 @@ def test_short_category_word_is_not_a_compound_hit():
     cheese = p("x", "o", "Post-it", "10.00")
     cheese.category = "Mejeri > Ost"
     assert compare._category_rank(["post"], cheese) == 1
+
+
+def test_relaxed_search_hit_is_marked_unsure():
+    """Bilka retries with optional words: 'cheasy skyr passionsfrugt' can return another flavour."""
+    other = p("x", "s", "Skyr m. skovbær 0,2%", "30.95", "1 kg", brand="Cheasy")
+    line = best_match("4 x cheasy skyr passionsfrugt", [other])
+    assert line.product.id == "s" and not line.sure and "Tjek varen" in line.note
+
+
+def test_relaxed_search_hit_without_brand_is_only_a_guess():
+    line = best_match("cheasy skyr passionsfrugt", [p("x", "n", "Skyr naturel", "20.00", "1 kg")])
+    assert line.product.id == "n" and line.guess and not line.sure

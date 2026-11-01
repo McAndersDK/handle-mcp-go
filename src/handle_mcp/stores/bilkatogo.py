@@ -213,6 +213,9 @@ class BilkaStore:
             {
                 "query": query,
                 "hitsPerPage": limit,
+                # Algolia needs every word by default: "cheasy skyr passionsfrugt" gives 0 hits
+                # when that flavour is not sold. Then retry with fewer words, like nemlig does.
+                "removeWordsIfNoResults": "allOptional",
                 "filters": f"isInAssortmentIn:{sid} AND nonsearchable:false",
                 "attributesToRetrieve": json.dumps(
                     [

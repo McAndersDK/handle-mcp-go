@@ -166,6 +166,7 @@ async def test_search_uses_cart_store_and_parses(store, fake):
     algolia = next(r for r in fake.requests if r.url.host.endswith("algolia.net"))
     params = parse_qs(json.loads(algolia.content)["requests"][0]["params"])
     assert params["filters"] == ["isInAssortmentIn:1661 AND nonsearchable:false"]
+    assert params["removeWordsIfNoResults"] == ["allOptional"]
     assert algolia.headers["x-algolia-api-key"]
 
 
