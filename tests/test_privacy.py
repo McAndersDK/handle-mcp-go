@@ -10,6 +10,7 @@ from tests.conftest import LEAK
 
 CALLS = [
     ("search_products", {"query": "mælk", "stores": ["fake"]}),
+    ("compare_basket", {"items": ["mælk 1 l", "2 x rugbrød"], "stores": ["fake"]}),
     ("get_cart", {"store": "fake"}),
     ("set_cart_quantities", {"store": "fake", "items": {"1": 1}}),
     ("get_delivery_info", {"store": "fake"}),
@@ -27,7 +28,7 @@ def _secrets(value):
 
 
 async def test_every_tool_is_checked():
-    tested = {name for name, _ in CALLS} | {"compare_basket"}  # trin 5
+    tested = {name for name, _ in CALLS}
     assert tested == {t.name for t in await server.mcp.list_tools()}
 
 

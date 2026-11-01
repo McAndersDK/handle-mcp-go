@@ -10,6 +10,7 @@ import asyncio
 import dataclasses
 import logging
 import sys
+from collections.abc import Awaitable, Callable
 from datetime import date, datetime
 from decimal import Decimal
 from typing import Any
@@ -18,12 +19,13 @@ from mcp.server.mcpserver import MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import ToolAnnotations
 
+from handle_mcp import compare
 from handle_mcp import stores as registry
 from handle_mcp.privacy import scrub
 
 log = logging.getLogger("handle_mcp")
 
-MAX_ITEMS = 50  # per set_cart_quantities call
+MAX_ITEMS = 50  # per set_cart_quantities or compare_basket call
 MAX_QUANTITY = 50  # per product
 MAX_RESULTS = 25
 
@@ -99,11 +101,9 @@ async def _call(store: str, method: str, *args: Any) -> Any:
         raise ToolError(_error_text(store, exc)) from exc
 
 
-async def _each(names: list[str], method: str, *args: Any) -> dict[str, Any]:
-    """Call every store at once. One store failing never stops the others."""
-    results = await asyncio.gather(
-        *(getattr(_store(n), method)(*args) for n in names), return_exceptions=True
-    )
+async def _each(names: list[str], work: Callable[[Any], Awaitable[Any]]) -> dict[str, Any]:
+    """Run `work(store)` for every store at once. One store failing never stops the others."""
+    results = await asyncio.gather(*(work(_store(n)) for n in names), return_exceptions=True)
     return {
         name: {"error": _error_text(name, r)} if isinstance(r, BaseException) else r
         for name, r in zip(names, results, strict=True)
@@ -114,13 +114,21 @@ async def _each(names: list[str], method: str, *args: Any) -> dict[str, Any]:
 async def search_products(query: str, stores: list[str] | None = None, limit: int = 10) -> dict:
     """Search products in one or more stores. Returns price, price per kg/l, offers and EAN when known."""
     limit = max(1, min(limit, MAX_RESULTS))
-    return _out(await _each(_names(stores), "search", query, limit))
+    return _out(await _each(_names(stores), lambda s: s.search(query, limit)))
 
 
 @mcp.tool(annotations=READ)
 async def compare_basket(items: list[str], stores: list[str] | None = None) -> dict:
-    """Price a shopping list in each store: best match per item, total incl. fees, minimum order met, unsure and missing matches marked."""
-    raise ToolError("compare_basket kommer i trin 5.")
+    """Price a shopping list in each store, e.g. ["2 x letmælk 1 l", "rugbrød", "æg 10 stk"].
+    Returns the best match per item, total incl. fees, minimum order met, and marks unsure
+    and missing matches. Only reads: use set_cart_quantities with the product ids after."""
+    items = [i.strip() for i in items if i.strip()]
+    if not items:
+        raise ToolError("Indkøbslisten er tom.")
+    if len(items) > MAX_ITEMS:
+        raise ToolError(f"Højst {MAX_ITEMS} varer pr. liste.")
+    quotes = await _each(_names(stores), lambda s: compare.quote(s, items))
+    return _out({"stores": quotes, **compare.verdict(quotes)})
 
 
 @mcp.tool(annotations=READ)

@@ -46,3 +46,34 @@ async def test_orders(store):
     orders = await store.orders(limit=2)
     if orders:
         await store.order(orders[0].id)
+
+
+async def test_compare_week_list(monkeypatch):
+    """Prices the 15-item week list in every store. Prints a table for a human check."""
+    from handle_mcp import server
+    from handle_mcp import stores as registry
+    from tests.test_compare import WEEK_LIST
+
+    monkeypatch.setattr(registry, "STORES", STORES)  # conftest swaps in fakes
+    monkeypatch.setattr(server, "_instances", {})
+    result = await server.compare_basket(WEEK_LIST)
+    for name, quote in result["stores"].items():
+        print(f"\n== {name} ==")
+        if "error" in quote:
+            print(quote["error"])
+            continue
+        for ln in quote["lines"]:
+            prod = ln["product"]
+            mark = "  " if ln["sure"] else "? "
+            print(
+                f"{mark}{ln['item']:<22} → {prod['name'][:38]:<38} {prod['size'] or '':<10}"
+                f" {ln['line_total']:>7} kr. {ln['note'] or ''}"
+            )
+        for item in quote["missing"]:
+            print(f"✗ {item:<22} → ikke fundet")
+        print(
+            f"varer={quote['products_total']} gebyrer={quote['fees']} total={quote['total']}"
+            f" minimum nået={quote['minimum_met']} noter={quote['notes']}"
+        )
+    print(f"\n{result['summary']}")
+    assert result["cheapest"]

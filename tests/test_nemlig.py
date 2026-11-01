@@ -26,7 +26,7 @@ class FakeNemlig:
     def __init__(self) -> None:
         self.requests: list[httpx.Request] = []
         self.basket = fixture("basket")
-        self.scripted: dict[str, list[int]] = {}  # path → status codes to answer first
+        self.scripted: dict[str, list] = {}  # path → status codes or errors to give first
         self.token_count = 0
         self.queue = False
 
@@ -34,7 +34,10 @@ class FakeNemlig:
         self.requests.append(request)
         path = request.url.path
         if self.scripted.get(path):
-            return httpx.Response(self.scripted[path].pop(0))
+            nxt = self.scripted[path].pop(0)
+            if isinstance(nxt, Exception):
+                raise nxt
+            return httpx.Response(nxt)
         if request.url.host == "nemlig.queue-it.net":
             return httpx.Response(200, text="<html>Du er i kø</html>")
         if path == "/" and self.queue:
@@ -142,6 +145,13 @@ async def test_expired_token_is_renewed_once(store, fake):
 
 async def test_retries_on_503_then_succeeds(store, fake):
     fake.scripted["/webapi/basket/GetBasket"] = [503, 503]
+    assert (await store.get_cart()).lines
+
+
+async def test_retries_on_network_error(store, fake):
+    """Seen live: nemlig sometimes drops the connection (ReadError) during many searches."""
+    await store.get_cart()
+    fake.scripted["/webapi/basket/GetBasket"] = [httpx.ReadError("reset"), 503]
     assert (await store.get_cart()).lines
 
 

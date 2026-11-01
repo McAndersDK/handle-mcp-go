@@ -37,6 +37,8 @@ class FakeBilka:
         path = request.url.path
         if self.scripted.get(path):
             nxt = self.scripted[path].pop(0)
+            if isinstance(nxt, Exception):
+                raise nxt
             return httpx.Response(nxt) if isinstance(nxt, int) else httpx.Response(200, json=nxt)
         if path == "/accounts.login":
             form = parse_qs(request.content.decode())
@@ -134,6 +136,14 @@ async def test_other_error_body_is_not_a_logout(store, fake):
 
 async def test_retries_on_503(store, fake):
     fake.scripted["/api/shop/v6/Cart"] = [503, 503]
+    assert (await store.get_cart()).lines
+
+
+async def test_retries_on_network_error(store, fake):
+    fake.scripted["/api/shop/v6/Cart"] = [
+        httpx.ReadError("reset"),
+        httpx.RemoteProtocolError("closed"),
+    ]
     assert (await store.get_cart()).lines
 
 

@@ -31,6 +31,7 @@ from handle_mcp.models import (
 )
 from handle_mcp.stores import StoreError, load_login
 
+RETRYABLE = (httpx.TimeoutException, httpx.NetworkError, httpx.RemoteProtocolError)
 log = logging.getLogger(__name__)
 
 GIGYA = "https://accounts.eu1.gigya.com"
@@ -113,9 +114,9 @@ class BilkaStore:
         for attempt in range(RETRIES + 1):
             try:
                 resp = await self._client.request(method, url, **kwargs)
-            except httpx.TimeoutException as exc:
+            except RETRYABLE as exc:  # safe: every write sets an absolute quantity
                 if attempt == RETRIES:
-                    raise StoreError("BilkaToGo svarer ikke (timeout).") from exc
+                    raise StoreError(f"BilkaToGo svarer ikke ({type(exc).__name__}).") from exc
             except httpx.HTTPError as exc:
                 raise StoreError(f"Kan ikke nå BilkaToGo ({type(exc).__name__}).") from exc
             else:

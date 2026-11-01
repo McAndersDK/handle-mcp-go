@@ -39,7 +39,7 @@ No change to `server.py` or the tools is needed.
 - Quantities are absolute; 0 removes the line.
 - Bilka answers HTTP 200 on errors. A cart change failed if the applied count differs from the requested one.
 - Bilka: log in without a `cart` cookie, or the login replaces the cart.
-- Retry only on timeout, 429 and 5xx.
+- Retry only on timeout, network errors (e.g. ReadError), 429 and 5xx. Safe because every write sets an absolute quantity.
 
 ## Test
 
