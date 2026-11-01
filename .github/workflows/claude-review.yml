@@ -1,0 +1,64 @@
+name: claude-review
+# A fresh Claude reviews every PR. It has no memory of the session that wrote the code.
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review, reopened]
+
+concurrency:
+  group: claude-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    # Dependabot PRs get no secrets, so skip them. Skip drafts.
+    if: github.event.pull_request.draft == false && github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+      - uses: anthropics/claude-code-action@v1
+        with:
+          # Set ONE of these secrets. /install-github-app sets it for you.
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          track_progress: true
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+
+            You review this pull request. You did not write it. Be skeptical.
+            Read CLAUDE.md and docs/adr/ first. Then read the full diff.
+
+            Block the PR (say "BLOCKER") if any of these break:
+            1. The human always pays. No code may place an order, pay, read cards,
+               choose a delivery time or change the address. No new store endpoint
+               outside search, product, cart quantity and read-only delivery slots.
+            2. Privacy. Every tool answer goes through privacy.scrub() in server._out().
+               No name, address, phone, email or raw store JSON leaves the server,
+               also not in logs, errors or test fixtures.
+            3. stdout is JSON-RPC. No print(). Logs go to stderr via logging.
+            4. No secrets in git: no tokens, passwords, cookies or real personal data.
+            5. One adapter per store in src/handle_mcp/stores/. A new store must not
+               need changes in server.py. One failing store must not stop the others.
+            6. Money is Decimal DKK. Bilka øre are converted in the adapter.
+            7. Tests use no network and no logins (except tests marked live).
+
+            Then look for real bugs: wrong logic, missing error handling, retries on
+            the wrong errors (only timeout, 429 and 5xx), missing tests for new code.
+            Skip style nits that ruff catches.
+
+            Output:
+            - Inline comments on the exact lines (mcp__github_inline_comment__create_inline_comment).
+            - One short top comment with `gh pr comment`: verdict (OK / changes needed /
+              BLOCKER), then max 5 bullets. Short sentences. No praise, no filler.
+            - Do not add any footer or attribution.
+
+          claude_args: |
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Read,Glob,Grep"
