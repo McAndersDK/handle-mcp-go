@@ -517,3 +517,50 @@ def test_count_without_size_prefers_pieces_and_unknown_size_comes_last():
 async def test_no_minimum_note_for_an_empty_basket(two_stores):
     result = await server.compare_basket(["findes ikke xyz"])
     assert not any("minimumskøb" in n for n in result["stores"]["nemlig"]["notes"])
+
+
+def test_count_of_pieces_buys_enough_packs_not_n_packs():
+    """Seen live at Bilka: '6 x bananer' gave 6 four-packs = 24 bananas."""
+    four = p("x", "4", "Bananer", "10.00", "4 stk")
+    line = best_match("6 x bananer", [four])
+    assert (line.quantity, line.line_total) == (2, Decimal("20.00"))
+
+
+def test_never_less_than_wanted():
+    """Seen live: 3 x 300 g for 'hakket kylling 1 kg', 3 x 180 g for 'laks 600 g'."""
+    small = p("x", "s", "Hakket kylling", "59.00", "300 g")
+    assert best_match("hakket kylling 1 kg", [small]).quantity == 4
+    assert best_match("mælk 1 l", [p("x", "m", "Mælk", "10.00", "990 ml")]).quantity == 1
+
+
+def test_alternatives_let_the_caller_swap():
+    shallot = p("x", "s", "Skalotteløg banan", "15.00", "250 g")
+    banana = p("x", "b", "Bananer", "3.00", "1 stk")
+    cheap = p("x", "c", "Bananer øko", "2.50", "1 stk")
+    line = best_match("bananer", [shallot, banana, cheap])
+    ids = [a["id"] for a in line.alternatives]
+    assert line.product.id not in ids and len(ids) == 2
+    assert {"id", "name", "size", "quantity", "line_total", "offer_text", "note"} <= set(
+        line.alternatives[0]
+    )
+
+
+def test_alternatives_skip_store_guesses():
+    banana = p("x", "b", "Bananer", "3.00", "1 stk")
+    tea = p("x", "t", "Grøn te", "10.00", "100 g")
+    assert best_match("bananer", [banana, tea]).alternatives == []
+
+
+def test_alternatives_keep_the_note():
+    small = p("x", "s", "Hakket kylling", "20.00", "300 g")
+    big = p("x", "b", "Hakket kylling", "59.00", "1 kg")
+    line = best_match("hakket kylling 1 kg", [small, big])
+    assert line.product.id == "b"
+    assert line.alternatives[0]["note"]
+
+
+def test_alternatives_survive_out():
+    banana = p("x", "b", "Bananer", "3.00", "1 stk")
+    cheap = p("x", "c", "Bananer øko", "2.50", "1 stk")
+    out = server._out(best_match("bananer", [banana, cheap]))
+    assert out["alternatives"][0]["line_total"] in {"3.00", "2.50"}

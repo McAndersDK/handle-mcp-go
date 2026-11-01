@@ -128,8 +128,9 @@ async def search_recipes(query: str, stores: list[str] | None = None, limit: int
 @mcp.tool(annotations=READ)
 async def compare_basket(items: list[str], stores: list[str] | None = None) -> dict:
     """Price a shopping list in each store, e.g. ["2 x letmælk 1 l", "rugbrød", "æg 10 stk"].
-    Returns the best match per item, total incl. fees, minimum order met, and marks unsure
-    and missing matches. Only reads: use set_cart_quantities with the product ids after."""
+    Returns the best match per item with up to 3 alternatives, total incl. fees, minimum order
+    met, and marks unsure and missing matches. Check every line: swap a wrong product for an
+    alternative. Only reads: use set_cart_quantities with the product ids after."""
     items = [i.strip() for i in items if i.strip()]
     if not items:
         raise ToolError("Indkøbslisten er tom.")

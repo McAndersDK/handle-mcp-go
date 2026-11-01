@@ -29,7 +29,9 @@ from handle_mcp.stores import StoreError
 
 SEARCH_LIMIT = 10
 DK = ZoneInfo("Europe/Copenhagen")  # offers end on Danish days
-SIZE_TOLERANCE = Decimal("0.15")  # 15 % off the wanted size still counts as the same size
+SIZE_TOLERANCE = Decimal("0.15")  # up to 15 % MORE than wanted still counts as the same size
+SHORT_TOLERANCE = Decimal("0.02")  # never less than wanted: 990 g is 1 kg, 900 g is not
+ALTERNATIVES = 3
 STOP_WORDS = {"og", "med", "i", "af", "en", "et", "til", "uden"}
 UNITS = {
     "g": ("g", 1), "gr": ("g", 1), "kg": ("g", 1000),
@@ -63,6 +65,8 @@ class BasketLine:
     sure: bool
     note: str | None = None
     guess: bool = False  # the store's top hit with no word match: left out of the verdict
+    # Next best products, so the caller can swap a wrong pick without a new search.
+    alternatives: list[dict[str, Any]] = field(default_factory=list)
 
 
 @dataclass
@@ -244,8 +248,16 @@ def _packs(wanted: tuple[str, Decimal] | None, quantity: int, product: Any) -> i
     have = _pack_size(product)
     if not wanted or not have or wanted[0] != have[0] or not have[1]:
         return None
-    need = wanted[1] * quantity * (1 - SIZE_TOLERANCE)  # 15 % short still counts
+    need = wanted[1] * quantity * (1 - SHORT_TOLERANCE)
     return max(1, math.ceil(need / have[1]))
+
+
+def _pieces(wanted: tuple[str, Decimal] | None, quantity: int, product: Any) -> int | None:
+    """'6 x bananer' with no size means 6 bananas: a 4-pack is bought twice, not 6 times."""
+    have = _pack_size(product)
+    if wanted or quantity < 2 or not have or have[0] != "stk" or have[1] <= 1:
+        return None
+    return math.ceil(quantity / have[1])
 
 
 def _too_much(wanted: tuple[str, Decimal], quantity: int, count: int, product: Any) -> bool:
@@ -255,6 +267,35 @@ def _too_much(wanted: tuple[str, Decimal], quantity: int, count: int, product: A
 
 
 def best_match(item: str, products: list[Any], on: date | None = None) -> BasketLine:
+    """The best product for one list item, plus the next best as alternatives."""
+    line = _best(item, products, on)
+    chosen = _get(line.product, "id") if line.product is not None else None
+    others = []
+    for x in products:
+        if not _get(x, "available") or _get(x, "id") == chosen:
+            continue
+        alt = _best(item, [x], on)
+        if alt.product is not None and not alt.guess:
+            others.append((-_score(parse_item(item)[1], x), alt.line_total, alt))
+    others.sort(key=lambda o: o[:2])
+    line.alternatives = [_brief(a) for _s, _t, a in others[:ALTERNATIVES]]
+    return line
+
+
+def _brief(line: BasketLine) -> dict[str, Any]:
+    p = line.product
+    return {
+        "id": _get(p, "id"),
+        "name": _get(p, "name"),
+        "size": _get(p, "size"),
+        "quantity": line.quantity,
+        "line_total": line.line_total,
+        "offer_text": _get(p, "offer_text"),
+        "note": line.note,
+    }
+
+
+def _best(item: str, products: list[Any], on: date | None = None) -> BasketLine:
     """Best word match first, then a comparable size, then the lowest cost for the amount.
     `on` is the delivery day: offers that end before it do not count."""
     quantity, words, size = parse_item(item)
@@ -262,7 +303,7 @@ def best_match(item: str, products: list[Any], on: date | None = None) -> Basket
     for product in products:
         score = _score(words, product)
         if _get(product, "available") and score >= 0.5:
-            packs = _packs(size, quantity, product)
+            packs = _packs(size, quantity, product) or _pieces(size, quantity, product)
             size_rank = 0 if packs or not size else 1
             count = packs or quantity
             cost = _cost(product, count, on)
