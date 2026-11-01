@@ -1,0 +1,72 @@
+"""The server can never order, pay or change the address, and keeps secrets out."""
+
+import os
+import re
+import stat
+from pathlib import Path
+
+import pytest
+
+from handle_mcp import stores as registry
+
+ROOT = Path(__file__).parent.parent
+SRC = ROOT / "src"
+
+# Endpoints and words that must never appear in the code.
+FORBIDDEN = [
+    r"PlaceOrder",
+    r"Checkout/",
+    r"GetCreditCards",
+    r"GetCardsFees",
+    r"/payment",
+    r"SetDeliveryAddress",
+    r"SetDeliveryTime",
+    r"ChangeAddress",
+    r"EmptyCart",
+    r"CancelOrder",
+]
+
+
+def _source_files():
+    return [p for p in SRC.rglob("*.py")]
+
+
+@pytest.mark.parametrize("pattern", FORBIDDEN)
+def test_forbidden_endpoint_not_in_code(pattern):
+    hits = [str(p) for p in _source_files() if re.search(pattern, p.read_text(), re.IGNORECASE)]
+    assert not hits, f"{pattern} found in {hits}"
+
+
+def test_nothing_prints_to_stdout():
+    """stdout is the JSON-RPC stream; a stray print() breaks the protocol."""
+    hits = [str(p) for p in _source_files() if re.search(r"\bprint\(", p.read_text())]
+    assert not hits
+
+
+def test_gitignore_keeps_secrets_out():
+    ignored = (ROOT / ".gitignore").read_text()
+    for entry in (".env", "*.secret.json"):
+        assert entry in ignored
+
+
+def test_login_from_env(monkeypatch):
+    monkeypatch.setenv("HANDLE_FAKE_EMAIL", "a@example.com")
+    monkeypatch.setenv("HANDLE_FAKE_PASSWORD", "x")
+    assert registry.load_login("fake") == {"email": "a@example.com", "password": "x"}
+
+
+def test_login_file_must_be_private(tmp_path, monkeypatch):
+    monkeypatch.setattr(registry, "CONFIG_DIR", tmp_path)
+    path = tmp_path / "fake.json"
+    path.write_text('{"email": "a@example.com", "password": "x"}')
+    os.chmod(path, 0o644)
+    with pytest.raises(registry.StoreError, match="chmod 600"):
+        registry.load_login("fake")
+    os.chmod(path, stat.S_IRUSR | stat.S_IWUSR)
+    assert registry.load_login("fake")["email"] == "a@example.com"
+
+
+def test_missing_login_says_how_to_fix(tmp_path, monkeypatch):
+    monkeypatch.setattr(registry, "CONFIG_DIR", tmp_path)
+    with pytest.raises(registry.StoreError, match="HANDLE_FAKE_EMAIL"):
+        registry.load_login("fake")
