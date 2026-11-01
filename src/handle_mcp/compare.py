@@ -8,6 +8,8 @@ Simple and explainable matching. No store-specific code here.
   is not a banana. Such products never win.
 - On the same name score, a product in a matching store category wins ("Fisk > Laks").
 - Then a product with a known size wins, then the lowest cost. Sold-out products never win.
+- No size in the item: compare price per kg, l or piece, and ask for an amount.
+- A blend ("m. 50% grønt") loses to the plain product and is never sure.
 - Unsure matches and missing items are marked, so a human can check them.
 """
 
@@ -34,6 +36,7 @@ UNITS = {
     "ml": ("ml", 1), "cl": ("ml", 10), "dl": ("ml", 100),
     "l": ("ml", 1000), "ltr": ("ml", 1000), "liter": ("ml", 1000),
     "stk": ("stk", 1), "st": ("stk", 1),
+    "ruller": ("stk", 1), "rulle": ("stk", 1), "rl": ("stk", 1),
 }  # fmt: skip
 SIZE_RE = re.compile(
     r"(?:(\d+)\s*[x×]\s*)?(\d+(?:[.,]\d+)?)\s*(" + "|".join(UNITS) + r")\b", re.IGNORECASE
@@ -46,6 +49,8 @@ DESCRIBERS = ("frilands", "skrabe", "øko", "split", "mini", "snack", "baby")
 CANNED = ("konserv", "dåse", "juice")  # "Cherrytomater i tomatjuice", "Kolonial > Konserves"
 FROZEN = ("frost", "frosne", "frossen", "frosset")
 FRESH = ("frugt", "grønt", "bær", "grøntsag")  # frozen loses only here: frozen meat is fine
+BLEND_RE = re.compile(r"\d+(?:[.,]\d+)?\s*%\s*([a-zæøå]+)", re.IGNORECASE)  # "50% grønt"
+NUTRIENTS = {"fedt", "protein", "sukker", "kakao", "alkohol", "salt", "frugt", "kulhydrat"}
 QTY_RE = re.compile(r"^\s*(\d+)\s*[x×]\s+(?=\D)", re.IGNORECASE)
 
 
@@ -183,6 +188,30 @@ def _compound(word: str, token: str) -> bool:
     return len(token) >= len(word) + 3 and token.endswith(word)
 
 
+def _mixed(words: list[str], product: Any) -> int:
+    """1 for a blend the item does not ask for: 'Hakket oksekød m. 50% grønt'. A share of
+    another food ('50% grønt') means a mix. A share of fat or sugar ('m. 0,5% fedt') does not,
+    nor 'Rugbrød m. kerner' or 'Laks m. skind'."""
+    parts = FLAVOUR_RE.split(_get(product, "name") or "", maxsplit=1)
+    shares = BLEND_RE.findall(parts[1]) if len(parts) == 2 else []
+    if not any(w.lower() not in NUTRIENTS for w in shares):
+        return 0
+    tail = set(_words(parts[1]))
+    return 0 if any(w in tail or _stem_hit(w, tail) for w in words) else 1
+
+
+def _per_unit(product: Any, quantity: int, on: date | None) -> tuple[int, Decimal]:
+    """For an item with no size: compare price per kg, l or piece, not per pack.
+    '4 x pærer' counts pieces, so pieces come first. 'æbler' is a bag, so weight comes first."""
+    have = _pack_size(product)
+    price = _price(product, on)
+    if not have or not have[1]:
+        return 2, price
+    by_piece = have[0] == "stk"
+    kind = (0 if by_piece else 1) if quantity > 1 else (1 if by_piece else 0)
+    return kind, price / have[1]
+
+
 def _flavour_only(words: list[str], product: Any) -> bool:
     """True when the item's words are only in the flavour part: 'Grøn te m. mandarin'."""
     return _score(words, product) > 0 and all(_score([w], product) < 0.5 for w in words)
@@ -239,24 +268,24 @@ def best_match(item: str, products: list[Any], on: date | None = None) -> Basket
             cost = _cost(product, count, on)
             # Canned or frozen produce loses before the category counts: a canned product can sit
             # in a category that fits ("... > Cherrytomater") while the fresh one does not.
-            fit = (_processed_rank(words, product), _category_rank(words, product))
+            fit = (
+                _processed_rank(words, product),
+                _category_rank(words, product),
+                _mixed(words, product),
+            )
             have = _pack_size(product)
             amount = have[1] * count if have else Decimal(0)
-            ranked.append((-score, fit, size_rank, cost, -amount, count, product))
+            value = (cost,) if size else _per_unit(product, quantity, on)
+            ranked.append((-score, fit, size_rank, value, cost, -amount, count, product))
     if not ranked:
-        # The store's own top hit, e.g. "Penne" for "pasta". Never sure, but better than nothing.
-        # Never a flavour-only hit ("Grøn te m. mandarin" for "mandariner").
-        top = next(
-            (x for x in products if _get(x, "available") and not _flavour_only(words, x)), None
-        )
-        if top is None:
-            return BasketLine(item, quantity, None, Decimal(0), False, "Ikke fundet")
-        note = "Butikkens bedste søgeresultat. Navnet matcher ikke. Tjek varen."
-        return BasketLine(item, quantity, top, _cost(top, quantity, on), False, note, guess=True)
+        return _guess(item, quantity, size, products, words, on)
     # Same cost: more food wins, then fewer packs. Never the store's search order.
-    neg_score, _cat, size_rank, cost, _amount, count, product = min(ranked, key=lambda r: r[:6])
+    neg_score, fit, size_rank, _value, cost, _amount, count, product = min(
+        ranked, key=lambda r: r[:7]
+    )
     too_much = size_rank == 0 and size is not None and _too_much(size, quantity, count, product)
-    sure = neg_score == -1.0 and size_rank == 0 and not too_much
+    mixed = fit[2] == 1
+    sure = neg_score == -1.0 and size_rank == 0 and not too_much and not mixed
     note = None
     if too_much:
         note = f"Anden størrelse: {count} x {_get(product, 'size') or _get(product, 'name')}."
@@ -264,14 +293,46 @@ def best_match(item: str, products: list[Any], on: date | None = None) -> Basket
         note = (
             f"Størrelsen kan ikke sammenlignes: {_get(product, 'size') or _get(product, 'name')}."
         )
+    elif mixed:
+        note = f"Blandingsvare: {_get(product, 'name')}. Tjek varen."
     elif not sure:
         note = "Usikkert match. Tjek varen."
     elif size and count != quantity:
         note = f"{count} x {_get(product, 'size') or 'pakke'} for at nå mængden."
+    if not size:
+        hint = "Ingen mængde på listen: billigst pr. kg, l eller stk. Skriv en mængde, fx '1 kg'."
+        note = " ".join(filter(None, [note, hint]))
     until = _get(product, "offer_until")
     if on and until and on > until and _get(product, "before_price"):
         note = " ".join(filter(None, [note, f"Tilbuddet slutter {until:%d/%m}, før levering."]))
     return BasketLine(item, count, product, cost, sure, note)
+
+
+def _guess(
+    item: str,
+    quantity: int,
+    size: tuple[str, Decimal] | None,
+    products: list[Any],
+    words: list[str],
+    on: date | None,
+) -> BasketLine:
+    """No name matches, e.g. "Penne" for "pasta". Never sure and left out of the verdict.
+    With a size: only products of that size kind, cheapest for the amount ("Tortelloni 250 g"
+    is not a guess for "pasta 500 g" when "Fettuccine 500 g" is cheaper). Without: the store's
+    top hit. Never a flavour-only hit ("Grøn te m. mandarin" for "mandariner")."""
+    ok = [x for x in products if _get(x, "available") and not _flavour_only(words, x)]
+    if size:
+        sized = [(x, _packs(size, quantity, x)) for x in ok]
+        sized = [(x, n) for x, n in sized if n]
+        if not sized:
+            return BasketLine(item, quantity, None, Decimal(0), False, "Ikke fundet")
+        top, count = min(sized, key=lambda xn: _cost(xn[0], xn[1], on))
+    elif ok:
+        top, count = ok[0], quantity
+    else:
+        return BasketLine(item, quantity, None, Decimal(0), False, "Ikke fundet")
+    note = "Butikkens bedste søgeresultat. Navnet matcher ikke. Tjek varen."
+    return BasketLine(item, count, top, _cost(top, count, on), False, note, guess=True)
 
 
 async def quote(store: Any, items: list[str]) -> BasketQuote:
@@ -290,6 +351,8 @@ async def quote(store: Any, items: list[str]) -> BasketQuote:
     if not terms.home_delivery and not note:
         notes.append("Kurven er ikke sat til hjemlevering.")
     minimum = terms.minimum_order
+    if minimum is not None and 0 < products_total < minimum:  # in words, for the human
+        notes.append(f"Under minimumskøb: {minimum - products_total} kr. mangler til {minimum} kr.")
     return BasketQuote(
         store=terms.store,
         lines=found,
