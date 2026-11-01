@@ -68,5 +68,29 @@ def test_login_file_must_be_private(tmp_path, monkeypatch):
 
 def test_missing_login_says_how_to_fix(tmp_path, monkeypatch):
     monkeypatch.setattr(registry, "CONFIG_DIR", tmp_path)
-    with pytest.raises(registry.StoreError, match="HANDLE_FAKE_EMAIL"):
+    with pytest.raises(registry.StoreError, match="handle-mcp login fake"):
         registry.load_login("fake")
+
+
+def test_login_from_keychain_beats_file(tmp_path, monkeypatch):
+    monkeypatch.setattr(registry, "CONFIG_DIR", tmp_path)
+    (tmp_path / "fake.json").write_text('{"email": "file@example.com", "password": "f"}')
+    registry.keychain_set("fake", "kc@example.com", "k")
+    assert registry.load_login("fake") == {"email": "kc@example.com", "password": "k"}
+    monkeypatch.setenv("HANDLE_FAKE_EMAIL", "env@example.com")
+    monkeypatch.setenv("HANDLE_FAKE_PASSWORD", "e")
+    assert registry.load_login("fake")["email"] == "env@example.com"  # env wins
+
+
+def test_no_keychain_falls_back_to_file(tmp_path, monkeypatch):
+    from keyring.errors import NoKeyringError
+
+    def broken(*_):
+        raise NoKeyringError("no backend")
+
+    monkeypatch.setattr(registry.keyring, "get_password", broken)
+    monkeypatch.setattr(registry, "CONFIG_DIR", tmp_path)
+    path = tmp_path / "fake.json"
+    path.write_text('{"email": "a@example.com", "password": "x"}')
+    os.chmod(path, stat.S_IRUSR | stat.S_IWUSR)
+    assert registry.load_login("fake")["email"] == "a@example.com"

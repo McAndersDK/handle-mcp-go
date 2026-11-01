@@ -173,6 +173,10 @@ async def get_order(store: str, order_id: str) -> dict:
 
 def main() -> None:
     logging.basicConfig(stream=sys.stderr, level=logging.INFO)
+    if len(sys.argv) > 1:  # `handle-mcp login <store>` from a terminal, not from an MCP client
+        from handle_mcp.cli import run
+
+        sys.exit(run(sys.argv[1:]))
     mcp.run("stdio")
 
 

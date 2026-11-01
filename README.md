@@ -23,20 +23,19 @@ What it can **never** do: place an order, pay, read cards, choose a delivery tim
 
 Needs [uv](https://docs.astral.sh/uv/) (`brew install uv`).
 
-**1. Logins.** One file per store, readable only by you:
+**1. Logins.** Save each store's login in your OS keychain (macOS Keychain, Windows Credential Locker or Linux Secret Service). It asks for email and password, checks them against the store, and saves them encrypted:
 
 ```sh
-mkdir -p ~/.config/handle-mcp && cd ~/.config/handle-mcp
-(umask 077 && touch nemlig.json bilkatogo.json)   # readable only by you from the start
+uvx --from git+https://github.com/NJohansen/handle-mcp handle-mcp login nemlig
+uvx --from git+https://github.com/NJohansen/handle-mcp handle-mcp login bilkatogo
 ```
 
-Open each file in an editor (not `echo`, which leaves the password in your shell history) and write:
+`handle-mcp logout <store>` removes it again. From a clone, use `uv run handle-mcp login nemlig`.
 
-```json
-{"email": "you@example.com", "password": "..."}
-```
-
-Or use env vars: `HANDLE_NEMLIG_EMAIL`, `HANDLE_NEMLIG_PASSWORD`, `HANDLE_BILKATOGO_EMAIL`, `HANDLE_BILKATOGO_PASSWORD`. Env vars win. The server refuses a login file that others can read.
+Other ways, checked in this order:
+1. Env vars `HANDLE_<STORE>_EMAIL` and `HANDLE_<STORE>_PASSWORD` (e.g. `HANDLE_NEMLIG_EMAIL`).
+2. The keychain (above). Recommended.
+3. A file `~/.config/handle-mcp/<store>.json` with `{"email": "...", "password": "..."}`. Plain text on disk, so the server refuses it unless only you can read it (`chmod 600`). Create it with `umask 077` and an editor, not `echo`, which leaves the password in your shell history.
 
 **2. BilkaToGo:** choose home delivery (not pickup) once on bilkatogo.dk. The server reads the store and fees from your cart.
 
@@ -65,7 +64,7 @@ Then ask: *"Compare this week's list in nemlig and Bilka, and fill the cheapest 
 
 - **The human always pays.** Only `set_cart_quantities` writes, and only cart quantities.
 - **Personal data stays on your machine.** Every tool answer goes through `privacy.scrub()`. Name, address, phone, email, door code and delivery notes are replaced with `[fjernet af handle-mcp]` before the model sees them.
-- **Logins** live in env vars or `~/.config/handle-mcp/` (chmod 600). Never in code, config in git or test fixtures.
+- **Logins** live in your OS keychain, env vars or `~/.config/handle-mcp/` (chmod 600). Never in code, config in git or test fixtures. `handle-mcp login` never shows or logs the password.
 - **stdout is JSON-RPC.** Logs go to stderr.
 - Use one client at a time per store. Close the store's app or website before an agent changes the cart.
 - Be kind to the stores: the server makes few calls, mostly one at a time per store, and retries only on timeouts, network errors, 429 and 5xx.

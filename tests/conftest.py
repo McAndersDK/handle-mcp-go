@@ -2,7 +2,10 @@ from dataclasses import asdict
 from datetime import date, datetime
 from decimal import Decimal
 
+import keyring
 import pytest
+from keyring.backend import KeyringBackend
+from keyring.errors import PasswordDeleteError
 
 from handle_mcp import server
 from handle_mcp import stores as registry
@@ -116,3 +119,35 @@ class BrokenStore(FakeStore):
 def fake_stores(monkeypatch):
     monkeypatch.setattr(registry, "STORES", {"fake": FakeStore, "broken": BrokenStore})
     monkeypatch.setattr(server, "_instances", {})
+
+
+class MemoryKeyring(KeyringBackend):
+    """A keychain in memory, so tests never read or write the real one."""
+
+    priority = 1
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.secrets: dict[tuple[str, str], str] = {}
+
+    def get_password(self, service, username):
+        return self.secrets.get((service, username))
+
+    def set_password(self, service, username, password):
+        self.secrets[(service, username)] = password
+
+    def delete_password(self, service, username):
+        if self.secrets.pop((service, username), None) is None:
+            raise PasswordDeleteError("not found")
+
+
+@pytest.fixture(autouse=True)
+def memory_keychain(request):
+    if request.node.get_closest_marker("live"):  # live tests use the real keychain
+        yield None
+        return
+    real = keyring.get_keyring()
+    fake = MemoryKeyring()
+    keyring.set_keyring(fake)
+    yield fake
+    keyring.set_keyring(real)

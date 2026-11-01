@@ -7,7 +7,7 @@ A local MCP server (stdio) for Danish grocery stores with home delivery. Full go
 1. **The human always pays.** No code may order, pay, read cards, choose a delivery time or change the address. See `docs/adr/0001-the-human-always-pays.md`. `tests/test_safety.py` greps for forbidden endpoints.
 2. **Privacy first.** Every tool answer goes through `privacy.scrub()` in `server._out()`. Never return raw store JSON without it.
 3. **stdout is JSON-RPC.** Never `print()`. Log to stderr with `logging`.
-4. **No secrets in git.** Logins only in env vars or `~/.config/handle-mcp/<store>.json` (chmod 600).
+4. **No secrets in git.** Logins only in env vars, the OS keychain (`handle-mcp login <store>`) or `~/.config/handle-mcp/<store>.json` (chmod 600).
 5. **Small and boring.** < ~300 lines per store file, < ~200 in `server.py`. No layer until two real users need it.
 6. **No Claude attribution** in commits, PRs or comments.
 

@@ -14,9 +14,13 @@ import stat
 from pathlib import Path
 from typing import Protocol
 
+import keyring
+from keyring.errors import KeyringError
+
 from handle_mcp.models import Cart, DeliveryInfo, Order, Product, QuantityResult, StoreTerms
 
 CONFIG_DIR = Path(os.environ.get("HANDLE_CONFIG_DIR", "~/.config/handle-mcp")).expanduser()
+KEYCHAIN_SERVICE = "handle-mcp"  # one entry per store; the secret is {"email", "password"} as JSON
 
 
 class StoreError(Exception):
@@ -35,23 +39,50 @@ class Store(Protocol):
     async def order(self, order_id: str) -> Order: ...
 
 
-def load_login(store: str) -> dict[str, str]:
-    """Read a store's login from env vars or ~/.config/handle-mcp/<store>.json.
+def keychain_get(store: str) -> dict[str, str] | None:
+    """The login saved by `handle-mcp login <store>` in the OS keychain, if any."""
+    try:
+        secret = keyring.get_password(KEYCHAIN_SERVICE, store)
+    except KeyringError:  # no keychain on this machine (e.g. a headless Linux box)
+        return None
+    if not secret:
+        return None
+    data = json.loads(secret)
+    return {"email": data["email"], "password": data["password"]}
 
-    Env vars win: HANDLE_<STORE>_EMAIL and HANDLE_<STORE>_PASSWORD.
-    The file must be readable by its owner only (chmod 600).
+
+def keychain_set(store: str, email: str, password: str) -> None:
+    keyring.set_password(
+        KEYCHAIN_SERVICE, store, json.dumps({"email": email, "password": password})
+    )
+
+
+def keychain_delete(store: str) -> bool:
+    try:
+        keyring.delete_password(KEYCHAIN_SERVICE, store)
+    except KeyringError:
+        return False
+    return True
+
+
+def load_login(store: str) -> dict[str, str]:
+    """A store's login. First found wins:
+
+    1. Env vars HANDLE_<STORE>_EMAIL and HANDLE_<STORE>_PASSWORD.
+    2. The OS keychain (macOS Keychain, Windows Credential Locker, Secret Service),
+       saved with `handle-mcp login <store>`. Recommended: encrypted at rest.
+    3. ~/.config/handle-mcp/<store>.json, readable by its owner only (chmod 600).
     """
     prefix = f"HANDLE_{store.upper()}_"
     email, password = os.environ.get(prefix + "EMAIL"), os.environ.get(prefix + "PASSWORD")
     if email and password:
         return {"email": email, "password": password}
+    if saved := keychain_get(store):
+        return saved
 
     path = CONFIG_DIR / f"{store}.json"
     if not path.exists():
-        raise StoreError(
-            f"Intet login til {store}. Sæt {prefix}EMAIL og {prefix}PASSWORD, "
-            f"eller opret {path} med chmod 600."
-        )
+        raise StoreError(f"Intet login til {store}. Kør i en terminal: handle-mcp login {store}")
     if path.stat().st_mode & (stat.S_IRWXG | stat.S_IRWXO):
         raise StoreError(f"{path} kan læses af andre. Kør: chmod 600 {path}")
     data = json.loads(path.read_text())
