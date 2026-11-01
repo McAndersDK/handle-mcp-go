@@ -1,0 +1,9 @@
+{
+  "callId": "fake0000000000000000000000000003",
+  "errorCode": 0,
+  "apiVersion": 2,
+  "statusCode": 200,
+  "statusReason": "OK",
+  "time": "2026-10-20T08:00:00.000Z",
+  "id_token": "eyFake.jwt.token"
+}

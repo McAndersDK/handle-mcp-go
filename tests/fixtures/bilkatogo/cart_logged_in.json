@@ -1,0 +1,645 @@
+{
+  "stat": {
+    "amount": 16,
+    "diff": 7,
+    "price": 12700,
+    "price_vat": 2540,
+    "serv_amount": 0,
+    "serv_diff": 0,
+    "serv_price": 0,
+    "prod_amount": 14,
+    "prod_amount_no_deposits": 14,
+    "prod_diff": 5,
+    "prod_price": 8800,
+    "ageCode": 0,
+    "verified_ageCode": 1,
+    "promo": 750,
+    "oos": false,
+    "has_replacements": false,
+    "blockedByHoliday": false,
+    "deposit": 0,
+    "deposit_amount": 0,
+    "deposit_diff": 0,
+    "delivery_price": 0,
+    "is_member": 1,
+    "membership_offer_discount": 200,
+    "personalized_offer_discount": 0,
+    "packing": 3900,
+    "packaging_price": 0,
+    "price_no_promo": 9250,
+    "subtotal_no_promo": 9750,
+    "uncollected_fee": null,
+    "global_discounts": [],
+    "vouchers": [],
+    "minimum_left": 0,
+    "minimum_left_text": "",
+    "delivery_comment": null,
+    "specifications": [
+      {
+        "text": "Pakkeservice",
+        "value": 3900
+      },
+      {
+        "text": "Emballage",
+        "value": 0
+      }
+    ]
+  },
+  "lines": [
+    {
+      "headline": "Emballage",
+      "type": "",
+      "lines": [
+        {
+          "orderlines": [
+            {
+              "subtotal": 0,
+              "net_subtotal": 0,
+              "quantity": 1,
+              "amount": 0,
+              "net_unitprice": 0,
+              "unitprice": 0,
+              "sort": 308317265,
+              "product": {
+                "objectID": 199289,
+                "erpProductID": "932058-EA",
+                "name": "Papirpose",
+                "link": "",
+                "article": "932058",
+                "price": 500,
+                "brand": "P",
+                "subBrand": "",
+                "countryOfOrigin": [],
+                "units": 0,
+                "unitsOfMeasure": "",
+                "unitsOfMeasurePrice": 0,
+                "unitsOfMeasureOfferPrice": 0,
+                "unitsOfMeasurePriceUnit": "",
+                "properties": [],
+                "attributes": [],
+                "productType": "",
+                "multipromo": 0,
+                "imageGUIDs": {},
+                "categories": {
+                  "lvl0": [
+                    "Emballage"
+                  ],
+                  "lvl1": [
+                    "Emballage > Til udlevering"
+                  ],
+                  "lvl2": []
+                },
+                "blockedByHoliday": false,
+                "msg": "",
+                "cpOffer": false,
+                "cpOfferPrice": null,
+                "cpOfferAmount": 0,
+                "cpOfferId": 0,
+                "cpOfferMsg": "",
+                "offerMax": 0,
+                "offerMaxDescription": "",
+                "ageCode": 0
+              },
+              "unavailable_reason": "",
+              "discounts": [],
+              "deposits": [],
+              "replacement": null,
+              "returns": [],
+              "pickedCountryOfOrigin": "",
+              "comment": "",
+              "strikethrough": null,
+              "tagline": null,
+              "children": []
+            }
+          ],
+          "discounts": []
+        }
+      ]
+    },
+    {
+      "headline": "Services",
+      "type": "",
+      "lines": [
+        {
+          "orderlines": [
+            {
+              "subtotal": 0,
+              "net_subtotal": 3900,
+              "quantity": 1,
+              "amount": 3900,
+              "net_unitprice": 3900,
+              "unitprice": 3900,
+              "sort": 308470032,
+              "product": {
+                "objectID": 81474,
+                "erpProductID": "87418611-EA",
+                "name": "Pakkeservice",
+                "link": "",
+                "article": "87418611",
+                "price": 3900,
+                "brand": "",
+                "subBrand": "",
+                "countryOfOrigin": [],
+                "units": 0,
+                "unitsOfMeasure": "",
+                "unitsOfMeasurePrice": 0,
+                "unitsOfMeasureOfferPrice": 0,
+                "unitsOfMeasurePriceUnit": "",
+                "properties": [],
+                "attributes": [],
+                "productType": "",
+                "multipromo": 0,
+                "imageGUIDs": {},
+                "categories": {
+                  "lvl0": [
+                    "Services"
+                  ],
+                  "lvl1": [
+                    "Services > ThomBerg Levering"
+                  ],
+                  "lvl2": []
+                },
+                "blockedByHoliday": false,
+                "msg": "",
+                "cpOffer": false,
+                "cpOfferPrice": null,
+                "cpOfferAmount": 0,
+                "cpOfferId": 0,
+                "cpOfferMsg": "",
+                "offerMax": 0,
+                "offerMaxDescription": "",
+                "ageCode": 0
+              },
+              "unavailable_reason": "",
+              "discounts": [],
+              "deposits": [],
+              "replacement": null,
+              "returns": [],
+              "pickedCountryOfOrigin": "",
+              "comment": "",
+              "strikethrough": null,
+              "tagline": null,
+              "children": []
+            }
+          ],
+          "discounts": []
+        }
+      ]
+    },
+    {
+      "headline": "Frugt & grønt",
+      "type": "",
+      "lines": [
+        {
+          "orderlines": [
+            {
+              "subtotal": 0,
+              "net_subtotal": 2500,
+              "quantity": 10,
+              "amount": 2500,
+              "net_unitprice": 250,
+              "unitprice": 250,
+              "sort": 308470134,
+              "product": {
+                "objectID": 18381,
+                "erpProductID": "89300500105-EA",
+                "name": "Bananer",
+                "link": "",
+                "article": "89300500105",
+                "price": 275,
+                "brand": "",
+                "subBrand": "",
+                "countryOfOrigin": [
+                  "Colombia"
+                ],
+                "units": 1,
+                "unitsOfMeasure": "stk",
+                "unitsOfMeasurePrice": 275,
+                "unitsOfMeasureOfferPrice": 0,
+                "unitsOfMeasurePriceUnit": "Stk.",
+                "properties": [],
+                "attributes": [],
+                "productType": "Bananer",
+                "multipromo": 2680,
+                "imageGUIDs": {
+                  "1": "6250dd9f-e862-446f-b17c-4517f66f5d9c",
+                  "11": "6250dd9f-e862-446f-b17c-4517f66f5d9c"
+                },
+                "categories": {
+                  "lvl0": [
+                    "Frugt og grønt"
+                  ],
+                  "lvl1": [
+                    "Frugt og grønt > Frugt og bær"
+                  ],
+                  "lvl2": [
+                    "Frugt og grønt > Frugt og bær > Banan, pærer og æbler"
+                  ]
+                },
+                "blockedByHoliday": false,
+                "msg": "Mix 10 for 25,00",
+                "cpOffer": false,
+                "cpOfferPrice": null,
+                "cpOfferAmount": 0,
+                "cpOfferId": 0,
+                "cpOfferMsg": "",
+                "offerMax": 0,
+                "offerMaxDescription": "",
+                "ageCode": 0
+              },
+              "unavailable_reason": "",
+              "discounts": [],
+              "deposits": [],
+              "replacement": null,
+              "returns": [],
+              "pickedCountryOfOrigin": "",
+              "comment": "",
+              "strikethrough": null,
+              "tagline": null,
+              "children": []
+            }
+          ],
+          "discounts": []
+        },
+        {
+          "orderlines": [
+            {
+              "subtotal": 0,
+              "net_subtotal": 700,
+              "quantity": 1,
+              "amount": 700,
+              "net_unitprice": 700,
+              "unitprice": 700,
+              "sort": 308470141,
+              "product": {
+                "objectID": 18364,
+                "erpProductID": "89221500340-EA",
+                "name": "Agurk",
+                "link": "",
+                "article": "89221500340",
+                "price": 700,
+                "brand": "Salling",
+                "subBrand": "",
+                "countryOfOrigin": [
+                  "Spanien"
+                ],
+                "units": 1,
+                "unitsOfMeasure": "stk",
+                "unitsOfMeasurePrice": 700,
+                "unitsOfMeasureOfferPrice": 0,
+                "unitsOfMeasurePriceUnit": "Stk.",
+                "properties": [],
+                "attributes": [
+                  {
+                    "attributeID": "euStarLabel",
+                    "attributeName": "Europæisk ejerskab",
+                    "attributeIconID": "euStarLabel",
+                    "attributeNameAndIcon": "Europæisk ejerskab > euStarLabel"
+                  }
+                ],
+                "productType": "Agurk",
+                "multipromo": 0,
+                "imageGUIDs": {
+                  "1": "2424d602-fce3-4198-8ac4-bf9c4e4a642c",
+                  "7": "8c66dd50e200befdf7fb8a115ce181a7",
+                  "11": "8c66dd50e200befdf7fb8a115ce181a7"
+                },
+                "categories": {
+                  "lvl0": [
+                    "Frugt og grønt"
+                  ],
+                  "lvl1": [
+                    "Frugt og grønt > Grønt, salat og krydderurter"
+                  ],
+                  "lvl2": [
+                    "Frugt og grønt > Grønt, salat og krydderurter > Agurk og tomat"
+                  ]
+                },
+                "blockedByHoliday": false,
+                "msg": "Skarp pris",
+                "cpOffer": false,
+                "cpOfferPrice": 0,
+                "cpOfferAmount": 0,
+                "cpOfferId": 0,
+                "cpOfferMsg": "",
+                "offerMax": 0,
+                "offerMaxDescription": "",
+                "ageCode": 0
+              },
+              "unavailable_reason": "",
+              "discounts": [],
+              "deposits": [],
+              "replacement": null,
+              "returns": [],
+              "pickedCountryOfOrigin": "",
+              "comment": "",
+              "strikethrough": null,
+              "tagline": null,
+              "children": []
+            }
+          ],
+          "discounts": []
+        }
+      ]
+    },
+    {
+      "headline": "Mejeri & køl",
+      "type": "",
+      "lines": [
+        {
+          "orderlines": [
+            {
+              "subtotal": 0,
+              "net_subtotal": 1700,
+              "quantity": 1,
+              "amount": 1700,
+              "net_unitprice": 1700,
+              "unitprice": 1700,
+              "sort": 308470149,
+              "product": {
+                "objectID": 19789,
+                "erpProductID": "93225500006-EA",
+                "name": "Yoghurt m. pære og banan 1,4% fedt",
+                "link": "",
+                "article": "93225500006",
+                "price": 1700,
+                "brand": "Yoggi",
+                "subBrand": "",
+                "countryOfOrigin": [],
+                "units": 1,
+                "unitsOfMeasure": "kg",
+                "unitsOfMeasurePrice": 1700,
+                "unitsOfMeasureOfferPrice": 0,
+                "unitsOfMeasurePriceUnit": "Kg.",
+                "properties": [],
+                "attributes": [
+                  {
+                    "attributeID": "euStarLabel",
+                    "attributeName": "Europæisk ejerskab",
+                    "attributeIconID": "euStarLabel",
+                    "attributeNameAndIcon": "Europæisk ejerskab > euStarLabel"
+                  }
+                ],
+                "productType": "Yoghurt m. smag",
+                "multipromo": 0,
+                "imageGUIDs": {
+                  "1": "edd77c50ba9cfd2fba42fed9c85ff736",
+                  "7": "cd02664d-601c-499b-a6bf-870a3cf57606",
+                  "11": "edd77c50ba9cfd2fba42fed9c85ff736"
+                },
+                "categories": {
+                  "lvl0": [
+                    "Mejeri"
+                  ],
+                  "lvl1": [
+                    "Mejeri > Yoghurt og syrnet"
+                  ],
+                  "lvl2": [
+                    "Mejeri > Yoghurt og syrnet > Yoghurt med smag"
+                  ]
+                },
+                "blockedByHoliday": false,
+                "msg": "Se Her",
+                "cpOffer": false,
+                "cpOfferPrice": null,
+                "cpOfferAmount": 0,
+                "cpOfferId": 0,
+                "cpOfferMsg": "",
+                "offerMax": 0,
+                "offerMaxDescription": "",
+                "ageCode": 0
+              },
+              "unavailable_reason": "",
+              "discounts": [],
+              "deposits": [],
+              "replacement": null,
+              "returns": [],
+              "pickedCountryOfOrigin": "",
+              "comment": "",
+              "strikethrough": null,
+              "tagline": null,
+              "children": []
+            }
+          ],
+          "discounts": []
+        },
+        {
+          "orderlines": [
+            {
+              "subtotal": 0,
+              "net_subtotal": 1000,
+              "quantity": 1,
+              "amount": 1000,
+              "net_unitprice": 1000,
+              "unitprice": 1000,
+              "sort": 308470194,
+              "product": {
+                "objectID": 185370,
+                "erpProductID": "11173234-EA",
+                "name": "Flydende smør og rapsolie til madlavning",
+                "link": "",
+                "article": "11173234",
+                "price": 1200,
+                "brand": "AMA",
+                "subBrand": "",
+                "countryOfOrigin": [],
+                "units": 0.5,
+                "unitsOfMeasure": "l",
+                "unitsOfMeasurePrice": 2400,
+                "unitsOfMeasureOfferPrice": 0,
+                "unitsOfMeasurePriceUnit": "L.",
+                "properties": [
+                  "Nøglehul"
+                ],
+                "attributes": [
+                  {
+                    "attributeID": "euStarLabel",
+                    "attributeName": "Europæisk ejerskab",
+                    "attributeIconID": "euStarLabel",
+                    "attributeNameAndIcon": "Europæisk ejerskab > euStarLabel"
+                  },
+                  {
+                    "attributeID": "KeyholeLabel",
+                    "attributeName": "Nøglehulsmærket",
+                    "attributeIconID": "noeglehulsmaerket",
+                    "attributeNameAndIcon": "Nøglehulsmærket > noeglehulsmaerket"
+                  }
+                ],
+                "productType": "Flydende fedtstof",
+                "multipromo": 0,
+                "imageGUIDs": {
+                  "1": "184778916f776fdab76ad6ff7305207e",
+                  "7": "3a2d0c29fc919b312443fd900352b237",
+                  "11": "184778916f776fdab76ad6ff7305207e"
+                },
+                "categories": {
+                  "lvl0": [
+                    "Mejeri"
+                  ],
+                  "lvl1": [
+                    "Mejeri > Smør og fedtstof"
+                  ],
+                  "lvl2": [
+                    "Mejeri > Smør og fedtstof > Flydende magarine"
+                  ]
+                },
+                "blockedByHoliday": false,
+                "msg": "Skarp pris",
+                "cpOffer": true,
+                "cpOfferPrice": 1000,
+                "cpOfferAmount": 1,
+                "cpOfferId": 100857802,
+                "cpOfferMsg": "Plus pris 10,00",
+                "offerMax": 0,
+                "offerMaxDescription": "",
+                "ageCode": 0
+              },
+              "unavailable_reason": "",
+              "discounts": [],
+              "deposits": [],
+              "replacement": null,
+              "returns": [],
+              "pickedCountryOfOrigin": "",
+              "comment": "",
+              "strikethrough": null,
+              "tagline": null,
+              "children": []
+            }
+          ],
+          "discounts": []
+        }
+      ]
+    },
+    {
+      "headline": "Slik & snacks",
+      "type": "",
+      "lines": [
+        {
+          "orderlines": [
+            {
+              "subtotal": 0,
+              "net_subtotal": 2900,
+              "quantity": 1,
+              "amount": 2900,
+              "net_unitprice": 2900,
+              "unitprice": 2900,
+              "sort": 308470204,
+              "product": {
+                "objectID": 75191,
+                "erpProductID": "89296101-EA",
+                "name": "Mini Mix",
+                "link": "",
+                "article": "89296101",
+                "price": 2900,
+                "brand": "Haribo",
+                "subBrand": "",
+                "countryOfOrigin": [],
+                "units": 220,
+                "unitsOfMeasure": "g",
+                "unitsOfMeasurePrice": 13182,
+                "unitsOfMeasureOfferPrice": 0,
+                "unitsOfMeasurePriceUnit": "Kg.",
+                "properties": [],
+                "attributes": [
+                  {
+                    "attributeID": "euStarLabel",
+                    "attributeName": "Europæisk ejerskab",
+                    "attributeIconID": "euStarLabel",
+                    "attributeNameAndIcon": "Europæisk ejerskab > euStarLabel"
+                  }
+                ],
+                "productType": "Blandet slik",
+                "multipromo": 0,
+                "imageGUIDs": {
+                  "1": "aad4112eed7ef77c66d4bff10856e2dd",
+                  "7": "b93bf0c1-a0b2-4749-a273-f2e7d45ee3d5",
+                  "11": "aad4112eed7ef77c66d4bff10856e2dd"
+                },
+                "categories": {
+                  "lvl0": [
+                    "Kiosk"
+                  ],
+                  "lvl1": [
+                    "Kiosk > Slik og bolcher"
+                  ],
+                  "lvl2": [
+                    "Kiosk > Slik og bolcher > Slikposer"
+                  ]
+                },
+                "blockedByHoliday": false,
+                "msg": "Skarp pris",
+                "cpOffer": false,
+                "cpOfferPrice": 0,
+                "cpOfferAmount": 0,
+                "cpOfferId": 0,
+                "cpOfferMsg": "",
+                "offerMax": 0,
+                "offerMaxDescription": "",
+                "ageCode": 0
+              },
+              "unavailable_reason": "",
+              "discounts": [],
+              "deposits": [],
+              "replacement": null,
+              "returns": [],
+              "pickedCountryOfOrigin": "",
+              "comment": "",
+              "strikethrough": null,
+              "tagline": null,
+              "children": []
+            }
+          ],
+          "discounts": []
+        }
+      ]
+    }
+  ],
+  "messages": [],
+  "has_b2b_organisations": false,
+  "company": null,
+  "is_ski": false,
+  "hd_available": true,
+  "missing_hd_address": false,
+  "blockbit": 0,
+  "replacement_setting": 7,
+  "ageRestrictionEnabled": true,
+  "deliveryAddress": {
+    "id": "16229",
+    "dawa_uid": null,
+    "name": "Bilka Vejle",
+    "address": "Solkilde Alle 2, 7100 Vejle",
+    "street": "Solkilde Alle 2",
+    "zip": "7100",
+    "city": "Vejle",
+    "sid": "1661",
+    "lat": "55.724723",
+    "lng": "9.581144",
+    "recipient_name": "",
+    "facility": 3,
+    "minimum_buy": 0,
+    "blockbit": 0,
+    "nextAvailableDeliveryDate": "2026-10-27",
+    "currentDeliveryDate": "2026-11-01",
+    "missing_hd_address": false,
+    "accessconditions_required": false,
+    "hd_available": false,
+    "temporary_zipcode": null
+  },
+  "deliveryDate": {
+    "displayDeliveryDate": "2026-11-01",
+    "deliveryDate": "2026-11-01",
+    "deliveryDay": "Søn",
+    "intervalStart": "14:00",
+    "intervalEnd": "16:00",
+    "closed": 0,
+    "customer_chosen_pickupzone": "1",
+    "message": "",
+    "order_id": "",
+    "delivery_message": "Søn. 01/11. kl. 14:00 - 16:00"
+  },
+  "checkoutconsent": [],
+  "eid": -1,
+  "uid": 900001,
+  "tid": "00000000-0000-0000-0000-000000000000",
+  "info_object": null
+}

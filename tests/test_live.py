@@ -30,8 +30,16 @@ async def test_search(store):
 async def test_cart_terms_delivery(store):
     cart = await store.get_cart()
     assert cart.total >= 0
-    await store.terms()
-    await store.delivery_info()
+    terms = await store.terms()
+    info = await store.delivery_info()
+    # Printed so a human can check the facts (no personal data in these fields).
+    print(f"\n[{store.name}] hjemlevering={terms.home_delivery} gebyrer={cart.fees}")
+    print(
+        f"[{store.name}] minimum={cart.minimum_order} nået={cart.minimum_met} advarsler={cart.warnings}"
+    )
+    print(
+        f"[{store.name}] valgt tid={info.chosen_start}-{info.chosen_end} næste ledige={info.next_available}"
+    )
 
 
 async def test_orders(store):
