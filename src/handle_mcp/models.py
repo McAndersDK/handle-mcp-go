@@ -25,6 +25,16 @@ class Product:
 
 
 @dataclass
+class Recipe:
+    store: str
+    id: str
+    name: str
+    url: str  # the store's recipe page: ingredients and how to cook it
+    time: str | None = None  # as the store writes it, e.g. "30 min"
+    persons: int | None = None
+
+
+@dataclass
 class CartLine:
     product_id: str
     name: str

@@ -38,7 +38,7 @@ mcp = MCPServer(
     "handle",
     instructions=(
         "Tools for Danish grocery stores with home delivery. You can search, compare "
-        "baskets and change cart quantities. You can never order or pay: the human "
+        "baskets, find recipes and change cart quantities. You can never order or pay: the human "
         "always does that on the store's website."
     ),
 )
@@ -115,6 +115,14 @@ async def search_products(query: str, stores: list[str] | None = None, limit: in
     """Search products in one or more stores. Returns price, price per kg/l, offers and EAN when known."""
     limit = max(1, min(limit, MAX_RESULTS))
     return _out(await _each(_names(stores), lambda s: s.search(query, limit)))
+
+
+@mcp.tool(annotations=READ)
+async def search_recipes(query: str, stores: list[str] | None = None, limit: int = 5) -> dict:
+    """Find the stores' own recipes, e.g. "kylling karry". Returns name, link, time and persons.
+    Ingredients are on the recipe page: read it, then price them with compare_basket."""
+    limit = max(1, min(limit, MAX_RESULTS))
+    return _out(await _each(_names(stores), lambda s: s.recipes(query, limit)))
 
 
 @mcp.tool(annotations=READ)

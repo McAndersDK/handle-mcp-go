@@ -11,6 +11,7 @@ Stores in v1: [nemlig.com](https://www.nemlig.com) and [BilkaToGo](https://www.b
 | Tool | Writes? | What |
 |---|---|---|
 | `search_products(query, stores?)` | no | Price, price per kg/l, offers, EAN when known |
+| `search_recipes(query, stores?)` | no | The store's own recipes: name, link, time, persons (nemlig only). Ingredients are on the recipe page |
 | `compare_basket(items, stores?)` | no | Prices a shopping list in each store: best match per item, fees, minimum order, unsure and missing items marked, cheapest store |
 | `get_cart(store)` | no | Cart lines, fees, total, minimum order |
 | `set_cart_quantities(store, items)` | **yes** | Absolute quantities (0 removes). Only the cart |

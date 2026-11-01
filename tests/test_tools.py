@@ -9,6 +9,7 @@ from handle_mcp import server
 
 ALLOWED = {
     "search_products": False,
+    "search_recipes": False,
     "compare_basket": False,
     "get_cart": False,
     "set_cart_quantities": True,
@@ -72,3 +73,15 @@ async def test_answers_are_json():
     json.dumps(result)
     assert result["delivery"]["chosen_start"] == "2026-11-03T16:00:00"
     assert result["terms"]["minimum_order"] == "500"
+
+
+async def test_recipes_in_a_store_without_recipes_do_not_stop_the_others(monkeypatch):
+    from tests.conftest import BrokenStore
+
+    async def no_recipes(self, query, limit=5):
+        raise NotImplementedError
+
+    monkeypatch.setattr(BrokenStore, "recipes", no_recipes)
+    result = await server.search_recipes("karry")
+    assert result["fake"][0]["name"] == "karry til 4"
+    assert result["broken"]["error"] == "broken kan ikke det endnu."

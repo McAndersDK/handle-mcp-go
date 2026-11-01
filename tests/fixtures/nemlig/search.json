@@ -31,5 +31,13 @@
     "Start": 0,
     "NumFound": 2
   },
-  "Recipes": []
+  "Recipes": [
+    {
+      "Id": "6f0c1d2e-0000-4000-8000-000000000001",
+      "Name": "Cocioshake med topping",
+      "Url": "/opskrifter/cocioshake-topping-98003783",
+      "TotalTime": "10 min",
+      "NumberOfPersons": 4
+    }
+  ]
 }

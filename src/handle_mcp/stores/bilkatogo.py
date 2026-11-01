@@ -27,6 +27,7 @@ from handle_mcp.models import (
     Order,
     Product,
     QuantityResult,
+    Recipe,
     StoreTerms,
 )
 from handle_mcp.stores import StoreError, load_login
@@ -239,6 +240,9 @@ class BilkaStore:
         except (KeyError, IndexError, TypeError) as exc:
             raise StoreError("BilkaToGo-søgning har ændret format.") from exc
         return [p for p in (self._product(h, sid) for h in hits) if p]
+
+    async def recipes(self, query: str, limit: int = 5) -> list[Recipe]:
+        raise NotImplementedError  # no recipe API found in BilkaToGo yet
 
     def _product(self, hit: dict, sid: str) -> Product | None:
         store = (hit.get("storeData") or {}).get(sid)

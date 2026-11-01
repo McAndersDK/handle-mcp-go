@@ -42,6 +42,13 @@ async def test_cart_terms_delivery(store):
     )
 
 
+async def test_nemlig_recipes():
+    recipes = await STORES["nemlig"]().recipes("kylling karry", limit=3)
+    for r in recipes:
+        print(f"\n[nemlig] {r.name} | {r.time} | {r.persons} pers. | {r.url}")
+    assert recipes and all(r.url.startswith("https://www.nemlig.com/") for r in recipes)
+
+
 async def test_orders(store):
     orders = await store.orders(limit=2)
     if orders:

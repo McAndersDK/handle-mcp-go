@@ -16,6 +16,7 @@ from handle_mcp.models import (
     Order,
     Product,
     QuantityResult,
+    Recipe,
     StoreTerms,
 )
 
@@ -89,6 +90,9 @@ class FakeStore:
 
     async def terms(self):
         return StoreTerms("fake", True, Decimal(39), minimum_order=Decimal(500))
+
+    async def recipes(self, query, limit=5):
+        return [self._leak(Recipe("fake", "r1", f"{query} til 4", "https://example.com/r1"))]
 
     async def orders(self, limit=10):
         return [self._leak(Order("fake", "900000000001", "Leveret", Decimal("612.50")))]

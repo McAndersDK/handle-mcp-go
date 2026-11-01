@@ -17,7 +17,15 @@ from typing import Protocol
 import keyring
 from keyring.errors import KeyringError, PasswordDeleteError
 
-from handle_mcp.models import Cart, DeliveryInfo, Order, Product, QuantityResult, StoreTerms
+from handle_mcp.models import (
+    Cart,
+    DeliveryInfo,
+    Order,
+    Product,
+    QuantityResult,
+    Recipe,
+    StoreTerms,
+)
 
 CONFIG_DIR = Path(os.environ.get("HANDLE_CONFIG_DIR", "~/.config/handle-mcp")).expanduser()
 KEYCHAIN_SERVICE = "handle-mcp"  # one entry per store; the secret is {"email", "password"} as JSON
@@ -31,6 +39,7 @@ class Store(Protocol):
     name: str
 
     async def search(self, query: str, limit: int = 10) -> list[Product]: ...
+    async def recipes(self, query: str, limit: int = 5) -> list[Recipe]: ...
     async def get_cart(self) -> Cart: ...
     async def set_quantities(self, items: dict[str, int]) -> list[QuantityResult]: ...
     async def delivery_info(self) -> DeliveryInfo: ...
