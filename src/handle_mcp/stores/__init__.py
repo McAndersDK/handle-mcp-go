@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Protocol
 
 import keyring
-from keyring.errors import KeyringError
+from keyring.errors import KeyringError, PasswordDeleteError
 
 from handle_mcp.models import Cart, DeliveryInfo, Order, Product, QuantityResult, StoreTerms
 
@@ -47,8 +47,11 @@ def keychain_get(store: str) -> dict[str, str] | None:
         return None
     if not secret:
         return None
-    data = json.loads(secret)
-    return {"email": data["email"], "password": data["password"]}
+    try:
+        data = json.loads(secret)
+        return {"email": data["email"], "password": data["password"]}
+    except (ValueError, KeyError, TypeError):
+        raise StoreError(f"Ugyldigt login i nøgleringen. Kør: handle-mcp login {store}") from None
 
 
 def keychain_set(store: str, email: str, password: str) -> None:
@@ -58,9 +61,10 @@ def keychain_set(store: str, email: str, password: str) -> None:
 
 
 def keychain_delete(store: str) -> bool:
+    """True if a login was removed, False if none was saved. Raises KeyringError with no keychain."""
     try:
         keyring.delete_password(KEYCHAIN_SERVICE, store)
-    except KeyringError:
+    except PasswordDeleteError:
         return False
     return True
 
