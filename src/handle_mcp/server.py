@@ -193,8 +193,15 @@ async def get_order(store: str, order_id: str) -> dict:
     return _out(await _call(store, "order", order_id))
 
 
-def main() -> None:
+def configure_logging() -> None:
+    """Log to stderr. httpx logs every request URL at INFO, and nemlig's offer URL holds
+    the UserId. MCP clients keep stderr in log files, so httpx only speaks on warnings."""
     logging.basicConfig(stream=sys.stderr, level=logging.INFO)
+    logging.getLogger("httpx").setLevel(logging.WARNING)
+
+
+def main() -> None:
+    configure_logging()
     if len(sys.argv) > 1:  # `handle-mcp login <store>` from a terminal, not from an MCP client
         from handle_mcp.cli import run
 

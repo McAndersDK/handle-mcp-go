@@ -43,6 +43,16 @@ def test_nothing_prints_to_stdout():
     assert not hits
 
 
+def test_httpx_does_not_log_urls():
+    """httpx logs every URL at INFO; nemlig's offer URL holds the personal UserId."""
+    import logging
+
+    from handle_mcp import server
+
+    server.configure_logging()
+    assert not logging.getLogger("httpx").isEnabledFor(logging.INFO)
+
+
 def test_gitignore_keeps_secrets_out():
     ignored = (ROOT / ".gitignore").read_text()
     for entry in (".env", "*.secret.json"):
