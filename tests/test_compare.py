@@ -9,9 +9,10 @@ from typing import ClassVar
 import httpx
 import pytest
 
-from handle_mcp import compare, server
+from handle_mcp import compare, match, server
 from handle_mcp import stores as registry
-from handle_mcp.compare import _pack_size, _score, best_match, parse_item, parse_size
+from handle_mcp.compare import best_match
+from handle_mcp.match import is_oeko, pack_size, parse_item, parse_size, score
 from handle_mcp.models import DeliveryInfo, Product, StoreTerms
 from handle_mcp.stores.bilkatogo import BilkaStore
 from handle_mcp.stores.nemlig import NemligStore
@@ -329,7 +330,7 @@ def test_and_joins_two_products_not_a_flavour():
 def test_short_category_word_is_not_a_compound_hit():
     cheese = p("x", "o", "Post-it", "10.00")
     cheese.category = "Mejeri > Ost"
-    assert compare._category_rank(["post"], cheese) == 1
+    assert match.category_rank(["post"], cheese) == 1
 
 
 def test_relaxed_search_hit_is_marked_unsure():
@@ -370,7 +371,7 @@ def test_cheapest_wins_on_the_same_name():
 
 
 def test_compound_word_counts_but_whole_word_wins():
-    assert _score(["mælk"], p("x", "k", "Kakaomælk", "8.00")) == 0.75
+    assert score(["mælk"], p("x", "k", "Kakaomælk", "8.00")) == 0.75
     whole = p("x", "m", "Mælk", "12.00", "1 l")
     cocoa = p("x", "k", "Kakaomælk", "8.00", "1 l")
     assert best_match("mælk 1 l", [cocoa, whole]).product.id == "m"
@@ -539,8 +540,8 @@ def test_guess_with_a_size_is_the_cheapest_of_that_size():
 
 def test_fat_share_or_size_is_not_a_blend():
     for name in ("Minimælk med 0,5% fedt", "Hakket svinekød u. 8% fedt", "Smør i 250 g"):
-        assert compare._mixed(["x"], p("x", "a", name, "10.00")) == 0
-    assert compare._mixed(["oksekød"], p("x", "b", "Oksekød m. 50% grønt", "10.00")) == 1
+        assert match.mixed(["x"], p("x", "a", name, "10.00")) == 0
+    assert match.mixed(["oksekød"], p("x", "b", "Oksekød m. 50% grønt", "10.00")) == 1
 
 
 def test_count_without_size_prefers_pieces_and_unknown_size_comes_last():
@@ -646,7 +647,6 @@ def test_multi_buy_for_the_amount_needed_and_a_hint():
 
 
 def test_oeko_is_a_whole_word():
-    from handle_mcp.compare import is_oeko
 
     assert is_oeko(p("x", "a", "Økologiske æg", "1"))
     assert is_oeko(p("x", "b", "Fior di latte øko", "1"))
@@ -709,7 +709,7 @@ def test_fresh_garlic_beats_garlic_in_oil():
 def test_garlic_with_an_amount_buys_one_bulb():
     for products in (_nemlig("match_hvidloeg"), _bilka("match_hvidloeg")):
         line = best_match("hvidløg 1 stk", products)
-        assert line.sure and _pack_size(line.product) == ("stk", 1)
+        assert line.sure and pack_size(line.product) == ("stk", 1)
 
 
 def test_mackerel_in_tomato_finds_the_single_tin():
@@ -726,8 +726,8 @@ def test_mackerel_in_tomato_finds_the_single_tin():
 def test_preserved_is_a_whole_word_end():
     beer = p("x", "l", "Lagerøl", "8.00", "33 cl")
     oil = p("x", "o", "Hvidløg i krydderolie", "17.80", "290 g")
-    assert compare._processed_rank(["øl"], beer) == 0  # 'lage' inside a word is not 'lage'
-    assert compare._processed_rank(["hvidløg"], oil, fresh=True) == 1
+    assert match.processed_rank(["øl"], beer) == 0  # 'lage' inside a word is not 'lage'
+    assert match.processed_rank(["hvidløg"], oil, fresh=True) == 1
 
 
 async def test_lines_say_oeko_in_the_tool_answer(two_stores):
@@ -739,15 +739,15 @@ async def test_lines_say_oeko_in_the_tool_answer(two_stores):
 
 def test_item_flavour_words_count_in_full():
     tin = p("x", "m", "Makrelfilet i tomat", "17.95", "125 g")
-    assert _score(["makrel", "tomat"], tin, {"tomat"}) == 1.0
-    assert _score(["makrel", "tomat"], tin) < 1.0  # 'tomat' alone is still a flavour
+    assert score(["makrel", "tomat"], tin, {"tomat"}) == 1.0
+    assert score(["makrel", "tomat"], tin) < 1.0  # 'tomat' alone is still a flavour
 
 
 def test_brand_is_not_the_product():
     # Real Bilka answer: jam from "Fior di Frutta" matched "fior di latte".
     line = best_match("fior di latte", _bilka("match_fior_di_latte"))
     assert line.guess and not line.sure
-    assert _score(["fior", "di", "latte"], line.product) < 0.5
+    assert score(["fior", "di", "latte"], line.product) < 0.5
     assert "marmelade" not in line.product.name.lower()  # a brand-only hit is never the guess
     assert best_match("fior di latte 300 g", _bilka("match_fior_di_latte")).product is None
 
@@ -772,5 +772,5 @@ def test_two_milk_still_compares_per_litre():
 def test_without_a_fresh_hit_canned_is_not_demoted():
     oil = p("x", "o", "Hvidløg i krydderolie", "17.80", "290 g")
     paste = p("x", "p", "Hvidløgspasta", "25.00", "100 g")
-    assert compare._processed_rank(["hvidløg"], oil) == 0  # no 'Grønt' hit: not known produce
+    assert match.processed_rank(["hvidløg"], oil) == 0  # no 'Grønt' hit: not known produce
     assert best_match("hvidløg", [oil, paste]).product.id == "o"

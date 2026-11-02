@@ -31,8 +31,8 @@ from handle_mcp.models import (
     StoreTerms,
 )
 from handle_mcp.stores import StoreError, load_login
+from handle_mcp.stores._http import request
 
-RETRYABLE = (httpx.TimeoutException, httpx.NetworkError, httpx.RemoteProtocolError)
 log = logging.getLogger(__name__)
 logging.getLogger("httpx").setLevel(logging.WARNING)  # its INFO logs full URLs with tokens
 
@@ -40,7 +40,6 @@ BASE = "https://www.nemlig.com"
 SEARCH = "https://webapi.prod.knl.nemlig.it/searchgateway/api/search"
 APP_VERSION = os.environ.get("HANDLE_NEMLIG_APP_VERSION", "11.201.0")
 SETTINGS_TTL = 600  # seconds to reuse timeslot/zone for search
-RETRIES = 2  # extra attempts on timeout, 429 and 5xx
 STATUS = {1: "Bestilt", 2: "Under behandling", 4: "Leveret"}
 UNITS = {"kg": "kg", "l": "l", "ltr": "l", "stk": "stk"}
 FREE = "ProductCampaignFreeProduct"
@@ -162,34 +161,22 @@ class NemligStore:
 
     async def _send(self, method: str, url: str, **kwargs: Any) -> Any:
         """One request with retries on timeout/429/5xx. Returns parsed JSON."""
-        for attempt in range(RETRIES + 1):
-            try:
-                resp = await self._client.request(method, url, headers=self._headers(), **kwargs)
-            except RETRYABLE as exc:  # safe: every write sets an absolute quantity
-                if attempt == RETRIES:
-                    raise StoreError(f"nemlig.com svarer ikke ({type(exc).__name__}).") from exc
-            except httpx.HTTPError as exc:
-                raise StoreError(f"Kan ikke nå nemlig.com ({type(exc).__name__}).") from exc
-            else:
-                if resp.url.host.endswith("queue-it.net"):
-                    raise StoreError("nemlig.com har kø lige nu (queue-it). Prøv igen om lidt.")
-                if resp.status_code == 429 or resp.status_code >= 500:
-                    if attempt == RETRIES:
-                        raise StoreError(f"nemlig.com svarer {resp.status_code}. Prøv igen senere.")
-                elif resp.status_code == 401:
-                    raise _Unauthorized
-                elif resp.status_code >= 400:
-                    shown = url.replace(self._user_id, "<bruger>") if self._user_id else url
-                    raise StoreError(f"nemlig.com afviste kaldet ({resp.status_code}): {shown}")
-                else:
-                    try:
-                        return resp.json() if resp.content else None
-                    except ValueError as exc:
-                        raise StoreError(
-                            "nemlig.com svarede ikke med JSON. API'et kan have ændret sig."
-                        ) from exc
-            await asyncio.sleep(0.5 * 2**attempt)
-        raise AssertionError("unreachable")
+        resp = await request(
+            self._client, method, url, "nemlig.com", headers=self._headers(), **kwargs
+        )
+        if resp.url.host.endswith("queue-it.net"):
+            raise StoreError("nemlig.com har kø lige nu (queue-it). Prøv igen om lidt.")
+        if resp.status_code == 401:
+            raise _Unauthorized
+        if resp.status_code >= 400:
+            shown = url.replace(self._user_id, "<bruger>") if self._user_id else url
+            raise StoreError(f"nemlig.com afviste kaldet ({resp.status_code}): {shown}")
+        try:
+            return resp.json() if resp.content else None
+        except ValueError as exc:
+            raise StoreError(
+                "nemlig.com svarede ikke med JSON. API'et kan have ændret sig."
+            ) from exc
 
     async def _api(self, method: str, url: str, **kwargs: Any) -> Any:
         """A logged-in call. On 401: renew the Bearer token, then log in again."""

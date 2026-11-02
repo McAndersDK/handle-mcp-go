@@ -10,7 +10,7 @@ import pytest
 
 from handle_mcp import server
 from handle_mcp import stores as registry
-from handle_mcp.stores import StoreError
+from handle_mcp.stores import StoreError, _http
 from handle_mcp.stores import nemlig as nemlig_module
 from handle_mcp.stores.nemlig import NemligStore
 
@@ -127,7 +127,7 @@ class FakeNemlig:
 def fake(monkeypatch):
     monkeypatch.setenv("HANDLE_NEMLIG_EMAIL", "kunde@example.com")
     monkeypatch.setenv("HANDLE_NEMLIG_PASSWORD", "hemmeligt")
-    monkeypatch.setattr(nemlig_module.asyncio, "sleep", _no_sleep)
+    monkeypatch.setattr(_http.asyncio, "sleep", _no_sleep)
     return FakeNemlig()
 
 

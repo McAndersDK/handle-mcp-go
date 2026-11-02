@@ -10,7 +10,7 @@ import pytest
 
 from handle_mcp import server
 from handle_mcp import stores as registry
-from handle_mcp.stores import StoreError
+from handle_mcp.stores import StoreError, _http
 from handle_mcp.stores import bilkatogo as bilka_module
 from handle_mcp.stores.bilkatogo import NOT_HOME, BilkaStore
 
@@ -85,7 +85,7 @@ async def _no_sleep(_seconds):
 def fake(monkeypatch):
     monkeypatch.setenv("HANDLE_BILKATOGO_EMAIL", "kunde@example.com")
     monkeypatch.setenv("HANDLE_BILKATOGO_PASSWORD", "hemmeligt")
-    monkeypatch.setattr(bilka_module.asyncio, "sleep", _no_sleep)
+    monkeypatch.setattr(_http.asyncio, "sleep", _no_sleep)
     return FakeBilka()
 
 

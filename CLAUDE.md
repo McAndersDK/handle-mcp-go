@@ -8,7 +8,7 @@ A local MCP server (stdio) for Danish grocery stores with home delivery. Goal an
 2. **Privacy first.** Every tool answer goes through `privacy.scrub()` in `server._out()`. Never return raw store JSON without it.
 3. **stdout is JSON-RPC.** Never `print()`. Log to stderr with `logging`.
 4. **No secrets in git.** Logins only in env vars, the OS keychain (`handle-mcp login <store>`) or `~/.config/handle-mcp/<store>.json` (chmod 600).
-5. **Small and boring.** < ~300 lines per store file, < ~200 in `server.py`. No layer until two real users need it.
+5. **Small and boring.** < ~550 lines per store file, < ~300 in every other file. No layer until two real users need it.
 6. **No Claude attribution** in commits, PRs or comments.
 
 ## Layout
@@ -16,10 +16,14 @@ A local MCP server (stdio) for Danish grocery stores with home delivery. Goal an
 ```
 src/handle_mcp/
   server.py        all tools, store selection, error handling
+  compare.py       compare_basket: best product per item, cheapest store
+  match.py         words: does this product match the item?
+  pricing.py       kroner: packs for the amount, offers, delivery day
   models.py        dataclasses; money is Decimal DKK
   privacy.py       scrub(): removes personal data
   stores/__init__.py  Store protocol, StoreError, load_login(), STORES
-  stores/<store>.py   one file per store
+  stores/_http.py     one request with the retries every store needs
+  stores/<store>.py   one file per store: login, calls and parsing for that store
 tests/             no network, no logins
 docs/adr/          one short file per hard decision
 ```

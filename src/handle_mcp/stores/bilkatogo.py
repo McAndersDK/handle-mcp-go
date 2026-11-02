@@ -31,8 +31,8 @@ from handle_mcp.models import (
     StoreTerms,
 )
 from handle_mcp.stores import StoreError, load_login
+from handle_mcp.stores._http import request
 
-RETRYABLE = (httpx.TimeoutException, httpx.NetworkError, httpx.RemoteProtocolError)
 log = logging.getLogger(__name__)
 
 GIGYA = "https://accounts.eu1.gigya.com"
@@ -49,7 +49,6 @@ ALGOLIA_INDEX = "prod_BILKATOGO_PRODUCTS"
 JWT_SECONDS = 86400
 FEE_GROUPS = {"Emballage", "Services"}  # cart groups that are fees, not products
 TZ = ZoneInfo("Europe/Copenhagen")
-RETRIES = 2
 UNITS = {"kg": "kg", "ltr": "l", "l": "l", "stk": "stk"}
 STATUS = {  # Bilka's codes → the words the website shows
     "Bestilt": "Modtaget",
@@ -123,21 +122,7 @@ class BilkaStore:
         self._lock = asyncio.Lock()
 
     async def _send(self, method: str, url: str, **kwargs: Any) -> httpx.Response:
-        for attempt in range(RETRIES + 1):
-            try:
-                resp = await self._client.request(method, url, **kwargs)
-            except RETRYABLE as exc:  # safe: every write sets an absolute quantity
-                if attempt == RETRIES:
-                    raise StoreError(f"BilkaToGo svarer ikke ({type(exc).__name__}).") from exc
-            except httpx.HTTPError as exc:
-                raise StoreError(f"Kan ikke nå BilkaToGo ({type(exc).__name__}).") from exc
-            else:
-                if resp.status_code != 429 and resp.status_code < 500:
-                    return resp
-                if attempt == RETRIES:
-                    raise StoreError(f"BilkaToGo svarer {resp.status_code}. Prøv igen senere.")
-            await asyncio.sleep(0.5 * 2**attempt)
-        raise AssertionError("unreachable")
+        return await request(self._client, method, url, "BilkaToGo", **kwargs)
 
     @staticmethod
     def _json(resp: httpx.Response, what: str) -> dict:
