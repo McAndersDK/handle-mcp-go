@@ -65,6 +65,7 @@ PERSONAL_KEYS = frozenset(
         "deliveryplacement",
         "pickupcode",
         "orderpickupcode",
+        "dawauid",  # Bilka: DAWA id that points to one Danish address
         # account ids
         "uid",
         "tid",

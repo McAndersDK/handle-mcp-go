@@ -77,3 +77,10 @@ def test_scrub_does_not_change_input():
     data = {"Email": "a@example.com"}
     scrub(data)
     assert data == {"Email": "a@example.com"}
+
+
+def test_scrub_dawa_address_id():
+    cart = {"dawa_uid": "0a3f50a0-0000-0000-0000-000000000000", "stat": {"price": 1}}
+    out = scrub(cart)
+    assert out["dawa_uid"] == REDACTED
+    assert out["stat"] == {"price": 1}
