@@ -1,6 +1,6 @@
 """A fixed list of ~50 everyday items, priced live in every store.
 
-A matcher change that picks the wrong product shows up here before the family shops.
+A matcher change that picks the wrong product shows up here before anyone shops.
 The list is data: tests/live_list.json. The offline tests below check the list and the checker.
 
 Run: HANDLE_LIVE=1 uv run pytest -m live -s tests/test_live_list.py
@@ -42,7 +42,8 @@ def problems(entry: dict[str, Any], line: BasketLine | None) -> list[str]:
     if "max_kr" in entry and line.line_total > Decimal(str(entry["max_kr"])):
         out.append(f"{line.line_total} kr. > {entry['max_kr']} kr.")
     if line.oeko:
-        plain = [a["line_total"] for a in line.alternatives if not a["oeko"] and _fits(entry, a)]
+        others = [c for c in line.candidates if not c.get("suggested")]
+        plain = [a["line_total"] for a in others if not a.get("oeko") and _fits(entry, a)]
         if plain and min(plain) * OEKO_MARGIN < line.line_total:
             out.append(f"øko {line.line_total} kr. mod {min(plain)} kr.")
     return out
@@ -51,7 +52,6 @@ def problems(entry: dict[str, Any], line: BasketLine | None) -> list[str]:
 def _fits(entry: dict[str, Any], alt: dict[str, Any]) -> bool:
     """An alternative counts for the øko rule only when it is the same kind of thing:
     not 'Citron peber' for citroner, not a tin ('Konserves') for cherrytomater."""
-    # Needs #38 (brand and category on alternatives). Without it, brand words never match here.
     text = f"{alt['name']} {alt.get('brand') or ''} {alt.get('category') or ''}".lower()
     return all(_any(w, text) for w in entry.get("has", [])) and not any(
         _any(w, text) for w in entry.get("not", [])
@@ -83,9 +83,9 @@ def test_list_is_about_50_unique_items():
     assert len(items_for("nemlig")) >= 45 and len(items_for("bilkatogo")) >= 45
 
 
-def _line(name, total="10", oeko=False, guess=False, alternatives=(), brand=None):
+def _line(name, total="10", oeko=False, guess=False, candidates=(), brand=None):
     product = Product("x", "1", name, Decimal(total), brand)
-    return BasketLine(name, 1, product, Decimal(total), True, None, guess, list(alternatives), oeko)
+    return BasketLine(name, 1, product, Decimal(total), True, None, guess, list(candidates), oeko)
 
 
 def test_checker_finds_wrong_words_price_and_guess():
@@ -112,15 +112,15 @@ def test_checker_finds_wrong_words_price_and_guess():
 def test_checker_oeko_within_10_percent():
     alt = [{"name": "Røde linser", "line_total": Decimal(20), "oeko": False}]
     entry = {"item": "linser", "has": ["linser"]}
-    assert problems(entry, _line("Røde linser øko", "22", oeko=True, alternatives=alt)) == []
-    assert problems(entry, _line("Røde linser øko", "27", oeko=True, alternatives=alt)) == [
+    assert problems(entry, _line("Røde linser øko", "22", oeko=True, candidates=alt)) == []
+    assert problems(entry, _line("Røde linser øko", "27", oeko=True, candidates=alt)) == [
         "øko 27 kr. mod 20 kr."
     ]
     tin = [
         {"name": "Røde linser", "category": "Konserves", "line_total": Decimal(9), "oeko": False}
     ]
     canned = {"item": "linser", "has": ["linser"], "not": ["konserv"]}
-    assert problems(canned, _line("Røde linser øko", "27", oeko=True, alternatives=tin)) == []
+    assert problems(canned, _line("Røde linser øko", "27", oeko=True, candidates=tin)) == []
 
 
 # --- live --------------------------------------------------------------------------------------

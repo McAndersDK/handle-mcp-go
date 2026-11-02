@@ -17,6 +17,7 @@ A local MCP server (stdio) for Danish grocery stores with home delivery. Goal an
 src/handle_mcp/
   server.py        all tools, store selection, error handling
   compare.py       compare_basket: best product per item, cheapest store
+  candidates.py    the products per item the caller picks from, with flags
   match.py         words: does this product match the item?
   pricing.py       kroner: packs for the amount, offers, delivery day
   models.py        dataclasses; money is Decimal DKK

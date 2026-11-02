@@ -11,6 +11,7 @@ import pytest
 
 from handle_mcp import compare, match, server
 from handle_mcp import stores as registry
+from handle_mcp.candidates import brief
 from handle_mcp.compare import best_match
 from handle_mcp.match import is_oeko, pack_size, parse_item, parse_size, score
 from handle_mcp.models import DeliveryInfo, Product, StoreTerms
@@ -342,14 +343,14 @@ def test_only_cold_cuts_found_is_no_penalty():
     assert best_match("kyllingebryst 400 g", [smoked, sliced]).product.id == "r"
 
 
-def test_alternatives_show_the_category():
+def test_candidates_show_the_category():
     """So a human sees that the cheaper 'Cherrytomater' is a tin."""
     tin = _cat(p("x", "t", "Cherrytomater", "12.00", "400 g"), "Kolonial > Konserves")
     fresh = _cat(p("x", "f", "Cherry tomater øko", "17.00", "250 g"), "Frugt & grønt > Tomater")
     line = best_match("cherrytomater 250 g", [tin, fresh])
     assert line.product.id == "f"
-    assert line.alternatives[0]["category"] == "Kolonial > Konserves"
-    assert "brand" in line.alternatives[0]
+    assert line.candidates[1:][0]["category"] == "Kolonial > Konserves"
+    assert "brand" not in line.candidates[1]  # no brand: an empty fact is left out
 
 
 def test_flavour_only_hit_is_never_a_guess():
@@ -637,37 +638,35 @@ def test_never_less_than_wanted():
     assert best_match("mælk 1 l", [p("x", "m", "Mælk", "10.00", "990 ml")]).quantity == 1
 
 
-def test_alternatives_let_the_caller_swap():
+def test_candidates_let_the_caller_swap():
     shallot = p("x", "s", "Skalotteløg banan", "15.00", "250 g")
     banana = p("x", "b", "Bananer", "3.00", "1 stk")
     cheap = p("x", "c", "Bananer øko", "2.50", "1 stk")
     line = best_match("bananer", [shallot, banana, cheap])
-    ids = [a["id"] for a in line.alternatives]
+    ids = [a["id"] for a in line.candidates[1:]]
     assert line.product.id not in ids and len(ids) == 2
-    assert {"id", "name", "size", "quantity", "line_total", "offer_text", "note"} <= set(
-        line.alternatives[0]
-    )
+    assert {"id", "name", "size", "quantity", "line_total", "note"} <= set(line.candidates[1:][0])
 
 
-def test_alternatives_skip_store_guesses():
+def test_candidates_skip_store_guesses():
     banana = p("x", "b", "Bananer", "3.00", "1 stk")
     tea = p("x", "t", "Grøn te", "10.00", "100 g")
-    assert best_match("bananer", [banana, tea]).alternatives == []
+    assert best_match("bananer", [banana, tea]).candidates[1:] == []
 
 
-def test_alternatives_keep_the_note():
+def test_candidates_keep_the_note():
     small = p("x", "s", "Hakket kylling", "20.00", "300 g")
     big = p("x", "b", "Hakket kylling", "59.00", "1 kg")
     line = best_match("hakket kylling 1 kg", [small, big])
     assert line.product.id == "b"
-    assert line.alternatives[0]["note"]
+    assert line.candidates[1:][0]["note"]
 
 
-def test_alternatives_survive_out():
+def test_candidates_survive_out():
     banana = p("x", "b", "Bananer", "3.00", "1 stk")
     cheap = p("x", "c", "Bananer øko", "2.50", "1 stk")
     out = server._out(best_match("bananer", [banana, cheap]))
-    assert out["alternatives"][0]["line_total"] in {"3.00", "2.50"}
+    assert out["candidates"][1]["line_total"] in {"3.00", "2.50"}
 
 
 def test_offer_limit_counts_extra_packs_at_the_normal_price():
@@ -681,10 +680,10 @@ def test_an_oeko_choice_is_always_shown():
     plain = [p("x", f"m{i}", "Fior di latte", f"{20 + i}.00", "200 g") for i in range(4)]
     eco = p("x", "eco", "Øko fior di latte", "40.00", "200 g")
     line = best_match("fior di latte 200 g", [*plain, eco])
-    alts = line.alternatives
-    assert line.product.id == "m0" and len(alts) == 3
+    alts = line.candidates[1:]
+    assert line.product.id == "m0" and len(alts) == 4  # 5 candidates with the suggestion
     assert alts[-1]["id"] == "eco" and alts[-1]["oeko"] is True
-    assert alts[0]["oeko"] is False
+    assert "oeko" not in alts[0]
 
 
 def test_no_extra_oeko_when_the_pick_is_oeko():
@@ -692,7 +691,7 @@ def test_no_extra_oeko_when_the_pick_is_oeko():
     plain = [p("x", f"m{i}", "Fior di latte", f"{20 + i}.00", "200 g") for i in range(4)]
     line = best_match("fior di latte 200 g", [eco, *plain])
     assert line.product.id == "eco"
-    assert [a["id"] for a in line.alternatives] == ["m0", "m1", "m2"]
+    assert [a["id"] for a in line.candidates[1:]] == ["m0", "m1", "m2", "m3"]
 
 
 def test_multi_buy_counts_in_the_price_per_kg():
@@ -742,11 +741,11 @@ def test_pieces_say_when_packs_give_more():
     assert line.quantity == 2 and "8 stk" in line.note
 
 
-def test_alternatives_have_a_price_and_lines_say_oeko():
+def test_candidates_have_a_price_and_lines_say_oeko():
     eco = p("x", "eco", "Øko fior di latte", "40.00", "200 g")
     plain = p("x", "m", "Fior di latte", "20.00", "200 g")
     line = best_match("fior di latte 200 g", [plain, eco])
-    assert line.oeko is False and line.alternatives[0]["price"] == Decimal("40.00")
+    assert line.oeko is False and line.candidates[1:][0]["price"] == Decimal("40.00")
 
 
 NEMLIG_FIX = Path(__file__).parent / "fixtures" / "nemlig"
@@ -786,7 +785,7 @@ def test_mackerel_in_tomato_finds_the_single_tin():
         Decimal("14.95"),
         True,
     )
-    assert any(a["size"].startswith("125 g") for a in line.alternatives)
+    assert any(a["size"].startswith("125 g") for a in line.candidates[1:])
 
 
 def test_preserved_is_a_whole_word_end():
@@ -800,7 +799,7 @@ async def test_lines_say_oeko_in_the_tool_answer(two_stores):
     result = await server.compare_basket(WEEK_LIST)
     lines = result["stores"]["nemlig"]["lines"]
     assert all(isinstance(ln["oeko"], bool) for ln in lines)
-    assert all("price" in a for ln in lines for a in ln["alternatives"])
+    assert all("price" in a for ln in lines for a in ln["candidates"])
 
 
 def test_item_flavour_words_count_in_full():
@@ -928,3 +927,65 @@ def test_over_under_only_before_a_limb():
     """'Kyllingeoverlår' is kyllingelår. 'over' inside other words is not a part."""
     assert score(["kyllingelår"], p("x", "o", "Kyllingeoverlår", "60.00")) == 1
     assert score(["kartofler"], p("x", "k", "Kartoverofler", "10.00")) < 1
+
+
+def test_candidates_put_the_suggestion_first_with_flags():
+    """The caller picks: up to 5 candidates, the suggested one first, each with plain facts."""
+    raw = "Kød & fisk > Kylling"
+    products = [
+        _cat(p("x", "r", "Røget kyllingebryst", "11.00", "100 g"), "Pålæg > Kyllingepålæg"),
+        _cat(p("x", "b", "Kyllingebrystfilet", "64.95", "650 g"), raw),
+        _cat(p("x", "a", "Kyllingebrystfilet", "32.95", "280 g"), raw),
+        _cat(p("x", "f", "Kyllingebrystfilet", "239.00", "4 kg"), "Frost > Kylling"),
+        _cat(p("x", "o", "Kyllingebrystfilet øko", "69.00", "225 g"), raw),
+        _cat(p("x", "s", "Kyllingebryst i skiver", "32.00", "350 g"), "Pålæg > Kyllingepålæg"),
+        _cat(p("x", "t", "Kyllingebrystfilet", "115.00", "1.2 kg"), raw),
+    ]
+    cands = best_match("kyllingebryst 450 g", products).candidates
+    assert len(cands) == 5 and cands[0]["id"] == "b" and cands[0]["suggested"]
+    assert not any(c.get("suggested") for c in cands[1:])
+    assert any(c.get("oeko") for c in cands)  # øko is always among them
+    by_id = {c["id"]: c for c in cands}
+    assert by_id["b"]["name_match"] == "full"
+    assert by_id["b"]["size_fits"] is False  # 650 g for 450 g: 'Anden størrelse'
+    assert "prepared" not in by_id["b"] and "processed" not in by_id["b"]
+    smoked = brief("kyllingebryst 450 g", best_match("røget kyllingebryst", products[:1]))
+    assert smoked["prepared"] is True
+    frozen = brief("kyllingebryst 450 g", best_match("kyllingebryst", [products[3]]))
+    assert frozen["processed"] == "frost" and frozen["size_fits"] is False  # 4 kg for 450 g
+
+
+def test_candidate_flags_canned_blend_and_no_size():
+    tin = _cat(
+        p("x", "t", "Cherrytomater", "12.00", "400 g"), "Kolonial > Konserves > Cherrytomater"
+    )
+    jar = _cat(p("x", "j", "Spaghetti", "7.95", "500 g"), "Kolonial")  # nemlig dry goods
+    blend = p("x", "m", "Hakket oksekød m. 50% grønt", "30.00", "500 g")
+    assert brief("cherrytomater", best_match("cherrytomater", [tin]))["processed"] == "konserves"
+    plain = brief("spaghetti", best_match("spaghetti", [jar]))
+    assert "processed" not in plain and "size_fits" not in plain  # unknown: left out
+    assert brief("hakket oksekød", best_match("hakket oksekød", [blend]))["blend"] is True
+
+
+def test_size_fits_is_unknown_when_sizes_cannot_be_compared():
+    loose = p("x", "l", "Kyllingebryst", "40.00", None)
+    two = p("x", "s", "Kyllingebryst", "40.00", "2 stk")
+    assert "size_fits" not in brief("kyllingebryst 500 g", best_match("kyllingebryst", [loose]))
+    assert "size_fits" not in brief("kyllingebryst 500 g", best_match("kyllingebryst", [two]))
+
+
+def test_six_pieces_fit_in_the_tool_answer():
+    banana = p("x", "b", "Bananer", "3.00", "1 stk")
+    out = server._out(best_match("6 x bananer", [banana]))
+    assert out["candidates"][0]["line_total"] == "18.00" and out["candidates"][0]["size_fits"]
+
+
+def test_no_candidates_when_nothing_is_found():
+    assert best_match("bananer 1 kg", []).candidates == []
+
+
+def test_a_guess_is_still_the_suggestion_marked_no_name_match():
+    # Intended: the caller sees the store's top hit, flagged, and can search again.
+    line = best_match("pasta", [p("x", "pe", "Penne", "10.00", "500 g")])
+    assert line.guess and len(line.candidates) == 1
+    assert line.candidates[0]["suggested"] and line.candidates[0]["name_match"] == "none"

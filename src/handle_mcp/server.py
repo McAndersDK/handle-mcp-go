@@ -140,11 +140,13 @@ async def list_offers(stores: list[str] | None = None, limit: int = 25) -> dict:
 @mcp.tool(annotations=READ)
 async def compare_basket(items: list[str], stores: list[str] | None = None) -> dict:
     """Price a shopping list in each store, e.g. ["2 x letmælk 1 l", "rugbrød", "æg 10 stk"].
-    Write the amount you need ("fior di latte 300 g"), not a pack size. Returns the best match
-    per item with up to 3 alternatives with price (one is øko when found), "oeko": true on any
-    øko product, total incl. fees, minimum order met, and marks unsure and missing matches.
-    Check every line: swap a wrong product for an alternative. Only reads: use
-    set_cart_quantities with the product ids after."""
+    Write the amount you need ("fior di latte 300 g"), not a pack size. Returns per item a
+    suggested product and up to 5 "candidates" (the suggestion first, one øko when found) with
+    the cost for the amount and flags: name_match, size_fits, prepared (cold cuts, smoked,
+    breaded), processed (frost/konserves), blend, oeko. The suggestion is a guess by word rules:
+    pick the candidate that fits the user, and ask when "sure" is false or none fits
+    (search_products finds more). Unknown facts and false flags are left out. Also total incl.
+    fees and minimum order met. Only reads: use set_cart_quantities with the chosen ids after."""
     items = [i.strip() for i in items if i.strip()]
     if not items:
         raise ToolError("Indkøbslisten er tom.")

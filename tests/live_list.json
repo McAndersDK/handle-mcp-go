@@ -1,5 +1,5 @@
 {
-  "about": "A fixed list of ~50 things a family buys most weeks. tests/test_live_list.py prices it live in every store and fails on a wrong pick. Keys per item: item (the list line), has (words the product name or brand must have), not (words it must not have). A word must start or end a name word, plural ending allowed ('kylling' hits 'Kyllingebryst', 'olie' hits 'krydderolie', 'ost' does not hit 'Leverpostej'); 'a|b' means a or b, stores (only these stores; default all), max_kr (the line may cost at most this), why (what went wrong before). Every item also gets the øko rule: an øko pick may cost at most 10 % more than the best non-øko alternative that passes the same has/not words (on its name and store category).",
+  "about": "A fixed list of ~50 everyday items. tests/test_live_list.py prices it live in every store and fails on a wrong pick. Keys per item: item (the list line), has (words the product name or brand must have), not (words it must not have). A word must start or end a name word, plural ending allowed ('kylling' hits 'Kyllingebryst', 'olie' hits 'krydderolie', 'ost' does not hit 'Leverpostej'); 'a|b' means a or b, stores (only these stores; default all), max_kr (the line may cost at most this), why (what went wrong before). Every item also gets the øko rule: an øko pick may cost at most 10 % more than the best non-øko alternative that passes the same has/not words (on its name and store category).",
   "items": [
     {"item": "letmælk 1 l", "has": ["letmælk"], "not": ["kakao", "skummet"]},
     {"item": "smør 250 g", "has": ["smør"], "not": ["kage", "kiks", "dej"]},
@@ -12,7 +12,7 @@
     {"item": "creme fraiche 200 g", "has": ["fraiche|fraîche"], "not": ["dressing", "dip"]},
     {"item": "ost i skiver 500 g", "has": ["ost", "skive"], "not": ["hytteost", "flødeost", "smøreost", "revet"], "why": "cheapest sliced cheese per kg"},
     {"item": "kogt skinke 150 g", "has": ["skinke"], "not": ["salat", "pizza"]},
-    {"item": "Stryhns leverpostej bacon peber 275 g", "has": ["leverpostej", "stryhn", "bacon"], "why": "the kids only eat this one"},
+    {"item": "Stryhns leverpostej bacon peber 275 g", "has": ["leverpostej", "stryhn", "bacon"], "why": "a brand on the list must win"},
     {"item": "makrel i tomat 125 g", "has": ["makrel", "tomat"], "not": ["salat", "smørepålæg"], "why": "a 90 g spread beat the 125 g tin (#29)"},
     {"item": "laksefilet 600 g", "has": ["laks"], "not": ["røget", "gravad", "rogn", "kat", "indbagt", "spinat"], "why": "laks 600 g became 400 g (week 46)"},
     {"item": "kyllingebryst 450 g", "has": ["kyllingebryst"], "not": ["pålæg", "røget", "skiver"]},

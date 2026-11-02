@@ -9,7 +9,7 @@ counted in `pricing`. This module picks the best product per item and compares t
 - Cold cuts and smoked ('Røget kyllingebryst') lose when the search also found it raw.
 - On the same name score, a product in a matching store category wins ("Fisk > Laks").
 - Then a product with a known size wins, then the lowest cost. Sold-out products never win.
-- An øko product is always among the alternatives when the search found one.
+- The caller picks from the candidates (candidates.py): the suggestion is a guess by words.
 - Unsure matches and missing items are marked, so a human can check them.
 """
 
@@ -21,6 +21,7 @@ from decimal import Decimal
 from typing import Any
 from zoneinfo import ZoneInfo
 
+from handle_mcp.candidates import candidates
 from handle_mcp.match import (
     PIECES,
     asked,
@@ -46,8 +47,6 @@ SEARCH_LIMIT = 30  # the cheapest tin was hit 14 for "hakkede tomater"
 
 DK = ZoneInfo("Europe/Copenhagen")  # offers end on Danish days
 
-ALTERNATIVES = 3
-
 
 @dataclass
 class BasketLine:
@@ -58,8 +57,8 @@ class BasketLine:
     sure: bool
     note: str | None = None
     guess: bool = False  # the store's top hit with no word match: left out of the verdict
-    # Next best products, so the caller can swap a wrong pick without a new search.
-    alternatives: list[dict[str, Any]] = field(default_factory=list)
+    # The suggested product and the next best, with flags: the caller picks (candidates.py).
+    candidates: list[dict[str, Any]] = field(default_factory=list)
     oeko: bool = False  # the chosen product is øko
 
 
@@ -77,7 +76,7 @@ class BasketQuote:
 
 
 def best_match(item: str, products: list[Any], on: date | None = None) -> BasketLine:
-    """The best product for one list item, plus the next best as alternatives."""
+    """The best product for one list item, plus the candidates to pick from."""
     line = _best(item, products, on)
     chosen = get(line.product, "id") if line.product is not None else None
     others = []
@@ -88,32 +87,9 @@ def best_match(item: str, products: list[Any], on: date | None = None) -> Basket
         if alt.product is not None and not alt.guess:
             others.append((-score(parse_item(item)[1], x, asked(item)), alt.line_total, alt))
     others.sort(key=lambda o: o[:2])
-    picked = [a for _s, _t, a in others[:ALTERNATIVES]]
-    # Always show an øko choice, so a human can pick it when it costs only a little more.
-    if line.product is not None and not is_oeko(line.product):
-        oeko = [a for _s, _t, a in others if is_oeko(a.product)]
-        if oeko and oeko[0] not in picked:
-            picked = [*picked[: ALTERNATIVES - 1], oeko[0]]
-    line.alternatives = [_brief(a) for a in picked]
+    line.candidates = candidates(item, line, [a for _s, _t, a in others])
     line.oeko = line.product is not None and is_oeko(line.product)
     return line
-
-
-def _brief(line: BasketLine) -> dict[str, Any]:
-    p = line.product
-    return {
-        "id": get(p, "id"),
-        "name": get(p, "name"),
-        "brand": get(p, "brand"),
-        "size": get(p, "size"),
-        "price": get(p, "price"),
-        "quantity": line.quantity,
-        "line_total": line.line_total,
-        "offer_text": get(p, "offer_text"),
-        "category": get(p, "category"),  # 'Konserves': a human (and the live list) sees canned
-        "oeko": is_oeko(p),
-        "note": line.note,
-    }
 
 
 def _best(item: str, products: list[Any], on: date | None = None) -> BasketLine:

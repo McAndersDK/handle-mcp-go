@@ -13,7 +13,7 @@ Stores in v1: [nemlig.com](https://www.nemlig.com) and [BilkaToGo](https://www.b
 | `search_products(query, stores?)` | no | Price, price per kg/l, offers, EAN when known |
 | `search_recipes(query, stores?)` | no | The store's own recipes: name, link, time, persons (nemlig only). Ingredients are on the recipe page |
 | `list_offers(stores?, limit?)` | no | This week's offers, also items you would not search for: nemlig Skarp pris, Priskup, Dagstilbud, Undgå madspild, gifts; BilkaToGo offers. Free gifts have price 0 and a max per order |
-| `compare_basket(items, stores?)` | no | Prices a shopping list in each store: best match per item, fees, minimum order, unsure and missing items marked, cheapest store |
+| `compare_basket(items, stores?)` | no | Prices a shopping list in each store: up to 5 candidates per item with facts and flags, fees, minimum order, unsure and missing items marked, cheapest store |
 | `get_cart(store)` | no | Cart lines, fees, total, minimum order |
 | `set_cart_quantities(store, items)` | **yes** | Absolute quantities (0 removes). Only the cart |
 | `get_delivery_info(store)` | no | Chosen delivery time, next free day, fees |
@@ -62,6 +62,30 @@ Claude Desktop (`claude_desktop_config.json`):
 ```
 
 Then ask: *"Compare this week's list in nemlig and Bilka, and fill the cheapest cart."* Open the store's website to check the cart, choose a time and pay.
+
+## Build your own skill on top
+
+The server finds and counts. Your skill or agent picks. Taste, favourites, budget and øko rules belong in your skill, never in this server.
+
+`compare_basket` gives each list line up to 5 `candidates`. The first has `suggested: true`: the server's guess by word rules, nothing more. When the search found an øko product, one candidate is øko.
+
+| Field | Meaning |
+|---|---|
+| `id` | Product id. Use it in `set_cart_quantities` |
+| `name`, `brand`, `size`, `category` | As the store shows them, e.g. category `Kolonial > Konserves` |
+| `quantity` | Packs needed for the amount on the list |
+| `line_total` | Cost for that amount, offers included. Compare on this |
+| `price`, `unit_price`, `unit` | Price per pack, and per kg, l or stk |
+| `offer_text` | The store's offer, e.g. `2 for 30` |
+| `name_match` | `full`, `partial` or `none` (a guess: no word on the list matched) |
+| `size_fits` | `false`: the packs give too much or too little. Left out when sizes cannot be compared |
+| `prepared` | Cold cuts, smoked, breaded |
+| `processed` | `frost` or `konserves` |
+| `blend` | A mix, e.g. minced meat with vegetables |
+| `oeko` | Organic |
+| `note` | Why the line is unsure, in Danish |
+
+Flags that are false and facts that are unknown are left out, to keep the answer small. `sure: false` on a line means: look, or ask the user. When no candidate fits, call `search_products` with other words.
 
 ## Security and privacy
 

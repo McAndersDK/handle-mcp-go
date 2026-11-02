@@ -184,6 +184,18 @@ def is_fresh(product: Any) -> bool:
     return any(m in text for m in FRESH) and not processed
 
 
+def processed(product: Any) -> str | None:
+    """'frost' or 'konserves' when the name or category says so, else None. A fact for the
+    caller, not a rank: plain 'Kolonial' (nemlig's dry goods too) is not konserves here."""
+    text = f"{get(product, 'name')} {get(product, 'category') or ''}".lower()
+    if any(m in text for m in FROZEN):
+        return "frost"
+    name_words = _words(get(product, "name") or "")
+    preserved = any(w.endswith(m) for w in name_words for m in PRESERVED)
+    canned = any(m in text for m in CANNED if m != "kolonial")
+    return "konserves" if canned or preserved else None
+
+
 def is_oeko(product: Any) -> bool:
     return bool(OEKO_RE.search(f"{get(product, 'name')} {get(product, 'brand') or ''}"))
 
