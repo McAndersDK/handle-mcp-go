@@ -7,7 +7,7 @@
 <img src="docs/badges/python.svg" alt="built with Python 3.12+" height="26">
 <a href="LICENSE"><img src="docs/badges/license.svg" alt="license MIT" height="26"></a>
 
-<img src="docs/hero.svg" alt="Pixels move from an AI sparkle to a shopping basket, a delivery van, a box and a meal" width="600">
+<img src="docs/hero.svg" alt="Give AI a budget, fill it cheaply, you pay and they deliver, unpack the week, enjoy dinner" width="800">
 
 **Your AI agent plans the week's meals on a budget, finds the cheapest cart and fills it. You approve and pay.**
 
