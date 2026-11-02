@@ -5,7 +5,8 @@
 - A word only after "m.", "m", "med", "i", "u." ... is a flavour, not the product: "Yoghurt m. banan"
   is not a banana. Such products never win, unless the item asks for it: "makrel i tomat".
 - A word only in the brand counts half: "Fior di Frutta" jam is not "fior di latte".
-- "makrelfilet" and "makrelstykker" are makrel: a cut of the thing named first.
+- "makrelfilet" and "makrelstykker" are makrel: a cut of the thing named first. Two cuts of one
+  thing are the same ("laksestykke" for "laksefilet"), and so is a part ("kyllingeoverlår").
 - Canned, preserved or frozen produce ("Hvidløg i krydderolie") loses when the search also found
   it fresh. Canned fish and frozen meat do not lose: "Makrel i tomat" is a tin.
 - A blend ("m. 50% grønt") loses to the plain product and is never sure.
@@ -39,13 +40,20 @@ SIZE_RE = re.compile(
 FLAVOUR_RE = re.compile(r"\s(?:m\.?|med|i|u\.|uden|smag)\s", re.IGNORECASE)
 
 # Words that only say how a thing is made or packed: "frilandsæg" is æg, "splitlinser" is linser.
-DESCRIBERS = ("frilands", "skrabe", "øko", "split", "mini", "snack", "baby")
+# Not "baby": "Babymajs" is another vegetable than "majs".
+DESCRIBERS = ("frilands", "skrabe", "øko", "split", "mini", "snack")
+
+# A part inside a compound: "kyllingeoverlår" and "kyllingeunderlår" are kyllingelår.
+PARTS = ("over", "under")
+LIMBS = ("lår",)  # only before these: never "kartoverofler"
 
 # A cut of the thing named first: "makrelfilet" and "makrelstykker" are makrel.
-CUTS = ("filet", "fileter", "stykker", "strimler", "tern")
+CUTS = ("filet", "fileter", "stykke", "stykker", "strimler", "tern")
 
 # Frozen or canned. Never the default for fresh food: "blåbær" is fresh, "frosne blåbær" is not.
-CANNED = ("konserv", "dåse", "juice")  # "Cherrytomater i tomatjuice", "Kolonial > Konserves"
+# "Cherrytomater i tomatjuice", Bilka "Kolonial > Konserves". nemlig puts jars in plain "Kolonial":
+# "Appetit agurker" is pickled, never a fresh agurk.
+CANNED = ("konserv", "dåse", "juice", "kolonial")
 
 PRESERVED = ("olie", "lage", "marinade")  # last part of a name word: "krydderolie", not "Lagerøl"
 
@@ -140,9 +148,14 @@ def _plural(word: str, token: str) -> bool:
 
 
 def _described(word: str, token: str) -> bool:
-    """'frilandsæg' is plain æg: the first part only says how it is made."""
-    return any(token == d + word for d in DESCRIBERS) or any(
-        token in (word + c, word + "e" + c, word + "s" + c) for c in CUTS
+    """'frilandsæg' is plain æg: the first part only says how it is made. 'makrelfilet' is
+    makrel, 'laksestykke' is 'laksefilet' and 'kyllingeoverlår' is 'kyllingelår'."""
+    # 'laksefilet' → 'lakse': then 'laksestykke' is the same fish, cut another way.
+    bases = [word] + [word[: -len(c)] for c in CUTS if word.endswith(c) and len(word) > len(c) + 2]
+    return (
+        any(token == d + word for d in DESCRIBERS)
+        or any(token in (b + c, b + "e" + c, b + "s" + c) for b in bases for c in CUTS)
+        or any(word.endswith(b) and token == word[: -len(b)] + m + b for b in LIMBS for m in PARTS)
     )
 
 
@@ -230,8 +243,9 @@ def pack_size(product: Any) -> tuple[str, Decimal] | None:
     return size or name
 
 
-# Ready to eat: cold cuts, smoked, fried. Never raw meat unless the item asks for it.
+# Ready to eat: cold cuts, smoked, fried, breaded. Never raw meat unless the item asks for it.
 PREPARED = ("røget", "røgede", "grillet", "grillede", "stegt", "stegte", "pålæg")
+PREPARED += ("indbagt", "indbagte", "paneret", "panerede")  # ready meals: "Indbagt laksefilet"
 
 
 def prepared(words: list[str], product: Any) -> bool:

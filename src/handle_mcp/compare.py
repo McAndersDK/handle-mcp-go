@@ -120,8 +120,9 @@ def _best(item: str, products: list[Any], on: date | None = None) -> BasketLine:
     """Best word match first, then a comparable size, then the lowest cost for the amount.
     `on` is the delivery day: offers that end before it do not count."""
     quantity, words, size = parse_item(item)
-    # The item is produce when the search found it fresh: then canned or frozen loses.
-    produce = any(get(x, "available") and is_fresh(x) and score(words, x) >= 0.5 for x in products)
+    # The item is produce when the search found it fresh, by its full name: then canned or frozen
+    # loses. Not "Spaghettisquash" for spaghetti.
+    produce = any(get(x, "available") and is_fresh(x) and score(words, x) == 1 for x in products)
     # The search also found it raw ('Kyllingebrystfilet'): then cold cuts and smoked lose.
     raw = any(
         get(x, "available") and score(words, x) == 1 and not prepared(words, x) for x in products
