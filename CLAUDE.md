@@ -52,6 +52,7 @@ uv sync
 uv run pytest -q          # unit tests, no network
 uv run ruff check . && uv run ruff format --check .
 HANDLE_LIVE=1 uv run pytest -m live   # read-only smoke tests against real stores (from step 3)
+HANDLE_LIVE=1 uv run pytest -m live -s tests/test_live_list.py   # 50 fixed items (tests/live_list.json): wrong picks fail
 ```
 
 ## Workflow
