@@ -1,3 +1,4 @@
+import os
 from dataclasses import asdict, field, make_dataclass
 from datetime import date, datetime
 from decimal import Decimal
@@ -20,6 +21,16 @@ from handle_mcp.models import (
     Recipe,
     StoreTerms,
 )
+
+
+def pytest_configure(config):
+    """Live tests log in for real. pytest's long tracebacks print every frame's arguments, and a
+    failed login call carries the email and password (e.g. Bilka's Gigya form). So live runs get
+    short tracebacks and no locals: a failure must never put a login in a log or a paste."""
+    if os.environ.get("HANDLE_LIVE") == "1":
+        config.option.tbstyle = "short"
+        config.option.showlocals = False
+
 
 # Personal data a store adapter could leak by mistake. Every tool must remove it.
 LEAK = {

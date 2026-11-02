@@ -108,3 +108,25 @@ def test_no_keychain_falls_back_to_file(tmp_path, monkeypatch):
     path.write_text('{"email": "a@example.com", "password": "x"}')
     os.chmod(path, stat.S_IRUSR | stat.S_IWUSR)
     assert registry.load_login("fake")["email"] == "a@example.com"
+
+
+def test_live_failures_do_not_print_logins(pytester, monkeypatch):
+    """A failed live login must not show the password in pytest's traceback."""
+    monkeypatch.setenv("HANDLE_LIVE", "1")
+    monkeypatch.setenv("FAKE_PASSWORD", "hemmeligt-4711")
+    pytester.makeini("[pytest]\nasyncio_default_fixture_loop_scope = function")
+    pytester.makeconftest("from tests.conftest import pytest_configure  # noqa: F401")
+    pytester.makepyfile(
+        """
+        import os
+
+        def send(data):
+            raise RuntimeError("blocked by the sandbox")
+
+        def test_login():
+            send(data={"password": os.environ["FAKE_PASSWORD"]})
+        """
+    )
+    result = pytester.runpytest("-l")
+    result.assert_outcomes(failed=1)
+    assert "hemmeligt-4711" not in result.stdout.str()
