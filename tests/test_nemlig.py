@@ -48,6 +48,7 @@ class FakeNemlig:
         self.scripted: dict[str, list] = {}  # path → status codes or errors to give first
         self.token_count = 0
         self.queue = False
+        self.history, self.details = "order_history", "order_details"
 
     def handle(self, request: httpx.Request) -> httpx.Response:
         self.requests.append(request)
@@ -113,9 +114,9 @@ class FakeNemlig:
         if path == "/webapi/Order/DeliverySpot":
             return httpx.Response(200, json=fixture("delivery_spot"))
         if path == "/webapi/order/GetBasicOrderHistory":
-            return httpx.Response(200, json=fixture("order_history"))
+            return httpx.Response(200, json=fixture(self.history))
         if path.startswith("/webapi/v2/order/GetOrderHistory/"):
-            return httpx.Response(200, json=fixture("order_details"))
+            return httpx.Response(200, json=fixture(self.details))
         return httpx.Response(404)
 
     def paths(self) -> list[str]:
@@ -311,6 +312,16 @@ async def test_orders_and_order(store):
     detail = await store.order("900001")
     assert [(ln.product_id, ln.quantity) for ln in detail.lines] == [("5064654", 1), ("701025", 3)]
     assert detail.total == Decimal("167.95")  # sum of lines when the answer has no total
+
+
+async def test_orders_with_flexible_delivery(store, fake):
+    # Real answer: OrderDate is "03/11-2026 kl. 14-21", not a time. It gave a ValueError.
+    fake.history, fake.details = "order_history_flex", "order_details_flex"
+    [order] = await store.orders(limit=2)
+    assert (order.id, order.total, order.placed_at) == ("1000001", Decimal("702.08"), None)
+    assert (order.delivery_start.hour, order.delivery_end.hour) == (14, 21)
+    detail = await store.order("1000001")
+    assert len(detail.lines) == 2
 
 
 async def test_never_calls_order_or_payment_endpoints(store, fake):

@@ -75,9 +75,14 @@ def _money(value: Any) -> Decimal | None:
 
 
 def _time(value: str | None) -> datetime | None:
+    """An ISO time, or None. nemlig sometimes sends text: OrderDate "03/11-2026 kl. 14-21"."""
     if not value or value.startswith(("0001-", "9999-")):
         return None
-    return datetime.fromisoformat(value)
+    try:
+        return datetime.fromisoformat(value)
+    except ValueError:
+        log.debug("nemlig: ikke en tid: %r", value)
+        return None
 
 
 def _unit(label: str | None) -> str | None:
