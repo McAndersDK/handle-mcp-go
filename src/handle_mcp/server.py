@@ -140,9 +140,10 @@ async def list_offers(stores: list[str] | None = None, limit: int = 25) -> dict:
 async def compare_basket(items: list[str], stores: list[str] | None = None) -> dict:
     """Price a shopping list in each store, e.g. ["2 x letmælk 1 l", "rugbrød", "æg 10 stk"].
     Write the amount you need ("fior di latte 300 g"), not a pack size. Returns the best match
-    per item with up to 3 alternatives (one is øko when found, "oeko": true), total incl. fees,
-    minimum order met, and marks unsure and missing matches. Check every line: swap a wrong
-    product for an alternative. Only reads: use set_cart_quantities with the product ids after."""
+    per item with up to 3 alternatives with price (one is øko when found), "oeko": true on any
+    øko product, total incl. fees, minimum order met, and marks unsure and missing matches.
+    Check every line: swap a wrong product for an alternative. Only reads: use
+    set_cart_quantities with the product ids after."""
     items = [i.strip() for i in items if i.strip()]
     if not items:
         raise ToolError("Indkøbslisten er tom.")

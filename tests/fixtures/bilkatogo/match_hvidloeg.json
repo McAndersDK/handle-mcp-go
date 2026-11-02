@@ -1,0 +1,313 @@
+{
+  "hits": [
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1450,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 7250,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 7250
+        }
+      },
+      "price": 1450,
+      "gtin": "5710405062088",
+      "name": "Hvidløg",
+      "brand": "Salling",
+      "netcontent": "200 g",
+      "deepestCategoryPath": "Frugt & grønt > Grøntsager > Løg & porrer",
+      "productType": "Hvidløg",
+      "objectID": "70828"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1300,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 13000,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 13000
+        }
+      },
+      "price": 1300,
+      "gtin": "5712876237903",
+      "name": "Hvidløg øko",
+      "brand": "Salling ØKO",
+      "netcontent": "100 g",
+      "deepestCategoryPath": "Frugt & grønt > Grøntsager > Løg & porrer",
+      "productType": "Hvidløg",
+      "objectID": "129946"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2200,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 8800,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 8800
+        }
+      },
+      "price": 2200,
+      "gtin": "5711044082031",
+      "name": "Hvidløg",
+      "brand": "",
+      "netcontent": "250 g",
+      "deepestCategoryPath": "Frugt & grønt > Grøntsager > Løg & porrer",
+      "productType": "Hvidløg",
+      "objectID": "51022"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 410,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 410,
+          "unitsOfMeasurePriceUnit": "Stk.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 410
+        }
+      },
+      "price": 410,
+      "gtin": "5711044098285",
+      "name": "Hvidløg",
+      "brand": "",
+      "netcontent": "1 stk",
+      "deepestCategoryPath": "Frugt & grønt > Grøntsager > Løg & porrer",
+      "productType": "Hvidløg",
+      "objectID": "109962"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1425,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 14250,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 14250
+        }
+      },
+      "price": 1425,
+      "gtin": "5712875585890",
+      "name": "Hvidløg i tern",
+      "brand": "Salling",
+      "netcontent": "100 g",
+      "deepestCategoryPath": "Frost > Grøntsager > Krydderurter",
+      "productType": "Krydderier",
+      "objectID": "121470"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Skarp pris",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1000,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 18000,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 13333,
+          "unitsOfMeasureShowPrice": 13333
+        }
+      },
+      "price": 1350,
+      "gtin": "5712875159787",
+      "name": "Hvidløgspulver",
+      "brand": "Salling",
+      "netcontent": "75 g",
+      "deepestCategoryPath": "Kolonial > Konserves, bouillon & krydderier > Krydderier, bouillon & fond > Krydderier",
+      "productType": "Hvidløgspulver",
+      "objectID": "93851"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Skarp pris",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 800,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 15409,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 7273,
+          "unitsOfMeasureShowPrice": 7273
+        }
+      },
+      "price": 1695,
+      "gtin": "5711044939656",
+      "name": "Knust hvidløg",
+      "brand": "Asian Kitchen",
+      "netcontent": "110 g",
+      "deepestCategoryPath": "Mad fra hele verden > Asiatisk mad > Asiatiske specialiteter > Asiatiske krydderiblandinger",
+      "productType": "Knust hvidløg",
+      "objectID": "17304"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2495,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 20792,
+          "unitsOfMeasurePriceUnit": "L.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 20792
+        }
+      },
+      "price": 2495,
+      "gtin": "5713284451264",
+      "name": "Flydende hvidløg øko",
+      "brand": "Northern Greens",
+      "netcontent": "120 ml",
+      "deepestCategoryPath": "Kolonial > Konserves, bouillon & krydderier > Krydderier, bouillon & fond > Krydderier",
+      "productType": "Flydende Urter",
+      "objectID": "175103"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "2699",
+          "offerDescription": "Mix 5 for 69,00",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 5,
+          "price": 1625,
+          "beforePrice": 0,
+          "multiPromoPrice": "6900",
+          "unitsOfMeasurePrice": 21667,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 18400,
+          "unitsOfMeasureShowPrice": 21667
+        }
+      },
+      "price": 1625,
+      "gtin": "5715775002412",
+      "name": "Hvidløgsolie m. persille",
+      "brand": "Salling",
+      "netcontent": "75 g",
+      "deepestCategoryPath": "Mejeri & køl > Tapas & specialiteter > Oliven & andet tilbehør",
+      "productType": "Hvidløgsolie",
+      "objectID": "195467"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1205,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 24100,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 24100
+        }
+      },
+      "price": 1205,
+      "gtin": "5712877788404",
+      "name": "Grissini m. hvidløg og persille",
+      "brand": "Salling",
+      "netcontent": "50 g",
+      "deepestCategoryPath": "Brød & kager > Kiks & knækbrød > Kiks > Croutoner & grissini",
+      "productType": "Grissini",
+      "objectID": "162824"
+    }
+  ],
+  "nbHits": 147,
+  "page": 0,
+  "nbPages": 15,
+  "hitsPerPage": 10,
+  "exhaustiveNbHits": true,
+  "exhaustiveTypo": true,
+  "exhaustive": {
+    "nbHits": true,
+    "typo": true
+  },
+  "query": "hvidløg",
+  "params": "query=hvidl%C3%B8g&hitsPerPage=10&removeWordsIfNoResults=allOptional&filters=isInAssortmentIn%3A1653+AND+nonsearchable%3Afalse&attributesToRetrieve=%5B%22name%22%2C+%22brand%22%2C+%22gtin%22%2C+%22netcontent%22%2C+%22productType%22%2C+%22deepestCategoryPath%22%2C+%22price%22%2C+%22storeData.1653%22%5D&analyticsTags=%5B%22ext-alg%23query-category%3Aquery-matched%22%2C%22ext-alg%23auto-filter%3Ahas-filters%22%5D&optionalFacetFilters=%5B%22searchHierachy%3Ahvidl%C3%B8g%3Cscore%3D2%3E%22%5D",
+  "index": "prod_BILKATOGO_PRODUCTS",
+  "extensions": {
+    "queryCategorization": {
+      "count": 10365,
+      "normalizedQuery": "hvidløg"
+    }
+  }
+}

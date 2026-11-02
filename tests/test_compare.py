@@ -1,15 +1,20 @@
 """compare_basket with a real week list against two fake stores. No network."""
 
+import json
 from datetime import date
 from decimal import Decimal
+from pathlib import Path
 from typing import ClassVar
 
+import httpx
 import pytest
 
 from handle_mcp import compare, server
 from handle_mcp import stores as registry
-from handle_mcp.compare import _score, best_match, parse_item, parse_size
+from handle_mcp.compare import _pack_size, _score, best_match, parse_item, parse_size
 from handle_mcp.models import DeliveryInfo, Product, StoreTerms
+from handle_mcp.stores.bilkatogo import BilkaStore
+from handle_mcp.stores.nemlig import NemligStore
 
 WEEK_LIST = [
     "2 x letmælk 1 l",
@@ -151,8 +156,7 @@ async def test_week_list_in_both_stores(two_stores):
     assert bilka["missing"] == ["toiletpapir"]
     milk = nemlig["lines"][0]
     assert (milk["product"]["id"], milk["quantity"], milk["line_total"]) == ("n1", 2, "23.90")
-    unsure = {ln["item"]: ln["note"] for ln in bilka["lines"] if not ln["sure"]}
-    assert set(unsure) == {"kyllingebryst"}  # Kyllingebrystfilet: word inside a word
+    assert all(ln["sure"] for ln in bilka["lines"])  # Kyllingebrystfilet is kyllingebryst
     assert [ln["item"] for ln in nemlig["lines"] if not ln["sure"]] == ["kaffe 400 g"]
 
     assert nemlig["fees"] == {"levering": "29", "poser": "6"}
@@ -637,3 +641,77 @@ def test_pieces_say_when_packs_give_more():
     four = p("x", "four", "Bananer", "8.00", "4 stk")
     line = best_match("6 x bananer", [four])
     assert line.quantity == 2 and "8 stk" in line.note
+
+
+def test_alternatives_have_a_price_and_lines_say_oeko():
+    eco = p("x", "eco", "Øko fior di latte", "40.00", "200 g")
+    plain = p("x", "m", "Fior di latte", "20.00", "200 g")
+    line = best_match("fior di latte 200 g", [plain, eco])
+    assert line.oeko is False and line.alternatives[0]["price"] == Decimal("40.00")
+
+
+NEMLIG_FIX = Path(__file__).parent / "fixtures" / "nemlig"
+BILKA_FIX = Path(__file__).parent / "fixtures" / "bilkatogo"
+
+
+def _nemlig(name):
+    store = NemligStore(httpx.AsyncClient())
+    hits = json.loads((NEMLIG_FIX / f"{name}.json").read_text())["Products"]["Products"]
+    return [store._product(h) for h in hits]
+
+
+def _bilka(name):
+    store = BilkaStore(httpx.AsyncClient())
+    hits = json.loads((BILKA_FIX / f"{name}.json").read_text())["hits"]
+    return [x for h in hits if (x := store._product(h, "1653"))]
+
+
+def test_fresh_garlic_beats_garlic_in_oil():
+    # Real nemlig answer: "Hvidløg i krydderolie" was cheapest per kg and won.
+    line = best_match("hvidløg", _nemlig("match_hvidloeg"))
+    assert "olie" not in line.product.name
+    assert line.product.category == "Grønt"
+
+
+def test_garlic_with_an_amount_buys_one_bulb():
+    for products in (_nemlig("match_hvidloeg"), _bilka("match_hvidloeg")):
+        line = best_match("hvidløg 1 stk", products)
+        assert line.sure and _pack_size(line.product) == ("stk", 1)
+
+
+def test_mackerel_in_tomato_finds_the_single_tin():
+    # Real nemlig answer: the 4 x 125 g pack won, and no 125 g tin was even an alternative.
+    line = best_match("makrel i tomat 125 g", _nemlig("match_makrel_tomat"))
+    assert (line.product.name, line.line_total, line.sure) == (
+        "Makrelstykker i tomat",
+        Decimal("14.95"),
+        True,
+    )
+    assert any(a["size"].startswith("125 g") for a in line.alternatives)
+
+
+def test_preserved_is_a_whole_word_end():
+    beer = p("x", "l", "Lagerøl", "8.00", "33 cl")
+    oil = p("x", "o", "Hvidløg i krydderolie", "17.80", "290 g")
+    assert compare._processed_rank(["øl"], beer) == 0  # 'lage' inside a word is not 'lage'
+    assert compare._processed_rank(["hvidløg"], oil) == 1
+
+
+async def test_lines_say_oeko_in_the_tool_answer(two_stores):
+    result = await server.compare_basket(WEEK_LIST)
+    lines = result["stores"]["nemlig"]["lines"]
+    assert all(isinstance(ln["oeko"], bool) for ln in lines)
+    assert all("price" in a for ln in lines for a in ln["alternatives"])
+
+
+def test_item_flavour_words_count_in_full():
+    tin = p("x", "m", "Makrelfilet i tomat", "17.95", "125 g")
+    assert _score(["makrel", "tomat"], tin, {"tomat"}) == 1.0
+    assert _score(["makrel", "tomat"], tin) < 1.0  # 'tomat' alone is still a flavour
+
+
+def test_brand_is_not_the_product():
+    # Real Bilka answer: jam from "Fior di Frutta" matched "fior di latte".
+    line = best_match("fior di latte", _bilka("match_fior_di_latte"))
+    assert line.guess and not line.sure
+    assert _score(["fior", "di", "latte"], line.product) < 0.5

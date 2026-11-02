@@ -1,0 +1,313 @@
+{
+  "hits": [
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 3995,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 15980,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 15980
+        }
+      },
+      "price": 3995,
+      "gtin": "8001505006025",
+      "name": "Jordbær- og skovjordbærmarmelade øko",
+      "brand": "Fior di Frutta",
+      "netcontent": "250 g",
+      "deepestCategoryPath": "Kolonial > Morgenmad, smørepålæg & marmelade > Marmelade, syltetøj & gelé > Jordbærmarmelade",
+      "productType": "Jordbærmarmelade",
+      "objectID": "64315"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 3995,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 15980,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 15980
+        }
+      },
+      "price": 3995,
+      "gtin": "8001505006001",
+      "name": "Abrikosmarmelade øko",
+      "brand": "Fior di Frutta",
+      "netcontent": "250 g",
+      "deepestCategoryPath": "Kolonial > Morgenmad, smørepålæg & marmelade > Marmelade, syltetøj & gelé > Abrikosmarmelade",
+      "productType": "Abrikosmarmelade",
+      "objectID": "64316"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 3995,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 15980,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 15980
+        }
+      },
+      "price": 3995,
+      "gtin": "8001505006032",
+      "name": "Skovbærmarmelade øko",
+      "brand": "Fior di Frutta",
+      "netcontent": "250 g",
+      "deepestCategoryPath": "Kolonial > Morgenmad, smørepålæg & marmelade > Marmelade, syltetøj & gelé > Anden marmelade, syltetøj & gelé",
+      "productType": "Skovbærmarmelade",
+      "objectID": "64318"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Skarp pris",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 700,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 4000,
+          "unitsOfMeasurePriceUnit": "L.",
+          "unitsOfMeasureOfferPrice": 2800,
+          "unitsOfMeasureShowPrice": 2800
+        }
+      },
+      "price": 1000,
+      "gtin": "4000980423208",
+      "name": "Latte cappuccino 1,3% fedt",
+      "brand": "Gropper",
+      "netcontent": "250 ml",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Kolde kaffedrikke & kakao",
+      "productType": "Kaffedrikke",
+      "objectID": "61491"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Skarp pris",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 700,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 4000,
+          "unitsOfMeasurePriceUnit": "L.",
+          "unitsOfMeasureOfferPrice": 2800,
+          "unitsOfMeasureShowPrice": 2800
+        }
+      },
+      "price": 1000,
+      "gtin": "4000980423307",
+      "name": "Latte macchiato 4,1% fedt",
+      "brand": "Gropper",
+      "netcontent": "250 ml",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Kolde kaffedrikke & kakao",
+      "productType": "Kaffedrikke",
+      "objectID": "61492"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Skarp pris",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2900,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 499,
+          "unitsOfMeasurePriceUnit": "Stk.",
+          "unitsOfMeasureOfferPrice": 363,
+          "unitsOfMeasureShowPrice": 363
+        }
+      },
+      "price": 3995,
+      "gtin": "8445291561564",
+      "name": "Latte",
+      "brand": "Nescafé",
+      "netcontent": "8 stk",
+      "deepestCategoryPath": "Kolonial > Kaffe, te & kakao > Kaffe > Kaffedrikke",
+      "productType": "Instant kaffedrik",
+      "objectID": "14585"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1370,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 137,
+          "unitsOfMeasurePriceUnit": "Stk.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 137
+        }
+      },
+      "price": 1370,
+      "gtin": "5900649077997",
+      "name": "Latte Karamel",
+      "brand": "Mokate",
+      "netcontent": "10 stk",
+      "deepestCategoryPath": "Kolonial > Kaffe, te & kakao > Kaffe > Kaffedrikke",
+      "productType": "Instant kaffedrik",
+      "objectID": "85791"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1339,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 134,
+          "unitsOfMeasurePriceUnit": "Stk.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 134
+        }
+      },
+      "price": 1339,
+      "gtin": "5900649077980",
+      "name": "Latte",
+      "brand": "Mokate",
+      "netcontent": "10 stk",
+      "deepestCategoryPath": "Kolonial > Kaffe, te & kakao > Kaffe > Instantkaffe",
+      "productType": "Instant kaffe",
+      "objectID": "85646"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 5200,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 387,
+          "unitsOfMeasurePriceUnit": "Stk.",
+          "unitsOfMeasureOfferPrice": 325,
+          "unitsOfMeasureShowPrice": 325
+        }
+      },
+      "price": 6195,
+      "gtin": "7613037788228",
+      "name": "Latte Macchiato Caramel kaffekapsler",
+      "brand": "Nescafé",
+      "netcontent": "16 stk",
+      "deepestCategoryPath": "Kolonial > Kaffe, te & kakao > Kaffe > Kaffekapsler",
+      "productType": "Latte macchiato kaffekapsler",
+      "objectID": "73557"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 8900,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 330,
+          "unitsOfMeasurePriceUnit": "Stk.",
+          "unitsOfMeasureOfferPrice": 297,
+          "unitsOfMeasureShowPrice": 297
+        }
+      },
+      "price": 9895,
+      "gtin": "7613037498141",
+      "name": "Latte Macchiato kaffekapsler",
+      "brand": "Nescafé",
+      "netcontent": "30 stk",
+      "deepestCategoryPath": "Kolonial > Kaffe, te & kakao > Kaffe > Kaffekapsler",
+      "productType": "Latte macchiato kaffekapsler",
+      "objectID": "73903"
+    }
+  ],
+  "nbHits": 110,
+  "page": 0,
+  "nbPages": 11,
+  "hitsPerPage": 10,
+  "exhaustiveNbHits": true,
+  "exhaustiveTypo": true,
+  "exhaustive": {
+    "nbHits": true,
+    "typo": true
+  },
+  "query": "fior di latte",
+  "params": "query=fior+di+latte&hitsPerPage=10&removeWordsIfNoResults=allOptional&filters=isInAssortmentIn%3A1653+AND+nonsearchable%3Afalse&attributesToRetrieve=%5B%22name%22%2C+%22brand%22%2C+%22gtin%22%2C+%22netcontent%22%2C+%22productType%22%2C+%22deepestCategoryPath%22%2C+%22price%22%2C+%22storeData.1653%22%5D&analyticsTags=%5B%22ext-alg%23query-category%3Aquery-matched%22%5D&optionalFacetFilters=%5B%22searchHierachy%3Akatte%3Cscore%3D2%3E%22%5D",
+  "index": "prod_BILKATOGO_PRODUCTS",
+  "extensions": {
+    "queryCategorization": {
+      "count": 64,
+      "normalizedQuery": "fior di latte"
+    }
+  }
+}

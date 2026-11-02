@@ -5,7 +5,10 @@ Simple and explainable matching. No store-specific code here.
   is bought 3 times. Products are compared on the cost of the amount wanted.
 - A product matches well when every word of the item is a whole word in its name.
 - A word only after "m.", "med", "i", "u." ... is a flavour, not the product: "Yoghurt m. banan"
-  is not a banana. Such products never win.
+  is not a banana. Such products never win, unless the item asks for it: "makrel i tomat".
+- A word only in the brand counts half: "Fior di Frutta" jam is not "fior di latte".
+- "makrelfilet" and "makrelstykker" are makrel: a cut of the thing named first.
+- Canned or preserved food ("Hvidløg i krydderolie") loses to fresh when the item does not ask.
 - On the same name score, a product in a matching store category wins ("Fisk > Laks").
 - Then a product with a known size wins, then the lowest cost. Sold-out products never win.
 - No size in the item: compare price per kg, l or piece, and ask for an amount.
@@ -49,8 +52,11 @@ FLAVOUR_RE = re.compile(r"\s(?:m\.|med|i|u\.|uden|smag)\s", re.IGNORECASE)
 MULTI_RE = re.compile(r"(\d+)\s*for\s*(\d+(?:[.,]\d+)?)", re.IGNORECASE)  # "4 for 50 kr"
 # Words that only say how a thing is made or packed: "frilandsæg" is æg, "splitlinser" is linser.
 DESCRIBERS = ("frilands", "skrabe", "øko", "split", "mini", "snack", "baby")
+# A cut of the thing named first: "makrelfilet" and "makrelstykker" are makrel.
+CUTS = ("filet", "fileter", "stykker", "strimler", "tern")
 # Frozen or canned. Never the default for fresh food: "blåbær" is fresh, "frosne blåbær" is not.
 CANNED = ("konserv", "dåse", "juice")  # "Cherrytomater i tomatjuice", "Kolonial > Konserves"
+PRESERVED = ("olie", "lage", "marinade")  # last part of a name word: "krydderolie", not "Lagerøl"
 FROZEN = ("frost", "frosne", "frossen", "frosset")
 FRESH = ("frugt", "grønt", "bær", "grøntsag")  # frozen loses only here: frozen meat is fine
 BLEND_RE = re.compile(r"\d+(?:[.,]\d+)?\s*%\s*([a-zæøå]+)", re.IGNORECASE)  # "50% grønt"
@@ -70,6 +76,7 @@ class BasketLine:
     guess: bool = False  # the store's top hit with no word match: left out of the verdict
     # Next best products, so the caller can swap a wrong pick without a new search.
     alternatives: list[dict[str, Any]] = field(default_factory=list)
+    oeko: bool = False  # the chosen product is øko
 
 
 @dataclass
@@ -119,30 +126,40 @@ def _words(text: str) -> list[str]:
     return re.findall(r"[a-zæøå0-9]+", text.lower())
 
 
-def _score(words: list[str], product: Any) -> float:
+def _asked(item: str) -> set[str]:
+    """Words the item itself puts after 'i', 'med' ...: 'makrel i tomat' asks for tomat."""
+    parts = FLAVOUR_RE.split(f" {SIZE_RE.sub(' ', item)} ", maxsplit=1)
+    return set(_words(parts[1])) - STOP_WORDS if len(parts) == 2 else set()
+
+
+def _score(words: list[str], product: Any, asked: set[str] | frozenset[str] = frozenset()) -> float:
     """1.0 when every word is a whole word in the name, or its Danish plural or singular
-    ('bananer' ~ 'banan'). Half for a word inside another word. A quarter for a word only in the
-    flavour part of the name ('Yoghurt m. banan')."""
+    ('bananer' ~ 'banan'). Half for a word inside another word, or only in the brand: 'Fior di
+    Frutta' is jam, not 'fior di latte'. A quarter for a word only in the flavour part of the
+    name ('Yoghurt m. banan'), unless the item asks for it there (`asked`: 'makrel i tomat')."""
     # c and k are the same sound in Danish shop names: "Clementiner" ~ "klementiner".
     words = [w.replace("c", "k") for w in words]
-    name = (_get(product, "name") or "").replace("C", "K").replace("c", "k")
-    brand = (_get(product, "brand") or "").replace("C", "K").replace("c", "k")
-    head = f"{FLAVOUR_RE.split(name)[0]} {brand}".lower()
+    asked = {w.replace("c", "k") for w in asked}
+    name = (_get(product, "name") or "").replace("C", "K").replace("c", "k").lower()
+    brand = (_get(product, "brand") or "").replace("C", "K").replace("c", "k").lower()
+    head = FLAVOUR_RE.split(name)[0]
     head_words = _words(head)
     # A compound split in two: "Cherry tomater" is "cherrytomater".
     tokens = set(head_words) | {a + b for a, b in pairwise(head_words)}
-    tail = name.lower()
-    tail_tokens = set(_words(tail))
+    brand_tokens = set(_words(brand))
+    tail_tokens = set(_words(name))
     hits = []
     for w in words:
         if w in tokens or any(_plural(w, t) or _described(w, t) for t in tokens):
             hits.append(1.0)
         elif any(_compound(w, t) for t in tokens):
             hits.append(0.75)  # 'frilandsæg' for 'æg': better than a word inside, below whole
-        elif w in head or _stem_hit(w, tokens):
+        elif w in head or _stem_hit(w, tokens) or w in brand_tokens or _stem_hit(w, brand_tokens):
             hits.append(0.5)
+        elif w in tail_tokens or _stem_hit(w, tail_tokens):
+            hits.append(1.0 if w in asked else 0.25)
         else:
-            hits.append(0.25 if w in tail or _stem_hit(w, tail_tokens) else 0.0)
+            hits.append(0.25 if w in name else 0.0)
     return sum(hits) / len(hits) if hits else 0.0
 
 
@@ -154,15 +171,22 @@ def _plural(word: str, token: str) -> bool:
 
 def _described(word: str, token: str) -> bool:
     """'frilandsæg' is plain æg: the first part only says how it is made."""
-    return any(token == d + word for d in DESCRIBERS)
+    return any(token == d + word for d in DESCRIBERS) or any(
+        token in (word + c, word + "e" + c, word + "s" + c) for c in CUTS
+    )
 
 
 def _processed_rank(words: list[str], product: Any) -> int:
-    """1 for canned food, or frozen fruit and vegetables, when the item does not ask for it.
+    """1 for canned or preserved food, or frozen fruit and vegetables, when the item does not
+    ask for it.
     Frozen meat or fish is not demoted: a frozen 35 kr offer is a fine 'kyllingelår'."""
     text = f"{_get(product, 'name')} {_get(product, 'category') or ''}".lower()
     item = " ".join(words)
     if any(m in text for m in CANNED) and not any(m in item for m in CANNED):
+        return 1
+    name_words = _words(_get(product, "name") or "")
+    preserved = any(w.endswith(m) for w in name_words for m in PRESERVED)
+    if preserved and not any(m in item for m in PRESERVED):
         return 1
     produce = any(m in text for m in FRESH) or any(w.endswith("bær") for w in words)
     frozen = any(m in text for m in FROZEN) and not any(m in item for m in FROZEN)
@@ -310,7 +334,7 @@ def best_match(item: str, products: list[Any], on: date | None = None) -> Basket
             continue
         alt = _best(item, [x], on)
         if alt.product is not None and not alt.guess:
-            others.append((-_score(parse_item(item)[1], x), alt.line_total, alt))
+            others.append((-_score(parse_item(item)[1], x, _asked(item)), alt.line_total, alt))
     others.sort(key=lambda o: o[:2])
     picked = [a for _s, _t, a in others[:ALTERNATIVES]]
     # Always show an øko choice, so a human can pick it when it costs only a little more.
@@ -319,6 +343,7 @@ def best_match(item: str, products: list[Any], on: date | None = None) -> Basket
         if oeko and oeko[0] not in picked:
             picked = [*picked[: ALTERNATIVES - 1], oeko[0]]
     line.alternatives = [_brief(a) for a in picked]
+    line.oeko = line.product is not None and is_oeko(line.product)
     return line
 
 
@@ -328,6 +353,7 @@ def _brief(line: BasketLine) -> dict[str, Any]:
         "id": _get(p, "id"),
         "name": _get(p, "name"),
         "size": _get(p, "size"),
+        "price": _get(p, "price"),
         "quantity": line.quantity,
         "line_total": line.line_total,
         "offer_text": _get(p, "offer_text"),
@@ -342,7 +368,7 @@ def _best(item: str, products: list[Any], on: date | None = None) -> BasketLine:
     quantity, words, size = parse_item(item)
     ranked = []
     for product in products:
-        score = _score(words, product)
+        score = _score(words, product, _asked(item))
         if _get(product, "available") and score >= 0.5:
             packs = _packs(size, quantity, product) or _pieces(size, quantity, product)
             size_rank = 0 if packs or not size else 1
