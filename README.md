@@ -1,10 +1,42 @@
-# handle-mcp
+# 🧺 handle-mcp
+
+[![ci](https://github.com/NJohansen/handle-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/NJohansen/handle-mcp/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-blue.svg)
+
+**Let your AI agent do the Danish grocery shopping. You approve and pay.**
 
 A local MCP server for Danish grocery stores with home delivery. An AI agent can search products, compare a shopping list across stores and fill the cart. **You always approve and pay yourself**, on the store's own website.
 
 Stores in v1: [nemlig.com](https://www.nemlig.com) and [BilkaToGo](https://www.bilkatogo.dk) (home delivery).
 
+> [!WARNING]
 > Unofficial. The stores have no public API. This uses the same private APIs as their websites, and it can break at any time. Not affiliated with nemlig.com or Salling Group.
+
+## What you can ask
+
+**Compare and save**
+- *"Here is this week's list. Which store is cheapest, fees included?"*
+- *"Price per kg for minced meat in both stores?"*
+
+**Offers**
+- *"What is on offer this week? Any free gifts?"*
+- *"Plan three dinners around this week's offers."*
+
+**Cart and delivery**
+- *"Fill the nemlig cart with the cheapest basket."*
+- *"Which delivery times are cheapest tomorrow?"*
+
+**Habits**
+- *"What did we buy in our last orders?"*
+- *"Find a lasagne recipe from the store."*
+
+What happens behind *"Fill the cheapest cart"*:
+
+1. `compare_basket` prices the list in each store and returns candidates per item.
+2. The agent picks a product per item, and asks you when it is unsure.
+3. `set_cart_quantities` sets the quantities in one store's cart. That is the only write.
+4. You open the store's website, check the cart, choose a time and pay.
 
 ## What it can do
 
@@ -61,7 +93,7 @@ Claude Desktop (`claude_desktop_config.json`):
 }
 ```
 
-Then ask: *"Compare this week's list in nemlig and Bilka, and fill the cheapest cart."* Open the store's website to check the cart, choose a time and pay.
+Then ask: *"Compare this week's list in nemlig and Bilka, and fill the cheapest cart."* Open the store's website to check the cart, choose a time and pay. More prompts: [What you can ask](#what-you-can-ask).
 
 ## Build your own skill on top
 
@@ -97,6 +129,18 @@ Flags that are false and facts that are unknown are left out, to keep the answer
 - **Versions.** `git+https://...` installs the newest `main`. Pin a tag when one exists: `git+https://github.com/NJohansen/handle-mcp@v0.1.0`.
 - Use one client at a time per store. Close the store's app or website before an agent changes the cart.
 - Be kind to the stores: the server makes few calls, mostly one at a time per store, and retries only on timeouts, network errors, 429 and 5xx.
+
+## Troubleshooting
+
+Errors from a store come back to the agent as one short Danish line, e.g. `nemlig: ...`. One store failing never stops the others.
+
+| Message | Fix |
+|---|---|
+| `Intet login til <store>` | Run `handle-mcp login <store>` in a terminal. |
+| `afviser login. Tjek email og kodeord.` | Wrong email or password. Run `handle-mcp login <store>` again. |
+| `nemlig.com har kø lige nu (queue-it)` | nemlig has a queue. Try again in a few minutes. |
+| `Kurven er sat til afhentning` (BilkaToGo) | Choose home delivery (not pickup) once on bilkatogo.dk. |
+| `uventet fejl (...)` | The store's API may have changed. The log on stderr has the details. Please open an issue. |
 
 ## Roadmap
 
