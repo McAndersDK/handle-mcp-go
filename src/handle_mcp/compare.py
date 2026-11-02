@@ -188,8 +188,12 @@ def _multi(product: Any, on: date | None) -> tuple[int, Decimal] | None:
 
 
 def _cost(product: Any, count: int, on: date | None) -> Decimal:
-    """Price for `count` packs, with a multi-buy offer like '4 for 50 kr' when it is still on."""
+    """Price for `count` packs, with a multi-buy offer like '4 for 50 kr' when it is still on.
+    Packs over the offer's limit ('max 1 stk.', e.g. a free gift) cost the normal price."""
     price = _price(product, on)
+    limit, before = _get(product, "max_per_order"), _get(product, "before_price")
+    if limit and before and count > limit:
+        return price * limit + Decimal(before) * (count - limit)
     if offer := _multi(product, on):
         size, total = offer
         return (count // size) * total + (count % size) * price

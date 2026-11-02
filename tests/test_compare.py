@@ -566,6 +566,13 @@ def test_alternatives_survive_out():
     assert out["alternatives"][0]["line_total"] in {"3.00", "2.50"}
 
 
+def test_offer_limit_counts_extra_packs_at_the_normal_price():
+    gift = p("x", "g", "Mums rosinboller", "0", "6 stk")
+    gift.before_price, gift.max_per_order = Decimal("20.45"), 1
+    assert best_match("rosinboller 6 stk", [gift]).line_total == Decimal(0)
+    assert best_match("2 x rosinboller 6 stk", [gift]).line_total == Decimal("20.45")
+
+
 def test_an_oeko_choice_is_always_shown():
     plain = [p("x", f"m{i}", "Fior di latte", f"{20 + i}.00", "200 g") for i in range(4)]
     eco = p("x", "eco", "Øko fior di latte", "40.00", "200 g")

@@ -1,0 +1,67 @@
+{
+  "Products": {
+    "Products": [
+      {
+        "TemplateName": "productlistitem",
+        "PrimaryImage": "https://nemlig.com//scommerce/images/mums-rosinboller.jpg?i=d6SzXCYE/5606321",
+        "Availability": {
+          "IsDeliveryAvailable": true,
+          "IsAvailableInStock": true,
+          "ReasonMessageKeys": []
+        },
+        "Id": "5606321",
+        "Name": "Mums rosinboller",
+        "Category": "Inspiration",
+        "Brand": "Schulstad",
+        "SubCategory": "Gave fra nemlig.com",
+        "Url": "mums-rosinboller-5606321",
+        "UnitPriceCalc": 58.43,
+        "UnitPriceLabel": "kr/kg",
+        "DiscountItem": false,
+        "Description": "6 stk. / 350 g  / Schulstad - Det Gode",
+        "SaleBeforeLastSalesDate": 2,
+        "Price": 20.45,
+        "Campaign": {
+          "MaxQuantity": 1,
+          "CampaignPrice": 0.0,
+          "CampaignUnitPrice": 0.0,
+          "Type": "ProductCampaignFreeProduct",
+          "Code": "U",
+          "DiscountSavings": 0.0,
+          "IntervalStart": "2018-01-03T23:00:00Z",
+          "IntervalEnd": "2026-12-31T22:59:59Z",
+          "ShowCampaignInterval": true
+        },
+        "Labels": [],
+        "Favorite": false,
+        "ProductSubGroupNumber": "3900200009",
+        "ProductSubGroupName": "Boller og stykker",
+        "ProductCategoryGroupNumber": "3900200000",
+        "ProductCategoryGroupName": "Lyst brød",
+        "ProductMainGroupNumber": "3900000000",
+        "ProductMainGroupName": "Brød"
+      }
+    ],
+    "Start": 0,
+    "NumFound": 4
+  },
+  "Facets": {
+    "NumFound": 4,
+    "SortingList": [],
+    "FacetGroups": [],
+    "FacetPivots": []
+  },
+  "Recipes": [],
+  "Ads": [],
+  "TopUpOrderProducts": {
+    "Products": [],
+    "ProductGroupId": "00000000-0000-0000-0000-000000000000",
+    "Start": 0,
+    "NumFound": 0,
+    "Advertisements": []
+  },
+  "RecipesNumFound": 1,
+  "ProductsNumFound": 4,
+  "SearchQuery": "mums rosinboller",
+  "AdsNumFound": 0
+}

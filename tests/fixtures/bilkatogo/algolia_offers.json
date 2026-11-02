@@ -1,0 +1,335 @@
+{
+  "hits": [
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "2680",
+          "offerDescription": "Mix 10 for 25,00",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 10,
+          "price": 275,
+          "beforePrice": 0,
+          "multiPromoPrice": "2500",
+          "unitsOfMeasurePrice": 275,
+          "unitsOfMeasurePriceUnit": "Stk.",
+          "unitsOfMeasureOfferPrice": 250,
+          "unitsOfMeasureShowPrice": 275
+        }
+      },
+      "price": 275,
+      "isInCurrentLeaflet": false,
+      "gtin": "5712873461653",
+      "name": "Bananer",
+      "brand": "",
+      "netcontent": "1 stk",
+      "multipromos": [
+        "2680"
+      ],
+      "productType": "Bananer",
+      "cpOffer": false,
+      "objectID": "18381"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Skarp pris",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2500,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 410,
+          "unitsOfMeasurePriceUnit": "Stk.",
+          "unitsOfMeasureOfferPrice": 250,
+          "unitsOfMeasureShowPrice": 250
+        }
+      },
+      "price": 4095,
+      "isInCurrentLeaflet": true,
+      "gtin": "5701607590233",
+      "name": "Frilandsæg S/M/L",
+      "brand": "Dava",
+      "netcontent": "10 stk",
+      "multipromos": [],
+      "productType": "Frilandsæg",
+      "cpOffer": false,
+      "objectID": "40258"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "1504",
+          "offerDescription": "Mix 6 for 69,00",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 6,
+          "price": 1395,
+          "beforePrice": 0,
+          "multiPromoPrice": "6900",
+          "unitsOfMeasurePrice": 15500,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 12778,
+          "unitsOfMeasureShowPrice": 15500
+        }
+      },
+      "price": 1395,
+      "isInCurrentLeaflet": true,
+      "gtin": "5707196154573",
+      "name": "Hamburgerryg i skiver",
+      "brand": "Tulip",
+      "netcontent": "90 g",
+      "multipromos": [
+        "1504"
+      ],
+      "productType": "Hamburgerryg i skiver",
+      "cpOffer": false,
+      "objectID": "21251"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Skarp pris",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1000,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 2195,
+          "unitsOfMeasurePriceUnit": "L.",
+          "unitsOfMeasureOfferPrice": 1000,
+          "unitsOfMeasureShowPrice": 1000
+        }
+      },
+      "price": 2195,
+      "isInCurrentLeaflet": true,
+      "gtin": "5704062370846",
+      "name": "Kakaomælk 0,5% fedt",
+      "brand": "Matilde",
+      "netcontent": "1 l",
+      "multipromos": [],
+      "productType": "Kakaomælk",
+      "cpOffer": false,
+      "objectID": "19668"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "2680",
+          "offerDescription": "Mix 10 for 25,00",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 10,
+          "price": 300,
+          "beforePrice": 0,
+          "multiPromoPrice": "2500",
+          "unitsOfMeasurePrice": 300,
+          "unitsOfMeasurePriceUnit": "Stk.",
+          "unitsOfMeasureOfferPrice": 250,
+          "unitsOfMeasureShowPrice": 300
+        }
+      },
+      "price": 300,
+      "isInCurrentLeaflet": false,
+      "gtin": "5710405055844",
+      "name": "Pærer",
+      "brand": "",
+      "netcontent": "1 stk",
+      "multipromos": [
+        "2680"
+      ],
+      "productType": "Pærer",
+      "cpOffer": false,
+      "objectID": "50998"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Skarp pris",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1800,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 12475,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 9000,
+          "unitsOfMeasureShowPrice": 9000
+        }
+      },
+      "price": 2495,
+      "isInCurrentLeaflet": false,
+      "gtin": "5760466101240",
+      "name": "Pikant flødeost 23% fedt",
+      "brand": "Buko",
+      "netcontent": "200 g",
+      "multipromos": [],
+      "productType": "Flødeost",
+      "cpOffer": false,
+      "objectID": "19982"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "2680",
+          "offerDescription": "Mix 10 for 25,00",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 10,
+          "price": 275,
+          "beforePrice": 0,
+          "multiPromoPrice": "2500",
+          "unitsOfMeasurePrice": 275,
+          "unitsOfMeasurePriceUnit": "Stk.",
+          "unitsOfMeasureOfferPrice": 250,
+          "unitsOfMeasureShowPrice": 275
+        }
+      },
+      "price": 275,
+      "isInCurrentLeaflet": false,
+      "gtin": "5710405055851",
+      "name": "Æbler",
+      "brand": "",
+      "netcontent": "1 stk",
+      "multipromos": [
+        "2680"
+      ],
+      "productType": "Æbler",
+      "cpOffer": false,
+      "objectID": "18379"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Skarp pris",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 6495,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 1388,
+          "unitsOfMeasurePriceUnit": "L.",
+          "unitsOfMeasureOfferPrice": 820,
+          "unitsOfMeasureShowPrice": 820
+        }
+      },
+      "price": 10995,
+      "isInCurrentLeaflet": true,
+      "gtin": "5741000139769",
+      "name": "Pepsi Max",
+      "brand": "Pepsi",
+      "netcontent": "24 x 0.33 liter",
+      "multipromos": [],
+      "productType": "Cola",
+      "cpOffer": false,
+      "objectID": "29575"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "2680",
+          "offerDescription": "Mix 10 for 25,00",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 10,
+          "price": 275,
+          "beforePrice": 0,
+          "multiPromoPrice": "2500",
+          "unitsOfMeasurePrice": 275,
+          "unitsOfMeasurePriceUnit": "Stk.",
+          "unitsOfMeasureOfferPrice": 250,
+          "unitsOfMeasureShowPrice": 275
+        }
+      },
+      "price": 275,
+      "isInCurrentLeaflet": false,
+      "gtin": "5711044363598",
+      "name": "Kiwi",
+      "brand": "",
+      "netcontent": "1 stk",
+      "multipromos": [
+        "2680"
+      ],
+      "productType": "Kiwi",
+      "cpOffer": false,
+      "objectID": "40810"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2500,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 12896,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 10417,
+          "unitsOfMeasureShowPrice": 10417
+        }
+      },
+      "price": 3095,
+      "isInCurrentLeaflet": false,
+      "gtin": "5711953084676",
+      "name": "Danbo ost i skiver mellemlagret 45+",
+      "brand": "Arla Klovborg",
+      "netcontent": "240 g",
+      "multipromos": [],
+      "productType": "Danbo ost i skiver",
+      "cpOffer": false,
+      "objectID": "61096"
+    }
+  ],
+  "nbHits": 11396,
+  "page": 0,
+  "nbPages": 1140,
+  "hitsPerPage": 10,
+  "exhaustiveTypo": true,
+  "query": "",
+  "params": "query=&hitsPerPage=10&filters=isInOffer%3A1653%20AND%20isInAssortmentIn%3A1653%20AND%20nonsearchable%3Afalse&attributesToRetrieve=%5B%22name%22%2C%22brand%22%2C%22gtin%22%2C%22netcontent%22%2C%22productType%22%2C%22price%22%2C%22isInCurrentLeaflet%22%2C%22cpOffer%22%2C%22multipromos%22%2C%22storeData.1653%22%5D&attributesToHighlight=%5B%5D",
+  "index": "prod_BILKATOGO_PRODUCTS",
+  "extensions": {
+    "queryCategorization": {}
+  }
+}

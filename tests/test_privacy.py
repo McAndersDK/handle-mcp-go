@@ -10,6 +10,7 @@ from tests.conftest import LEAK
 
 CALLS = [
     ("search_products", {"query": "mælk", "stores": ["fake"]}),
+    ("list_offers", {"stores": ["fake"]}),
     ("search_recipes", {"query": "karry", "stores": ["fake"]}),
     ("compare_basket", {"items": ["mælk 1 l", "2 x rugbrød"], "stores": ["fake"]}),
     ("get_cart", {"store": "fake"}),

@@ -58,6 +58,9 @@ class FakeStore:
             )
         ]
 
+    async def offers(self, limit=25):
+        return await self.search("Tilbud", limit)
+
     async def get_cart(self):
         lines = [CartLine(pid, "Mælk", q, Decimal("12.95") * q) for pid, q in self.cart.items()]
         total = sum((line.line_total for line in lines), Decimal(0))

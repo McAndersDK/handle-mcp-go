@@ -126,6 +126,15 @@ async def search_recipes(query: str, stores: list[str] | None = None, limit: int
 
 
 @mcp.tool(annotations=READ)
+async def list_offers(stores: list[str] | None = None, limit: int = 25) -> dict:
+    """List this week's offers in each store, also items you would not search for: nemlig's
+    Skarp pris, Priskup, Dagstilbud, Undgå madspild and gifts; BilkaToGo's offers. `limit` is
+    per list. Free gifts have price 0 and "max_per_order". Use them when they fit the plan."""
+    limit = max(1, min(limit, MAX_RESULTS))
+    return _out(await _each(_names(stores), lambda s: s.offers(limit)))
+
+
+@mcp.tool(annotations=READ)
 async def compare_basket(items: list[str], stores: list[str] | None = None) -> dict:
     """Price a shopping list in each store, e.g. ["2 x letmælk 1 l", "rugbrød", "æg 10 stk"].
     Write the amount you need ("fior di latte 300 g"), not a pack size. Returns the best match

@@ -71,6 +71,13 @@ def _kr(ore: Any) -> Decimal:
         raise StoreError(f"BilkaToGo sendte et ukendt beløb: {ore!r}.") from exc
 
 
+def _campaign(offer: str | None) -> str | None:
+    """'Skarp pris' stays, 'Mix 10 for 25,00' is 'Mix', leaflet offers are 'Tilbud'."""
+    if not offer:
+        return None
+    return offer if offer == "Skarp pris" else "Mix" if offer.startswith("Mix ") else "Tilbud"
+
+
 def _is_home(address: dict) -> bool:
     """Home addresses have a DAWA id or a recipient; pickup points (Bilka stores) do not.
     ⚠ Confirm with a live home-delivery cart (docs/research.md)."""
@@ -207,12 +214,22 @@ class BilkaStore:
         return await self._shop("GET", "shop/v6/Cart", {"extra": "deliveryAddress,deliveryDate"})
 
     async def search(self, query: str, limit: int = 10) -> list[Product]:
+        return await self._algolia(query, limit)
+
+    async def offers(self, limit: int = 25) -> list[Product]:
+        """Products on offer in our store: Skarp pris, leaflet offers and mix offers."""
+        return await self._algolia("", limit, offers=True)
+
+    async def _algolia(self, query: str, limit: int, offers: bool = False) -> list[Product]:
         address = (await self._cart_json()).get("deliveryAddress") or {}
         sid = str(address.get("sid") or "")
         if not sid:
             raise StoreError(
                 "Ingen leveringsadresse valgt i BilkaToGo. Vælg hjemlevering på bilkatogo.dk."
             )
+        filters = f"isInAssortmentIn:{sid} AND nonsearchable:false"
+        if offers:  # isInOffer is a list of store ids, not true/false
+            filters = f"isInOffer:{sid} AND {filters}"
         params = urlencode(
             {
                 "query": query,
@@ -220,7 +237,7 @@ class BilkaStore:
                 # Algolia needs every word by default: "cheasy skyr passionsfrugt" gives 0 hits
                 # when that flavour is not sold. Then retry with fewer words, like nemlig does.
                 "removeWordsIfNoResults": "allOptional",
-                "filters": f"isInAssortmentIn:{sid} AND nonsearchable:false",
+                "filters": filters,
                 "attributesToRetrieve": json.dumps(
                     [
                         "name",
@@ -237,12 +254,13 @@ class BilkaStore:
         )
         body = {"requests": [{"indexName": ALGOLIA_INDEX, "params": params}]}
         resp = await self._send("POST", ALGOLIA, headers=ALGOLIA_HEADERS, json=body)
+        what = "tilbud" if offers else "søgning"
         if resp.status_code != 200:
-            raise StoreError(f"BilkaToGo-søgning fejlede ({resp.status_code}).")
+            raise StoreError(f"BilkaToGo-{what} fejlede ({resp.status_code}).")
         try:
-            hits = self._json(resp, "søgning")["results"][0]["hits"]
+            hits = self._json(resp, what)["results"][0]["hits"]
         except (KeyError, IndexError, TypeError) as exc:
-            raise StoreError("BilkaToGo-søgning har ændret format.") from exc
+            raise StoreError(f"BilkaToGo-{what} har ændret format.") from exc
         return [p for p in (self._product(h, sid) for h in hits) if p]
 
     async def recipes(self, query: str, limit: int = 5) -> list[Recipe]:
@@ -274,6 +292,8 @@ class BilkaStore:
             on_offer=bool(offer),
             offer_text=offer,
             before_price=before if offer else None,
+            campaign=_campaign(offer),
+            max_per_order=(int(store.get("offerMax") or 0) or None) if offer else None,
             available=bool(store.get("inStock")),
             category=" > ".join(
                 x for x in (hit.get("deepestCategoryPath"), hit.get("productType")) if x

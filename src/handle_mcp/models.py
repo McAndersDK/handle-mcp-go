@@ -24,6 +24,8 @@ class Product:
     offer_until: date | None = None  # last day of the offer, when the store says it
     available: bool = True
     category: str | None = None  # the store's category path, e.g. "Frugt & grønt > Bananer"
+    campaign: str | None = None  # the store's offer list, e.g. "Priskup", "Skarp pris", "Gratis"
+    max_per_order: int | None = None  # offer limit, e.g. 1 for a free gift
 
 
 @dataclass

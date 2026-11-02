@@ -21,6 +21,24 @@ def fixture(name: str) -> dict:
     return json.loads((FIXTURES / f"{name}.json").read_text())
 
 
+OFFER_FILES = {
+    "g-skarp": "offers_skarp_pris",
+    "g-priskup": "offers_priskup",
+    "g-dag": "offers_dagstilbud",
+    "g-madspild": "offers_madspild",
+    "g-gave": "offers_gratis",
+}
+TILBUD = [  # the spots on /tilbud?GetAsJson=1, trimmed (tests/fixtures/nemlig/README.md)
+    {"TemplateName": "productlistshowallspot", "Heading": "Skarp pris", "ProductGroupId": "g-skarp"},
+    {"TemplateName": "productlistshowallspot", "Heading": "Ugens Priskup", "ProductGroupId": "g-priskup"},
+    {"TemplateName": "productlistshowallspot", "Heading": "Dagstilbud", "ProductGroupId": "g-dag"},
+    {"TemplateName": "productlistshowallspot", "Heading": "Undgå madspild", "ProductGroupId": "g-madspild"},
+    {"TemplateName": "productlistshowallspot", "Heading": "En gave til dig", "ProductGroupId": "g-gave"},
+    {"TemplateName": "productlistshowallspot", "Heading": "Nyheder", "ProductGroupId": "g-news"},
+    {"TemplateName": "bannerspot", "Heading": "Skarp pris"},
+]  # fmt: skip
+
+
 class FakeNemlig:
     """Answers like nemlig.com. Records every request. Tests can script failures."""
 
@@ -61,10 +79,25 @@ class FakeNemlig:
             return httpx.Response(200, json={"CombinedProductsAndSitecoreTimestamp": "ts-1"})
         if path == "/" and request.url.params.get("GetAsJson"):
             return httpx.Response(
-                200, json={"Settings": {"TimeslotUtc": "2026110316-60-180", "DeliveryZoneId": 3}}
+                200,
+                json={
+                    "Settings": {
+                        "TimeslotUtc": "2026110316-60-180",
+                        "DeliveryZoneId": 3,
+                        "UserId": "user-4711",
+                    }
+                },
             )
         if path == "/searchgateway/api/search":
+            if request.url.params.get("query") == "mums rosinboller":
+                return httpx.Response(200, json=fixture("search_gift"))
             return httpx.Response(200, json=fixture("search"))
+        if path == "/tilbud":
+            return httpx.Response(200, json={"content": TILBUD})
+        if path.endswith("/Products/GetByProductGroupId"):
+            return httpx.Response(
+                200, json=fixture(OFFER_FILES[request.url.params["productGroupId"]])
+            )
         if path == "/webapi/basket/GetBasket":
             return httpx.Response(200, json=self.basket)
         if path == "/webapi/basket/AddToBasket":
@@ -424,3 +457,70 @@ def test_offer_end_uses_danish_time(store):
     }
     p = store._product({"Id": 7, "Name": "Is", "Price": 20, "Campaign": summer})
     assert p.offer_until == date(2026, 7, 1)  # 23:59:59 in DK summer time
+
+
+async def test_offers_reads_every_offer_list(store, fake):
+    offers = await store.offers(10)
+    lists = {p.campaign for p in offers}
+    assert lists == {"Skarp pris", "Priskup", "Dagstilbud", "Undgå madspild"}
+    calls = [r for r in fake.requests if r.url.path.endswith("GetByProductGroupId")]
+    assert len(calls) == 5  # "Nyheder" is not an offer list
+    assert (
+        calls[0].url.path
+        == "/webapi/ts-1/2026110316-60-180/3/user-4711/Products/GetByProductGroupId"
+    )
+    assert calls[0].url.params["pagesize"] == "10"
+    assert all(r.method == "GET" for r in fake.requests if r.url.path != "/webapi/login")
+    rejer = next(p for p in offers if p.id == "5061889")
+    assert (rejer.price, rejer.before_price, rejer.campaign) == (
+        Decimal("25.0"),
+        Decimal("31.5"),
+        "Priskup",
+    )
+
+
+async def test_offer_above_the_normal_price_is_not_an_offer(store):
+    steak = next(p for p in await store.offers(10) if p.id == "5071238")
+    assert (steak.price, steak.before_price, steak.on_offer) == (Decimal("82.565"), None, False)
+
+
+async def test_free_gift_costs_nothing_and_says_max_one(store):
+    [gift] = await store.search("mums rosinboller")
+    assert (gift.price, gift.before_price) == (Decimal(0), Decimal("20.45"))
+    assert (gift.campaign, gift.max_per_order) == ("Gratis", 1)
+    assert gift.offer_text == "Gratis (max 1 stk.)"
+
+
+async def test_offers_without_lists_is_a_clear_error(store, fake, monkeypatch):
+    monkeypatch.setattr(nemlig_module, "OFFER_LISTS", {})
+    with pytest.raises(StoreError, match="tilbudslister"):
+        await store.offers()
+
+
+async def test_list_offers_tool_never_shows_the_user_id(store, monkeypatch):
+    monkeypatch.setitem(registry.STORES, "nemlig", lambda: store)
+    monkeypatch.setattr(server, "_instances", {}, raising=False)
+    monkeypatch.setattr(server, "_store", lambda _name: store)
+    out = await server.list_offers(["nemlig"], 5)
+    text = json.dumps(out, default=str)
+    assert "user-4711" not in text and "Priskup" in text
+
+
+async def test_offer_list_error_never_shows_the_user_id(store, fake):
+    url = "/webapi/ts-1/2026110316-60-180/3/user-4711/Products/GetByProductGroupId"
+    fake.scripted[url] = [404]
+    with pytest.raises(StoreError) as err:
+        await store.offers()
+    assert "user-4711" not in str(err.value) and "<bruger>" in str(err.value)
+
+
+async def test_offers_need_a_user(store, monkeypatch):
+    await store._search_settings()
+    store._user_id = ""
+    monkeypatch.setattr(store, "_search_settings", lambda: _settings(store))
+    with pytest.raises(StoreError, match="Log ind"):
+        await store.offers()
+
+
+async def _settings(store):
+    return store._settings[1]

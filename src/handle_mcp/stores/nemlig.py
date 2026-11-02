@@ -43,6 +43,16 @@ SETTINGS_TTL = 600  # seconds to reuse timeslot/zone for search
 RETRIES = 2  # extra attempts on timeout, 429 and 5xx
 STATUS = {1: "Bestilt", 2: "Under behandling", 4: "Leveret"}
 UNITS = {"kg": "kg", "l": "l", "ltr": "l", "stk": "stk"}
+FREE = "ProductCampaignFreeProduct"
+# Offer lists on /tilbud, matched on the heading (ids change). See tests/fixtures/nemlig/README.md.
+OFFER_LISTS = {
+    "skarp pris": "Skarp pris",
+    "ugens priskup": "Priskup",
+    "priskup": "Priskup",
+    "dagstilbud": "Dagstilbud",
+    "undgå madspild": "Undgå madspild",
+    "en gave til dig": "Gratis",
+}
 # Bags for a normal week (~800 kr), seen live 2026-11. The basket only says the bag price when it
 # has products, so compare_basket uses this for an empty cart.
 BAG_FEE = Decimal("17.85")
@@ -93,9 +103,12 @@ def _offer(campaign: dict | None) -> str | None:
 
 def _discount_price(campaign: dict | None) -> Decimal | None:
     """Discount campaigns: the hit's Price is the price BEFORE the offer, CampaignPrice is what
-    you pay. Multi-buy campaigns (MinQuantity > 1) keep the single price."""
+    you pay. Multi-buy campaigns (MinQuantity > 1) keep the single price. A free gift
+    (ProductCampaignFreeProduct) costs 0."""
     if not campaign or (campaign.get("MinQuantity") or 0) > 1:
         return None
+    if campaign.get("Type") == FREE:
+        return Decimal(0)
     return _money(campaign.get("CampaignPrice")) or None
 
 
@@ -121,6 +134,7 @@ class NemligStore:
         self._xsrf: str | None = None
         self._logged_in = False
         self._settings: tuple[float, dict[str, Any]] | None = None
+        self._user_id = ""  # personal: only in the offer-list URL, never logged or returned
         self._lock = asyncio.Lock()
 
     # --- HTTP -------------------------------------------------------------
@@ -160,7 +174,8 @@ class NemligStore:
                 elif resp.status_code == 401:
                     raise _Unauthorized
                 elif resp.status_code >= 400:
-                    raise StoreError(f"nemlig.com afviste kaldet ({resp.status_code}): {url}")
+                    shown = url.replace(self._user_id, "<bruger>") if self._user_id else url
+                    raise StoreError(f"nemlig.com afviste kaldet ({resp.status_code}): {shown}")
                 else:
                     try:
                         return resp.json() if resp.content else None
@@ -231,6 +246,7 @@ class NemligStore:
             "timeslotUtc": page.get("TimeslotUtc", ""),
             "deliveryZoneId": page.get("DeliveryZoneId", 1),
         }
+        self._user_id = str(page.get("UserId") or "")
         self._settings = (time.monotonic(), settings)
         return settings
 
@@ -266,32 +282,77 @@ class NemligStore:
             if h.get("Id") and h.get("Url")
         ]
 
+    async def offers(self, limit: int = 25) -> list[Product]:
+        """Every product on nemlig's offer lists (/tilbud): Skarp pris, Priskup, Dagstilbud,
+        Undgå madspild and gifts. Read only."""
+        settings = await self._search_settings()
+        page = await self._api("GET", f"{BASE}/tilbud", params={"GetAsJson": "1", "d": "1"}) or {}
+        spots = [
+            (OFFER_LISTS[head], c["ProductGroupId"])
+            for c in page.get("content") or []
+            if c.get("TemplateName") == "productlistshowallspot"
+            and c.get("ProductGroupId")
+            and (head := str(c.get("Heading") or "").strip().lower()) in OFFER_LISTS
+        ]
+        if not spots:
+            raise StoreError(
+                "Fandt ingen tilbudslister på nemlig.com/tilbud. Siden kan have ændret sig."
+            )
+        if not self._user_id:
+            raise StoreError("nemlig gav ingen bruger. Log ind på nemlig for at se tilbud.")
+        path = "/".join(str(settings[k]) for k in ("timestamp", "timeslotUtc", "deliveryZoneId"))
+        products: dict[str, Product] = {}
+        for name, group in spots:
+            data = await self._api(
+                "GET",
+                f"{BASE}/webapi/{path}/{self._user_id}/Products/GetByProductGroupId",
+                params={"productGroupId": group, "pageIndex": 0, "pagesize": limit},
+            )
+            for hit in (data or {}).get("Products") or []:
+                if hit.get("Id") and str(hit["Id"]) not in products:
+                    product = self._product(hit)
+                    product.campaign = product.campaign or name
+                    products[product.id] = product
+        return list(products.values())
+
     def _product(self, hit: dict) -> Product:
         avail = hit.get("Availability") or {}
         campaign = hit.get("Campaign") or None
         price = _money(hit.get("Price")) or Decimal(0)
         now = _discount_price(campaign)
-        offer = _offer(campaign)
-        if offer == "Tilbud" and now and price > now:
+        if now is not None and now >= price:  # seen live: a "Dagstilbud" above the normal price
+            now = None
+        offer = _offer(campaign) if now is not None or not _discount_price(campaign) else None
+        if (campaign or {}).get("Type") == FREE and now is not None:
+            offer = "Gratis"
+        elif offer == "Tilbud" and now is not None:
             offer = f"Tilbud, før {_kr(price)} kr"
+        limit = (campaign or {}).get("MaxQuantity") or None
+        if offer and limit:
+            offer += f" (max {limit} stk.)"
         return Product(
             store=self.name,
             id=str(hit["Id"]),
             name=hit.get("Name", ""),
-            price=now or price,
+            price=price if now is None else now,
             brand=hit.get("Brand") or None,
             size=hit.get("Description") or None,
-            unit_price=(now and _money(campaign.get("CampaignUnitPrice")))
-            or _money(hit.get("UnitPriceCalc")),
+            unit_price=_money(campaign.get("CampaignUnitPrice"))
+            if now is not None
+            else _money(hit.get("UnitPriceCalc")),
             unit=_unit(hit.get("UnitPriceLabel")),
             ean=None,  # not in nemlig's search answers (docs/research.md)
             on_offer=bool(offer),
             offer_text=offer,
-            before_price=price if now and price > now else None,
+            before_price=price if now is not None else None,
             offer_until=_until(campaign),
             available=avail.get("IsDeliveryAvailable", True)
             and avail.get("IsAvailableInStock", True),
             category=hit.get("Category") or None,
+            campaign="Gratis"
+            if offer and offer.startswith("Gratis")
+            else hit.get("CampaignAttribute"),
+            max_per_order=limit if offer else None,
         )
 
     async def _basket(self) -> dict:

@@ -54,7 +54,9 @@ class FakeBilka:
         if path == "/api/shop/v6/Cart":
             return httpx.Response(200, json=self.cart)
         if path == "/1/indexes/*/queries":
-            return httpx.Response(200, json={"results": [fixture("algolia_products")]})
+            params = json.loads(request.content)["requests"][0]["params"]
+            name = "algolia_offers" if "isInOffer" in params else "algolia_products"
+            return httpx.Response(200, json={"results": [fixture(name)]})
         if path == "/api/shop/v6/ChangeLineCount":
             pid, count = request.url.params["productId"], int(request.url.params["count"])
             if pid == "88672":
@@ -323,3 +325,13 @@ def test_se_her_gets_a_real_text(store):
 def test_no_offer_has_no_before_price(store):
     p = store._product(_hit("", 10995, 8500, 14167), "s")
     assert (p.on_offer, p.before_price, p.unit_price) == (False, None, Decimal("141.67"))
+
+
+async def test_offers_filter_on_our_store(store, fake):
+    fake.cart = {**fake.cart, "deliveryAddress": {**fake.cart["deliveryAddress"], "sid": "1653"}}
+    offers = await store.offers(10)
+    [call] = [r for r in fake.requests if r.url.path == "/1/indexes/*/queries"]
+    assert "isInOffer%3A1653" in json.loads(call.content)["requests"][0]["params"]
+    by_id = {p.id: p for p in offers}
+    assert (by_id["40258"].campaign, by_id["40258"].price) == ("Skarp pris", Decimal(25))
+    assert (by_id["18381"].campaign, by_id["18381"].offer_text) == ("Mix", "Mix 10 for 25,00")

@@ -1,0 +1,494 @@
+{
+  "Products": [
+    {
+      "Score": 58.580326,
+      "TemplateName": "productlistitem",
+      "PrimaryImage": "https://www.nemlig.com/scommerce/images/angus-butler-steak-oeko.jpg?i=CRLSXmDs/5071238",
+      "Availability": {
+        "IsDeliveryAvailable": true,
+        "IsAvailableInStock": true,
+        "ReasonMessageKeys": []
+      },
+      "CampaignAttribute": "Dagstilbud",
+      "Id": "5071238",
+      "Name": "Angus butler steak øko.",
+      "Category": "Kød & fisk",
+      "SubCategory": "Bøffer - Oksekød",
+      "Url": "angus-butler-steak-oeko-5071238",
+      "UnitPrice": "294,87 kr./Kg.",
+      "UnitPriceCalc": 294.88,
+      "UnitPriceLabel": "kr./Kg.",
+      "DiscountItem": false,
+      "Description": "2 stk. / 280-320 g",
+      "SaleBeforeLastSalesDate": 4,
+      "Price": 82.565,
+      "Campaign": {
+        "DiscountSavings": -2.385,
+        "MaxQuantity": 0,
+        "CampaignPrice": 84.95,
+        "CampaignUnitPrice": 303.39,
+        "Type": "ProductCampaignDiscount",
+        "Code": "D",
+        "IntervalStart": "2026-11-01T23:00:00Z",
+        "IntervalEnd": "2026-11-03T22:59:59Z",
+        "ShowCampaignInterval": false
+      },
+      "Labels": [
+        "Øko (dansk)",
+        "Produceret i Danmark",
+        "Bedre dyrevelfærd (3 hjerter)",
+        "Køl",
+        "Premium"
+      ],
+      "Favorite": false,
+      "SearchDescription": [
+        "BØFFER",
+        "OKSEKØD",
+        "OKSEBØF"
+      ],
+      "ProductSubGroupNumber": "6300100003",
+      "ProductSubGroupName": "Oksekød udskæringer, fersk",
+      "ProductCategoryGroupNumber": "6300100000",
+      "ProductCategoryGroupName": "Oksekød, fersk",
+      "ProductMainGroupNumber": "6300000000",
+      "ProductMainGroupName": "Kød og fisk"
+    },
+    {
+      "Score": 58.580326,
+      "TemplateName": "productlistitem",
+      "PrimaryImage": "https://www.nemlig.com/scommerce/images/angus-entrecoteboeffer-oeko.jpg?i=CRLSXmDs/5071247",
+      "Availability": {
+        "IsDeliveryAvailable": true,
+        "IsAvailableInStock": true,
+        "ReasonMessageKeys": []
+      },
+      "CampaignAttribute": "Dagstilbud",
+      "Id": "5071247",
+      "Name": "Angus entrecotebøffer øko.",
+      "Category": "Kød & fisk",
+      "SubCategory": "Bøffer - Oksekød",
+      "Url": "angus-entrecoteboeffer-oeko-5071247",
+      "UnitPrice": "397,80 kr./Kg.",
+      "UnitPriceCalc": 397.8,
+      "UnitPriceLabel": "kr./Kg.",
+      "DiscountItem": false,
+      "Description": "2 stk. / 380-420 g",
+      "SaleBeforeLastSalesDate": 4,
+      "Price": 151.165,
+      "Campaign": {
+        "DiscountSavings": 11.215,
+        "MaxQuantity": 0,
+        "CampaignPrice": 139.95,
+        "CampaignUnitPrice": 368.29,
+        "Type": "ProductCampaignDiscount",
+        "Code": "D",
+        "IntervalStart": "2026-11-01T23:00:00Z",
+        "IntervalEnd": "2026-11-03T22:59:59Z",
+        "ShowCampaignInterval": false
+      },
+      "Labels": [
+        "Øko (dansk)",
+        "Produceret i Danmark",
+        "Bedre dyrevelfærd (3 hjerter)",
+        "Køl",
+        "Premium"
+      ],
+      "Favorite": false,
+      "SearchDescription": [
+        "BØFFER",
+        "OKSEKØD",
+        "OKSEBØF"
+      ],
+      "ProductSubGroupNumber": "6300100003",
+      "ProductSubGroupName": "Oksekød udskæringer, fersk",
+      "ProductCategoryGroupNumber": "6300100000",
+      "ProductCategoryGroupName": "Oksekød, fersk",
+      "ProductMainGroupNumber": "6300000000",
+      "ProductMainGroupName": "Kød og fisk"
+    },
+    {
+      "Score": 58.580326,
+      "TemplateName": "productlistitem",
+      "PrimaryImage": "https://www.nemlig.com/scommerce/images/angus-tykstegsboeffer-oeko.jpg?i=CRLSXmDs/5071248",
+      "Availability": {
+        "IsDeliveryAvailable": true,
+        "IsAvailableInStock": true,
+        "ReasonMessageKeys": []
+      },
+      "CampaignAttribute": "Dagstilbud",
+      "Id": "5071248",
+      "Name": "Angus tykstegsbøffer øko.",
+      "Category": "Kød & fisk",
+      "SubCategory": "Bøffer - Oksekød",
+      "Url": "angus-tykstegsboeffer-oeko-5071248",
+      "UnitPrice": "392,37 kr./Kg.",
+      "UnitPriceCalc": 392.38,
+      "UnitPriceLabel": "kr./Kg.",
+      "DiscountItem": false,
+      "Description": "2 stk. / 280-320 g",
+      "SaleBeforeLastSalesDate": 4,
+      "Price": 109.865,
+      "Campaign": {
+        "DiscountSavings": 10.915,
+        "MaxQuantity": 0,
+        "CampaignPrice": 98.95,
+        "CampaignUnitPrice": 353.39,
+        "Type": "ProductCampaignDiscount",
+        "Code": "D",
+        "IntervalStart": "2026-11-01T23:00:00Z",
+        "IntervalEnd": "2026-11-03T22:59:59Z",
+        "ShowCampaignInterval": false
+      },
+      "Labels": [
+        "Øko (dansk)",
+        "Produceret i Danmark",
+        "Bedre dyrevelfærd (3 hjerter)",
+        "Køl",
+        "Premium"
+      ],
+      "Favorite": false,
+      "SearchDescription": [
+        "BØFFER",
+        "OKSEKØD",
+        "OKSEBØF"
+      ],
+      "ProductSubGroupNumber": "6300100003",
+      "ProductSubGroupName": "Oksekød udskæringer, fersk",
+      "ProductCategoryGroupNumber": "6300100000",
+      "ProductCategoryGroupName": "Oksekød, fersk",
+      "ProductMainGroupNumber": "6300000000",
+      "ProductMainGroupName": "Kød og fisk"
+    },
+    {
+      "Score": 58.580326,
+      "TemplateName": "productlistitem",
+      "PrimaryImage": "https://www.nemlig.com/scommerce/images/angus-ribeyeboeffer-oeko.jpg?i=CRLSXmDs/5071253",
+      "Availability": {
+        "IsDeliveryAvailable": true,
+        "IsAvailableInStock": true,
+        "ReasonMessageKeys": []
+      },
+      "CampaignAttribute": "Dagstilbud",
+      "Id": "5071253",
+      "Name": "Angus ribeyebøffer øko.",
+      "Category": "Kød & fisk",
+      "SubCategory": "Bøffer - Oksekød",
+      "Url": "angus-ribeyeboeffer-oeko-5071253",
+      "UnitPrice": "436,48 kr./Kg.",
+      "UnitPriceCalc": 436.49,
+      "UnitPriceLabel": "kr./Kg.",
+      "DiscountItem": false,
+      "Description": "2 stk. / 380-420 g",
+      "SaleBeforeLastSalesDate": 4,
+      "Price": 165.865,
+      "Campaign": {
+        "DiscountSavings": 10.915,
+        "MaxQuantity": 0,
+        "CampaignPrice": 154.95,
+        "CampaignUnitPrice": 407.76,
+        "Type": "ProductCampaignDiscount",
+        "Code": "D",
+        "IntervalStart": "2026-11-01T23:00:00Z",
+        "IntervalEnd": "2026-11-03T22:59:59Z",
+        "ShowCampaignInterval": false
+      },
+      "Labels": [
+        "Øko (dansk)",
+        "Produceret i Danmark",
+        "Bedre dyrevelfærd (3 hjerter)",
+        "Køl",
+        "Premium"
+      ],
+      "Favorite": false,
+      "SearchDescription": [
+        "BØFFER",
+        "OKSEKØD",
+        "OKSEBØF"
+      ],
+      "ProductSubGroupNumber": "6300100003",
+      "ProductSubGroupName": "Oksekød udskæringer, fersk",
+      "ProductCategoryGroupNumber": "6300100000",
+      "ProductCategoryGroupName": "Oksekød, fersk",
+      "ProductMainGroupNumber": "6300000000",
+      "ProductMainGroupName": "Kød og fisk"
+    },
+    {
+      "Score": 58.580326,
+      "TemplateName": "productlistitem",
+      "PrimaryImage": "https://www.nemlig.com/scommerce/images/vildsvine-steaks.jpg?i=VG3Sub0J/5605313",
+      "Availability": {
+        "IsDeliveryAvailable": true,
+        "IsAvailableInStock": true,
+        "ReasonMessageKeys": []
+      },
+      "CampaignAttribute": "Dagstilbud",
+      "Id": "5605313",
+      "Name": "Vildsvine steaks",
+      "Category": "Kød & fisk",
+      "SubCategory": "Vildt",
+      "Url": "vildsvine-steaks-5605313",
+      "UnitPrice": "389,75 kr./Kg.",
+      "UnitPriceCalc": 389.75,
+      "UnitPriceLabel": "kr./Kg.",
+      "DiscountItem": false,
+      "Description": "200 g",
+      "SaleBeforeLastSalesDate": 4,
+      "Price": 77.95,
+      "Campaign": {
+        "DiscountSavings": 24.0,
+        "MaxQuantity": 0,
+        "CampaignPrice": 53.95,
+        "CampaignUnitPrice": 269.75,
+        "Type": "ProductCampaignDiscount",
+        "Code": "D",
+        "IntervalStart": "2026-11-01T23:00:00Z",
+        "IntervalEnd": "2026-11-03T22:59:59Z",
+        "ShowCampaignInterval": false
+      },
+      "Labels": [
+        "Produceret i Danmark",
+        "Køl"
+      ],
+      "Favorite": false,
+      "SearchDescription": [
+        "VILDSVINESTEAKS",
+        "GRIS",
+        "STEAKS"
+      ],
+      "ProductSubGroupNumber": "6300400001",
+      "ProductSubGroupName": "Vildt, fersk",
+      "ProductCategoryGroupNumber": "6300400000",
+      "ProductCategoryGroupName": "Lam og vildt, fersk",
+      "ProductMainGroupNumber": "6300000000",
+      "ProductMainGroupName": "Kød og fisk"
+    },
+    {
+      "Score": 58.580326,
+      "TemplateName": "productlistitem",
+      "PrimaryImage": "https://www.nemlig.com/scommerce/images/skalrejer-soekogte.jpg?i=5AvoTYzW/5605532",
+      "Availability": {
+        "IsDeliveryAvailable": true,
+        "IsAvailableInStock": true,
+        "ReasonMessageKeys": []
+      },
+      "CampaignAttribute": "Dagstilbud",
+      "Id": "5605532",
+      "Name": "Skalrejer (søkogte)",
+      "Category": "Kød & fisk",
+      "Brand": "Glyngøre",
+      "SubCategory": "Skaldyr",
+      "Url": "skalrejer-soekogte-5605532",
+      "UnitPrice": "168,65 kr./Kg.",
+      "UnitPriceCalc": 168.66,
+      "UnitPriceLabel": "kr./Kg.",
+      "DiscountItem": false,
+      "Description": "400 g / Glyngøre",
+      "SaleBeforeLastSalesDate": 2,
+      "Price": 67.462,
+      "Campaign": {
+        "DiscountSavings": 4.512,
+        "MaxQuantity": 0,
+        "CampaignPrice": 62.95,
+        "CampaignUnitPrice": 157.38,
+        "Type": "ProductCampaignDiscount",
+        "Code": "D",
+        "IntervalStart": "2026-11-01T23:00:00Z",
+        "IntervalEnd": "2026-11-03T22:59:59Z",
+        "ShowCampaignInterval": false
+      },
+      "Labels": [
+        "Nøglehulsmærket",
+        "MSC-mærket"
+      ],
+      "Favorite": false,
+      "SearchDescription": [
+        "REJER",
+        "FISK",
+        "SKALDYR"
+      ],
+      "ProductSubGroupNumber": "6300600005",
+      "ProductSubGroupName": "Skaldyr, fersk",
+      "ProductCategoryGroupNumber": "6300600000",
+      "ProductCategoryGroupName": "Fisk og skaldyr, fersk",
+      "ProductMainGroupNumber": "6300000000",
+      "ProductMainGroupName": "Kød og fisk"
+    },
+    {
+      "Score": 19.066013,
+      "TemplateName": "productlistitem",
+      "PrimaryImage": "https://www.nemlig.com/scommerce/images/rullepoelse-oeko.jpg?i=S5VoKk5m/5041818",
+      "Availability": {
+        "IsDeliveryAvailable": true,
+        "IsAvailableInStock": true,
+        "ReasonMessageKeys": []
+      },
+      "CampaignAttribute": "Dagstilbud",
+      "Id": "5041818",
+      "Name": "Rullepølse øko.",
+      "Category": "Køl",
+      "Brand": "Defco",
+      "SubCategory": "Pålæg i Skiver",
+      "Url": "rullepoelse-oeko-5041818",
+      "UnitPrice": "386,00 kr./Kg.",
+      "UnitPriceCalc": 386.0,
+      "UnitPriceLabel": "kr./Kg.",
+      "DiscountItem": true,
+      "Description": "90 g / Defco",
+      "SaleBeforeLastSalesDate": 7,
+      "Price": 23.16,
+      "Campaign": {
+        "DiscountSavings": 4.16,
+        "MaxQuantity": 0,
+        "CampaignPrice": 19.0,
+        "CampaignUnitPrice": 316.67,
+        "Type": "ProductCampaignDiscount",
+        "Code": "D",
+        "IntervalStart": "2026-11-01T23:00:00Z",
+        "IntervalEnd": "2026-11-03T22:59:59Z",
+        "ShowCampaignInterval": false
+      },
+      "Labels": [
+        "Øko (dansk)",
+        "Øko (europæisk)",
+        "Køl",
+        "Discount"
+      ],
+      "Favorite": false,
+      "SearchDescription": [
+        "KØDPÅLÆG"
+      ],
+      "ProductSubGroupNumber": "0101000003",
+      "ProductSubGroupName": "Pålæg i Skiver",
+      "ProductCategoryGroupNumber": "0101000000",
+      "ProductCategoryGroupName": "Pålæg",
+      "ProductMainGroupNumber": "0100000000",
+      "ProductMainGroupName": "Køl"
+    },
+    {
+      "Score": 2.7565393,
+      "TemplateName": "productlistitem",
+      "PrimaryImage": "https://www.nemlig.com/scommerce/images/eddike-oeko.jpg?i=QopJLJTA/5602203",
+      "Availability": {
+        "IsDeliveryAvailable": true,
+        "IsAvailableInStock": true,
+        "ReasonMessageKeys": []
+      },
+      "CampaignAttribute": "Dagstilbud",
+      "Id": "5602203",
+      "Name": "Eddike øko.",
+      "Category": "Kolonial",
+      "Brand": "Nemlig Måltider",
+      "SubCategory": "Saucer tør",
+      "Url": "eddike-oeko-5602203",
+      "UnitPrice": "159,79 kr./Ltr.",
+      "UnitPriceCalc": 159.8,
+      "UnitPriceLabel": "kr./Ltr.",
+      "DiscountItem": false,
+      "Description": "50 g / Pure Garden",
+      "SaleBeforeLastSalesDate": 7,
+      "Price": 7.95,
+      "Campaign": {
+        "DiscountSavings": 2.0,
+        "MaxQuantity": 0,
+        "CampaignPrice": 5.95,
+        "CampaignUnitPrice": 119.6,
+        "Type": "ProductCampaignDiscount",
+        "Code": "D",
+        "IntervalStart": "2026-10-22T22:00:00Z",
+        "IntervalEnd": "2026-11-25T22:59:59Z",
+        "ShowCampaignInterval": false
+      },
+      "Labels": [
+        "Øko (dansk)"
+      ],
+      "Favorite": false,
+      "SearchDescription": [
+        "EDDIKE"
+      ],
+      "ProductSubGroupNumber": "1000400015",
+      "ProductSubGroupName": "Eddike, diverse",
+      "ProductCategoryGroupNumber": "1000400000",
+      "ProductCategoryGroupName": "Olier og eddike",
+      "ProductMainGroupNumber": "1000000000",
+      "ProductMainGroupName": "Tørvarer"
+    },
+    {
+      "Score": 2.7565393,
+      "TemplateName": "productlistitem",
+      "PrimaryImage": "https://www.nemlig.com/scommerce/images/worcestersauce.jpg?i=QopJLJTA/5064098",
+      "Availability": {
+        "IsDeliveryAvailable": true,
+        "IsAvailableInStock": true,
+        "ReasonMessageKeys": []
+      },
+      "CampaignAttribute": "Dagstilbud",
+      "Id": "5064098",
+      "Name": "Worcestersauce",
+      "Category": "Kolonial",
+      "Brand": "Nemlig Måltider",
+      "SubCategory": "Grillsauce / Olie / Marinade",
+      "Url": "worcestersauce-5064098",
+      "UnitPrice": "199,00 kr./Ltr.",
+      "UnitPriceCalc": 199.0,
+      "UnitPriceLabel": "kr./Ltr.",
+      "DiscountItem": false,
+      "Description": "50 g / Pure Garden",
+      "SaleBeforeLastSalesDate": 7,
+      "Price": 9.95,
+      "Campaign": {
+        "DiscountSavings": 1.0,
+        "MaxQuantity": 0,
+        "CampaignPrice": 8.95,
+        "CampaignUnitPrice": 179.0,
+        "Type": "ProductCampaignDiscount",
+        "Code": "D",
+        "IntervalStart": "2026-09-24T22:00:00Z",
+        "IntervalEnd": "2026-11-15T22:59:59Z",
+        "ShowCampaignInterval": false
+      },
+      "Labels": [],
+      "Favorite": false,
+      "SearchDescription": [
+        "WORCESTERSAUCE"
+      ],
+      "ProductSubGroupNumber": "1003800001",
+      "ProductSubGroupName": "Kryddersauce og essens",
+      "ProductCategoryGroupNumber": "1003800000",
+      "ProductCategoryGroupName": "Saucer og smagsforstærkere",
+      "ProductMainGroupNumber": "1000000000",
+      "ProductMainGroupName": "Tørvarer"
+    }
+  ],
+  "ProductGroupId": "19b12525-8929-4857-a271-ac61cea61309",
+  "Start": 0,
+  "NumFound": 15,
+  "ExceptionMessage": null,
+  "Advertisements": [
+    {
+      "Key": 4,
+      "Value": {
+        "TemplateName": "advertisement",
+        "Name": "PK_jule-legetoej_uge45",
+        "Link": {
+          "Anchor": "",
+          "Class": "",
+          "Text": "Jul",
+          "Query": "",
+          "Title": "Jul",
+          "Url": "/jul",
+          "Target": "",
+          "TargetId": "6ba12828-edd1-430c-b05b-29c87f52f1c8",
+          "LinkType": 4
+        },
+        "Image": {
+          "AltText": "24 små overraskelser. Og det er kun til et barn. Julen er ikke altid nem. Indkøbene er. ",
+          "MediaType": 0,
+          "Url": "https://www.nemlig.com/scommerce/images/Julekampagneinterne bannereuge4520 Product card  search ad 272x420.jpg?i={C225E1D6-C3B2-4085-B0D3-70E75DF8CBDF}&v=AAOa3q44"
+        },
+        "ImageMobile": null,
+        "ImageTablet": null,
+        "Size": null
+      }
+    }
+  ]
+}
