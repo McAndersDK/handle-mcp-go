@@ -36,6 +36,7 @@ RETRYABLE = (httpx.TimeoutException, httpx.NetworkError, httpx.RemoteProtocolErr
 log = logging.getLogger(__name__)
 
 GIGYA = "https://accounts.eu1.gigya.com"
+# Public keys from bilkatogo.dk's own JavaScript. Not secrets: every visitor's browser sends them.
 GIGYA_API_KEY = "3_tA6BbV434FQqN73HnUG1KA3qFv8KiG4OqLu9eWPh7sKRqRizH5Vfv5Larmgrb4I2"
 GIGYA_BAD_LOGIN = 403042
 API = "https://api.bilkatogo.dk/api"

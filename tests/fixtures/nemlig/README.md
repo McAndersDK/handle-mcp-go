@@ -1,6 +1,10 @@
 Shapes from eisbaw/nemlig_cli `nemlig_api.md` (MIT), with personal data replaced by
-fixed test values (Kunde Eksempel, Testvej 1, 9999 Eksempelby, kunde@example.com).
-Replace with real, redacted captures when they exist.
+fixed test values (Kunde Eksempel, Testvej 1, 9999 Eksempelby, kunde@example.com). These
+files are shapes, not captures, unless a section below says otherwise.
+
+`order_history_flex.json` and `order_details_flex.json` are real captures (2026-11-02) of an
+order with flexible delivery. Name, address, notes, coupon, DebitorId and KVHX are replaced
+with "X", and the order number is a test value. Product lines, amounts and dates are real.
 
 `search.json` `Recipes`: the fields documented in `nemlig_api.md` (`Id`, `Name`, `Url`,
 `TotalTime`, `NumberOfPersons`). Not a live capture yet.

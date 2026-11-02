@@ -1,6 +1,6 @@
 # handle-mcp
 
-A local MCP server (stdio) for Danish grocery stores with home delivery. Full goal and roadmap: the project's `CLAUDE_CODE_PROMPT.md`. Findings about the stores: `docs/research.md`.
+A local MCP server (stdio) for Danish grocery stores with home delivery. Goal and roadmap: the README. Findings about the stores: `docs/research.md`. How to contribute: `CONTRIBUTING.md`.
 
 ## Rules (never break)
 
@@ -52,7 +52,7 @@ HANDLE_LIVE=1 uv run pytest -m live   # read-only smoke tests against real store
 
 ## Workflow
 
-Build in the steps from `CLAUDE_CODE_PROMPT.md`. After each step: run the tests, show the result, wait for OK.
+One PR per change. Run the tests before you push, show the result, wait for OK.
 
 ## Branches, commits and PRs (gitmoji)
 
