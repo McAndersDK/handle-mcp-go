@@ -1,15 +1,17 @@
+<div align="center">
+
 # 🧺 handle-mcp
 
-<p>
-<a href="https://github.com/NJohansen/handle-mcp/actions/workflows/ci.yml"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/github/ci/NJohansen/handle-mcp.svg?variant=outline&mode=dark"><img alt="CI" src="https://shieldcn.dev/github/ci/NJohansen/handle-mcp.svg?variant=outline&mode=light"></picture></a>
-<a href="LICENSE"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/license-MIT-grey.svg?variant=outline&mode=dark"><img alt="License: MIT" src="https://shieldcn.dev/badge/license-MIT-grey.svg?variant=outline&mode=light"></picture></a>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/python-3.12%2B-grey.svg?variant=outline&mode=dark"><img alt="Python 3.12+" src="https://shieldcn.dev/badge/python-3.12%2B-grey.svg?variant=outline&mode=light"></picture>
-<a href="https://modelcontextprotocol.io"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/MCP-server-grey.svg?variant=outline&mode=dark"><img alt="MCP server" src="https://shieldcn.dev/badge/MCP-server-grey.svg?variant=outline&mode=light"></picture></a>
-</p>
+<a href="https://modelcontextprotocol.io"><img src="docs/badges/mcp.svg" alt="made for MCP" height="26"></a>
+<img src="docs/badges/stores.svg" alt="stores: nemlig, BilkaToGo" height="26">
+<img src="docs/badges/python.svg" alt="built with Python 3.12+" height="26">
+<a href="LICENSE"><img src="docs/badges/license.svg" alt="license MIT" height="26"></a>
+
+<img src="docs/hero.svg" alt="Pixels move from an AI sparkle to a shopping basket, a delivery van, a box and a meal" width="600">
 
 **Your AI agent plans the week's meals on a budget, finds the cheapest cart and fills it. You approve and pay.**
 
-<p align="center"><img src="docs/hero.svg" alt="Pixels move from an AI sparkle to a shopping basket, a delivery van, a box and a meal" width="600"></p>
+</div>
 
 A local MCP server for Danish grocery stores with home delivery. An AI agent can search products, read this week's offers, compare a shopping list across stores and fill the cart. **You always approve and pay yourself**, on the store's own website.
 
