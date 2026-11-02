@@ -621,3 +621,19 @@ def test_offer_limit_caps_a_multi_buy():
     mix.offer_text, mix.max_per_order = "Mix 10 for 25,00", 10
     assert best_match("10 x bananer", [mix]).line_total == Decimal(25)
     assert best_match("20 x bananer", [mix]).line_total == Decimal("52.50")  # 10 on offer
+
+
+def test_pieces_pick_the_cheapest_for_the_count():
+    """Live 2026-11-02, Bilka: '6 x bananer' took 2 x 4-pack (8 stk, 20 kr) on price per piece."""
+    four = p("x", "four", "Bananer 4 pak øko", "10.00", "4 stk")
+    one = p("x", "one", "Bananer", "2.75", "1 stk")
+    six = p("x", "six", "Bananer 6 pak øko", "18.00", "6 stk")
+    line = best_match("6 x bananer", [four, one, six])
+    assert (line.product.id, line.quantity, line.line_total) == ("one", 6, Decimal("16.50"))
+    assert "Ingen mængde" not in (line.note or "")
+
+
+def test_pieces_say_when_packs_give_more():
+    four = p("x", "four", "Bananer", "8.00", "4 stk")
+    line = best_match("6 x bananer", [four])
+    assert line.quantity == 2 and "8 stk" in line.note

@@ -317,6 +317,8 @@ class NemligStore:
             for hit in (data or {}).get("Products") or []:
                 if hit.get("Id") and str(hit["Id"]) not in products:
                     product = self._product(hit)
+                    if not product.on_offer:  # seen live: a "Dagstilbud" above the normal price
+                        continue
                     product.campaign = product.campaign or name
                     products[product.id] = product
         if failed and len(failed) == len(spots):

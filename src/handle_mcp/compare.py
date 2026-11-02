@@ -357,7 +357,15 @@ def _best(item: str, products: list[Any], on: date | None = None) -> BasketLine:
             )
             have = _pack_size(product)
             amount = have[1] * count if have else Decimal(0)
-            value = (cost,) if size else _per_unit(product, quantity, count, on)
+            # '6 x bananer': pieces of a stk pack. Compare what the 6 cost, not the price per piece.
+            by_piece = not size and quantity > 1 and bool(have) and have[0] == "stk"
+            value = (
+                (cost,)
+                if size
+                else (0, cost)
+                if by_piece
+                else _per_unit(product, quantity, count, on)
+            )
             ranked.append((-score, fit, size_rank, value, cost, -amount, count, product))
     if not ranked:
         return _guess(item, quantity, size, products, words, on)
@@ -381,7 +389,12 @@ def _best(item: str, products: list[Any], on: date | None = None) -> BasketLine:
         note = "Usikkert match. Tjek varen."
     elif size and count != quantity:
         note = f"{count} x {_get(product, 'size') or 'pakke'} for at nå mængden."
-    if not size:
+    have = _pack_size(product)
+    if not size and quantity > 1 and have and have[0] == "stk":
+        if have[1] * count > quantity:
+            extra = f"{count} x {_get(product, 'size') or 'pakke'} = {have[1] * count:g} stk."
+            note = " ".join(filter(None, [note, extra]))
+    elif not size:
         hint = "Ingen mængde på listen: billigst pr. kg, l eller stk. Skriv en mængde, fx '1 kg'."
         note = " ".join(filter(None, [note, hint]))
     note = " ".join(filter(None, [note, _multi_hint(product, count, on)]))

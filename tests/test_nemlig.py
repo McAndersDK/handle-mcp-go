@@ -480,7 +480,8 @@ async def test_offers_reads_every_offer_list(store, fake):
 
 
 async def test_offer_above_the_normal_price_is_not_an_offer(store):
-    steak = next(p for p in await store.offers(10) if p.id == "5071238")
+    hit = next(h for h in fixture("offers_dagstilbud")["Products"] if h["Id"] == "5071238")
+    steak = store._product(hit)
     assert (steak.price, steak.before_price, steak.on_offer) == (Decimal("82.565"), None, False)
 
 
@@ -531,3 +532,7 @@ async def test_one_broken_offer_list_does_not_hide_the_others(store, fake):
     fake.scripted[url] = [404]  # the first list (Skarp pris) fails
     offers = await store.offers(10)
     assert "Skarp pris" not in {p.campaign for p in offers} and offers
+
+
+async def test_offers_leave_out_an_offer_above_the_normal_price(store):
+    assert "5071238" not in {p.id for p in await store.offers(10)}
