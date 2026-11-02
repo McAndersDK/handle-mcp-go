@@ -12,6 +12,15 @@ uv run ruff check . && uv run ruff format --check .
 
 Live tests (`HANDLE_LIVE=1 uv run pytest -m live -s`) call the real stores with **your own** accounts, saved with `handle-mcp login <store>`. They only read. CI never runs them.
 
+## Add a store
+
+1. Create `src/handle_mcp/stores/<name>.py` with a class that has every method in `stores.Store`.
+2. Raise `StoreError("clear Danish message")` for expected failures, `NotImplementedError` for what the store cannot do.
+3. Add one line to `STORES` in `src/handle_mcp/stores/__init__.py`.
+4. Tests: real, redacted answers in `tests/fixtures/<name>/`, HTTP mocked with `httpx.MockTransport`.
+
+No change to `server.py` or the tools. Store facts: [docs/research.md](docs/research.md).
+
 ## Pull requests
 
 - Branch: `<type>/<slug>`, type is one of `feature`, `fix`, `hotfix`, `refactor`, `docs`, `test`, `chore`. One type per branch.
