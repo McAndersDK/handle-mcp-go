@@ -1,6 +1,8 @@
 """A fixed list of ~50 everyday items, priced live in every store.
 
-A matcher change that picks the wrong product shows up here before anyone shops.
+The MCP finds and counts, the AI model picks. So an item fails only when no candidate fits:
+the right product never reached the model. A wrong suggestion (or øko too dear) is a warning,
+printed with "!", because the model can still pick another candidate.
 The list is data: tests/live_list.json. The offline tests below check the list and the checker.
 
 Run: HANDLE_LIVE=1 uv run pytest -m live -s tests/test_live_list.py
@@ -30,23 +32,34 @@ def items_for(store: str) -> list[dict[str, Any]]:
     return [e for e in LIST if store in e.get("stores", STORES)]
 
 
-def problems(entry: dict[str, Any], line: BasketLine | None) -> list[str]:
-    """What is wrong with the pick for one list entry. Empty when the pick is fine."""
-    if line is None or line.product is None:
-        return ["ikke fundet"]
-    if line.guess:
-        return [f"gæt: {get(line.product, 'name')}"]
-    text = f"{get(line.product, 'name')} {get(line.product, 'brand') or ''}".lower()
+def problems(entry: dict[str, Any], cand: dict[str, Any]) -> list[str]:
+    """What is wrong with one candidate for one list entry. Empty when it fits."""
+    text = f"{cand['name']} {cand.get('brand') or ''}".lower()
     out = [f"mangler '{w}'" for w in entry.get("has", []) if not _any(w, text)]
     out += [f"har '{w}'" for w in entry.get("not", []) if _any(w, text)]
-    if "max_kr" in entry and line.line_total > Decimal(str(entry["max_kr"])):
-        out.append(f"{line.line_total} kr. > {entry['max_kr']} kr.")
+    if "max_kr" in entry and Decimal(str(cand["line_total"])) > Decimal(str(entry["max_kr"])):
+        out.append(f"{cand['line_total']} kr. > {entry['max_kr']} kr.")
+    return out
+
+
+def check(entry: dict[str, Any], line: BasketLine | None) -> tuple[list[str], list[str]]:
+    """(fail, warn). Fail: no candidate fits. Warn: the suggestion is wrong or øko too dear."""
+    if line is None or line.product is None:
+        return ["ikke fundet"], []
+    cands = [c for c in line.candidates if not (c.get("suggested") and line.guess)]
+    if line.guess:
+        warn = [f"gæt: {get(line.product, 'name')}"]
+    else:
+        first = next((c for c in line.candidates if c.get("suggested")), None)
+        warn = problems(entry, first) if first else []
+    if not any(not problems(entry, c) for c in cands):
+        return [f"ingen kandidat passer ({len(cands)} vist)", *warn], []
     if line.oeko:
         others = [c for c in line.candidates if not c.get("suggested")]
-        plain = [a["line_total"] for a in others if not a.get("oeko") and _fits(entry, a)]
+        plain = [c["line_total"] for c in others if not c.get("oeko") and _fits(entry, c)]
         if plain and min(plain) * OEKO_MARGIN < line.line_total:
-            out.append(f"øko {line.line_total} kr. mod {min(plain)} kr.")
-    return out
+            warn.append(f"øko {line.line_total} kr. mod {min(plain)} kr.")
+    return [], warn
 
 
 def _fits(entry: dict[str, Any], alt: dict[str, Any]) -> bool:
@@ -83,44 +96,75 @@ def test_list_is_about_50_unique_items():
     assert len(items_for("nemlig")) >= 45 and len(items_for("bilkatogo")) >= 45
 
 
-def _line(name, total="10", oeko=False, guess=False, candidates=(), brand=None):
-    product = Product("x", "1", name, Decimal(total), brand)
-    return BasketLine(name, 1, product, Decimal(total), True, None, guess, list(candidates), oeko)
+def _c(name, total="10", suggested=False, oeko=False, brand=None, category=None):
+    c = {"name": name, "line_total": Decimal(total), "brand": brand, "category": category}
+    return c | {"suggested": suggested, "oeko": oeko}
 
 
-def test_checker_finds_wrong_words_price_and_guess():
+def _line(*cands, guess=False):
+    """A BasketLine whose suggestion is the first candidate."""
+    first = cands[0]
+    product = Product("x", "1", first["name"], first["line_total"], first["brand"])
+    cands = [first | {"suggested": True}, *cands[1:]]
+    total, oeko = first["line_total"], first["oeko"]
+    return BasketLine("x", 1, product, total, True, None, guess, cands, oeko)
+
+
+def test_checker_finds_wrong_words_and_price():
     garlic = {"item": "hvidløg", "has": ["hvidløg"], "not": ["olie"], "max_kr": 10}
-    assert problems(garlic, _line("Hvidløg 1 stk", "4")) == []
-    assert problems(garlic, _line("Hvidløg i olie", "4")) == ["har 'olie'"]
-    assert problems(garlic, _line("Hvidløg 3 stk", "12")) == ["12 kr. > 10 kr."]
-    assert problems(garlic, _line("Hvidløg", guess=True)) == ["gæt: Hvidløg"]
-    assert problems(garlic, None) == ["ikke fundet"]
+    assert problems(garlic, _c("Hvidløg 1 stk", "4")) == []
+    assert problems(garlic, _c("Hvidløg i olie", "4")) == ["har 'olie'"]
+    assert problems(garlic, _c("Hvidløg 3 stk", "12")) == ["12 kr. > 10 kr."]
     jam = {"item": "fior di latte", "has": ["fior di latte|mozzarella"]}
-    assert problems(jam, _line("Mozzarella 125 g")) == []
-    assert problems(jam, _line("Jordbær", brand="Fior di Frutta")) == [
+    assert problems(jam, _c("Mozzarella 125 g")) == []
+    assert problems(jam, _c("Jordbær", brand="Fior di Frutta")) == [
         "mangler 'fior di latte|mozzarella'"
     ]
     cheese = {"item": "ost", "has": ["ost"], "not": ["olie"]}
-    assert problems(cheese, _line("Skiveost 45+")) == []
-    assert problems(cheese, _line("Leverpostej")) == ["mangler 'ost'"]
-    assert problems(cheese, _line("Ost i krydderolie")) == ["har 'olie'"]
-    assert problems({"item": "t", "has": ["tomat"]}, _line("Cherrytomater")) == []
+    assert problems(cheese, _c("Skiveost 45+")) == []
+    assert problems(cheese, _c("Leverpostej")) == ["mangler 'ost'"]
+    assert problems(cheese, _c("Ost i krydderolie")) == ["har 'olie'"]
+    assert problems({"item": "t", "has": ["tomat"]}, _c("Cherrytomater")) == []
     stryhn = {"item": "leverpostej", "has": ["stryhn"]}
-    assert problems(stryhn, _line("Leverpostej bacon-peber", brand="Stryhn's")) == []
+    assert problems(stryhn, _c("Leverpostej bacon-peber", brand="Stryhn's")) == []
 
 
-def test_checker_oeko_within_10_percent():
-    alt = [{"name": "Røde linser", "line_total": Decimal(20), "oeko": False}]
+def test_fails_only_when_no_candidate_fits():
+    corn = {"item": "majs", "has": ["majs"], "not": ["baby"]}
+    assert check(corn, _line(_c("Majs 3 stk"))) == ([], [])
+    # A wrong suggestion with a right candidate is a warning: the model can pick the other.
+    assert check(corn, _line(_c("Babymajs"), _c("Majs 3 stk"))) == ([], ["har 'baby'"])
+    assert check(corn, _line(_c("Babymajs"), _c("Babymajs øko"))) == (
+        ["ingen kandidat passer (2 vist)", "har 'baby'"],
+        [],
+    )
+    assert check(corn, None) == (["ikke fundet"], [])
+
+
+def test_a_guess_never_counts_as_fitting():
+    garlic = {"item": "hvidløg", "has": ["hvidløg"]}
+    assert check(garlic, _line(_c("Hvidløg"), guess=True)) == (
+        ["ingen kandidat passer (0 vist)", "gæt: Hvidløg"],
+        [],
+    )
+
+
+def test_a_guess_with_a_fitting_candidate_is_a_warning():
+    garlic = {"item": "hvidløg", "has": ["hvidløg"]}
+    assert check(garlic, _line(_c("Løg"), _c("Hvidløg 1 stk"), guess=True)) == ([], ["gæt: Løg"])
+
+
+def test_oeko_too_dear_is_a_warning():
     entry = {"item": "linser", "has": ["linser"]}
-    assert problems(entry, _line("Røde linser øko", "22", oeko=True, candidates=alt)) == []
-    assert problems(entry, _line("Røde linser øko", "27", oeko=True, candidates=alt)) == [
-        "øko 27 kr. mod 20 kr."
-    ]
-    tin = [
-        {"name": "Røde linser", "category": "Konserves", "line_total": Decimal(9), "oeko": False}
-    ]
+    plain = _c("Røde linser", "20")
+    assert check(entry, _line(_c("Røde linser øko", "22", oeko=True), plain)) == ([], [])
+    assert check(entry, _line(_c("Røde linser øko", "27", oeko=True), plain)) == (
+        [],
+        ["øko 27 kr. mod 20 kr."],
+    )
+    tin = _c("Røde linser", "9", category="Konserves")
     canned = {"item": "linser", "has": ["linser"], "not": ["konserv"]}
-    assert problems(canned, _line("Røde linser øko", "27", oeko=True, candidates=tin)) == []
+    assert check(canned, _line(_c("Røde linser øko", "27", oeko=True), tin)) == ([], [])
 
 
 # --- live --------------------------------------------------------------------------------------
@@ -133,16 +177,18 @@ async def test_fixed_list_live(name):
     entries = items_for(name)
     result = await quote(STORES[name](), [e["item"] for e in entries])
     by_item = {ln.item: ln for ln in result.lines}
-    failed = []
+    failed, warned = [], 0
     print(f"\n== {name}: {len(entries)} varer, {result.products_total} kr. ==")
     for e in entries:
         line = by_item.get(e["item"])
-        bad = problems(e, line)
-        mark = "✗ " if bad else "? " if line and not line.sure else "  "
+        fail, warn = check(e, line)
+        warned += bool(warn)
+        mark = "✗ " if fail else "! " if warn else "? " if line and not line.sure else "  "
         pick = f"{get(line.product, 'name')[:36]:<36} {line.line_total:>7}" if line else "-"
-        print(f"{mark}{e['item']:<34} → {pick} {'; '.join(bad) or (line.note or '')}")
-        if bad:
+        print(f"{mark}{e['item']:<34} → {pick} {'; '.join(fail + warn) or (line.note or '')}")
+        if fail:
             failed.append(
-                f"{e['item']}: {'; '.join(bad)}" + (f" ({e['why']})" if "why" in e else "")
+                f"{e['item']}: {'; '.join(fail)}" + (f" ({e['why']})" if "why" in e else "")
             )
-    assert not failed, f"{name}: {len(failed)} forkerte valg:\n" + "\n".join(failed)
+    print(f"{warned} forslag med advarsel (modellen kan vælge en anden kandidat)")
+    assert not failed, f"{name}: {len(failed)} varer uden passende kandidat:\n" + "\n".join(failed)
