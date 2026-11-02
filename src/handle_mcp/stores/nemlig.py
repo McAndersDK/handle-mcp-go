@@ -323,6 +323,15 @@ class NemligStore:
                     products[product.id] = product
         if failed and len(failed) == len(spots):
             raise failed[0]
+        # "En gave til dig" is often empty (live 2026-11-02), but a search for "gratis" finds the
+        # free gifts (ProductCampaignFreeProduct). A free-text search, so it may change.
+        try:
+            gifts = [p for p in await self.search("gratis", 50) if p.campaign == "Gratis"]
+        except StoreError as exc:
+            log.warning("nemlig-gaver fejlede: %s", exc)
+            gifts = []
+        for gift in gifts:
+            products.setdefault(gift.id, gift)
         return list(products.values())
 
     def _product(self, hit: dict) -> Product:

@@ -89,7 +89,7 @@ class FakeNemlig:
                 },
             )
         if path == "/searchgateway/api/search":
-            if request.url.params.get("query") == "mums rosinboller":
+            if request.url.params.get("query") in ("mums rosinboller", "gratis"):
                 return httpx.Response(200, json=fixture("search_gift"))
             return httpx.Response(200, json=fixture("search"))
         if path == "/tilbud":
@@ -462,7 +462,7 @@ def test_offer_end_uses_danish_time(store):
 async def test_offers_reads_every_offer_list(store, fake):
     offers = await store.offers(10)
     lists = {p.campaign for p in offers}
-    assert lists == {"Skarp pris", "Priskup", "Dagstilbud", "Undgå madspild"}
+    assert lists == {"Skarp pris", "Priskup", "Dagstilbud", "Undgå madspild", "Gratis"}
     calls = [r for r in fake.requests if r.url.path.endswith("GetByProductGroupId")]
     assert len(calls) == 5  # "Nyheder" is not an offer list
     assert (
@@ -536,3 +536,17 @@ async def test_one_broken_offer_list_does_not_hide_the_others(store, fake):
 
 async def test_offers_leave_out_an_offer_above_the_normal_price(store):
     assert "5071238" not in {p.id for p in await store.offers(10)}
+
+
+async def test_offers_find_free_gifts_by_search(store, fake):
+    """Live 2026-11-02: "En gave til dig" was empty, but search "gratis" found the gift."""
+    gift = next(p for p in await store.offers(10) if p.id == "5606321")
+    assert (gift.price, gift.campaign, gift.max_per_order) == (Decimal(0), "Gratis", 1)
+    searches = [r for r in fake.requests if r.url.path == "/searchgateway/api/search"]
+    assert [r.url.params["query"] for r in searches] == ["gratis"]
+
+
+async def test_offers_survive_a_failed_gift_search(store, fake):
+    fake.scripted["/searchgateway/api/search"] = [500] * 3
+    offers = await store.offers(10)
+    assert offers and "5606321" not in {p.id for p in offers}
