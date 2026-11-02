@@ -129,7 +129,9 @@ async def search_recipes(query: str, stores: list[str] | None = None, limit: int
 async def list_offers(stores: list[str] | None = None, limit: int = 25) -> dict:
     """List this week's offers in each store, also items you would not search for: nemlig's
     Skarp pris, Priskup, Dagstilbud, Undgå madspild and gifts; BilkaToGo's offers. `limit` is
-    per list. Free gifts have price 0 and "max_per_order". Use them when they fit the plan."""
+    per list; a product on two lists is shown once. A list the store fails to send is left out
+    (see the server log). Free gifts have price 0 and "max_per_order". Use them when they fit
+    the plan."""
     limit = max(1, min(limit, MAX_RESULTS))
     return _out(await _each(_names(stores), lambda s: s.offers(limit)))
 

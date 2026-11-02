@@ -302,17 +302,25 @@ class NemligStore:
             raise StoreError("nemlig gav ingen bruger. Log ind på nemlig for at se tilbud.")
         path = "/".join(str(settings[k]) for k in ("timestamp", "timeslotUtc", "deliveryZoneId"))
         products: dict[str, Product] = {}
+        failed = []
         for name, group in spots:
-            data = await self._api(
-                "GET",
-                f"{BASE}/webapi/{path}/{self._user_id}/Products/GetByProductGroupId",
-                params={"productGroupId": group, "pageIndex": 0, "pagesize": limit},
-            )
+            try:
+                data = await self._api(
+                    "GET",
+                    f"{BASE}/webapi/{path}/{self._user_id}/Products/GetByProductGroupId",
+                    params={"productGroupId": group, "pageIndex": 0, "pagesize": limit},
+                )
+            except StoreError as exc:  # one broken list must not hide the others
+                log.warning("nemlig-tilbudslisten %s fejlede: %s", name, exc)
+                failed.append(exc)
+                continue
             for hit in (data or {}).get("Products") or []:
                 if hit.get("Id") and str(hit["Id"]) not in products:
                     product = self._product(hit)
                     product.campaign = product.campaign or name
                     products[product.id] = product
+        if failed and len(failed) == len(spots):
+            raise failed[0]
         return list(products.values())
 
     def _product(self, hit: dict) -> Product:

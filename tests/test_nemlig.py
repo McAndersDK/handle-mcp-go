@@ -508,7 +508,7 @@ async def test_list_offers_tool_never_shows_the_user_id(store, monkeypatch):
 
 async def test_offer_list_error_never_shows_the_user_id(store, fake):
     url = "/webapi/ts-1/2026110316-60-180/3/user-4711/Products/GetByProductGroupId"
-    fake.scripted[url] = [404]
+    fake.scripted[url] = [404] * len(TILBUD)  # every list fails
     with pytest.raises(StoreError) as err:
         await store.offers()
     assert "user-4711" not in str(err.value) and "<bruger>" in str(err.value)
@@ -524,3 +524,10 @@ async def test_offers_need_a_user(store, monkeypatch):
 
 async def _settings(store):
     return store._settings[1]
+
+
+async def test_one_broken_offer_list_does_not_hide_the_others(store, fake):
+    url = "/webapi/ts-1/2026110316-60-180/3/user-4711/Products/GetByProductGroupId"
+    fake.scripted[url] = [404]  # the first list (Skarp pris) fails
+    offers = await store.offers(10)
+    assert "Skarp pris" not in {p.campaign for p in offers} and offers

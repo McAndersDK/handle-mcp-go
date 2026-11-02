@@ -192,12 +192,14 @@ def _cost(product: Any, count: int, on: date | None) -> Decimal:
     Packs over the offer's limit ('max 1 stk.', e.g. a free gift) cost the normal price."""
     price = _price(product, on)
     limit, before = _get(product, "max_per_order"), _get(product, "before_price")
-    if limit and before and count > limit:
-        return price * limit + Decimal(before) * (count - limit)
+    offered = min(count, limit) if limit else count  # the limit caps multi-buys too
+    normal = Decimal(before) if before else price
     if offer := _multi(product, on):
         size, total = offer
-        return (count // size) * total + (count % size) * price
-    return price * count
+        cost = (offered // size) * total + (offered % size) * price
+    else:
+        cost = price * offered
+    return cost + normal * (count - offered)
 
 
 def _multi_hint(product: Any, count: int, on: date | None) -> str | None:
