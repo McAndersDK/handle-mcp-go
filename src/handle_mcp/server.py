@@ -28,6 +28,7 @@ log = logging.getLogger("handle_mcp")
 MAX_ITEMS = 50  # per set_cart_quantities or compare_basket call
 MAX_QUANTITY = 50  # per product
 MAX_RESULTS = 25
+MAX_DAYS = 14
 
 READ = ToolAnnotations(readOnlyHint=True, destructiveHint=False, openWorldHint=True)
 WRITE = ToolAnnotations(
@@ -38,7 +39,7 @@ mcp = MCPServer(
     "handle",
     instructions=(
         "Tools for Danish grocery stores with home delivery. You can search, compare "
-        "baskets, find recipes and change cart quantities. You can never order or pay: the human "
+        "baskets, find recipes, list delivery times and change cart quantities. You can never order or pay: the human "
         "always does that on the store's website."
     ),
 )
@@ -178,6 +179,24 @@ async def get_delivery_info(store: str) -> dict:
     """Show the chosen delivery time, edit deadline and next free day, plus fees and minimum order."""
     info, terms = await asyncio.gather(_call(store, "delivery_info"), _call(store, "terms"))
     return _out({"delivery": info, "terms": terms})
+
+
+@mcp.tool(annotations=READ)
+async def list_delivery_slots(stores: list[str] | None = None, days: int = 7) -> dict:
+    """List free delivery times for the next `days` days with the delivery fee per slot, in time
+    order, plus the 3 cheapest per store. nemlig: "Personlig" (you are home) or "Fleksibel"
+    (left at the door). BilkaToGo: one flat fee, night delivery. Only reads: it never chooses
+    a time. The human chooses the time on the store's website."""
+    days = max(1, min(days, MAX_DAYS))
+    return _out(await _each(_names(stores), lambda s: _slots(s, days)))
+
+
+async def _slots(store: registry.Store, days: int) -> dict:
+    slots = sorted(
+        (s for s in await store.delivery_slots(days) if s.available), key=lambda s: s.start
+    )
+    cheapest = sorted(slots, key=lambda s: (s.price is None, s.price or 0, s.start))[:3]
+    return {"cheapest": cheapest, "slots": slots}
 
 
 @mcp.tool(annotations=READ)

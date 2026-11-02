@@ -89,6 +89,19 @@ class DeliveryInfo:
 
 
 @dataclass
+class DeliverySlot:
+    """A delivery time the store offers. Read only: handle-mcp never chooses one."""
+
+    store: str
+    start: datetime
+    end: datetime
+    price: Decimal | None  # delivery fee for this slot, None when the store does not say
+    available: bool = True
+    kind: str | None = None  # the store's type of delivery, e.g. "Fleksibel" or "Personlig"
+    note: str | None = None
+
+
+@dataclass
 class Order:
     store: str
     id: str

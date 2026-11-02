@@ -42,6 +42,14 @@ async def test_cart_terms_delivery(store):
     )
 
 
+async def test_delivery_slots(store):
+    """GET only: lists slots, never chooses one. Printed for a human check of the prices."""
+    slots = [s for s in await store.delivery_slots(days=3) if s.available]
+    assert slots and all(s.end > s.start for s in slots)
+    for s in sorted(slots, key=lambda s: s.start)[:12]:
+        print(f"\n[{store.name}] {s.start:%a %d/%m %H}-{s.end:%H} {s.kind or ''} {s.price} kr")
+
+
 async def test_nemlig_recipes():
     recipes = await STORES["nemlig"]().recipes("kylling karry", limit=3)
     for r in recipes:

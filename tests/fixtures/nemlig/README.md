@@ -66,3 +66,10 @@ Odd case: a dagstilbud item had `Price` 82.565 < `CampaignPrice` 84.95 and negat
 trimmed to product 5606321 (Facets, Ads, Recipes emptied). Free gift: `Price` 20.45 but
 `Campaign` = `{Type: ProductCampaignFreeProduct, Code: U, CampaignPrice: 0, MaxQuantity: 1,
 IntervalEnd: 2026-12-31T22:59:59Z}`, `SubCategory` "Gave fra nemlig.com".
+
+## `delivery_days.json` (live capture, 2026-11-02, logged in, read-only GET)
+
+`GET https://www.nemlig.com/webapi/v2/Delivery/GetDeliveryDays?days=3&showForSubscriptions=false`,
+3 days, nothing removed: the answer has no personal data (slot ids are global). `Type` 0 =
+Personlig, 1 = Fleksibel. `Availability` 0 = free, 1 = past deadline. Tue 14-21: Personlig 19 kr,
+Fleksibel 25 kr. Wed 14-21 Personlig: 0 kr.

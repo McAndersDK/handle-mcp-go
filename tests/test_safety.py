@@ -21,6 +21,10 @@ FORBIDDEN = [
     r"/payment",
     r"SetDeliveryAddress",
     r"SetDeliveryTime",
+    r"UpdateDeliveryTime",  # nemlig: also TryUpdateDeliveryTime; chooses a slot
+    r"updateTimeslot",
+    r"SetDeliveryDate",  # BilkaToGo: chooses a slot
+    r"ReserveTimeslot",
     r"ChangeAddress",
     r"EmptyCart",
     r"CancelOrder",

@@ -17,6 +17,7 @@ Stores in v1: [nemlig.com](https://www.nemlig.com) and [BilkaToGo](https://www.b
 | `get_cart(store)` | no | Cart lines, fees, total, minimum order |
 | `set_cart_quantities(store, items)` | **yes** | Absolute quantities (0 removes). Only the cart |
 | `get_delivery_info(store)` | no | Chosen delivery time, next free day, fees |
+| `list_delivery_slots(stores?, days?)` | no | Free delivery times with the fee per slot, the 3 cheapest first |
 | `get_orders(store)` / `get_order(store, id)` | no | Past orders, for "what we usually buy" |
 
 What it can **never** do: place an order, pay, read cards, choose a delivery time or change the address. That code does not exist, and a test fails if it shows up. See [ADR 0001](docs/adr/0001-the-human-always-pays.md).

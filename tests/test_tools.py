@@ -15,6 +15,7 @@ ALLOWED = {
     "get_cart": False,
     "set_cart_quantities": True,
     "get_delivery_info": False,
+    "list_delivery_slots": False,
     "get_orders": False,
     "get_order": False,
 }
@@ -86,3 +87,10 @@ async def test_recipes_in_a_store_without_recipes_do_not_stop_the_others(monkeyp
     result = await server.search_recipes("karry")
     assert result["fake"][0]["name"] == "karry til 4"
     assert result["broken"]["error"] == "broken kan ikke det endnu."
+
+
+async def test_delivery_slots_in_time_order_cheapest_first_only_free():
+    fake = (await server.list_delivery_slots())["fake"]
+    assert [s["price"] for s in fake["slots"]] == ["25", "19", "0"]  # sold-out slot left out
+    assert [s["price"] for s in fake["cheapest"]] == ["0", "19", "25"]
+    assert fake["cheapest"][0]["start"] == "2026-11-04T14:00:00"

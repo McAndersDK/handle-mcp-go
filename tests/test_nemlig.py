@@ -48,6 +48,7 @@ class FakeNemlig:
         self.scripted: dict[str, list] = {}  # path → status codes or errors to give first
         self.token_count = 0
         self.queue = False
+        self.endless_days = False
         self.history, self.details = "order_history", "order_details"
 
     def handle(self, request: httpx.Request) -> httpx.Response:
@@ -111,6 +112,10 @@ class FakeNemlig:
                 lines.append({"Id": pid, "Name": "Vare", "Quantity": qty, "Price": 10.0 * qty})
             self.basket = {**self.basket, "Lines": lines}
             return httpx.Response(200, json=self.basket)
+        if path == "/webapi/v2/Delivery/GetDeliveryDays":
+            if request.url.params.get("startDate") and not self.endless_days:  # no more days
+                return httpx.Response(200, json={"DayRangeHours": [], "NextRangeStart": None})
+            return httpx.Response(200, json=fixture("delivery_days"))
         if path == "/webapi/Order/DeliverySpot":
             return httpx.Response(200, json=fixture("delivery_spot"))
         if path == "/webapi/order/GetBasicOrderHistory":
@@ -561,3 +566,31 @@ async def test_offers_survive_a_failed_gift_search(store, fake):
     fake.scripted["/searchgateway/api/search"] = [500] * 3
     offers = await store.offers(10)
     assert offers and "5606321" not in {p.id for p in offers}
+
+
+async def test_delivery_slots_with_prices_and_kinds(store, fake):
+    slots = await store.delivery_slots(days=7)
+    tue = [s for s in slots if s.start.isoformat() == "2026-11-03T14:00:00+01:00"]
+    assert {(s.kind, s.price) for s in tue if s.end.hour == 21} == {
+        ("Personlig", Decimal("19.0")),
+        ("Fleksibel", Decimal("25.0")),
+    }
+    wed = next(
+        s
+        for s in slots
+        if s.start.isoformat() == "2026-11-04T14:00:00+01:00"
+        and s.end.hour == 21
+        and s.kind == "Personlig"
+    )
+    assert (wed.price, wed.available) == (Decimal("0.0"), True)
+    assert not next(s for s in slots if s.start.hour == 7).available  # past deadline
+    calls = [r for r in fake.requests if r.url.path.endswith("/GetDeliveryDays")]
+    assert all(r.method == "GET" for r in calls)
+    assert calls[1].url.params["startDate"] == "2026-11-06T00:00:00"  # next page for days 4-7
+    assert calls[1].url.params["days"] == "4"
+
+
+async def test_delivery_slots_stop_when_nemlig_keeps_paging(store, fake):
+    fake.endless_days = True  # every page has 3 days and a next page
+    await store.delivery_slots(days=7)
+    assert fake.paths().count("/webapi/v2/Delivery/GetDeliveryDays") == 3

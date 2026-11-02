@@ -1,6 +1,7 @@
 """BilkaToGo adapter against a fake backend (httpx.MockTransport). No network."""
 
 import json
+from datetime import date
 from decimal import Decimal
 from pathlib import Path
 from urllib.parse import parse_qs
@@ -67,6 +68,8 @@ class FakeBilka:
             return httpx.Response(
                 200, json={**answer, "productId": pid, "productAmount": applied, "message": message}
             )
+        if path == "/api/shop/v3/AvailableDeliveryDates":
+            return httpx.Response(200, json=fixture("available_delivery_dates"))
         if path == "/api/shop/v7/OrderHistory":
             return httpx.Response(200, json=fixture("order_history"))
         if path == "/api/shop/v7/OrderDetails":
@@ -239,9 +242,10 @@ async def test_never_calls_forbidden_endpoints(store, fake):
     await store.set_quantities({"18381": 2})
     await store.terms()
     await store.delivery_info()
+    await store.delivery_slots()
     await store.orders()
     await store.order("900000000002")
-    forbidden = ("EmptyCart", "SetDeliveryAddress", "Checkout", "Payment", "PlaceOrder")
+    forbidden = ("EmptyCart", "SetDelivery", "Checkout", "Payment", "PlaceOrder")
     assert not [p for p in fake.paths() if any(f.lower() in p.lower() for f in forbidden)]
 
 
@@ -335,3 +339,34 @@ async def test_offers_filter_on_our_store(store, fake):
     by_id = {p.id: p for p in offers}
     assert (by_id["40258"].campaign, by_id["40258"].price) == ("Skarp pris", Decimal(25))
     assert (by_id["18381"].campaign, by_id["18381"].offer_text) == ("Mix", "Mix 10 for 25,00")
+
+
+async def test_delivery_slots_flat_fee_and_night_slots(store, fake):
+    slots = await store.delivery_slots(days=7)
+    assert [s.start.date().isoformat() for s in slots] == ["2026-11-02", "2026-11-04"]
+    mon, wed = slots  # Tuesday is sold out: no intervals at all
+    assert not mon.available  # closed: past deadline
+    assert (wed.available, wed.price, wed.kind) == (True, Decimal("39.00"), "Nat")
+    assert wed.start.isoformat() == "2026-11-04T00:00:00+01:00"
+    assert wed.end.isoformat() == "2026-11-04T06:00:00+01:00"
+    assert wed.note.startswith("Levering vil ske natten til onsdag.") and "<" not in wed.note
+    call = next(r for r in fake.requests if r.url.path.endswith("AvailableDeliveryDates"))
+    assert call.method == "GET"
+
+
+async def test_delivery_slots_keep_exactly_days(store, monkeypatch):
+    monkeypatch.setattr(bilka_module, "_today", lambda: date(2026, 11, 2))
+    assert [s.start.day for s in await store.delivery_slots(days=1)] == [2]
+    assert [s.start.day for s in await store.delivery_slots(days=3)] == [2, 4]
+
+
+async def test_delivery_slots_say_when_the_fee_is_unknown(store, fake):
+    fake.cart = {**fake.cart, "stat": {}}  # an empty cart may send no delivery price
+    wed = (await store.delivery_slots())[1]
+    assert wed.price is None and wed.note.startswith("Gebyret er ukendt")
+
+
+async def test_delivery_slots_need_home_delivery(store, fake):
+    fake.cart = {**fake.cart, "deliveryAddress": {"sid": "1234"}}
+    with pytest.raises(StoreError, match="hjemlevering"):
+        await store.delivery_slots()

@@ -16,7 +16,7 @@ Skrevet før de første live kald. Punkter markeret **⚠ live** er stadig ikke 
 |---|---|---|
 | Login | 3 kald: XSRF → Bearer → `/webapi/login` | 3 kald: Gigya login → Gigya JWT → `LoginJWT` |
 | Session holder | `.ASPXAUTH`-cookie: 1 år. Bearer-token: 5 min | Bilka-JWT: 24 t. Log ind igen med email/kode |
-| Læse ledige tider | **Ikke fundet** | **Delvist:** `nextAvailableDeliveryDate` på kurvens adresse. Ingen liste |
+| Læse ledige tider | `GET /webapi/v2/Delivery/GetDeliveryDays` med pris pr. tid | `GET shop/v3/AvailableDeliveryDates`. Ingen pris pr. tid: fast gebyr i kurven |
 | Valgt tid | `GET /webapi/Order/DeliverySpot` → `TimeSlot` | Kurvens `deliveryDate` → `intervalStart/End` |
 | Gebyrer fra API | Ja: `DeliveryPrice` i kurv | Ja: `stat.delivery_price`, `stat.packing` (Pakkeservice) |
 | Minimumskøb fra API | Ja: `MinimumOrderTotal`, `IsMinTotalValid` | Ja: `stat.minimum_left`, `deliveryAddress.minimum_buy` |
@@ -55,8 +55,10 @@ Krævede headers: `Platform: web`, `Device-Size: desktop`, `Version: <app-versio
 
 ### Leveringstider
 - Kun `GET /webapi/Order/DeliverySpot` er kendt. Den viser den **valgte** tid (`TimeSlot`, `EditDeadline`) for den åbne ordre. Den har også `CustomerName` → privacy-filter.
-- Intet kendt endpoint lister ledige tider. **⚠ live:** åbn tidsvælgeren på nemlig.com med DevTools og find læse-kaldet.
-- v1-beslutning: `get_delivery_info` viser valgt tid + `EditDeadline`. Ingen valg af tid.
+- Ledige tider (fundet 2026-11-02 i `main.js`, kun GET): `GET /webapi/v2/Delivery/GetDeliveryDays?days=3&showForSubscriptions=false` (valgfri `startDate`; næste side = svarets `NextRangeStart`). Virker uden login, men så med standardzonens priser. Logget ind = husstandens priser.
+- Pr. tid i `DayRangeHours[].DayHours[]`: `Date` + `StartHour`/`EndHour` (lokal tid), `DeliveryPrice` (kr), `Type` (0 = Personlig, 1 = Fleksibel), `Availability` (0 ledig, 1 efter deadline, 2 udsolgt, 3 ikke aktiv), `Deadline`. Bekræftet: Fleksibel 14-21 = 25 kr, Personlig tir 14-21 = 19 kr, ons 14-21 = 0 kr.
+- Samme klasse har `UpdateDeliveryTime` / `TryUpdateDeliveryTime` (POST, vælger tid). Må aldrig kaldes: står i `tests/test_safety.py`.
+- `list_delivery_slots` viser listen. `get_delivery_info` viser valgt tid + `EditDeadline`. Ingen valg af tid.
 
 ### Ordrer
 Kendt i `nemlig_cli` (ordrehistorik og ordredetaljer). Indeholder adresse og navn → privacy-filter.
@@ -103,7 +105,9 @@ Nyttige felter pr. hit: `objectID` (varenummer til kurven), `gtin` (**EAN findes
 ### Leveringstider
 - Valgt tid: kurvens `deliveryDate` (`deliveryDate`, `intervalStart`, `intervalEnd`, `delivery_message`).
 - Næste ledige dag: `deliveryAddress.nextAvailableDeliveryDate`. Det er et læse-felt.
-- Liste over ledige tider: **ikke fundet**. nickknissen har det udtrykkeligt uden for scope. **⚠ live:** find kaldet bag tidsvælgeren i DevTools.
+- Ledige tider (fundet 2026-11-02, kun GET): `GET https://api.bilkatogo.dk/api/shop/v3/AvailableDeliveryDates?u=w`, logget ind. Følger kurvens leveringsadresse. `availableIntervals[].intervals[]`: `intervalStart`/`intervalEnd`, `closed` (1 = lukket), `availability_bit` (1 = ledig, 2 = udsolgt), `orderBeforeTime`, `info[].message` (HTML). Dagen har `closed_text` ("udsolgt").
+- Ingen pris pr. tid: gebyret er fast (`stat.delivery_price` i kurven, 39 kr). Hjemlevering er her kun nat (00-06, kommer mellem 20 og 06).
+- `SetDeliveryDate` (vælger tid) må aldrig kaldes: står i `tests/test_safety.py`.
 
 ### Ordrer
 `POST shop/v7/OrderHistory`, `GET shop/v7/OrderDetails`. Status-koder (`Bestilt`, `Leveret`, `Faktureret`) mappes til hjemmesidens ord (nickknissen ADR 0003). Ordrer kan have `home_delivery` og adresse → privacy-filter.
@@ -112,7 +116,7 @@ Nyttige felter pr. hit: `objectID` (varenummer til kurven), `gtin` (**EAN findes
 
 1. **Varematch:** EAN kun hos Bilka. `compare_basket` matcher på normaliseret navn + mængde + enhed, og bruger EAN, når begge sider har det. Usikre match markeres.
 2. **Gebyrer og minimumskøb** kommer fra API'et hos begge butikker. Ingen config nødvendig, kun som fallback.
-3. **Leveringstider:** v1 viser valgt tid (begge) og næste ledige dag (Bilka). Ingen liste og intet valg.
+3. **Leveringstider:** valgt tid (begge), næste ledige dag (Bilka) og listen over ledige tider med pris (`list_delivery_slots`). Intet valg.
 4. **Privacy-filter** skal dække: `InvoiceAddress`, `DeliveryAddress`/`deliveryAddress` (kun ved hjemlevering), navne-, email-, telefon-felter, `DoorCode`, `UnattendedNotes`, `uid`, `tid`, `CustomerName`.
 5. **Forbudte endpoints-test:** grep efter `PlaceOrder`, `Checkout/`, `SetDeliveryAddress`, `EmptyCart` i `src/`.
 
@@ -126,9 +130,7 @@ Nyttige felter pr. hit: `objectID` (varenummer til kurven), `gtin` (**EAN findes
 
 Hvis du finder svaret i DevTools → Network (Fetch/XHR): kopier kun URL og svar-felter, aldrig cookies, og læg et redigeret svar i `tests/fixtures/`.
 
-1. **nemlig:** hvilket kald henter de ledige leveringstider? Er det et GET (kun læse)?
-2. **nemlig:** står EAN/GTIN på produktsiden (`/webapi/…/product`)? Søgesvaret har det ikke.
-3. **BilkaToGo:** hvilket kald henter de ledige tider for hjemlevering?
-4. **nemlig:** hvad svarer API'et på en forældet `Version`-header? (I dag: `HANDLE_NEMLIG_APP_VERSION` kan sættes som env var.)
+1. **nemlig:** står EAN/GTIN på produktsiden (`/webapi/…/product`)? Søgesvaret har det ikke.
+2. **nemlig:** hvad svarer API'et på en forældet `Version`-header? (I dag: `HANDLE_NEMLIG_APP_VERSION` kan sættes som env var.)
 
-Indtil da viser v1 kun den valgte tid (begge) og næste ledige dag (Bilka), og matcher på navn + mængde i stedet for EAN hos nemlig.
+Indtil da matcher v1 på navn + mængde i stedet for EAN hos nemlig.

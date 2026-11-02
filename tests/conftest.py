@@ -1,4 +1,4 @@
-from dataclasses import asdict
+from dataclasses import asdict, field, make_dataclass
 from datetime import date, datetime
 from decimal import Decimal
 
@@ -13,6 +13,7 @@ from handle_mcp.models import (
     Cart,
     CartLine,
     DeliveryInfo,
+    DeliverySlot,
     Order,
     Product,
     QuantityResult,
@@ -29,6 +30,13 @@ LEAK = {
     "UnattendedNotes": "Nøglen ligger under måtten",
     "deliveryAddress": {"street": "Andeby 1", "zip": "postnr-9999", "city": "Andeby"},
 }
+
+# A slot with LEAK as extra fields: the tool sorts slots by attribute, so they cannot be dicts.
+LeakySlot = make_dataclass(
+    "LeakySlot",
+    [(k, object, field(default_factory=lambda v=v: v)) for k, v in LEAK.items()],
+    bases=(DeliverySlot,),
+)
 
 
 class FakeStore:
@@ -90,6 +98,15 @@ class FakeStore:
                 next_available=date(2026, 11, 2),
             )
         )
+
+    async def delivery_slots(self, days=7):
+        tue, wed = datetime(2026, 11, 3, 14), datetime(2026, 11, 4, 14)
+        return [
+            LeakySlot("fake", tue, tue.replace(hour=21), Decimal(25), kind="Fleksibel"),
+            DeliverySlot("fake", tue, tue.replace(hour=21), Decimal(19), kind="Personlig"),
+            DeliverySlot("fake", wed, wed.replace(hour=21), Decimal(0), kind="Personlig"),
+            DeliverySlot("fake", wed, wed.replace(hour=17), Decimal(0), available=False),
+        ]
 
     async def terms(self):
         return StoreTerms("fake", True, Decimal(39), minimum_order=Decimal(500))

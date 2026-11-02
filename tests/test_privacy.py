@@ -16,6 +16,7 @@ CALLS = [
     ("get_cart", {"store": "fake"}),
     ("set_cart_quantities", {"store": "fake", "items": {"1": 1}}),
     ("get_delivery_info", {"store": "fake"}),
+    ("list_delivery_slots", {"stores": ["fake"]}),
     ("get_orders", {"store": "fake"}),
     ("get_order", {"store": "fake", "order_id": "900000000001"}),
 ]

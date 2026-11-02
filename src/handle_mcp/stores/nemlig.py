@@ -12,7 +12,7 @@ import logging
 import os
 import time
 import uuid
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from decimal import Decimal, InvalidOperation
 from typing import Any
 from urllib.parse import urljoin
@@ -24,6 +24,7 @@ from handle_mcp.models import (
     Cart,
     CartLine,
     DeliveryInfo,
+    DeliverySlot,
     Order,
     Product,
     QuantityResult,
@@ -40,6 +41,7 @@ BASE = "https://www.nemlig.com"
 SEARCH = "https://webapi.prod.knl.nemlig.it/searchgateway/api/search"
 APP_VERSION = os.environ.get("HANDLE_NEMLIG_APP_VERSION", "11.201.0")
 SETTINGS_TTL = 600  # seconds to reuse timeslot/zone for search
+SLOT_KINDS = {0: "Personlig", 1: "Fleksibel"}  # Type: attended / unattended delivery
 STATUS = {1: "Bestilt", 2: "Under behandling", 4: "Leveret"}
 UNITS = {"kg": "kg", "l": "l", "ltr": "l", "stk": "stk"}
 FREE = "ProductCampaignFreeProduct"
@@ -472,6 +474,37 @@ class NemligStore:
                 if chosen
                 else "Ingen tid valgt. Gebyret afhænger af tiden (ca. 19-51 kr.). Vælg på nemlig.com."
             ),
+        )
+
+    async def delivery_slots(self, days: int = 7) -> list[DeliverySlot]:
+        """The time picker's list (GET). Logged in, so prices are for our zone. Never choose a
+        slot here: the human does (docs/adr/0001)."""
+        slots: list[DeliverySlot] = []
+        start, seen = None, 0
+        for _page in range(days):  # every page has at least one day, so this is the cap
+            params = {"days": days - seen, "showForSubscriptions": "false", "startDate": start}
+            url = f"{BASE}/webapi/v2/Delivery/GetDeliveryDays"
+            data = await self._api("GET", url, params={k: v for k, v in params.items() if v})
+            day_list = (data or {}).get("DayRangeHours") or []
+            for day in day_list:
+                slots += [self._slot(h) for h in day.get("DayHours") or []]
+            seen, start = seen + len(day_list), (data or {}).get("NextRangeStart")
+            if not day_list or not start or seen >= days:
+                break
+        return [s for s in slots if s]
+
+    def _slot(self, hour: dict) -> DeliverySlot | None:
+        day, deadline = _time(hour.get("Date")), _time(hour.get("Deadline"))
+        if day is None or None in (hour.get("StartHour"), hour.get("EndHour")):
+            return None
+        return DeliverySlot(
+            store=self.name,
+            start=day.replace(tzinfo=DK) + timedelta(hours=hour["StartHour"]),
+            end=day.replace(tzinfo=DK) + timedelta(hours=hour["EndHour"]),
+            price=_money(hour.get("DeliveryPrice")),
+            available=hour.get("Availability") == 0,  # 1 past deadline, 2 sold out, 3 off
+            kind=SLOT_KINDS.get(hour.get("Type")),
+            note=f"Bestil senest {deadline:%d/%m kl. %H:%M}" if deadline else None,
         )
 
     def _order(self, o: dict, lines: list[CartLine] | None = None) -> Order:

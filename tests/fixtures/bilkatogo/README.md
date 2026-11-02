@@ -17,3 +17,9 @@ store id. Offer fields are in `storeData.<sid>`: `offerDescription` ("Skarp pris
 "Mix 10 for 25,00", "Se Her"), `price` / `unitsOfMeasureOfferPrice` in øre, `multiPromoPrice` +
 `offerCount` for mix offers, `offerMax` / `offerMaxDescription`, `offerFrom` / `offerUntil`
 (empty in this capture), `beforePrice` (0 in this capture).
+
+## `available_delivery_dates.json` (live capture, 2026-11-02, logged in, read-only GET)
+
+`GET https://api.bilkatogo.dk/api/shop/v3/AvailableDeliveryDates?u=w`, trimmed to 3 days. `uid`,
+`eid` and `tid` (personal/session ids) are replaced with "X". Home delivery, night slot only.
+Mon is closed (past deadline), Tue is sold out (`closed_text` "udsolgt", no intervals), Wed is open.
