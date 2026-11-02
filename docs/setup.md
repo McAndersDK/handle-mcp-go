@@ -1,6 +1,6 @@
 # Setup
 
-Needs [uv](https://docs.astral.sh/uv/) (`brew install uv`).
+Works on macOS, Linux and Windows. Needs [uv](https://docs.astral.sh/uv/getting-started/installation/).
 
 **1. Logins.** Save each store's login in your OS keychain (macOS Keychain, Windows Credential Locker or Linux Secret Service). It asks for email and password, checks them against the store, and saves them encrypted:
 
