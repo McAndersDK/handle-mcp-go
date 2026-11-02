@@ -10,6 +10,8 @@ Simple and explainable matching. No store-specific code here.
 - Then a product with a known size wins, then the lowest cost. Sold-out products never win.
 - No size in the item: compare price per kg, l or piece, and ask for an amount.
 - A blend ("m. 50% grønt") loses to the plain product and is never sure.
+- A multi-buy offer ("3 for 48 kr") counts for the packs we need, also in the price per kg.
+- An øko product is always among the alternatives when the search found one.
 - Unsure matches and missing items are marked, so a human can check them.
 """
 
@@ -54,6 +56,7 @@ FRESH = ("frugt", "grønt", "bær", "grøntsag")  # frozen loses only here: froz
 BLEND_RE = re.compile(r"\d+(?:[.,]\d+)?\s*%\s*([a-zæøå]+)", re.IGNORECASE)  # "50% grønt"
 NUTRIENTS = {"fedt", "protein", "sukker", "kakao", "alkohol", "salt", "frugt", "kulhydrat"}
 QTY_RE = re.compile(r"^\s*(\d+)\s*[x×]\s+(?=\D)", re.IGNORECASE)
+OEKO_RE = re.compile(r"\b(?:øko|økologiske?|organic)\b", re.IGNORECASE)  # not "Økonomi"
 
 
 @dataclass
@@ -174,16 +177,40 @@ def _price(product: Any, on: date | None) -> Decimal:
     return Decimal(_get(product, "price"))
 
 
+def _multi(product: Any, on: date | None) -> tuple[int, Decimal] | None:
+    """A multi-buy offer like '4 for 50 kr' that is still on: (4, 50)."""
+    match = MULTI_RE.search(_get(product, "offer_text") or "")
+    until = _get(product, "offer_until")
+    if not match or (on and until and on > until):
+        return None
+    size, total = int(match.group(1)), Decimal(match.group(2).replace(",", "."))
+    return (size, total) if size > 1 and total < _price(product, on) * size else None
+
+
 def _cost(product: Any, count: int, on: date | None) -> Decimal:
     """Price for `count` packs, with a multi-buy offer like '4 for 50 kr' when it is still on."""
     price = _price(product, on)
-    match = MULTI_RE.search(_get(product, "offer_text") or "")
-    until = _get(product, "offer_until")
-    if match and not (on and until and on > until):
-        size, total = int(match.group(1)), Decimal(match.group(2).replace(",", "."))
-        if size > 1 and total < price * size:
-            return (count // size) * total + (count % size) * price
+    if offer := _multi(product, on):
+        size, total = offer
+        return (count // size) * total + (count % size) * price
     return price * count
+
+
+def _multi_hint(product: Any, count: int, on: date | None) -> str | None:
+    """Say it when the multi-buy is close: 2 packs at 22 kr, but '3 for 48 kr' is 4 kr more.
+    We never buy more than needed on our own: the human decides."""
+    offer = _multi(product, on)
+    if not offer or count % offer[0] == 0:
+        return None
+    full = math.ceil(count / offer[0]) * offer[0]
+    extra = _cost(product, full, on) - _cost(product, count, on)
+    if extra >= _price(product, on):
+        return None
+    return f"Tilbud {_get(product, 'offer_text')}: {full - count} mere for {extra} kr."
+
+
+def is_oeko(product: Any) -> bool:
+    return bool(OEKO_RE.search(f"{_get(product, 'name')} {_get(product, 'brand') or ''}"))
 
 
 def _compound(word: str, token: str) -> bool:
@@ -204,11 +231,12 @@ def _mixed(words: list[str], product: Any) -> int:
     return 0 if any(w in tail or _stem_hit(w, tail) for w in words) else 1
 
 
-def _per_unit(product: Any, quantity: int, on: date | None) -> tuple[int, Decimal]:
+def _per_unit(product: Any, quantity: int, count: int, on: date | None) -> tuple[int, Decimal]:
     """For an item with no size: compare price per kg, l or piece, not per pack.
-    '4 x pærer' counts pieces, so pieces come first. 'æbler' is a bag, so weight comes first."""
+    '4 x pærer' counts pieces, so pieces come first. 'æbler' is a bag, so weight comes first.
+    The pack price is what `count` packs cost each, so '3 for 48 kr' counts for 3 packs."""
     have = _pack_size(product)
-    price = _price(product, on)
+    price = _cost(product, count, on) / count
     if not have or not have[1]:
         return 2, price
     by_piece = have[0] == "stk"
@@ -278,7 +306,13 @@ def best_match(item: str, products: list[Any], on: date | None = None) -> Basket
         if alt.product is not None and not alt.guess:
             others.append((-_score(parse_item(item)[1], x), alt.line_total, alt))
     others.sort(key=lambda o: o[:2])
-    line.alternatives = [_brief(a) for _s, _t, a in others[:ALTERNATIVES]]
+    picked = [a for _s, _t, a in others[:ALTERNATIVES]]
+    # Always show an øko choice, so a human can pick it when it costs only a little more.
+    if line.product is not None and not is_oeko(line.product):
+        oeko = [a for _s, _t, a in others if is_oeko(a.product)]
+        if oeko and oeko[0] not in picked:
+            picked = [*picked[: ALTERNATIVES - 1], oeko[0]]
+    line.alternatives = [_brief(a) for a in picked]
     return line
 
 
@@ -291,6 +325,7 @@ def _brief(line: BasketLine) -> dict[str, Any]:
         "quantity": line.quantity,
         "line_total": line.line_total,
         "offer_text": _get(p, "offer_text"),
+        "oeko": is_oeko(p),
         "note": line.note,
     }
 
@@ -316,7 +351,7 @@ def _best(item: str, products: list[Any], on: date | None = None) -> BasketLine:
             )
             have = _pack_size(product)
             amount = have[1] * count if have else Decimal(0)
-            value = (cost,) if size else _per_unit(product, quantity, on)
+            value = (cost,) if size else _per_unit(product, quantity, count, on)
             ranked.append((-score, fit, size_rank, value, cost, -amount, count, product))
     if not ranked:
         return _guess(item, quantity, size, products, words, on)
@@ -343,6 +378,7 @@ def _best(item: str, products: list[Any], on: date | None = None) -> BasketLine:
     if not size:
         hint = "Ingen mængde på listen: billigst pr. kg, l eller stk. Skriv en mængde, fx '1 kg'."
         note = " ".join(filter(None, [note, hint]))
+    note = " ".join(filter(None, [note, _multi_hint(product, count, on)]))
     until = _get(product, "offer_until")
     if on and until and on > until and _get(product, "before_price"):
         note = " ".join(filter(None, [note, f"Tilbuddet slutter {until:%d/%m}, før levering."]))

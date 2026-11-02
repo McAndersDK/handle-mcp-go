@@ -13,7 +13,7 @@ import os
 import time
 import uuid
 from datetime import date, datetime
-from decimal import Decimal
+from decimal import Decimal, InvalidOperation
 from typing import Any
 from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
@@ -43,6 +43,21 @@ SETTINGS_TTL = 600  # seconds to reuse timeslot/zone for search
 RETRIES = 2  # extra attempts on timeout, 429 and 5xx
 STATUS = {1: "Bestilt", 2: "Under behandling", 4: "Leveret"}
 UNITS = {"kg": "kg", "l": "l", "ltr": "l", "stk": "stk"}
+# Bags for a normal week (~800 kr), seen live 2026-11. The basket only says the bag price when it
+# has products, so compare_basket uses this for an empty cart.
+BAG_FEE = Decimal("17.85")
+
+
+def _bag_fee() -> Decimal:
+    """HANDLE_NEMLIG_BAG_FEE overrides the estimate. A bad value logs and falls back."""
+    raw = os.environ.get("HANDLE_NEMLIG_BAG_FEE")
+    if not raw:
+        return BAG_FEE
+    try:
+        return Decimal(raw.strip().replace(",", "."))
+    except InvalidOperation:
+        log.warning("HANDLE_NEMLIG_BAG_FEE=%r er ikke et tal. Bruger %s kr.", raw, BAG_FEE)
+        return BAG_FEE
 
 
 def _money(value: Any) -> Decimal | None:
@@ -291,6 +306,7 @@ class NemligStore:
                 _money(ln.get("Price")) or Decimal(0),
             )
             for ln in basket.get("Lines") or []
+            if int(ln.get("Quantity") or 0) > 0  # removed lines can stay with a price
         ]
         products = _money(basket.get("TotalProductsPrice"))
         if products is None:
@@ -355,12 +371,16 @@ class NemligStore:
 
     async def terms(self) -> StoreTerms:
         basket = await self._basket()
+        bags = _money(basket.get("TotalBagsPrice"))
+        empty = not any(int(ln.get("Quantity") or 0) > 0 for ln in basket.get("Lines") or [])
         return StoreTerms(
             store=self.name,
             home_delivery=True,
             delivery_fee=_money(basket.get("DeliveryPrice")),
-            other_fees={"poser": _money(basket["TotalBagsPrice"])}
-            if basket.get("TotalBagsPrice")
+            other_fees={"poser (anslået)": _bag_fee()}
+            if empty
+            else {"poser": bags}
+            if bags
             else {},
             minimum_order=_money(basket.get("MinimumOrderTotal")),
         )

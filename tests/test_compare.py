@@ -564,3 +564,46 @@ def test_alternatives_survive_out():
     cheap = p("x", "c", "Bananer øko", "2.50", "1 stk")
     out = server._out(best_match("bananer", [banana, cheap]))
     assert out["alternatives"][0]["line_total"] in {"3.00", "2.50"}
+
+
+def test_an_oeko_choice_is_always_shown():
+    plain = [p("x", f"m{i}", "Fior di latte", f"{20 + i}.00", "200 g") for i in range(4)]
+    eco = p("x", "eco", "Øko fior di latte", "40.00", "200 g")
+    line = best_match("fior di latte 200 g", [*plain, eco])
+    alts = line.alternatives
+    assert line.product.id == "m0" and len(alts) == 3
+    assert alts[-1]["id"] == "eco" and alts[-1]["oeko"] is True
+    assert alts[0]["oeko"] is False
+
+
+def test_no_extra_oeko_when_the_pick_is_oeko():
+    eco = p("x", "eco", "Øko fior di latte", "10.00", "200 g")
+    plain = [p("x", f"m{i}", "Fior di latte", f"{20 + i}.00", "200 g") for i in range(4)]
+    line = best_match("fior di latte 200 g", [eco, *plain])
+    assert line.product.id == "eco"
+    assert [a["id"] for a in line.alternatives] == ["m0", "m1", "m2"]
+
+
+def test_multi_buy_counts_in_the_price_per_kg():
+    """Week 45: 3 small øko packs on '3 for 48' beat a bigger pack that is cheaper per kg alone."""
+    big = p("x", "big", "Fior di latte", "34.00", "200 g")  # 170 kr/kg
+    eco = p("x", "eco", "Øko fior di latte", "22.00", "100 g")  # 220 kr/kg alone, 160 on offer
+    eco.offer_text = "3 for 48 kr"
+    line = best_match("3 x fior di latte", [big, eco])
+    assert (line.product.id, line.quantity, line.line_total) == ("eco", 3, Decimal(48))
+
+
+def test_multi_buy_for_the_amount_needed_and_a_hint():
+    eco = p("x", "eco", "Øko fior di latte", "22.00", "100 g")
+    eco.offer_text = "3 for 48 kr"
+    line = best_match("fior di latte 200 g", [eco])
+    assert (line.quantity, line.line_total) == (2, Decimal(44))  # never more than needed
+    assert "1 mere for 4.00 kr" in line.note
+
+
+def test_oeko_is_a_whole_word():
+    from handle_mcp.compare import is_oeko
+
+    assert is_oeko(p("x", "a", "Økologiske æg", "1"))
+    assert is_oeko(p("x", "b", "Fior di latte øko", "1"))
+    assert not is_oeko(p("x", "c", "Økonomipakke toiletpapir", "1"))

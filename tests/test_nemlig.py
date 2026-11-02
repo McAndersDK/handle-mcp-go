@@ -215,6 +215,26 @@ async def test_cart_has_fees_minimum_and_warnings(store):
     assert cart.delivery == "Tirsdag 3. nov. kl. 17-20"
 
 
+async def test_cart_hides_removed_lines(store, fake):
+    fake.basket = {**fake.basket, "Lines": [*fake.basket["Lines"], {"Id": "9", "Name": "Æg",
+        "Quantity": 0, "Price": 28.0}]}  # fmt: skip
+    cart = await store.get_cart()
+    assert "9" not in [ln.product_id for ln in cart.lines]
+    assert cart.products_total == Decimal("147.45")  # nemlig's own total is kept
+
+
+async def test_terms_estimate_bags_for_an_empty_cart(store, fake, monkeypatch):
+    assert (await store.terms()).other_fees == {"poser": Decimal("6.0")}
+    fake.basket = {**fake.basket, "TotalBagsPrice": 0}  # products but no bag fee: no guess
+    assert (await store.terms()).other_fees == {}
+    fake.basket = {**fake.basket, "Lines": [], "TotalBagsPrice": 0}
+    assert (await store.terms()).other_fees == {"poser (anslået)": Decimal("17.85")}
+    monkeypatch.setenv("HANDLE_NEMLIG_BAG_FEE", "12,50")
+    assert (await store.terms()).other_fees == {"poser (anslået)": Decimal("12.50")}
+    monkeypatch.setenv("HANDLE_NEMLIG_BAG_FEE", "ikke et tal")
+    assert (await store.terms()).other_fees == {"poser (anslået)": Decimal("17.85")}
+
+
 async def test_set_quantities_absolute_and_remove(store, fake):
     results = await store.set_quantities({"701025": 5, "5064654": 0})
     assert [(r.product_id, r.applied, r.ok) for r in results] == [
