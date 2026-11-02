@@ -6,6 +6,7 @@ counted in `pricing`. This module picks the best product per item and compares t
 - "2 x broccoli" with no size: the lowest cost for 2 packs wins, also 500 g against 1 stk.
   Only for pieces and produce: "2 x mælk" still compares per litre.
 - A product that matches only by its brand is never a guess: "Fior di Frutta" jam.
+- Cold cuts and smoked ('Røget kyllingebryst') lose when the search also found it raw.
 - On the same name score, a product in a matching store category wins ("Fisk > Laks").
 - Then a product with a known size wins, then the lowest cost. Sold-out products never win.
 - An øko product is always among the alternatives when the search found one.
@@ -21,6 +22,7 @@ from typing import Any
 from zoneinfo import ZoneInfo
 
 from handle_mcp.match import (
+    PIECES,
     asked,
     brand_only,
     category_rank,
@@ -31,6 +33,7 @@ from handle_mcp.match import (
     mixed,
     pack_size,
     parse_item,
+    prepared,
     processed_rank,
     query,
     score,
@@ -101,11 +104,13 @@ def _brief(line: BasketLine) -> dict[str, Any]:
     return {
         "id": get(p, "id"),
         "name": get(p, "name"),
+        "brand": get(p, "brand"),
         "size": get(p, "size"),
         "price": get(p, "price"),
         "quantity": line.quantity,
         "line_total": line.line_total,
         "offer_text": get(p, "offer_text"),
+        "category": get(p, "category"),  # 'Konserves': a human (and the live list) sees canned
         "oeko": is_oeko(p),
         "note": line.note,
     }
@@ -117,6 +122,10 @@ def _best(item: str, products: list[Any], on: date | None = None) -> BasketLine:
     quantity, words, size = parse_item(item)
     # The item is produce when the search found it fresh: then canned or frozen loses.
     produce = any(get(x, "available") and is_fresh(x) and score(words, x) >= 0.5 for x in products)
+    # The search also found it raw ('Kyllingebrystfilet'): then cold cuts and smoked lose.
+    raw = any(
+        get(x, "available") and score(words, x) == 1 and not prepared(words, x) for x in products
+    )
     ranked = []
     for product in products:
         name_score = score(words, product, asked(item))
@@ -129,6 +138,7 @@ def _best(item: str, products: list[Any], on: date | None = None) -> BasketLine:
             # in a category that fits ("... > Cherrytomater") while the fresh one does not.
             fit = (
                 processed_rank(words, product, produce),
+                int(raw and prepared(words, product)),
                 category_rank(words, product),
                 mixed(words, product),
             )
@@ -136,7 +146,7 @@ def _best(item: str, products: list[Any], on: date | None = None) -> BasketLine:
             amount = have[1] * count if have else Decimal(0)
             # '6 x bananer' or '2 x broccoli': N things. Compare what they cost, also a 500 g
             # broccoli against '1 stk'. Not per piece or kg. '2 x mælk' still compares per litre.
-            by_piece = not size and quantity > 1 and bool(have) and (have[0] == "stk" or produce)
+            by_piece = not size and quantity > 1 and bool(have) and (have[0] in PIECES or produce)
             value = (
                 (line_cost,)
                 if size
@@ -152,7 +162,7 @@ def _best(item: str, products: list[Any], on: date | None = None) -> BasketLine:
         ranked, key=lambda r: r[:7]
     )
     over = size_rank == 0 and size is not None and too_much(size, quantity, count, product)
-    is_mixed = fit[2] == 1
+    is_mixed = fit[-1] == 1  # mixed() is always last in fit
     sure = neg_score == -1.0 and size_rank == 0 and not over and not is_mixed
     note = None
     if over:
@@ -166,7 +176,7 @@ def _best(item: str, products: list[Any], on: date | None = None) -> BasketLine:
     elif size and count != quantity:
         note = f"{count} x {get(product, 'size') or 'pakke'} for at nå mængden."
     have = pack_size(product)
-    if not size and quantity > 1 and have and have[0] == "stk":
+    if not size and quantity > 1 and have and have[0] in PIECES:
         if have[1] * count > quantity:
             extra = f"{count} x {get(product, 'size') or 'pakke'} = {have[1] * count:g} stk."
             note = " ".join(filter(None, [note, extra]))

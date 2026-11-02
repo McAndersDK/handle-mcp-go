@@ -286,6 +286,72 @@ def test_flavour_word_is_not_the_product():
     assert line.product.id == "b"
 
 
+def _cat(product, category):
+    product.category = category
+    return product
+
+
+def test_m_without_dot_is_a_flavour():
+    """Seen live 2 Nov: nemlig 'blåbær 250 g' picked 3 x 'Mini frugtstænger m blåbær øko'."""
+    bar = _cat(p("x", "s", "Mini frugtstænger m blåbær øko", "9.45", "7 x 12,5 g"), "Kolonial")
+    berries = _cat(p("x", "b", "Blåbær", "18.00", "125 g"), "Grønt")
+    frozen = _cat(p("x", "f", "Blåbær", "29.50", "300 g / frost"), "Frost")
+    assert best_match("blåbær 250 g", [bar, berries, frozen]).product.id == "b"
+
+
+def test_cold_cuts_lose_to_raw_meat():
+    """Seen live 2 Nov: Bilka 'kyllingebryst 450 g' picked 5 x 'Røget kyllingebryst' 100 g."""
+    pålæg = "Mejeri & køl > Pålæg > Kødpålæg > Kyllingepålæg > Kyllingebryst i skiver"
+    raw = "Kød & fisk > Kylling > Kyllingebryst & kyllingefilet > Kyllingebrystfilet"
+    products = [
+        _cat(p("x", "r", "Røget kyllingebryst", "11.00", "100 g"), pålæg),
+        _cat(p("x", "s", "Kyllingebryst i skiver", "32.00", "350 g"), pålæg),
+        _cat(p("x", "a", "Kyllingebrystfilet", "32.95", "280 g"), raw),
+        _cat(p("x", "b", "Kyllingebrystfilet", "64.95", "650 g"), raw),
+    ]
+    assert best_match("kyllingebryst 450 g", products).product.id == "b"
+    # Asked for: smoked still wins.
+    assert best_match("røget kyllingebryst 100 g", products).product.id == "r"
+
+
+def test_rolls_are_not_wet_wipes():
+    """Seen live 2 Nov: Bilka 'toiletpapir 8 ruller' picked 42 wet wipes ('42 stk.')."""
+    wipes = p("x", "w", "Aloe Vera fugtigt toiletpapir", "22.95", "42 stk.")
+    rolls = p("x", "r", "Classic toiletpapir", "32.00", "12 rl.")
+    assert best_match("toiletpapir 8 ruller", [wipes, rolls]).product.id == "r"
+    nemlig = p("x", "n", "Toiletpapir 8 ruller", "39.00", "8 stk")
+    assert pack_size(nemlig) == ("rl", 8)
+    # '8 stk' still finds rolls: only the other way round is closed.
+    eight = p("x", "8", "Toiletpapir 3-lags", "28.00", "8 rl.")
+    assert best_match("toiletpapir 8 stk", [eight]).sure
+
+
+def test_rolls_count_as_pieces():
+    """'6 x køkkenrulle' with no size: 6 rolls, so a 4-pack is bought twice, like '6 x bananer'."""
+    four = p("x", "4", "Køkkenrulle 3-lags", "20.00", "4 rl.")
+    one = p("x", "1", "Køkkenrulle 2-lags", "8.00", "1 rl.")
+    line = best_match("6 x køkkenrulle", [four, one])
+    assert (line.product.id, line.quantity, line.line_total) == ("4", 2, Decimal(40))
+
+
+def test_only_cold_cuts_found_is_no_penalty():
+    """Nothing raw in the search: the cheapest cold cut for the amount still wins."""
+    pålæg = "Pålæg > Kyllingepålæg"
+    smoked = _cat(p("x", "r", "Røget kyllingebryst", "11.00", "100 g"), pålæg)
+    sliced = _cat(p("x", "s", "Kyllingebryst i skiver", "32.00", "350 g"), pålæg)
+    assert best_match("kyllingebryst 400 g", [smoked, sliced]).product.id == "r"
+
+
+def test_alternatives_show_the_category():
+    """So a human sees that the cheaper 'Cherrytomater' is a tin."""
+    tin = _cat(p("x", "t", "Cherrytomater", "12.00", "400 g"), "Kolonial > Konserves")
+    fresh = _cat(p("x", "f", "Cherry tomater øko", "17.00", "250 g"), "Frugt & grønt > Tomater")
+    line = best_match("cherrytomater 250 g", [tin, fresh])
+    assert line.product.id == "f"
+    assert line.alternatives[0]["category"] == "Kolonial > Konserves"
+    assert "brand" in line.alternatives[0]
+
+
 def test_flavour_only_hit_is_never_a_guess():
     """Seen live: nemlig 'mandariner' matched 'Grøn te m. mandarin & appelsin'."""
     line = best_match("mandariner 1 kg", [p("x", "t", "Grøn te m. mandarin & appelsin", "31.50")])

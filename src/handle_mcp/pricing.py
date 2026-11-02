@@ -17,7 +17,7 @@ from datetime import date
 from decimal import Decimal
 from typing import Any
 
-from handle_mcp.match import get, pack_size
+from handle_mcp.match import PIECES, get, pack_size
 
 SIZE_TOLERANCE = Decimal("0.15")  # up to 15 % MORE than wanted still counts as the same size
 
@@ -80,7 +80,7 @@ def per_unit(product: Any, quantity: int, count: int, on: date | None) -> tuple[
     price = cost(product, count, on) / count
     if not have or not have[1]:
         return 2, price
-    by_piece = have[0] == "stk"
+    by_piece = have[0] in PIECES
     kind = (0 if by_piece else 1) if quantity > 1 else (1 if by_piece else 0)
     return kind, price / have[1]
 
@@ -89,7 +89,9 @@ def packs(wanted: tuple[str, Decimal] | None, quantity: int, product: Any) -> in
     """How many packs give the wanted amount. '1,5 kg' with 500 g packs → 3.
     None when the sizes cannot be compared (no size, or kg against stk)."""
     have = pack_size(product)
-    if not wanted or not have or wanted[0] != have[0] or not have[1]:
+    # '8 stk' toilet paper takes rolls. '8 ruller' never takes '42 stk' wet wipes.
+    unit = "stk" if have and have[0] == "rl" and wanted and wanted[0] == "stk" else have and have[0]
+    if not wanted or not have or wanted[0] != unit or not have[1]:
         return None
     need = wanted[1] * quantity * (1 - SHORT_TOLERANCE)
     return max(1, math.ceil(need / have[1]))
@@ -98,7 +100,7 @@ def packs(wanted: tuple[str, Decimal] | None, quantity: int, product: Any) -> in
 def pieces(wanted: tuple[str, Decimal] | None, quantity: int, product: Any) -> int | None:
     """'6 x bananer' with no size means 6 bananas: a 4-pack is bought twice, not 6 times."""
     have = pack_size(product)
-    if wanted or quantity < 2 or not have or have[0] != "stk" or have[1] <= 1:
+    if wanted or quantity < 2 or not have or have[0] not in PIECES or have[1] <= 1:
         return None
     return math.ceil(quantity / have[1])
 

@@ -2,7 +2,7 @@
 
 - "2 x rugbrød" means quantity 2. A size like "1,5 kg" is the amount wanted.
 - A product matches well when every word of the item is a whole word in its name.
-- A word only after "m.", "med", "i", "u." ... is a flavour, not the product: "Yoghurt m. banan"
+- A word only after "m.", "m", "med", "i", "u." ... is a flavour, not the product: "Yoghurt m. banan"
   is not a banana. Such products never win, unless the item asks for it: "makrel i tomat".
 - A word only in the brand counts half: "Fior di Frutta" jam is not "fior di latte".
 - "makrelfilet" and "makrelstykker" are makrel: a cut of the thing named first.
@@ -26,14 +26,17 @@ UNITS = {
     "ml": ("ml", 1), "cl": ("ml", 10), "dl": ("ml", 100),
     "l": ("ml", 1000), "ltr": ("ml", 1000), "liter": ("ml", 1000),
     "stk": ("stk", 1), "st": ("stk", 1),
-    "ruller": ("stk", 1), "rulle": ("stk", 1), "rl": ("stk", 1),
+    "ruller": ("rl", 1), "rulle": ("rl", 1), "rl": ("rl", 1),  # rolls, not 42 wet wipes
 }  # fmt: skip
+
+PIECES = ("stk", "rl")  # counted things: '2 x køkkenrulle' is 2 packs of rolls, like pieces
 
 SIZE_RE = re.compile(
     r"(?:(\d+)\s*[x×]\s*)?(\d+(?:[.,]\d+)?)\s*(" + "|".join(UNITS) + r")\b", re.IGNORECASE
 )
 
-FLAVOUR_RE = re.compile(r"\s(?:m\.|med|i|u\.|uden|smag)\s", re.IGNORECASE)
+# "m" without a dot too: nemlig writes "Mini frugtstænger m blåbær".
+FLAVOUR_RE = re.compile(r"\s(?:m\.?|med|i|u\.|uden|smag)\s", re.IGNORECASE)
 
 # Words that only say how a thing is made or packed: "frilandsæg" is æg, "splitlinser" is linser.
 DESCRIBERS = ("frilands", "skrabe", "øko", "split", "mini", "snack", "baby")
@@ -219,4 +222,26 @@ def _suffix(word: str, token: str) -> bool:
 
 
 def pack_size(product: Any) -> tuple[str, Decimal] | None:
-    return parse_size(get(product, "size")) or parse_size(get(product, "name"))
+    """The size field, else the name. Rolls in the name win over 'stk' in the size field:
+    nemlig sells 'Toiletpapir 8 ruller' with size '8 stk'."""
+    size, name = parse_size(get(product, "size")), parse_size(get(product, "name"))
+    if name and name[0] == "rl" and (not size or size[0] == "stk"):
+        return name
+    return size or name
+
+
+# Ready to eat: cold cuts, smoked, fried. Never raw meat unless the item asks for it.
+PREPARED = ("røget", "røgede", "grillet", "grillede", "stegt", "stegte", "pålæg")
+
+
+def prepared(words: list[str], product: Any) -> bool:
+    """True for 'Røget kyllingebryst' (Bilka 'Pålæg' category) when the item does not ask for
+    it: 'kyllingebryst 450 g' is raw meat, 'røget laks' asks."""
+    text = f"{get(product, 'name')} {get(product, 'category') or ''}".lower()
+    item = " ".join(words)
+    return _marked(text) and not _marked(item)
+
+
+def _marked(text: str) -> bool:
+    """A PREPARED word starts or ends a word: 'Røget', 'Kyllingepålæg'. Not deep inside one."""
+    return any(re.search(rf"\b{m}|{m}\b", text) for m in PREPARED)
