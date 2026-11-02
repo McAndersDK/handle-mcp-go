@@ -1,0 +1,487 @@
+{
+  "hits": [
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1395,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 11160,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 11160
+        }
+      },
+      "price": 1395,
+      "gtin": "5701101700022",
+      "name": "Makrel i tomat",
+      "brand": "Sæby",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Kolonial > Konserves, bouillon & krydderier > Fiskekonserves > Makrel",
+      "productType": "Findelt makrel",
+      "objectID": "199749"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 6500,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 13990,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 13000,
+          "unitsOfMeasureShowPrice": 13000
+        }
+      },
+      "price": 6995,
+      "gtin": "5701101400267",
+      "name": "Makrelfilet i tomat",
+      "brand": "Sæby",
+      "netcontent": "4 x 125 g",
+      "deepestCategoryPath": "Kolonial > Konserves, bouillon & krydderier > Fiskekonserves > Makrel",
+      "productType": "Makrelfilet",
+      "objectID": "187246"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 6500,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 13990,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 13000,
+          "unitsOfMeasureShowPrice": 13000
+        }
+      },
+      "price": 6995,
+      "gtin": "5701101400243",
+      "name": "Findelt makrel i tomat",
+      "brand": "Sæby",
+      "netcontent": "4 x 125 g",
+      "deepestCategoryPath": "Kolonial > Konserves, bouillon & krydderier > Fiskekonserves > Makrel",
+      "productType": "Findelt makrel",
+      "objectID": "187245"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1395,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 11160,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 11160
+        }
+      },
+      "price": 1395,
+      "gtin": "5701101700015",
+      "name": "Makrelfilet i tomat",
+      "brand": "Sæby",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Kolonial > Konserves, bouillon & krydderier > Fiskekonserves > Makrel",
+      "productType": "Makrelfilet",
+      "objectID": "189311"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1795,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 14360,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 14360
+        }
+      },
+      "price": 1795,
+      "gtin": "5701101400229",
+      "name": "Makrelfilet i tomat",
+      "brand": "Sæby",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Kolonial > Konserves, bouillon & krydderier > Fiskekonserves > Makrel",
+      "productType": "Makrelfilet",
+      "objectID": "189309"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2000,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 16400,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 16000,
+          "unitsOfMeasureShowPrice": 16000
+        }
+      },
+      "price": 2050,
+      "gtin": "5701018049962",
+      "name": "Makrelfilet i tomat",
+      "brand": "Glyngøre",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Kolonial > Konserves, bouillon & krydderier > Fiskekonserves > Makrel",
+      "productType": "Makrelfilet",
+      "objectID": "64000"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2000,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 11026,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 10526,
+          "unitsOfMeasureShowPrice": 10526
+        }
+      },
+      "price": 2095,
+      "gtin": "5711170230139",
+      "name": "Makrelkræs",
+      "brand": "Amanda",
+      "netcontent": "190 g",
+      "deepestCategoryPath": "Kolonial > Konserves, bouillon & krydderier > Fiskekonserves > Makrel",
+      "productType": "Findelt makrel",
+      "objectID": "17741"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2000,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 18360,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 16000,
+          "unitsOfMeasureShowPrice": 16000
+        }
+      },
+      "price": 2295,
+      "gtin": "5705550303032",
+      "name": "Makrelfilet i tomat",
+      "brand": "Amanda",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Kolonial > Konserves, bouillon & krydderier > Fiskekonserves > Makrel",
+      "productType": "Makrelfilet",
+      "objectID": "49101"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2195,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 27438,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 27438
+        }
+      },
+      "price": 2195,
+      "gtin": "5705550826128",
+      "name": "Makrel i tomat smørbar",
+      "brand": "Amanda",
+      "netcontent": "80 g",
+      "deepestCategoryPath": "Mejeri & køl > Pålæg > Fiskepålæg > Andet fiskepålæg & tilbehør",
+      "productType": "Makrel",
+      "objectID": "195447"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2000,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 16400,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 16000,
+          "unitsOfMeasureShowPrice": 16000
+        }
+      },
+      "price": 2050,
+      "gtin": "5701018049948",
+      "name": "Makrelguf",
+      "brand": "Glyngøre",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Kolonial > Konserves, bouillon & krydderier > Fiskekonserves > Makrel",
+      "productType": "Findelt makrel",
+      "objectID": "64866"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2000,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 17200,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 16000,
+          "unitsOfMeasureShowPrice": 16000
+        }
+      },
+      "price": 2150,
+      "gtin": "5711170216003",
+      "name": "Makrelfilet i tomat",
+      "brand": "Amanda",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Kolonial > Konserves, bouillon & krydderier > Fiskekonserves > Makrel",
+      "productType": "Makrelfilet",
+      "objectID": "17754"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Skarp pris",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1400,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 26944,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 15556,
+          "unitsOfMeasureShowPrice": 15556
+        }
+      },
+      "price": 2425,
+      "gtin": "5712876460004",
+      "name": "Makrel i tomat smørbar",
+      "brand": "Salling",
+      "netcontent": "90 g",
+      "deepestCategoryPath": "Mejeri & køl > Pålæg > Fiskepålæg > Andet fiskepålæg & tilbehør",
+      "productType": "Makrel",
+      "objectID": "134096"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1795,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 14360,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 14360
+        }
+      },
+      "price": 1795,
+      "gtin": "5701101400236",
+      "name": "Makrelfilet i tomat",
+      "brand": "Sæby",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Kolonial > Konserves, bouillon & krydderier > Fiskekonserves > Makrel",
+      "productType": "Findelt makrel",
+      "objectID": "189310"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2195,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 17560,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 17560
+        }
+      },
+      "price": 2195,
+      "gtin": "5701101400021",
+      "name": "Makrelfilet i tomat m. chili",
+      "brand": "Sæby",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Kolonial > Konserves, bouillon & krydderier > Fiskekonserves > Makrel",
+      "productType": "Makrelfilet",
+      "objectID": "84528"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2000,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 16760,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 16000,
+          "unitsOfMeasureShowPrice": 16000
+        }
+      },
+      "price": 2095,
+      "gtin": "5705550303025",
+      "name": "Makrelkræs",
+      "brand": "Amanda",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Kolonial > Konserves, bouillon & krydderier > Fiskekonserves > Makrel",
+      "productType": "Findelt makrel",
+      "objectID": "54425"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2900,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 19417,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 16111,
+          "unitsOfMeasureShowPrice": 16111
+        }
+      },
+      "price": 3495,
+      "gtin": "5708665801820",
+      "name": "Plantebaserede fileter i tomat øko",
+      "brand": "Rømer Plant Based",
+      "netcontent": "180 g",
+      "deepestCategoryPath": "Kolonial > Konserves, bouillon & krydderier > Veganske & vegetariske alternativer",
+      "productType": "Plantebaseret makrelfilet",
+      "objectID": "122722"
+    }
+  ],
+  "nbHits": 16,
+  "page": 0,
+  "nbPages": 1,
+  "hitsPerPage": 30,
+  "exhaustiveNbHits": true,
+  "exhaustiveTypo": true,
+  "exhaustive": {
+    "nbHits": true,
+    "typo": true
+  },
+  "query": "makrel tomat",
+  "params": "query=makrel+tomat&hitsPerPage=30&removeWordsIfNoResults=allOptional&filters=isInAssortmentIn%3A1653+AND+nonsearchable%3Afalse&attributesToRetrieve=%5B%22name%22%2C+%22brand%22%2C+%22gtin%22%2C+%22netcontent%22%2C+%22productType%22%2C+%22deepestCategoryPath%22%2C+%22price%22%2C+%22storeData.1653%22%5D&analyticsTags=%5B%22ext-alg%23query-category%3Aquery-matched%22%2C%22ext-alg%23auto-filter%3Ahas-boosts%22%5D&optionalFacetFilters=%5B%22searchHierachy%3Amakrel%3Cscore%3D2%3E%22%2C%22searchHierachy%3Atomater%3Cscore%3D2%3E%22%5D",
+  "index": "prod_BILKATOGO_PRODUCTS",
+  "extensions": {
+    "queryCategorization": {
+      "count": 10,
+      "normalizedQuery": "makrel tomat"
+    }
+  }
+}

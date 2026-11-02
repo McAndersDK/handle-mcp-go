@@ -8,7 +8,11 @@ Simple and explainable matching. No store-specific code here.
   is not a banana. Such products never win, unless the item asks for it: "makrel i tomat".
 - A word only in the brand counts half: "Fior di Frutta" jam is not "fior di latte".
 - "makrelfilet" and "makrelstykker" are makrel: a cut of the thing named first.
-- Canned or preserved food ("Hvidløg i krydderolie") loses to fresh when the item does not ask.
+- Canned, preserved or frozen produce ("Hvidløg i krydderolie") loses when the search also found
+  it fresh. Canned fish and frozen meat do not lose: "Makrel i tomat" is a tin.
+- "2 x broccoli" with no size: the lowest cost for 2 packs wins, also 500 g against 1 stk.
+  Only for pieces and produce: "2 x mælk" still compares per litre.
+- A product that matches only by its brand is never a guess: "Fior di Frutta" jam.
 - On the same name score, a product in a matching store category wins ("Fisk > Laks").
 - Then a product with a known size wins, then the lowest cost. Sold-out products never win.
 - No size in the item: compare price per kg, l or piece, and ask for an amount.
@@ -32,7 +36,7 @@ from zoneinfo import ZoneInfo
 from handle_mcp.models import Product
 from handle_mcp.stores import StoreError
 
-SEARCH_LIMIT = 10
+SEARCH_LIMIT = 30  # the cheapest tin was hit 14 for "hakkede tomater"
 DK = ZoneInfo("Europe/Copenhagen")  # offers end on Danish days
 SIZE_TOLERANCE = Decimal("0.15")  # up to 15 % MORE than wanted still counts as the same size
 SHORT_TOLERANCE = Decimal("0.02")  # never less than wanted: 990 g is 1 kg, 900 g is not
@@ -176,21 +180,29 @@ def _described(word: str, token: str) -> bool:
     )
 
 
-def _processed_rank(words: list[str], product: Any) -> int:
-    """1 for canned or preserved food, or frozen fruit and vegetables, when the item does not
-    ask for it.
-    Frozen meat or fish is not demoted: a frozen 35 kr offer is a fine 'kyllingelår'."""
+def _processed_rank(words: list[str], product: Any, fresh: bool = False) -> int:
+    """1 for canned, preserved or frozen fruit and vegetables, when the item does not ask for it.
+    `fresh` says the search also found the item fresh ('Grønt'), so the item is produce.
+    Canned fish or frozen meat is not demoted: "Makrel i tomat" 125 g is a fine tin, and a
+    frozen 35 kr offer is a fine 'kyllingelår'."""
     text = f"{_get(product, 'name')} {_get(product, 'category') or ''}".lower()
     item = " ".join(words)
-    if any(m in text for m in CANNED) and not any(m in item for m in CANNED):
-        return 1
+    produce = fresh or _fresh(product) or any(w.endswith("bær") for w in words)
+    if not produce:
+        return 0
+    canned = any(m in text for m in CANNED) and not any(m in item for m in CANNED)
     name_words = _words(_get(product, "name") or "")
     preserved = any(w.endswith(m) for w in name_words for m in PRESERVED)
-    if preserved and not any(m in item for m in PRESERVED):
-        return 1
-    produce = any(m in text for m in FRESH) or any(w.endswith("bær") for w in words)
+    preserved = preserved and not any(m in item for m in PRESERVED)
     frozen = any(m in text for m in FROZEN) and not any(m in item for m in FROZEN)
-    return 1 if frozen and produce else 0
+    return 1 if canned or preserved or frozen else 0
+
+
+def _fresh(product: Any) -> bool:
+    """Fruit or vegetables, not canned or frozen: nemlig 'Grønt', Bilka 'Frugt & grønt'."""
+    text = f"{_get(product, 'name')} {_get(product, 'category') or ''}".lower()
+    processed = any(m in text for m in (*CANNED, *FROZEN))
+    return any(m in text for m in FRESH) and not processed
 
 
 def _price(product: Any, on: date | None) -> Decimal:
@@ -277,6 +289,12 @@ def _per_unit(product: Any, quantity: int, count: int, on: date | None) -> tuple
 def _flavour_only(words: list[str], product: Any) -> bool:
     """True when the item's words are only in the flavour part: 'Grøn te m. mandarin'."""
     return _score(words, product) > 0 and all(_score([w], product) < 0.5 for w in words)
+
+
+def _brand_only(words: list[str], product: Any) -> bool:
+    """True when only the brand has the item's words: 'Fior di Frutta' jam for 'fior di latte'."""
+    bare = {"name": _get(product, "name"), "brand": None}
+    return _score(words, bare) == 0 and _score(words, product) > 0
 
 
 def _stem_hit(word: str, tokens: set[str]) -> bool:
@@ -366,6 +384,8 @@ def _best(item: str, products: list[Any], on: date | None = None) -> BasketLine:
     """Best word match first, then a comparable size, then the lowest cost for the amount.
     `on` is the delivery day: offers that end before it do not count."""
     quantity, words, size = parse_item(item)
+    # The item is produce when the search found it fresh: then canned or frozen loses.
+    fresh = any(_get(x, "available") and _fresh(x) and _score(words, x) >= 0.5 for x in products)
     ranked = []
     for product in products:
         score = _score(words, product, _asked(item))
@@ -377,14 +397,15 @@ def _best(item: str, products: list[Any], on: date | None = None) -> BasketLine:
             # Canned or frozen produce loses before the category counts: a canned product can sit
             # in a category that fits ("... > Cherrytomater") while the fresh one does not.
             fit = (
-                _processed_rank(words, product),
+                _processed_rank(words, product, fresh),
                 _category_rank(words, product),
                 _mixed(words, product),
             )
             have = _pack_size(product)
             amount = have[1] * count if have else Decimal(0)
-            # '6 x bananer': pieces of a stk pack. Compare what the 6 cost, not the price per piece.
-            by_piece = not size and quantity > 1 and bool(have) and have[0] == "stk"
+            # '6 x bananer' or '2 x broccoli': N things. Compare what they cost, also a 500 g
+            # broccoli against '1 stk'. Not per piece or kg. '2 x mælk' still compares per litre.
+            by_piece = not size and quantity > 1 and bool(have) and (have[0] == "stk" or fresh)
             value = (
                 (cost,)
                 if size
@@ -421,7 +442,8 @@ def _best(item: str, products: list[Any], on: date | None = None) -> BasketLine:
             extra = f"{count} x {_get(product, 'size') or 'pakke'} = {have[1] * count:g} stk."
             note = " ".join(filter(None, [note, extra]))
     elif not size:
-        hint = "Ingen mængde på listen: billigst pr. kg, l eller stk. Skriv en mængde, fx '1 kg'."
+        what = f"{quantity} pakker" if quantity > 1 and fresh else "pr. kg, l eller stk"
+        hint = f"Ingen mængde på listen: billigst {what}. Skriv en mængde, fx '1 kg'."
         note = " ".join(filter(None, [note, hint]))
     note = " ".join(filter(None, [note, _multi_hint(product, count, on)]))
     until = _get(product, "offer_until")
@@ -442,7 +464,11 @@ def _guess(
     With a size: only products of that size kind, cheapest for the amount ("Tortelloni 250 g"
     is not a guess for "pasta 500 g" when "Fettuccine 500 g" is cheaper). Without: the store's
     top hit. Never a flavour-only hit ("Grøn te m. mandarin" for "mandariner")."""
-    ok = [x for x in products if _get(x, "available") and not _flavour_only(words, x)]
+    ok = [
+        x
+        for x in products
+        if _get(x, "available") and not _flavour_only(words, x) and not _brand_only(words, x)
+    ]
     if size:
         sized = [(x, _packs(size, quantity, x)) for x in ok]
         sized = [(x, n) for x, n in sized if n]

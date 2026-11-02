@@ -418,6 +418,7 @@ def test_fresh_beats_cheaper_frozen_or_canned():
     canned = p("x", "c", "Cherrytomater i tomatjuice", "8.00", "400 g")
     canned.category = "Kolonial > Konserves"
     tomato = p("x", "t", "Cherrytomater", "15.00", "250 g")
+    tomato.category = "Grønt"  # real products have a category: it says the item is produce
     assert best_match("cherrytomater", [canned, tomato]).product.id == "t"
     assert best_match("frosne blåbær", [frozen, fresh]).product.id == "f"
 
@@ -433,7 +434,39 @@ def test_canned_by_name_or_category_loses():
     canned = p("x", "c", "Cherrytomater i tomatjuice", "10.95", "400 g")
     canned.category = "Kolonial > Konserves & dåsemad"
     fresh = p("x", "t", "Cherrytomater", "12.00", "400 g")
+    fresh.category = "Frugt & grønt > Tomater"
     assert best_match("cherrytomater 250 g", [canned, fresh]).product.id == "t"
+
+
+def test_canned_fish_is_not_demoted():
+    # Real Bilka answer: canned 'Makrel i tomat' 125 g lost to 2 x 90 g spread from the fridge.
+    line = best_match("makrel i tomat 125 g", _bilka("match_makrel_tomat"))
+    assert (line.product.name, line.product.size, line.line_total, line.sure) == (
+        "Makrel i tomat",
+        "125 g",
+        Decimal("13.95"),
+        True,
+    )
+
+
+def test_fresh_broccoli_beats_frozen_and_one_piece():
+    # Real nemlig answer: '2 x broccoli' took 2 x 1 stk (36 kr) over 2 x 500 g (30 kr).
+    line = best_match("2 x broccoli", _nemlig("match_broccoli"))
+    assert (line.product.size, line.line_total) == ("500 g", Decimal(30))
+
+
+def test_cheapest_tin_beyond_the_top_ten():
+    # Real nemlig answer: Taste of Nature (3 for 16 kr) is hit 14 of 30.
+    products = _nemlig("match_hakkede_tomater_30")
+    line = best_match("4 x hakkede tomater 400 g", products)
+    assert line.product.size == "400 g / Taste of Nature"
+    assert line.line_total == Decimal("22.37")  # 3 for 16 + 1 x 6.37
+    assert compare.SEARCH_LIMIT >= 30
+
+
+def test_mozzarella_is_only_a_guess_for_fior_di_latte():
+    line = best_match("fior di latte 300 g", _bilka("match_mozzarella"))
+    assert line.guess and not line.sure and "mozzarella" in line.product.name.lower()
 
 
 def test_c_and_k_and_short_plural():
@@ -694,7 +727,7 @@ def test_preserved_is_a_whole_word_end():
     beer = p("x", "l", "Lagerøl", "8.00", "33 cl")
     oil = p("x", "o", "Hvidløg i krydderolie", "17.80", "290 g")
     assert compare._processed_rank(["øl"], beer) == 0  # 'lage' inside a word is not 'lage'
-    assert compare._processed_rank(["hvidløg"], oil) == 1
+    assert compare._processed_rank(["hvidløg"], oil, fresh=True) == 1
 
 
 async def test_lines_say_oeko_in_the_tool_answer(two_stores):
@@ -715,3 +748,29 @@ def test_brand_is_not_the_product():
     line = best_match("fior di latte", _bilka("match_fior_di_latte"))
     assert line.guess and not line.sure
     assert _score(["fior", "di", "latte"], line.product) < 0.5
+    assert "marmelade" not in line.product.name.lower()  # a brand-only hit is never the guess
+    assert best_match("fior di latte 300 g", _bilka("match_fior_di_latte")).product is None
+
+
+def test_two_broccoli_compares_a_pack_with_one_piece():
+    # Live at nemlig: '2 x broccoli' took 2 x 1 stk at 36 kr, not 2 x 500 g at 30 kr.
+    piece = p("x", "s", "Broccoli", "18.00", "1 stk.")
+    pack = p("x", "g", "Broccoli", "15.00", "500 g")
+    piece.category = pack.category = "Grønt"
+    line = best_match("2 x broccoli", [piece, pack])
+    assert (line.product.id, line.quantity, line.line_total) == ("g", 2, Decimal(30))
+    assert "billigst 2 pakker" in line.note
+
+
+def test_two_milk_still_compares_per_litre():
+    small = p("x", "s", "Letmælk", "8.00", "500 ml")
+    big = p("x", "b", "Letmælk", "12.00", "1 l")
+    line = best_match("2 x letmælk", [small, big])
+    assert line.product.id == "b" and "pr. kg, l eller stk" in line.note
+
+
+def test_without_a_fresh_hit_canned_is_not_demoted():
+    oil = p("x", "o", "Hvidløg i krydderolie", "17.80", "290 g")
+    paste = p("x", "p", "Hvidløgspasta", "25.00", "100 g")
+    assert compare._processed_rank(["hvidløg"], oil) == 0  # no 'Grønt' hit: not known produce
+    assert best_match("hvidløg", [oil, paste]).product.id == "o"

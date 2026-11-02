@@ -1,0 +1,893 @@
+{
+  "hits": [
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 795,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 6360,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 6360
+        }
+      },
+      "price": 795,
+      "gtin": "5712870974354",
+      "name": "Mozzarella 19% fedt",
+      "brand": "Fellino",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Mozzarella",
+      "objectID": "41685"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1435,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 7175,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 7175
+        }
+      },
+      "price": 1435,
+      "gtin": "5712877217324",
+      "name": "Revet mozzarella 22% fedt",
+      "brand": "Salling",
+      "netcontent": "200 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Revet ost & topping",
+      "productType": "Revet mozzarella",
+      "objectID": "140787"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 3500,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 9975,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 8750,
+          "unitsOfMeasureShowPrice": 8750
+        }
+      },
+      "price": 3990,
+      "gtin": "5760466817325",
+      "name": "Revet mozzarella ost 15% fedt",
+      "brand": "Arla Karolines Køkken",
+      "netcontent": "400 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Revet ost & topping",
+      "productType": "Revet mozzarella",
+      "objectID": "20014"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "2699",
+          "offerDescription": "Mix 5 for 69,00",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 5,
+          "price": 1495,
+          "beforePrice": 0,
+          "multiPromoPrice": "6900",
+          "unitsOfMeasurePrice": 11960,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 11040,
+          "unitsOfMeasureShowPrice": 11960
+        }
+      },
+      "price": 1495,
+      "gtin": "5712871209196",
+      "name": "Mini Mozzarella 19% fedt",
+      "brand": "Fellino",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Mozzarella",
+      "objectID": "52481"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1995,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 11400,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 11400
+        }
+      },
+      "price": 1995,
+      "gtin": "5706911031434",
+      "name": "Mozzarella i tern 21 % fedt",
+      "brand": "Nora",
+      "netcontent": "175 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Revet ost & topping",
+      "productType": "Mozzarella i tern",
+      "objectID": "195937"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1995,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 15960,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 15960
+        }
+      },
+      "price": 1995,
+      "gtin": "5712875717369",
+      "name": "Mozzarella di Bufala 21% fedt",
+      "brand": "Salling Princip",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Mozzarella",
+      "objectID": "116554"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1895,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 12633,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 12633
+        }
+      },
+      "price": 1895,
+      "gtin": "5711953020773",
+      "name": "Revet ost m. mozzarella 13% fedt",
+      "brand": "Cheasy",
+      "netcontent": "150 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Revet ost & topping",
+      "productType": "Revet mozzarella",
+      "objectID": "89593"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1895,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 13536,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 13536
+        }
+      },
+      "price": 1895,
+      "gtin": "5712875279225",
+      "name": "Revet mozzarella 20% fedt øko",
+      "brand": "Salling ØKO",
+      "netcontent": "140 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Revet ost & topping",
+      "productType": "Revet mozzarella",
+      "objectID": "105432"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1695,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 13560,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 13560
+        }
+      },
+      "price": 1695,
+      "gtin": "5712873769315",
+      "name": "Mozzarella 17% fedt øko",
+      "brand": "Salling ØKO",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Mozzarella",
+      "objectID": "81396"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1395,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 11160,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 11160
+        }
+      },
+      "price": 1395,
+      "gtin": "5712873769339",
+      "name": "Mozzarella 16% fedt laktosefri",
+      "brand": "Salling Laktosefri",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Mozzarella",
+      "objectID": "84871"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2194,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 14627,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 14627
+        }
+      },
+      "price": 2194,
+      "gtin": "5711953165061",
+      "name": "Mozzarella tern 21% fedt",
+      "brand": "Arla Karolines Køkken",
+      "netcontent": "150 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Revet ost & topping",
+      "productType": "Mozzarella i tern",
+      "objectID": "116369"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 3163,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 12652,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 12652
+        }
+      },
+      "price": 3163,
+      "gtin": "5712877876033",
+      "name": "Mozzarella sticks",
+      "brand": "Salling",
+      "netcontent": "250 g",
+      "deepestCategoryPath": "Frost > Færdigretter på frost > Andre færdigretter",
+      "productType": "Mozzarella sticks",
+      "objectID": "180039"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1095,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 10950,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 10950
+        }
+      },
+      "price": 1095,
+      "gtin": "5710326023335",
+      "name": "Protein Cheese natural 10+",
+      "brand": "Protein lab",
+      "netcontent": "100 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Mozzarella",
+      "objectID": "158410"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2000,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 8780,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 8000,
+          "unitsOfMeasureShowPrice": 8000
+        }
+      },
+      "price": 2195,
+      "gtin": "8002710333036",
+      "name": "Mascarpone Italiano 42% fedt",
+      "brand": "Zanetti",
+      "netcontent": "250 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Mascarpone",
+      "objectID": "135617"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Skarp pris",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2200,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 22360,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 17600,
+          "unitsOfMeasureShowPrice": 17600
+        }
+      },
+      "price": 2795,
+      "gtin": "5712878760652",
+      "name": "Burrata di Andria",
+      "brand": "Salling Princip",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Burrata",
+      "objectID": "205658"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2400,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 17300,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 16000,
+          "unitsOfMeasureShowPrice": 16000
+        }
+      },
+      "price": 2595,
+      "gtin": "80894162",
+      "name": "Burrata 24% fedt",
+      "brand": "Zanetti",
+      "netcontent": "150 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Burrata",
+      "objectID": "75984"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "2699",
+          "offerDescription": "Mix 5 for 69,00",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 5,
+          "price": 1795,
+          "beforePrice": 0,
+          "multiPromoPrice": "6900",
+          "unitsOfMeasurePrice": 8975,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 6900,
+          "unitsOfMeasureShowPrice": 8975
+        }
+      },
+      "price": 1795,
+      "gtin": "5704025039094",
+      "name": "Revet mozzarella 22% fedt",
+      "brand": "Emborg",
+      "netcontent": "200 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Revet ost & topping",
+      "productType": "Revet mozzarella",
+      "objectID": "169373"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 3000,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 15000,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 15000
+        }
+      },
+      "price": 3000,
+      "gtin": "8002710415138",
+      "name": "Burratina 15% fedt",
+      "brand": "Zanetti",
+      "netcontent": "4 x 50 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Burrata",
+      "objectID": "158428"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2295,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 11475,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 11475
+        }
+      },
+      "price": 2295,
+      "gtin": "5710326023861",
+      "name": "Mascarpone laktosefri 35% fedt",
+      "brand": "Nora Free",
+      "netcontent": "200 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Mascarpone",
+      "objectID": "158412"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1495,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 10679,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 10679
+        }
+      },
+      "price": 1495,
+      "gtin": "5706911032189",
+      "name": "Revet mozzarella 17% fedt",
+      "brand": "Dairy Goood",
+      "netcontent": "140 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Revet ost & topping",
+      "productType": "Revet mozzarella",
+      "objectID": "195942"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": false,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1895,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 15160,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 15160
+        }
+      },
+      "price": 1895,
+      "gtin": "8002710335047",
+      "name": "Mini mozzarelle 16% fedt",
+      "brand": "Zanetti",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Mozzarella",
+      "objectID": "164355"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2400,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 17333,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 16000,
+          "unitsOfMeasureShowPrice": 16000
+        }
+      },
+      "price": 2600,
+      "gtin": "8002710415855",
+      "name": "Stracciatella di Burrata",
+      "brand": "Zanetti",
+      "netcontent": "150 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Stracciatella",
+      "objectID": "145576"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": false,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 3295,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 32950,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 32950
+        }
+      },
+      "price": 3295,
+      "gtin": "5700002044310",
+      "name": "Burrata 24% fedt øko",
+      "brand": "La Treccia",
+      "netcontent": "100 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Mozzarella",
+      "objectID": "92896"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": false,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1995,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 13300,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 13300
+        }
+      },
+      "price": 1995,
+      "gtin": "5706911032165",
+      "name": "Mozzarella mini 5% fedt",
+      "brand": "Dairy Goood",
+      "netcontent": "150 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Mozzarella",
+      "objectID": "204519"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1400,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 5600,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 5600
+        }
+      },
+      "price": 1400,
+      "gtin": "8002710333111",
+      "name": "Ricotta Italiana",
+      "brand": "Zanetti",
+      "netcontent": "250 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Ricotta",
+      "objectID": "134998"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2295,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 18360,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 18360
+        }
+      },
+      "price": 2295,
+      "gtin": "8002710301271",
+      "name": "Mozzarella 16% fedt",
+      "brand": "Zanetti",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Mozzarella",
+      "objectID": "164354"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1995,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 15960,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 15960
+        }
+      },
+      "price": 1995,
+      "gtin": "5706911030314",
+      "name": "Mini Mozzarella laktosefri 18% fedt",
+      "brand": "Nora Free",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Mozzarella",
+      "objectID": "185375"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2595,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 14829,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 14829
+        }
+      },
+      "price": 2595,
+      "gtin": "5713507032720",
+      "name": "Fynsk rygeost 10% fedt øko",
+      "brand": "Løgismose",
+      "netcontent": "175 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Rygeost",
+      "objectID": "81391"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 1995,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 11735,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 0,
+          "unitsOfMeasureShowPrice": 11735
+        }
+      },
+      "price": 1995,
+      "gtin": "5701924350091",
+      "name": "Rygeost 10% fedt øko",
+      "brand": "Løgismose",
+      "netcontent": "170 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Rygeost",
+      "objectID": "20041"
+    },
+    {
+      "storeData": {
+        "1653": {
+          "inStock": true,
+          "multipromo": "",
+          "offerDescription": "Se Her",
+          "offerFrom": "",
+          "offerUntil": "",
+          "offerMax": 0,
+          "offerMaxDescription": "",
+          "offerCount": 0,
+          "price": 2400,
+          "beforePrice": 0,
+          "multiPromoPrice": "",
+          "unitsOfMeasurePrice": 23160,
+          "unitsOfMeasurePriceUnit": "Kg.",
+          "unitsOfMeasureOfferPrice": 19200,
+          "unitsOfMeasureShowPrice": 19200
+        }
+      },
+      "price": 2895,
+      "gtin": "8002710335283",
+      "name": "Burrata 24% fedt",
+      "brand": "Zanetti",
+      "netcontent": "125 g",
+      "deepestCategoryPath": "Mejeri & køl > Mejeri > Ost > Mozzarella",
+      "productType": "Burrata",
+      "objectID": "145578"
+    }
+  ],
+  "nbHits": 52,
+  "page": 0,
+  "nbPages": 2,
+  "hitsPerPage": 30,
+  "exhaustiveNbHits": true,
+  "exhaustiveTypo": true,
+  "exhaustive": {
+    "nbHits": true,
+    "typo": true
+  },
+  "query": "mozzarella",
+  "params": "query=mozzarella&hitsPerPage=30&removeWordsIfNoResults=allOptional&filters=isInAssortmentIn%3A1653+AND+nonsearchable%3Afalse&attributesToRetrieve=%5B%22name%22%2C+%22brand%22%2C+%22gtin%22%2C+%22netcontent%22%2C+%22productType%22%2C+%22deepestCategoryPath%22%2C+%22price%22%2C+%22storeData.1653%22%5D&analyticsTags=%5B%22ext-alg%23query-category%3Aquery-matched%22%2C%22ext-alg%23auto-filter%3Ahas-filters%22%5D&optionalFacetFilters=%5B%22searchHierachy%3Amozzarella%3Cscore%3D2%3E%22%5D",
+  "index": "prod_BILKATOGO_PRODUCTS",
+  "extensions": {
+    "queryCategorization": {
+      "count": 5689,
+      "normalizedQuery": "mozzarella"
+    }
+  }
+}
