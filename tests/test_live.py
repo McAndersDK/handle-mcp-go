@@ -71,6 +71,13 @@ async def test_nemlig_featured_recipe_has_products():
     assert any(not i.have_at_home for i in recipe.items)
 
 
+async def test_nemlig_recipes_by_tag():
+    recipes = await STORES["nemlig"]().recipes_by_tag(["Familievenlig", "Under 30 min"], limit=5)
+    for r in recipes:
+        print(f"\n[nemlig] {r.group}: {r.name} | {r.url}")
+    assert recipes and all(r.url.startswith("https://www.nemlig.com/maaltider/") for r in recipes)
+
+
 async def test_orders(store):
     orders = await store.orders(limit=2)
     if orders:

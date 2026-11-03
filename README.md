@@ -47,7 +47,7 @@ BilkaToGo, Claude Desktop and other logins: [setup](docs/setup.md).
 |---|---|---|
 | `search_products` | no | Price, price per kg/l, offers |
 | `search_recipes` | no | The store's recipes (nemlig) |
-| `list_recipes` | no | This week's featured recipes (nemlig "Ugens udvalgte") |
+| `list_recipes` | no | Featured recipes, or by tag: Familievenlig, Budgetvenlig, Under 30 min ... (nemlig) |
 | `get_recipe` | no | The products to buy for a recipe, for any number of persons |
 | `list_offers` | no | This week's offers and free gifts |
 | `compare_basket` | no | Prices a list in every store, fees included, cheapest first |

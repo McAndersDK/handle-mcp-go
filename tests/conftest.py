@@ -142,6 +142,11 @@ class FakeStore:
             )
         )
 
+    async def recipes_by_tag(self, tags, category=None, limit=20):
+        return [
+            self._leak(Recipe("fake", "r2", "Pasta", "https://example.com/r2", group="Aftensmad"))
+        ]
+
     async def featured_recipes(self, limit=20):
         return [self._leak(Recipe("fake", "r1", "Grød", "https://example.com/r1", group="Morgen"))]
 

@@ -6,7 +6,8 @@ import pytest
 
 from handle_mcp import server
 from handle_mcp.stores import StoreError
-from handle_mcp.stores.nemlig_recipes import recipe_slug
+from handle_mcp.stores.bilkatogo import BilkaStore
+from handle_mcp.stores.nemlig_recipes import category_path, recipe_slug
 from tests import test_nemlig
 
 fake, store = test_nemlig.fake, test_nemlig.store  # the fixtures with nemlig's fake HTTP
@@ -96,3 +97,59 @@ async def test_recipe_without_price_or_servings(store, monkeypatch):
     monkeypatch.setattr(store, "_api", api)
     r = await store.recipe(KEBAB, 6)
     assert (r.persons, r.items[0].product.price, r.total) == (6, Decimal(0), Decimal(0))
+
+
+async def test_recipes_by_tag_title_or_path(store, fake):
+    recipes = await store.recipes_by_tag(["Familievenlig", "budgetvenlig"], limit=5)
+    assert len(recipes) == 5 and recipes[0].group == "Aftensmad"
+    assert recipes[0].url.startswith("https://www.nemlig.com/maaltider/opskrift/")
+    call = [r for r in fake.requests if r.url.path.endswith("/meals/allRecipes")][-1]
+    assert call.url.params.get_list("filters") == ["familievenlig", "budgetvenlig"]
+    assert "categoryPath" not in call.url.params  # nemlig's default: aftensmad
+
+
+async def test_recipes_by_tag_in_a_category(store, fake):
+    await store.recipes_by_tag(["Under 30 min"], category="Madpakke")
+    call = [r for r in fake.requests if r.url.path.endswith("/meals/allRecipes")][-1]
+    assert call.url.params["categoryPath"] == "madpakke"
+    assert call.url.params.get_list("filters") == ["under-30"]
+
+
+async def test_unknown_tag_lists_the_known_ones(store):
+    with pytest.raises(StoreError, match="kender ikke tagget 'Pizza'.*Familievenlig"):
+        await store.recipes_by_tag(["Pizza"])
+
+
+async def test_recipe_tags_are_fetched_once(store, fake):
+    await store.recipes_by_tag(["Familievenlig"])
+    await store.recipes_by_tag(["Kylling"])
+    calls = [r for r in fake.requests if r.url.path.endswith("/meals/allRecipes")]
+    assert len(calls) == 3  # one for the tag list, one per search
+
+
+async def test_list_recipes_tool_picks_featured_or_tags():
+    featured = await server.list_recipes(["fake"])
+    tagged = await server.list_recipes(["fake"], tags=["Familievenlig"])
+    assert featured["fake"][0]["group"] == "Morgen"
+    assert tagged["fake"][0]["group"] == "Aftensmad"
+
+
+def test_category_with_spaces_and_danish_letters():
+    assert category_path("Mad til flere dage") == "mad-til-flere-dage"
+    assert category_path("Måltidskasse") == "maaltidskasse"
+    with pytest.raises(StoreError, match="Kender ikke kategorien"):
+        category_path("aftens/mad")
+
+
+async def test_no_tags_from_nemlig_is_a_format_change(store, monkeypatch):
+    async def api(*_args, **_kwargs):
+        return {"filters": []}
+
+    monkeypatch.setattr(store, "_api", api)
+    with pytest.raises(StoreError, match="ændret format"):
+        await store.recipes_by_tag(["Familievenlig"])
+
+
+async def test_bilkatogo_has_no_recipes_by_tag():
+    with pytest.raises(NotImplementedError):
+        await BilkaStore().recipes_by_tag(["Familievenlig"])

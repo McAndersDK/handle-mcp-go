@@ -1,0 +1,1483 @@
+{
+ "totalCount": 16,
+ "categories": [
+  {
+   "title": "Aftensmad",
+   "categoryPath": "aftensmad",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/esmaucjx/kategori-fotos-30-2026-aftensmad.png?mode=crop&anchor=center&width=192&height=192",
+    "accessibilityText": ""
+   },
+   "subCategories": [
+    {
+     "title": "Suppe",
+     "categoryPath": "suppe",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Gryderetter",
+     "categoryPath": "gryderetter",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Simreretter",
+     "categoryPath": "simreretter",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Mad i fad",
+     "categoryPath": "mad-i-fad",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "One pot",
+     "categoryPath": "one-pot",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Mormormad",
+     "categoryPath": "mormormad",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Pasta",
+     "categoryPath": "pastaretter",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Lasagne",
+     "categoryPath": "lasagne",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Ris",
+     "categoryPath": "risretter",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Wok",
+     "categoryPath": "wokretter",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Madtærter",
+     "categoryPath": "madtaerter",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Pizza",
+     "categoryPath": "pizza",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Burger",
+     "categoryPath": "burger",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Vafler",
+     "categoryPath": "vafler",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Nudler",
+     "categoryPath": "nudler",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Tacos og tortillas",
+     "categoryPath": "tacos-tortillas",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Madpandekager",
+     "categoryPath": "madpandekager",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Pitabrød",
+     "categoryPath": "pitabroed",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Bowls",
+     "categoryPath": "bowls",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Salater",
+     "categoryPath": "maaltidssalater",
+     "image": null,
+     "subCategories": []
+    }
+   ]
+  },
+  {
+   "title": "Madpakke",
+   "categoryPath": "madpakke",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/ujfhlvcb/kategori-fotos-30-2026-madpakke.png?mode=crop&anchor=center&width=192&height=192",
+    "accessibilityText": "Madpakke"
+   },
+   "subCategories": [
+    {
+     "title": "Madmuffins og tærter",
+     "categoryPath": "madmuffins-og-taerter",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Wraps",
+     "categoryPath": "madpakke-wraps",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Pizzasnegle",
+     "categoryPath": "pizzasnegle",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Pølsehorn",
+     "categoryPath": "poelsehorn",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Pitabrød",
+     "categoryPath": "pitabroed",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Sandwich",
+     "categoryPath": "sandwich",
+     "image": null,
+     "subCategories": []
+    }
+   ]
+  },
+  {
+   "title": "Frokost",
+   "categoryPath": "frokost",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/urojcthq/kategori-fotos-30-2026-frokost.png?mode=crop&anchor=center&width=192&height=192",
+    "accessibilityText": "Frokost"
+   },
+   "subCategories": [
+    {
+     "title": "Smørrebrød",
+     "categoryPath": "smoerrebroed",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Pasta",
+     "categoryPath": "frokostpasta",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Salater",
+     "categoryPath": "frokostsalater",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Wraps",
+     "categoryPath": "wraps-til-frokost",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Sandwich",
+     "categoryPath": "sandwich",
+     "image": null,
+     "subCategories": []
+    }
+   ]
+  },
+  {
+   "title": "Jul",
+   "categoryPath": "juleopskrifter",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/3ank4ka3/andelaar-med-roedkaal-sovs-og-kartofler-fritlagt.png?mode=crop&anchor=center&width=192&height=192",
+    "accessibilityText": ""
+   },
+   "subCategories": [
+    {
+     "title": "Småkager",
+     "categoryPath": "smaekager",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Kager",
+     "categoryPath": "kager",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Julemad",
+     "categoryPath": "julemad",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Konfekt",
+     "categoryPath": "konfekt",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Julefrokost",
+     "categoryPath": "julefrokost",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Risengrød & risalamande",
+     "categoryPath": "risengroed-risalamande",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Gløgg & æbleskiver",
+     "categoryPath": "gloegg-aebleskiver",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Vegetarisk jul",
+     "categoryPath": "vegetarisk-jul",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Airfryer",
+     "categoryPath": "airfryer",
+     "image": null,
+     "subCategories": []
+    }
+   ]
+  },
+  {
+   "title": "Morgenmad",
+   "categoryPath": "morgenmad",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/jlkb04yd/kategori-fotos-30-2026-morgenmad.png?mode=crop&anchor=center&width=192&height=192",
+    "accessibilityText": "Morgenmad"
+   },
+   "subCategories": [
+    {
+     "title": "Æg og Bacon",
+     "categoryPath": "aeg-bacon",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Grød",
+     "categoryPath": "groed",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Bowls",
+     "categoryPath": "bowls",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Müsli og granola",
+     "categoryPath": "musli-granola",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Marmelade og spreads",
+     "categoryPath": "marmelade-spreads",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Smoothie",
+     "categoryPath": "smoothie",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Brunch",
+     "categoryPath": "brunch",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Sødt",
+     "categoryPath": "soedt",
+     "image": null,
+     "subCategories": []
+    }
+   ]
+  },
+  {
+   "title": "Bagværk",
+   "categoryPath": "bagvaerk",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/z1tbxf1v/kategori-fotos-30-2026-bagvaerk-2.png?mode=crop&anchor=center&width=192&height=192",
+    "accessibilityText": "Brød"
+   },
+   "subCategories": [
+    {
+     "title": "Sødt bagværk",
+     "categoryPath": "soedt-bagvaerk",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Boller",
+     "categoryPath": "boller",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Lyst brød",
+     "categoryPath": "lyst-broed",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Groft brød",
+     "categoryPath": "groft-broed",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Rugbrød",
+     "categoryPath": "rugbroed",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Knækbrød",
+     "categoryPath": "knaekbroed",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Madbrød",
+     "categoryPath": "madbroed",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Pølsehorn",
+     "categoryPath": "poelsehorn",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Pizzasnegle",
+     "categoryPath": "pizzasnegle",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Glutenfrit bagværk",
+     "categoryPath": "glutenfrit-bagvaerk",
+     "image": null,
+     "subCategories": []
+    }
+   ]
+  },
+  {
+   "title": "Tilbehør",
+   "categoryPath": "tilbehoer",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/r5plgt24/kategori-fotos-30-2026-tilbehoer.png?mode=crop&anchor=center&width=192&height=192",
+    "accessibilityText": "Tilbehør"
+   },
+   "subCategories": [
+    {
+     "title": "Salater",
+     "categoryPath": "salater",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Kartofler og rodfrugter",
+     "categoryPath": "kartofler-og-rodfrugter",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Tilberedt grønt",
+     "categoryPath": "tilberedt-groent",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Sauce og sovs",
+     "categoryPath": "sauce-og-sovs",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Dip og dressing",
+     "categoryPath": "dip-og-dressing",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Sylt",
+     "categoryPath": "sylt",
+     "image": null,
+     "subCategories": []
+    }
+   ]
+  },
+  {
+   "title": "Kage",
+   "categoryPath": "kage",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/lzsfyu05/kategori-fotos-30-2026-kage.png?mode=crop&anchor=center&width=192&height=192",
+    "accessibilityText": "Kage"
+   },
+   "subCategories": [
+    {
+     "title": "Konditorkager",
+     "categoryPath": "konditorkager",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Småkager",
+     "categoryPath": "smaakager",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Cookies",
+     "categoryPath": "cookies",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Muffins og cupcakes",
+     "categoryPath": "muffins-og-cupcakes",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Cheesecake",
+     "categoryPath": "cheesecake",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Minikager",
+     "categoryPath": "minikager",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Søde tærter",
+     "categoryPath": "soede-taerter",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Bradepandekager",
+     "categoryPath": "bradepandekager",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Skærekager",
+     "categoryPath": "skaerekager",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Fødselsdagskager",
+     "categoryPath": "foedselsdagskager",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Frugt- og bærkager",
+     "categoryPath": "frugt-og-baerkager",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Grøntsagskager",
+     "categoryPath": "groentsagskager",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Pandekager",
+     "categoryPath": "pandekager",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Vafler",
+     "categoryPath": "soede-vafler",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Cremer",
+     "categoryPath": "cremer",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Glutenfri kager",
+     "categoryPath": "glutenfri-kager",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Sødt uden sukker",
+     "categoryPath": "soedt-uden-sukker",
+     "image": null,
+     "subCategories": []
+    }
+   ]
+  },
+  {
+   "title": "Drikkevarer",
+   "categoryPath": "drikkevarer",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/p2ghvkj0/kategori-fotos-30-2026-drikkevarer.png?mode=crop&anchor=center&width=192&height=192",
+    "accessibilityText": "Drikkevarer"
+   },
+   "subCategories": [
+    {
+     "title": "Juice",
+     "categoryPath": "juice",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Saft",
+     "categoryPath": "saft",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Smoothies",
+     "categoryPath": "smoothies",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Milkshakes",
+     "categoryPath": "milkshakes",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Varme drikke",
+     "categoryPath": "varme-drikke",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Iskaffe",
+     "categoryPath": "iskaffe",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Frappé",
+     "categoryPath": "frappe",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Cocktails",
+     "categoryPath": "cocktails",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Alkoholfri drinks",
+     "categoryPath": "alkoholfri-drinks",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Gin",
+     "categoryPath": "drinks-med-gin",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Rom",
+     "categoryPath": "drinks-med-rom",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Vodka",
+     "categoryPath": "drinks-med-vodka",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Vin og bobler",
+     "categoryPath": "drinks-med-vin-og-bobler",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Likør",
+     "categoryPath": "drinks-med-likoer",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Whiskey",
+     "categoryPath": "drinks-med-whiskey",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Snaps",
+     "categoryPath": "snaps",
+     "image": null,
+     "subCategories": []
+    }
+   ]
+  },
+  {
+   "title": "Forretter",
+   "categoryPath": "forretter",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/jggo34sd/kategori-fotos-30-2026-forret.png?mode=crop&anchor=center&width=192&height=192",
+    "accessibilityText": "Forretter"
+   },
+   "subCategories": [
+    {
+     "title": "Med kød",
+     "categoryPath": "forretter-med-koed",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Med fisk",
+     "categoryPath": "forretter-med-fisk",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Vegetariske",
+     "categoryPath": "vegetariske-forretter",
+     "image": null,
+     "subCategories": []
+    }
+   ]
+  },
+  {
+   "title": "Hovedretter",
+   "categoryPath": "hovedretter",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/cpybd4tz/kategori-fotos-30-2026-hovedret.png?mode=crop&anchor=center&width=192&height=192",
+    "accessibilityText": "Hovedretter"
+   },
+   "subCategories": [
+    {
+     "title": "Steaks og stege",
+     "categoryPath": "steaks-stege",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Fisk og skaldyr",
+     "categoryPath": "fisk-skaldyr",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Svampe og grøntsager",
+     "categoryPath": "svampe-groentsager",
+     "image": null,
+     "subCategories": []
+    }
+   ]
+  },
+  {
+   "title": "Desserter",
+   "categoryPath": "desserter",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/sqallg2b/kategori-fotos-30-2026-dessert.png?mode=crop&anchor=center&width=192&height=192",
+    "accessibilityText": "Desserter"
+   },
+   "subCategories": [
+    {
+     "title": "Hjemmelavet is",
+     "categoryPath": "hjemmelavet-is",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Dessert i glas",
+     "categoryPath": "dessert-i-glas",
+     "image": null,
+     "subCategories": []
+    }
+   ]
+  },
+  {
+   "title": "Appetizers",
+   "categoryPath": "appetizers",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/ggoohz1o/kategori-fotos-30-2026-appetizers.png?mode=crop&anchor=center&width=192&height=192",
+    "accessibilityText": "Appetizers"
+   },
+   "subCategories": []
+  },
+  {
+   "title": "Mellemmåltid",
+   "categoryPath": "mellemmaaltid",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/eotpcqmm/kategori-fotos-30-2026-mellemmaaltid.png?mode=crop&anchor=center&width=192&height=192",
+    "accessibilityText": "Mellemmåltider"
+   },
+   "subCategories": [
+    {
+     "title": "Dadelkugler",
+     "categoryPath": "dadelkugler",
+     "image": null,
+     "subCategories": []
+    },
+    {
+     "title": "Myslibarer",
+     "categoryPath": "myslibar",
+     "image": null,
+     "subCategories": []
+    }
+   ]
+  }
+ ],
+ "filters": [
+  {
+   "title": "Generelt",
+   "filters": [
+    {
+     "title": "Under 20 min",
+     "path": "under-20",
+     "isActive": false
+    },
+    {
+     "title": "Under 30 min",
+     "path": "under-30",
+     "isActive": false
+    },
+    {
+     "title": "Budgetvenlig",
+     "path": "budgetvenlig",
+     "isActive": true
+    },
+    {
+     "title": "Familievenlig",
+     "path": "familievenlig",
+     "isActive": true
+    },
+    {
+     "title": "Populær",
+     "path": "populaer",
+     "isActive": false
+    },
+    {
+     "title": "Mad til flere dage",
+     "path": "mad-til-flere-dage",
+     "isActive": false
+    }
+   ]
+  },
+  {
+   "title": "Hovedingrediens",
+   "filters": [
+    {
+     "title": "Kylling",
+     "path": "kylling",
+     "isActive": false
+    },
+    {
+     "title": "Oksekød",
+     "path": "oksekoed",
+     "isActive": false
+    },
+    {
+     "title": "Gris",
+     "path": "gris",
+     "isActive": false
+    },
+    {
+     "title": "Fisk",
+     "path": "fisk",
+     "isActive": false
+    },
+    {
+     "title": "Laks",
+     "path": "laks",
+     "isActive": false
+    },
+    {
+     "title": "Skaldyr",
+     "path": "skaldyr",
+     "isActive": false
+    },
+    {
+     "title": "Vegetarisk",
+     "path": "vegetarisk",
+     "isActive": false
+    },
+    {
+     "title": "Vegansk",
+     "path": "vegansk",
+     "isActive": false
+    },
+    {
+     "title": "And",
+     "path": "and",
+     "isActive": false
+    },
+    {
+     "title": "Kalkun",
+     "path": "kalkun",
+     "isActive": false
+    },
+    {
+     "title": "Lam",
+     "path": "lam",
+     "isActive": false
+    },
+    {
+     "title": "Vildt",
+     "path": "vildt",
+     "isActive": false
+    },
+    {
+     "title": "Bælgfrugter",
+     "path": "baelgfrugter",
+     "isActive": false
+    },
+    {
+     "title": "Halloumi",
+     "path": "halloumi",
+     "isActive": false
+    },
+    {
+     "title": "Tofu",
+     "path": "tofu",
+     "isActive": false
+    },
+    {
+     "title": "Æg",
+     "path": "aeg",
+     "isActive": false
+    }
+   ]
+  },
+  {
+   "title": "Tema",
+   "filters": [
+    {
+     "title": "Glutenfri",
+     "path": "glutenfri",
+     "isActive": false
+    },
+    {
+     "title": "Laktosefri",
+     "path": "laktosefri",
+     "isActive": false
+    },
+    {
+     "title": "Airfryer",
+     "path": "airfryer",
+     "isActive": false
+    },
+    {
+     "title": "Babymad",
+     "path": "babymad",
+     "isActive": false
+    },
+    {
+     "title": "Gæstemad",
+     "path": "gaestemad",
+     "isActive": false
+    },
+    {
+     "title": "Mad til mange",
+     "path": "mad-til-mange",
+     "isActive": false
+    },
+    {
+     "title": "Grill",
+     "path": "grill",
+     "isActive": false
+    },
+    {
+     "title": "Tapas",
+     "path": "tapas",
+     "isActive": false
+    },
+    {
+     "title": "Buffet",
+     "path": "buffet",
+     "isActive": false
+    },
+    {
+     "title": "Natmad",
+     "path": "natmad",
+     "isActive": false
+    },
+    {
+     "title": "Bålmad ",
+     "path": "baalmad",
+     "isActive": false
+    }
+   ]
+  },
+  {
+   "title": "Sæson",
+   "filters": [
+    {
+     "title": "Forår",
+     "path": "foraar",
+     "isActive": false
+    },
+    {
+     "title": "Sommer",
+     "path": "sommer",
+     "isActive": false
+    },
+    {
+     "title": "Efterår",
+     "path": "efteraar",
+     "isActive": false
+    },
+    {
+     "title": "Vinter",
+     "path": "vinter",
+     "isActive": false
+    },
+    {
+     "title": "Påske",
+     "path": "paaske",
+     "isActive": false
+    },
+    {
+     "title": "Jul",
+     "path": "jul",
+     "isActive": false
+    },
+    {
+     "title": "Nytår",
+     "path": "nytaar",
+     "isActive": false
+    },
+    {
+     "title": "Halloween",
+     "path": "halloween",
+     "isActive": false
+    },
+    {
+     "title": "Mortensaften",
+     "path": "mortensaften",
+     "isActive": false
+    },
+    {
+     "title": "Fastelavn",
+     "path": "fastelavn",
+     "isActive": false
+    },
+    {
+     "title": "Sankt hans",
+     "path": "sankt-hans",
+     "isActive": false
+    },
+    {
+     "title": "Pinse",
+     "path": "pinse",
+     "isActive": false
+    },
+    {
+     "title": "Picnic",
+     "path": "picnic",
+     "isActive": false
+    },
+    {
+     "title": "Fødselsdag",
+     "path": "foedselsdag",
+     "isActive": false
+    },
+    {
+     "title": "Konfirmation",
+     "path": "konfirmation",
+     "isActive": false
+    },
+    {
+     "title": "Studentergilde",
+     "path": "studentergilde",
+     "isActive": false
+    }
+   ]
+  },
+  {
+   "title": "Køkken",
+   "filters": [
+    {
+     "title": "Asiatisk",
+     "path": "asiatisk",
+     "isActive": false
+    },
+    {
+     "title": "Italiensk",
+     "path": "italiensk",
+     "isActive": false
+    },
+    {
+     "title": "Mexicansk",
+     "path": "mexicansk",
+     "isActive": false
+    },
+    {
+     "title": "Indisk",
+     "path": "indisk",
+     "isActive": false
+    },
+    {
+     "title": "Græsk",
+     "path": "graesk",
+     "isActive": false
+    },
+    {
+     "title": "Mellemøstlig",
+     "path": "mellemoestlig",
+     "isActive": false
+    },
+    {
+     "title": "Dansk",
+     "path": "dansk",
+     "isActive": false
+    },
+    {
+     "title": "Nordisk",
+     "path": "nordisk",
+     "isActive": false
+    },
+    {
+     "title": "Thailandsk",
+     "path": "thailandsk",
+     "isActive": false
+    },
+    {
+     "title": "Vietnamesisk",
+     "path": "vietnamesisk",
+     "isActive": false
+    },
+    {
+     "title": "Japansk",
+     "path": "japansk",
+     "isActive": false
+    },
+    {
+     "title": "Kinesisk",
+     "path": "kinesisk",
+     "isActive": false
+    },
+    {
+     "title": "Koreansk",
+     "path": "koreansk",
+     "isActive": false
+    },
+    {
+     "title": "Fransk",
+     "path": "fransk",
+     "isActive": false
+    },
+    {
+     "title": "Spansk",
+     "path": "spansk",
+     "isActive": false
+    },
+    {
+     "title": "Amerikansk",
+     "path": "amerikansk",
+     "isActive": false
+    },
+    {
+     "title": "Britisk",
+     "path": "britisk",
+     "isActive": false
+    }
+   ]
+  },
+  {
+   "title": "Råvare",
+   "filters": [
+    {
+     "title": "Asparges",
+     "path": "asparges",
+     "isActive": false
+    },
+    {
+     "title": "Blomkål",
+     "path": "blomkaal",
+     "isActive": false
+    },
+    {
+     "title": "Butternut squash",
+     "path": "butternut-squash",
+     "isActive": false
+    },
+    {
+     "title": "Citroner",
+     "path": "citroner",
+     "isActive": false
+    },
+    {
+     "title": "Fennikel",
+     "path": "fennikel",
+     "isActive": false
+    },
+    {
+     "title": "Græskar",
+     "path": "graeskar",
+     "isActive": false
+    },
+    {
+     "title": "Grønkål",
+     "path": "gronkaal",
+     "isActive": false
+    },
+    {
+     "title": "Gulerødder",
+     "path": "guleroedder",
+     "isActive": false
+    },
+    {
+     "title": "Hvidkål",
+     "path": "hvidkaal",
+     "isActive": false
+    },
+    {
+     "title": "Jordbær",
+     "path": "jordbaer",
+     "isActive": false
+    },
+    {
+     "title": "Kartofler ",
+     "path": "kartofler",
+     "isActive": false
+    },
+    {
+     "title": "Kirsebær",
+     "path": "kirsebaer",
+     "isActive": false
+    },
+    {
+     "title": "Knoldselleri",
+     "path": "knoldselleri",
+     "isActive": false
+    },
+    {
+     "title": "Kål",
+     "path": "kaal",
+     "isActive": false
+    },
+    {
+     "title": "Pære",
+     "path": "paere",
+     "isActive": false
+    },
+    {
+     "title": "Porre",
+     "path": "porre",
+     "isActive": false
+    },
+    {
+     "title": "Rabarber",
+     "path": "rabarber",
+     "isActive": false
+    },
+    {
+     "title": "Spidskål",
+     "path": "spidskaal",
+     "isActive": false
+    },
+    {
+     "title": "Squash",
+     "path": "squash",
+     "isActive": false
+    },
+    {
+     "title": "Svampe",
+     "path": "svampe",
+     "isActive": false
+    },
+    {
+     "title": "Søde kartofler",
+     "path": "soede-kartofler",
+     "isActive": false
+    },
+    {
+     "title": "Tomater",
+     "path": "tomater",
+     "isActive": false
+    },
+    {
+     "title": "Æbler",
+     "path": "aebler",
+     "isActive": false
+    }
+   ]
+  }
+ ],
+ "requestedCategory": {
+  "categoryPath": "aftensmad",
+  "root": "aftensmad",
+  "breadcrumbs": [
+   {
+    "title": "Aftensmad",
+    "url": "aftensmad"
+   }
+  ],
+  "pageMetaData": {
+   "title": "",
+   "description": "",
+   "content": "",
+   "noIndex": false
+  },
+  "title": "Aftensmad",
+  "recipes": [
+   {
+    "id": "mac-and-cheese-med-bacon-og-porrer-98004555",
+    "title": "Mac and cheese med bacon og porrer",
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/we4ldwux/mac-cheese-med-bacon-og-porrer-16x9.jpg?mode=crop&anchor=center&width=513&height=912",
+     "accessibilityText": "Gylden pastagratin med brunet ostetop, synlige porrer og bacon i et hvidt ovnfast fad med blå kant, pyntet med friske krydderurter og serveret med træske."
+    },
+    "video": null,
+    "generalFilters": [
+     {
+      "title": "Familievenlig",
+      "path": "familievenlig",
+      "isActive": false
+     },
+     {
+      "title": "Budgetvenlig",
+      "path": "budgetvenlig",
+      "isActive": false
+     }
+    ],
+    "highlightedFilters": []
+   },
+   {
+    "id": "enchiladas-med-tomatsauce-og-hytteost-98001179",
+    "title": "Enchiladas med tomatsauce og hytteost",
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/xnwd2mql/mtk-uge-32-2025-groenne-livretter-enchiladas-med-tomatsauce-og-hytteost-ubeskaaret.jpg?crop=0.4276475934062414,0.1263281109310284,0.2576348847596974,0.043039798307221204&cropmode=percentage&width=513&height=912",
+     "accessibilityText": "Ovnbagte enchiladas i lyst fad med rød tomatsauce, hvide klatter hytteost og grønne krydderurter. Ved siden af står en skål hytteost med ske."
+    },
+    "video": null,
+    "generalFilters": [
+     {
+      "title": "Familievenlig",
+      "path": "familievenlig",
+      "isActive": false
+     },
+     {
+      "title": "Budgetvenlig",
+      "path": "budgetvenlig",
+      "isActive": false
+     }
+    ],
+    "highlightedFilters": []
+   },
+   {
+    "id": "melanzane-alla-parmigiana-98004335",
+    "title": "Melanzane alla parmigiana ",
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/xnioayog/850x478_melanzane-alla-parmigiana-98004335.jpg?mode=crop&anchor=center&width=513&height=912",
+     "accessibilityText": "Ovnbagt aubergineret i metalfad med rød tomatsauce, gylden ostetop, flager af hård ost og friske grønne basilikumblade."
+    },
+    "video": {
+     "thumbnail": "",
+     "videoFormat": "",
+     "source": "https://media.umbraco.io/nemlig3/pscn3ttw/melanzane-9x16-1080x1920-reel-v1.mp4",
+     "accessibilityText": ""
+    },
+    "generalFilters": [
+     {
+      "title": "Familievenlig",
+      "path": "familievenlig",
+      "isActive": false
+     },
+     {
+      "title": "Budgetvenlig",
+      "path": "budgetvenlig",
+      "isActive": false
+     }
+    ],
+    "highlightedFilters": []
+   },
+   {
+    "id": "hokkaidosuppe-98000734",
+    "title": "Hokkaidosuppe",
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/d2uebzzy/hokkaidosuppe-m-bacon-og-broed-opskrift.jpg?mode=crop&anchor=center&width=513&height=912",
+     "accessibilityText": "Hokkaidosuppe med bacon og brød"
+    },
+    "video": null,
+    "generalFilters": [
+     {
+      "title": "Familievenlig",
+      "path": "familievenlig",
+      "isActive": false
+     },
+     {
+      "title": "Budgetvenlig",
+      "path": "budgetvenlig",
+      "isActive": false
+     },
+     {
+      "title": "Populær",
+      "path": "populaer",
+      "isActive": false
+     }
+    ],
+    "highlightedFilters": []
+   },
+   {
+    "id": "gnocchi-med-mozzarella-98001579",
+    "title": "Gnocchi med mozzarella",
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/viandnpj/ma-ltidernes-eftera-rskampagne-gnocchi-i-fad-med-mozzarella.jpg?mode=crop&anchor=center&width=513&height=912",
+     "accessibilityText": "Gnocchi med mozzarella"
+    },
+    "video": null,
+    "generalFilters": [
+     {
+      "title": "Budgetvenlig",
+      "path": "budgetvenlig",
+      "isActive": false
+     },
+     {
+      "title": "Familievenlig",
+      "path": "familievenlig",
+      "isActive": false
+     },
+     {
+      "title": "Populær",
+      "path": "populaer",
+      "isActive": false
+     }
+    ],
+    "highlightedFilters": []
+   },
+   {
+    "id": "bagt-tomatsuppe-hjemmelavede-croutoner-98004277",
+    "title": "Bagt tomatsuppe med croutoner",
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/2cmirawd/isabellas-opskrifter-juni-20239756.jpg?mode=crop&anchor=center&width=513&height=912",
+     "accessibilityText": "Orange-rød tomatsuppe i en lys skål, toppet med gyldne croutoner, hvide cremeklatter, grønne krydderurter og lidt olie."
+    },
+    "video": {
+     "thumbnail": "",
+     "videoFormat": "",
+     "source": "https://media.umbraco.io/nemlig3/5e2mo2iq/bagt-tomatsuppe-ig.mp4",
+     "accessibilityText": ""
+    },
+    "generalFilters": [
+     {
+      "title": "Familievenlig",
+      "path": "familievenlig",
+      "isActive": false
+     },
+     {
+      "title": "Budgetvenlig",
+      "path": "budgetvenlig",
+      "isActive": false
+     }
+    ],
+    "highlightedFilters": []
+   },
+   {
+    "id": "skinkestang-med-butterdej-98004417",
+    "title": "Skinkestang med butterdej",
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/n4wkkpje/skinkestang-ubeska-%C3%A8ret.jpg?crop=0.3050152959114642,0.0,0.30497113947163346,0.0&cropmode=percentage&width=513&height=912",
+     "accessibilityText": "Gylden, flettet butterdejsstang med sesamfrø og grønne urter på et træbræt, anrettet med friske spinatblade og en kniv."
+    },
+    "video": {
+     "thumbnail": "",
+     "videoFormat": "",
+     "source": "https://media.umbraco.io/nemlig3/ghdcpj2v/skinkestang-ig.mp4",
+     "accessibilityText": ""
+    },
+    "generalFilters": [
+     {
+      "title": "Familievenlig",
+      "path": "familievenlig",
+      "isActive": false
+     },
+     {
+      "title": "Budgetvenlig",
+      "path": "budgetvenlig",
+      "isActive": false
+     }
+    ],
+    "highlightedFilters": []
+   },
+   {
+    "id": "samosa-krydret-fyld-myntedip-98003851",
+    "title": "Samosa med grøntsagsfyld",
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/zlppe0qu/mtk-uge-10-20215471-ubeskaaret.jpg?crop=0.15435012736917197,0.0,0.47068384617676023,0.0&cropmode=percentage&width=513&height=912",
+     "accessibilityText": "Gyldne, trekantede samosaer på træfad med grønne urter, serveret med cremet dip og råkost af rødkål og gulerod."
+    },
+    "video": null,
+    "generalFilters": [
+     {
+      "title": "Familievenlig",
+      "path": "familievenlig",
+      "isActive": false
+     },
+     {
+      "title": "Budgetvenlig",
+      "path": "budgetvenlig",
+      "isActive": false
+     }
+    ],
+    "highlightedFilters": []
+   }
+  ]
+ }
+}

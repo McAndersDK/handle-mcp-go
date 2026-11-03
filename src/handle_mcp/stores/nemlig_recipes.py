@@ -29,6 +29,16 @@ def recipe_slug(recipe: str) -> str:
     return slug
 
 
+def category_path(category: str) -> str:
+    """'Mad til flere dage' or 'måltidskasse' → nemlig's path: 'mad-til-flere-dage'."""
+    path = category.strip().lower().replace(" ", "-")
+    for a, b in (("æ", "ae"), ("ø", "oe"), ("å", "aa")):
+        path = path.replace(a, b)
+    if not SLUG.match(path):
+        raise StoreError(f"Kender ikke kategorien {category!r}. Brug fx aftensmad eller frokost.")
+    return path
+
+
 def _product(item: dict) -> RecipeProduct:
     p = item.get("product") or {}
     campaign = next((c.get("text") for c in p.get("campaignLines") or [] if c.get("text")), None)
@@ -61,6 +71,8 @@ class RecipesMixin:
 
     name: str
     _api: Any
+    _tags: dict[str, str]
+    _tag_names: list[str]
 
     async def recipe(self, recipe_id: str, persons: int | None = None) -> RecipeDetails:
         slug = recipe_slug(recipe_id)
@@ -118,3 +130,57 @@ class RecipesMixin:
             for r in b["recipes"] or []
             if r.get("id")
         ][:limit]
+
+    async def recipes_by_tag(
+        self, tags: list[str], category: str | None = None, limit: int = 20
+    ) -> list[Recipe]:
+        """All of nemlig's recipes with every tag, e.g. ["Familievenlig", "Under 30 min"].
+        Tags are matched on nemlig's own list, by title or path. Category defaults to
+        nemlig's "aftensmad"."""
+        known = await self._recipe_tags()
+        paths = []
+        for tag in tags:
+            path = known.get(tag.strip().lower())
+            if not path:
+                names = ", ".join(self._tag_names)
+                raise StoreError(f"nemlig kender ikke tagget {tag!r}. Brug et af: {names}.")
+            paths.append(path)
+        params: dict[str, Any] = {"skip": 0, "take": limit, "filters": paths}
+        if category:
+            params["categoryPath"] = category_path(category)
+        data = await self._api("GET", f"{BFF}/meals/allRecipes", params=params) or {}
+        found = data.get("requestedCategory") or {}
+        if not isinstance(found.get("recipes"), list):
+            raise StoreError("nemlig-opskrifter har ændret format.")
+        return [
+            Recipe(
+                store=self.name,
+                id=r["id"],
+                name=r.get("title", ""),
+                url=f"{SITE}/maaltider/opskrift/{r['id']}",
+                group=found.get("title"),
+            )
+            for r in found["recipes"]
+            if r.get("id")
+        ][:limit]
+
+    async def _recipe_tags(self) -> dict[str, str]:
+        """nemlig's tags, by lower-case title and by path → path. Cached: they rarely change."""
+        if not getattr(self, "_tags", None):
+            data = await self._api("GET", f"{BFF}/meals/allRecipes", params={"skip": 0, "take": 1})
+            found = [
+                f
+                for group in (data or {}).get("filters") or []
+                for f in group.get("filters") or []
+                if f.get("path")
+            ]
+            if not found:
+                raise StoreError("nemlig-opskrifter har ændret format: ingen tags.")
+            self._tag_names = [str(f.get("title") or f["path"]).strip() for f in found]
+            self._tags = {
+                key.strip().lower(): f["path"]
+                for f in found
+                for key in (str(f.get("title") or ""), f["path"])
+                if key.strip()
+            }
+        return self._tags

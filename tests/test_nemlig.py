@@ -68,6 +68,8 @@ class FakeNemlig:
             return httpx.Response(200, json=fixture("recipe_details"))
         if path == "/productbff/api/web/meals/recipeProductDialog":
             return httpx.Response(200, json=fixture("recipe_products"))
+        if path == "/productbff/api/web/meals/allRecipes":
+            return httpx.Response(200, json=fixture("recipes_by_tag"))
         if path == "/productbff/api/web/page":
             page = {"/maaltider": "meals_page", "/tilbud": "offers_page"}[
                 request.url.params["path"]

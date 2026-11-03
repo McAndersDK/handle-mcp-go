@@ -264,6 +264,11 @@ class BilkaStore:
     async def featured_recipes(self, limit: int = 20) -> list[Recipe]:
         raise NotImplementedError
 
+    async def recipes_by_tag(
+        self, tags: list[str], category: str | None = None, limit: int = 20
+    ) -> list[Recipe]:
+        raise NotImplementedError
+
     def _product(self, hit: dict, sid: str) -> Product | None:
         store = (hit.get("storeData") or {}).get(sid)
         if not store:

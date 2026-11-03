@@ -140,11 +140,25 @@ async def get_recipe(store: str, recipe: str, persons: int | None = None) -> dic
 
 
 @mcp.tool(annotations=READ)
-async def list_recipes(stores: list[str] | None = None, limit: int = 20) -> dict:
-    """The store's featured recipes this week (nemlig: "Ugens udvalgte"), with theme and link.
+async def list_recipes(
+    stores: list[str] | None = None,
+    tags: list[str] | None = None,
+    category: str | None = None,
+    limit: int = 20,
+) -> dict:
+    """Browse the store's recipes, with link. No tags or category: this week's featured
+    recipes (nemlig: "Ugens udvalgte"). With `tags`: recipes that have every tag, e.g.
+    ["Familievenlig", "Budgetvenlig"] or ["Under 30 min", "Kylling"]. nemlig's tags include
+    Under 20/30 min, Budgetvenlig, Familievenlig, Populær, Mad til flere dage, Vegetarisk,
+    Kylling, Fisk, Oksekød, Gris and cuisines; an unknown tag answers with the full list.
+    `category` (nemlig: aftensmad by default, frokost, madpakke, morgenmad, ...).
     Use get_recipe for the products."""
     limit = max(1, min(limit, MAX_RESULTS))
-    return _out(await _each(_names(stores), lambda s: s.featured_recipes(limit)))
+    if not tags and not category:
+        return _out(await _each(_names(stores), lambda s: s.featured_recipes(limit)))
+    return _out(
+        await _each(_names(stores), lambda s: s.recipes_by_tag(tags or [], category, limit))
+    )
 
 
 @mcp.tool(annotations=READ)
