@@ -11,6 +11,9 @@ tell that an order *had* a delivery address. Keys are matched without case,
 
 from __future__ import annotations
 
+import dataclasses
+from datetime import date, datetime
+from decimal import Decimal
 from typing import Any
 
 REDACTED = "[fjernet af handle-mcp]"
@@ -96,4 +99,19 @@ def scrub(value: Any) -> Any:
         }
     if isinstance(value, list | tuple):
         return [scrub(v) for v in value]
+    return value
+
+
+def jsonable(value: Any) -> Any:
+    """Store models (dataclasses, Decimal, dates) as plain JSON values, before scrub()."""
+    if dataclasses.is_dataclass(value) and not isinstance(value, type):
+        return jsonable(dataclasses.asdict(value))
+    if isinstance(value, dict):
+        return {k: jsonable(v) for k, v in value.items()}
+    if isinstance(value, list | tuple):
+        return [jsonable(v) for v in value]
+    if isinstance(value, Decimal):
+        return str(value)
+    if isinstance(value, datetime | date):
+        return value.isoformat()
     return value

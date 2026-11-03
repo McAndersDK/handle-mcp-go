@@ -97,3 +97,34 @@ async def test_delivery_slots_in_time_order_cheapest_first_only_free():
     assert [s["price"] for s in fake["slots"]] == ["25", "19", "0"]  # sold-out slot left out
     assert [s["price"] for s in fake["cheapest"]] == ["0", "19", "25"]
     assert fake["cheapest"][0]["start"] == "2026-11-04T14:00:00"
+
+
+async def test_search_sort_puts_unknown_unit_price_last(monkeypatch):
+    async def hits(self, query, limit=10):
+        return [
+            {"id": "a", "name": "A", "price": "30", "unit_price": None},
+            {"id": "b", "name": "B", "price": "20", "unit_price": "80"},
+            {"id": "c", "name": "C", "price": "10", "unit_price": "90"},
+        ]
+
+    monkeypatch.setattr("tests.conftest.FakeStore.search", hits)
+    by_unit = await server.search_products("kylling", ["fake"], 3, sort="unit_price")
+    by_price = await server.search_products("kylling", ["fake"], 3, sort="price")
+    plain = await server.search_products("kylling", ["fake"], 3)
+    assert [p["id"] for p in by_unit["fake"]] == ["b", "c", "a"]
+    assert [p["id"] for p in by_price["fake"]] == ["c", "b", "a"]
+    assert [p["id"] for p in plain["fake"]] == ["a", "b", "c"]  # the store's own order
+
+
+async def test_search_by_price_puts_a_free_gift_first(monkeypatch):
+    """On purpose: a free gift (price 0) is the cheapest. Its offer text says "max 1 stk."."""
+
+    async def hits(self, query, limit=10):
+        return [
+            {"id": "bread", "name": "Rugbrød", "price": "25", "unit_price": "25"},
+            {"id": "gift", "name": "Rosinboller", "price": "0", "unit_price": "0"},
+        ]
+
+    monkeypatch.setattr("tests.conftest.FakeStore.search", hits)
+    result = await server.search_products("brød", ["fake"], 2, sort="price")
+    assert [p["id"] for p in result["fake"]] == ["gift", "bread"]

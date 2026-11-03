@@ -8,7 +8,7 @@ from pathlib import Path
 import httpx
 import pytest
 
-from handle_mcp import server
+from handle_mcp import compare, server
 from handle_mcp import stores as registry
 from handle_mcp.stores import StoreError, _http, nemlig_offers
 from handle_mcp.stores.nemlig import NemligStore
@@ -84,6 +84,11 @@ class FakeNemlig:
         if path == "/searchgateway/api/search":
             if request.url.params.get("query") in ("mums rosinboller", "gratis"):
                 return httpx.Response(200, json=fixture("search_gift"))
+            if request.url.params.get("query") == "kyllingebryst":
+                hits = fixture("search_kyllingebryst")  # live 2026-11-03: the cheapest is hit 30
+                take = int(request.url.params["take"])
+                hits["Products"]["Products"] = hits["Products"]["Products"][:take]
+                return httpx.Response(200, json=hits)
             return httpx.Response(200, json=fixture("search"))
         if path == "/webapi/basket/GetBasket":
             return httpx.Response(200, json=self.basket)
@@ -602,3 +607,21 @@ async def test_delivery_slots_stop_when_nemlig_keeps_paging(store, fake):
     fake.endless_days = True  # every page has 3 days and a next page
     await store.delivery_slots(days=7)
     assert fake.paths().count("/webapi/v2/Delivery/GetDeliveryDays") == 3
+
+
+async def test_cheapest_chicken_is_far_down_in_nemlig_order(store):
+    top = await store.search("kyllingebryst", 10)
+    assert "450 g / tilsat vand / Rose" not in {p.size for p in top}  # the bug: hit 30
+
+
+async def test_sorted_search_finds_the_cheapest_far_down(store, fake):
+    by_unit = await compare.search(store, "kyllingebryst", 3, "unit_price")
+    assert [p.size for p in by_unit] == [  # hits 31, 29 and 30 in nemlig's order
+        "1,50 kg / tilsat vand / Rose",
+        "1,20 kg / tilsat vand / Rose",
+        "450 g / tilsat vand / Rose",
+    ]
+    search = [r for r in fake.requests if r.url.path == "/searchgateway/api/search"][-1]
+    assert search.url.params["take"] == str(compare.SEARCH_LIMIT)
+    by_price = await compare.search(store, "kyllingebryst", 5, "price")
+    assert [p.price for p in by_price] == sorted(p.price for p in by_price)  # cold cuts first

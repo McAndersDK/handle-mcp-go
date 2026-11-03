@@ -7,13 +7,10 @@ Every answer goes through privacy.scrub() in `_out()`.
 from __future__ import annotations
 
 import asyncio
-import dataclasses
 import logging
 import sys
 from collections.abc import Awaitable, Callable
-from datetime import date, datetime
-from decimal import Decimal
-from typing import Any
+from typing import Any, Literal
 
 from mcp.server.mcpserver import MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
@@ -21,7 +18,7 @@ from mcp.types import ToolAnnotations
 
 from handle_mcp import compare, recipe_cart
 from handle_mcp import stores as registry
-from handle_mcp.privacy import scrub
+from handle_mcp.privacy import jsonable, scrub
 
 log = logging.getLogger("handle_mcp")
 
@@ -69,22 +66,12 @@ def _names(requested: list[str] | None) -> list[str]:
     return names
 
 
-def _jsonable(value: Any) -> Any:
-    if dataclasses.is_dataclass(value) and not isinstance(value, type):
-        return _jsonable(dataclasses.asdict(value))
-    if isinstance(value, dict):
-        return {k: _jsonable(v) for k, v in value.items()}
-    if isinstance(value, list | tuple):
-        return [_jsonable(v) for v in value]
-    if isinstance(value, Decimal):
-        return str(value)
-    if isinstance(value, datetime | date):
-        return value.isoformat()
-    return value
+def _persons(persons: int | None) -> int | None:
+    return None if persons is None else max(MIN_PERSONS, min(persons, MAX_PERSONS))
 
 
 def _out(value: Any) -> dict[str, Any]:
-    result = scrub(_jsonable(value))
+    result = scrub(jsonable(value))
     return result if isinstance(result, dict) else {"result": result}
 
 
@@ -116,10 +103,17 @@ async def _each(names: list[str], work: Callable[[Any], Awaitable[Any]]) -> dict
 
 
 @mcp.tool(annotations=READ)
-async def search_products(query: str, stores: list[str] | None = None, limit: int = 10) -> dict:
-    """Search products in one or more stores. Returns price, price per kg/l, offers and EAN when known."""
+async def search_products(
+    query: str,
+    stores: list[str] | None = None,
+    limit: int = 10,
+    sort: Literal["relevance", "price", "unit_price"] = "relevance",
+) -> dict:
+    """Search products in one or more stores. Returns price, price per kg/l, offers and EAN when
+    known. Stores rank by relevance and put cheap products far down: when the human asks for the
+    cheapest, use sort="unit_price" (per kg/l/stk) or "price"."""
     limit = max(1, min(limit, MAX_RESULTS))
-    return _out(await _each(_names(stores), lambda s: s.search(query, limit)))
+    return _out(await _each(_names(stores), lambda s: compare.search(s, query, limit, sort)))
 
 
 @mcp.tool(annotations=READ)
@@ -139,9 +133,7 @@ async def get_recipe(store: str, recipe: str, persons: int | None = None) -> dic
     `recipe` is the recipe's link or id from search_recipes or list_recipes. Put the products
     in the cart with add_recipe_to_cart after the human says yes.
     nemlig only for now; BilkaToGo answers that it cannot yet."""
-    if persons is not None:
-        persons = max(MIN_PERSONS, min(persons, MAX_PERSONS))
-    return _out(await _call(store, "recipe", recipe, persons))
+    return _out(await _call(store, "recipe", recipe, _persons(persons)))
 
 
 @mcp.tool(annotations=READ)
@@ -235,9 +227,7 @@ async def add_recipe_to_cart(
     items and the new cart. Check `ok` per product: a store can refuse some lines; tell the
     human which ones failed.
     nemlig only for now; BilkaToGo answers that it cannot yet."""
-    if persons is not None:
-        persons = max(MIN_PERSONS, min(persons, MAX_PERSONS))
-    details = await _call(store, "recipe", recipe, persons)
+    details = await _call(store, "recipe", recipe, _persons(persons))
     try:
         lines, skipped = recipe_cart.plan(details, skip, swap, include)
     except recipe_cart.PlanError as exc:

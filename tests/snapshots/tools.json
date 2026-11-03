@@ -395,7 +395,7 @@
  },
  {
   "name": "search_products",
-  "description": "Search products in one or more stores. Returns price, price per kg/l, offers and EAN when known.",
+  "description": "Search products in one or more stores. Returns price, price per kg/l, offers and EAN when\n    known. Stores rank by relevance and put cheap products far down: when the human asks for the\n    cheapest, use sort=\"unit_price\" (per kg/l/stk) or \"price\".",
   "inputSchema": {
    "properties": {
     "query": {
@@ -421,6 +421,16 @@
      "default": 10,
      "title": "Limit",
      "type": "integer"
+    },
+    "sort": {
+     "default": "relevance",
+     "enum": [
+      "relevance",
+      "price",
+      "unit_price"
+     ],
+     "title": "Sort",
+     "type": "string"
     }
    },
    "required": [

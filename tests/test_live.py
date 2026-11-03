@@ -9,7 +9,7 @@ import os
 
 import pytest
 
-from handle_mcp import recipe_cart
+from handle_mcp import compare, recipe_cart
 from handle_mcp.stores import STORES
 
 pytestmark = [
@@ -26,6 +26,15 @@ def store(request):
 async def test_search(store):
     products = await store.search("minimælk", limit=3)
     assert products and all(p.price > 0 for p in products)
+
+
+async def test_cheapest_first(store):
+    """Stores rank by relevance; sorted search must still find the cheap packs far down."""
+    hits = await compare.search(store, "kyllingebryst", 5, "unit_price")
+    for p in hits:
+        print(f"\n[{store.name}] {p.unit_price} kr/{p.unit} | {p.name} {p.size} | {p.price} kr")
+    prices = [p.unit_price for p in hits if p.unit_price is not None]
+    assert hits and prices == sorted(prices)
 
 
 async def test_cart_terms_delivery(store):

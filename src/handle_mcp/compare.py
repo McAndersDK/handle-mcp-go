@@ -43,7 +43,7 @@ from handle_mcp.models import Product
 from handle_mcp.pricing import cost, multi_hint, packs, per_unit, pieces, too_much
 from handle_mcp.stores import StoreError
 
-SEARCH_LIMIT = 30  # the cheapest tin was hit 14 for "hakkede tomater"
+SEARCH_LIMIT = 50  # cheap hits sit far down: tin 14 "hakkede tomater", chicken 30 "kyllingebryst"
 
 DK = ZoneInfo("Europe/Copenhagen")  # offers end on Danish days
 
@@ -197,6 +197,19 @@ def _guess(
         return BasketLine(item, quantity, None, Decimal(0), False, "Ikke fundet")
     note = "Butikkens bedste søgeresultat. Navnet matcher ikke. Tjek varen."
     return BasketLine(item, count, top, cost(top, count, on), False, note, guess=True)
+
+
+async def search(store: Any, text: str, limit: int, sort: str = "relevance") -> list[Any]:
+    """search_products: the store's own order, or the cheapest of SEARCH_LIMIT hits first by
+    `price` or `unit_price` (no unit price: last). Stores rank by relevance, so the cheapest
+    chicken was hit 30 of 32 for "kyllingebryst" (nemlig, 2026-11-03)."""
+    if sort == "relevance":
+        return await store.search(text, limit)
+    hits = sorted(
+        await store.search(text, max(limit, SEARCH_LIMIT)),
+        key=lambda p: (get(p, sort) is None, Decimal(str(get(p, sort) or 0))),
+    )
+    return hits[:limit]
 
 
 async def quote(store: Any, items: list[str]) -> BasketQuote:
