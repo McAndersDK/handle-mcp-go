@@ -9,6 +9,7 @@ import os
 
 import pytest
 
+from handle_mcp import recipe_cart
 from handle_mcp.stores import STORES
 
 pytestmark = [
@@ -48,6 +49,37 @@ async def test_delivery_slots(store):
     assert slots and all(s.end > s.start for s in slots)
     for s in sorted(slots, key=lambda s: s.start)[:12]:
         print(f"\n[{store.name}] {s.start:%a %d/%m %H}-{s.end:%H} {s.kind or ''} {s.price} kr")
+
+
+async def test_offers(store):
+    """Read only. A list can be empty on a given day (offers() leaves it out), so nemlig only
+    needs one of its big weekly lists."""
+    offers = await store.offers(10)
+    lists = {p.campaign for p in offers}
+    print(f"\n[{store.name}] {len(offers)} tilbud, lister: {sorted(map(str, lists))}")
+    assert offers and all(p.on_offer and p.id and p.name for p in offers)
+    assert all(0 < p.price < 2000 for p in offers if p.campaign != "Gratis")
+    assert all(p.before_price is None or p.before_price > p.price for p in offers)
+    if store.name == "nemlig":
+        assert {"Skarp pris", "Priskup"} & lists
+
+
+async def test_nemlig_add_recipe_dry_run(monkeypatch):
+    """add_recipe_to_cart's plan on live data: recipe and cart are read, nothing is written."""
+    nemlig = STORES["nemlig"]()
+
+    async def no_writes(*_args, **_kwargs):
+        raise AssertionError("the dry run must never write to the cart")
+
+    monkeypatch.setattr(nemlig, "set_quantities", no_writes)
+    (first, *_) = await nemlig.featured_recipes(limit=1)
+    recipe = await nemlig.recipe(first.url, persons=4)
+    lines, skipped = recipe_cart.plan(recipe)
+    before = recipe_cart.in_cart(await nemlig.get_cart())
+    targets = {pid: before.get(pid, 0) + ln["quantity"] for pid, ln in lines.items()}
+    print(f"\n[nemlig] {recipe.name}: {len(lines)} varer, {len(skipped)} sprunget over")
+    assert lines and all(1 <= qty <= 50 for qty in targets.values())
+    assert all(s["reason"] for s in skipped)
 
 
 async def test_nemlig_recipes():

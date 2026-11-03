@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- launchd LaunchAgent: handle-mcp live tests on weekdays at 09:00. Install: docs/testing.md.
+     REPO and HOME are placeholders the install command fills in. A run missed while the Mac
+     sleeps starts when it wakes (launchd's StartCalendarInterval). -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>handle-mcp.live-check</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>REPO/scripts/live-check.sh</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+  </dict>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Weekday</key><integer>1</integer><key>Hour</key><integer>9</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Weekday</key><integer>2</integer><key>Hour</key><integer>9</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Weekday</key><integer>3</integer><key>Hour</key><integer>9</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Weekday</key><integer>4</integer><key>Hour</key><integer>9</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Weekday</key><integer>5</integer><key>Hour</key><integer>9</integer><key>Minute</key><integer>0</integer></dict>
+  </array>
+  <key>StandardOutPath</key>
+  <string>HOME/Library/Logs/handle-mcp/launchd.log</string>
+  <key>StandardErrorPath</key>
+  <string>HOME/Library/Logs/handle-mcp/launchd.log</string>
+</dict>
+</plist>
