@@ -44,10 +44,11 @@ class FakeNemlig:
 
     def __init__(self) -> None:
         self.requests: list[httpx.Request] = []
-        self.basket = fixture("basket")
+        self.basket = fixture("basket") | {"TimeslotUtc": "2026110316-60-180", "DeliveryZoneId": 3}
         self.scripted: dict[str, list] = {}  # path → status codes or errors to give first
         self.token_count = 0
         self.queue = False
+        self.user_id = "user-4711"
         self.endless_days = False
         self.history, self.details = "order_history", "order_details"
 
@@ -61,7 +62,7 @@ class FakeNemlig:
             return httpx.Response(nxt)
         if request.url.host == "nemlig.queue-it.net":
             return httpx.Response(200, text="<html>Du er i kø</html>")
-        if path == "/" and self.queue:
+        if path in ("/", "/tilbud") and self.queue:  # page URLs, never /webapi/
             return httpx.Response(
                 302, headers={"Location": "https://nemlig.queue-it.net/?c=nemlig"}
             )
@@ -79,23 +80,14 @@ class FakeNemlig:
             return httpx.Response(200, json={"RedirectUrl": "/", "TimeslotUtc": "x"})
         if path == "/webapi/v2/AppSettings/Website":
             return httpx.Response(200, json={"CombinedProductsAndSitecoreTimestamp": "ts-1"})
-        if path == "/" and request.url.params.get("GetAsJson"):
-            return httpx.Response(
-                200,
-                json={
-                    "Settings": {
-                        "TimeslotUtc": "2026110316-60-180",
-                        "DeliveryZoneId": 3,
-                        "UserId": "user-4711",
-                    }
-                },
-            )
         if path == "/searchgateway/api/search":
             if request.url.params.get("query") in ("mums rosinboller", "gratis"):
                 return httpx.Response(200, json=fixture("search_gift"))
             return httpx.Response(200, json=fixture("search"))
         if path == "/tilbud":
-            return httpx.Response(200, json={"content": TILBUD})
+            return httpx.Response(
+                200, json={"content": TILBUD, "Settings": {"UserId": self.user_id}}
+            )
         if path.endswith("/Products/GetByProductGroupId"):
             return httpx.Response(
                 200, json=fixture(OFFER_FILES[request.url.params["productGroupId"]])
@@ -364,10 +356,36 @@ async def test_tools_hide_personal_data_from_nemlig(store, monkeypatch):
     assert "Black Coffee Blend Supreme" in text
 
 
+async def test_search_works_while_pages_are_in_the_queue(store, fake):
+    fake.queue = True  # seen live 2026-11-03: /?GetAsJson=1 → queue-it, /webapi/ works
+    assert await store.search("mælk")
+    search = next(r for r in fake.requests if r.url.path == "/searchgateway/api/search")
+    assert search.url.params["timeslotUtc"] == "2026110316-60-180"
+    assert search.url.params["deliveryZoneId"] == "3"
+    assert "/" not in fake.paths()
+
+
+async def test_search_uses_defaults_when_settings_fail(store, fake):
+    fake.scripted["/webapi/basket/GetBasket"] = [404]
+    assert await store.search("mælk")
+    search = next(r for r in fake.requests if r.url.path == "/searchgateway/api/search")
+    assert search.url.params["timeslotUtc"] == "" and search.url.params["deliveryZoneId"] == "1"
+    await store.search("brød")  # not cached: tries again
+    assert fake.paths().count("/webapi/basket/GetBasket") == 2
+
+
+@pytest.mark.parametrize("failing", ["/webapi/v2/AppSettings/Website", "/webapi/basket/GetBasket"])
+async def test_offers_with_failed_settings_is_a_clear_error(store, fake, failing):
+    fake.scripted[failing] = [404]
+    with pytest.raises(StoreError, match="indstillinger"):
+        await store.offers()
+    assert "/tilbud" not in fake.paths()
+
+
 async def test_queue_it_waiting_room_is_a_clear_error(store, fake):
     fake.queue = True
     with pytest.raises(StoreError, match="kø"):
-        await store.search("mælk")
+        await store.offers()
 
 
 async def test_recipes_format_change_is_a_clear_error(store, monkeypatch):
@@ -531,16 +549,10 @@ async def test_offer_list_error_never_shows_the_user_id(store, fake):
     assert "user-4711" not in str(err.value) and "<bruger>" in str(err.value)
 
 
-async def test_offers_need_a_user(store, monkeypatch):
-    await store._search_settings()
-    store._user_id = ""
-    monkeypatch.setattr(store, "_search_settings", lambda: _settings(store))
+async def test_offers_need_a_user(store, fake):
+    fake.user_id = ""
     with pytest.raises(StoreError, match="Log ind"):
         await store.offers()
-
-
-async def _settings(store):
-    return store._settings[1]
 
 
 async def test_one_broken_offer_list_does_not_hide_the_others(store, fake):

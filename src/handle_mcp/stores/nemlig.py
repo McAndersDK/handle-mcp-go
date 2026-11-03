@@ -230,18 +230,23 @@ class NemligStore:
         log.info("logged in to nemlig.com")
 
     async def _search_settings(self) -> dict[str, Any]:
+        """Timestamp, timeslot and zone for search, from /webapi/ only: page URLs such as
+        /?GetAsJson=1 can land in the queue-it waiting room. Defaults if a call fails."""
         if self._settings and time.monotonic() - self._settings[0] < SETTINGS_TTL:
             return self._settings[1]
-        app = await self._api("GET", f"{BASE}/webapi/v2/AppSettings/Website") or {}
-        page = await self._api("GET", f"{BASE}/", params={"GetAsJson": "1", "d": "1"}) or {}
-        page = page.get("Settings", {})
+        app, basket = {}, {}
+        try:
+            app = await self._api("GET", f"{BASE}/webapi/v2/AppSettings/Website") or {}
+            basket = await self._basket()
+        except StoreError as exc:  # search still works, only less exact
+            log.warning("nemlig: søger med standardværdier: %s", exc)
         settings = {
             "timestamp": app.get("CombinedProductsAndSitecoreTimestamp", ""),
-            "timeslotUtc": page.get("TimeslotUtc", ""),
-            "deliveryZoneId": page.get("DeliveryZoneId", 1),
+            "timeslotUtc": basket.get("TimeslotUtc", ""),
+            "deliveryZoneId": basket.get("DeliveryZoneId") or 1,
         }
-        self._user_id = str(page.get("UserId") or "")
-        self._settings = (time.monotonic(), settings)
+        if basket:  # a failed call is tried again next time
+            self._settings = (time.monotonic(), settings)
         return settings
 
     # --- Store methods ----------------------------------------------------
@@ -280,7 +285,10 @@ class NemligStore:
         """Every product on nemlig's offer lists (/tilbud): Skarp pris, Priskup, Dagstilbud,
         Undgå madspild and gifts. Read only."""
         settings = await self._search_settings()
+        if not self._settings:  # defaults (a settings call failed) build a broken list URL
+            raise StoreError("nemlig gav ingen indstillinger til tilbud. Prøv igen om lidt.")
         page = await self._api("GET", f"{BASE}/tilbud", params={"GetAsJson": "1", "d": "1"}) or {}
+        self._user_id = str((page.get("Settings") or {}).get("UserId") or self._user_id)
         spots = [
             (OFFER_LISTS[head], c["ProductGroupId"])
             for c in page.get("content") or []
