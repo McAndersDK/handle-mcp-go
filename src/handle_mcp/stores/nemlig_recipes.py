@@ -71,12 +71,15 @@ class RecipesMixin:
 
     name: str
     _api: Any
+    _timeslot_id: Any
     _tags: dict[str, str]
     _tag_names: list[str]
 
     async def recipe(self, recipe_id: str, persons: int | None = None) -> RecipeDetails:
         slug = recipe_slug(recipe_id)
         params: dict[str, Any] = {"recipeId": slug, "maxProductsPerIngredient": 10}
+        if slot := await self._timeslot_id():
+            params["timeSlotId"] = slot
         if persons:
             params["servings"] = persons
         details, dialog = await asyncio.gather(

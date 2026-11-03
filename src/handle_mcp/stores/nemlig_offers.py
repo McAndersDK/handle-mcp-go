@@ -78,12 +78,16 @@ class OffersMixin:
     """offers() for NemligStore. Uses its logged-in `_api` and `search`."""
 
     _api: Any
+    _timeslot_id: Any
     search: Any
 
     async def offers(self, limit: int = 25) -> list[Product]:
         """Every product on nemlig's offer lists (/tilbud): Skarp pris, Priskup, Dagstilbud,
         Undgå madspild and gifts. `limit` is per list. Read only."""
-        page = await self._api("GET", f"{BFF}/page", params={"path": "/tilbud"}) or {}
+        params = {"path": "/tilbud"}
+        if slot := await self._timeslot_id():
+            params["timeslotId"] = slot  # sic: the page call spells it so, the dialog not
+        page = await self._api("GET", f"{BFF}/page", params=params) or {}
         lists = [
             (OFFER_LISTS[head], block.get("products") or [])
             for block in page.get("pageContent") or []

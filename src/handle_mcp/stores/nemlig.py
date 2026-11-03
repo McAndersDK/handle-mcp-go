@@ -133,6 +133,7 @@ class NemligStore(RecipesMixin, OffersMixin):
         self._xsrf: str | None = None
         self._logged_in = False
         self._settings: tuple[float, dict[str, Any]] | None = None
+        self._slot_id = ""  # the basket's delivery time, for productbff calls
         self._lock = asyncio.Lock()
 
     # --- HTTP -------------------------------------------------------------
@@ -238,7 +239,14 @@ class NemligStore(RecipesMixin, OffersMixin):
         }
         if basket:  # a failed call is tried again next time
             self._settings = (time.monotonic(), settings)
+            self._slot_id = str((basket.get("DeliveryTimeSlot") or {}).get("Id") or "")
         return settings
+
+    async def _timeslot_id(self) -> str:
+        """The delivery time in the basket, so recipe products and offers fit it (sold out on
+        that day, prices). Empty if none: nemlig then answers for a default time."""
+        await self._search_settings()
+        return self._slot_id
 
     # --- Store methods ----------------------------------------------------
 

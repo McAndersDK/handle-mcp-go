@@ -26,7 +26,11 @@ class FakeNemlig:
 
     def __init__(self) -> None:
         self.requests: list[httpx.Request] = []
-        self.basket = fixture("basket") | {"TimeslotUtc": "2026110316-60-180", "DeliveryZoneId": 3}
+        self.basket = fixture("basket") | {
+            "TimeslotUtc": "2026110316-60-180",
+            "DeliveryZoneId": 3,
+            "DeliveryTimeSlot": {"Id": "2435672"},  # live basket field, 2026-11-03
+        }
         self.scripted: dict[str, list] = {}  # path → status codes or errors to give first
         self.token_count = 0
         self.queue = False  # page URLs (/, /tilbud) go to queue-it, as seen live 2026-11-03
@@ -503,6 +507,19 @@ async def test_offers_reads_every_offer_list(store, fake):
     assert (ribs.before_price, ribs.offer_text) == (None, "Skarp pris")
     click = next(p for p in offers if p.id == "5012574")
     assert (click.offer_text, click.campaign) == ("Mix 2 stk. 35,-", "Priskup")
+
+
+async def test_offers_fit_the_basket_delivery_time(store, fake):
+    await store.offers()
+    (page,) = [r for r in fake.requests if r.url.path == "/productbff/api/web/page"]
+    assert page.url.params["timeslotId"] == "2435672"
+
+
+async def test_offers_without_a_delivery_time_send_none(store, fake):
+    fake.basket = {k: v for k, v in fake.basket.items() if k != "DeliveryTimeSlot"}
+    await store.offers()
+    (page,) = [r for r in fake.requests if r.url.path == "/productbff/api/web/page"]
+    assert "timeslotId" not in page.url.params
 
 
 async def test_offers_limit_is_per_list(store):

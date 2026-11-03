@@ -43,6 +43,7 @@ async def test_recipe_sends_slug_and_persons(store, fake):
     dialog = next(r for r in fake.requests if r.url.path.endswith("/recipeProductDialog"))
     assert dialog.url.params["recipeId"] == "kebabfad-med-fladbrod-98001303"
     assert dialog.url.params["servings"] == "6"
+    assert dialog.url.params["timeSlotId"] == "2435672"  # the basket's delivery time
 
 
 @pytest.mark.parametrize("bad", ["kebab%2f..", "kebab fad", ""])
