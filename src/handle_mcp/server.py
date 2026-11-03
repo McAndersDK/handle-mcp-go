@@ -236,8 +236,8 @@ async def get_order(store: str, order_id: str) -> dict:
 
 
 def configure_logging() -> None:
-    """Log to stderr. httpx logs every request URL at INFO, and nemlig's offer URL holds
-    the UserId. MCP clients keep stderr in log files, so httpx only speaks on warnings."""
+    """Log to stderr. httpx logs every request URL at INFO, and URLs can hold ids and
+    tokens. MCP clients keep stderr in log files, so httpx only speaks on warnings."""
     logging.basicConfig(stream=sys.stderr, level=logging.INFO)
     logging.getLogger("httpx").setLevel(logging.WARNING)
 

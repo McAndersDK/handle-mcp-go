@@ -33,6 +33,7 @@ from handle_mcp.models import (
 )
 from handle_mcp.stores import StoreError, load_login
 from handle_mcp.stores._http import request
+from handle_mcp.stores.nemlig_offers import OffersMixin
 from handle_mcp.stores.nemlig_recipes import RecipesMixin
 
 log = logging.getLogger(__name__)
@@ -46,15 +47,6 @@ SLOT_KINDS = {0: "Personlig", 1: "Fleksibel"}  # Type: attended / unattended del
 STATUS = {1: "Bestilt", 2: "Under behandling", 4: "Leveret"}
 UNITS = {"kg": "kg", "l": "l", "ltr": "l", "stk": "stk"}
 FREE = "ProductCampaignFreeProduct"
-# Offer lists on /tilbud, matched on the heading (ids change). See tests/fixtures/nemlig/README.md.
-OFFER_LISTS = {
-    "skarp pris": "Skarp pris",
-    "ugens priskup": "Priskup",
-    "priskup": "Priskup",
-    "dagstilbud": "Dagstilbud",
-    "undgå madspild": "Undgå madspild",
-    "en gave til dig": "Gratis",
-}
 # Bags for a normal week (~800 kr), seen live 2026-11. The basket only says the bag price when it
 # has products, so compare_basket uses this for an empty cart.
 BAG_FEE = Decimal("17.85")
@@ -132,7 +124,7 @@ def _kr(value: Decimal) -> str:
     return f"{value:.2f}".replace(".", ",").removesuffix(",00")
 
 
-class NemligStore(RecipesMixin):
+class NemligStore(RecipesMixin, OffersMixin):
     name = "nemlig"
 
     def __init__(self, client: httpx.AsyncClient | None = None) -> None:
@@ -141,7 +133,6 @@ class NemligStore(RecipesMixin):
         self._xsrf: str | None = None
         self._logged_in = False
         self._settings: tuple[float, dict[str, Any]] | None = None
-        self._user_id = ""  # personal: only in the offer-list URL, never logged or returned
         self._lock = asyncio.Lock()
 
     # --- HTTP -------------------------------------------------------------
@@ -172,8 +163,7 @@ class NemligStore(RecipesMixin):
         if resp.status_code == 401:
             raise _Unauthorized
         if resp.status_code >= 400:
-            shown = url.replace(self._user_id, "<bruger>") if self._user_id else url
-            raise StoreError(f"nemlig.com afviste kaldet ({resp.status_code}): {shown}")
+            raise StoreError(f"nemlig.com afviste kaldet ({resp.status_code}): {url}")
         try:
             return resp.json() if resp.content else None
         except ValueError as exc:
@@ -281,61 +271,6 @@ class NemligStore(RecipesMixin):
             for h in hits[:limit]
             if h.get("Id") and h.get("Url")
         ]
-
-    async def offers(self, limit: int = 25) -> list[Product]:
-        """Every product on nemlig's offer lists (/tilbud): Skarp pris, Priskup, Dagstilbud,
-        Undgå madspild and gifts. Read only."""
-        settings = await self._search_settings()
-        if not self._settings:  # defaults (a settings call failed) build a broken list URL
-            raise StoreError("nemlig gav ingen indstillinger til tilbud. Prøv igen om lidt.")
-        page = await self._api("GET", f"{BASE}/tilbud", params={"GetAsJson": "1", "d": "1"}) or {}
-        self._user_id = str((page.get("Settings") or {}).get("UserId") or self._user_id)
-        spots = [
-            (OFFER_LISTS[head], c["ProductGroupId"])
-            for c in page.get("content") or []
-            if c.get("TemplateName") == "productlistshowallspot"
-            and c.get("ProductGroupId")
-            and (head := str(c.get("Heading") or "").strip().lower()) in OFFER_LISTS
-        ]
-        if not spots:
-            raise StoreError(
-                "Fandt ingen tilbudslister på nemlig.com/tilbud. Siden kan have ændret sig."
-            )
-        if not self._user_id:
-            raise StoreError("nemlig gav ingen bruger. Log ind på nemlig for at se tilbud.")
-        path = "/".join(str(settings[k]) for k in ("timestamp", "timeslotUtc", "deliveryZoneId"))
-        products: dict[str, Product] = {}
-        failed = []
-        for name, group in spots:
-            try:
-                data = await self._api(
-                    "GET",
-                    f"{BASE}/webapi/{path}/{self._user_id}/Products/GetByProductGroupId",
-                    params={"productGroupId": group, "pageIndex": 0, "pagesize": limit},
-                )
-            except StoreError as exc:  # one broken list must not hide the others
-                log.warning("nemlig-tilbudslisten %s fejlede: %s", name, exc)
-                failed.append(exc)
-                continue
-            for hit in (data or {}).get("Products") or []:
-                if hit.get("Id") and str(hit["Id"]) not in products:
-                    product = self._product(hit)
-                    if not product.on_offer:  # seen live: a "Dagstilbud" above the normal price
-                        continue
-                    product.campaign = product.campaign or name
-                    products[product.id] = product
-        if failed and len(failed) == len(spots):
-            raise failed[0]
-        # "En gave til dig" is often empty (live 2026-11-02), but a search for "gratis" finds the
-        # free gifts (ProductCampaignFreeProduct). A free-text search, so it may change.
-        try:
-            gifts = [p for p in await self.search("gratis", 50) if p.campaign == "Gratis"]
-        except StoreError as exc:
-            log.warning("nemlig-gaver fejlede: %s", exc)
-            gifts = []
-        for gift in gifts:
-            products.setdefault(gift.id, gift)
-        return list(products.values())
 
     def _product(self, hit: dict) -> Product:
         avail = hit.get("Availability") or {}

@@ -10,33 +10,15 @@ import pytest
 
 from handle_mcp import server
 from handle_mcp import stores as registry
-from handle_mcp.stores import StoreError, _http
-from handle_mcp.stores import nemlig as nemlig_module
+from handle_mcp.stores import StoreError, _http, nemlig_offers
 from handle_mcp.stores.nemlig import NemligStore
+from handle_mcp.stores.nemlig_offers import offer_product
 
 FIXTURES = Path(__file__).parent / "fixtures" / "nemlig"
 
 
 def fixture(name: str) -> dict:
     return json.loads((FIXTURES / f"{name}.json").read_text())
-
-
-OFFER_FILES = {
-    "g-skarp": "offers_skarp_pris",
-    "g-priskup": "offers_priskup",
-    "g-dag": "offers_dagstilbud",
-    "g-madspild": "offers_madspild",
-    "g-gave": "offers_gratis",
-}
-TILBUD = [  # the spots on /tilbud?GetAsJson=1, trimmed (tests/fixtures/nemlig/README.md)
-    {"TemplateName": "productlistshowallspot", "Heading": "Skarp pris", "ProductGroupId": "g-skarp"},
-    {"TemplateName": "productlistshowallspot", "Heading": "Ugens Priskup", "ProductGroupId": "g-priskup"},
-    {"TemplateName": "productlistshowallspot", "Heading": "Dagstilbud", "ProductGroupId": "g-dag"},
-    {"TemplateName": "productlistshowallspot", "Heading": "Undgå madspild", "ProductGroupId": "g-madspild"},
-    {"TemplateName": "productlistshowallspot", "Heading": "En gave til dig", "ProductGroupId": "g-gave"},
-    {"TemplateName": "productlistshowallspot", "Heading": "Nyheder", "ProductGroupId": "g-news"},
-    {"TemplateName": "bannerspot", "Heading": "Skarp pris"},
-]  # fmt: skip
 
 
 class FakeNemlig:
@@ -47,8 +29,8 @@ class FakeNemlig:
         self.basket = fixture("basket") | {"TimeslotUtc": "2026110316-60-180", "DeliveryZoneId": 3}
         self.scripted: dict[str, list] = {}  # path → status codes or errors to give first
         self.token_count = 0
-        self.queue = False
-        self.user_id = "user-4711"
+        self.queue = False  # page URLs (/, /tilbud) go to queue-it, as seen live 2026-11-03
+        self.api_queue = False  # the API too: not seen, but nemlig could
         self.endless_days = False
         self.history, self.details = "order_history", "order_details"
 
@@ -80,26 +62,21 @@ class FakeNemlig:
             return httpx.Response(200, json={"RedirectUrl": "/", "TimeslotUtc": "x"})
         if path == "/webapi/v2/AppSettings/Website":
             return httpx.Response(200, json={"CombinedProductsAndSitecoreTimestamp": "ts-1"})
-        if path.startswith("/productbff/") and self.queue:  # if nemlig ever queues the API
+        if path.startswith("/productbff/") and self.api_queue:
             return httpx.Response(302, headers={"Location": "https://nemlig.queue-it.net/"})
         if path.startswith("/productbff/api/web/meals/recipeDetails/"):
             return httpx.Response(200, json=fixture("recipe_details"))
         if path == "/productbff/api/web/meals/recipeProductDialog":
             return httpx.Response(200, json=fixture("recipe_products"))
         if path == "/productbff/api/web/page":
-            return httpx.Response(200, json=fixture("meals_page"))
+            page = {"/maaltider": "meals_page", "/tilbud": "offers_page"}[
+                request.url.params["path"]
+            ]
+            return httpx.Response(200, json=fixture(page))
         if path == "/searchgateway/api/search":
             if request.url.params.get("query") in ("mums rosinboller", "gratis"):
                 return httpx.Response(200, json=fixture("search_gift"))
             return httpx.Response(200, json=fixture("search"))
-        if path == "/tilbud":
-            return httpx.Response(
-                200, json={"content": TILBUD, "Settings": {"UserId": self.user_id}}
-            )
-        if path.endswith("/Products/GetByProductGroupId"):
-            return httpx.Response(
-                200, json=fixture(OFFER_FILES[request.url.params["productGroupId"]])
-            )
         if path == "/webapi/basket/GetBasket":
             return httpx.Response(200, json=self.basket)
         if path == "/webapi/basket/AddToBasket":
@@ -382,16 +359,14 @@ async def test_search_uses_defaults_when_settings_fail(store, fake):
     assert fake.paths().count("/webapi/basket/GetBasket") == 2
 
 
-@pytest.mark.parametrize("failing", ["/webapi/v2/AppSettings/Website", "/webapi/basket/GetBasket"])
-async def test_offers_with_failed_settings_is_a_clear_error(store, fake, failing):
-    fake.scripted[failing] = [404]
-    with pytest.raises(StoreError, match="indstillinger"):
-        await store.offers()
-    assert "/tilbud" not in fake.paths()
+async def test_offers_work_while_pages_are_in_the_queue(store, fake):
+    fake.queue = True
+    assert {p.campaign for p in await store.offers()} >= {"Skarp pris", "Priskup"}
+    assert not {"/", "/tilbud"} & set(fake.paths())
 
 
 async def test_queue_it_waiting_room_is_a_clear_error(store, fake):
-    fake.queue = True
+    fake.api_queue = True
     with pytest.raises(StoreError, match="kø"):
         await store.offers()
 
@@ -503,28 +478,65 @@ def test_offer_end_uses_danish_time(store):
 
 async def test_offers_reads_every_offer_list(store, fake):
     offers = await store.offers(10)
-    lists = {p.campaign for p in offers}
-    assert lists == {"Skarp pris", "Priskup", "Dagstilbud", "Undgå madspild", "Gratis"}
-    calls = [r for r in fake.requests if r.url.path.endswith("GetByProductGroupId")]
-    assert len(calls) == 5  # "Nyheder" is not an offer list
-    assert (
-        calls[0].url.path
-        == "/webapi/ts-1/2026110316-60-180/3/user-4711/Products/GetByProductGroupId"
-    )
-    assert calls[0].url.params["pagesize"] == "10"
-    assert all(r.method == "GET" for r in fake.requests if r.url.path != "/webapi/login")
-    rejer = next(p for p in offers if p.id == "5061889")
-    assert (rejer.price, rejer.before_price, rejer.campaign) == (
-        Decimal("25.0"),
-        Decimal("31.5"),
+    assert {p.campaign for p in offers} == {
+        "Skarp pris",
         "Priskup",
+        "Dagstilbud",
+        "Undgå madspild",
+        "Gratis",
+    }
+    assert "5066321" not in {p.id for p in offers}  # "Frugt og grønt" is a category, not a list
+    (page,) = [r for r in fake.requests if r.url.path == "/productbff/api/web/page"]
+    assert page.url.params["path"] == "/tilbud"
+    assert all(r.method == "GET" for r in fake.requests if r.url.path != "/webapi/login")
+    steak = next(p for p in offers if p.id == "5067616")
+    assert (steak.price, steak.before_price, steak.campaign, steak.unit) == (
+        Decimal(100),
+        Decimal("158.95"),
+        "Skarp pris",
+        "kg",
     )
+    assert steak.offer_text == "Tilbud, før 158,95 kr"
+    ribs = next(p for p in offers if p.id == "5060880")  # no normal price given: still an offer
+    assert (ribs.before_price, ribs.offer_text) == (None, "Skarp pris")
+    click = next(p for p in offers if p.id == "5012574")
+    assert (click.offer_text, click.campaign) == ("Mix 2 stk. 35,-", "Priskup")
 
 
-async def test_offer_above_the_normal_price_is_not_an_offer(store):
-    hit = next(h for h in fixture("offers_dagstilbud")["Products"] if h["Id"] == "5071238")
-    steak = store._product(hit)
-    assert (steak.price, steak.before_price, steak.on_offer) == (Decimal("82.565"), None, False)
+async def test_offers_limit_is_per_list(store):
+    offers = await store.offers(1)
+    assert len([p for p in offers if p.campaign == "Skarp pris"]) == 1
+
+
+def test_multi_buy_text_is_the_offer():
+    lemon = fixture("offers_page")["pageContent"][-1]["products"][1]  # "2 stk. 15,-"
+    assert offer_product(lemon, "Priskup").offer_text == "2 stk. 15,-"
+
+
+def test_offer_above_the_normal_price_is_not_an_offer():
+    p = fixture("offers_page")["pageContent"][1]["products"][2] | {"price": 20000}
+    assert offer_product(p, "Dagstilbud") is None
+
+
+def test_offer_without_price_is_a_format_change():
+    p = dict(fixture("offers_page")["pageContent"][1]["products"][2])
+    del p["price"]
+    with pytest.raises(KeyError):  # the list guard reports "ændret format", never "Gratis"
+        offer_product(p, "Dagstilbud")
+
+
+async def test_offers_limit_counts_only_real_offers(store, fake, monkeypatch):
+    page = fixture("offers_page")
+    block = next(b for b in page["pageContent"] if b.get("products"))
+    first = block["products"][0] | {"price": 99999}  # not cheaper: filtered out
+    block = block | {"products": [first, *block["products"][1:]]}
+    page = page | {"pageContent": [block]}
+
+    async def api(_method, url, **_kwargs):
+        return page if url.endswith("/page") else {"Products": {"Products": []}}
+
+    monkeypatch.setattr(store, "_api", api)
+    assert len(await store.offers(1)) == 1
 
 
 async def test_free_gift_costs_nothing_and_says_max_one(store):
@@ -534,44 +546,38 @@ async def test_free_gift_costs_nothing_and_says_max_one(store):
     assert gift.offer_text == "Gratis (max 1 stk.)"
 
 
+async def test_offer_list_gift_is_free_with_max_one(store):
+    gift = next(p for p in await store.offers(10) if p.id == "5606321")
+    assert (gift.price, gift.before_price, gift.campaign) == (
+        Decimal(0),
+        Decimal("20.45"),
+        "Gratis",
+    )
+    assert (gift.offer_text, gift.max_per_order) == ("Gratis (max 1 stk.)", 1)
+
+
 async def test_offers_without_lists_is_a_clear_error(store, fake, monkeypatch):
-    monkeypatch.setattr(nemlig_module, "OFFER_LISTS", {})
+    monkeypatch.setattr(nemlig_offers, "OFFER_LISTS", {})
     with pytest.raises(StoreError, match="tilbudslister"):
         await store.offers()
 
 
-async def test_list_offers_tool_never_shows_the_user_id(store, monkeypatch):
-    monkeypatch.setitem(registry.STORES, "nemlig", lambda: store)
-    monkeypatch.setattr(server, "_instances", {}, raising=False)
-    monkeypatch.setattr(server, "_store", lambda _name: store)
-    out = await server.list_offers(["nemlig"], 5)
-    text = json.dumps(out, default=str)
-    assert "user-4711" not in text and "Priskup" in text
-
-
-async def test_offer_list_error_never_shows_the_user_id(store, fake):
-    url = "/webapi/ts-1/2026110316-60-180/3/user-4711/Products/GetByProductGroupId"
-    fake.scripted[url] = [404] * len(TILBUD)  # every list fails
-    with pytest.raises(StoreError) as err:
-        await store.offers()
-    assert "user-4711" not in str(err.value) and "<bruger>" in str(err.value)
-
-
-async def test_offers_need_a_user(store, fake):
-    fake.user_id = ""
-    with pytest.raises(StoreError, match="Log ind"):
-        await store.offers()
-
-
-async def test_one_broken_offer_list_does_not_hide_the_others(store, fake):
-    url = "/webapi/ts-1/2026110316-60-180/3/user-4711/Products/GetByProductGroupId"
-    fake.scripted[url] = [404]  # the first list (Skarp pris) fails
+async def test_one_broken_offer_list_does_not_hide_the_others(store, fake, monkeypatch):
+    page = fixture("offers_page")
+    page["pageContent"][1]["products"][0].pop("id")  # Skarp pris changed format
+    monkeypatch.setattr(fake, "handle", _with_page(fake.handle, page))
+    store._client = httpx.AsyncClient(transport=httpx.MockTransport(fake.handle))
     offers = await store.offers(10)
     assert "Skarp pris" not in {p.campaign for p in offers} and offers
 
 
-async def test_offers_leave_out_an_offer_above_the_normal_price(store):
-    assert "5071238" not in {p.id for p in await store.offers(10)}
+def _with_page(handle, page):
+    def handler(request):
+        if request.url.path == "/productbff/api/web/page":
+            return httpx.Response(200, json=page)
+        return handle(request)
+
+    return handler
 
 
 async def test_offers_find_free_gifts_by_search(store, fake):
@@ -585,7 +591,7 @@ async def test_offers_find_free_gifts_by_search(store, fake):
 async def test_offers_survive_a_failed_gift_search(store, fake):
     fake.scripted["/searchgateway/api/search"] = [500] * 3
     offers = await store.offers(10)
-    assert offers and "5606321" not in {p.id for p in offers}
+    assert offers and {p.campaign for p in offers} >= {"Skarp pris"}
 
 
 async def test_delivery_slots_with_prices_and_kinds(store, fake):

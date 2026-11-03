@@ -68,7 +68,7 @@ async def test_featured_recipes_are_grouped(store):
 
 
 async def test_queued_recipe_api_is_a_clear_error(store, fake):
-    fake.queue = True
+    fake.api_queue = True
     with pytest.raises(StoreError, match="kø"):
         await store.featured_recipes()
 
