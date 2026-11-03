@@ -7,21 +7,9 @@
 | Safety | `tests/test_safety.py` (part of the above) | No order, payment, slot, "add recipe" or "clear cart" endpoint in the code |
 | Live, read only | `HANDLE_LIVE=1 uv run pytest -m live` | The stores still answer as we expect. Needs logins. Never writes to the cart |
 
-## Live tests every weekday morning (macOS)
+## Run the live tests often
 
-`scripts/live-check.sh` runs the live tests and shows a notification listing the failed tests.
-`scripts/live-check.plist` is a launchd LaunchAgent that starts it Monday to Friday at 09:00;
-a run missed while the Mac sleeps starts when it wakes. Logins come from the keychain
-(`handle-mcp login <store>`); nothing secret is in these files, and live runs print short
-tracebacks without locals. Logs: `~/Library/Logs/handle-mcp/`.
-
-Install, from the repo folder:
-
-```bash
-mkdir -p ~/Library/Logs/handle-mcp ~/Library/LaunchAgents
-sed -e "s|REPO|$PWD|g" -e "s|HOME|$HOME|g" scripts/live-check.plist > ~/Library/LaunchAgents/handle-mcp.live-check.plist
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/handle-mcp.live-check.plist
-```
-
-Run it now: `launchctl kickstart gui/$(id -u)/handle-mcp.live-check`.
-Remove: `launchctl bootout gui/$(id -u)/handle-mcp.live-check && rm ~/Library/LaunchAgents/handle-mcp.live-check.plist`.
+Stores change their APIs without notice. Run the live tests before a merge that touches a store,
+and on a schedule if you can, e.g. a scheduled task in your own tool that runs
+`HANDLE_LIVE=1 uv run pytest -m live -q` on weekdays. Live tests only read: they never write to the
+cart, and they print short tracebacks without locals, so no login reaches a log.
