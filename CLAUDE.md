@@ -51,6 +51,7 @@ No change to `server.py` or the tools is needed.
 ```
 uv sync
 uv run pytest -q          # unit tests, no network
+HANDLE_UPDATE_SNAPSHOT=1 uv run pytest tests/test_protocol.py   # after changing a tool's name, description or args on purpose
 uv run ruff check . && uv run ruff format --check .
 HANDLE_LIVE=1 uv run pytest -m live   # read-only smoke tests against real stores (from step 3)
 HANDLE_LIVE=1 uv run pytest -m live -s tests/test_live_list.py   # 50 fixed items (tests/live_list.json): fails when no candidate fits
