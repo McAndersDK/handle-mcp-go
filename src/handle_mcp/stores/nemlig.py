@@ -15,7 +15,6 @@ import uuid
 from datetime import date, datetime, timedelta
 from decimal import Decimal, InvalidOperation
 from typing import Any
-from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
 
 import httpx
@@ -28,7 +27,6 @@ from handle_mcp.models import (
     Order,
     Product,
     QuantityResult,
-    Recipe,
     StoreTerms,
 )
 from handle_mcp.stores import StoreError, load_login
@@ -259,26 +257,6 @@ class NemligStore(RecipesMixin, OffersMixin):
         except (KeyError, TypeError) as exc:
             raise StoreError("nemlig-søgning har ændret format.") from exc
         return [self._product(h) for h in hits]
-
-    async def recipes(self, query: str, limit: int = 5) -> list[Recipe]:
-        """nemlig's own recipes. Only name, link, time and persons: ingredients are on the page."""
-        params = {"query": query, "take": 1, "skip": 0, "recipeCount": limit}
-        data = await self._api("GET", SEARCH, params=params | await self._search_settings())
-        hits = (data or {}).get("Recipes")
-        if not isinstance(hits, list):
-            raise StoreError("nemlig-opskrifter har ændret format.")
-        return [
-            Recipe(
-                store=self.name,
-                id=str(h["Id"]),
-                name=h.get("Name", ""),
-                url=urljoin(BASE + "/", str(h["Url"])),
-                time=h.get("TotalTime") or None,
-                persons=h.get("NumberOfPersons") or None,
-            )
-            for h in hits[:limit]
-            if h.get("Id") and h.get("Url")
-        ]
 
     def _product(self, hit: dict) -> Product:
         avail = hit.get("Availability") or {}

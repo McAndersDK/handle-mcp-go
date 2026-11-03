@@ -75,6 +75,28 @@ class RecipesMixin:
     _tags: dict[str, str]
     _tag_names: list[str]
 
+    async def recipes(self, query: str, limit: int = 5) -> list[Recipe]:
+        """nemlig's recipe search, as on the website. The old search (searchgateway) also finds
+        recipes that the new API no longer has (500 on get_recipe, live 2026-11-03), so not that.
+        Name and link only: get_recipe gives time, persons and products."""
+        params: dict[str, Any] = {"query": query, "take": limit, "skip": 0}
+        if slot := await self._timeslot_id():
+            params["timeslotId"] = slot
+        data = await self._api("GET", f"{BFF}/search/recipes", params=params) or {}
+        hits = (data.get("searchResult") or {}).get("items")
+        if not isinstance(hits, list):
+            raise StoreError("nemlig-opskrifter har ændret format.")
+        return [
+            Recipe(
+                store=self.name,
+                id=h["id"],
+                name=h.get("title", ""),
+                url=f"{SITE}/maaltider/opskrift/{h['id']}",
+            )
+            for h in hits[:limit]
+            if h.get("id")
+        ]
+
     async def recipe(self, recipe_id: str, persons: int | None = None) -> RecipeDetails:
         slug = recipe_slug(recipe_id)
         params: dict[str, Any] = {"recipeId": slug, "maxProductsPerIngredient": 10}

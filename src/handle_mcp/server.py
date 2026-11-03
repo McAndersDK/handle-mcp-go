@@ -121,8 +121,8 @@ async def search_products(query: str, stores: list[str] | None = None, limit: in
 
 @mcp.tool(annotations=READ)
 async def search_recipes(query: str, stores: list[str] | None = None, limit: int = 5) -> dict:
-    """Find the stores' own recipes, e.g. "kylling karry". Returns name, link, time and persons.
-    Use get_recipe for the products to buy."""
+    """Find the stores' own recipes, e.g. "kylling karry". Returns name and link.
+    Use get_recipe for time, persons and the products to buy."""
     limit = max(1, min(limit, MAX_RESULTS))
     return _out(await _each(_names(stores), lambda s: s.recipes(query, limit)))
 

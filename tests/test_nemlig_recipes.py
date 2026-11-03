@@ -135,6 +135,37 @@ async def test_list_recipes_tool_picks_featured_or_tags():
     assert tagged["fake"][0]["group"] == "Aftensmad"
 
 
+async def test_recipe_search_gives_new_links(store, fake):
+    recipes = await store.recipes("kylling karry", limit=3)
+    assert [r.id for r in recipes] == [
+        "nem-kylling-i-karry-98003871",
+        "kylling-i-kokos-karry-98000533",
+        "kylling-i-karry-98003870",
+    ]
+    assert (
+        recipes[0].url == "https://www.nemlig.com/maaltider/opskrift/nem-kylling-i-karry-98003871"
+    )
+    assert recipes[0].name and recipes[0].time is None  # get_recipe has the time
+    (call,) = [r for r in fake.requests if r.url.path.endswith("/search/recipes")]
+    assert (call.url.params["query"], call.url.params["take"]) == ("kylling karry", "3")
+    assert call.url.params["timeslotId"] == "2435672"
+    assert "/searchgateway/api/search" not in fake.paths()
+
+
+async def test_recipe_search_format_change_is_a_clear_error(store, monkeypatch):
+    async def empty(*_args, **_kwargs):
+        return {"searchResult": {}}
+
+    monkeypatch.setattr(store, "_api", empty)
+    monkeypatch.setattr(store, "_timeslot_id", _no_slot)
+    with pytest.raises(StoreError, match="ændret format"):
+        await store.recipes("karry")
+
+
+async def _no_slot():
+    return ""
+
+
 def test_category_with_spaces_and_danish_letters():
     assert category_path("Mad til flere dage") == "mad-til-flere-dage"
     assert category_path("Måltidskasse") == "maaltidskasse"

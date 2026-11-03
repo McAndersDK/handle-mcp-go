@@ -72,6 +72,8 @@ class FakeNemlig:
             return httpx.Response(200, json=fixture("recipe_details"))
         if path == "/productbff/api/web/meals/recipeProductDialog":
             return httpx.Response(200, json=fixture("recipe_products"))
+        if path == "/productbff/api/web/search/recipes":
+            return httpx.Response(200, json=fixture("recipe_search"))
         if path == "/productbff/api/web/meals/allRecipes":
             return httpx.Response(200, json=fixture("recipes_by_tag"))
         if path == "/productbff/api/web/page":
@@ -210,14 +212,6 @@ async def test_search_parses_products(store, fake):
     search = next(r for r in fake.requests if r.url.path == "/searchgateway/api/search")
     assert search.url.params["timeslotUtc"] == "2026110316-60-180"
     assert search.url.params["deliveryZoneId"] == "3"
-
-
-async def test_recipes_are_parsed_with_full_links(store, fake):
-    (recipe,) = await store.recipes("cocio", limit=3)
-    assert (recipe.name, recipe.time, recipe.persons) == ("Cocioshake med topping", "10 min", 4)
-    assert recipe.url == "https://www.nemlig.com/opskrifter/cocioshake-topping-98003783"
-    search = next(r for r in fake.requests if r.url.path == "/searchgateway/api/search")
-    assert search.url.params["recipeCount"] == "3"
 
 
 async def test_search_reuses_settings(store, fake):
@@ -375,37 +369,6 @@ async def test_queue_it_waiting_room_is_a_clear_error(store, fake):
     fake.api_queue = True
     with pytest.raises(StoreError, match="kø"):
         await store.offers()
-
-
-async def test_recipes_format_change_is_a_clear_error(store, monkeypatch):
-    async def no_recipes(*_args, **_kwargs):
-        return {"Products": {"Products": []}}
-
-    async def settings():
-        return {}
-
-    monkeypatch.setattr(store, "_api", no_recipes)
-    monkeypatch.setattr(store, "_search_settings", settings)
-    with pytest.raises(StoreError, match="ændret format"):
-        await store.recipes("karry")
-
-
-async def test_recipe_links_absolute_or_empty(store, monkeypatch):
-    async def recipes(*_args, **_kwargs):
-        return {
-            "Recipes": [
-                {"Id": "a", "Name": "Absolut", "Url": "https://www.nemlig.com/opskrifter/a-1"},
-                {"Id": "b", "Name": "Uden link", "Url": ""},
-            ]
-        }
-
-    async def settings():
-        return {}
-
-    monkeypatch.setattr(store, "_api", recipes)
-    monkeypatch.setattr(store, "_search_settings", settings)
-    (only,) = await store.recipes("x")
-    assert only.url == "https://www.nemlig.com/opskrifter/a-1"
 
 
 # Shapes seen live 2026-11-01 (docs/research.md). Only the fields we read.

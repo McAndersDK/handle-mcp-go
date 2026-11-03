@@ -3,7 +3,7 @@
 | Tool | Writes? | What |
 |---|---|---|
 | `search_products(query, stores?)` | no | Price, price per kg/l, offers, EAN when known |
-| `search_recipes(query, stores?)` | no | The store's own recipes: name, link, time, persons (nemlig only) |
+| `search_recipes(query, stores?)` | no | The store's own recipes: name and link (nemlig only). `get_recipe` gives time, persons and products |
 | `list_recipes(stores?, tags?, category?, limit?)` | no | This week's featured recipes (nemlig "Ugens udvalgte"), or with `tags` all recipes that have every tag, e.g. `["Familievenlig", "Budgetvenlig"]` or `["Under 30 min", "Kylling"]`. `category`: aftensmad (default), frokost, madpakke, ... An unknown tag answers with nemlig's list |
 | `get_recipe(store, recipe, persons?)` | no | The products behind the store's "Se varer og læg i kurv": per ingredient the product, packs for `persons`, price and alternatives. `have_at_home` items (salt, oil) are left out of `total`. Fill the cart with `set_cart_quantities` after a yes |
 | `list_offers(stores?, limit?)` | no | This week's offers, also items you would not search for: nemlig Skarp pris, Priskup, Dagstilbud, Undgå madspild, gifts; BilkaToGo offers. Free gifts have price 0 and a max per order |

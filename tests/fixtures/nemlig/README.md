@@ -47,9 +47,10 @@ token as `/webapi/` (`GET /webapi/Token`). `tracking` and `dataLayerTracking` re
 | `recipe_details.json` | `GET https://webapi.prod.knl.nemlig.it/productbff/api/web/meals/recipeDetails/kebabfad-med-fladbrod-98001303` (without `structuredData`) |
 | `recipe_products.json` | `GET .../meals/recipeProductDialog?recipeId=kebabfad-med-fladbrod-98001303&servings=4&maxProductsPerIngredient=10`: `includedProducts` to buy, `selfSuppliedProducts` "Vi regner med du har". `price` is øre. `servings` 2-12 changes `item.quantity` |
 | `recipes_by_tag.json` | `GET .../meals/allRecipes?skip=0&take=8&categoryPath=aftensmad&filters=familievenlig&filters=budgetvenlig`: `filters[]` is nemlig's tag list (groups of `{path, title}`), `requestedCategory.recipes[]` the hits (tags combine with AND; no `categoryPath` = aftensmad) |
+| `recipe_search.json` | `GET .../search/recipes?query=kylling karry&take=5&skip=0`: `searchResult.items[]` with `id` (the slug), `title`, no time or persons. The old searchgateway `Recipes` also has recipes the new API answers 500 for |
 | `meals_page.json` | `GET .../page?path=/maaltider`: "Ugens udvalgte", `pageContent[].recipes[]` |
 
 Also seen in the website's code, not used: `meals/filters/{path}` (one tag, all categories),
-`search/recipes`, `meals/purchased` ("Mine opskrifter", 401 without login) and
+`meals/purchased` ("Mine opskrifter", 401 without login) and
 `POST /webapi/basket/AddRecipeToBasket` (never call it: we fill the cart with
 `set_cart_quantities` after the human says yes).
