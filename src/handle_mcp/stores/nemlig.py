@@ -33,6 +33,7 @@ from handle_mcp.models import (
 )
 from handle_mcp.stores import StoreError, load_login
 from handle_mcp.stores._http import request
+from handle_mcp.stores.nemlig_recipes import RecipesMixin
 
 log = logging.getLogger(__name__)
 logging.getLogger("httpx").setLevel(logging.WARNING)  # its INFO logs full URLs with tokens
@@ -131,7 +132,7 @@ def _kr(value: Decimal) -> str:
     return f"{value:.2f}".replace(".", ",").removesuffix(",00")
 
 
-class NemligStore:
+class NemligStore(RecipesMixin):
     name = "nemlig"
 
     def __init__(self, client: httpx.AsyncClient | None = None) -> None:

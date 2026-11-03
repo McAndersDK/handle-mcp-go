@@ -57,6 +57,20 @@ async def test_nemlig_recipes():
     assert recipes and all(r.url.startswith("https://www.nemlig.com/") for r in recipes)
 
 
+async def test_nemlig_featured_recipe_has_products():
+    nemlig = STORES["nemlig"]()
+    (first, *_) = await nemlig.featured_recipes(limit=1)
+    recipe = await nemlig.recipe(first.url, persons=6)
+    print(f"\n[nemlig] {first.group}: {recipe.name} | {recipe.persons} pers. | {recipe.total} kr")
+    for item in recipe.items:
+        p = item.product
+        print(
+            f"  {'(har du)' if item.have_at_home else ''} {item.ingredient}: {p.name} x{p.quantity}"
+        )
+    assert recipe.persons == 6 and recipe.total > 0
+    assert any(not i.have_at_home for i in recipe.items)
+
+
 async def test_orders(store):
     orders = await store.orders(limit=2)
     if orders:

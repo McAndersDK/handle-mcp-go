@@ -29,6 +29,7 @@ MAX_ITEMS = 50  # per set_cart_quantities or compare_basket call
 MAX_QUANTITY = 50  # per product
 MAX_RESULTS = 25
 MAX_DAYS = 14
+MIN_PERSONS, MAX_PERSONS = 2, 12  # nemlig: 2-12
 
 READ = ToolAnnotations(readOnlyHint=True, destructiveHint=False, openWorldHint=True)
 WRITE = ToolAnnotations(
@@ -121,9 +122,29 @@ async def search_products(query: str, stores: list[str] | None = None, limit: in
 @mcp.tool(annotations=READ)
 async def search_recipes(query: str, stores: list[str] | None = None, limit: int = 5) -> dict:
     """Find the stores' own recipes, e.g. "kylling karry". Returns name, link, time and persons.
-    Ingredients are on the recipe page: read it, then price them with compare_basket."""
+    Use get_recipe for the products to buy."""
     limit = max(1, min(limit, MAX_RESULTS))
     return _out(await _each(_names(stores), lambda s: s.recipes(query, limit)))
+
+
+@mcp.tool(annotations=READ)
+async def get_recipe(store: str, recipe: str, persons: int | None = None) -> dict:
+    """The products to buy for one of the store's recipes, as on its "Se varer og læg i kurv":
+    per ingredient the store's product, packs for `persons` and alternatives. `have_at_home`
+    items (salt, oil) are what the store assumes you have: left out of `total`, ask first.
+    `recipe` is the recipe's link or id from search_recipes or list_recipes. Put the products
+    in the cart with set_cart_quantities after the human says yes."""
+    if persons is not None:
+        persons = max(MIN_PERSONS, min(persons, MAX_PERSONS))
+    return _out(await _call(store, "recipe", recipe, persons))
+
+
+@mcp.tool(annotations=READ)
+async def list_recipes(stores: list[str] | None = None, limit: int = 20) -> dict:
+    """The store's featured recipes this week (nemlig: "Ugens udvalgte"), with theme and link.
+    Use get_recipe for the products."""
+    limit = max(1, min(limit, MAX_RESULTS))
+    return _out(await _each(_names(stores), lambda s: s.featured_recipes(limit)))
 
 
 @mcp.tool(annotations=READ)

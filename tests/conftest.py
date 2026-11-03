@@ -19,6 +19,9 @@ from handle_mcp.models import (
     Product,
     QuantityResult,
     Recipe,
+    RecipeDetails,
+    RecipeItem,
+    RecipeProduct,
     StoreTerms,
 )
 
@@ -124,6 +127,23 @@ class FakeStore:
 
     async def recipes(self, query, limit=5):
         return [self._leak(Recipe("fake", "r1", f"{query} til 4", "https://example.com/r1"))]
+
+    async def recipe(self, recipe_id, persons=None):
+        milk = RecipeProduct("1", "Mælk", Decimal("12.95"), 2, "1 l")
+        return self._leak(
+            RecipeDetails(
+                "fake",
+                recipe_id,
+                "Grød",
+                "https://example.com/r1",
+                persons or 4,
+                items=[RecipeItem("mælk", milk)],
+                total=Decimal("25.90"),
+            )
+        )
+
+    async def featured_recipes(self, limit=20):
+        return [self._leak(Recipe("fake", "r1", "Grød", "https://example.com/r1", group="Morgen"))]
 
     async def orders(self, limit=10):
         return [self._leak(Order("fake", "900000000001", "Leveret", Decimal("612.50")))]

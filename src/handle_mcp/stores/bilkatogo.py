@@ -29,6 +29,7 @@ from handle_mcp.models import (
     Product,
     QuantityResult,
     Recipe,
+    RecipeDetails,
     StoreTerms,
 )
 from handle_mcp.stores import StoreError, load_login
@@ -256,6 +257,12 @@ class BilkaStore:
 
     async def recipes(self, query: str, limit: int = 5) -> list[Recipe]:
         raise NotImplementedError  # no recipe API found in BilkaToGo yet
+
+    async def recipe(self, recipe_id: str, persons: int | None = None) -> RecipeDetails:
+        raise NotImplementedError
+
+    async def featured_recipes(self, limit: int = 20) -> list[Recipe]:
+        raise NotImplementedError
 
     def _product(self, hit: dict, sid: str) -> Product | None:
         store = (hit.get("storeData") or {}).get(sid)

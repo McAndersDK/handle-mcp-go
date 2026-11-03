@@ -28,6 +28,7 @@ FORBIDDEN = [
     r"ChangeAddress",
     r"EmptyCart",
     r"CancelOrder",
+    r"AddRecipeToBasket",  # nemlig: fills the cart without the human's yes
 ]
 
 

@@ -36,6 +36,43 @@ class Recipe:
     url: str  # the store's recipe page: ingredients and how to cook it
     time: str | None = None  # as the store writes it, e.g. "30 min"
     persons: int | None = None
+    group: str | None = None  # the store's theme, e.g. "Mad i fad" in nemlig's "Ugens udvalgte"
+
+
+@dataclass
+class RecipeProduct:
+    id: str  # the store's product id, for set_cart_quantities
+    name: str
+    price: Decimal  # per pack
+    quantity: int  # packs to buy for the persons asked for
+    size: str | None = None
+    available: bool = True
+    offer_text: str | None = None
+
+
+@dataclass
+class RecipeItem:
+    """One ingredient and the product the store picks for it."""
+
+    ingredient: str
+    product: RecipeProduct
+    have_at_home: bool = False  # the store assumes you have it (salt, oil): left out of the total
+    alternatives: list[RecipeProduct] = field(default_factory=list)
+
+
+@dataclass
+class RecipeDetails:
+    store: str
+    id: str
+    name: str
+    url: str
+    persons: int
+    min_persons: int | None = None
+    max_persons: int | None = None
+    time: str | None = None
+    ingredients: list[str] = field(default_factory=list)  # the recipe's text, e.g. "2 stk. rødløg"
+    items: list[RecipeItem] = field(default_factory=list)
+    total: Decimal = Decimal(0)  # the items to buy, without have_at_home items
 
 
 @dataclass

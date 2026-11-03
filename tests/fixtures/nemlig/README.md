@@ -73,3 +73,21 @@ IntervalEnd: 2026-12-31T22:59:59Z}`, `SubCategory` "Gave fra nemlig.com".
 3 days, nothing removed: the answer has no personal data (slot ids are global). `Type` 0 =
 Personlig, 1 = Fleksibel. `Availability` 0 = free, 1 = past deadline. Tue 14-21: Personlig 19 kr,
 Fleksibel 25 kr. Wed 14-21 Personlig: 0 kr.
+
+## Recipes (live captures, 2026-11-03, read-only GETs)
+
+nemlig's website moved to Angular. Page URLs with `?GetAsJson=1` now give HTML, and in busy
+hours they redirect to queue-it. The recipe pages read from `productbff`, with the same Bearer
+token as `/webapi/` (`GET /webapi/Token`). `tracking` and `dataLayerTracking` removed,
+`isFavorite`/`isInShoppingList` set to false, at most 2 alternatives per ingredient.
+
+| File | Call |
+|---|---|
+| `recipe_details.json` | `GET https://webapi.prod.knl.nemlig.it/productbff/api/web/meals/recipeDetails/kebabfad-med-fladbrod-98001303` (without `structuredData`) |
+| `recipe_products.json` | `GET .../meals/recipeProductDialog?recipeId=kebabfad-med-fladbrod-98001303&servings=4&maxProductsPerIngredient=10`: `includedProducts` to buy, `selfSuppliedProducts` "Vi regner med du har". `price` is øre. `servings` 2-12 changes `item.quantity` |
+| `meals_page.json` | `GET .../page?path=/maaltider`: "Ugens udvalgte", `pageContent[].recipes[]` |
+
+Also seen in the website's code, not used: `meals/allRecipes`, `meals/filters/{path}`,
+`search/recipes`, `meals/purchased` ("Mine opskrifter", 401 without login) and
+`POST /webapi/basket/AddRecipeToBasket` (never call it: we fill the cart with
+`set_cart_quantities` after the human says yes).

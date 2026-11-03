@@ -80,6 +80,14 @@ class FakeNemlig:
             return httpx.Response(200, json={"RedirectUrl": "/", "TimeslotUtc": "x"})
         if path == "/webapi/v2/AppSettings/Website":
             return httpx.Response(200, json={"CombinedProductsAndSitecoreTimestamp": "ts-1"})
+        if path.startswith("/productbff/") and self.queue:  # if nemlig ever queues the API
+            return httpx.Response(302, headers={"Location": "https://nemlig.queue-it.net/"})
+        if path.startswith("/productbff/api/web/meals/recipeDetails/"):
+            return httpx.Response(200, json=fixture("recipe_details"))
+        if path == "/productbff/api/web/meals/recipeProductDialog":
+            return httpx.Response(200, json=fixture("recipe_products"))
+        if path == "/productbff/api/web/page":
+            return httpx.Response(200, json=fixture("meals_page"))
         if path == "/searchgateway/api/search":
             if request.url.params.get("query") in ("mums rosinboller", "gratis"):
                 return httpx.Response(200, json=fixture("search_gift"))

@@ -1,0 +1,380 @@
+{
+ "title": "Kebabfad med fladbrød og hvidløgsdressing",
+ "id": "kebabfad-med-fladbrod-98001303",
+ "description": "Prøv denne lækre og nemme opskrift på kebabfad, en nem måde at få smagen af take away, hjemme i dit eget køkken 🌯",
+ "servings": 4,
+ "instructions": [
+  {
+   "title": "Kebabfad",
+   "steps": [
+    {
+     "description": "Tænd ovnen på 200 grader varmluft og sæt en bagerist i ovnen",
+     "duration": null
+    },
+    {
+     "description": "Pil rødløg, gem halvdelen til salaten og hak resten fint på et skærebræt",
+     "duration": null
+    },
+    {
+     "description": "Pil hvidløg og hak fint. Gem halvdelen af hvidløget til dressingen",
+     "duration": null
+    },
+    {
+     "description": "Skyl og hak persille fint (både blade og stilk). Gem halvdelen til salaten",
+     "duration": null
+    },
+    {
+     "description": "Kom kødet i en røreskål sammen med hakket løg, hvidløg og persille samt krydderimix, salt og peber. Rør det godt sammen til en fars",
+     "duration": null
+    },
+    {
+     "description": "Fordel farsen jævnt i et smurt ovnfast fad, så den dækker hele bunden i et lag på ca. 2 cm.",
+     "duration": null
+    },
+    {
+     "description": "Brug en kniv eller dejskraber til at trække aflange riller i farsen – det giver små “kebabstykker”, som bliver nemme at tage op, når retten er bagt. Lav f.eks. 1 lang strimmel pr. fladbrød",
+     "duration": null
+    },
+    {
+     "description": "Bag fadet i ovnen i ca. 15-20 min. og slut af med ca. 2-3 min. på grillfunktion, til kødet er gennemstegt og gyldent",
+     "duration": null
+    }
+   ]
+  },
+  {
+   "title": "Salat",
+   "steps": [
+    {
+     "description": "Snit resterende rødløg i tynde skiver",
+     "duration": null
+    },
+    {
+     "description": "Skyl tomat og skær i tern",
+     "duration": null
+    },
+    {
+     "description": "Skyl agurk og halver på langs. Skrab kerner ud og snit i skiver",
+     "duration": null
+    },
+    {
+     "description": "Skyl salat og skær i tynde strimler",
+     "duration": null
+    },
+    {
+     "description": "Vend rødløg, tomat, agurk, salat og hakket persille sammen i en salatskål. Dryp med lidt olivenolie og krydr let med salt og peber",
+     "duration": null
+    }
+   ]
+  },
+  {
+   "title": "Dressing",
+   "steps": [
+    {
+     "description": "Rør yoghurt sammen med det gemte hvidløg, sukker, salt og peber. Tilføj evt. også lidt af krydderiblandingen efter ønsket smag",
+     "duration": null
+    }
+   ]
+  },
+  {
+   "title": "Servering",
+   "steps": [
+    {
+     "description": "Lun fladbrød ca. 1-2 min. på bageristen i ovnen eller hurtigt på en brødrister/i mikroovnen, indtil de er bløde og lune",
+     "duration": null
+    },
+    {
+     "description": "Lad hver medspiser samle sit eget fladbrød med hvidløgsdressing, kebabkød og frisk salat",
+     "duration": null
+    }
+   ]
+  }
+ ],
+ "byline": {
+  "name": "Christel Irmov",
+  "image": {
+   "source": "https://media.umbraco.io/nemlig3/onzjdj1l/christel-portraet-2026.jpg?mode=crop&anchor=center&width=44&height=44",
+   "accessibilityText": ""
+  }
+ },
+ "durationPreparation": {
+  "from": 30,
+  "to": null
+ },
+ "durationTotal": {
+  "from": 40,
+  "to": null
+ },
+ "filters": [
+  {
+   "title": "Mellemøstlig",
+   "path": "mellemoestlig",
+   "isActive": false
+  },
+  {
+   "title": "Familievenlig",
+   "path": "familievenlig",
+   "isActive": false
+  },
+  {
+   "title": "Gris",
+   "path": "gris",
+   "isActive": false
+  },
+  {
+   "title": "Tomater",
+   "path": "tomater",
+   "isActive": false
+  }
+ ],
+ "images": [
+  {
+   "source": "https://media.umbraco.io/nemlig3/zu0cfnyn/kebabfad-med-fladbr-d-og-hvidl-gsdressing-opskrift-16x9.jpg?mode=crop&anchor=center&width=912&height=513",
+   "accessibilityText": "kebab ruller med kød grønt og dressing serveret på sølv fad"
+  }
+ ],
+ "videos": [
+  {
+   "thumbnail": null,
+   "videoFormat": "",
+   "source": "https://media.umbraco.io/nemlig3/tpxefkgt/kebabfad-med-fladbroed-og-hvidloegsdressing-v2.mp4",
+   "accessibilityText": ""
+  }
+ ],
+ "ingredients": [
+  {
+   "title": "Kebabfad:",
+   "ingredients": [
+    {
+     "text": "2 stk. rødløg",
+     "alternatives": null
+    },
+    {
+     "text": "2 fed hvidløg",
+     "alternatives": null
+    },
+    {
+     "text": "1 bdt. persille",
+     "alternatives": null
+    },
+    {
+     "text": "500 g hakket grise- og kalvekød",
+     "alternatives": null
+    },
+    {
+     "text": "3 tsk. kebab krydderi",
+     "alternatives": null
+    },
+    {
+     "text": "1 spsk. neutral olie",
+     "alternatives": null
+    },
+    {
+     "text": "salt",
+     "alternatives": null
+    },
+    {
+     "text": "peber",
+     "alternatives": null
+    }
+   ]
+  },
+  {
+   "title": "Salat:",
+   "ingredients": [
+    {
+     "text": "200 g tomater",
+     "alternatives": null
+    },
+    {
+     "text": "1 stk. agurk",
+     "alternatives": null
+    },
+    {
+     "text": "1 stk. icebergsalat (alternativt hjertesalat)",
+     "alternatives": [
+      "2 stk. hjertesalat"
+     ]
+    },
+    {
+     "text": "1 spsk. olivenolie",
+     "alternatives": null
+    }
+   ]
+  },
+  {
+   "title": "Dressing:",
+   "ingredients": [
+    {
+     "text": "3 dl yoghurt naturel",
+     "alternatives": null
+    },
+    {
+     "text": "1 tsk. sukker",
+     "alternatives": null
+    },
+    {
+     "text": "salt",
+     "alternatives": null
+    },
+    {
+     "text": "peber",
+     "alternatives": null
+    }
+   ]
+  },
+  {
+   "title": "Servering:",
+   "ingredients": [
+    {
+     "text": "8 stk. fladbrød",
+     "alternatives": [
+      "8 stk. tortillawraps"
+     ]
+    }
+   ]
+  }
+ ],
+ "tip": "",
+ "seo": {
+  "title": "Kebabfad med fladbrød og hvidløgsdressing | 40 min.| Se her!",
+  "description": "Prøv denne lækre opskrift på kebabfad med fladbrød og cremet hvidløgsdressing. En nem og smagfuld ret til aftensmaden.",
+  "content": "",
+  "noIndex": false
+ },
+ "productsPreview": [
+  {
+   "id": "2301108",
+   "url": "2301108",
+   "title": "Rødløg",
+   "description": "1 kg",
+   "price": 1600,
+   "priceOriginal": null,
+   "priceDiscount": null,
+   "pricePerUnit": {
+    "value": 1600,
+    "unitType": "Weight"
+   },
+   "currency": "DKK",
+   "labelMaxQuantity": null,
+   "labelFreshnessDays": null,
+   "labelHighlighted": {
+    "type": "PriceMatch",
+    "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+   },
+   "certificates": [
+    {
+     "type": "dkProduced",
+     "text": "Produceret i Danmark"
+    }
+   ],
+   "campaignLines": [],
+   "campaignBadge": null,
+   "quantity": 0,
+   "unitOfMeasure": "Kg.",
+   "quantityLimit": null,
+   "isFavorite": false,
+   "isInShoppingList": false,
+   "availability": {
+    "type": "Available",
+    "nextAvailableDate": "0001-01-01T00:00:00Z",
+    "reasonMessage": []
+   },
+   "image": {
+    "source": "https://product-images.nemlig.io/2301108.webp",
+    "accessibilityText": "Billede af Rødløg"
+   }
+  },
+  {
+   "id": "5006443",
+   "url": "5006443",
+   "title": "Tomater",
+   "description": "500 g",
+   "price": 2000,
+   "priceOriginal": null,
+   "priceDiscount": null,
+   "pricePerUnit": {
+    "value": 4000,
+    "unitType": "Weight"
+   },
+   "currency": "DKK",
+   "labelMaxQuantity": null,
+   "labelFreshnessDays": null,
+   "labelHighlighted": {
+    "type": "PriceMatch",
+    "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+   },
+   "certificates": [
+    {
+     "type": "dkProduced",
+     "text": "Produceret i Danmark"
+    }
+   ],
+   "campaignLines": [],
+   "campaignBadge": null,
+   "quantity": 0,
+   "unitOfMeasure": "Kg.",
+   "quantityLimit": null,
+   "isFavorite": false,
+   "isInShoppingList": false,
+   "availability": {
+    "type": "Available",
+    "nextAvailableDate": "0001-01-01T00:00:00Z",
+    "reasonMessage": []
+   },
+   "image": {
+    "source": "https://product-images.nemlig.io/5006443.webp",
+    "accessibilityText": "Billede af Tomater"
+   }
+  },
+  {
+   "id": "703017",
+   "url": "703017",
+   "title": "Yoghurt naturel 3,5%",
+   "description": "1 kg / Kløver",
+   "price": 995,
+   "priceOriginal": null,
+   "priceDiscount": null,
+   "pricePerUnit": {
+    "value": 995,
+    "unitType": "Weight"
+   },
+   "currency": "DKK",
+   "labelMaxQuantity": null,
+   "labelFreshnessDays": 8,
+   "labelHighlighted": {
+    "type": "PriceMatch",
+    "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+   },
+   "certificates": [
+    {
+     "type": "dkProduced",
+     "text": "Produceret i Danmark"
+    },
+    {
+     "type": "refrigerated",
+     "text": "Køl"
+    }
+   ],
+   "campaignLines": [],
+   "campaignBadge": null,
+   "quantity": 0,
+   "unitOfMeasure": "Kg.",
+   "quantityLimit": null,
+   "isFavorite": false,
+   "isInShoppingList": false,
+   "availability": {
+    "type": "Available",
+    "nextAvailableDate": "0001-01-01T00:00:00Z",
+    "reasonMessage": []
+   },
+   "image": {
+    "source": "https://product-images.nemlig.io/703017.webp",
+    "accessibilityText": "Billede af Yoghurt naturel 3,5%"
+   }
+  }
+ ],
+ "servingLimits": {
+  "minServings": 2,
+  "maxServings": 12
+ }
+}
