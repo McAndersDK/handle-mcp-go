@@ -18,6 +18,7 @@ CALLS = [
     ("compare_basket", {"items": ["mælk 1 l", "2 x rugbrød"], "stores": ["fake"]}),
     ("get_cart", {"store": "fake"}),
     ("set_cart_quantities", {"store": "fake", "items": {"1": 1}}),
+    ("add_recipe_to_cart", {"store": "fake", "recipe": "r1"}),
     ("get_delivery_info", {"store": "fake"}),
     ("list_delivery_slots", {"stores": ["fake"]}),
     ("get_orders", {"store": "fake"}),

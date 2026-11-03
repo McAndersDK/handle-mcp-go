@@ -19,7 +19,7 @@ from mcp.server.mcpserver import MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import ToolAnnotations
 
-from handle_mcp import compare
+from handle_mcp import compare, recipe_cart
 from handle_mcp import stores as registry
 from handle_mcp.privacy import scrub
 
@@ -34,6 +34,9 @@ MIN_PERSONS, MAX_PERSONS = 2, 12  # nemlig: 2-12
 READ = ToolAnnotations(readOnlyHint=True, destructiveHint=False, openWorldHint=True)
 WRITE = ToolAnnotations(
     readOnlyHint=False, destructiveHint=True, idempotentHint=True, openWorldHint=True
+)
+ADD = ToolAnnotations(  # add_recipe_to_cart: twice adds twice
+    readOnlyHint=False, destructiveHint=True, idempotentHint=False, openWorldHint=True
 )
 
 mcp = MCPServer(
@@ -209,6 +212,43 @@ async def set_cart_quantities(store: str, items: dict[str, int]) -> dict:
         raise ToolError(f"Antal skal være 0-{MAX_QUANTITY}. Forkert for: {', '.join(bad)}.")
     results = await _call(store, "set_quantities", dict(items))
     return _out({"results": results, "cart": await _call(store, "get_cart")})
+
+
+@mcp.tool(annotations=ADD)
+async def add_recipe_to_cart(
+    store: str,
+    recipe: str,
+    persons: int | None = None,
+    skip: list[str] | None = None,
+    swap: dict[str, str] | None = None,
+    include: list[str] | None = None,
+) -> dict:
+    """Put a recipe's products in one store's cart, as get_recipe shows them.
+    ASK THE HUMAN FIRST: show the list from get_recipe and get a yes. Never orders or pays.
+    Adds to what is already in the cart, so calling it twice adds twice.
+    `have_at_home` items (salt, oil) are left out unless named in `include`. `skip` leaves out
+    ingredients; `swap` maps an ingredient (or product id) to one of its alternatives' product
+    ids. Names: ingredient or product id. Returns before/added/after per product, the skipped
+    items and the new cart. Check `ok` per product: a store can refuse some lines; tell the
+    human which ones failed."""
+    if persons is not None:
+        persons = max(MIN_PERSONS, min(persons, MAX_PERSONS))
+    details = await _call(store, "recipe", recipe, persons)
+    try:
+        lines, skipped = recipe_cart.plan(details, skip, swap, include)
+    except recipe_cart.PlanError as exc:
+        raise ToolError(str(exc)) from exc
+    if not lines:
+        raise ToolError("Ingen varer at lægge i kurven.")
+    if len(lines) > MAX_ITEMS:
+        raise ToolError(f"Højst {MAX_ITEMS} varer pr. kald.")
+    before = recipe_cart.in_cart(await _call(store, "get_cart"))
+    targets = {pid: before.get(pid, 0) + ln["quantity"] for pid, ln in lines.items()}
+    if bad := [pid for pid, qty in targets.items() if qty > MAX_QUANTITY]:
+        raise ToolError(f"Højst {MAX_QUANTITY} stk. pr. vare. For mange af: {', '.join(bad)}.")
+    results = await _call(store, "set_quantities", targets)
+    added = recipe_cart.report(lines, before, results)
+    return _out({"added": added, "skipped": skipped, "cart": await _call(store, "get_cart")})
 
 
 @mcp.tool(annotations=READ)

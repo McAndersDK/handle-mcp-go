@@ -1,6 +1,6 @@
 # Security and privacy
 
-- **The human always pays.** Only `set_cart_quantities` writes, and only cart quantities.
+- **The human always pays.** Only `set_cart_quantities` and `add_recipe_to_cart` write, and only cart quantities (both through the store's `set_quantities`). The stores' own "add recipe" and "clear cart" calls are forbidden in `tests/test_safety.py`.
 - **Personal data stays on your machine.** Every tool answer goes through `privacy.scrub()`. Name, address, phone, email, door code and delivery notes are replaced with `[fjernet af handle-mcp]` before the model sees them.
 - **Logins** live in your OS keychain, env vars or `~/.config/handle-mcp/` (chmod 600). Never in code, config in git or test fixtures. `handle-mcp login` never shows or logs the password.
 - **stdout is JSON-RPC.** Logs go to stderr. httpx request logging is off, because some store URLs contain account ids.

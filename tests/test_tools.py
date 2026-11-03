@@ -16,6 +16,7 @@ ALLOWED = {
     "compare_basket": False,
     "get_cart": False,
     "set_cart_quantities": True,
+    "add_recipe_to_cart": True,
     "get_delivery_info": False,
     "list_delivery_slots": False,
     "get_orders": False,
@@ -28,7 +29,7 @@ async def test_only_allowed_tools_exist():
     assert set(tools) == set(ALLOWED)
 
 
-async def test_only_set_cart_quantities_writes():
+async def test_only_cart_tools_write():
     for tool in await server.mcp.list_tools():
         writes = ALLOWED[tool.name]
         assert tool.annotations.read_only_hint is (not writes), tool.name
