@@ -1,7 +1,7 @@
 [
  {
   "name": "add_recipe_to_cart",
-  "description": "Put a recipe's products in one store's cart, as get_recipe shows them.\n    ASK THE HUMAN FIRST: show the list from get_recipe and get a yes. Never orders or pays.\n    Adds to what is already in the cart, so calling it twice adds twice.\n    `have_at_home` items (salt, oil) are left out unless named in `include`. `skip` leaves out\n    ingredients; `swap` maps an ingredient (or product id) to one of its alternatives' product\n    ids. Names: ingredient or product id. Returns before/added/after per product, the skipped\n    items and the new cart. Check `ok` per product: a store can refuse some lines; tell the\n    human which ones failed.",
+  "description": "Put a recipe's products in one store's cart, as get_recipe shows them.\n    ASK THE HUMAN FIRST: show the list from get_recipe and get a yes. Never orders or pays.\n    Adds to what is already in the cart, so calling it twice adds twice.\n    `have_at_home` items (salt, oil) are left out unless named in `include`. `skip` leaves out\n    ingredients; `swap` maps an ingredient (or product id) to one of its alternatives' product\n    ids. Names: ingredient or product id. Returns before/added/after per product, the skipped\n    items and the new cart. Check `ok` per product: a store can refuse some lines; tell the\n    human which ones failed.\n    nemlig only for now; BilkaToGo answers that it cannot yet.",
   "inputSchema": {
    "properties": {
     "store": {
@@ -224,7 +224,7 @@
  },
  {
   "name": "get_recipe",
-  "description": "The products to buy for one of the store's recipes, as on its \"Se varer og læg i kurv\":\n    per ingredient the store's product, packs for `persons` and alternatives. `have_at_home`\n    items (salt, oil) are what the store assumes you have: left out of `total`, ask first.\n    `recipe` is the recipe's link or id from search_recipes or list_recipes. Put the products\n    in the cart with set_cart_quantities after the human says yes.",
+  "description": "The products to buy for one of the store's recipes, as on its \"Se varer og læg i kurv\":\n    per ingredient the store's product, packs for `persons` and alternatives. `have_at_home`\n    items (salt, oil) are what the store assumes you have: left out of `total`, ask first.\n    `recipe` is the recipe's link or id from search_recipes or list_recipes. Put the products\n    in the cart with add_recipe_to_cart after the human says yes.\n    nemlig only for now; BilkaToGo answers that it cannot yet.",
   "inputSchema": {
    "properties": {
     "store": {
@@ -333,7 +333,7 @@
  },
  {
   "name": "list_recipes",
-  "description": "Browse the store's recipes, with link. No tags or category: this week's featured\n    recipes (nemlig: \"Ugens udvalgte\"). With `tags`: recipes that have every tag, e.g.\n    [\"Familievenlig\", \"Budgetvenlig\"] or [\"Under 30 min\", \"Kylling\"]. nemlig's tags include\n    Under 20/30 min, Budgetvenlig, Familievenlig, Populær, Mad til flere dage, Vegetarisk,\n    Kylling, Fisk, Oksekød, Gris and cuisines; an unknown tag answers with the full list.\n    `category` (nemlig: aftensmad by default, frokost, madpakke, morgenmad, ...).\n    Use get_recipe for the products.",
+  "description": "Browse the store's recipes, with link. No tags or category: this week's featured\n    recipes (nemlig: \"Ugens udvalgte\"). With `tags`: recipes that have every tag, e.g.\n    [\"Familievenlig\", \"Budgetvenlig\"] or [\"Under 30 min\", \"Kylling\"]. nemlig's tags include\n    Under 20/30 min, Budgetvenlig, Familievenlig, Populær, Mad til flere dage, Vegetarisk,\n    Kylling, Fisk, Oksekød, Gris and cuisines; an unknown tag answers with the full list.\n    `category` (nemlig: aftensmad by default, frokost, madpakke, morgenmad, ...).\n    Use get_recipe for the products.\n    nemlig only for now; BilkaToGo answers that it cannot yet.",
   "inputSchema": {
    "properties": {
     "stores": {
@@ -437,7 +437,7 @@
  },
  {
   "name": "search_recipes",
-  "description": "Find the stores' own recipes, e.g. \"kylling karry\". Returns name and link.\n    Use get_recipe for time, persons and the products to buy.",
+  "description": "Find the stores' own recipes, e.g. \"kylling karry\". Returns name and link.\n    Use get_recipe for time, persons and the products to buy.\n    nemlig only for now; BilkaToGo answers that it cannot yet.",
   "inputSchema": {
    "properties": {
     "query": {

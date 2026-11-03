@@ -125,7 +125,8 @@ async def search_products(query: str, stores: list[str] | None = None, limit: in
 @mcp.tool(annotations=READ)
 async def search_recipes(query: str, stores: list[str] | None = None, limit: int = 5) -> dict:
     """Find the stores' own recipes, e.g. "kylling karry". Returns name and link.
-    Use get_recipe for time, persons and the products to buy."""
+    Use get_recipe for time, persons and the products to buy.
+    nemlig only for now; BilkaToGo answers that it cannot yet."""
     limit = max(1, min(limit, MAX_RESULTS))
     return _out(await _each(_names(stores), lambda s: s.recipes(query, limit)))
 
@@ -136,7 +137,8 @@ async def get_recipe(store: str, recipe: str, persons: int | None = None) -> dic
     per ingredient the store's product, packs for `persons` and alternatives. `have_at_home`
     items (salt, oil) are what the store assumes you have: left out of `total`, ask first.
     `recipe` is the recipe's link or id from search_recipes or list_recipes. Put the products
-    in the cart with set_cart_quantities after the human says yes."""
+    in the cart with add_recipe_to_cart after the human says yes.
+    nemlig only for now; BilkaToGo answers that it cannot yet."""
     if persons is not None:
         persons = max(MIN_PERSONS, min(persons, MAX_PERSONS))
     return _out(await _call(store, "recipe", recipe, persons))
@@ -155,7 +157,8 @@ async def list_recipes(
     Under 20/30 min, Budgetvenlig, Familievenlig, Populær, Mad til flere dage, Vegetarisk,
     Kylling, Fisk, Oksekød, Gris and cuisines; an unknown tag answers with the full list.
     `category` (nemlig: aftensmad by default, frokost, madpakke, morgenmad, ...).
-    Use get_recipe for the products."""
+    Use get_recipe for the products.
+    nemlig only for now; BilkaToGo answers that it cannot yet."""
     limit = max(1, min(limit, MAX_RESULTS))
     if not tags and not category:
         return _out(await _each(_names(stores), lambda s: s.featured_recipes(limit)))
@@ -230,7 +233,8 @@ async def add_recipe_to_cart(
     ingredients; `swap` maps an ingredient (or product id) to one of its alternatives' product
     ids. Names: ingredient or product id. Returns before/added/after per product, the skipped
     items and the new cart. Check `ok` per product: a store can refuse some lines; tell the
-    human which ones failed."""
+    human which ones failed.
+    nemlig only for now; BilkaToGo answers that it cannot yet."""
     if persons is not None:
         persons = max(MIN_PERSONS, min(persons, MAX_PERSONS))
     details = await _call(store, "recipe", recipe, persons)
