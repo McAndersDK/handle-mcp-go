@@ -9,7 +9,7 @@
 <img src="docs/badges/python.svg" alt="built with Python 3.12+" height="26">
 <a href="LICENSE"><img src="docs/badges/license.svg" alt="license MIT" height="26"></a>
 
-**Your AI agent plans the week's meals, keeping the budget, prices them at nemlig.com and BilkaToGo and fills the cheapest cart. You approve and pay.**
+**Your AI agent plans the week's meals on a budget, prices them at nemlig.com and BilkaToGo and fills the cheapest cart. You approve and pay.**
 
 </div>
 
