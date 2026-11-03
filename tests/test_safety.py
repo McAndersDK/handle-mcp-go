@@ -27,6 +27,7 @@ FORBIDDEN = [
     r"ReserveTimeslot",
     r"ChangeAddress",
     r"EmptyCart",
+    r"ClearBasket",  # nemlig: empties the whole cart
     r"CancelOrder",
     r"AddRecipeToBasket",  # nemlig: fills the cart without the human's yes
 ]
