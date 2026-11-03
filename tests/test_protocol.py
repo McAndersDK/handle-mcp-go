@@ -5,6 +5,7 @@ descriptions, input schemas and annotations, so every change to them shows in th
 Update on purpose: HANDLE_UPDATE_SNAPSHOT=1 uv run pytest tests/test_protocol.py
 """
 
+import inspect
 import json
 import os
 from pathlib import Path
@@ -27,6 +28,8 @@ async def _client_tools() -> list[dict]:
 
 async def test_tool_surface_matches_the_snapshot():
     tools = sorted(await _client_tools(), key=lambda t: t["name"])
+    for tool in tools:  # Python 3.13+ strips docstring indents itself; 3.12 does not
+        tool["description"] = inspect.cleandoc(tool["description"])
     if os.environ.get("HANDLE_UPDATE_SNAPSHOT") == "1":
         SNAPSHOT.write_text(json.dumps(tools, ensure_ascii=False, indent=1) + "\n")
         pytest.skip("snapshot written: check the diff")

@@ -1,7 +1,7 @@
 [
  {
   "name": "add_recipe_to_cart",
-  "description": "Put a recipe's products in one store's cart, as get_recipe shows them.\n    ASK THE HUMAN FIRST: show the list from get_recipe and get a yes. Never orders or pays.\n    Adds to what is already in the cart, so calling it twice adds twice.\n    `have_at_home` items (salt, oil) are left out unless named in `include`. `skip` leaves out\n    ingredients; `swap` maps an ingredient (or product id) to one of its alternatives' product\n    ids. Names: ingredient or product id. Returns before/added/after per product, the skipped\n    items and the new cart. Check `ok` per product: a store can refuse some lines; tell the\n    human which ones failed.\n    nemlig only for now; BilkaToGo answers that it cannot yet.",
+  "description": "Put a recipe's products in one store's cart, as get_recipe shows them.\nASK THE HUMAN FIRST: show the list from get_recipe and get a yes. Never orders or pays.\nAdds to what is already in the cart, so calling it twice adds twice.\n`have_at_home` items (salt, oil) are left out unless named in `include`. `skip` leaves out\ningredients; `swap` maps an ingredient (or product id) to one of its alternatives' product\nids. Names: ingredient or product id. Returns before/added/after per product, the skipped\nitems and the new cart. Check `ok` per product: a store can refuse some lines; tell the\nhuman which ones failed.\nnemlig only for now; BilkaToGo answers that it cannot yet.",
   "inputSchema": {
    "properties": {
     "store": {
@@ -86,7 +86,7 @@
  },
  {
   "name": "compare_basket",
-  "description": "Price a shopping list in each store, e.g. [\"2 x letmælk 1 l\", \"rugbrød\", \"æg 10 stk\"].\n    Write the amount you need (\"fior di latte 300 g\"), not a pack size. Returns per item a\n    suggested product and up to 5 \"candidates\" (the suggestion first, one øko when found) with\n    the cost for the amount and flags: name_match, size_fits, prepared (cold cuts, smoked,\n    breaded), processed (frost/konserves), blend, oeko. The suggestion is a guess by word rules:\n    pick the candidate that fits the user, and ask when \"sure\" is false or none fits\n    (search_products finds more). Unknown facts and false flags are left out. Also total incl.\n    fees and minimum order met. Only reads: use set_cart_quantities with the chosen ids after.",
+  "description": "Price a shopping list in each store, e.g. [\"2 x letmælk 1 l\", \"rugbrød\", \"æg 10 stk\"].\nWrite the amount you need (\"fior di latte 300 g\"), not a pack size. Returns per item a\nsuggested product and up to 5 \"candidates\" (the suggestion first, one øko when found) with\nthe cost for the amount and flags: name_match, size_fits, prepared (cold cuts, smoked,\nbreaded), processed (frost/konserves), blend, oeko. The suggestion is a guess by word rules:\npick the candidate that fits the user, and ask when \"sure\" is false or none fits\n(search_products finds more). Unknown facts and false flags are left out. Also total incl.\nfees and minimum order met. Only reads: use set_cart_quantities with the chosen ids after.",
   "inputSchema": {
    "properties": {
     "items": {
@@ -224,7 +224,7 @@
  },
  {
   "name": "get_recipe",
-  "description": "The products to buy for one of the store's recipes, as on its \"Se varer og læg i kurv\":\n    per ingredient the store's product, packs for `persons` and alternatives. `have_at_home`\n    items (salt, oil) are what the store assumes you have: left out of `total`, ask first.\n    `recipe` is the recipe's link or id from search_recipes or list_recipes. Put the products\n    in the cart with add_recipe_to_cart after the human says yes.\n    nemlig only for now; BilkaToGo answers that it cannot yet.",
+  "description": "The products to buy for one of the store's recipes, as on its \"Se varer og læg i kurv\":\nper ingredient the store's product, packs for `persons` and alternatives. `have_at_home`\nitems (salt, oil) are what the store assumes you have: left out of `total`, ask first.\n`recipe` is the recipe's link or id from search_recipes or list_recipes. Put the products\nin the cart with add_recipe_to_cart after the human says yes.\nnemlig only for now; BilkaToGo answers that it cannot yet.",
   "inputSchema": {
    "properties": {
     "store": {
@@ -263,7 +263,7 @@
  },
  {
   "name": "list_delivery_slots",
-  "description": "List free delivery times for the next `days` days with the delivery fee per slot, in time\n    order, plus the 3 cheapest per store. nemlig: \"Personlig\" (you are home) or \"Fleksibel\"\n    (left at the door). BilkaToGo: one flat fee, night delivery. Only reads: it never chooses\n    a time. The human chooses the time on the store's website.",
+  "description": "List free delivery times for the next `days` days with the delivery fee per slot, in time\norder, plus the 3 cheapest per store. nemlig: \"Personlig\" (you are home) or \"Fleksibel\"\n(left at the door). BilkaToGo: one flat fee, night delivery. Only reads: it never chooses\na time. The human chooses the time on the store's website.",
   "inputSchema": {
    "properties": {
     "stores": {
@@ -298,7 +298,7 @@
  },
  {
   "name": "list_offers",
-  "description": "List this week's offers in each store, also items you would not search for: nemlig's\n    Skarp pris, Priskup, Dagstilbud, Undgå madspild and gifts; BilkaToGo's offers. `limit` is\n    per list; a product on two lists is shown once. A list the store fails to send is left out\n    (see the server log). Free gifts come from a separate search and are not cut by `limit`.\n    They have price 0 and \"max_per_order\". Use them when they fit the plan.",
+  "description": "List this week's offers in each store, also items you would not search for: nemlig's\nSkarp pris, Priskup, Dagstilbud, Undgå madspild and gifts; BilkaToGo's offers. `limit` is\nper list; a product on two lists is shown once. A list the store fails to send is left out\n(see the server log). Free gifts come from a separate search and are not cut by `limit`.\nThey have price 0 and \"max_per_order\". Use them when they fit the plan.",
   "inputSchema": {
    "properties": {
     "stores": {
@@ -333,7 +333,7 @@
  },
  {
   "name": "list_recipes",
-  "description": "Browse the store's recipes, with link. No tags or category: this week's featured\n    recipes (nemlig: \"Ugens udvalgte\"). With `tags`: recipes that have every tag, e.g.\n    [\"Familievenlig\", \"Budgetvenlig\"] or [\"Under 30 min\", \"Kylling\"]. nemlig's tags include\n    Under 20/30 min, Budgetvenlig, Familievenlig, Populær, Mad til flere dage, Vegetarisk,\n    Kylling, Fisk, Oksekød, Gris and cuisines; an unknown tag answers with the full list.\n    `category` (nemlig: aftensmad by default, frokost, madpakke, morgenmad, ...).\n    Use get_recipe for the products.\n    nemlig only for now; BilkaToGo answers that it cannot yet.",
+  "description": "Browse the store's recipes, with link. No tags or category: this week's featured\nrecipes (nemlig: \"Ugens udvalgte\"). With `tags`: recipes that have every tag, e.g.\n[\"Familievenlig\", \"Budgetvenlig\"] or [\"Under 30 min\", \"Kylling\"]. nemlig's tags include\nUnder 20/30 min, Budgetvenlig, Familievenlig, Populær, Mad til flere dage, Vegetarisk,\nKylling, Fisk, Oksekød, Gris and cuisines; an unknown tag answers with the full list.\n`category` (nemlig: aftensmad by default, frokost, madpakke, morgenmad, ...).\nUse get_recipe for the products.\nnemlig only for now; BilkaToGo answers that it cannot yet.",
   "inputSchema": {
    "properties": {
     "stores": {
@@ -395,7 +395,7 @@
  },
  {
   "name": "search_products",
-  "description": "Search products in one or more stores. Returns price, price per kg/l, offers and EAN when\n    known. Stores rank by relevance and put cheap products far down: when the human asks for the\n    cheapest, use sort=\"unit_price\" (per kg/l/stk) or \"price\".",
+  "description": "Search products in one or more stores. Returns price, price per kg/l, offers and EAN when\nknown. Stores rank by relevance and put cheap products far down: when the human asks for the\ncheapest, use sort=\"unit_price\" (per kg/l/stk) or \"price\".",
   "inputSchema": {
    "properties": {
     "query": {
@@ -447,7 +447,7 @@
  },
  {
   "name": "search_recipes",
-  "description": "Find the stores' own recipes, e.g. \"kylling karry\". Returns name and link.\n    Use get_recipe for time, persons and the products to buy.\n    nemlig only for now; BilkaToGo answers that it cannot yet.",
+  "description": "Find the stores' own recipes, e.g. \"kylling karry\". Returns name and link.\nUse get_recipe for time, persons and the products to buy.\nnemlig only for now; BilkaToGo answers that it cannot yet.",
   "inputSchema": {
    "properties": {
     "query": {
