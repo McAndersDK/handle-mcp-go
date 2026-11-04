@@ -75,19 +75,21 @@ def offer_product(p: dict, campaign: str) -> Product | None:
 
 
 class OffersMixin:
-    """offers() for NemligStore. Uses its logged-in `_api` and `search`."""
+    """offers() for NemligStore. Uses its `_public` (login optional) and `search`."""
 
-    _api: Any
+    _public: Any
+    _has_login: Any
     _timeslot_id: Any
     search: Any
 
     async def offers(self, limit: int = 25) -> list[Product]:
         """Every product on nemlig's offer lists (/tilbud): Skarp pris, Priskup, Dagstilbud,
-        Undgå madspild and gifts. `limit` is per list. Read only."""
+        Undgå madspild and gifts. `limit` is per list. Read only. Works without a login:
+        the offers are public; with one, they fit the household's delivery time."""
         params = {"path": "/tilbud"}
         if slot := await self._timeslot_id():
             params["timeslotId"] = slot  # sic: the page call spells it so, the dialog not
-        page = await self._api("GET", f"{BFF}/page", params=params) or {}
+        page = await self._public("GET", f"{BFF}/page", params=params) or {}
         lists = [
             (OFFER_LISTS[head], block.get("products") or [])
             for block in page.get("pageContent") or []
@@ -112,11 +114,13 @@ class OffersMixin:
             raise StoreError("nemligs tilbudslister har ændret format.")
         # "En gave til dig" is often empty (live 2026-11-02), but a search for "gratis" finds the
         # free gifts (ProductCampaignFreeProduct). A free-text search, so it may change.
-        try:
-            gifts = [p for p in await self.search("gratis", 50) if p.campaign == "Gratis"]
-        except StoreError as exc:
-            log.warning("nemlig-gaver fejlede: %s", exc)
-            gifts = []
+        # Search needs a login; without one the lists above are the whole answer.
+        gifts: list[Product] = []
+        if self._has_login():
+            try:
+                gifts = [p for p in await self.search("gratis", 50) if p.campaign == "Gratis"]
+            except StoreError as exc:
+                log.warning("nemlig-gaver fejlede: %s", exc)
         for gift in gifts:
             products.setdefault(gift.id, gift)
         return list(products.values())

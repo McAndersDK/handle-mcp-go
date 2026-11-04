@@ -370,3 +370,11 @@ async def test_delivery_slots_need_home_delivery(store, fake):
     fake.cart = {**fake.cart, "deliveryAddress": {"sid": "1234"}}
     with pytest.raises(StoreError, match="hjemlevering"):
         await store.delivery_slots()
+
+
+async def test_offers_without_a_login_say_why(store, monkeypatch, tmp_path):
+    monkeypatch.delenv("HANDLE_BILKATOGO_EMAIL")
+    monkeypatch.delenv("HANDLE_BILKATOGO_PASSWORD")
+    monkeypatch.setattr(registry, "CONFIG_DIR", tmp_path)
+    with pytest.raises(StoreError, match="leveringsadresse.*handle-mcp login bilkatogo"):
+        await store.offers()

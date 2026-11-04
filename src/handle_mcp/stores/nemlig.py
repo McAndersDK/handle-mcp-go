@@ -29,7 +29,7 @@ from handle_mcp.models import (
     QuantityResult,
     StoreTerms,
 )
-from handle_mcp.stores import StoreError, load_login
+from handle_mcp.stores import StoreError, has_login, load_login
 from handle_mcp.stores._http import request
 from handle_mcp.stores.nemlig_offers import OffersMixin
 from handle_mcp.stores.nemlig_recipes import RecipesMixin
@@ -130,7 +130,7 @@ class NemligStore(RecipesMixin, OffersMixin):
         self._bearer: str | None = None
         self._xsrf: str | None = None
         self._logged_in = False
-        self._settings: tuple[float, dict[str, Any]] | None = None
+        self._settings: tuple[float, dict[str, Any], bool] | None = None  # (at, values, logged)
         self._slot_id = ""  # the basket's delivery time, for productbff calls
         self._lock = asyncio.Lock()
 
@@ -188,6 +188,31 @@ class NemligStore(RecipesMixin, OffersMixin):
                     continue
         raise AssertionError("unreachable")
 
+    def _has_login(self) -> bool:
+        """Logged in, or a login is saved. Once logged in the keychain is not read again."""
+        return self._logged_in or has_login(self.name)
+
+    async def _public(self, method: str, url: str, **kwargs: Any) -> Any:
+        """A call that needs no login (offers, settings): logged in when a login is saved, so
+        prices and delivery time fit the household; else with an anonymous token, renewed
+        once when nemlig says it has expired. Search is not such a call: with an anonymous
+        token nemlig's search gateway answers 500 (live 2026-11-04)."""
+        if self._has_login():
+            return await self._api(method, url, **kwargs)
+        for last in (False, True):
+            try:
+                async with self._lock:
+                    if not self._bearer:
+                        await self._renew_token()
+                return await self._send(method, url, **kwargs)
+            except _Unauthorized:
+                if last:
+                    raise StoreError(
+                        "nemlig.com afviser kaldet uden login. Gem et login: handle-mcp login nemlig"
+                    ) from None
+                self._bearer = None  # expired: the next round fetches a fresh one
+        raise AssertionError("unreachable")
+
     async def _renew_token(self) -> None:
         self._bearer = None
         token = await self._send("GET", f"{BASE}/webapi/Token")
@@ -223,12 +248,15 @@ class NemligStore(RecipesMixin, OffersMixin):
     async def _search_settings(self) -> dict[str, Any]:
         """Timestamp, timeslot and zone for search, from /webapi/ only: page URLs such as
         /?GetAsJson=1 can land in the queue-it waiting room. Defaults if a call fails."""
-        if self._settings and time.monotonic() - self._settings[0] < SETTINGS_TTL:
+        logged = self._has_login()  # once per search: the keychain is not free
+        fresh = self._settings and time.monotonic() - self._settings[0] < SETTINGS_TTL
+        if fresh and (self._settings[2] or not logged):  # anonymous values die on login
             return self._settings[1]
         app, basket = {}, {}
         try:
-            app = await self._api("GET", f"{BASE}/webapi/v2/AppSettings/Website") or {}
-            basket = await self._basket()
+            app = await self._public("GET", f"{BASE}/webapi/v2/AppSettings/Website") or {}
+            if logged:  # without a login, nemlig answers for a default zone and time
+                basket = await self._basket()
         except StoreError as exc:  # search still works, only less exact
             log.warning("nemlig: søger med standardværdier: %s", exc)
         settings = {
@@ -236,8 +264,8 @@ class NemligStore(RecipesMixin, OffersMixin):
             "timeslotUtc": basket.get("TimeslotUtc", ""),
             "deliveryZoneId": basket.get("DeliveryZoneId") or 1,
         }
-        if basket:  # a failed call is tried again next time
-            self._settings = (time.monotonic(), settings)
+        if basket or (app and not logged):  # a failed call is tried again next time
+            self._settings = (time.monotonic(), settings, bool(basket))
             self._slot_id = str((basket.get("DeliveryTimeSlot") or {}).get("Id") or "")
         return settings
 
@@ -250,6 +278,10 @@ class NemligStore(RecipesMixin, OffersMixin):
     # --- Store methods ----------------------------------------------------
 
     async def search(self, query: str, limit: int = 10) -> list[Product]:
+        if not self._has_login():
+            raise StoreError(
+                "nemlig-søgning kræver login (tilbud gør ikke). Gem et login: handle-mcp login nemlig"
+            )
         params = {"query": query, "take": limit, "skip": 0, "recipeCount": 0}
         params |= await self._search_settings()
         data = await self._api("GET", SEARCH, params=params)

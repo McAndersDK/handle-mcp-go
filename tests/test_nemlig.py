@@ -625,3 +625,55 @@ async def test_sorted_search_finds_the_cheapest_far_down(store, fake):
     assert search.url.params["take"] == str(compare.SEARCH_LIMIT)
     by_price = await compare.search(store, "kyllingebryst", 5, "price")
     assert [p.price for p in by_price] == sorted(p.price for p in by_price)  # cold cuts first
+
+
+@pytest.fixture
+def no_login(monkeypatch, tmp_path):
+    monkeypatch.delenv("HANDLE_NEMLIG_EMAIL")
+    monkeypatch.delenv("HANDLE_NEMLIG_PASSWORD")
+    monkeypatch.setattr(registry, "CONFIG_DIR", tmp_path)
+
+
+async def test_offers_work_without_a_login(store, fake, no_login):
+    """Headless setup, 2026-11-04: the offer lists are public, so no login must be needed.
+    The gift search is skipped: nemlig's search gateway answers 500 to an anonymous token."""
+    offers = await store.offers(10)
+    assert {p.campaign for p in offers} >= {"Skarp pris", "Priskup"}
+    assert "/webapi/login" not in fake.paths()
+    assert "/webapi/basket/GetBasket" not in fake.paths()
+    assert "/searchgateway/api/search" not in fake.paths()
+    (page,) = [r for r in fake.requests if r.url.path == "/productbff/api/web/page"]
+    assert page.headers["Authorization"] == "Bearer bearer-1"  # the anonymous token
+    assert "timeslotId" not in page.url.params
+
+
+async def test_search_needs_a_login(store, fake, no_login):
+    """Live 2026-11-04: searchgateway answers 500 to an anonymous token, so say so up front."""
+    with pytest.raises(StoreError, match="kræver login"):
+        await store.search("mælk")
+    assert fake.paths() == []
+
+
+async def test_anonymous_token_is_renewed_once_when_it_expires(store, fake, no_login):
+    await store.offers(5)
+    fake.scripted["/productbff/api/web/page"] = [401]  # the token expired: one renewal
+    assert await store.offers(5) and fake.paths().count("/webapi/Token") == 2
+    fake.scripted["/productbff/api/web/page"] = [401, 401]  # still refused: a clear error
+    with pytest.raises(StoreError, match="uden login"):
+        await store.offers(5)
+
+
+async def test_settings_from_anonymous_offers_are_refetched_after_login(
+    store, fake, no_login, monkeypatch
+):
+    await store.offers(5)
+    assert "/webapi/basket/GetBasket" not in fake.paths()
+    monkeypatch.setenv("HANDLE_NEMLIG_EMAIL", "kunde@example.com")
+    monkeypatch.setenv("HANDLE_NEMLIG_PASSWORD", "hemmeligt")
+    await store.offers(5)
+    assert "/webapi/basket/GetBasket" in fake.paths()  # the household's zone and time now
+
+
+async def test_cart_still_needs_a_login(store, fake, no_login):
+    with pytest.raises(registry.StoreError, match="Intet login til nemlig"):
+        await store.get_cart()

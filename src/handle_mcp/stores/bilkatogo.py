@@ -32,7 +32,7 @@ from handle_mcp.models import (
     RecipeDetails,
     StoreTerms,
 )
-from handle_mcp.stores import StoreError, load_login
+from handle_mcp.stores import StoreError, has_login, load_login
 from handle_mcp.stores._http import request
 
 log = logging.getLogger(__name__)
@@ -213,6 +213,11 @@ class BilkaStore:
         return await self._algolia("", limit, offers=True)
 
     async def _algolia(self, query: str, limit: int, offers: bool = False) -> list[Product]:
+        if not has_login(self.name):  # the assortment, prices and offers follow the address
+            raise StoreError(
+                "BilkaToGo viser priser og tilbud for butikken bag din leveringsadresse, "
+                "så et login skal til. Kør: handle-mcp login bilkatogo"
+            )
         address = (await self._cart_json()).get("deliveryAddress") or {}
         sid = str(address.get("sid") or "")
         if not sid:

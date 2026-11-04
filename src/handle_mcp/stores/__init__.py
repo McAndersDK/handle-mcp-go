@@ -111,6 +111,15 @@ def config_delete(store: str) -> bool:
     return True
 
 
+def has_login(store: str) -> bool:
+    """True when load_login(store) would succeed. For calls that work without one."""
+    try:
+        load_login(store)
+    except StoreError:
+        return False
+    return True
+
+
 def load_login(store: str) -> dict[str, str]:
     """A store's login. First found wins:
 
