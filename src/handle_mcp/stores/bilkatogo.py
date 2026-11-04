@@ -2,7 +2,7 @@
 
 Login: Gigya accounts.login → accounts.getJWT (24 h) → POST api.bilkatogo.dk/api/auth/LoginJWT.
 Search goes to the website's public Algolia index. Money comes in øre.
-Facts and fixtures from nickknissen/bilkatogo (MIT, Copyright (c) 2026 Nick Knissen).
+Facts and fixtures from nickknissen/bilkatogo (MIT, Copyright (c) 2026 Nick Nissen).
 Never add order, payment or delivery-address calls here (docs/adr/0001).
 """
 
