@@ -78,7 +78,7 @@ async def test_answers_are_json():
     result = await server.get_delivery_info("fake")
     json.dumps(result)
     assert result["delivery"]["chosen_start"] == "2026-11-03T16:00:00"
-    assert result["terms"]["minimum_order"] == "500"
+    assert result["terms"]["minimum_order"] == "500.00"
 
 
 async def test_recipes_in_a_store_without_recipes_do_not_stop_the_others(monkeypatch):
@@ -95,8 +95,12 @@ async def test_recipes_in_a_store_without_recipes_do_not_stop_the_others(monkeyp
 
 async def test_delivery_slots_in_time_order_cheapest_first_only_free():
     fake = (await server.list_delivery_slots())["fake"]
-    assert [s["price"] for s in fake["slots"]] == ["25", "19", "0"]  # sold-out slot left out
-    assert [s["price"] for s in fake["cheapest"]] == ["0", "19", "25"]
+    assert [s["price"] for s in fake["slots"]] == [
+        "25.00",
+        "19.00",
+        "0.00",
+    ]  # sold-out slot left out
+    assert [s["price"] for s in fake["cheapest"]] == ["0.00", "19.00", "25.00"]
     assert fake["cheapest"][0]["start"] == "2026-11-04T14:00:00"
 
 

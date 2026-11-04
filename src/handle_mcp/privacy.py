@@ -13,7 +13,7 @@ from __future__ import annotations
 
 import dataclasses
 from datetime import date, datetime
-from decimal import Decimal
+from decimal import ROUND_HALF_UP, Decimal, InvalidOperation
 from typing import Any
 
 REDACTED = "[fjernet af handle-mcp]"
@@ -110,8 +110,11 @@ def jsonable(value: Any) -> Any:
         return {k: jsonable(v) for k, v in value.items()}
     if isinstance(value, list | tuple):
         return [jsonable(v) for v in value]
-    if isinstance(value, Decimal):
-        return str(value)
+    if isinstance(value, Decimal):  # money: always "39.00", whatever the store sent
+        try:  # sub-øre values (a unit price) are rounded on purpose: docs/adr/0002
+            return str(value.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP))
+        except InvalidOperation:  # NaN or absurdly large: show what we have, never fail
+            return str(value)
     if isinstance(value, datetime | date):
         return value.isoformat()
     return value

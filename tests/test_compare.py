@@ -161,7 +161,7 @@ async def test_week_list_in_both_stores(two_stores):
     assert all(ln["sure"] for ln in bilka["lines"])  # Kyllingebrystfilet is kyllingebryst
     assert [ln["item"] for ln in nemlig["lines"] if not ln["sure"]] == ["kaffe 400 g"]
 
-    assert nemlig["fees"] == {"levering": "29", "poser": "6"}
+    assert nemlig["fees"] == {"levering": "29.00", "poser": "6.00"}
     assert nemlig["products_total"] == "413.80"
     assert nemlig["total"] == "448.80"
     assert nemlig["minimum_met"] is True

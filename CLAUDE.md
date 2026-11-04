@@ -46,7 +46,7 @@ docs/tools.md      the tool table users read: stores per tool, what writes
 - Every write tool says "Never orders or pays" in its description. A tool that adds to the cart says "ASK THE HUMAN FIRST". The tool never asks; the model does.
 - A tool that works in one store says so in its description and in `docs/tools.md`.
 - `tests/snapshots/tools.json` is the contract. A change to a tool's name, description or args is on purpose, in its own commit, with `HANDLE_UPDATE_SNAPSHOT=1`.
-- Tool answers are small, readable JSON: money as strings in kroner (`"12.95"`), dates ISO, no raw store fields. A missing fact is `null` with a reason next to it, not a guess.
+- Tool answers are small, readable JSON: money as strings in kroner with two decimals (`"12.95"`, `"39.00"`, never `"39"` or `"0.0"`; `privacy.jsonable()` formats every Decimal, see `docs/adr/0002-money-has-two-decimals.md`), dates ISO, no raw store fields. A missing fact is `null` with a reason next to it, not a guess.
 - A new rule or a changed one gets a short ADR in `docs/adr/`.
 
 ## Add a store

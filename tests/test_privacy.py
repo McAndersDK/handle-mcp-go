@@ -1,11 +1,13 @@
 """No personal data leaves the server, whatever a store adapter returns."""
 
+import dataclasses
 import json
+from decimal import Decimal
 
 import pytest
 
 from handle_mcp import server
-from handle_mcp.privacy import REDACTED, scrub
+from handle_mcp.privacy import REDACTED, jsonable, scrub
 from tests.conftest import LEAK
 
 CALLS = [
@@ -88,3 +90,31 @@ def test_scrub_dawa_address_id():
     out = scrub(cart)
     assert out["dawa_uid"] == REDACTED
     assert out["stat"] == {"price": 1}
+
+
+@pytest.mark.parametrize(
+    ("value", "text"),
+    [
+        (Decimal(0), "0.00"),
+        (Decimal("0.0"), "0.00"),
+        (Decimal(39), "39.00"),
+        (Decimal("12.95"), "12.95"),
+    ],
+)
+def test_money_is_always_two_decimals(value, text):
+    """nemlig sends "0.0" and "32.0", BilkaToGo "0" and "39.00": one format across stores."""
+    assert jsonable({"price": value}) == {"price": text}
+
+
+def test_money_is_two_decimals_when_nested_and_rounded_half_up():
+    @dataclasses.dataclass
+    class Line:
+        unit_price: Decimal
+
+    out = jsonable({"fees": {"levering": Decimal(39)}, "lines": [Line(Decimal("0.125"))]})
+    assert out == {"fees": {"levering": "39.00"}, "lines": [{"unit_price": "0.13"}]}
+
+
+def test_money_that_cannot_be_quantized_is_still_shown():
+    assert jsonable(Decimal("NaN")) == "NaN"
+    assert jsonable(Decimal("1e40")) == "1E+40"
