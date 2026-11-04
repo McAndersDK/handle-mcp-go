@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HandleMCP: tom madkonto den 20.?</title>
+<meta name="description" content="Slut med at handle 5-6 gange om ugen, og med en madkonto der er tom før tid. Din AI laver madplanen ud fra budget og tilbud hos nemlig.com og BilkaToGo og fylder den billigste kurv. Du betaler selv.">
+<meta property="og:title" content="HandleMCP: tom madkonto den 20.?">
+<meta property="og:description" content="Én handel om ugen. Et budget der holder. Din AI planlægger og fylder kurven, du betaler selv.">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%232f8f46'/%3E%3Cpath d='M11.2 11.5V10a4.8 4.8 0 019.6 0v1.5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M8.6 11h14.8a1 1 0 011 .92l.9 12A2 2 0 0123.3 26H8.7a2 2 0 01-2-2.08l.9-12A1 1 0 018.6 11zM12.4 14.8v7.8h2.2v-2.9h2.8v2.9h2.2v-7.8h-2.2v2.9h-2.8v-2.9z'/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:Inter;src:url(fonts/inter.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{
+  --bg:#fff;--soft:#f4f4f1;--line:#e6e6e1;--ink:#1d1e1b;--mute:#6d6e69;
+  --green:#2f8f46;--leaf:#8ed462;--leaf-soft:#eef8e6;--sky:#2ba0ff;--sky-soft:#e6f3ff;--coral:#ff705d;--coral-soft:#ffece8;--sun:#f5e211;--sun-soft:#fdf8c9;
+  --sans:Inter,ui-sans-serif,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+[hidden]{display:none!important}
+
+/* nav */
+nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{font-weight:700;letter-spacing:-.03em;text-decoration:none;font-size:18px}
+nav ul{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0;font-size:15px}
+nav ul a{text-decoration:none;color:var(--mute)}
+nav ul a:hover{color:var(--ink)}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:500;font-size:15px;text-decoration:none;background:var(--ink);color:#fff;white-space:nowrap}
+.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+nav ul a.btn{padding:10px 18px;color:#fff}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;padding:72px 0 40px}
+.eyebrow{font-size:14px;font-weight:500;color:var(--mute);margin:0 0 22px}
+.eyebrow b{color:var(--green);font-weight:600}
+h1{font-weight:600;font-size:clamp(56px,8.2vw,112px);line-height:.94;letter-spacing:-.055em;margin:0 0 28px}
+.lead{font-size:20px;line-height:1.5;max-width:520px;margin:0 0 36px;color:var(--mute)}
+.lead strong{color:var(--ink);font-weight:500}
+.ctas{display:flex;gap:10px;flex-wrap:wrap}
+
+/* receipt */
+.receipt-wrap{position:relative;justify-self:center;width:100%;max-width:380px}
+.receipt{background:var(--soft);padding:30px 28px 38px;font:13.5px/1.75 var(--mono);color:var(--ink);
+  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 12px) no-repeat,radial-gradient(circle at 8px 12px,transparent 6px,#000 6.5px) bottom/16px 12px repeat-x;
+          mask:linear-gradient(#000 0 0) top/100% calc(100% - 12px) no-repeat,radial-gradient(circle at 8px 12px,transparent 6px,#000 6.5px) bottom/16px 12px repeat-x;
+  transform:rotate(1.5deg)}
+.receipt .head{text-align:center;margin-bottom:14px}
+.receipt .head b{display:block;font-size:15px;letter-spacing:.12em}
+.receipt .row{display:flex;justify-content:space-between;gap:12px}
+.receipt .row span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.receipt .off{color:var(--green)}
+.receipt hr{border:0;border-top:1px dashed #b9bab4;margin:10px 0}
+.receipt .total{font-weight:700;font-size:16px}
+.receipt .muted{color:var(--mute)}
+.receipt .note{font-size:12px;line-height:1.6;color:var(--mute);margin-bottom:4px}
+.receipt .free{color:var(--green);font-weight:700}
+.receipt .win span:last-child::before{content:"✓ ";color:var(--green)}
+.stamp{position:absolute;right:-18px;bottom:-26px;transform:rotate(-7deg);background:var(--leaf);color:var(--ink);border-radius:999px;padding:10px 18px 10px 14px;font:600 15px/1.2 var(--sans);display:flex;align-items:center;gap:8px}
+.stamp i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--leaf);font-style:normal;font-size:13px}
+/* prints once on load */
+@media (prefers-reduced-motion:no-preference){
+  .receipt>*{opacity:0;animation:line .35s ease-out forwards}
+  .stamp{opacity:0;animation:stamp .45s cubic-bezier(.2,.9,.3,1.3) forwards;animation-delay:5.4s}
+}
+@keyframes line{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@keyframes stamp{from{opacity:0;transform:rotate(-7deg) scale(1.5)}to{opacity:1;transform:rotate(-7deg) scale(1)}}
+
+/* sections */
+section{padding-top:136px}
+.kicker{font-size:14px;font-weight:500;color:var(--green);margin:0 0 14px}
+h2{font-weight:600;font-size:clamp(38px,5.4vw,68px);line-height:1;letter-spacing:-.045em;margin:0 0 20px;max-width:820px}
+.sub{color:var(--mute);max-width:560px;margin:0 0 56px;font-size:19px}
+
+/* problem */
+.facts{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink);margin-top:56px}
+.fact{padding:36px 40px 8px 0}
+.fact+.fact{padding-left:40px;border-left:1px solid var(--line)}
+.num{font-weight:600;font-size:clamp(72px,10vw,140px);line-height:.9;letter-spacing:-.06em;margin:0 0 22px;display:flex;align-items:baseline;gap:.18em}
+.num s{color:#c9cac4;text-decoration-thickness:.07em;text-decoration-color:var(--green)}
+.num small{white-space:nowrap;font-size:.16em;font-weight:500;letter-spacing:-.01em;color:var(--mute)}
+.fact h3{font-weight:600;font-size:24px;letter-spacing:-.025em;margin:0 0 8px}
+.fact p{margin:0;color:var(--mute);max-width:440px}
+
+/* chat */
+.chat{background:var(--soft);border-radius:28px;padding:40px;max-width:860px}
+.who{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.you{text-align:right;margin-bottom:28px}
+.bubble{display:inline-block;max-width:580px;padding:14px 20px;border-radius:22px;text-align:left;font-size:17px}
+.you .bubble{background:var(--ink);color:#fff;border-bottom-right-radius:6px}
+.ai .bubble{background:#fff;border-bottom-left-radius:6px;margin:16px 0 0}
+.call{font:13px/1.9 var(--mono);color:var(--mute)}
+.call b{color:var(--ink);font-weight:500}
+.note{font-size:14px;color:var(--mute);margin:18px 0 0}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);margin-top:56px}
+.steps div{padding:28px 28px 0 0}
+.steps div+div{padding-left:28px;border-left:1px solid var(--line)}
+.steps span{display:block}
+.steps h3{font-weight:600;font-size:24px;letter-spacing:-.025em;margin:0 0 8px}
+.steps p{margin:0;color:var(--mute);font-size:16px}
+
+/* promise */
+.promise{background:var(--ink);color:#fff;border-radius:32px;padding:72px 64px;display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.promise h2{color:#fff;margin:0}
+.promise h3{font-weight:600;font-size:22px;letter-spacing:-.02em;margin:0 0 8px}
+.promise p{margin:0 0 28px;color:#a9aaa4}
+.promise p:last-child{margin-bottom:0}
+
+/* start */
+.start{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.start>*{min-width:0}
+pre{background:var(--soft);border-radius:18px;padding:20px 22px;overflow-x:auto;font:13.5px/1.75 var(--mono);margin:0 0 16px}
+.small{font-size:16px;color:var(--mute);margin:0}
+.small a{text-decoration:none;border-bottom:1px solid var(--line)}
+.extra{margin-top:28px;padding-top:28px;border-top:1px solid var(--line)}
+
+footer{margin-top:136px;border-top:1px solid var(--line);padding:32px 0 56px;font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer a{margin-right:20px}
+footer p{margin:0;max-width:560px}
+
+/* MindMarket-style layer: pill nav, dot buttons, tinted cards, chips, colour bands */
+.navwrap{position:sticky;top:14px;z-index:10;padding-top:14px}
+nav{height:auto;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 8px 8px 10px}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{display:block;width:36px;height:36px}
+.logo svg{display:block;width:36px;height:36px}
+.brand b{color:var(--green);font-weight:inherit}
+nav ul{gap:6px}
+nav ul a{display:block;padding:10px 16px;border-radius:999px}
+nav ul a:hover{background:var(--soft)}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:12px 12px 12px 22px;border-radius:999px;background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.btn i{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--sky);color:#fff}
+.btn i svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.btn.coral{background:var(--coral);box-shadow:none}
+.btn.coral i{background:#fff;color:var(--ink)}
+.btn.line{box-shadow:inset 0 0 0 1px var(--line)}
+.btn.line i{background:var(--leaf);color:var(--ink)}
+nav ul a.btn{padding:9px 10px 9px 18px;color:var(--ink);background:#fff}
+nav ul a.btn:hover{background:#fff}
+.eyebrow b{color:var(--ink)}
+.kicker{display:inline-block;padding:4px 12px;border-radius:10px;border:1.5px solid var(--leaf);color:var(--ink)}
+.kicker.sky{border-color:var(--sky)}.kicker.coral{border-color:var(--coral)}.kicker.sun{border-color:var(--sun)}
+.facts{border-top:0;gap:20px}
+.fact,.fact+.fact{border-radius:50px;padding:44px;border-left:0}
+.fact:first-child{background:var(--coral-soft)}.fact+.fact{background:var(--leaf-soft)}
+.num s{color:#b4b5ae;text-decoration-color:var(--coral)}
+.fact p{color:#55564f}
+.chat{border-radius:50px;background:var(--sky-soft);padding:48px}
+.steps{border-top:0;gap:16px}
+.steps div,.steps div+div{border-left:0;border-radius:40px;padding:30px}
+.steps div:nth-child(1){background:var(--sun-soft)}.steps div:nth-child(2){background:var(--sky-soft)}.steps div:nth-child(3){background:var(--leaf-soft)}.steps div:nth-child(4){background:var(--coral-soft)}
+.steps span{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--ink);font:600 14px var(--sans);margin-bottom:36px}
+.steps p{color:#55564f}
+.promise{background:var(--leaf);color:var(--ink);border-radius:50px}
+.promise h2{color:var(--ink)}
+.promise p{color:#2f4a22}
+pre{background:var(--soft);border-radius:24px}
+footer{background:var(--sun);border-top:0;color:var(--ink);padding:72px 0 56px}
+footer p.big{max-width:none;font-weight:600;font-size:clamp(44px,7vw,88px);line-height:.95;letter-spacing:-.055em;margin:0 0 40px;width:100%}
+footer a{font-weight:500}
+
+/* full-bleed colour bands */
+body{overflow-x:clip}
+.band{position:relative;padding-bottom:128px;margin-top:136px;padding-top:120px}
+.band::before{content:"";position:absolute;top:0;bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);z-index:-1;background:var(--sky-soft)}
+.band.leaf::before{background:var(--leaf)}
+.band.coral::before{background:var(--coral-soft)}
+.band.coral .fact,.band.coral .fact+.fact{background:#fff}
+.band .chat{background:#fff}
+.band .ai .bubble{background:var(--sky-soft)}
+.band.leaf .promise{background:transparent;padding:0;border-radius:0}
+.band+section{padding-top:128px}
+.band+.band{margin-top:0}
+
+@media (max-width:900px){
+  .wrap{padding:0 20px}
+  nav ul li.opt{display:none}
+  .hero{grid-template-columns:1fr;gap:56px;padding-top:40px}
+  .facts,.promise,.start{grid-template-columns:1fr}
+  .fact,.fact+.fact{padding:32px 0 8px;border-left:0}
+  .steps{grid-template-columns:1fr 1fr;gap:12px}
+  .steps div,.steps div+div{padding:24px 16px 0 0;border-left:0}
+  .promise{padding:44px 28px;border-radius:26px}
+  .chat{padding:24px;border-radius:24px}
+  .stamp{right:4px}
+  .band{margin-top:104px;padding-top:88px;padding-bottom:96px}
+  .band+section{padding-top:96px}
+  .fact,.fact+.fact{padding:32px;margin-top:0}
+  .steps div,.steps div+div{padding:24px}
+  .chat{padding:24px;border-radius:32px}
+  .promise{border-radius:36px}
+  nav ul li.opt{display:none}
+  section{padding-top:104px}
+}
+
+.agent{max-width:860px;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.agent .bar{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--line);font-size:13px;color:var(--mute)}
+.agent .dots{display:flex;gap:6px}.agent .dots i{width:11px;height:11px;border-radius:50%;background:var(--line)}
+.agent .title{font-weight:600;color:var(--ink)}
+.agent .conn{margin-left:auto;display:flex;align-items:center;gap:6px}.agent .conn i{width:7px;height:7px;border-radius:50%;background:var(--green)}
+.agent .log{padding:28px 28px 8px;display:flex;flex-direction:column;gap:16px}
+.agent .you{text-align:right}
+.agent .bubble{display:inline-block;max-width:600px;padding:12px 18px;border-radius:18px;text-align:left;font-size:16px}
+.agent .you .bubble{background:var(--soft);color:var(--ink);border-bottom-right-radius:6px}
+.agent .ai .bubble{background:none;padding:0;max-width:none;font-size:16px}
+.tools{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.tool{display:grid;grid-template-columns:22px auto 1fr 18px;gap:10px;align-items:center;padding:9px 14px;font:13px/1.4 var(--mono);color:var(--mute)}
+.tool+.tool{border-top:1px solid var(--line)}
+.tool b{color:var(--ink);font-weight:600}.tool span{white-space:nowrap}
+.tool em{font-style:normal;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.tool .ti{color:var(--sky);font-size:15px}
+.tool .ok svg{width:14px;height:14px;fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.agent .input{display:flex;align-items:center;margin:16px 20px 20px;padding:8px 8px 8px 18px;border:1px solid var(--line);border-radius:999px;color:var(--mute);font-size:15px}
+.agent .input i{margin-left:auto;width:32px;height:32px;border-radius:50%;background:var(--ink);display:grid;place-items:center}
+.agent .input svg{width:13px;height:13px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:700px){.agent .log{padding:20px 16px 4px}.tool{grid-template-columns:18px 1fr 16px}.tool em{grid-column:2}.agent .conn{display:none}}
+</style>
+</head>
+<body>
+
+<header class="wrap navwrap">
+  <nav>
+    <a class="brand" href="./"><span class="logo"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f8f46"/><path d="M11.2 11.5V10a4.8 4.8 0 019.6 0v1.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path fill="#fff" fill-rule="evenodd" d="M8.6 11h14.8a1 1 0 011 .92l.9 12A2 2 0 0123.3 26H8.7a2 2 0 01-2-2.08l.9-12A1 1 0 018.6 11zM12.4 14.8v7.8h2.2v-2.9h2.8v2.9h2.2v-7.8h-2.2v2.9h-2.8v-2.9z"/></svg></span><span>Handle<b>MCP</b></span></a>
+    <ul>
+      <li class="opt"><a href="#hvorfor">Hvorfor</a></li>
+      <li class="opt"><a href="#saadan">Sådan virker det</a></li>
+      <li class="opt"><a href="https://github.com/NJohansen/handle-mcp">GitHub</a></li>
+      <li><a class="btn" href="#kom-i-gang">Kom i gang <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 2v8M2.5 6.5L6 10l3.5-3.5"/></svg></i></a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <p class="eyebrow"><b>Gratis og open source</b> · nemlig.com og BilkaToGo</p>
+      <h1>Tom madkonto<br>den 20.?</h1>
+      <p class="lead"><strong>Og sjette tur i butikken i denne uge?</strong> Din AI laver madplanen ud fra jeres budget og ugens tilbud, og fylder den billigste kurv. Én levering, hele ugen. Du betaler selv.</p>
+      <div class="ctas">
+        <a class="btn coral" href="#kom-i-gang">Kom i gang <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 2v8M2.5 6.5L6 10l3.5-3.5"/></svg></i></a>
+        <a class="btn line" href="https://github.com/NJohansen/handle-mcp">Se koden <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5l5-5M4 3.5h4.5V8"/></svg></i></a>
+      </div>
+    </div>
+
+    <div class="receipt-wrap" role="img" aria-label="Eksempel på ugens kurv som kvittering: tilbud fra begge butikker, opskrifter fra nemlig.com, en gratis vare, nemlig.com 842 kr mod BilkaToGo 879 kr, 58 kr under budget">
+      <div class="receipt">
+        <div class="head" style="animation-delay:0.20s"><b>UGENS KURV</b>5 aftener · 4 pers.</div>
+        <div class="note" style="animation-delay:0.45s">Tilbud tjekket: nemlig.com + BilkaToGo</div>
+        <div class="note" style="animation-delay:0.70s">Opskrifter: karry, laks, pizza (nemlig.com)</div>
+        <hr style="animation-delay:0.95s">
+        <div class="row" style="animation-delay:1.20s"><span>Kyllingelår 1 kg</span><span>59,00</span></div>
+        <div class="row off" style="animation-delay:1.45s"><span>&nbsp; tilbud</span><span>−20,00</span></div>
+        <div class="row" style="animation-delay:1.70s"><span>Laks 600 g</span><span>84,53</span></div>
+        <div class="row off" style="animation-delay:1.95s"><span>&nbsp; −30 %</span><span>−36,22</span></div>
+        <div class="row" style="animation-delay:2.20s"><span>Kikærter 2 stk</span><span>14,00</span></div>
+        <div class="row" style="animation-delay:2.45s"><span>Kokosmælk 2 stk</span><span>17,90</span></div>
+        <div class="row" style="animation-delay:2.70s"><span>Mozzarella 3 stk</span><span>60,00</span></div>
+        <div class="row off" style="animation-delay:2.95s"><span>&nbsp; 3 for 48</span><span>−12,00</span></div>
+        <div class="row" style="animation-delay:3.20s"><span>Broccoli 2 stk</span><span>30,00</span></div>
+        <div class="row free" style="animation-delay:3.45s"><span>Kaffe 400 g · gratis</span><span>0,00</span></div>
+        <div class="row muted" style="animation-delay:3.70s"><span>+ 19 varer</span><span>615,79</span></div>
+        <div class="row" style="animation-delay:3.95s"><span>Levering</span><span>29,00</span></div>
+        <hr style="animation-delay:4.20s">
+        <div class="row total win" style="animation-delay:4.45s"><span>nemlig.com</span><span>842,00</span></div>
+        <div class="row muted" style="animation-delay:4.70s"><span>BilkaToGo</span><span>879,00</span></div>
+        <div class="row muted" style="animation-delay:4.95s"><span>Budget 900 · tilbage</span><span>58,00</span></div>
+      </div>
+      <div class="stamp"><i>✓</i>Du betaler selv</div>
+    </div>
+  </div>
+
+  <section id="hvorfor" class="band coral">
+    <h2>Kender I det her?</h2>
+    <div class="facts">
+      <div class="fact">
+        <div class="num"><s>6</s>1<small>handel om ugen</small></div>
+        <h3>I handler hele tiden</h3>
+        <p>En tur efter mælk, en efter aftensmad, en fordi noget mangler. Med en plan for hele ugen kommer det hele med én levering.</p>
+      </div>
+      <div class="fact">
+        <div class="num"><s>20.</s>31.<small>i måneden</small></div>
+        <h3>Madkontoen løber tør før tid</h3>
+        <p>Sig hvor meget der er til mad. Din AI planlægger ugen inden for budgettet, bygger på tilbuddene og finder den billigste butik.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <h2>Sådan ser det ud</h2>
+    <p class="sub">Du skriver én besked. Den tjekker begge butikker og fylder kurven. Betalingen er din.</p>
+    <div class="agent" aria-label="Eksempel på en samtale med en AI-assistent">
+      <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="title">AI-assistent</span><span class="conn"><i></i>HandleMCP tilsluttet</span></div>
+      <div class="log">
+        <div class="you"><div class="bubble">Der er 900 kr til mad i denne uge. Lav en madplan til 4 ud fra tilbuddene, og fyld den billigste kurv.</div></div>
+        <div class="tools">
+          <div class="tool"><span class="ti">⚙</span><span><b>handle</b> · list_offers</span><em>nemlig.com + BilkaToGo · 214 tilbud · 1 gratis vare</em><span class="ok"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span></div>
+          <div class="tool"><span class="ti">⚙</span><span><b>handle</b> · list_recipes</span><em>nemlig.com · Familievenlig</em><span class="ok"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span></div>
+          <div class="tool"><span class="ti">⚙</span><span><b>handle</b> · get_recipe</span><em>3 opskrifter · 4 personer</em><span class="ok"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span></div>
+          <div class="tool"><span class="ti">⚙</span><span><b>handle</b> · compare_basket</span><em>31 varer · nemlig.com 842 kr · BilkaToGo 879 kr</em><span class="ok"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span></div>
+          <div class="tool"><span class="ti">⚙</span><span><b>handle</b> · set_cart_quantities</span><em>31 varer i kurven hos nemlig.com</em><span class="ok"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span></div>
+        </div>
+        <div class="ai"><div class="bubble">Fem aftener: kyllingekarry, laks med ris, rugbrødsaften, spaghetti med kødsovs og hjemmelavet pizza. Bygget på ugens tilbud i begge butikker, og en gratis pose kaffe kommer med. nemlig.com er 37 kr billigere end BilkaToGo, og I har 58 kr tilbage. Kurven er klar: åbn den, vælg en tid og betal.</div></div>
+      </div>
+      <div class="input"><span>Skriv en besked …</span><i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5"/></svg></i></div>
+    </div>
+    <p class="note">Et eksempel. Rigtige svar bruger butikkernes priser lige nu.</p>
+  </section>
+
+  <section id="saadan">
+    <h2>Sådan virker det</h2>
+    <div class="steps">
+      <div><span>1</span><h3>Sig budgettet</h3><p>"900 kr til 4 personer." Og hvad I kan lide, og hvad I har hjemme.</p></div>
+      <div><span>2</span><h3>Den planlægger</h3><p>Den læser tilbud i begge butikker, finder gratis varer og bruger butikkens opskrifter.</p></div>
+      <div><span>3</span><h3>Den fylder kurven</h3><p>Den regner hele kurven i begge butikker, med levering, og fylder den billigste.</p></div>
+      <div><span>4</span><h3>Du betaler</h3><p>Du tjekker kurven, vælger leveringstid og betaler. Maden kommer til døren.</p></div>
+    </div>
+  </section>
+
+  <section class="band leaf">
+    <div class="promise">
+      <h2>Du har styr på pengene</h2>
+      <div>
+        <h3>Den kan aldrig betale</h3>
+        <p>Der findes ingen kode til at bestille, betale, læse kort, vælge leveringstid eller ændre adresse. En test fejler, hvis nogen tilføjer den.</p>
+        <h3>Jeres data bliver hjemme</h3>
+        <p>Navn, adresse og telefon bliver fjernet, før din AI ser svar fra butikken. Login gemmes kun på din egen computer, ikke i en sky.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="kom-i-gang">
+    <div class="start">
+      <div>
+        <h2>Kom i gang</h2>
+        <p class="sub" style="margin-bottom:0">Ærligt: i dag kræver det lidt teknik. Du skal bruge en AI-assistent, der kan bruge værktøjer (fx Claude), og terminalen.</p>
+      </div>
+      <div>
+        <p class="small" style="margin-bottom:16px">Installer <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a>. Gem dit nemlig-login, og tilføj HandleMCP til Claude:</p>
+<pre>uvx --from git+https://github.com/NJohansen/handle-mcp handle-mcp login nemlig
+claude mcp add handle -- uvx --from git+https://github.com/NJohansen/handle-mcp handle-mcp</pre>
+        <p class="small">BilkaToGo og Claude Desktop: se <a href="https://github.com/NJohansen/handle-mcp/blob/main/docs/setup.md">vejledningen</a> (på engelsk).</p>
+        <!-- Hidden until the Tally URL exists: set href, then remove "hidden". -->
+        <div class="extra" hidden>
+          <p class="small" style="margin-bottom:14px">Uden terminal? Vi arbejder på en nemmere vej. Skriv dig op, så får du besked.</p>
+          <a class="btn coral" href="#" data-placeholder="tally">Skriv mig op <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></i></a>
+        </div>
+        <!-- Hidden until the Buy Me a Coffee URL exists: set href, then remove "hidden". -->
+        <div class="extra" hidden>
+          <p class="small" style="margin-bottom:14px">Gratis, og det bliver det ved med. Sparer den jer tid eller penge? En kop kaffe holder projektet i gang.</p>
+          <a class="btn line" href="#" data-placeholder="coffee">Giv en kop kaffe <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="big">Handl én gang.<br>Spis hele ugen.</p>
+    <p>Ikke officiel. Bruger butikkernes egne hjemmesider, så det kan gå i stykker uden varsel. Ikke tilknyttet nemlig.com eller Salling Group.</p>
+    <div><a href="https://github.com/NJohansen/handle-mcp">GitHub</a><a href="https://github.com/NJohansen/handle-mcp/blob/main/docs/security.md">Sikkerhed</a><a href="https://github.com/NJohansen/handle-mcp/blob/main/LICENSE">MIT-licens</a></div>
+  </div>
+</footer>
+</body>
+</html>
