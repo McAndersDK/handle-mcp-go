@@ -157,7 +157,8 @@ class NemligStore(RecipesMixin, OffersMixin):
         resp = await request(
             self._client, method, url, "nemlig.com", headers=self._headers(), **kwargs
         )
-        if resp.url.host.endswith("queue-it.net"):
+        host = resp.url.host
+        if host == "queue-it.net" or host.endswith(".queue-it.net"):
             raise StoreError("nemlig.com har kø lige nu (queue-it). Prøv igen om lidt.")
         if resp.status_code == 401:
             raise _Unauthorized
