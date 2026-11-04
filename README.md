@@ -67,3 +67,5 @@ Full arguments and fields: [docs/tools.md](docs/tools.md).
 Unofficial. Uses the stores' private website APIs, so it can break any day. Not affiliated with nemlig.com or Salling Group.
 
 [MIT](LICENSE)
+
+Free, and it stays free. If it saves you time or money: <a href="https://buymeacoffee.com/niclasjohansen"><img src="docs/badges/coffee.svg" alt="buy me a coffee" height="26" align="absmiddle"></a>
