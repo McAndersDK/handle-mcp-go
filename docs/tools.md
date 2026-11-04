@@ -15,7 +15,16 @@
 | `list_delivery_slots(stores?, days?)` | no | nemlig, BilkaToGo | Free delivery times with the fee per slot, the 3 cheapest first |
 | `get_orders(store)` / `get_order(store, id)` | no | nemlig, BilkaToGo | Past orders, for "what we usually buy" |
 
-Money is a string in kroner with two decimals (`"12.95"`, `"39.00"`) in every store. Dates are ISO. A fact the store does not give is `null`.
+Money is a string in kroner with two decimals (`"12.95"`, `"39.00"`) in every store. Dates are ISO. A fact the store does not give is `null`, never left out.
+
+Every product from `search_products` and `list_offers` has the same fields. Two of them are often `null`:
+
+| Field | nemlig | BilkaToGo |
+|---|---|---|
+| `before_price` (the price without the offer) | when nemlig shows a crossed-out price; a "Skarp pris" without one has `null` | when the offer has a normal price |
+| `offer_until` (last day of the offer, ISO date) | from `search_products`; nemlig's offer lists (`list_offers`) do not say, so `null` | always `null`: BilkaToGo does not say |
+
+`compare_basket` candidates list only the facts that are known, to stay short.
 
 What it can **never** do: place an order, pay, read cards, choose a delivery time or change the address. That code does not exist, and a test fails if it shows up. See [ADR 0001](adr/0001-the-human-always-pays.md).
 

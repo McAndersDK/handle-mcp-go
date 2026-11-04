@@ -1,12 +1,19 @@
 """The tool surface: allowlist, write limits and error handling."""
 
+import dataclasses
 import json
+from dataclasses import asdict
+from decimal import Decimal
+from pathlib import Path
 
 import pytest
 from mcp.server.mcpserver.exceptions import ToolError
 
 from handle_mcp import server
 from handle_mcp import stores as registry
+from handle_mcp.models import Product
+from handle_mcp.stores.bilkatogo import BilkaStore
+from handle_mcp.stores.nemlig_offers import offer_product
 
 ALLOWED = {
     "search_products": False,
@@ -156,3 +163,31 @@ async def test_get_cart_with_an_empty_store_name_is_an_error():
 async def test_get_cart_with_a_store_keeps_its_shape():
     cart = await server.get_cart("fake")
     assert cart["store"] == "fake" and "lines" in cart
+
+
+def test_every_product_has_the_offer_fields_null_when_unknown():
+    """docs/tools.md promises before_price and offer_until on every product, null when the
+    store does not say. Every adapter builds a Product, so the dataclass is the contract."""
+    fields = {f.name for f in dataclasses.fields(Product)}
+    assert {"before_price", "offer_until"} <= fields
+    product = asdict(Product(store="x", id="1", name="x", price=Decimal(1)))
+    assert product["before_price"] is None and product["offer_until"] is None
+
+
+def test_real_store_parsers_keep_the_offer_fields():
+    """The nemlig and Bilka parsers go through Product too; this fails if one of them ever
+    answers a plain dict. offers_page.json has a Skarp pris without a normal price."""
+    page = json.loads(
+        (Path(__file__).parent / "fixtures" / "nemlig" / "offers_page.json").read_text()
+    )
+    items = next(b["products"] for b in page["pageContent"] if (b.get("header") or {}).get("title"))
+    checked = [p for raw in items if (p := offer_product(raw, "Skarp pris"))]
+    assert checked and all(hasattr(p, "offer_until") for p in checked)
+    assert any(p.before_price is None for p in checked)  # null, not a guess
+    hits = json.loads(
+        (Path(__file__).parent / "fixtures" / "bilkatogo" / "algolia_offers.json").read_text()
+    )["hits"]
+    bilka = [
+        p for h in hits for sid in h.get("storeData") or {} if (p := BilkaStore()._product(h, sid))
+    ]
+    assert bilka and all(p.offer_until is None for p in bilka)  # Bilka never says
