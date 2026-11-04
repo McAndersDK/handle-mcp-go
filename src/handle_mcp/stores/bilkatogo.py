@@ -98,6 +98,24 @@ def _slot(day: str | None, start: str | None, end: str | None) -> tuple[datetime
         return None, None
 
 
+def _slot_ended(data: dict) -> bool:
+    """Bilka keeps the slot of the last order in the cart ("Ons. 04/09" seen weeks later).
+    True only when the slot parses and has ended; an unreadable slot is kept, not hidden."""
+    chosen = data.get("deliveryDate") or {}
+    _start, end = _slot(
+        chosen.get("deliveryDate"), chosen.get("intervalStart"), chosen.get("intervalEnd")
+    )
+    return bool(end and end < datetime.now(TZ))
+
+
+def _chosen_slot(data: dict) -> tuple[datetime | None, datetime | None]:
+    """The delivery time chosen in the cart; none when it has ended."""
+    if _slot_ended(data):
+        return None, None
+    chosen = data.get("deliveryDate") or {}
+    return _slot(chosen.get("deliveryDate"), chosen.get("intervalStart"), chosen.get("intervalEnd"))
+
+
 def _lines(groups: list[dict]) -> list[CartLine]:
     """Cart and order lines are nested: groups → blocks → orderlines."""
     return [
@@ -322,6 +340,9 @@ class BilkaStore:
             )
             if stat.get(key)
         }
+        chosen_text = (data.get("deliveryDate") or {}).get("delivery_message") or None
+        if _slot_ended(data):
+            chosen_text = None  # the slot of a past order is no choice
         warnings = [] if _is_home(address) else [NOT_HOME]
         if stat.get("minimum_left_text"):
             warnings.append(re.sub(r"<[^>]+>", "", stat["minimum_left_text"]))
@@ -337,7 +358,7 @@ class BilkaStore:
             total=_kr(stat.get("price")),
             minimum_order=_kr(address["minimum_buy"]) if address.get("minimum_buy") else None,
             minimum_met=not stat.get("minimum_left"),
-            delivery=(data.get("deliveryDate") or {}).get("delivery_message") or None,
+            delivery=chosen_text,
             warnings=warnings,
         )
 
@@ -382,12 +403,8 @@ class BilkaStore:
 
     async def delivery_info(self) -> DeliveryInfo:
         data = await self._cart_json()
-        address, chosen = data.get("deliveryAddress") or {}, data.get("deliveryDate") or {}
-        start, end = _slot(
-            chosen.get("deliveryDate"), chosen.get("intervalStart"), chosen.get("intervalEnd")
-        )
-        if end and end < datetime.now(TZ):
-            start = end = None  # an old slot from a past order is not a choice
+        address = data.get("deliveryAddress") or {}
+        start, end = _chosen_slot(data)
         nxt = address.get("nextAvailableDeliveryDate")
         return DeliveryInfo(
             store=self.name,

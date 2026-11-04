@@ -280,6 +280,20 @@ async def test_old_chosen_slot_is_ignored(store, fake):
     }
     info = await store.delivery_info()
     assert info.chosen_start is None and info.chosen_end is None
+    assert (await store.get_cart()).delivery is None  # the cart text said "Ons. 04/09" too
+
+
+async def test_current_chosen_slot_shows_in_the_cart(store):
+    # the cart_home fixture's slot is 2036-11-01, so it stays in the future
+    assert (await store.get_cart()).delivery == "Søn. 01/11. kl. 14:00 - 16:00"
+
+
+async def test_unreadable_slot_keeps_the_cart_text(store, fake):
+    fake.cart = {
+        **fake.cart,
+        "deliveryDate": {**fake.cart["deliveryDate"], "intervalEnd": None},
+    }
+    assert (await store.get_cart()).delivery == "Søn. 01/11. kl. 14:00 - 16:00"
 
 
 async def test_set_quantities_stops_on_store_failure(store, fake):
