@@ -51,7 +51,7 @@ BilkaToGo, Claude Desktop and other logins: [setup](docs/setup.md).
 | `get_recipe` | no | The products to buy for a recipe, for any number of persons |
 | `list_offers` | no | This week's offers and free gifts |
 | `compare_basket` | no | Prices a list in every store, fees included, cheapest first |
-| `get_cart` | no | Cart lines, fees, total |
+| `get_cart` | no | Cart lines, fees, total, in one store or every store |
 | `set_cart_quantities` | **yes** | Sets quantities in the cart. Nothing else |
 | `add_recipe_to_cart` | **yes** | Puts a recipe's products in the cart, after your yes. Nothing else |
 | `get_delivery_info` | no | Chosen time, fees |

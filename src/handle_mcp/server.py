@@ -190,9 +190,13 @@ async def compare_basket(items: list[str], stores: list[str] | None = None) -> d
 
 
 @mcp.tool(annotations=READ)
-async def get_cart(store: str) -> dict:
-    """Show the cart in one store: lines, fees, total and whether the minimum order is met."""
-    return _out(await _call(store, "get_cart"))
+async def get_cart(store: str | None = None) -> dict:
+    """Show the cart: lines, fees, total and whether the minimum order is met. With `store`
+    that store's cart; without, every store's cart keyed by store name, a failing store
+    (e.g. no login) as {"error": ...} next to the others."""
+    if store is not None:
+        return _out(await _call(store, "get_cart"))
+    return _out(await _each(_names(None), lambda s: s.get_cart()))
 
 
 @mcp.tool(annotations=WRITE)

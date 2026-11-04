@@ -126,17 +126,22 @@
  },
  {
   "name": "get_cart",
-  "description": "Show the cart in one store: lines, fees, total and whether the minimum order is met.",
+  "description": "Show the cart: lines, fees, total and whether the minimum order is met. With `store`\nthat store's cart; without, every store's cart keyed by store name, a failing store\n(e.g. no login) as {\"error\": ...} next to the others.",
   "inputSchema": {
    "properties": {
     "store": {
-     "title": "Store",
-     "type": "string"
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Store"
     }
    },
-   "required": [
-    "store"
-   ],
    "type": "object",
    "title": "get_cartArguments"
   },

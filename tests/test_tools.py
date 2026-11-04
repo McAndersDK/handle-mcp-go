@@ -6,6 +6,7 @@ import pytest
 from mcp.server.mcpserver.exceptions import ToolError
 
 from handle_mcp import server
+from handle_mcp import stores as registry
 
 ALLOWED = {
     "search_products": False,
@@ -128,3 +129,26 @@ async def test_search_by_price_puts_a_free_gift_first(monkeypatch):
     monkeypatch.setattr("tests.conftest.FakeStore.search", hits)
     result = await server.search_products("brød", ["fake"], 2, sort="price")
     assert [p["id"] for p in result["fake"]] == ["gift", "bread"]
+
+
+async def test_get_cart_without_a_store_gives_every_cart(monkeypatch):
+    from tests.conftest import BrokenStore
+
+    async def no_login(_self):
+        raise registry.StoreError("Intet login til broken.")
+
+    monkeypatch.setattr(BrokenStore, "get_cart", no_login)
+    carts = await server.get_cart()
+    assert set(carts) == {"broken", "fake"}
+    assert carts["fake"]["store"] == "fake" and "lines" in carts["fake"]
+    assert "Intet login" in carts["broken"]["error"]  # one store failing never stops the other
+
+
+async def test_get_cart_with_an_empty_store_name_is_an_error():
+    with pytest.raises(ToolError, match="Ukendt butik ''"):
+        await server.get_cart("")
+
+
+async def test_get_cart_with_a_store_keeps_its_shape():
+    cart = await server.get_cart("fake")
+    assert cart["store"] == "fake" and "lines" in cart
