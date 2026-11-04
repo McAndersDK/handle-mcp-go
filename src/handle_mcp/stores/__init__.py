@@ -87,6 +87,30 @@ def keychain_delete(store: str) -> bool:
     return True
 
 
+def config_set(store: str, email: str, password: str) -> Path:
+    """Save a login in ~/.config/handle-mcp/<store>.json, readable by the owner only.
+    Used by `handle-mcp login <store> --from-env` where there is no keychain."""
+    CONFIG_DIR.mkdir(parents=True, exist_ok=True)
+    CONFIG_DIR.chmod(stat.S_IRWXU)
+    path = CONFIG_DIR / f"{store}.json"
+    fd = os.open(path, os.O_WRONLY | os.O_CREAT, stat.S_IRUSR | stat.S_IWUSR)
+    if hasattr(os, "fchmod"):  # an existing wider file: tighten before writing (not on Windows)
+        os.fchmod(fd, stat.S_IRUSR | stat.S_IWUSR)
+    os.ftruncate(fd, 0)
+    with os.fdopen(fd, "w") as f:
+        json.dump({"email": email, "password": password}, f)
+    return path
+
+
+def config_delete(store: str) -> bool:
+    """True if ~/.config/handle-mcp/<store>.json was removed."""
+    try:
+        (CONFIG_DIR / f"{store}.json").unlink()
+    except FileNotFoundError:
+        return False
+    return True
+
+
 def load_login(store: str) -> dict[str, str]:
     """A store's login. First found wins:
 
@@ -104,7 +128,11 @@ def load_login(store: str) -> dict[str, str]:
 
     path = CONFIG_DIR / f"{store}.json"
     if not path.exists():
-        raise StoreError(f"Intet login til {store}. Kør i en terminal: handle-mcp login {store}")
+        raise StoreError(
+            f"Intet login til {store}. Kør i en terminal: handle-mcp login {store}. "
+            f"Uden terminal: sæt HANDLE_{store.upper()}_EMAIL og _PASSWORD, "
+            f"og kør: handle-mcp login {store} --from-env"
+        )
     if path.stat().st_mode & (stat.S_IRWXG | stat.S_IRWXO):
         raise StoreError(f"{path} kan læses af andre. Kør: chmod 600 {path}")
     data = json.loads(path.read_text())

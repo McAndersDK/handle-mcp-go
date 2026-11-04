@@ -16,6 +16,15 @@ Other ways, checked in this order:
 2. The keychain (above). Recommended.
 3. A file `~/.config/handle-mcp/<store>.json` with `{"email": "...", "password": "..."}`. Plain text on disk, so the server refuses it unless only you can read it (`chmod 600`). Create it with `umask 077` and an editor, not `echo`, which leaves the password in your shell history.
 
+**Headless / AI agent.** No terminal and no keychain (a Linux server, a container, an agent that sets itself up)? Put the login in env vars for one command, which checks it against the store and writes `~/.config/handle-mcp/<store>.json` with `chmod 600`:
+
+```sh
+HANDLE_NEMLIG_EMAIL=you@example.com HANDLE_NEMLIG_PASSWORD='...' \
+  uvx --from git+https://github.com/NJohansen/handle-mcp handle-mcp login nemlig --from-env
+```
+
+The env vars are only needed for that one command; the MCP server reads the file afterwards. `handle-mcp logout <store>` removes the file. Nothing is written when the login fails.
+
 **2. BilkaToGo:** choose home delivery (not pickup) once on bilkatogo.dk. The server reads the store and fees from your cart.
 
 **3. Add it to your MCP client.** Claude Code:

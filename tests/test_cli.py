@@ -85,3 +85,101 @@ def test_load_login_surfaces_a_broken_keychain_entry(memory_keychain):
     memory_keychain.secrets[(registry.KEYCHAIN_SERVICE, "fake")] = "not json"
     with pytest.raises(registry.StoreError, match="handle-mcp login fake"):
         registry.load_login("fake")
+
+
+@pytest.fixture
+def config_dir(monkeypatch, tmp_path):
+    monkeypatch.setattr(registry, "CONFIG_DIR", tmp_path / "handle-mcp")
+    monkeypatch.setattr(registry, "STORES", {"fake": CheckingStore})
+    return tmp_path / "handle-mcp"
+
+
+def test_login_from_env_writes_an_owner_only_file(config_dir, monkeypatch, capsys):
+    monkeypatch.setenv("HANDLE_FAKE_EMAIL", "a@example.com")
+    monkeypatch.setenv("HANDLE_FAKE_PASSWORD", "rigtig")
+    assert cli.run(["login", "fake", "--from-env"]) == 0
+    path = config_dir / "fake.json"
+    assert path.stat().st_mode & 0o777 == 0o600
+    assert config_dir.stat().st_mode & 0o777 == 0o700
+    monkeypatch.delenv("HANDLE_FAKE_EMAIL")
+    monkeypatch.delenv("HANDLE_FAKE_PASSWORD")
+    assert registry.load_login("fake") == {"email": "a@example.com", "password": "rigtig"}
+    out = capsys.readouterr()
+    assert out.out == "" and "rigtig" not in out.err and str(path) in out.err
+
+
+def test_login_from_env_with_a_wrong_password_saves_nothing(config_dir, monkeypatch, capsys):
+    monkeypatch.setenv("HANDLE_FAKE_EMAIL", "a@example.com")
+    monkeypatch.setenv("HANDLE_FAKE_PASSWORD", "forkert")
+    assert cli.run(["login", "fake", "--from-env"]) == 1
+    assert not (config_dir / "fake.json").exists()
+    assert "Tjek email og kodeord" in capsys.readouterr().err
+
+
+def test_login_from_env_without_env_vars_says_which(config_dir, monkeypatch, capsys):
+    monkeypatch.delenv("HANDLE_FAKE_EMAIL", raising=False)
+    monkeypatch.delenv("HANDLE_FAKE_PASSWORD", raising=False)
+    assert cli.run(["login", "fake", "--from-env"]) == 1
+    assert "HANDLE_FAKE_EMAIL" in capsys.readouterr().err
+
+
+def test_logout_removes_the_file_too(config_dir, capsys):
+    registry.config_set("fake", "a@example.com", "x")
+    assert cli.run(["logout", "fake"]) == 0
+    assert not (config_dir / "fake.json").exists()
+    assert "slettet fra config-filen." in capsys.readouterr().err  # one line, not two
+
+
+def test_logout_removes_file_and_keychain_in_one_line(config_dir, capsys):
+    registry.config_set("fake", "a@example.com", "x")
+    registry.keychain_set("fake", "a@example.com", "x")
+    assert cli.run(["logout", "fake"]) == 0
+    assert "slettet fra config-filen og nøgleringen." in capsys.readouterr().err
+
+
+def test_logout_file_only_without_a_keychain(config_dir, monkeypatch, capsys):
+    from keyring.errors import NoKeyringError
+
+    def no_keychain(*_args):
+        raise NoKeyringError("no backend")
+
+    monkeypatch.setattr(registry.keyring, "delete_password", no_keychain)
+    registry.config_set("fake", "a@example.com", "x")
+    assert cli.run(["logout", "fake"]) == 0
+    assert "slettet fra config-filen." in capsys.readouterr().err
+
+
+def test_login_from_env_tightens_an_existing_wide_file(config_dir, monkeypatch):
+    config_dir.mkdir()
+    old = config_dir / "fake.json"
+    old.write_text('{"email": "old@example.com", "password": "gammelt-og-langt-kodeord"}')
+    old.chmod(0o644)
+    monkeypatch.setenv("HANDLE_FAKE_EMAIL", "a@example.com")
+    monkeypatch.setenv("HANDLE_FAKE_PASSWORD", "rigtig")
+    assert cli.run(["login", "fake", "--from-env"]) == 0
+    assert old.stat().st_mode & 0o777 == 0o600
+    assert old.read_text() == '{"email": "a@example.com", "password": "rigtig"}'  # no old tail
+
+
+def test_login_from_env_warns_when_the_keychain_wins(config_dir, monkeypatch, capsys):
+    registry.keychain_set("fake", "old@example.com", "rigtig")
+    monkeypatch.setenv("HANDLE_FAKE_EMAIL", "a@example.com")
+    monkeypatch.setenv("HANDLE_FAKE_PASSWORD", "rigtig")
+    assert cli.run(["login", "fake", "--from-env"]) == 0
+    assert "nøgleringen har også et login" in capsys.readouterr().err
+
+
+def test_missing_login_error_names_the_headless_way(config_dir):
+    with pytest.raises(registry.StoreError, match="handle-mcp login fake --from-env"):
+        registry.load_login("fake")
+
+
+def test_login_from_env_survives_a_broken_keychain_entry(
+    config_dir, memory_keychain, monkeypatch, capsys
+):
+    memory_keychain.secrets[(registry.KEYCHAIN_SERVICE, "fake")] = "not json"
+    monkeypatch.setenv("HANDLE_FAKE_EMAIL", "a@example.com")
+    monkeypatch.setenv("HANDLE_FAKE_PASSWORD", "rigtig")
+    assert cli.run(["login", "fake", "--from-env"]) == 0
+    assert (config_dir / "fake.json").exists()
+    assert "nøgleringen har også et login" in capsys.readouterr().err
