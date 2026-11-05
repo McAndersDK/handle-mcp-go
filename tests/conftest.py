@@ -153,6 +153,9 @@ class FakeStore:
     async def orders(self, limit=10):
         return [self._leak(Order("fake", "900000000001", "Leveret", Decimal("612.50")))]
 
+    def session(self):
+        return {"token": "session-1"}
+
     async def order(self, order_id):
         return self._leak(
             Order(

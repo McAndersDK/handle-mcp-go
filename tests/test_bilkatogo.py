@@ -47,6 +47,10 @@ class FakeBilka:
                 return httpx.Response(403, json=fixture("gigya_login_invalid"))
             return httpx.Response(200, json=fixture("gigya_login"))
         if path == "/accounts.getJWT":
+            if parse_qs(request.content.decode())["login_token"] != ["st2.fake-login-token"]:
+                return httpx.Response(
+                    200, json={**fixture("gigya_login_invalid"), "errorCode": 403005}
+                )
             return httpx.Response(200, json=fixture("gigya_jwt"))
         if path == "/api/auth/LoginJWT":
             return httpx.Response(
@@ -106,6 +110,53 @@ async def test_login_flow_and_jwt_header(store, fake):
         "/api/shop/v6/Cart",
     ]
     assert fake.requests[3].headers["jwt_token"] == "eyFake.jwt.token"
+
+
+@pytest.fixture
+def saved(monkeypatch, memory_keychain):
+    """No env vars: the login comes from the keychain."""
+    monkeypatch.delenv("HANDLE_BILKATOGO_EMAIL")
+    monkeypatch.delenv("HANDLE_BILKATOGO_PASSWORD")
+    return memory_keychain
+
+
+async def test_saved_session_logs_in_without_a_password(store, fake, saved):
+    registry.keychain_set("bilkatogo", "kunde@example.com", {"login_token": "st2.fake-login-token"})
+    await store.get_cart()
+    assert fake.paths()[:2] == ["/accounts.getJWT", "/api/auth/LoginJWT"]
+
+
+async def test_dead_session_says_log_in_again(store, fake, saved):
+    registry.keychain_set("bilkatogo", "kunde@example.com", {"login_token": "st2.dead"})
+    with pytest.raises(StoreError, match="udløbet. Kør i en terminal: handle-mcp login bilkatogo"):
+        await store.get_cart()
+    assert "/accounts.login" not in fake.paths()
+
+
+@pytest.mark.parametrize("code", [403048, 500001])
+async def test_gigya_busy_is_not_an_expired_session(store, fake, saved, code):
+    """Rate limit or Gigya's own server error: the session is fine, try later."""
+    registry.keychain_set("bilkatogo", "kunde@example.com", {"login_token": "st2.fake-login-token"})
+    fake.scripted["/accounts.getJWT"] = [{"errorCode": code, "errorMessage": "busy"}]
+    with pytest.raises(StoreError, match="Prøv igen om lidt") as err:
+        await store.get_cart()
+    assert "udløbet" not in str(err.value)
+
+
+async def test_an_old_saved_password_is_replaced_by_the_session(store, fake, saved):
+    key = (registry.KEYCHAIN_SERVICE, "bilkatogo")
+    saved.secrets[key] = json.dumps({"email": "kunde@example.com", "password": "hemmeligt"})
+    await store.get_cart()
+    assert json.loads(saved.secrets[key]) == {
+        "email": "kunde@example.com",
+        "session": {"login_token": "st2.fake-login-token"},
+    }
+
+
+async def test_env_vars_are_never_saved(store, fake, memory_keychain):
+    await store.get_cart()
+    assert store.session() == {"login_token": "st2.fake-login-token"}
+    assert not memory_keychain.secrets
 
 
 async def test_login_never_sends_cart_cookie(store, fake):

@@ -30,7 +30,7 @@ from handle_mcp.models import (
     QuantityResult,
     StoreTerms,
 )
-from handle_mcp.stores import StoreError, has_login, load_login
+from handle_mcp.stores import StoreError, expired, has_login, load_login, save_session
 from handle_mcp.stores._http import request
 from handle_mcp.stores.nemlig_offers import OffersMixin
 from handle_mcp.stores.nemlig_recipes import RecipesMixin
@@ -111,6 +111,9 @@ def _discount_price(campaign: dict | None) -> Decimal | None:
 
 
 DK = ZoneInfo("Europe/Copenhagen")
+LOGIN_FLAGS = {"CheckForExistingProducts": True, "DoMerge": True}
+LOGIN_FLAGS |= {"AppInstalled": False, "SaveExistingBasket": False}
+AUTH_COOKIE = ".ASPXAUTH"  # set by /webapi/login, lives 1 year
 
 
 def _until(campaign: dict | None) -> date | None:
@@ -131,6 +134,7 @@ class NemligStore(RecipesMixin, OffersMixin):
         self._bearer: str | None = None
         self._xsrf: str | None = None
         self._logged_in = False
+        self._resumed = False  # logged in with a saved session, not a password
         self._settings: tuple[float, dict[str, Any], bool] | None = None  # (at, values, logged)
         self._slot_id = ""  # the basket's delivery time, for productbff calls
         self._lock = asyncio.Lock()
@@ -183,7 +187,8 @@ class NemligStore(RecipesMixin, OffersMixin):
                 return await self._send(method, url, **kwargs)
             except _Unauthorized:
                 if renew is None:
-                    raise StoreError("nemlig.com afviser login. Tjek email og kodeord.") from None
+                    bad = StoreError("nemlig.com afviser login. Tjek email og kodeord.")
+                    raise (expired(self.name) if self._resumed else bad) from None
                 try:
                     await renew()
                 except _Unauthorized:
@@ -225,19 +230,14 @@ class NemligStore(RecipesMixin, OffersMixin):
     async def _login(self) -> None:
         login = load_login(self.name)
         self._bearer = self._xsrf = None
+        if "session" in login:  # saved by `handle-mcp login`: no password (docs/adr/0003)
+            return await self._resume(login["session"])
         try:
             await self._renew_token()
             result = await self._send(
                 "POST",
                 f"{BASE}/webapi/login",
-                json={
-                    "Username": login["email"],
-                    "Password": login["password"],
-                    "CheckForExistingProducts": True,
-                    "DoMerge": True,
-                    "AppInstalled": False,
-                    "SaveExistingBasket": False,
-                },
+                json={"Username": login["email"], "Password": login["password"]} | LOGIN_FLAGS,
             )
         except _Unauthorized:
             raise StoreError("nemlig.com afviser login. Tjek email og kodeord.") from None
@@ -246,6 +246,29 @@ class NemligStore(RecipesMixin, OffersMixin):
         await self._renew_token()  # tokens change after login
         self._logged_in = True
         log.info("logged in to nemlig.com")
+        if session := self.session():  # an old saved password is replaced by the session
+            save_session(self.name, login["email"], session)
+
+    async def _resume(self, session: dict) -> None:
+        """Log in with the saved login cookie. A dead cookie gives an anonymous basket
+        (no email), not a 401: check it, never shop anonymously by mistake."""
+        if not session.get(AUTH_COOKIE):
+            raise expired(self.name)
+        self._client.cookies.set(AUTH_COOKIE, session[AUTH_COOKIE], domain=".nemlig.com")
+        try:
+            await self._renew_token()
+            basket = await self._send("GET", f"{BASE}/webapi/basket/GetBasket")
+        except _Unauthorized:
+            raise expired(self.name) from None
+        if not (basket or {}).get("Email"):
+            raise expired(self.name)
+        self._logged_in = self._resumed = True
+        log.info("resumed the nemlig.com session")
+
+    def session(self) -> dict[str, str] | None:
+        """The login cookie (1 year), saved instead of the password."""
+        value = next((c.value for c in self._client.cookies.jar if c.name == AUTH_COOKIE), None)
+        return {AUTH_COOKIE: value} if value else None
 
     async def _search_settings(self) -> dict[str, Any]:
         """Timestamp, timeslot and zone for search, from /webapi/ only: page URLs such as
@@ -334,7 +357,13 @@ class NemligStore(RecipesMixin, OffersMixin):
         )
 
     async def _basket(self) -> dict:
-        return await self._api("GET", f"{BASE}/webapi/basket/GetBasket") or {}
+        return self._own(await self._api("GET", f"{BASE}/webapi/basket/GetBasket") or {})
+
+    def _own(self, basket: dict) -> dict:
+        """A saved cookie that dies mid-run gives an anonymous basket, not a 401: stop there."""
+        if self._resumed and not basket.get("Email"):
+            raise expired(self.name)
+        return basket
 
     def _cart(self, basket: dict) -> Cart:
         lines = [
@@ -380,6 +409,8 @@ class NemligStore(RecipesMixin, OffersMixin):
         return self._cart(await self._basket())
 
     async def set_quantities(self, items: dict[str, int]) -> list[QuantityResult]:
+        if self._resumed:
+            await self._basket()  # never fill an anonymous basket
         results = []
         for product_id, quantity in items.items():
             payload = {

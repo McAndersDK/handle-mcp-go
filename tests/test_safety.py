@@ -91,8 +91,8 @@ def test_missing_login_says_how_to_fix(tmp_path, monkeypatch):
 def test_login_from_keychain_beats_file(tmp_path, monkeypatch):
     monkeypatch.setattr(registry, "CONFIG_DIR", tmp_path)
     (tmp_path / "fake.json").write_text('{"email": "file@example.com", "password": "f"}')
-    registry.keychain_set("fake", "kc@example.com", "k")
-    assert registry.load_login("fake") == {"email": "kc@example.com", "password": "k"}
+    registry.keychain_set("fake", "kc@example.com", {"token": "k"})
+    assert registry.load_login("fake") == {"email": "kc@example.com", "session": {"token": "k"}}
     monkeypatch.setenv("HANDLE_FAKE_EMAIL", "env@example.com")
     monkeypatch.setenv("HANDLE_FAKE_PASSWORD", "e")
     assert registry.load_login("fake")["email"] == "env@example.com"  # env wins

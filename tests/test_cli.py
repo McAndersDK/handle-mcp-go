@@ -1,6 +1,7 @@
 """`handle-mcp login/logout <store>`: saves in the keychain only when the login works."""
 
 import io
+import json
 import os
 
 import pytest
@@ -8,6 +9,9 @@ import pytest
 from handle_mcp import cli
 from handle_mcp import stores as registry
 from tests.conftest import FakeStore
+
+SAVED = {"email": "a@example.com", "session": {"token": "session-1"}}
+OLD = {"token": "old"}
 
 
 class CheckingStore(FakeStore):
@@ -31,7 +35,7 @@ def terminal(monkeypatch):
 def test_login_saves_a_working_login(terminal, memory_keychain, capsys):
     terminal("a@example.com", "rigtig")
     assert cli.run(["login", "fake"]) == 0
-    assert registry.keychain_get("fake") == {"email": "a@example.com", "password": "rigtig"}
+    assert registry.keychain_get("fake") == SAVED  # the session, never the password
     out = capsys.readouterr()
     assert out.out == ""  # nothing on stdout, and the password is never shown
     assert "rigtig" not in out.err and "Logget ind" in out.err
@@ -45,7 +49,7 @@ def test_wrong_password_saves_nothing(terminal, memory_keychain, capsys):
 
 
 def test_logout_removes_the_login(memory_keychain):
-    registry.keychain_set("fake", "a@example.com", "x")
+    registry.keychain_set("fake", "a@example.com", OLD)
     assert cli.run(["logout", "fake"]) == 0
     assert registry.keychain_get("fake") is None
 
@@ -56,10 +60,10 @@ def test_unknown_command_or_store_shows_usage(capsys):
 
 
 def test_failed_relogin_keeps_the_old_login(terminal, memory_keychain):
-    registry.keychain_set("fake", "a@example.com", "rigtig")
+    registry.keychain_set("fake", "a@example.com", OLD)
     terminal("a@example.com", "forkert")
     assert cli.run(["login", "fake"]) == 1
-    assert registry.keychain_get("fake") == {"email": "a@example.com", "password": "rigtig"}
+    assert registry.keychain_get("fake") == {"email": "a@example.com", "session": OLD}
     assert "HANDLE_FAKE_PASSWORD" not in os.environ  # the check leaves no env vars
 
 
@@ -103,7 +107,8 @@ def test_login_from_env_writes_an_owner_only_file(config_dir, monkeypatch, capsy
     assert config_dir.stat().st_mode & 0o777 == 0o700
     monkeypatch.delenv("HANDLE_FAKE_EMAIL")
     monkeypatch.delenv("HANDLE_FAKE_PASSWORD")
-    assert registry.load_login("fake") == {"email": "a@example.com", "password": "rigtig"}
+    assert registry.load_login("fake") == SAVED
+    assert "rigtig" not in path.read_text()
     out = capsys.readouterr()
     assert out.out == "" and "rigtig" not in out.err and str(path) in out.err
 
@@ -124,15 +129,15 @@ def test_login_from_env_without_env_vars_says_which(config_dir, monkeypatch, cap
 
 
 def test_logout_removes_the_file_too(config_dir, capsys):
-    registry.config_set("fake", "a@example.com", "x")
+    registry.config_set("fake", "a@example.com", OLD)
     assert cli.run(["logout", "fake"]) == 0
     assert not (config_dir / "fake.json").exists()
     assert "slettet fra config-filen." in capsys.readouterr().err  # one line, not two
 
 
 def test_logout_removes_file_and_keychain_in_one_line(config_dir, capsys):
-    registry.config_set("fake", "a@example.com", "x")
-    registry.keychain_set("fake", "a@example.com", "x")
+    registry.config_set("fake", "a@example.com", OLD)
+    registry.keychain_set("fake", "a@example.com", OLD)
     assert cli.run(["logout", "fake"]) == 0
     assert "slettet fra config-filen og nøgleringen." in capsys.readouterr().err
 
@@ -144,7 +149,7 @@ def test_logout_file_only_without_a_keychain(config_dir, monkeypatch, capsys):
         raise NoKeyringError("no backend")
 
     monkeypatch.setattr(registry.keyring, "delete_password", no_keychain)
-    registry.config_set("fake", "a@example.com", "x")
+    registry.config_set("fake", "a@example.com", OLD)
     assert cli.run(["logout", "fake"]) == 0
     assert "slettet fra config-filen." in capsys.readouterr().err
 
@@ -158,11 +163,11 @@ def test_login_from_env_tightens_an_existing_wide_file(config_dir, monkeypatch):
     monkeypatch.setenv("HANDLE_FAKE_PASSWORD", "rigtig")
     assert cli.run(["login", "fake", "--from-env"]) == 0
     assert old.stat().st_mode & 0o777 == 0o600
-    assert old.read_text() == '{"email": "a@example.com", "password": "rigtig"}'  # no old tail
+    assert old.read_text() == json.dumps(SAVED)  # no old tail, no password
 
 
 def test_login_from_env_warns_when_the_keychain_wins(config_dir, monkeypatch, capsys):
-    registry.keychain_set("fake", "old@example.com", "rigtig")
+    registry.keychain_set("fake", "old@example.com", OLD)
     monkeypatch.setenv("HANDLE_FAKE_EMAIL", "a@example.com")
     monkeypatch.setenv("HANDLE_FAKE_PASSWORD", "rigtig")
     assert cli.run(["login", "fake", "--from-env"]) == 0
@@ -183,3 +188,40 @@ def test_login_from_env_survives_a_broken_keychain_entry(
     assert cli.run(["login", "fake", "--from-env"]) == 0
     assert (config_dir / "fake.json").exists()
     assert "nøgleringen har også et login" in capsys.readouterr().err
+
+
+@pytest.mark.parametrize(
+    "secret", ['{"email": "a@example.com", "session": {}}', '{"session": {"t": "x"}}']
+)
+def test_entry_without_session_or_password_is_broken(memory_keychain, secret):
+    memory_keychain.secrets[(registry.KEYCHAIN_SERVICE, "fake")] = secret
+    with pytest.raises(registry.StoreError, match="Ugyldigt login i nøgleringen"):
+        registry.keychain_get("fake")
+
+
+def test_an_old_saved_password_is_still_read(memory_keychain):
+    """Saved before docs/adr/0003: read once, then the store replaces it with a session."""
+    memory_keychain.secrets[(registry.KEYCHAIN_SERVICE, "fake")] = json.dumps(
+        {"email": "a@example.com", "password": "rigtig"}
+    )
+    assert registry.load_login("fake") == {"email": "a@example.com", "password": "rigtig"}
+    registry.save_session("fake", "a@example.com", {"token": "new"})
+    assert registry.load_login("fake") == {"email": "a@example.com", "session": {"token": "new"}}
+    assert "rigtig" not in memory_keychain.secrets[(registry.KEYCHAIN_SERVICE, "fake")]
+
+
+def test_save_session_replaces_an_old_password_in_the_file(config_dir):
+    config_dir.mkdir(mode=0o700)
+    path = config_dir / "fake.json"
+    path.write_text('{"email": "a@example.com", "password": "rigtig"}')
+    path.chmod(0o600)
+    registry.save_session("fake", "a@example.com", {"token": "new"})
+    assert "rigtig" not in path.read_text()
+    assert path.stat().st_mode & 0o777 == 0o600
+
+
+def test_save_session_never_writes_when_env_vars_hold_the_login(config_dir, monkeypatch):
+    monkeypatch.setenv("HANDLE_FAKE_EMAIL", "a@example.com")
+    monkeypatch.setenv("HANDLE_FAKE_PASSWORD", "rigtig")
+    registry.save_session("fake", "a@example.com", {"token": "new"})
+    assert not (config_dir / "fake.json").exists()

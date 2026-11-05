@@ -63,7 +63,11 @@ class FakeNemlig:
             body = json.loads(request.content)
             if body["Password"] != "hemmeligt":
                 return httpx.Response(401)
-            return httpx.Response(200, json={"RedirectUrl": "/", "TimeslotUtc": "x"})
+            return httpx.Response(
+                200,
+                json={"RedirectUrl": "/", "TimeslotUtc": "x"},
+                headers={"set-cookie": ".ASPXAUTH=auth-1; Path=/; HttpOnly"},
+            )
         if path == "/webapi/v2/AppSettings/Website":
             return httpx.Response(200, json={"CombinedProductsAndSitecoreTimestamp": "ts-1"})
         if path.startswith("/productbff/") and self.api_queue:
@@ -91,6 +95,8 @@ class FakeNemlig:
                 return httpx.Response(200, json=hits)
             return httpx.Response(200, json=fixture("search"))
         if path == "/webapi/basket/GetBasket":
+            if ".ASPXAUTH=auth-1" not in request.headers.get("cookie", ""):
+                return httpx.Response(200, json={**self.basket, "Email": None})  # anonymous
             return httpx.Response(200, json=self.basket)
         if path == "/webapi/basket/AddToBasket":
             body = json.loads(request.content)
@@ -151,6 +157,63 @@ async def test_login_flow_then_authorized_calls(store, fake):
     assert login.headers["X-XSRF-TOKEN"] == "xsrf-1"
     basket = fake.requests[-1]
     assert basket.headers["Authorization"] == "Bearer bearer-2"  # fresh token after login
+
+
+@pytest.fixture
+def saved(monkeypatch, memory_keychain):
+    """No env vars: the login comes from the keychain."""
+    monkeypatch.delenv("HANDLE_NEMLIG_EMAIL")
+    monkeypatch.delenv("HANDLE_NEMLIG_PASSWORD")
+    return memory_keychain
+
+
+def _saved_login(keychain):
+    return json.loads(keychain.secrets[(registry.KEYCHAIN_SERVICE, "nemlig")])
+
+
+async def test_saved_session_logs_in_without_a_password(store, fake, saved):
+    registry.keychain_set("nemlig", "kunde@example.com", {".ASPXAUTH": "auth-1"})
+    assert (await store.get_cart()).lines
+    assert "/webapi/login" not in fake.paths()
+
+
+async def test_dead_session_says_log_in_again(store, fake, saved):
+    """A dead cookie gives an anonymous basket, not a 401: never shop anonymously."""
+    registry.keychain_set("nemlig", "kunde@example.com", {".ASPXAUTH": "old"})
+    with pytest.raises(StoreError, match="udløbet. Kør i en terminal: handle-mcp login nemlig"):
+        await store.get_cart()
+    assert "/webapi/login" not in fake.paths()
+
+
+async def test_session_that_dies_mid_run_never_fills_an_anonymous_basket(store, fake, saved):
+    registry.keychain_set("nemlig", "kunde@example.com", {".ASPXAUTH": "auth-1"})
+    await store.get_cart()
+    store._client.cookies.clear()  # nemlig drops the login: baskets turn anonymous, no 401
+    with pytest.raises(StoreError, match="udløbet"):
+        await store.set_quantities({"1": 2})
+    assert "/webapi/basket/AddToBasket" not in fake.paths()
+
+
+async def test_session_refused_on_every_call_says_log_in_again(store, fake, saved):
+    registry.keychain_set("nemlig", "kunde@example.com", {".ASPXAUTH": "auth-1"})
+    await store.get_cart()
+    fake.scripted["/webapi/basket/GetBasket"] = [401, 401, 401]
+    with pytest.raises(StoreError, match="udløbet"):
+        await store.get_cart()
+
+
+async def test_an_old_saved_password_is_replaced_by_the_session(store, fake, saved):
+    saved.secrets[(registry.KEYCHAIN_SERVICE, "nemlig")] = json.dumps(
+        {"email": "kunde@example.com", "password": "hemmeligt"}
+    )
+    await store.get_cart()
+    assert _saved_login(saved) == {"email": "kunde@example.com", "session": {".ASPXAUTH": "auth-1"}}
+
+
+async def test_env_vars_are_never_saved(store, fake, memory_keychain):
+    await store.get_cart()
+    assert store.session() == {".ASPXAUTH": "auth-1"}
+    assert not memory_keychain.secrets
 
 
 async def test_logs_in_only_once(store, fake):

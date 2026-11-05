@@ -32,7 +32,7 @@ from handle_mcp.models import (
     RecipeDetails,
     StoreTerms,
 )
-from handle_mcp.stores import StoreError, has_login, load_login
+from handle_mcp.stores import StoreError, expired, has_login, load_login, save_session
 from handle_mcp.stores._http import request
 
 log = logging.getLogger(__name__)
@@ -41,6 +41,7 @@ GIGYA = "https://accounts.eu1.gigya.com"
 # Public keys from bilkatogo.dk's own JavaScript. Not secrets: every visitor's browser sends them.
 GIGYA_API_KEY = "3_tA6BbV434FQqN73HnUG1KA3qFv8KiG4OqLu9eWPh7sKRqRizH5Vfv5Larmgrb4I2"
 GIGYA_BAD_LOGIN = 403042
+GIGYA_RATE_LIMIT = 403048  # with 5xxxxx (Gigya's server errors): try later, the login is fine
 API = "https://api.bilkatogo.dk/api"
 ALGOLIA = "https://f9vbjlr1bk-dsn.algolia.net/1/indexes/*/queries"
 ALGOLIA_HEADERS = {
@@ -136,12 +137,17 @@ class _Refused(StoreError):
     """Bilka answered HTTP 200 with an error body."""
 
 
+class _GigyaRefused(StoreError):
+    """Gigya answered with an errorCode: bad login or a dead login_token."""
+
+
 class BilkaStore:
     name = "bilkatogo"
 
     def __init__(self, client: httpx.AsyncClient | None = None) -> None:
         self._client = client or httpx.AsyncClient(timeout=30)
         self._jwt: str | None = None
+        self._token: str | None = None  # Gigya login_token: saved instead of the password
         self._jwt_until = datetime.min.replace(tzinfo=TZ)
         self._lock = asyncio.Lock()
 
@@ -161,26 +167,32 @@ class BilkaStore:
     async def _gigya(self, method: str, form: dict[str, str]) -> dict:
         data = self._json(await self._send("POST", f"{GIGYA}/{method}", data=form), method)
         if data.get("errorCode") == GIGYA_BAD_LOGIN:
-            raise StoreError("BilkaToGo afviser login. Tjek email og kodeord.")
-        if data.get("errorCode", 0) != 0:
-            raise StoreError(
+            raise _GigyaRefused("BilkaToGo afviser login. Tjek email og kodeord.")
+        code = data.get("errorCode", 0)
+        if code == GIGYA_RATE_LIMIT or (isinstance(code, int) and code >= 500000):
+            raise StoreError("BilkaToGo-login svarer ikke lige nu. Prøv igen om lidt.")
+        if code != 0:
+            raise _GigyaRefused(
                 f"BilkaToGo login fejlede: {data.get('errorMessage', data['errorCode'])}"
             )
         return data
 
     async def _login(self) -> None:
         login = load_login(self.name)
-        form = {"loginID": login["email"], "password": login["password"], "apiKey": GIGYA_API_KEY}
-        session = (await self._gigya("accounts.login", form | {"httpStatusCodes": "true"})).get(
-            "sessionInfo"
-        )
-        token = (session or {}).get("cookieValue")
-        jwt_form = {
-            "apiKey": GIGYA_API_KEY,
-            "login_token": token or "",
-            "expiration": str(JWT_SECONDS),
-        }
-        jwt = (await self._gigya("accounts.getJWT", jwt_form)).get("id_token")
+        if "session" in login:  # saved by `handle-mcp login`: no password (docs/adr/0003)
+            token = login["session"].get("login_token")
+            if not token:
+                raise expired(self.name)
+            try:
+                jwt = await self._jwt_for(token)
+            except _GigyaRefused:  # Gigya refuses the token: the session is over
+                raise expired(self.name) from None
+        else:
+            form = {"loginID": login["email"], "password": login["password"]}
+            form |= {"apiKey": GIGYA_API_KEY, "httpStatusCodes": "true"}
+            session = (await self._gigya("accounts.login", form)).get("sessionInfo")
+            token = (session or {}).get("cookieValue")
+            jwt = await self._jwt_for(token) if token else None
         if not token or not jwt:
             raise StoreError("BilkaToGo login svarede uden token. API'et kan have ændret sig.")
         # Never send the `cart` cookie: LoginJWT would REPLACE the account's cart with it.
@@ -190,9 +202,18 @@ class BilkaStore:
         )
         if resp.status_code != 200:
             raise StoreError(f"BilkaToGo login fejlede ({resp.status_code}).")
-        self._jwt = jwt
+        self._jwt, self._token = jwt, token
         self._jwt_until = datetime.now(TZ) + timedelta(seconds=JWT_SECONDS - 300)
         log.info("logged in to BilkaToGo")
+        if "password" in login:  # an old saved password is replaced by the session
+            save_session(self.name, login["email"], {"login_token": token})
+
+    async def _jwt_for(self, token: str) -> str | None:
+        form = {"apiKey": GIGYA_API_KEY, "login_token": token, "expiration": str(JWT_SECONDS)}
+        return (await self._gigya("accounts.getJWT", form)).get("id_token")
+
+    def session(self) -> dict[str, str] | None:
+        return {"login_token": self._token} if self._token else None
 
     async def _shop(self, method: str, path: str, params: dict[str, Any] | None = None) -> dict:
         for fresh in (False, True):

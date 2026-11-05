@@ -1,12 +1,14 @@
 """Command line for a human in a terminal: save or remove a store login.
 
-    handle-mcp login nemlig             asks for email and password, checks them, saves in the keychain
-    handle-mcp login nemlig --from-env  reads HANDLE_NEMLIG_EMAIL/_PASSWORD, checks them, saves
-                                        in ~/.config/handle-mcp/nemlig.json (chmod 600). For a
-                                        headless machine or an AI agent with no terminal.
+    handle-mcp login nemlig             asks for email and password, logs in, saves the store's
+                                        session in the keychain
+    handle-mcp login nemlig --from-env  reads HANDLE_NEMLIG_EMAIL/_PASSWORD, logs in, saves the
+                                        session in ~/.config/handle-mcp/nemlig.json (chmod 600).
+                                        For a headless machine or an AI agent with no terminal.
     handle-mcp logout nemlig            removes the login from the keychain and the file
 
-The password is never echoed or logged. Only `--from-env` writes it to disk, owner-readable only.
+The password is used for one login and then forgotten: never saved, echoed or logged. Only the
+session the store gives back is saved (docs/adr/0003). When it expires, log in again.
 """
 
 from __future__ import annotations
@@ -49,17 +51,17 @@ def run(args: list[str]) -> int:
     if not email or not password:
         _say("Email og kodeord skal udfyldes. Intet er gemt.")
         return 1
-    try:  # check first, save after: a failed check never touches a saved login
-        _check(store, email, password)
+    try:  # log in first, save after: a failed login never touches a saved one
+        session = _check(store, email, password)
     except registry.StoreError as exc:
         _say(f"Login blev ikke gemt: {exc}\nEt tidligere gemt login er uændret.")
         return 1
     try:
-        registry.keychain_set(store, email, password)
+        registry.keychain_set(store, email, session)
     except KeyringError as exc:
         _say(f"Kunne ikke gemme i nøgleringen: {exc}")
         return 1
-    _say(f"Logget ind på {store}. Login er gemt i nøgleringen.")
+    _say(f"Logget ind på {store}. Sessionen er gemt i nøgleringen. Kodeordet er ikke gemt.")
     return 0
 
 
@@ -84,13 +86,16 @@ def _login_from_env(store: str) -> int:
     if not email or not password:
         _say(f"Sæt {prefix}EMAIL og {prefix}PASSWORD, og kør igen. Intet er gemt.")
         return 1
-    try:  # check first, save after: a failed check never touches a saved login
-        _check(store, email, password)
+    try:  # log in first, save after: a failed login never touches a saved one
+        session = _check(store, email, password)
     except registry.StoreError as exc:
         _say(f"Login blev ikke gemt: {exc}\nEt tidligere gemt login er uændret.")
         return 1
-    path = registry.config_set(store, email, password)
-    _say(f"Logget ind på {store}. Login er gemt i {path} (kun du kan læse den).")
+    path = registry.config_set(store, email, session)
+    _say(
+        f"Logget ind på {store}. Sessionen er gemt i {path} (kun du kan læse den). "
+        f"Kodeordet er ikke gemt: fjern {prefix}PASSWORD igen."
+    )
     try:
         shadowed = registry.keychain_get(store) is not None
     except registry.StoreError:  # a broken entry: load_login will complain about it too
@@ -103,17 +108,23 @@ def _login_from_env(store: str) -> int:
     return 0
 
 
-def _check(store: str, email: str, password: str) -> None:
-    """A real, read-only login with these values. They win over saved ones via env vars."""
+def _check(store: str, email: str, password: str) -> dict[str, str]:
+    """A real, read-only login with these values (they win over saved ones via env vars).
+    Returns the session to save."""
     prefix = f"HANDLE_{store.upper()}_"
     keys = {prefix + "EMAIL": email, prefix + "PASSWORD": password}
     before = {k: os.environ.get(k) for k in keys}
     os.environ.update(keys)
+    instance = registry.STORES[store]()
     try:
-        asyncio.run(registry.STORES[store]().get_cart())
+        asyncio.run(instance.get_cart())
     finally:
         for k, v in before.items():
             if v is None:
                 os.environ.pop(k, None)
             else:
                 os.environ[k] = v
+    session = instance.session()
+    if not session:
+        raise registry.StoreError(f"{store} gav ingen session tilbage. API'et kan have ændret sig.")
+    return session
