@@ -1,0 +1,156 @@
+{
+ "answer": {
+  "delivery": null,
+  "fees": {
+   "levering": "39.00",
+   "pakkeservice": "39.00"
+  },
+  "lines": [
+   {
+    "line_total": "25.00",
+    "name": "Bananer",
+    "product_id": "18381",
+    "quantity": 10
+   },
+   {
+    "line_total": "7.00",
+    "name": "Agurk",
+    "product_id": "18364",
+    "quantity": 1
+   },
+   {
+    "line_total": "17.00",
+    "name": "Yoghurt m. pære og banan 1,4% fedt",
+    "product_id": "19789",
+    "quantity": 1
+   },
+   {
+    "line_total": "10.00",
+    "name": "Flydende smør og rapsolie til madlavning",
+    "product_id": "185370",
+    "quantity": 1
+   },
+   {
+    "line_total": "29.00",
+    "name": "Mini Mix",
+    "product_id": "75191",
+    "quantity": 1
+   }
+  ],
+  "minimum_met": false,
+  "minimum_order": "500.00",
+  "products_total": "88.00",
+  "store": "bilkatogo",
+  "total": "166.00",
+  "warnings": [
+   "373,00 kr. fra minimumskøb på 500,00 kr. alt inkl. for at få hjemmelevering"
+  ]
+ },
+ "args": [],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   "login_token": "st2.fake-login-token"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "get_cart",
+ "name": "cart_no_slot",
+ "requests": [
+  {
+   "body": [
+    [
+     "loginID",
+     "kunde@example.com"
+    ],
+    [
+     "password",
+     "hemmeligt"
+    ],
+    [
+     "apiKey",
+     "3_tA6BbV434FQqN73HnUG1KA3qFv8KiG4OqLu9eWPh7sKRqRizH5Vfv5Larmgrb4I2"
+    ],
+    [
+     "httpStatusCodes",
+     "true"
+    ]
+   ],
+   "cookies": [],
+   "headers": {
+    "content-type": "application/x-www-form-urlencoded"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://accounts.eu1.gigya.com/accounts.login"
+  },
+  {
+   "body": [
+    [
+     "apiKey",
+     "3_tA6BbV434FQqN73HnUG1KA3qFv8KiG4OqLu9eWPh7sKRqRizH5Vfv5Larmgrb4I2"
+    ],
+    [
+     "login_token",
+     "st2.fake-login-token"
+    ],
+    [
+     "expiration",
+     "86400"
+    ]
+   ],
+   "cookies": [],
+   "headers": {
+    "content-type": "application/x-www-form-urlencoded"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://accounts.eu1.gigya.com/accounts.getJWT"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "jwt_token": "eyFake.jwt.token"
+   },
+   "method": "POST",
+   "params": [
+    [
+     "u",
+     "w"
+    ]
+   ],
+   "url": "https://api.bilkatogo.dk/api/auth/LoginJWT"
+  },
+  {
+   "body": null,
+   "cookies": [
+    "cart"
+   ],
+   "headers": {
+    "jwt_token": "eyFake.jwt.token"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "u",
+     "w"
+    ],
+    [
+     "extra",
+     "deliveryAddress,deliveryDate"
+    ]
+   ],
+   "url": "https://api.bilkatogo.dk/api/shop/v6/Cart"
+  }
+ ],
+ "session_after": {
+  "login_token": "st2.fake-login-token"
+ },
+ "store": "bilkatogo"
+}

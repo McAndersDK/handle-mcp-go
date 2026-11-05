@@ -1,0 +1,395 @@
+{
+ "answer": [
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Danske Familiegårde",
+   "campaign": "Fast mixtilbud",
+   "category": "Kød & fisk",
+   "ean": null,
+   "id": "5031743",
+   "max_per_order": null,
+   "name": "Kyllingebrystfilet øko.",
+   "offer_text": "2 for 185 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "98.37",
+   "size": "2 stk. / 225-300 g / Danske Familiegårde",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "437.20"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Danske Familiegårde",
+   "campaign": "Fast mixtilbud",
+   "category": "Kød & fisk",
+   "ean": null,
+   "id": "5056387",
+   "max_per_order": null,
+   "name": "Kyllingebrystfilet",
+   "offer_text": "3 for 118 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "43.95",
+   "size": "280 g / Gårdkylling / Danske Familiegårde",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "156.96"
+  },
+  {
+   "available": true,
+   "before_price": "139.95",
+   "brand": "Danske Familiegårde",
+   "campaign": null,
+   "category": "Kød & fisk",
+   "ean": null,
+   "id": "5056393",
+   "max_per_order": null,
+   "name": "Kyllingebrystfilet",
+   "offer_text": "-25 %",
+   "offer_until": "2026-11-30",
+   "on_offer": true,
+   "price": "104.96",
+   "size": "1 kg / Gårdkylling / Danske Familiegårde",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "104.96"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Rose",
+   "campaign": null,
+   "category": "Kød & fisk",
+   "ean": null,
+   "id": "5064235",
+   "max_per_order": null,
+   "name": "Kyllingebrystfilet",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "82.75",
+   "size": "650 g / Rose",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "127.31"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Danske Familiegårde",
+   "campaign": "Fast mixtilbud",
+   "category": "Kød & fisk",
+   "ean": null,
+   "id": "5056391",
+   "max_per_order": null,
+   "name": "Kyllingebrystfilet",
+   "offer_text": "2 for 150 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "79.95",
+   "size": "550 g / Gårdkylling / Danske Familiegårde",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "145.36"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Hopballe Mølle",
+   "campaign": "Fast mixtilbud",
+   "category": "Kød & fisk",
+   "ean": null,
+   "id": "5065343",
+   "max_per_order": null,
+   "name": "Kyllingebrystfilet m. skind",
+   "offer_text": "2 for 206,95 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "113.50",
+   "size": "320 g / Hopballe Mølle",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "354.69"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Danpo",
+   "campaign": null,
+   "category": "Kød & fisk",
+   "ean": null,
+   "id": "5602318",
+   "max_per_order": null,
+   "name": "Kyllingebrystfilet",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "118.95",
+   "size": "1,10 kg / Danpo",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "108.14"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Rose",
+   "campaign": "Fast mixtilbud",
+   "category": "Kød & fisk",
+   "ean": null,
+   "id": "5069520",
+   "max_per_order": null,
+   "name": "Kyllingebrystfilet",
+   "offer_text": "2 for 190 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "117.95",
+   "size": "1,0 kg / Rose",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "117.95"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Kalu",
+   "campaign": "Fast mixtilbud",
+   "category": "Kød & fisk",
+   "ean": null,
+   "id": "5030649",
+   "max_per_order": null,
+   "name": "Kyllingebrystfilet",
+   "offer_text": "2 for 152,95 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "85.95",
+   "size": "2 stk. / 340 g / Nature & Respect",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "252.79"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Danske Familiegårde",
+   "campaign": "Fast mixtilbud",
+   "category": "Kød & fisk",
+   "ean": null,
+   "id": "5606249",
+   "max_per_order": null,
+   "name": "Marry Me Chicken",
+   "offer_text": "2 for 75 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "46.25",
+   "size": "300 g / Gårdkylling / Danske Familiegårde",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "154.17"
+  }
+ ],
+ "args": [
+  "kyllingebryst",
+  10
+ ],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   ".ASPXAUTH": "auth-1"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "search",
+ "name": "search_kyllingebryst_10",
+ "requests": [
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": {
+    "AppInstalled": false,
+    "CheckForExistingProducts": true,
+    "DoMerge": true,
+    "Password": "hemmeligt",
+    "SaveExistingBasket": false,
+    "Username": "kunde@example.com"
+   },
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "content-type": "application/json",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/login"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/v2/AppSettings/Website"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/basket/GetBasket"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "query",
+     "kyllingebryst"
+    ],
+    [
+     "take",
+     "10"
+    ],
+    [
+     "skip",
+     "0"
+    ],
+    [
+     "recipeCount",
+     "0"
+    ],
+    [
+     "timestamp",
+     "ts-1"
+    ],
+    [
+     "timeslotUtc",
+     "2026110316-60-180"
+    ],
+    [
+     "deliveryZoneId",
+     "3"
+    ]
+   ],
+   "url": "https://webapi.prod.knl.nemlig.it/searchgateway/api/search"
+  }
+ ],
+ "session_after": {
+  ".ASPXAUTH": "auth-1"
+ },
+ "store": "nemlig"
+}

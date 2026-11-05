@@ -1,0 +1,270 @@
+{
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   ".ASPXAUTH": "auth-1"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "session": {
+   ".ASPXAUTH": "auth-1"
+  }
+ },
+ "login": "session",
+ "name": "cart_session_refused_everywhere",
+ "session_after": {
+  ".ASPXAUTH": "auth-1"
+ },
+ "steps": [
+  {
+   "answer": {
+    "delivery": "Tirsdag 3. nov. kl. 17-20",
+    "fees": {
+     "levering": "29.00",
+     "poser": "6.00"
+    },
+    "lines": [
+     {
+      "line_total": "99.95",
+      "name": "Black Coffee Blend Supreme",
+      "product_id": "5064654",
+      "quantity": 1
+     },
+     {
+      "line_total": "47.50",
+      "name": "Cocio kakaomælk",
+      "product_id": "701025",
+      "quantity": 2
+     }
+    ],
+    "minimum_met": false,
+    "minimum_order": "300.00",
+    "products_total": "147.45",
+    "store": "nemlig",
+    "total": "182.45",
+    "warnings": [
+     "Minimumskøb er 300 kr."
+    ]
+   },
+   "args": [],
+   "method": "get_cart",
+   "requests": [
+    {
+     "body": null,
+     "cookies": [
+      ".ASPXAUTH"
+     ],
+     "headers": {
+      "accept": "application/json, text/plain, */*",
+      "device-size": "desktop",
+      "platform": "web",
+      "referer": "https://www.nemlig.com/",
+      "user-agent": "Mozilla/5.0 (handle-mcp)",
+      "version": "11.201.0"
+     },
+     "method": "GET",
+     "params": [],
+     "url": "https://www.nemlig.com/webapi/Token"
+    },
+    {
+     "body": null,
+     "cookies": [
+      ".ASPXAUTH"
+     ],
+     "headers": {
+      "accept": "application/json, text/plain, */*",
+      "authorization": "Bearer bearer-1",
+      "device-size": "desktop",
+      "platform": "web",
+      "referer": "https://www.nemlig.com/",
+      "user-agent": "Mozilla/5.0 (handle-mcp)",
+      "version": "11.201.0"
+     },
+     "method": "GET",
+     "params": [],
+     "url": "https://www.nemlig.com/webapi/AntiForgery"
+    },
+    {
+     "body": null,
+     "cookies": [
+      ".ASPXAUTH"
+     ],
+     "headers": {
+      "accept": "application/json, text/plain, */*",
+      "authorization": "Bearer bearer-1",
+      "device-size": "desktop",
+      "platform": "web",
+      "referer": "https://www.nemlig.com/",
+      "user-agent": "Mozilla/5.0 (handle-mcp)",
+      "version": "11.201.0",
+      "x-xsrf-token": "xsrf-1"
+     },
+     "method": "GET",
+     "params": [],
+     "url": "https://www.nemlig.com/webapi/basket/GetBasket"
+    },
+    {
+     "body": null,
+     "cookies": [
+      ".ASPXAUTH"
+     ],
+     "headers": {
+      "accept": "application/json, text/plain, */*",
+      "authorization": "Bearer bearer-1",
+      "device-size": "desktop",
+      "platform": "web",
+      "referer": "https://www.nemlig.com/",
+      "user-agent": "Mozilla/5.0 (handle-mcp)",
+      "version": "11.201.0",
+      "x-xsrf-token": "xsrf-1"
+     },
+     "method": "GET",
+     "params": [],
+     "url": "https://www.nemlig.com/webapi/basket/GetBasket"
+    }
+   ]
+  },
+  {
+   "args": [],
+   "error": {
+    "message": "Login til nemlig er udløbet. Kør i en terminal: handle-mcp login nemlig",
+    "type": "StoreError"
+   },
+   "method": "get_cart",
+   "requests": [
+    {
+     "body": null,
+     "cookies": [
+      ".ASPXAUTH"
+     ],
+     "headers": {
+      "accept": "application/json, text/plain, */*",
+      "authorization": "Bearer bearer-1",
+      "device-size": "desktop",
+      "platform": "web",
+      "referer": "https://www.nemlig.com/",
+      "user-agent": "Mozilla/5.0 (handle-mcp)",
+      "version": "11.201.0",
+      "x-xsrf-token": "xsrf-1"
+     },
+     "method": "GET",
+     "params": [],
+     "url": "https://www.nemlig.com/webapi/basket/GetBasket"
+    },
+    {
+     "body": null,
+     "cookies": [
+      ".ASPXAUTH"
+     ],
+     "headers": {
+      "accept": "application/json, text/plain, */*",
+      "device-size": "desktop",
+      "platform": "web",
+      "referer": "https://www.nemlig.com/",
+      "user-agent": "Mozilla/5.0 (handle-mcp)",
+      "version": "11.201.0",
+      "x-xsrf-token": "xsrf-1"
+     },
+     "method": "GET",
+     "params": [],
+     "url": "https://www.nemlig.com/webapi/Token"
+    },
+    {
+     "body": null,
+     "cookies": [
+      ".ASPXAUTH"
+     ],
+     "headers": {
+      "accept": "application/json, text/plain, */*",
+      "authorization": "Bearer bearer-2",
+      "device-size": "desktop",
+      "platform": "web",
+      "referer": "https://www.nemlig.com/",
+      "user-agent": "Mozilla/5.0 (handle-mcp)",
+      "version": "11.201.0",
+      "x-xsrf-token": "xsrf-1"
+     },
+     "method": "GET",
+     "params": [],
+     "url": "https://www.nemlig.com/webapi/AntiForgery"
+    },
+    {
+     "body": null,
+     "cookies": [
+      ".ASPXAUTH"
+     ],
+     "headers": {
+      "accept": "application/json, text/plain, */*",
+      "authorization": "Bearer bearer-2",
+      "device-size": "desktop",
+      "platform": "web",
+      "referer": "https://www.nemlig.com/",
+      "user-agent": "Mozilla/5.0 (handle-mcp)",
+      "version": "11.201.0",
+      "x-xsrf-token": "xsrf-1"
+     },
+     "method": "GET",
+     "params": [],
+     "url": "https://www.nemlig.com/webapi/basket/GetBasket"
+    },
+    {
+     "body": null,
+     "cookies": [
+      ".ASPXAUTH"
+     ],
+     "headers": {
+      "accept": "application/json, text/plain, */*",
+      "device-size": "desktop",
+      "platform": "web",
+      "referer": "https://www.nemlig.com/",
+      "user-agent": "Mozilla/5.0 (handle-mcp)",
+      "version": "11.201.0"
+     },
+     "method": "GET",
+     "params": [],
+     "url": "https://www.nemlig.com/webapi/Token"
+    },
+    {
+     "body": null,
+     "cookies": [
+      ".ASPXAUTH"
+     ],
+     "headers": {
+      "accept": "application/json, text/plain, */*",
+      "authorization": "Bearer bearer-3",
+      "device-size": "desktop",
+      "platform": "web",
+      "referer": "https://www.nemlig.com/",
+      "user-agent": "Mozilla/5.0 (handle-mcp)",
+      "version": "11.201.0"
+     },
+     "method": "GET",
+     "params": [],
+     "url": "https://www.nemlig.com/webapi/AntiForgery"
+    },
+    {
+     "body": null,
+     "cookies": [
+      ".ASPXAUTH"
+     ],
+     "headers": {
+      "accept": "application/json, text/plain, */*",
+      "authorization": "Bearer bearer-3",
+      "device-size": "desktop",
+      "platform": "web",
+      "referer": "https://www.nemlig.com/",
+      "user-agent": "Mozilla/5.0 (handle-mcp)",
+      "version": "11.201.0",
+      "x-xsrf-token": "xsrf-1"
+     },
+     "method": "GET",
+     "params": [],
+     "url": "https://www.nemlig.com/webapi/basket/GetBasket"
+    }
+   ]
+  }
+ ],
+ "store": "nemlig"
+}

@@ -1,0 +1,16 @@
+{
+ "args": [],
+ "env": {},
+ "error": {
+  "message": "Intet login til nemlig. Kør i en terminal: handle-mcp login nemlig. Uden terminal: sæt HANDLE_NEMLIG_EMAIL og _PASSWORD, og kør: handle-mcp login nemlig --from-env",
+  "type": "StoreError"
+ },
+ "keychain_after": null,
+ "keychain_before": null,
+ "login": null,
+ "method": "get_cart",
+ "name": "cart_no_login",
+ "requests": [],
+ "session_after": null,
+ "store": "nemlig"
+}

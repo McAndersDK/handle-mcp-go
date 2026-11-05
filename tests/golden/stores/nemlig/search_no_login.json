@@ -1,0 +1,18 @@
+{
+ "args": [
+  "mælk"
+ ],
+ "env": {},
+ "error": {
+  "message": "nemlig-søgning kræver login (tilbud gør ikke). Gem et login: handle-mcp login nemlig",
+  "type": "StoreError"
+ },
+ "keychain_after": null,
+ "keychain_before": null,
+ "login": null,
+ "method": "search",
+ "name": "search_no_login",
+ "requests": [],
+ "session_after": null,
+ "store": "nemlig"
+}

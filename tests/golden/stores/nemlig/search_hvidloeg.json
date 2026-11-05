@@ -1,0 +1,395 @@
+{
+ "answer": [
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": null,
+   "category": "Grønt",
+   "ean": null,
+   "id": "100160",
+   "max_per_order": null,
+   "name": "Hvidløg øko.",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "5.00",
+   "size": "1 stk.",
+   "store": "nemlig",
+   "unit": "stk",
+   "unit_price": "5.00"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": null,
+   "category": "Grønt",
+   "ean": null,
+   "id": "5053384",
+   "max_per_order": null,
+   "name": "Hvidløg i net",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "13.33",
+   "size": "200 g",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "66.65"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Hvidløg & Vin",
+   "campaign": null,
+   "category": "Grønt",
+   "ean": null,
+   "id": "1101017",
+   "max_per_order": null,
+   "name": "Hvidløg dansk øko.",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "12.00",
+   "size": "1 stk. / Stevns",
+   "store": "nemlig",
+   "unit": "stk",
+   "unit_price": "12.00"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": null,
+   "category": "Grønt",
+   "ean": null,
+   "id": "5007165",
+   "max_per_order": null,
+   "name": "Hvidløg Solo",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "25.00",
+   "size": "250 g",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "100.00"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Prince de bretagne",
+   "campaign": null,
+   "category": "Grønt",
+   "ean": null,
+   "id": "5023521",
+   "max_per_order": null,
+   "name": "Hvidløg røde/pink",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "35.00",
+   "size": "3 stk.",
+   "store": "nemlig",
+   "unit": "stk",
+   "unit_price": "11.67"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": null,
+   "category": "Grønt",
+   "ean": null,
+   "id": "5019312",
+   "max_per_order": null,
+   "name": "Hvidløg (sorte) øko.",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "55.00",
+   "size": "2 stk. / 80 g",
+   "store": "nemlig",
+   "unit": "stk",
+   "unit_price": "27.50"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Ardo",
+   "campaign": "Fast mixtilbud",
+   "category": "Frost",
+   "ean": null,
+   "id": "5044354",
+   "max_per_order": null,
+   "name": "Hvidløg (finthakket)",
+   "offer_text": "3 for 70 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "28.50",
+   "size": "250 g / frost / Ardo",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "114.00"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Santa Maria",
+   "campaign": "Fast mixtilbud",
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5034910",
+   "max_per_order": null,
+   "name": "Hvidløgspulver",
+   "offer_text": "3 for 79 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "28.50",
+   "size": "49 g / Santa Maria",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "581.63"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": "Fast mixtilbud",
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5062814",
+   "max_per_order": null,
+   "name": "Hvidløg i krydderolie",
+   "offer_text": "2 for 33,50 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "17.80",
+   "size": "290 g / 180 g / Taste of Nature",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "98.89"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": "Fast mixtilbud",
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5062815",
+   "max_per_order": null,
+   "name": "Hvidløg i chiliolie",
+   "offer_text": "2 for 33,50 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "17.80",
+   "size": "290 g / 180 g / Taste of Nature",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "98.89"
+  }
+ ],
+ "args": [
+  "hvidløg",
+  50
+ ],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   ".ASPXAUTH": "auth-1"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "search",
+ "name": "search_hvidloeg",
+ "requests": [
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": {
+    "AppInstalled": false,
+    "CheckForExistingProducts": true,
+    "DoMerge": true,
+    "Password": "hemmeligt",
+    "SaveExistingBasket": false,
+    "Username": "kunde@example.com"
+   },
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "content-type": "application/json",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/login"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/v2/AppSettings/Website"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/basket/GetBasket"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "query",
+     "hvidløg"
+    ],
+    [
+     "take",
+     "50"
+    ],
+    [
+     "skip",
+     "0"
+    ],
+    [
+     "recipeCount",
+     "0"
+    ],
+    [
+     "timestamp",
+     "ts-1"
+    ],
+    [
+     "timeslotUtc",
+     "2026110316-60-180"
+    ],
+    [
+     "deliveryZoneId",
+     "3"
+    ]
+   ],
+   "url": "https://webapi.prod.knl.nemlig.it/searchgateway/api/search"
+  }
+ ],
+ "session_after": {
+  ".ASPXAUTH": "auth-1"
+ },
+ "store": "nemlig"
+}

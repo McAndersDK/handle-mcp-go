@@ -1,0 +1,1971 @@
+{
+ "calls": [
+  {
+   "arguments": {
+    "query": "mælk",
+    "stores": [
+     "fake"
+    ]
+   },
+   "is_error": false,
+   "name": "search_products",
+   "response": {
+    "id": 3,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"mælk 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ]\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"mælk 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ]\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"mælk 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ]\n}"
+  },
+  {
+   "arguments": {
+    "stores": [
+     "fake"
+    ]
+   },
+   "is_error": false,
+   "name": "list_offers",
+   "response": {
+    "id": 4,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"Tilbud 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ]\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"Tilbud 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ]\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"Tilbud 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ]\n}"
+  },
+  {
+   "arguments": {
+    "query": "karry",
+    "stores": [
+     "fake"
+    ]
+   },
+   "is_error": false,
+   "name": "search_recipes",
+   "response": {
+    "id": 5,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r1\",\n      \"name\": \"karry til 4\",\n      \"url\": \"https://example.com/r1\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": null\n    }\n  ]\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r1\",\n      \"name\": \"karry til 4\",\n      \"url\": \"https://example.com/r1\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": null\n    }\n  ]\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r1\",\n      \"name\": \"karry til 4\",\n      \"url\": \"https://example.com/r1\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": null\n    }\n  ]\n}"
+  },
+  {
+   "arguments": {
+    "persons": 6,
+    "recipe": "r1",
+    "store": "fake"
+   },
+   "is_error": false,
+   "name": "get_recipe",
+   "response": {
+    "id": 6,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"store\": \"fake\",\n  \"id\": \"r1\",\n  \"name\": \"Grød\",\n  \"url\": \"https://example.com/r1\",\n  \"persons\": 6,\n  \"min_persons\": null,\n  \"max_persons\": null,\n  \"time\": null,\n  \"description\": null,\n  \"image\": null,\n  \"ingredients\": [],\n  \"ingredients_persons\": null,\n  \"method\": [],\n  \"tip\": null,\n  \"items\": [\n    {\n      \"ingredient\": \"mælk\",\n      \"product\": {\n        \"id\": \"1\",\n        \"name\": \"Mælk\",\n        \"price\": \"12.95\",\n        \"quantity\": 2,\n        \"size\": \"1 l\",\n        \"available\": true,\n        \"offer_text\": null\n      },\n      \"have_at_home\": false,\n      \"alternatives\": []\n    }\n  ],\n  \"total\": \"25.90\"\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"store\": \"fake\",\n  \"id\": \"r1\",\n  \"name\": \"Grød\",\n  \"url\": \"https://example.com/r1\",\n  \"persons\": 6,\n  \"min_persons\": null,\n  \"max_persons\": null,\n  \"time\": null,\n  \"description\": null,\n  \"image\": null,\n  \"ingredients\": [],\n  \"ingredients_persons\": null,\n  \"method\": [],\n  \"tip\": null,\n  \"items\": [\n    {\n      \"ingredient\": \"mælk\",\n      \"product\": {\n        \"id\": \"1\",\n        \"name\": \"Mælk\",\n        \"price\": \"12.95\",\n        \"quantity\": 2,\n        \"size\": \"1 l\",\n        \"available\": true,\n        \"offer_text\": null\n      },\n      \"have_at_home\": false,\n      \"alternatives\": []\n    }\n  ],\n  \"total\": \"25.90\"\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"store\": \"fake\",\n  \"id\": \"r1\",\n  \"name\": \"Grød\",\n  \"url\": \"https://example.com/r1\",\n  \"persons\": 6,\n  \"min_persons\": null,\n  \"max_persons\": null,\n  \"time\": null,\n  \"description\": null,\n  \"image\": null,\n  \"ingredients\": [],\n  \"ingredients_persons\": null,\n  \"method\": [],\n  \"tip\": null,\n  \"items\": [\n    {\n      \"ingredient\": \"mælk\",\n      \"product\": {\n        \"id\": \"1\",\n        \"name\": \"Mælk\",\n        \"price\": \"12.95\",\n        \"quantity\": 2,\n        \"size\": \"1 l\",\n        \"available\": true,\n        \"offer_text\": null\n      },\n      \"have_at_home\": false,\n      \"alternatives\": []\n    }\n  ],\n  \"total\": \"25.90\"\n}"
+  },
+  {
+   "arguments": {
+    "stores": [
+     "fake"
+    ]
+   },
+   "is_error": false,
+   "name": "list_recipes",
+   "response": {
+    "id": 7,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r1\",\n      \"name\": \"Grød\",\n      \"url\": \"https://example.com/r1\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": \"Morgen\"\n    }\n  ]\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r1\",\n      \"name\": \"Grød\",\n      \"url\": \"https://example.com/r1\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": \"Morgen\"\n    }\n  ]\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r1\",\n      \"name\": \"Grød\",\n      \"url\": \"https://example.com/r1\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": \"Morgen\"\n    }\n  ]\n}"
+  },
+  {
+   "arguments": {
+    "stores": [
+     "fake"
+    ],
+    "tags": [
+     "Familievenlig"
+    ]
+   },
+   "is_error": false,
+   "name": "list_recipes",
+   "response": {
+    "id": 8,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r2\",\n      \"name\": \"Pasta\",\n      \"url\": \"https://example.com/r2\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": \"Aftensmad\"\n    }\n  ]\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r2\",\n      \"name\": \"Pasta\",\n      \"url\": \"https://example.com/r2\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": \"Aftensmad\"\n    }\n  ]\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r2\",\n      \"name\": \"Pasta\",\n      \"url\": \"https://example.com/r2\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": \"Aftensmad\"\n    }\n  ]\n}"
+  },
+  {
+   "arguments": {
+    "items": [
+     "mælk 1 l",
+     "2 x rugbrød"
+    ],
+    "stores": [
+     "fake"
+    ]
+   },
+   "is_error": false,
+   "name": "compare_basket",
+   "response": {
+    "id": 9,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"stores\": {\n    \"fake\": {\n      \"store\": \"fake\",\n      \"lines\": [\n        {\n          \"item\": \"mælk 1 l\",\n          \"quantity\": 1,\n          \"product\": {\n            \"store\": \"fake\",\n            \"id\": \"1\",\n            \"name\": \"mælk 1 l\",\n            \"price\": \"12.95\",\n            \"brand\": null,\n            \"size\": null,\n            \"unit_price\": \"12.95\",\n            \"unit\": \"l\",\n            \"ean\": \"5701234567890\",\n            \"on_offer\": false,\n            \"offer_text\": null,\n            \"before_price\": null,\n            \"offer_until\": null,\n            \"available\": true,\n            \"category\": null,\n            \"campaign\": null,\n            \"max_per_order\": null\n          },\n          \"line_total\": \"12.95\",\n          \"sure\": true,\n          \"note\": \"\",\n          \"guess\": false,\n          \"candidates\": [\n            {\n              \"id\": \"1\",\n              \"name\": \"mælk 1 l\",\n              \"price\": \"12.95\",\n              \"quantity\": 1,\n              \"line_total\": \"12.95\",\n              \"unit_price\": \"12.95\",\n              \"unit\": \"l\",\n              \"note\": \"\",\n              \"suggested\": true,\n              \"name_match\": \"full\",\n              \"size_fits\": true\n            }\n          ],\n          \"oeko\": false\n        },\n        {\n          \"item\": \"2 x rugbrød\",\n          \"quantity\": 2,\n          \"product\": {\n            \"store\": \"fake\",\n            \"id\": \"1\",\n            \"name\": \"rugbrød 1 l\",\n            \"price\": \"12.95\",\n            \"brand\": null,\n            \"size\": null,\n            \"unit_price\": \"12.95\",\n            \"unit\": \"l\",\n            \"ean\": \"5701234567890\",\n            \"on_offer\": false,\n            \"offer_text\": null,\n            \"before_price\": null,\n            \"offer_until\": null,\n            \"available\": true,\n            \"category\": null,\n            \"campaign\": null,\n            \"max_per_order\": null\n          },\n          \"line_total\": \"25.90\",\n          \"sure\": true,\n          \"note\": \"Ingen mængde på listen: billigst pr. kg, l eller stk. Skriv en mængde, fx '1 kg'.\",\n          \"guess\": false,\n          \"candidates\": [\n            {\n              \"id\": \"1\",\n              \"name\": \"rugbrød 1 l\",\n              \"price\": \"12.95\",\n              \"quantity\": 2,\n              \"line_total\": \"25.90\",\n              \"unit_price\": \"12.95\",\n              \"unit\": \"l\",\n              \"note\": \"Ingen mængde på listen: billigst pr. kg, l eller stk. Skriv en mængde, fx '1 kg'.\",\n              \"suggested\": true,\n              \"name_match\": \"full\"\n            }\n          ],\n          \"oeko\": false\n        }\n      ],\n      \"missing\": [],\n      \"products_total\": \"38.85\",\n      \"fees\": {\n        \"levering\": \"39.00\"\n      },\n      \"total\": \"77.85\",\n      \"minimum_order\": \"500.00\",\n      \"minimum_met\": false,\n      \"notes\": [\n        \"Under minimumskøb: 461.15 kr. mangler til 500.00 kr.\"\n      ]\n    }\n  },\n  \"cheapest\": null,\n  \"summary\": \"Kun fake kunne prise listen.\"\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"stores\": {\n    \"fake\": {\n      \"store\": \"fake\",\n      \"lines\": [\n        {\n          \"item\": \"mælk 1 l\",\n          \"quantity\": 1,\n          \"product\": {\n            \"store\": \"fake\",\n            \"id\": \"1\",\n            \"name\": \"mælk 1 l\",\n            \"price\": \"12.95\",\n            \"brand\": null,\n            \"size\": null,\n            \"unit_price\": \"12.95\",\n            \"unit\": \"l\",\n            \"ean\": \"5701234567890\",\n            \"on_offer\": false,\n            \"offer_text\": null,\n            \"before_price\": null,\n            \"offer_until\": null,\n            \"available\": true,\n            \"category\": null,\n            \"campaign\": null,\n            \"max_per_order\": null\n          },\n          \"line_total\": \"12.95\",\n          \"sure\": true,\n          \"note\": \"\",\n          \"guess\": false,\n          \"candidates\": [\n            {\n              \"id\": \"1\",\n              \"name\": \"mælk 1 l\",\n              \"price\": \"12.95\",\n              \"quantity\": 1,\n              \"line_total\": \"12.95\",\n              \"unit_price\": \"12.95\",\n              \"unit\": \"l\",\n              \"note\": \"\",\n              \"suggested\": true,\n              \"name_match\": \"full\",\n              \"size_fits\": true\n            }\n          ],\n          \"oeko\": false\n        },\n        {\n          \"item\": \"2 x rugbrød\",\n          \"quantity\": 2,\n          \"product\": {\n            \"store\": \"fake\",\n            \"id\": \"1\",\n            \"name\": \"rugbrød 1 l\",\n            \"price\": \"12.95\",\n            \"brand\": null,\n            \"size\": null,\n            \"unit_price\": \"12.95\",\n            \"unit\": \"l\",\n            \"ean\": \"5701234567890\",\n            \"on_offer\": false,\n            \"offer_text\": null,\n            \"before_price\": null,\n            \"offer_until\": null,\n            \"available\": true,\n            \"category\": null,\n            \"campaign\": null,\n            \"max_per_order\": null\n          },\n          \"line_total\": \"25.90\",\n          \"sure\": true,\n          \"note\": \"Ingen mængde på listen: billigst pr. kg, l eller stk. Skriv en mængde, fx '1 kg'.\",\n          \"guess\": false,\n          \"candidates\": [\n            {\n              \"id\": \"1\",\n              \"name\": \"rugbrød 1 l\",\n              \"price\": \"12.95\",\n              \"quantity\": 2,\n              \"line_total\": \"25.90\",\n              \"unit_price\": \"12.95\",\n              \"unit\": \"l\",\n              \"note\": \"Ingen mængde på listen: billigst pr. kg, l eller stk. Skriv en mængde, fx '1 kg'.\",\n              \"suggested\": true,\n              \"name_match\": \"full\"\n            }\n          ],\n          \"oeko\": false\n        }\n      ],\n      \"missing\": [],\n      \"products_total\": \"38.85\",\n      \"fees\": {\n        \"levering\": \"39.00\"\n      },\n      \"total\": \"77.85\",\n      \"minimum_order\": \"500.00\",\n      \"minimum_met\": false,\n      \"notes\": [\n        \"Under minimumskøb: 461.15 kr. mangler til 500.00 kr.\"\n      ]\n    }\n  },\n  \"cheapest\": null,\n  \"summary\": \"Kun fake kunne prise listen.\"\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"stores\": {\n    \"fake\": {\n      \"store\": \"fake\",\n      \"lines\": [\n        {\n          \"item\": \"mælk 1 l\",\n          \"quantity\": 1,\n          \"product\": {\n            \"store\": \"fake\",\n            \"id\": \"1\",\n            \"name\": \"mælk 1 l\",\n            \"price\": \"12.95\",\n            \"brand\": null,\n            \"size\": null,\n            \"unit_price\": \"12.95\",\n            \"unit\": \"l\",\n            \"ean\": \"5701234567890\",\n            \"on_offer\": false,\n            \"offer_text\": null,\n            \"before_price\": null,\n            \"offer_until\": null,\n            \"available\": true,\n            \"category\": null,\n            \"campaign\": null,\n            \"max_per_order\": null\n          },\n          \"line_total\": \"12.95\",\n          \"sure\": true,\n          \"note\": \"\",\n          \"guess\": false,\n          \"candidates\": [\n            {\n              \"id\": \"1\",\n              \"name\": \"mælk 1 l\",\n              \"price\": \"12.95\",\n              \"quantity\": 1,\n              \"line_total\": \"12.95\",\n              \"unit_price\": \"12.95\",\n              \"unit\": \"l\",\n              \"note\": \"\",\n              \"suggested\": true,\n              \"name_match\": \"full\",\n              \"size_fits\": true\n            }\n          ],\n          \"oeko\": false\n        },\n        {\n          \"item\": \"2 x rugbrød\",\n          \"quantity\": 2,\n          \"product\": {\n            \"store\": \"fake\",\n            \"id\": \"1\",\n            \"name\": \"rugbrød 1 l\",\n            \"price\": \"12.95\",\n            \"brand\": null,\n            \"size\": null,\n            \"unit_price\": \"12.95\",\n            \"unit\": \"l\",\n            \"ean\": \"5701234567890\",\n            \"on_offer\": false,\n            \"offer_text\": null,\n            \"before_price\": null,\n            \"offer_until\": null,\n            \"available\": true,\n            \"category\": null,\n            \"campaign\": null,\n            \"max_per_order\": null\n          },\n          \"line_total\": \"25.90\",\n          \"sure\": true,\n          \"note\": \"Ingen mængde på listen: billigst pr. kg, l eller stk. Skriv en mængde, fx '1 kg'.\",\n          \"guess\": false,\n          \"candidates\": [\n            {\n              \"id\": \"1\",\n              \"name\": \"rugbrød 1 l\",\n              \"price\": \"12.95\",\n              \"quantity\": 2,\n              \"line_total\": \"25.90\",\n              \"unit_price\": \"12.95\",\n              \"unit\": \"l\",\n              \"note\": \"Ingen mængde på listen: billigst pr. kg, l eller stk. Skriv en mængde, fx '1 kg'.\",\n              \"suggested\": true,\n              \"name_match\": \"full\"\n            }\n          ],\n          \"oeko\": false\n        }\n      ],\n      \"missing\": [],\n      \"products_total\": \"38.85\",\n      \"fees\": {\n        \"levering\": \"39.00\"\n      },\n      \"total\": \"77.85\",\n      \"minimum_order\": \"500.00\",\n      \"minimum_met\": false,\n      \"notes\": [\n        \"Under minimumskøb: 461.15 kr. mangler til 500.00 kr.\"\n      ]\n    }\n  },\n  \"cheapest\": null,\n  \"summary\": \"Kun fake kunne prise listen.\"\n}"
+  },
+  {
+   "arguments": {
+    "store": "fake"
+   },
+   "is_error": false,
+   "name": "get_cart",
+   "response": {
+    "id": 10,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"store\": \"fake\",\n  \"lines\": [\n    {\n      \"product_id\": \"1\",\n      \"name\": \"Mælk\",\n      \"quantity\": 2,\n      \"line_total\": \"25.90\"\n    }\n  ],\n  \"products_total\": \"25.90\",\n  \"fees\": {\n    \"levering\": \"39.00\"\n  },\n  \"total\": \"64.90\",\n  \"minimum_order\": \"500.00\",\n  \"minimum_met\": false,\n  \"delivery\": null,\n  \"warnings\": []\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"store\": \"fake\",\n  \"lines\": [\n    {\n      \"product_id\": \"1\",\n      \"name\": \"Mælk\",\n      \"quantity\": 2,\n      \"line_total\": \"25.90\"\n    }\n  ],\n  \"products_total\": \"25.90\",\n  \"fees\": {\n    \"levering\": \"39.00\"\n  },\n  \"total\": \"64.90\",\n  \"minimum_order\": \"500.00\",\n  \"minimum_met\": false,\n  \"delivery\": null,\n  \"warnings\": []\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"store\": \"fake\",\n  \"lines\": [\n    {\n      \"product_id\": \"1\",\n      \"name\": \"Mælk\",\n      \"quantity\": 2,\n      \"line_total\": \"25.90\"\n    }\n  ],\n  \"products_total\": \"25.90\",\n  \"fees\": {\n    \"levering\": \"39.00\"\n  },\n  \"total\": \"64.90\",\n  \"minimum_order\": \"500.00\",\n  \"minimum_met\": false,\n  \"delivery\": null,\n  \"warnings\": []\n}"
+  },
+  {
+   "arguments": {
+    "items": {
+     "1": 1
+    },
+    "store": "fake"
+   },
+   "is_error": false,
+   "name": "set_cart_quantities",
+   "response": {
+    "id": 11,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"results\": [\n    {\n      \"product_id\": \"1\",\n      \"requested\": 1,\n      \"applied\": 1,\n      \"ok\": true,\n      \"message\": null\n    }\n  ],\n  \"cart\": {\n    \"store\": \"fake\",\n    \"lines\": [\n      {\n        \"product_id\": \"1\",\n        \"name\": \"Mælk\",\n        \"quantity\": 1,\n        \"line_total\": \"12.95\"\n      }\n    ],\n    \"products_total\": \"12.95\",\n    \"fees\": {\n      \"levering\": \"39.00\"\n    },\n    \"total\": \"51.95\",\n    \"minimum_order\": \"500.00\",\n    \"minimum_met\": false,\n    \"delivery\": null,\n    \"warnings\": []\n  }\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"results\": [\n    {\n      \"product_id\": \"1\",\n      \"requested\": 1,\n      \"applied\": 1,\n      \"ok\": true,\n      \"message\": null\n    }\n  ],\n  \"cart\": {\n    \"store\": \"fake\",\n    \"lines\": [\n      {\n        \"product_id\": \"1\",\n        \"name\": \"Mælk\",\n        \"quantity\": 1,\n        \"line_total\": \"12.95\"\n      }\n    ],\n    \"products_total\": \"12.95\",\n    \"fees\": {\n      \"levering\": \"39.00\"\n    },\n    \"total\": \"51.95\",\n    \"minimum_order\": \"500.00\",\n    \"minimum_met\": false,\n    \"delivery\": null,\n    \"warnings\": []\n  }\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"results\": [\n    {\n      \"product_id\": \"1\",\n      \"requested\": 1,\n      \"applied\": 1,\n      \"ok\": true,\n      \"message\": null\n    }\n  ],\n  \"cart\": {\n    \"store\": \"fake\",\n    \"lines\": [\n      {\n        \"product_id\": \"1\",\n        \"name\": \"Mælk\",\n        \"quantity\": 1,\n        \"line_total\": \"12.95\"\n      }\n    ],\n    \"products_total\": \"12.95\",\n    \"fees\": {\n      \"levering\": \"39.00\"\n    },\n    \"total\": \"51.95\",\n    \"minimum_order\": \"500.00\",\n    \"minimum_met\": false,\n    \"delivery\": null,\n    \"warnings\": []\n  }\n}"
+  },
+  {
+   "arguments": {
+    "recipe": "r1",
+    "store": "fake"
+   },
+   "is_error": false,
+   "name": "add_recipe_to_cart",
+   "response": {
+    "id": 12,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"added\": [\n    {\n      \"product_id\": \"1\",\n      \"name\": \"Mælk\",\n      \"ingredients\": [\n        \"mælk\"\n      ],\n      \"before\": 1,\n      \"added\": 2,\n      \"after\": 3,\n      \"ok\": true,\n      \"message\": null\n    }\n  ],\n  \"skipped\": [],\n  \"cart\": {\n    \"store\": \"fake\",\n    \"lines\": [\n      {\n        \"product_id\": \"1\",\n        \"name\": \"Mælk\",\n        \"quantity\": 3,\n        \"line_total\": \"38.85\"\n      }\n    ],\n    \"products_total\": \"38.85\",\n    \"fees\": {\n      \"levering\": \"39.00\"\n    },\n    \"total\": \"77.85\",\n    \"minimum_order\": \"500.00\",\n    \"minimum_met\": false,\n    \"delivery\": null,\n    \"warnings\": []\n  }\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"added\": [\n    {\n      \"product_id\": \"1\",\n      \"name\": \"Mælk\",\n      \"ingredients\": [\n        \"mælk\"\n      ],\n      \"before\": 1,\n      \"added\": 2,\n      \"after\": 3,\n      \"ok\": true,\n      \"message\": null\n    }\n  ],\n  \"skipped\": [],\n  \"cart\": {\n    \"store\": \"fake\",\n    \"lines\": [\n      {\n        \"product_id\": \"1\",\n        \"name\": \"Mælk\",\n        \"quantity\": 3,\n        \"line_total\": \"38.85\"\n      }\n    ],\n    \"products_total\": \"38.85\",\n    \"fees\": {\n      \"levering\": \"39.00\"\n    },\n    \"total\": \"77.85\",\n    \"minimum_order\": \"500.00\",\n    \"minimum_met\": false,\n    \"delivery\": null,\n    \"warnings\": []\n  }\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"added\": [\n    {\n      \"product_id\": \"1\",\n      \"name\": \"Mælk\",\n      \"ingredients\": [\n        \"mælk\"\n      ],\n      \"before\": 1,\n      \"added\": 2,\n      \"after\": 3,\n      \"ok\": true,\n      \"message\": null\n    }\n  ],\n  \"skipped\": [],\n  \"cart\": {\n    \"store\": \"fake\",\n    \"lines\": [\n      {\n        \"product_id\": \"1\",\n        \"name\": \"Mælk\",\n        \"quantity\": 3,\n        \"line_total\": \"38.85\"\n      }\n    ],\n    \"products_total\": \"38.85\",\n    \"fees\": {\n      \"levering\": \"39.00\"\n    },\n    \"total\": \"77.85\",\n    \"minimum_order\": \"500.00\",\n    \"minimum_met\": false,\n    \"delivery\": null,\n    \"warnings\": []\n  }\n}"
+  },
+  {
+   "arguments": {
+    "store": "fake"
+   },
+   "is_error": false,
+   "name": "get_delivery_info",
+   "response": {
+    "id": 13,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"delivery\": {\n    \"store\": \"fake\",\n    \"chosen_start\": \"2026-11-03T16:00:00\",\n    \"chosen_end\": \"2026-11-03T19:00:00\",\n    \"edit_deadline\": null,\n    \"next_available\": \"2026-11-02\",\n    \"note\": null\n  },\n  \"terms\": {\n    \"store\": \"fake\",\n    \"home_delivery\": true,\n    \"delivery_fee\": \"39.00\",\n    \"other_fees\": {},\n    \"minimum_order\": \"500.00\",\n    \"source\": \"api\"\n  }\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"delivery\": {\n    \"store\": \"fake\",\n    \"chosen_start\": \"2026-11-03T16:00:00\",\n    \"chosen_end\": \"2026-11-03T19:00:00\",\n    \"edit_deadline\": null,\n    \"next_available\": \"2026-11-02\",\n    \"note\": null\n  },\n  \"terms\": {\n    \"store\": \"fake\",\n    \"home_delivery\": true,\n    \"delivery_fee\": \"39.00\",\n    \"other_fees\": {},\n    \"minimum_order\": \"500.00\",\n    \"source\": \"api\"\n  }\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"delivery\": {\n    \"store\": \"fake\",\n    \"chosen_start\": \"2026-11-03T16:00:00\",\n    \"chosen_end\": \"2026-11-03T19:00:00\",\n    \"edit_deadline\": null,\n    \"next_available\": \"2026-11-02\",\n    \"note\": null\n  },\n  \"terms\": {\n    \"store\": \"fake\",\n    \"home_delivery\": true,\n    \"delivery_fee\": \"39.00\",\n    \"other_fees\": {},\n    \"minimum_order\": \"500.00\",\n    \"source\": \"api\"\n  }\n}"
+  },
+  {
+   "arguments": {
+    "stores": [
+     "fake"
+    ]
+   },
+   "is_error": false,
+   "name": "list_delivery_slots",
+   "response": {
+    "id": 14,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"fake\": {\n    \"cheapest\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      }\n    ],\n    \"slots\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      }\n    ]\n  }\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"fake\": {\n    \"cheapest\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      }\n    ],\n    \"slots\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      }\n    ]\n  }\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"fake\": {\n    \"cheapest\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      }\n    ],\n    \"slots\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      }\n    ]\n  }\n}"
+  },
+  {
+   "arguments": {
+    "store": "fake"
+   },
+   "is_error": false,
+   "name": "get_orders",
+   "response": {
+    "id": 15,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"orders\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"900000000001\",\n      \"status\": \"Leveret\",\n      \"total\": \"612.50\",\n      \"placed_at\": null,\n      \"delivery_start\": null,\n      \"delivery_end\": null,\n      \"lines\": []\n    }\n  ]\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"orders\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"900000000001\",\n      \"status\": \"Leveret\",\n      \"total\": \"612.50\",\n      \"placed_at\": null,\n      \"delivery_start\": null,\n      \"delivery_end\": null,\n      \"lines\": []\n    }\n  ]\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"orders\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"900000000001\",\n      \"status\": \"Leveret\",\n      \"total\": \"612.50\",\n      \"placed_at\": null,\n      \"delivery_start\": null,\n      \"delivery_end\": null,\n      \"lines\": []\n    }\n  ]\n}"
+  },
+  {
+   "arguments": {
+    "order_id": "900000000001",
+    "store": "fake"
+   },
+   "is_error": false,
+   "name": "get_order",
+   "response": {
+    "id": 16,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"store\": \"fake\",\n  \"id\": \"900000000001\",\n  \"status\": \"Leveret\",\n  \"total\": \"612.50\",\n  \"placed_at\": null,\n  \"delivery_start\": null,\n  \"delivery_end\": null,\n  \"lines\": [\n    {\n      \"product_id\": \"1\",\n      \"name\": \"Mælk\",\n      \"quantity\": 2,\n      \"line_total\": \"25.90\"\n    }\n  ]\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"store\": \"fake\",\n  \"id\": \"900000000001\",\n  \"status\": \"Leveret\",\n  \"total\": \"612.50\",\n  \"placed_at\": null,\n  \"delivery_start\": null,\n  \"delivery_end\": null,\n  \"lines\": [\n    {\n      \"product_id\": \"1\",\n      \"name\": \"Mælk\",\n      \"quantity\": 2,\n      \"line_total\": \"25.90\"\n    }\n  ]\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"store\": \"fake\",\n  \"id\": \"900000000001\",\n  \"status\": \"Leveret\",\n  \"total\": \"612.50\",\n  \"placed_at\": null,\n  \"delivery_start\": null,\n  \"delivery_end\": null,\n  \"lines\": [\n    {\n      \"product_id\": \"1\",\n      \"name\": \"Mælk\",\n      \"quantity\": 2,\n      \"line_total\": \"25.90\"\n    }\n  ]\n}"
+  }
+ ],
+ "errors": [
+  {
+   "arguments": {
+    "store": "nope"
+   },
+   "is_error": true,
+   "name": "get_cart",
+   "response": {
+    "id": 17,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool get_cart: Ukendt butik 'nope'. Kendte butikker: broken, fake.",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool get_cart: Ukendt butik 'nope'. Kendte butikker: broken, fake.",
+   "text_compared": true,
+   "text_without_prefix": "Ukendt butik 'nope'. Kendte butikker: broken, fake."
+  },
+  {
+   "arguments": {
+    "store": ""
+   },
+   "is_error": true,
+   "name": "get_cart",
+   "response": {
+    "id": 18,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool get_cart: Ukendt butik ''. Kendte butikker: broken, fake.",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool get_cart: Ukendt butik ''. Kendte butikker: broken, fake.",
+   "text_compared": true,
+   "text_without_prefix": "Ukendt butik ''. Kendte butikker: broken, fake."
+  },
+  {
+   "arguments": {
+    "items": {
+     "1": 99
+    },
+    "store": "fake"
+   },
+   "is_error": true,
+   "name": "set_cart_quantities",
+   "response": {
+    "id": 19,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool set_cart_quantities: Antal skal være 0-50. Forkert for: 1.",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool set_cart_quantities: Antal skal være 0-50. Forkert for: 1.",
+   "text_compared": true,
+   "text_without_prefix": "Antal skal være 0-50. Forkert for: 1."
+  },
+  {
+   "arguments": {
+    "items": {
+     "1": -1
+    },
+    "store": "fake"
+   },
+   "is_error": true,
+   "name": "set_cart_quantities",
+   "response": {
+    "id": 20,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool set_cart_quantities: Antal skal være 0-50. Forkert for: 1.",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool set_cart_quantities: Antal skal være 0-50. Forkert for: 1.",
+   "text_compared": true,
+   "text_without_prefix": "Antal skal være 0-50. Forkert for: 1."
+  },
+  {
+   "arguments": {
+    "items": {
+     "1": "mange"
+    },
+    "store": "fake"
+   },
+   "is_error": true,
+   "name": "set_cart_quantities",
+   "response": {
+    "id": 21,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool set_cart_quantities: 1 validation error for set_cart_quantitiesArguments\nitems.1\n  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='mange', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/int_parsing",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool set_cart_quantities: 1 validation error for set_cart_quantitiesArguments\nitems.1\n  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='mange', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/int_parsing",
+   "text_compared": false,
+   "text_without_prefix": "1 validation error for set_cart_quantitiesArguments\nitems.1\n  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='mange', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/int_parsing"
+  },
+  {
+   "arguments": {
+    "items": {},
+    "store": "fake"
+   },
+   "is_error": true,
+   "name": "set_cart_quantities",
+   "response": {
+    "id": 22,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool set_cart_quantities: Ingen varer angivet.",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool set_cart_quantities: Ingen varer angivet.",
+   "text_compared": true,
+   "text_without_prefix": "Ingen varer angivet."
+  },
+  {
+   "arguments": {
+    "items": {
+     "0": 1,
+     "1": 1,
+     "10": 1,
+     "11": 1,
+     "12": 1,
+     "13": 1,
+     "14": 1,
+     "15": 1,
+     "16": 1,
+     "17": 1,
+     "18": 1,
+     "19": 1,
+     "2": 1,
+     "20": 1,
+     "21": 1,
+     "22": 1,
+     "23": 1,
+     "24": 1,
+     "25": 1,
+     "26": 1,
+     "27": 1,
+     "28": 1,
+     "29": 1,
+     "3": 1,
+     "30": 1,
+     "31": 1,
+     "32": 1,
+     "33": 1,
+     "34": 1,
+     "35": 1,
+     "36": 1,
+     "37": 1,
+     "38": 1,
+     "39": 1,
+     "4": 1,
+     "40": 1,
+     "41": 1,
+     "42": 1,
+     "43": 1,
+     "44": 1,
+     "45": 1,
+     "46": 1,
+     "47": 1,
+     "48": 1,
+     "49": 1,
+     "5": 1,
+     "50": 1,
+     "6": 1,
+     "7": 1,
+     "8": 1,
+     "9": 1
+    },
+    "store": "fake"
+   },
+   "is_error": true,
+   "name": "set_cart_quantities",
+   "response": {
+    "id": 23,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool set_cart_quantities: Højst 50 varer pr. kald.",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool set_cart_quantities: Højst 50 varer pr. kald.",
+   "text_compared": true,
+   "text_without_prefix": "Højst 50 varer pr. kald."
+  },
+  {
+   "arguments": {
+    "recipe": "r1",
+    "skip": [
+     "Pizza"
+    ],
+    "store": "fake"
+   },
+   "is_error": true,
+   "name": "add_recipe_to_cart",
+   "response": {
+    "id": 24,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool add_recipe_to_cart: Opskriften har ikke 'Pizza'. Ingredienser: mælk.",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool add_recipe_to_cart: Opskriften har ikke 'Pizza'. Ingredienser: mælk.",
+   "text_compared": true,
+   "text_without_prefix": "Opskriften har ikke 'Pizza'. Ingredienser: mælk."
+  },
+  {
+   "arguments": {
+    "recipe": "r1",
+    "store": "fake",
+    "swap": {
+     "mælk": "999"
+    }
+   },
+   "is_error": true,
+   "name": "add_recipe_to_cart",
+   "response": {
+    "id": 25,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool add_recipe_to_cart: 999 er ikke et alternativ til mælk: ingen.",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool add_recipe_to_cart: 999 er ikke et alternativ til mælk: ingen.",
+   "text_compared": true,
+   "text_without_prefix": "999 er ikke et alternativ til mælk: ingen."
+  },
+  {
+   "arguments": {
+    "include": [
+     "Peber"
+    ],
+    "recipe": "r1",
+    "store": "fake"
+   },
+   "is_error": true,
+   "name": "add_recipe_to_cart",
+   "response": {
+    "id": 26,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool add_recipe_to_cart: Opskriften har ikke 'Peber'. Ingredienser: mælk.",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool add_recipe_to_cart: Opskriften har ikke 'Peber'. Ingredienser: mælk.",
+   "text_compared": true,
+   "text_without_prefix": "Opskriften har ikke 'Peber'. Ingredienser: mælk."
+  },
+  {
+   "arguments": {
+    "recipe": "r1",
+    "skip": [
+     "mælk"
+    ],
+    "store": "fake"
+   },
+   "is_error": true,
+   "name": "add_recipe_to_cart",
+   "response": {
+    "id": 27,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool add_recipe_to_cart: Ingen varer at lægge i kurven.",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool add_recipe_to_cart: Ingen varer at lægge i kurven.",
+   "text_compared": true,
+   "text_without_prefix": "Ingen varer at lægge i kurven."
+  },
+  {
+   "arguments": {
+    "persons": 99,
+    "recipe": "r1",
+    "store": "fake",
+    "swap": {
+     "mælk": "1"
+    }
+   },
+   "is_error": true,
+   "name": "add_recipe_to_cart",
+   "response": {
+    "id": 28,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool add_recipe_to_cart: 1 er ikke et alternativ til mælk: ingen.",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool add_recipe_to_cart: 1 er ikke et alternativ til mælk: ingen.",
+   "text_compared": true,
+   "text_without_prefix": "1 er ikke et alternativ til mælk: ingen."
+  },
+  {
+   "arguments": {
+    "query": "mælk",
+    "stores": [
+     "broken"
+    ]
+   },
+   "is_error": false,
+   "name": "search_products",
+   "response": {
+    "id": 29,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"broken\": {\n    \"error\": \"broken: API'et svarer 500\"\n  }\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"broken\": {\n    \"error\": \"broken: API'et svarer 500\"\n  }\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"broken\": {\n    \"error\": \"broken: API'et svarer 500\"\n  }\n}"
+  },
+  {
+   "arguments": {
+    "query": "mælk",
+    "stores": [
+     "nope"
+    ]
+   },
+   "is_error": true,
+   "name": "search_products",
+   "response": {
+    "id": 30,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool search_products: Ukendt butik 'nope'. Kendte butikker: broken, fake.",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool search_products: Ukendt butik 'nope'. Kendte butikker: broken, fake.",
+   "text_compared": true,
+   "text_without_prefix": "Ukendt butik 'nope'. Kendte butikker: broken, fake."
+  },
+  {
+   "arguments": {
+    "query": "mælk",
+    "sort": "price",
+    "stores": [
+     "fake",
+     "broken"
+    ]
+   },
+   "is_error": false,
+   "name": "search_products",
+   "response": {
+    "id": 31,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"mælk 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ],\n  \"broken\": {\n    \"error\": \"broken: API'et svarer 500\"\n  }\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"mælk 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ],\n  \"broken\": {\n    \"error\": \"broken: API'et svarer 500\"\n  }\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"mælk 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ],\n  \"broken\": {\n    \"error\": \"broken: API'et svarer 500\"\n  }\n}"
+  },
+  {
+   "arguments": {
+    "query": "mælk",
+    "sort": "billigst"
+   },
+   "is_error": true,
+   "name": "search_products",
+   "response": {
+    "id": 32,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool search_products: 1 validation error for search_productsArguments\nsort\n  Input should be 'relevance', 'price' or 'unit_price' [type=literal_error, input_value='billigst', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/literal_error",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool search_products: 1 validation error for search_productsArguments\nsort\n  Input should be 'relevance', 'price' or 'unit_price' [type=literal_error, input_value='billigst', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/literal_error",
+   "text_compared": false,
+   "text_without_prefix": "1 validation error for search_productsArguments\nsort\n  Input should be 'relevance', 'price' or 'unit_price' [type=literal_error, input_value='billigst', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/literal_error"
+  },
+  {
+   "arguments": {
+    "limit": 0,
+    "query": "mælk",
+    "stores": [
+     "fake"
+    ]
+   },
+   "is_error": false,
+   "name": "search_products",
+   "response": {
+    "id": 33,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"mælk 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ]\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"mælk 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ]\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"mælk 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ]\n}"
+  },
+  {
+   "arguments": {
+    "limit": 999,
+    "query": "mælk",
+    "stores": [
+     "fake"
+    ]
+   },
+   "is_error": false,
+   "name": "search_products",
+   "response": {
+    "id": 34,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"mælk 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ]\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"mælk 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ]\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"mælk 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ]\n}"
+  },
+  {
+   "arguments": {},
+   "is_error": true,
+   "name": "search_products",
+   "response": {
+    "id": 35,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool search_products: 1 validation error for search_productsArguments\nquery\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool search_products: 1 validation error for search_productsArguments\nquery\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing",
+   "text_compared": false,
+   "text_without_prefix": "1 validation error for search_productsArguments\nquery\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing"
+  },
+  {
+   "arguments": {
+    "query": "karry",
+    "stores": [
+     "broken"
+    ]
+   },
+   "is_error": false,
+   "name": "search_recipes",
+   "response": {
+    "id": 36,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"broken\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r1\",\n      \"name\": \"karry til 4\",\n      \"url\": \"https://example.com/r1\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": null\n    }\n  ]\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"broken\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r1\",\n      \"name\": \"karry til 4\",\n      \"url\": \"https://example.com/r1\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": null\n    }\n  ]\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"broken\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r1\",\n      \"name\": \"karry til 4\",\n      \"url\": \"https://example.com/r1\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": null\n    }\n  ]\n}"
+  },
+  {
+   "arguments": {
+    "store": "broken"
+   },
+   "is_error": true,
+   "name": "get_orders",
+   "response": {
+    "id": 37,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool get_orders: broken kan ikke det endnu.",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool get_orders: broken kan ikke det endnu.",
+   "text_compared": true,
+   "text_without_prefix": "broken kan ikke det endnu."
+  },
+  {
+   "arguments": {
+    "store": "fake"
+   },
+   "is_error": true,
+   "name": "get_order",
+   "response": {
+    "id": 38,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool get_order: 1 validation error for get_orderArguments\norder_id\n  Field required [type=missing, input_value={'store': 'fake'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool get_order: 1 validation error for get_orderArguments\norder_id\n  Field required [type=missing, input_value={'store': 'fake'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing",
+   "text_compared": false,
+   "text_without_prefix": "1 validation error for get_orderArguments\norder_id\n  Field required [type=missing, input_value={'store': 'fake'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing"
+  },
+  {
+   "arguments": {
+    "persons": 1,
+    "recipe": "r1",
+    "store": "fake"
+   },
+   "is_error": false,
+   "name": "get_recipe",
+   "response": {
+    "id": 39,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"store\": \"fake\",\n  \"id\": \"r1\",\n  \"name\": \"Grød\",\n  \"url\": \"https://example.com/r1\",\n  \"persons\": 2,\n  \"min_persons\": null,\n  \"max_persons\": null,\n  \"time\": null,\n  \"description\": null,\n  \"image\": null,\n  \"ingredients\": [],\n  \"ingredients_persons\": null,\n  \"method\": [],\n  \"tip\": null,\n  \"items\": [\n    {\n      \"ingredient\": \"mælk\",\n      \"product\": {\n        \"id\": \"1\",\n        \"name\": \"Mælk\",\n        \"price\": \"12.95\",\n        \"quantity\": 2,\n        \"size\": \"1 l\",\n        \"available\": true,\n        \"offer_text\": null\n      },\n      \"have_at_home\": false,\n      \"alternatives\": []\n    }\n  ],\n  \"total\": \"25.90\"\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"store\": \"fake\",\n  \"id\": \"r1\",\n  \"name\": \"Grød\",\n  \"url\": \"https://example.com/r1\",\n  \"persons\": 2,\n  \"min_persons\": null,\n  \"max_persons\": null,\n  \"time\": null,\n  \"description\": null,\n  \"image\": null,\n  \"ingredients\": [],\n  \"ingredients_persons\": null,\n  \"method\": [],\n  \"tip\": null,\n  \"items\": [\n    {\n      \"ingredient\": \"mælk\",\n      \"product\": {\n        \"id\": \"1\",\n        \"name\": \"Mælk\",\n        \"price\": \"12.95\",\n        \"quantity\": 2,\n        \"size\": \"1 l\",\n        \"available\": true,\n        \"offer_text\": null\n      },\n      \"have_at_home\": false,\n      \"alternatives\": []\n    }\n  ],\n  \"total\": \"25.90\"\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"store\": \"fake\",\n  \"id\": \"r1\",\n  \"name\": \"Grød\",\n  \"url\": \"https://example.com/r1\",\n  \"persons\": 2,\n  \"min_persons\": null,\n  \"max_persons\": null,\n  \"time\": null,\n  \"description\": null,\n  \"image\": null,\n  \"ingredients\": [],\n  \"ingredients_persons\": null,\n  \"method\": [],\n  \"tip\": null,\n  \"items\": [\n    {\n      \"ingredient\": \"mælk\",\n      \"product\": {\n        \"id\": \"1\",\n        \"name\": \"Mælk\",\n        \"price\": \"12.95\",\n        \"quantity\": 2,\n        \"size\": \"1 l\",\n        \"available\": true,\n        \"offer_text\": null\n      },\n      \"have_at_home\": false,\n      \"alternatives\": []\n    }\n  ],\n  \"total\": \"25.90\"\n}"
+  },
+  {
+   "arguments": {
+    "persons": 99,
+    "recipe": "r1",
+    "store": "fake"
+   },
+   "is_error": false,
+   "name": "get_recipe",
+   "response": {
+    "id": 40,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"store\": \"fake\",\n  \"id\": \"r1\",\n  \"name\": \"Grød\",\n  \"url\": \"https://example.com/r1\",\n  \"persons\": 12,\n  \"min_persons\": null,\n  \"max_persons\": null,\n  \"time\": null,\n  \"description\": null,\n  \"image\": null,\n  \"ingredients\": [],\n  \"ingredients_persons\": null,\n  \"method\": [],\n  \"tip\": null,\n  \"items\": [\n    {\n      \"ingredient\": \"mælk\",\n      \"product\": {\n        \"id\": \"1\",\n        \"name\": \"Mælk\",\n        \"price\": \"12.95\",\n        \"quantity\": 2,\n        \"size\": \"1 l\",\n        \"available\": true,\n        \"offer_text\": null\n      },\n      \"have_at_home\": false,\n      \"alternatives\": []\n    }\n  ],\n  \"total\": \"25.90\"\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"store\": \"fake\",\n  \"id\": \"r1\",\n  \"name\": \"Grød\",\n  \"url\": \"https://example.com/r1\",\n  \"persons\": 12,\n  \"min_persons\": null,\n  \"max_persons\": null,\n  \"time\": null,\n  \"description\": null,\n  \"image\": null,\n  \"ingredients\": [],\n  \"ingredients_persons\": null,\n  \"method\": [],\n  \"tip\": null,\n  \"items\": [\n    {\n      \"ingredient\": \"mælk\",\n      \"product\": {\n        \"id\": \"1\",\n        \"name\": \"Mælk\",\n        \"price\": \"12.95\",\n        \"quantity\": 2,\n        \"size\": \"1 l\",\n        \"available\": true,\n        \"offer_text\": null\n      },\n      \"have_at_home\": false,\n      \"alternatives\": []\n    }\n  ],\n  \"total\": \"25.90\"\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"store\": \"fake\",\n  \"id\": \"r1\",\n  \"name\": \"Grød\",\n  \"url\": \"https://example.com/r1\",\n  \"persons\": 12,\n  \"min_persons\": null,\n  \"max_persons\": null,\n  \"time\": null,\n  \"description\": null,\n  \"image\": null,\n  \"ingredients\": [],\n  \"ingredients_persons\": null,\n  \"method\": [],\n  \"tip\": null,\n  \"items\": [\n    {\n      \"ingredient\": \"mælk\",\n      \"product\": {\n        \"id\": \"1\",\n        \"name\": \"Mælk\",\n        \"price\": \"12.95\",\n        \"quantity\": 2,\n        \"size\": \"1 l\",\n        \"available\": true,\n        \"offer_text\": null\n      },\n      \"have_at_home\": false,\n      \"alternatives\": []\n    }\n  ],\n  \"total\": \"25.90\"\n}"
+  },
+  {
+   "arguments": {
+    "persons": null,
+    "recipe": "r1",
+    "store": "fake"
+   },
+   "is_error": false,
+   "name": "get_recipe",
+   "response": {
+    "id": 41,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"store\": \"fake\",\n  \"id\": \"r1\",\n  \"name\": \"Grød\",\n  \"url\": \"https://example.com/r1\",\n  \"persons\": 4,\n  \"min_persons\": null,\n  \"max_persons\": null,\n  \"time\": null,\n  \"description\": null,\n  \"image\": null,\n  \"ingredients\": [],\n  \"ingredients_persons\": null,\n  \"method\": [],\n  \"tip\": null,\n  \"items\": [\n    {\n      \"ingredient\": \"mælk\",\n      \"product\": {\n        \"id\": \"1\",\n        \"name\": \"Mælk\",\n        \"price\": \"12.95\",\n        \"quantity\": 2,\n        \"size\": \"1 l\",\n        \"available\": true,\n        \"offer_text\": null\n      },\n      \"have_at_home\": false,\n      \"alternatives\": []\n    }\n  ],\n  \"total\": \"25.90\"\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"store\": \"fake\",\n  \"id\": \"r1\",\n  \"name\": \"Grød\",\n  \"url\": \"https://example.com/r1\",\n  \"persons\": 4,\n  \"min_persons\": null,\n  \"max_persons\": null,\n  \"time\": null,\n  \"description\": null,\n  \"image\": null,\n  \"ingredients\": [],\n  \"ingredients_persons\": null,\n  \"method\": [],\n  \"tip\": null,\n  \"items\": [\n    {\n      \"ingredient\": \"mælk\",\n      \"product\": {\n        \"id\": \"1\",\n        \"name\": \"Mælk\",\n        \"price\": \"12.95\",\n        \"quantity\": 2,\n        \"size\": \"1 l\",\n        \"available\": true,\n        \"offer_text\": null\n      },\n      \"have_at_home\": false,\n      \"alternatives\": []\n    }\n  ],\n  \"total\": \"25.90\"\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"store\": \"fake\",\n  \"id\": \"r1\",\n  \"name\": \"Grød\",\n  \"url\": \"https://example.com/r1\",\n  \"persons\": 4,\n  \"min_persons\": null,\n  \"max_persons\": null,\n  \"time\": null,\n  \"description\": null,\n  \"image\": null,\n  \"ingredients\": [],\n  \"ingredients_persons\": null,\n  \"method\": [],\n  \"tip\": null,\n  \"items\": [\n    {\n      \"ingredient\": \"mælk\",\n      \"product\": {\n        \"id\": \"1\",\n        \"name\": \"Mælk\",\n        \"price\": \"12.95\",\n        \"quantity\": 2,\n        \"size\": \"1 l\",\n        \"available\": true,\n        \"offer_text\": null\n      },\n      \"have_at_home\": false,\n      \"alternatives\": []\n    }\n  ],\n  \"total\": \"25.90\"\n}"
+  },
+  {
+   "arguments": {
+    "items": [
+     " ",
+     ""
+    ]
+   },
+   "is_error": true,
+   "name": "compare_basket",
+   "response": {
+    "id": 42,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool compare_basket: Indkøbslisten er tom.",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool compare_basket: Indkøbslisten er tom.",
+   "text_compared": true,
+   "text_without_prefix": "Indkøbslisten er tom."
+  },
+  {
+   "arguments": {
+    "items": [
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk",
+     "mælk"
+    ]
+   },
+   "is_error": true,
+   "name": "compare_basket",
+   "response": {
+    "id": 43,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Error executing tool compare_basket: Højst 50 varer pr. liste.",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Error executing tool compare_basket: Højst 50 varer pr. liste.",
+   "text_compared": true,
+   "text_without_prefix": "Højst 50 varer pr. liste."
+  },
+  {
+   "arguments": {
+    "items": [
+     " mælk 1 l ",
+     "",
+     "2 x rugbrød"
+    ],
+    "stores": [
+     "fake",
+     "broken"
+    ]
+   },
+   "is_error": false,
+   "name": "compare_basket",
+   "response": {
+    "id": 44,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"stores\": {\n    \"fake\": {\n      \"store\": \"fake\",\n      \"lines\": [\n        {\n          \"item\": \"mælk 1 l\",\n          \"quantity\": 1,\n          \"product\": {\n            \"store\": \"fake\",\n            \"id\": \"1\",\n            \"name\": \"mælk 1 l\",\n            \"price\": \"12.95\",\n            \"brand\": null,\n            \"size\": null,\n            \"unit_price\": \"12.95\",\n            \"unit\": \"l\",\n            \"ean\": \"5701234567890\",\n            \"on_offer\": false,\n            \"offer_text\": null,\n            \"before_price\": null,\n            \"offer_until\": null,\n            \"available\": true,\n            \"category\": null,\n            \"campaign\": null,\n            \"max_per_order\": null\n          },\n          \"line_total\": \"12.95\",\n          \"sure\": true,\n          \"note\": \"\",\n          \"guess\": false,\n          \"candidates\": [\n            {\n              \"id\": \"1\",\n              \"name\": \"mælk 1 l\",\n              \"price\": \"12.95\",\n              \"quantity\": 1,\n              \"line_total\": \"12.95\",\n              \"unit_price\": \"12.95\",\n              \"unit\": \"l\",\n              \"note\": \"\",\n              \"suggested\": true,\n              \"name_match\": \"full\",\n              \"size_fits\": true\n            }\n          ],\n          \"oeko\": false\n        },\n        {\n          \"item\": \"2 x rugbrød\",\n          \"quantity\": 2,\n          \"product\": {\n            \"store\": \"fake\",\n            \"id\": \"1\",\n            \"name\": \"rugbrød 1 l\",\n            \"price\": \"12.95\",\n            \"brand\": null,\n            \"size\": null,\n            \"unit_price\": \"12.95\",\n            \"unit\": \"l\",\n            \"ean\": \"5701234567890\",\n            \"on_offer\": false,\n            \"offer_text\": null,\n            \"before_price\": null,\n            \"offer_until\": null,\n            \"available\": true,\n            \"category\": null,\n            \"campaign\": null,\n            \"max_per_order\": null\n          },\n          \"line_total\": \"25.90\",\n          \"sure\": true,\n          \"note\": \"Ingen mængde på listen: billigst pr. kg, l eller stk. Skriv en mængde, fx '1 kg'.\",\n          \"guess\": false,\n          \"candidates\": [\n            {\n              \"id\": \"1\",\n              \"name\": \"rugbrød 1 l\",\n              \"price\": \"12.95\",\n              \"quantity\": 2,\n              \"line_total\": \"25.90\",\n              \"unit_price\": \"12.95\",\n              \"unit\": \"l\",\n              \"note\": \"Ingen mængde på listen: billigst pr. kg, l eller stk. Skriv en mængde, fx '1 kg'.\",\n              \"suggested\": true,\n              \"name_match\": \"full\"\n            }\n          ],\n          \"oeko\": false\n        }\n      ],\n      \"missing\": [],\n      \"products_total\": \"38.85\",\n      \"fees\": {\n        \"levering\": \"39.00\"\n      },\n      \"total\": \"77.85\",\n      \"minimum_order\": \"500.00\",\n      \"minimum_met\": false,\n      \"notes\": [\n        \"Under minimumskøb: 461.15 kr. mangler til 500.00 kr.\"\n      ]\n    },\n    \"broken\": {\n      \"error\": \"broken: API'et svarer 500\"\n    }\n  },\n  \"cheapest\": null,\n  \"summary\": \"Kun fake kunne prise listen. Fejl: broken.\"\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"stores\": {\n    \"fake\": {\n      \"store\": \"fake\",\n      \"lines\": [\n        {\n          \"item\": \"mælk 1 l\",\n          \"quantity\": 1,\n          \"product\": {\n            \"store\": \"fake\",\n            \"id\": \"1\",\n            \"name\": \"mælk 1 l\",\n            \"price\": \"12.95\",\n            \"brand\": null,\n            \"size\": null,\n            \"unit_price\": \"12.95\",\n            \"unit\": \"l\",\n            \"ean\": \"5701234567890\",\n            \"on_offer\": false,\n            \"offer_text\": null,\n            \"before_price\": null,\n            \"offer_until\": null,\n            \"available\": true,\n            \"category\": null,\n            \"campaign\": null,\n            \"max_per_order\": null\n          },\n          \"line_total\": \"12.95\",\n          \"sure\": true,\n          \"note\": \"\",\n          \"guess\": false,\n          \"candidates\": [\n            {\n              \"id\": \"1\",\n              \"name\": \"mælk 1 l\",\n              \"price\": \"12.95\",\n              \"quantity\": 1,\n              \"line_total\": \"12.95\",\n              \"unit_price\": \"12.95\",\n              \"unit\": \"l\",\n              \"note\": \"\",\n              \"suggested\": true,\n              \"name_match\": \"full\",\n              \"size_fits\": true\n            }\n          ],\n          \"oeko\": false\n        },\n        {\n          \"item\": \"2 x rugbrød\",\n          \"quantity\": 2,\n          \"product\": {\n            \"store\": \"fake\",\n            \"id\": \"1\",\n            \"name\": \"rugbrød 1 l\",\n            \"price\": \"12.95\",\n            \"brand\": null,\n            \"size\": null,\n            \"unit_price\": \"12.95\",\n            \"unit\": \"l\",\n            \"ean\": \"5701234567890\",\n            \"on_offer\": false,\n            \"offer_text\": null,\n            \"before_price\": null,\n            \"offer_until\": null,\n            \"available\": true,\n            \"category\": null,\n            \"campaign\": null,\n            \"max_per_order\": null\n          },\n          \"line_total\": \"25.90\",\n          \"sure\": true,\n          \"note\": \"Ingen mængde på listen: billigst pr. kg, l eller stk. Skriv en mængde, fx '1 kg'.\",\n          \"guess\": false,\n          \"candidates\": [\n            {\n              \"id\": \"1\",\n              \"name\": \"rugbrød 1 l\",\n              \"price\": \"12.95\",\n              \"quantity\": 2,\n              \"line_total\": \"25.90\",\n              \"unit_price\": \"12.95\",\n              \"unit\": \"l\",\n              \"note\": \"Ingen mængde på listen: billigst pr. kg, l eller stk. Skriv en mængde, fx '1 kg'.\",\n              \"suggested\": true,\n              \"name_match\": \"full\"\n            }\n          ],\n          \"oeko\": false\n        }\n      ],\n      \"missing\": [],\n      \"products_total\": \"38.85\",\n      \"fees\": {\n        \"levering\": \"39.00\"\n      },\n      \"total\": \"77.85\",\n      \"minimum_order\": \"500.00\",\n      \"minimum_met\": false,\n      \"notes\": [\n        \"Under minimumskøb: 461.15 kr. mangler til 500.00 kr.\"\n      ]\n    },\n    \"broken\": {\n      \"error\": \"broken: API'et svarer 500\"\n    }\n  },\n  \"cheapest\": null,\n  \"summary\": \"Kun fake kunne prise listen. Fejl: broken.\"\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"stores\": {\n    \"fake\": {\n      \"store\": \"fake\",\n      \"lines\": [\n        {\n          \"item\": \"mælk 1 l\",\n          \"quantity\": 1,\n          \"product\": {\n            \"store\": \"fake\",\n            \"id\": \"1\",\n            \"name\": \"mælk 1 l\",\n            \"price\": \"12.95\",\n            \"brand\": null,\n            \"size\": null,\n            \"unit_price\": \"12.95\",\n            \"unit\": \"l\",\n            \"ean\": \"5701234567890\",\n            \"on_offer\": false,\n            \"offer_text\": null,\n            \"before_price\": null,\n            \"offer_until\": null,\n            \"available\": true,\n            \"category\": null,\n            \"campaign\": null,\n            \"max_per_order\": null\n          },\n          \"line_total\": \"12.95\",\n          \"sure\": true,\n          \"note\": \"\",\n          \"guess\": false,\n          \"candidates\": [\n            {\n              \"id\": \"1\",\n              \"name\": \"mælk 1 l\",\n              \"price\": \"12.95\",\n              \"quantity\": 1,\n              \"line_total\": \"12.95\",\n              \"unit_price\": \"12.95\",\n              \"unit\": \"l\",\n              \"note\": \"\",\n              \"suggested\": true,\n              \"name_match\": \"full\",\n              \"size_fits\": true\n            }\n          ],\n          \"oeko\": false\n        },\n        {\n          \"item\": \"2 x rugbrød\",\n          \"quantity\": 2,\n          \"product\": {\n            \"store\": \"fake\",\n            \"id\": \"1\",\n            \"name\": \"rugbrød 1 l\",\n            \"price\": \"12.95\",\n            \"brand\": null,\n            \"size\": null,\n            \"unit_price\": \"12.95\",\n            \"unit\": \"l\",\n            \"ean\": \"5701234567890\",\n            \"on_offer\": false,\n            \"offer_text\": null,\n            \"before_price\": null,\n            \"offer_until\": null,\n            \"available\": true,\n            \"category\": null,\n            \"campaign\": null,\n            \"max_per_order\": null\n          },\n          \"line_total\": \"25.90\",\n          \"sure\": true,\n          \"note\": \"Ingen mængde på listen: billigst pr. kg, l eller stk. Skriv en mængde, fx '1 kg'.\",\n          \"guess\": false,\n          \"candidates\": [\n            {\n              \"id\": \"1\",\n              \"name\": \"rugbrød 1 l\",\n              \"price\": \"12.95\",\n              \"quantity\": 2,\n              \"line_total\": \"25.90\",\n              \"unit_price\": \"12.95\",\n              \"unit\": \"l\",\n              \"note\": \"Ingen mængde på listen: billigst pr. kg, l eller stk. Skriv en mængde, fx '1 kg'.\",\n              \"suggested\": true,\n              \"name_match\": \"full\"\n            }\n          ],\n          \"oeko\": false\n        }\n      ],\n      \"missing\": [],\n      \"products_total\": \"38.85\",\n      \"fees\": {\n        \"levering\": \"39.00\"\n      },\n      \"total\": \"77.85\",\n      \"minimum_order\": \"500.00\",\n      \"minimum_met\": false,\n      \"notes\": [\n        \"Under minimumskøb: 461.15 kr. mangler til 500.00 kr.\"\n      ]\n    },\n    \"broken\": {\n      \"error\": \"broken: API'et svarer 500\"\n    }\n  },\n  \"cheapest\": null,\n  \"summary\": \"Kun fake kunne prise listen. Fejl: broken.\"\n}"
+  },
+  {
+   "arguments": {
+    "days": 0,
+    "stores": [
+     "fake"
+    ]
+   },
+   "is_error": false,
+   "name": "list_delivery_slots",
+   "response": {
+    "id": 45,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"fake\": {\n    \"cheapest\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      }\n    ],\n    \"slots\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      }\n    ]\n  }\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"fake\": {\n    \"cheapest\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      }\n    ],\n    \"slots\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      }\n    ]\n  }\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"fake\": {\n    \"cheapest\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      }\n    ],\n    \"slots\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      }\n    ]\n  }\n}"
+  },
+  {
+   "arguments": {
+    "days": 99,
+    "stores": [
+     "fake"
+    ]
+   },
+   "is_error": false,
+   "name": "list_delivery_slots",
+   "response": {
+    "id": 46,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"fake\": {\n    \"cheapest\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      }\n    ],\n    \"slots\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      }\n    ]\n  }\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"fake\": {\n    \"cheapest\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      }\n    ],\n    \"slots\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      }\n    ]\n  }\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"fake\": {\n    \"cheapest\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      }\n    ],\n    \"slots\": [\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"25.00\",\n        \"available\": true,\n        \"kind\": \"Fleksibel\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-03T14:00:00\",\n        \"end\": \"2026-11-03T21:00:00\",\n        \"price\": \"19.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      },\n      {\n        \"store\": \"fake\",\n        \"start\": \"2026-11-04T14:00:00\",\n        \"end\": \"2026-11-04T21:00:00\",\n        \"price\": \"0.00\",\n        \"available\": true,\n        \"kind\": \"Personlig\",\n        \"note\": null\n      }\n    ]\n  }\n}"
+  },
+  {
+   "arguments": {
+    "category": "frokost",
+    "stores": [
+     "fake"
+    ]
+   },
+   "is_error": false,
+   "name": "list_recipes",
+   "response": {
+    "id": 47,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r2\",\n      \"name\": \"Pasta\",\n      \"url\": \"https://example.com/r2\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": \"Aftensmad\"\n    }\n  ]\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r2\",\n      \"name\": \"Pasta\",\n      \"url\": \"https://example.com/r2\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": \"Aftensmad\"\n    }\n  ]\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r2\",\n      \"name\": \"Pasta\",\n      \"url\": \"https://example.com/r2\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": \"Aftensmad\"\n    }\n  ]\n}"
+  },
+  {
+   "arguments": {
+    "stores": [
+     "fake"
+    ],
+    "tags": []
+   },
+   "is_error": false,
+   "name": "list_recipes",
+   "response": {
+    "id": 48,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r1\",\n      \"name\": \"Grød\",\n      \"url\": \"https://example.com/r1\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": \"Morgen\"\n    }\n  ]\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r1\",\n      \"name\": \"Grød\",\n      \"url\": \"https://example.com/r1\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": \"Morgen\"\n    }\n  ]\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"r1\",\n      \"name\": \"Grød\",\n      \"url\": \"https://example.com/r1\",\n      \"time\": null,\n      \"persons\": null,\n      \"group\": \"Morgen\"\n    }\n  ]\n}"
+  },
+  {
+   "arguments": {
+    "store": "broken"
+   },
+   "is_error": false,
+   "name": "get_delivery_info",
+   "response": {
+    "id": 49,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"delivery\": {\n    \"store\": \"fake\",\n    \"chosen_start\": \"2026-11-03T16:00:00\",\n    \"chosen_end\": \"2026-11-03T19:00:00\",\n    \"edit_deadline\": null,\n    \"next_available\": \"2026-11-02\",\n    \"note\": null\n  },\n  \"terms\": {\n    \"store\": \"fake\",\n    \"home_delivery\": true,\n    \"delivery_fee\": \"39.00\",\n    \"other_fees\": {},\n    \"minimum_order\": \"500.00\",\n    \"source\": \"api\"\n  }\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"delivery\": {\n    \"store\": \"fake\",\n    \"chosen_start\": \"2026-11-03T16:00:00\",\n    \"chosen_end\": \"2026-11-03T19:00:00\",\n    \"edit_deadline\": null,\n    \"next_available\": \"2026-11-02\",\n    \"note\": null\n  },\n  \"terms\": {\n    \"store\": \"fake\",\n    \"home_delivery\": true,\n    \"delivery_fee\": \"39.00\",\n    \"other_fees\": {},\n    \"minimum_order\": \"500.00\",\n    \"source\": \"api\"\n  }\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"delivery\": {\n    \"store\": \"fake\",\n    \"chosen_start\": \"2026-11-03T16:00:00\",\n    \"chosen_end\": \"2026-11-03T19:00:00\",\n    \"edit_deadline\": null,\n    \"next_available\": \"2026-11-02\",\n    \"note\": null\n  },\n  \"terms\": {\n    \"store\": \"fake\",\n    \"home_delivery\": true,\n    \"delivery_fee\": \"39.00\",\n    \"other_fees\": {},\n    \"minimum_order\": \"500.00\",\n    \"source\": \"api\"\n  }\n}"
+  },
+  {
+   "arguments": {},
+   "is_error": false,
+   "name": "get_cart",
+   "response": {
+    "id": 50,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"broken\": {\n    \"store\": \"fake\",\n    \"lines\": [\n      {\n        \"product_id\": \"1\",\n        \"name\": \"Mælk\",\n        \"quantity\": 2,\n        \"line_total\": \"25.90\"\n      }\n    ],\n    \"products_total\": \"25.90\",\n    \"fees\": {\n      \"levering\": \"39.00\"\n    },\n    \"total\": \"64.90\",\n    \"minimum_order\": \"500.00\",\n    \"minimum_met\": false,\n    \"delivery\": null,\n    \"warnings\": []\n  },\n  \"fake\": {\n    \"store\": \"fake\",\n    \"lines\": [\n      {\n        \"product_id\": \"1\",\n        \"name\": \"Mælk\",\n        \"quantity\": 3,\n        \"line_total\": \"38.85\"\n      }\n    ],\n    \"products_total\": \"38.85\",\n    \"fees\": {\n      \"levering\": \"39.00\"\n    },\n    \"total\": \"77.85\",\n    \"minimum_order\": \"500.00\",\n    \"minimum_met\": false,\n    \"delivery\": null,\n    \"warnings\": []\n  }\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"broken\": {\n    \"store\": \"fake\",\n    \"lines\": [\n      {\n        \"product_id\": \"1\",\n        \"name\": \"Mælk\",\n        \"quantity\": 2,\n        \"line_total\": \"25.90\"\n      }\n    ],\n    \"products_total\": \"25.90\",\n    \"fees\": {\n      \"levering\": \"39.00\"\n    },\n    \"total\": \"64.90\",\n    \"minimum_order\": \"500.00\",\n    \"minimum_met\": false,\n    \"delivery\": null,\n    \"warnings\": []\n  },\n  \"fake\": {\n    \"store\": \"fake\",\n    \"lines\": [\n      {\n        \"product_id\": \"1\",\n        \"name\": \"Mælk\",\n        \"quantity\": 3,\n        \"line_total\": \"38.85\"\n      }\n    ],\n    \"products_total\": \"38.85\",\n    \"fees\": {\n      \"levering\": \"39.00\"\n    },\n    \"total\": \"77.85\",\n    \"minimum_order\": \"500.00\",\n    \"minimum_met\": false,\n    \"delivery\": null,\n    \"warnings\": []\n  }\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"broken\": {\n    \"store\": \"fake\",\n    \"lines\": [\n      {\n        \"product_id\": \"1\",\n        \"name\": \"Mælk\",\n        \"quantity\": 2,\n        \"line_total\": \"25.90\"\n      }\n    ],\n    \"products_total\": \"25.90\",\n    \"fees\": {\n      \"levering\": \"39.00\"\n    },\n    \"total\": \"64.90\",\n    \"minimum_order\": \"500.00\",\n    \"minimum_met\": false,\n    \"delivery\": null,\n    \"warnings\": []\n  },\n  \"fake\": {\n    \"store\": \"fake\",\n    \"lines\": [\n      {\n        \"product_id\": \"1\",\n        \"name\": \"Mælk\",\n        \"quantity\": 3,\n        \"line_total\": \"38.85\"\n      }\n    ],\n    \"products_total\": \"38.85\",\n    \"fees\": {\n      \"levering\": \"39.00\"\n    },\n    \"total\": \"77.85\",\n    \"minimum_order\": \"500.00\",\n    \"minimum_met\": false,\n    \"delivery\": null,\n    \"warnings\": []\n  }\n}"
+  },
+  {
+   "arguments": {
+    "limit": 1,
+    "stores": [
+     "broken",
+     "fake"
+    ]
+   },
+   "is_error": false,
+   "name": "list_offers",
+   "response": {
+    "id": 51,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"broken\": {\n    \"error\": \"broken: API'et svarer 500\"\n  },\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"Tilbud 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ]\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"broken\": {\n    \"error\": \"broken: API'et svarer 500\"\n  },\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"Tilbud 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ]\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"broken\": {\n    \"error\": \"broken: API'et svarer 500\"\n  },\n  \"fake\": [\n    {\n      \"store\": \"fake\",\n      \"id\": \"1\",\n      \"name\": \"Tilbud 1 l\",\n      \"price\": \"12.95\",\n      \"brand\": null,\n      \"size\": null,\n      \"unit_price\": \"12.95\",\n      \"unit\": \"l\",\n      \"ean\": \"5701234567890\",\n      \"on_offer\": false,\n      \"offer_text\": null,\n      \"before_price\": null,\n      \"offer_until\": null,\n      \"available\": true,\n      \"category\": null,\n      \"campaign\": null,\n      \"max_per_order\": null\n    }\n  ]\n}"
+  },
+  {
+   "arguments": {},
+   "is_error": true,
+   "name": "no_such_tool",
+   "response": {
+    "id": 52,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "Unknown tool: no_such_tool",
+       "type": "text"
+      }
+     ],
+     "isError": true
+    }
+   },
+   "text": "Unknown tool: no_such_tool",
+   "text_compared": true,
+   "text_without_prefix": "Unknown tool: no_such_tool"
+  },
+  {
+   "arguments": {
+    "extra": 1,
+    "store": "fake"
+   },
+   "is_error": false,
+   "name": "get_cart",
+   "response": {
+    "id": 53,
+    "jsonrpc": "2.0",
+    "result": {
+     "content": [
+      {
+       "text": "{\n  \"store\": \"fake\",\n  \"lines\": [\n    {\n      \"product_id\": \"1\",\n      \"name\": \"Mælk\",\n      \"quantity\": 3,\n      \"line_total\": \"38.85\"\n    }\n  ],\n  \"products_total\": \"38.85\",\n  \"fees\": {\n    \"levering\": \"39.00\"\n  },\n  \"total\": \"77.85\",\n  \"minimum_order\": \"500.00\",\n  \"minimum_met\": false,\n  \"delivery\": null,\n  \"warnings\": []\n}",
+       "type": "text"
+      }
+     ],
+     "isError": false
+    }
+   },
+   "text": "{\n  \"store\": \"fake\",\n  \"lines\": [\n    {\n      \"product_id\": \"1\",\n      \"name\": \"Mælk\",\n      \"quantity\": 3,\n      \"line_total\": \"38.85\"\n    }\n  ],\n  \"products_total\": \"38.85\",\n  \"fees\": {\n    \"levering\": \"39.00\"\n  },\n  \"total\": \"77.85\",\n  \"minimum_order\": \"500.00\",\n  \"minimum_met\": false,\n  \"delivery\": null,\n  \"warnings\": []\n}",
+   "text_compared": true,
+   "text_without_prefix": "{\n  \"store\": \"fake\",\n  \"lines\": [\n    {\n      \"product_id\": \"1\",\n      \"name\": \"Mælk\",\n      \"quantity\": 3,\n      \"line_total\": \"38.85\"\n    }\n  ],\n  \"products_total\": \"38.85\",\n  \"fees\": {\n    \"levering\": \"39.00\"\n  },\n  \"total\": \"77.85\",\n  \"minimum_order\": \"500.00\",\n  \"minimum_met\": false,\n  \"delivery\": null,\n  \"warnings\": []\n}"
+  }
+ ],
+ "initialize": {
+  "request": {
+   "capabilities": {},
+   "clientInfo": {
+    "name": "golden",
+    "version": "0"
+   },
+   "protocolVersion": "2025-06-18"
+  },
+  "response": {
+   "id": 1,
+   "jsonrpc": "2.0",
+   "result": {
+    "capabilities": {
+     "prompts": {
+      "listChanged": false
+     },
+     "resources": {
+      "listChanged": false,
+      "subscribe": false
+     },
+     "tools": {
+      "listChanged": false
+     }
+    },
+    "instructions": "Tools for Danish grocery stores with home delivery. You can search, compare baskets, find recipes, list delivery times and change cart quantities. You can never order or pay: the human always does that on the store's website.",
+    "protocolVersion": "2025-06-18",
+    "serverInfo": {
+     "name": "handle",
+     "version": ""
+    }
+   }
+  },
+  "response_raw": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"capabilities\":{\"prompts\":{\"listChanged\":false},\"resources\":{\"listChanged\":false,\"subscribe\":false},\"tools\":{\"listChanged\":false}},\"instructions\":\"Tools for Danish grocery stores with home delivery. You can search, compare baskets, find recipes, list delivery times and change cart quantities. You can never order or pay: the human always does that on the store's website.\",\"protocolVersion\":\"2025-06-18\",\"serverInfo\":{\"name\":\"handle\",\"version\":\"\"}}}"
+ },
+ "ping": {
+  "id": 54,
+  "jsonrpc": "2.0",
+  "result": {}
+ },
+ "tools_list": {
+  "response": {
+   "id": 2,
+   "jsonrpc": "2.0",
+   "result": {
+    "tools": [
+     {
+      "annotations": {
+       "destructiveHint": false,
+       "openWorldHint": true,
+       "readOnlyHint": true
+      },
+      "description": "Search products in one or more stores. Returns price, price per kg/l, offers and EAN when\nknown. Stores rank by relevance and put cheap products far down: when the human asks for the\ncheapest, use sort=\"unit_price\" (per kg/l/stk) or \"price\".",
+      "inputSchema": {
+       "properties": {
+        "limit": {
+         "default": 10,
+         "title": "Limit",
+         "type": "integer"
+        },
+        "query": {
+         "title": "Query",
+         "type": "string"
+        },
+        "sort": {
+         "default": "relevance",
+         "enum": [
+          "relevance",
+          "price",
+          "unit_price"
+         ],
+         "title": "Sort",
+         "type": "string"
+        },
+        "stores": {
+         "anyOf": [
+          {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "title": "Stores"
+        }
+       },
+       "required": [
+        "query"
+       ],
+       "title": "search_productsArguments",
+       "type": "object"
+      },
+      "name": "search_products"
+     },
+     {
+      "annotations": {
+       "destructiveHint": false,
+       "openWorldHint": true,
+       "readOnlyHint": true
+      },
+      "description": "Find the stores' own recipes, e.g. \"kylling karry\". Returns name and link.\nUse get_recipe for time, persons and the products to buy.\nnemlig only for now; BilkaToGo answers that it cannot yet.",
+      "inputSchema": {
+       "properties": {
+        "limit": {
+         "default": 5,
+         "title": "Limit",
+         "type": "integer"
+        },
+        "query": {
+         "title": "Query",
+         "type": "string"
+        },
+        "stores": {
+         "anyOf": [
+          {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "title": "Stores"
+        }
+       },
+       "required": [
+        "query"
+       ],
+       "title": "search_recipesArguments",
+       "type": "object"
+      },
+      "name": "search_recipes"
+     },
+     {
+      "annotations": {
+       "destructiveHint": false,
+       "openWorldHint": true,
+       "readOnlyHint": true
+      },
+      "description": "The products to buy for one of the store's recipes, as on its \"Se varer og læg i kurv\":\nper ingredient the store's product, packs for `persons` and alternatives. `have_at_home`\nitems (salt, oil) are what the store assumes you have: left out of `total`, ask first.\nAlso `image`, `description`, `method`, `tip`. Scale `ingredients` from `ingredients_persons`.\n`recipe` is the recipe's link or id from search_recipes or list_recipes. Put the products\nin the cart with add_recipe_to_cart after the human says yes.\nnemlig only for now; BilkaToGo answers that it cannot yet.",
+      "inputSchema": {
+       "properties": {
+        "persons": {
+         "anyOf": [
+          {
+           "type": "integer"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "title": "Persons"
+        },
+        "recipe": {
+         "title": "Recipe",
+         "type": "string"
+        },
+        "store": {
+         "title": "Store",
+         "type": "string"
+        }
+       },
+       "required": [
+        "store",
+        "recipe"
+       ],
+       "title": "get_recipeArguments",
+       "type": "object"
+      },
+      "name": "get_recipe"
+     },
+     {
+      "annotations": {
+       "destructiveHint": false,
+       "openWorldHint": true,
+       "readOnlyHint": true
+      },
+      "description": "Browse the store's recipes, with link. No tags or category: this week's featured\nrecipes (nemlig: \"Ugens udvalgte\"). With `tags`: recipes that have every tag, e.g.\n[\"Familievenlig\", \"Budgetvenlig\"] or [\"Under 30 min\", \"Kylling\"]. nemlig's tags include\nUnder 20/30 min, Budgetvenlig, Familievenlig, Populær, Mad til flere dage, Vegetarisk,\nKylling, Fisk, Oksekød, Gris and cuisines; an unknown tag answers with the full list.\n`category` (nemlig: aftensmad by default, frokost, madpakke, morgenmad, ...).\nUse get_recipe for the products.\nnemlig only for now; BilkaToGo answers that it cannot yet.",
+      "inputSchema": {
+       "properties": {
+        "category": {
+         "anyOf": [
+          {
+           "type": "string"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "title": "Category"
+        },
+        "limit": {
+         "default": 20,
+         "title": "Limit",
+         "type": "integer"
+        },
+        "stores": {
+         "anyOf": [
+          {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "title": "Stores"
+        },
+        "tags": {
+         "anyOf": [
+          {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "title": "Tags"
+        }
+       },
+       "title": "list_recipesArguments",
+       "type": "object"
+      },
+      "name": "list_recipes"
+     },
+     {
+      "annotations": {
+       "destructiveHint": false,
+       "openWorldHint": true,
+       "readOnlyHint": true
+      },
+      "description": "List this week's offers in each store, also items you would not search for: nemlig's\nSkarp pris, Priskup, Dagstilbud, Undgå madspild and gifts; BilkaToGo's offers. `limit` is\nper list; a product on two lists is shown once. A list the store fails to send is left out\n(see the server log). Free gifts come from a separate search and are not cut by `limit`.\nThey have price 0 and \"max_per_order\". Use them when they fit the plan.",
+      "inputSchema": {
+       "properties": {
+        "limit": {
+         "default": 25,
+         "title": "Limit",
+         "type": "integer"
+        },
+        "stores": {
+         "anyOf": [
+          {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "title": "Stores"
+        }
+       },
+       "title": "list_offersArguments",
+       "type": "object"
+      },
+      "name": "list_offers"
+     },
+     {
+      "annotations": {
+       "destructiveHint": false,
+       "openWorldHint": true,
+       "readOnlyHint": true
+      },
+      "description": "Price a shopping list in each store, e.g. [\"2 x letmælk 1 l\", \"rugbrød\", \"æg 10 stk\"].\nWrite the amount you need (\"fior di latte 300 g\"), not a pack size. Returns per item a\nsuggested product and up to 5 \"candidates\" (the suggestion first, one øko when found) with\nthe cost for the amount and flags: name_match, size_fits, prepared (cold cuts, smoked,\nbreaded), processed (frost/konserves), blend, oeko. The suggestion is a guess by word rules:\npick the candidate that fits the user, and ask when \"sure\" is false or none fits\n(search_products finds more). Unknown facts and false flags are left out. Also total incl.\nfees and minimum order met. Only reads: use set_cart_quantities with the chosen ids after.",
+      "inputSchema": {
+       "properties": {
+        "items": {
+         "items": {
+          "type": "string"
+         },
+         "title": "Items",
+         "type": "array"
+        },
+        "stores": {
+         "anyOf": [
+          {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "title": "Stores"
+        }
+       },
+       "required": [
+        "items"
+       ],
+       "title": "compare_basketArguments",
+       "type": "object"
+      },
+      "name": "compare_basket"
+     },
+     {
+      "annotations": {
+       "destructiveHint": false,
+       "openWorldHint": true,
+       "readOnlyHint": true
+      },
+      "description": "Show the cart: lines, fees, total and whether the minimum order is met. With `store`\nthat store's cart; without, every store's cart keyed by store name, a failing store\n(e.g. no login) as {\"error\": ...} next to the others.",
+      "inputSchema": {
+       "properties": {
+        "store": {
+         "anyOf": [
+          {
+           "type": "string"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "title": "Store"
+        }
+       },
+       "title": "get_cartArguments",
+       "type": "object"
+      },
+      "name": "get_cart"
+     },
+     {
+      "annotations": {
+       "destructiveHint": true,
+       "idempotentHint": true,
+       "openWorldHint": true,
+       "readOnlyHint": false
+      },
+      "description": "Set ABSOLUTE quantities in one store's cart (0 removes the product). Never orders or pays. Returns a result per product and the new cart.",
+      "inputSchema": {
+       "properties": {
+        "items": {
+         "additionalProperties": {
+          "type": "integer"
+         },
+         "title": "Items",
+         "type": "object"
+        },
+        "store": {
+         "title": "Store",
+         "type": "string"
+        }
+       },
+       "required": [
+        "store",
+        "items"
+       ],
+       "title": "set_cart_quantitiesArguments",
+       "type": "object"
+      },
+      "name": "set_cart_quantities"
+     },
+     {
+      "annotations": {
+       "destructiveHint": true,
+       "idempotentHint": false,
+       "openWorldHint": true,
+       "readOnlyHint": false
+      },
+      "description": "Put a recipe's products in one store's cart, as get_recipe shows them.\nASK THE HUMAN FIRST: show the list from get_recipe and get a yes. Never orders or pays.\nAdds to what is already in the cart, so calling it twice adds twice.\n`have_at_home` items (salt, oil) are left out unless named in `include`. `skip` leaves out\ningredients; `swap` maps an ingredient (or product id) to one of its alternatives' product\nids. Names: ingredient or product id. Returns before/added/after per product, the skipped\nitems and the new cart. Check `ok` per product: a store can refuse some lines; tell the\nhuman which ones failed.\nnemlig only for now; BilkaToGo answers that it cannot yet.",
+      "inputSchema": {
+       "properties": {
+        "include": {
+         "anyOf": [
+          {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "title": "Include"
+        },
+        "persons": {
+         "anyOf": [
+          {
+           "type": "integer"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "title": "Persons"
+        },
+        "recipe": {
+         "title": "Recipe",
+         "type": "string"
+        },
+        "skip": {
+         "anyOf": [
+          {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "title": "Skip"
+        },
+        "store": {
+         "title": "Store",
+         "type": "string"
+        },
+        "swap": {
+         "anyOf": [
+          {
+           "additionalProperties": {
+            "type": "string"
+           },
+           "type": "object"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "title": "Swap"
+        }
+       },
+       "required": [
+        "store",
+        "recipe"
+       ],
+       "title": "add_recipe_to_cartArguments",
+       "type": "object"
+      },
+      "name": "add_recipe_to_cart"
+     },
+     {
+      "annotations": {
+       "destructiveHint": false,
+       "openWorldHint": true,
+       "readOnlyHint": true
+      },
+      "description": "Show the chosen delivery time, edit deadline and next free day, plus fees and minimum order.",
+      "inputSchema": {
+       "properties": {
+        "store": {
+         "title": "Store",
+         "type": "string"
+        }
+       },
+       "required": [
+        "store"
+       ],
+       "title": "get_delivery_infoArguments",
+       "type": "object"
+      },
+      "name": "get_delivery_info"
+     },
+     {
+      "annotations": {
+       "destructiveHint": false,
+       "openWorldHint": true,
+       "readOnlyHint": true
+      },
+      "description": "List free delivery times for the next `days` days with the delivery fee per slot, in time\norder, plus the 3 cheapest per store. nemlig: \"Personlig\" (you are home) or \"Fleksibel\"\n(left at the door). BilkaToGo: one flat fee, night delivery. Only reads: it never chooses\na time. The human chooses the time on the store's website.",
+      "inputSchema": {
+       "properties": {
+        "days": {
+         "default": 7,
+         "title": "Days",
+         "type": "integer"
+        },
+        "stores": {
+         "anyOf": [
+          {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "title": "Stores"
+        }
+       },
+       "title": "list_delivery_slotsArguments",
+       "type": "object"
+      },
+      "name": "list_delivery_slots"
+     },
+     {
+      "annotations": {
+       "destructiveHint": false,
+       "openWorldHint": true,
+       "readOnlyHint": true
+      },
+      "description": "List recent orders in one store (newest first). Use get_order for the lines.",
+      "inputSchema": {
+       "properties": {
+        "limit": {
+         "default": 10,
+         "title": "Limit",
+         "type": "integer"
+        },
+        "store": {
+         "title": "Store",
+         "type": "string"
+        }
+       },
+       "required": [
+        "store"
+       ],
+       "title": "get_ordersArguments",
+       "type": "object"
+      },
+      "name": "get_orders"
+     },
+     {
+      "annotations": {
+       "destructiveHint": false,
+       "openWorldHint": true,
+       "readOnlyHint": true
+      },
+      "description": "Show one order with what was bought.",
+      "inputSchema": {
+       "properties": {
+        "order_id": {
+         "title": "Order Id",
+         "type": "string"
+        },
+        "store": {
+         "title": "Store",
+         "type": "string"
+        }
+       },
+       "required": [
+        "store",
+        "order_id"
+       ],
+       "title": "get_orderArguments",
+       "type": "object"
+      },
+      "name": "get_order"
+     }
+    ]
+   }
+  },
+  "response_raw": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"tools\":[{\"annotations\":{\"destructiveHint\":false,\"openWorldHint\":true,\"readOnlyHint\":true},\"description\":\"Search products in one or more stores. Returns price, price per kg/l, offers and EAN when\\nknown. Stores rank by relevance and put cheap products far down: when the human asks for the\\ncheapest, use sort=\\\"unit_price\\\" (per kg/l/stk) or \\\"price\\\".\",\"inputSchema\":{\"properties\":{\"query\":{\"title\":\"Query\",\"type\":\"string\"},\"stores\":{\"anyOf\":[{\"items\":{\"type\":\"string\"},\"type\":\"array\"},{\"type\":\"null\"}],\"default\":null,\"title\":\"Stores\"},\"limit\":{\"default\":10,\"title\":\"Limit\",\"type\":\"integer\"},\"sort\":{\"default\":\"relevance\",\"enum\":[\"relevance\",\"price\",\"unit_price\"],\"title\":\"Sort\",\"type\":\"string\"}},\"required\":[\"query\"],\"type\":\"object\",\"title\":\"search_productsArguments\"},\"name\":\"search_products\"},{\"annotations\":{\"destructiveHint\":false,\"openWorldHint\":true,\"readOnlyHint\":true},\"description\":\"Find the stores' own recipes, e.g. \\\"kylling karry\\\". Returns name and link.\\nUse get_recipe for time, persons and the products to buy.\\nnemlig only for now; BilkaToGo answers that it cannot yet.\",\"inputSchema\":{\"properties\":{\"query\":{\"title\":\"Query\",\"type\":\"string\"},\"stores\":{\"anyOf\":[{\"items\":{\"type\":\"string\"},\"type\":\"array\"},{\"type\":\"null\"}],\"default\":null,\"title\":\"Stores\"},\"limit\":{\"default\":5,\"title\":\"Limit\",\"type\":\"integer\"}},\"required\":[\"query\"],\"type\":\"object\",\"title\":\"search_recipesArguments\"},\"name\":\"search_recipes\"},{\"annotations\":{\"destructiveHint\":false,\"openWorldHint\":true,\"readOnlyHint\":true},\"description\":\"The products to buy for one of the store's recipes, as on its \\\"Se varer og læg i kurv\\\":\\nper ingredient the store's product, packs for `persons` and alternatives. `have_at_home`\\nitems (salt, oil) are what the store assumes you have: left out of `total`, ask first.\\nAlso `image`, `description`, `method`, `tip`. Scale `ingredients` from `ingredients_persons`.\\n`recipe` is the recipe's link or id from search_recipes or list_recipes. Put the products\\nin the cart with add_recipe_to_cart after the human says yes.\\nnemlig only for now; BilkaToGo answers that it cannot yet.\",\"inputSchema\":{\"properties\":{\"store\":{\"title\":\"Store\",\"type\":\"string\"},\"recipe\":{\"title\":\"Recipe\",\"type\":\"string\"},\"persons\":{\"anyOf\":[{\"type\":\"integer\"},{\"type\":\"null\"}],\"default\":null,\"title\":\"Persons\"}},\"required\":[\"store\",\"recipe\"],\"type\":\"object\",\"title\":\"get_recipeArguments\"},\"name\":\"get_recipe\"},{\"annotations\":{\"destructiveHint\":false,\"openWorldHint\":true,\"readOnlyHint\":true},\"description\":\"Browse the store's recipes, with link. No tags or category: this week's featured\\nrecipes (nemlig: \\\"Ugens udvalgte\\\"). With `tags`: recipes that have every tag, e.g.\\n[\\\"Familievenlig\\\", \\\"Budgetvenlig\\\"] or [\\\"Under 30 min\\\", \\\"Kylling\\\"]. nemlig's tags include\\nUnder 20/30 min, Budgetvenlig, Familievenlig, Populær, Mad til flere dage, Vegetarisk,\\nKylling, Fisk, Oksekød, Gris and cuisines; an unknown tag answers with the full list.\\n`category` (nemlig: aftensmad by default, frokost, madpakke, morgenmad, ...).\\nUse get_recipe for the products.\\nnemlig only for now; BilkaToGo answers that it cannot yet.\",\"inputSchema\":{\"properties\":{\"stores\":{\"anyOf\":[{\"items\":{\"type\":\"string\"},\"type\":\"array\"},{\"type\":\"null\"}],\"default\":null,\"title\":\"Stores\"},\"tags\":{\"anyOf\":[{\"items\":{\"type\":\"string\"},\"type\":\"array\"},{\"type\":\"null\"}],\"default\":null,\"title\":\"Tags\"},\"category\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}],\"default\":null,\"title\":\"Category\"},\"limit\":{\"default\":20,\"title\":\"Limit\",\"type\":\"integer\"}},\"type\":\"object\",\"title\":\"list_recipesArguments\"},\"name\":\"list_recipes\"},{\"annotations\":{\"destructiveHint\":false,\"openWorldHint\":true,\"readOnlyHint\":true},\"description\":\"List this week's offers in each store, also items you would not search for: nemlig's\\nSkarp pris, Priskup, Dagstilbud, Undgå madspild and gifts; BilkaToGo's offers. `limit` is\\nper list; a product on two lists is shown once. A list the store fails to send is left out\\n(see the server log). Free gifts come from a separate search and are not cut by `limit`.\\nThey have price 0 and \\\"max_per_order\\\". Use them when they fit the plan.\",\"inputSchema\":{\"properties\":{\"stores\":{\"anyOf\":[{\"items\":{\"type\":\"string\"},\"type\":\"array\"},{\"type\":\"null\"}],\"default\":null,\"title\":\"Stores\"},\"limit\":{\"default\":25,\"title\":\"Limit\",\"type\":\"integer\"}},\"type\":\"object\",\"title\":\"list_offersArguments\"},\"name\":\"list_offers\"},{\"annotations\":{\"destructiveHint\":false,\"openWorldHint\":true,\"readOnlyHint\":true},\"description\":\"Price a shopping list in each store, e.g. [\\\"2 x letmælk 1 l\\\", \\\"rugbrød\\\", \\\"æg 10 stk\\\"].\\nWrite the amount you need (\\\"fior di latte 300 g\\\"), not a pack size. Returns per item a\\nsuggested product and up to 5 \\\"candidates\\\" (the suggestion first, one øko when found) with\\nthe cost for the amount and flags: name_match, size_fits, prepared (cold cuts, smoked,\\nbreaded), processed (frost/konserves), blend, oeko. The suggestion is a guess by word rules:\\npick the candidate that fits the user, and ask when \\\"sure\\\" is false or none fits\\n(search_products finds more). Unknown facts and false flags are left out. Also total incl.\\nfees and minimum order met. Only reads: use set_cart_quantities with the chosen ids after.\",\"inputSchema\":{\"properties\":{\"items\":{\"items\":{\"type\":\"string\"},\"title\":\"Items\",\"type\":\"array\"},\"stores\":{\"anyOf\":[{\"items\":{\"type\":\"string\"},\"type\":\"array\"},{\"type\":\"null\"}],\"default\":null,\"title\":\"Stores\"}},\"required\":[\"items\"],\"type\":\"object\",\"title\":\"compare_basketArguments\"},\"name\":\"compare_basket\"},{\"annotations\":{\"destructiveHint\":false,\"openWorldHint\":true,\"readOnlyHint\":true},\"description\":\"Show the cart: lines, fees, total and whether the minimum order is met. With `store`\\nthat store's cart; without, every store's cart keyed by store name, a failing store\\n(e.g. no login) as {\\\"error\\\": ...} next to the others.\",\"inputSchema\":{\"properties\":{\"store\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}],\"default\":null,\"title\":\"Store\"}},\"type\":\"object\",\"title\":\"get_cartArguments\"},\"name\":\"get_cart\"},{\"annotations\":{\"destructiveHint\":true,\"idempotentHint\":true,\"openWorldHint\":true,\"readOnlyHint\":false},\"description\":\"Set ABSOLUTE quantities in one store's cart (0 removes the product). Never orders or pays. Returns a result per product and the new cart.\",\"inputSchema\":{\"properties\":{\"store\":{\"title\":\"Store\",\"type\":\"string\"},\"items\":{\"additionalProperties\":{\"type\":\"integer\"},\"title\":\"Items\",\"type\":\"object\"}},\"required\":[\"store\",\"items\"],\"type\":\"object\",\"title\":\"set_cart_quantitiesArguments\"},\"name\":\"set_cart_quantities\"},{\"annotations\":{\"destructiveHint\":true,\"idempotentHint\":false,\"openWorldHint\":true,\"readOnlyHint\":false},\"description\":\"Put a recipe's products in one store's cart, as get_recipe shows them.\\nASK THE HUMAN FIRST: show the list from get_recipe and get a yes. Never orders or pays.\\nAdds to what is already in the cart, so calling it twice adds twice.\\n`have_at_home` items (salt, oil) are left out unless named in `include`. `skip` leaves out\\ningredients; `swap` maps an ingredient (or product id) to one of its alternatives' product\\nids. Names: ingredient or product id. Returns before/added/after per product, the skipped\\nitems and the new cart. Check `ok` per product: a store can refuse some lines; tell the\\nhuman which ones failed.\\nnemlig only for now; BilkaToGo answers that it cannot yet.\",\"inputSchema\":{\"properties\":{\"store\":{\"title\":\"Store\",\"type\":\"string\"},\"recipe\":{\"title\":\"Recipe\",\"type\":\"string\"},\"persons\":{\"anyOf\":[{\"type\":\"integer\"},{\"type\":\"null\"}],\"default\":null,\"title\":\"Persons\"},\"skip\":{\"anyOf\":[{\"items\":{\"type\":\"string\"},\"type\":\"array\"},{\"type\":\"null\"}],\"default\":null,\"title\":\"Skip\"},\"swap\":{\"anyOf\":[{\"additionalProperties\":{\"type\":\"string\"},\"type\":\"object\"},{\"type\":\"null\"}],\"default\":null,\"title\":\"Swap\"},\"include\":{\"anyOf\":[{\"items\":{\"type\":\"string\"},\"type\":\"array\"},{\"type\":\"null\"}],\"default\":null,\"title\":\"Include\"}},\"required\":[\"store\",\"recipe\"],\"type\":\"object\",\"title\":\"add_recipe_to_cartArguments\"},\"name\":\"add_recipe_to_cart\"},{\"annotations\":{\"destructiveHint\":false,\"openWorldHint\":true,\"readOnlyHint\":true},\"description\":\"Show the chosen delivery time, edit deadline and next free day, plus fees and minimum order.\",\"inputSchema\":{\"properties\":{\"store\":{\"title\":\"Store\",\"type\":\"string\"}},\"required\":[\"store\"],\"type\":\"object\",\"title\":\"get_delivery_infoArguments\"},\"name\":\"get_delivery_info\"},{\"annotations\":{\"destructiveHint\":false,\"openWorldHint\":true,\"readOnlyHint\":true},\"description\":\"List free delivery times for the next `days` days with the delivery fee per slot, in time\\norder, plus the 3 cheapest per store. nemlig: \\\"Personlig\\\" (you are home) or \\\"Fleksibel\\\"\\n(left at the door). BilkaToGo: one flat fee, night delivery. Only reads: it never chooses\\na time. The human chooses the time on the store's website.\",\"inputSchema\":{\"properties\":{\"stores\":{\"anyOf\":[{\"items\":{\"type\":\"string\"},\"type\":\"array\"},{\"type\":\"null\"}],\"default\":null,\"title\":\"Stores\"},\"days\":{\"default\":7,\"title\":\"Days\",\"type\":\"integer\"}},\"type\":\"object\",\"title\":\"list_delivery_slotsArguments\"},\"name\":\"list_delivery_slots\"},{\"annotations\":{\"destructiveHint\":false,\"openWorldHint\":true,\"readOnlyHint\":true},\"description\":\"List recent orders in one store (newest first). Use get_order for the lines.\",\"inputSchema\":{\"properties\":{\"store\":{\"title\":\"Store\",\"type\":\"string\"},\"limit\":{\"default\":10,\"title\":\"Limit\",\"type\":\"integer\"}},\"required\":[\"store\"],\"type\":\"object\",\"title\":\"get_ordersArguments\"},\"name\":\"get_orders\"},{\"annotations\":{\"destructiveHint\":false,\"openWorldHint\":true,\"readOnlyHint\":true},\"description\":\"Show one order with what was bought.\",\"inputSchema\":{\"properties\":{\"store\":{\"title\":\"Store\",\"type\":\"string\"},\"order_id\":{\"title\":\"Order Id\",\"type\":\"string\"}},\"required\":[\"store\",\"order_id\"],\"type\":\"object\",\"title\":\"get_orderArguments\"},\"name\":\"get_order\"}]}}"
+ }
+}

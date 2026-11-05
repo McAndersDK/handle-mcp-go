@@ -1,0 +1,325 @@
+{
+ "answer": [
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": "Skarp pris",
+   "category": null,
+   "ean": null,
+   "id": "5060880",
+   "max_per_order": null,
+   "name": "Short ribs",
+   "offer_text": "Skarp pris",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "100.00",
+   "size": "1-1,30 kg / frost / Irish Nature",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "100.00"
+  },
+  {
+   "available": true,
+   "before_price": "19.95",
+   "brand": null,
+   "campaign": "Priskup",
+   "category": null,
+   "ean": null,
+   "id": "5003217",
+   "max_per_order": null,
+   "name": "Blåbærfrugtstænger",
+   "offer_text": "Tilbud, før 19,95 kr",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "11.97",
+   "size": "5 x 20 g / Castus",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "119.70"
+  },
+  {
+   "available": true,
+   "before_price": "20.45",
+   "brand": null,
+   "campaign": "Gratis",
+   "category": null,
+   "ean": null,
+   "id": "5606321",
+   "max_per_order": 1,
+   "name": "Mums rosinboller",
+   "offer_text": "Gratis (max 1 stk.)",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "0.00",
+   "size": "6 stk. / 350 g  / Schulstad - Det Gode",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "0.00"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": "Dagstilbud",
+   "category": null,
+   "ean": null,
+   "id": "5071252",
+   "max_per_order": null,
+   "name": "Angus cuvettesteg øko.",
+   "offer_text": "Dagstilbud",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "394.95",
+   "size": "1,4-1,70 kg",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "282.11"
+  },
+  {
+   "available": true,
+   "before_price": "20.95",
+   "brand": null,
+   "campaign": "Undgå madspild",
+   "category": null,
+   "ean": null,
+   "id": "5601872",
+   "max_per_order": null,
+   "name": "Kyllingepålæg m. urter",
+   "offer_text": "Tilbud, før 20,95 kr",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "12.95",
+   "size": "125 g / Sidste anv. dato: 06-11-2026",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "103.60"
+  }
+ ],
+ "args": [
+  1
+ ],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   ".ASPXAUTH": "auth-1"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "offers",
+ "name": "offers_limit_1",
+ "requests": [
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": {
+    "AppInstalled": false,
+    "CheckForExistingProducts": true,
+    "DoMerge": true,
+    "Password": "hemmeligt",
+    "SaveExistingBasket": false,
+    "Username": "kunde@example.com"
+   },
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "content-type": "application/json",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/login"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/v2/AppSettings/Website"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/basket/GetBasket"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "path",
+     "/tilbud"
+    ],
+    [
+     "timeslotId",
+     "2435672"
+    ]
+   ],
+   "url": "https://webapi.prod.knl.nemlig.it/productbff/api/web/page"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "query",
+     "gratis"
+    ],
+    [
+     "take",
+     "50"
+    ],
+    [
+     "skip",
+     "0"
+    ],
+    [
+     "recipeCount",
+     "0"
+    ],
+    [
+     "timestamp",
+     "ts-1"
+    ],
+    [
+     "timeslotUtc",
+     "2026110316-60-180"
+    ],
+    [
+     "deliveryZoneId",
+     "3"
+    ]
+   ],
+   "url": "https://webapi.prod.knl.nemlig.it/searchgateway/api/search"
+  }
+ ],
+ "session_after": {
+  ".ASPXAUTH": "auth-1"
+ },
+ "store": "nemlig"
+}

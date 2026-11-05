@@ -1,0 +1,228 @@
+{
+ "answer": [
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Cheasy",
+   "campaign": null,
+   "category": "Mejeri & køl > Mejeri > Yoghurt & syrnede mælkeprodukter > Skyr > Skyr m. smag",
+   "ean": "5711953011399",
+   "id": "19753",
+   "max_per_order": null,
+   "name": "Skyr m. vanilje 0,2% fedt u. tilsat sukker",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "30.95",
+   "size": "1 kg",
+   "store": "bilkatogo",
+   "unit": "kg",
+   "unit_price": "30.95"
+  },
+  {
+   "available": true,
+   "before_price": "39.31",
+   "brand": "Salling ØKO",
+   "campaign": "Skarp pris",
+   "category": "Mejeri & køl > Mejeri > Yoghurt & syrnede mælkeprodukter > Skyr > Skyr m. smag",
+   "ean": "5712876340580",
+   "id": "128298",
+   "max_per_order": null,
+   "name": "Skyr m. vanilje 0,2 % fedt øko",
+   "offer_text": "Skarp pris",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "25.00",
+   "size": "800 g",
+   "store": "bilkatogo",
+   "unit": "kg",
+   "unit_price": "31.25"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": "Mix",
+   "category": "Frugt & grønt > Frugt > Bananer > Bananer",
+   "ean": "5712873461653",
+   "id": "18381",
+   "max_per_order": null,
+   "name": "Bananer",
+   "offer_text": "Mix 10 for 25,00",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "2.75",
+   "size": "1 stk",
+   "store": "bilkatogo",
+   "unit": "stk",
+   "unit_price": "2.75"
+  },
+  {
+   "available": false,
+   "before_price": null,
+   "brand": "Salling",
+   "campaign": null,
+   "category": "Mejeri & køl > Mejeri > Ost > Revet ost & topping > Revet mozzarella",
+   "ean": "5712877217324",
+   "id": "140787",
+   "max_per_order": null,
+   "name": "Revet mozzarella 22% fedt",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "14.35",
+   "size": "200 g",
+   "store": "bilkatogo",
+   "unit": "kg",
+   "unit_price": "71.75"
+  },
+  {
+   "available": false,
+   "before_price": "64.95",
+   "brand": "Salling",
+   "campaign": "Tilbud",
+   "category": "Kød & fisk > Kylling > Kyllingebryst & kyllingefilet > Kyllingebrystfilet",
+   "ean": "5712877998575",
+   "id": "169794",
+   "max_per_order": null,
+   "name": "Kyllingebrystfilet",
+   "offer_text": "Spar 4,95",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "60.00",
+   "size": "650 g",
+   "store": "bilkatogo",
+   "unit": "kg",
+   "unit_price": "92.31"
+  }
+ ],
+ "args": [
+  "skyr",
+  5
+ ],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   "login_token": "st2.fake-login-token"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "search",
+ "name": "search_sid_1653",
+ "requests": [
+  {
+   "body": [
+    [
+     "loginID",
+     "kunde@example.com"
+    ],
+    [
+     "password",
+     "hemmeligt"
+    ],
+    [
+     "apiKey",
+     "3_tA6BbV434FQqN73HnUG1KA3qFv8KiG4OqLu9eWPh7sKRqRizH5Vfv5Larmgrb4I2"
+    ],
+    [
+     "httpStatusCodes",
+     "true"
+    ]
+   ],
+   "cookies": [],
+   "headers": {
+    "content-type": "application/x-www-form-urlencoded"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://accounts.eu1.gigya.com/accounts.login"
+  },
+  {
+   "body": [
+    [
+     "apiKey",
+     "3_tA6BbV434FQqN73HnUG1KA3qFv8KiG4OqLu9eWPh7sKRqRizH5Vfv5Larmgrb4I2"
+    ],
+    [
+     "login_token",
+     "st2.fake-login-token"
+    ],
+    [
+     "expiration",
+     "86400"
+    ]
+   ],
+   "cookies": [],
+   "headers": {
+    "content-type": "application/x-www-form-urlencoded"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://accounts.eu1.gigya.com/accounts.getJWT"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "jwt_token": "eyFake.jwt.token"
+   },
+   "method": "POST",
+   "params": [
+    [
+     "u",
+     "w"
+    ]
+   ],
+   "url": "https://api.bilkatogo.dk/api/auth/LoginJWT"
+  },
+  {
+   "body": null,
+   "cookies": [
+    "cart"
+   ],
+   "headers": {
+    "jwt_token": "eyFake.jwt.token"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "u",
+     "w"
+    ],
+    [
+     "extra",
+     "deliveryAddress,deliveryDate"
+    ]
+   ],
+   "url": "https://api.bilkatogo.dk/api/shop/v6/Cart"
+  },
+  {
+   "body": {
+    "requests": [
+     {
+      "indexName": "prod_BILKATOGO_PRODUCTS",
+      "params": "query=skyr&hitsPerPage=5&removeWordsIfNoResults=allOptional&filters=isInAssortmentIn%3A1653+AND+nonsearchable%3Afalse&attributesToRetrieve=%5B%22name%22%2C+%22brand%22%2C+%22gtin%22%2C+%22netcontent%22%2C+%22productType%22%2C+%22deepestCategoryPath%22%2C+%22price%22%2C+%22storeData.1653%22%5D"
+     }
+    ]
+   },
+   "cookies": [],
+   "headers": {
+    "content-type": "application/json",
+    "x-algolia-api-key": "1deaf41c87e729779f7695c00f190cc9",
+    "x-algolia-application-id": "F9VBJLR1BK"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://f9vbjlr1bk-dsn.algolia.net/1/indexes/*/queries"
+  }
+ ],
+ "session_after": {
+  "login_token": "st2.fake-login-token"
+ },
+ "store": "bilkatogo"
+}

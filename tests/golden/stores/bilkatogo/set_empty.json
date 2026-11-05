@@ -1,0 +1,21 @@
+{
+ "answer": [],
+ "args": [
+  {}
+ ],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "set_quantities",
+ "name": "set_empty",
+ "requests": [],
+ "session_after": null,
+ "store": "bilkatogo"
+}

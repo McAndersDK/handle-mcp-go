@@ -1,0 +1,92 @@
+{
+ "answer": [
+  {
+   "applied": null,
+   "message": "Login til nemlig er udløbet. Kør i en terminal: handle-mcp login nemlig",
+   "ok": false,
+   "product_id": "1",
+   "requested": 2
+  }
+ ],
+ "args": [
+  {
+   "1": 2
+  }
+ ],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   ".ASPXAUTH": "old"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "session": {
+   ".ASPXAUTH": "old"
+  }
+ },
+ "login": "dead_session",
+ "method": "set_quantities",
+ "name": "set_dead_session",
+ "requests": [
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/basket/GetBasket"
+  }
+ ],
+ "session_after": {
+  ".ASPXAUTH": "old"
+ },
+ "store": "nemlig"
+}

@@ -1,0 +1,23 @@
+{
+ "answer": null,
+ "args": [],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   "login_token": "st2.fake-login-token"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "session": {
+   "login_token": "st2.fake-login-token"
+  }
+ },
+ "login": "session",
+ "method": "session",
+ "name": "session_before_login",
+ "requests": [],
+ "session_after": null,
+ "store": "bilkatogo"
+}

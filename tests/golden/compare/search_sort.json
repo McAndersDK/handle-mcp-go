@@ -1,0 +1,4029 @@
+{
+ "cases": [
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "a",
+      "max_per_order": null,
+      "name": "a",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "30.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     1
+    ]
+   ],
+   "ids": [
+    "a"
+   ],
+   "limit": 1,
+   "set": "mixed",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "a",
+      "max_per_order": null,
+      "name": "a",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "30.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "b",
+      "max_per_order": null,
+      "name": "b",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "20.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "80.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     2
+    ]
+   ],
+   "ids": [
+    "a",
+    "b"
+   ],
+   "limit": 2,
+   "set": "mixed",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "a",
+      "max_per_order": null,
+      "name": "a",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "30.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "b",
+      "max_per_order": null,
+      "name": "b",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "20.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "80.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "c",
+      "max_per_order": null,
+      "name": "c",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "90.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     3
+    ]
+   ],
+   "ids": [
+    "a",
+    "b",
+    "c"
+   ],
+   "limit": 3,
+   "set": "mixed",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "a",
+      "max_per_order": null,
+      "name": "a",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "30.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "b",
+      "max_per_order": null,
+      "name": "b",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "20.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "80.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "c",
+      "max_per_order": null,
+      "name": "c",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "90.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     10
+    ]
+   ],
+   "ids": [
+    "a",
+    "b",
+    "c"
+   ],
+   "limit": 10,
+   "set": "mixed",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "c",
+      "max_per_order": null,
+      "name": "c",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "90.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "c"
+   ],
+   "limit": 1,
+   "set": "mixed",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "c",
+      "max_per_order": null,
+      "name": "c",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "90.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "b",
+      "max_per_order": null,
+      "name": "b",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "20.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "80.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "c",
+    "b"
+   ],
+   "limit": 2,
+   "set": "mixed",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "c",
+      "max_per_order": null,
+      "name": "c",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "90.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "b",
+      "max_per_order": null,
+      "name": "b",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "20.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "80.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "a",
+      "max_per_order": null,
+      "name": "a",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "30.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "c",
+    "b",
+    "a"
+   ],
+   "limit": 3,
+   "set": "mixed",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "c",
+      "max_per_order": null,
+      "name": "c",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "90.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "b",
+      "max_per_order": null,
+      "name": "b",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "20.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "80.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "a",
+      "max_per_order": null,
+      "name": "a",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "30.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "c",
+    "b",
+    "a"
+   ],
+   "limit": 10,
+   "set": "mixed",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "b",
+      "max_per_order": null,
+      "name": "b",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "20.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "80.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "b"
+   ],
+   "limit": 1,
+   "set": "mixed",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "b",
+      "max_per_order": null,
+      "name": "b",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "20.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "80.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "c",
+      "max_per_order": null,
+      "name": "c",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "90.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "b",
+    "c"
+   ],
+   "limit": 2,
+   "set": "mixed",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "b",
+      "max_per_order": null,
+      "name": "b",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "20.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "80.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "c",
+      "max_per_order": null,
+      "name": "c",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "90.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "a",
+      "max_per_order": null,
+      "name": "a",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "30.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "b",
+    "c",
+    "a"
+   ],
+   "limit": 3,
+   "set": "mixed",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "b",
+      "max_per_order": null,
+      "name": "b",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "20.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "80.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "c",
+      "max_per_order": null,
+      "name": "c",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "90.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "a",
+      "max_per_order": null,
+      "name": "a",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "30.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "b",
+    "c",
+    "a"
+   ],
+   "limit": 10,
+   "set": "mixed",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "c",
+      "max_per_order": null,
+      "name": "c",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "90.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "c"
+   ],
+   "limit": -5,
+   "set": "mixed",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "c",
+      "max_per_order": null,
+      "name": "c",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "90.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "c"
+   ],
+   "limit": 0,
+   "set": "mixed",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "c",
+      "max_per_order": null,
+      "name": "c",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "90.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "b",
+      "max_per_order": null,
+      "name": "b",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "20.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "80.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "a",
+      "max_per_order": null,
+      "name": "a",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "30.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "c",
+    "b",
+    "a"
+   ],
+   "limit": 25,
+   "set": "mixed",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "c",
+      "max_per_order": null,
+      "name": "c",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "90.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "b",
+      "max_per_order": null,
+      "name": "b",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "20.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "80.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "a",
+      "max_per_order": null,
+      "name": "a",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "30.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "c",
+    "b",
+    "a"
+   ],
+   "limit": 26,
+   "set": "mixed",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "c",
+      "max_per_order": null,
+      "name": "c",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "90.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "b",
+      "max_per_order": null,
+      "name": "b",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "20.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "80.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "a",
+      "max_per_order": null,
+      "name": "a",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "30.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "c",
+    "b",
+    "a"
+   ],
+   "limit": 1000,
+   "set": "mixed",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t1",
+      "max_per_order": null,
+      "name": "t1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     1
+    ]
+   ],
+   "ids": [
+    "t1"
+   ],
+   "limit": 1,
+   "set": "ties",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t1",
+      "max_per_order": null,
+      "name": "t1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t2",
+      "max_per_order": null,
+      "name": "t2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     2
+    ]
+   ],
+   "ids": [
+    "t1",
+    "t2"
+   ],
+   "limit": 2,
+   "set": "ties",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t1",
+      "max_per_order": null,
+      "name": "t1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t2",
+      "max_per_order": null,
+      "name": "t2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t3",
+      "max_per_order": null,
+      "name": "t3",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "9.99",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     3
+    ]
+   ],
+   "ids": [
+    "t1",
+    "t2",
+    "t3"
+   ],
+   "limit": 3,
+   "set": "ties",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t1",
+      "max_per_order": null,
+      "name": "t1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t2",
+      "max_per_order": null,
+      "name": "t2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t3",
+      "max_per_order": null,
+      "name": "t3",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "9.99",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t4",
+      "max_per_order": null,
+      "name": "t4",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "4.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     10
+    ]
+   ],
+   "ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4"
+   ],
+   "limit": 10,
+   "set": "ties",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t3",
+      "max_per_order": null,
+      "name": "t3",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "9.99",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "t3"
+   ],
+   "limit": 1,
+   "set": "ties",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t3",
+      "max_per_order": null,
+      "name": "t3",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "9.99",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t1",
+      "max_per_order": null,
+      "name": "t1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "t3",
+    "t1"
+   ],
+   "limit": 2,
+   "set": "ties",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t3",
+      "max_per_order": null,
+      "name": "t3",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "9.99",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t1",
+      "max_per_order": null,
+      "name": "t1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t2",
+      "max_per_order": null,
+      "name": "t2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "t3",
+    "t1",
+    "t2"
+   ],
+   "limit": 3,
+   "set": "ties",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t3",
+      "max_per_order": null,
+      "name": "t3",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "9.99",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t1",
+      "max_per_order": null,
+      "name": "t1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t2",
+      "max_per_order": null,
+      "name": "t2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t4",
+      "max_per_order": null,
+      "name": "t4",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "4.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "t3",
+    "t1",
+    "t2",
+    "t4"
+   ],
+   "limit": 10,
+   "set": "ties",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t4",
+      "max_per_order": null,
+      "name": "t4",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "4.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "t4"
+   ],
+   "limit": 1,
+   "set": "ties",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t4",
+      "max_per_order": null,
+      "name": "t4",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "4.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t1",
+      "max_per_order": null,
+      "name": "t1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "t4",
+    "t1"
+   ],
+   "limit": 2,
+   "set": "ties",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t4",
+      "max_per_order": null,
+      "name": "t4",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "4.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t1",
+      "max_per_order": null,
+      "name": "t1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t2",
+      "max_per_order": null,
+      "name": "t2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "t4",
+    "t1",
+    "t2"
+   ],
+   "limit": 3,
+   "set": "ties",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t4",
+      "max_per_order": null,
+      "name": "t4",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "4.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t1",
+      "max_per_order": null,
+      "name": "t1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t2",
+      "max_per_order": null,
+      "name": "t2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "t3",
+      "max_per_order": null,
+      "name": "t3",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "9.99",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "5.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "t4",
+    "t1",
+    "t2",
+    "t3"
+   ],
+   "limit": 10,
+   "set": "ties",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "bread",
+      "max_per_order": null,
+      "name": "bread",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "25.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "25.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     1
+    ]
+   ],
+   "ids": [
+    "bread"
+   ],
+   "limit": 1,
+   "set": "gift_first",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "bread",
+      "max_per_order": null,
+      "name": "bread",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "25.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "25.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "gift",
+      "max_per_order": null,
+      "name": "gift",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     2
+    ]
+   ],
+   "ids": [
+    "bread",
+    "gift"
+   ],
+   "limit": 2,
+   "set": "gift_first",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "bread",
+      "max_per_order": null,
+      "name": "bread",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "25.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "25.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "gift",
+      "max_per_order": null,
+      "name": "gift",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     3
+    ]
+   ],
+   "ids": [
+    "bread",
+    "gift"
+   ],
+   "limit": 3,
+   "set": "gift_first",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "bread",
+      "max_per_order": null,
+      "name": "bread",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "25.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "25.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "gift",
+      "max_per_order": null,
+      "name": "gift",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     10
+    ]
+   ],
+   "ids": [
+    "bread",
+    "gift"
+   ],
+   "limit": 10,
+   "set": "gift_first",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "gift",
+      "max_per_order": null,
+      "name": "gift",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "gift"
+   ],
+   "limit": 1,
+   "set": "gift_first",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "gift",
+      "max_per_order": null,
+      "name": "gift",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "bread",
+      "max_per_order": null,
+      "name": "bread",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "25.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "25.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "gift",
+    "bread"
+   ],
+   "limit": 2,
+   "set": "gift_first",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "gift",
+      "max_per_order": null,
+      "name": "gift",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "bread",
+      "max_per_order": null,
+      "name": "bread",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "25.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "25.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "gift",
+    "bread"
+   ],
+   "limit": 3,
+   "set": "gift_first",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "gift",
+      "max_per_order": null,
+      "name": "gift",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "bread",
+      "max_per_order": null,
+      "name": "bread",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "25.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "25.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "gift",
+    "bread"
+   ],
+   "limit": 10,
+   "set": "gift_first",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "gift",
+      "max_per_order": null,
+      "name": "gift",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "gift"
+   ],
+   "limit": 1,
+   "set": "gift_first",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "gift",
+      "max_per_order": null,
+      "name": "gift",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "bread",
+      "max_per_order": null,
+      "name": "bread",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "25.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "25.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "gift",
+    "bread"
+   ],
+   "limit": 2,
+   "set": "gift_first",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "gift",
+      "max_per_order": null,
+      "name": "gift",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "bread",
+      "max_per_order": null,
+      "name": "bread",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "25.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "25.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "gift",
+    "bread"
+   ],
+   "limit": 3,
+   "set": "gift_first",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "gift",
+      "max_per_order": null,
+      "name": "gift",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "bread",
+      "max_per_order": null,
+      "name": "bread",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "25.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "25.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "gift",
+    "bread"
+   ],
+   "limit": 10,
+   "set": "gift_first",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u1",
+      "max_per_order": null,
+      "name": "u1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "5.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     1
+    ]
+   ],
+   "ids": [
+    "u1"
+   ],
+   "limit": 1,
+   "set": "all_unknown",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u1",
+      "max_per_order": null,
+      "name": "u1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "5.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u2",
+      "max_per_order": null,
+      "name": "u2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "4.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     2
+    ]
+   ],
+   "ids": [
+    "u1",
+    "u2"
+   ],
+   "limit": 2,
+   "set": "all_unknown",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u1",
+      "max_per_order": null,
+      "name": "u1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "5.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u2",
+      "max_per_order": null,
+      "name": "u2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "4.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     3
+    ]
+   ],
+   "ids": [
+    "u1",
+    "u2"
+   ],
+   "limit": 3,
+   "set": "all_unknown",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u1",
+      "max_per_order": null,
+      "name": "u1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "5.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u2",
+      "max_per_order": null,
+      "name": "u2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "4.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     10
+    ]
+   ],
+   "ids": [
+    "u1",
+    "u2"
+   ],
+   "limit": 10,
+   "set": "all_unknown",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u2",
+      "max_per_order": null,
+      "name": "u2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "4.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "u2"
+   ],
+   "limit": 1,
+   "set": "all_unknown",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u2",
+      "max_per_order": null,
+      "name": "u2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "4.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u1",
+      "max_per_order": null,
+      "name": "u1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "5.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "u2",
+    "u1"
+   ],
+   "limit": 2,
+   "set": "all_unknown",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u2",
+      "max_per_order": null,
+      "name": "u2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "4.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u1",
+      "max_per_order": null,
+      "name": "u1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "5.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "u2",
+    "u1"
+   ],
+   "limit": 3,
+   "set": "all_unknown",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u2",
+      "max_per_order": null,
+      "name": "u2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "4.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u1",
+      "max_per_order": null,
+      "name": "u1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "5.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "u2",
+    "u1"
+   ],
+   "limit": 10,
+   "set": "all_unknown",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u1",
+      "max_per_order": null,
+      "name": "u1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "5.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "u1"
+   ],
+   "limit": 1,
+   "set": "all_unknown",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u1",
+      "max_per_order": null,
+      "name": "u1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "5.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u2",
+      "max_per_order": null,
+      "name": "u2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "4.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "u1",
+    "u2"
+   ],
+   "limit": 2,
+   "set": "all_unknown",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u1",
+      "max_per_order": null,
+      "name": "u1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "5.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u2",
+      "max_per_order": null,
+      "name": "u2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "4.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "u1",
+    "u2"
+   ],
+   "limit": 3,
+   "set": "all_unknown",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u1",
+      "max_per_order": null,
+      "name": "u1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "5.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "u2",
+      "max_per_order": null,
+      "name": "u2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "4.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": null
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "u1",
+    "u2"
+   ],
+   "limit": 10,
+   "set": "all_unknown",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d1",
+      "max_per_order": null,
+      "name": "d1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.13",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     1
+    ]
+   ],
+   "ids": [
+    "d1"
+   ],
+   "limit": 1,
+   "set": "decimals",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d1",
+      "max_per_order": null,
+      "name": "d1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.13",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d2",
+      "max_per_order": null,
+      "name": "d2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.12",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     2
+    ]
+   ],
+   "ids": [
+    "d1",
+    "d2"
+   ],
+   "limit": 2,
+   "set": "decimals",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d1",
+      "max_per_order": null,
+      "name": "d1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.13",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d2",
+      "max_per_order": null,
+      "name": "d2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.12",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d3",
+      "max_per_order": null,
+      "name": "d3",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "10.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     3
+    ]
+   ],
+   "ids": [
+    "d1",
+    "d2",
+    "d3"
+   ],
+   "limit": 3,
+   "set": "decimals",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d1",
+      "max_per_order": null,
+      "name": "d1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.13",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d2",
+      "max_per_order": null,
+      "name": "d2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.12",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d3",
+      "max_per_order": null,
+      "name": "d3",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "10.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     10
+    ]
+   ],
+   "ids": [
+    "d1",
+    "d2",
+    "d3"
+   ],
+   "limit": 10,
+   "set": "decimals",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d2",
+      "max_per_order": null,
+      "name": "d2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.12",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "d2"
+   ],
+   "limit": 1,
+   "set": "decimals",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d2",
+      "max_per_order": null,
+      "name": "d2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.12",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d1",
+      "max_per_order": null,
+      "name": "d1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.13",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "d2",
+    "d1"
+   ],
+   "limit": 2,
+   "set": "decimals",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d2",
+      "max_per_order": null,
+      "name": "d2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.12",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d1",
+      "max_per_order": null,
+      "name": "d1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.13",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d3",
+      "max_per_order": null,
+      "name": "d3",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "10.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "d2",
+    "d1",
+    "d3"
+   ],
+   "limit": 3,
+   "set": "decimals",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d2",
+      "max_per_order": null,
+      "name": "d2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.12",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d1",
+      "max_per_order": null,
+      "name": "d1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.13",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d3",
+      "max_per_order": null,
+      "name": "d3",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "10.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "d2",
+    "d1",
+    "d3"
+   ],
+   "limit": 10,
+   "set": "decimals",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d1",
+      "max_per_order": null,
+      "name": "d1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.13",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "d1"
+   ],
+   "limit": 1,
+   "set": "decimals",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d1",
+      "max_per_order": null,
+      "name": "d1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.13",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d2",
+      "max_per_order": null,
+      "name": "d2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.12",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "d1",
+    "d2"
+   ],
+   "limit": 2,
+   "set": "decimals",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d1",
+      "max_per_order": null,
+      "name": "d1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.13",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d2",
+      "max_per_order": null,
+      "name": "d2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.12",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d3",
+      "max_per_order": null,
+      "name": "d3",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "10.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "d1",
+    "d2",
+    "d3"
+   ],
+   "limit": 3,
+   "set": "decimals",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": [
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d1",
+      "max_per_order": null,
+      "name": "d1",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.13",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d2",
+      "max_per_order": null,
+      "name": "d2",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "0.12",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "0.00"
+     },
+     {
+      "available": true,
+      "before_price": null,
+      "brand": null,
+      "campaign": null,
+      "category": null,
+      "ean": null,
+      "id": "d3",
+      "max_per_order": null,
+      "name": "d3",
+      "offer_text": null,
+      "offer_until": null,
+      "on_offer": false,
+      "price": "10.00",
+      "size": null,
+      "store": "x",
+      "unit": null,
+      "unit_price": "10.00"
+     }
+    ]
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [
+    "d1",
+    "d2",
+    "d3"
+   ],
+   "limit": 10,
+   "set": "decimals",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": []
+   },
+   "calls": [
+    [
+     "kylling",
+     1
+    ]
+   ],
+   "ids": [],
+   "limit": 1,
+   "set": "empty",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": []
+   },
+   "calls": [
+    [
+     "kylling",
+     2
+    ]
+   ],
+   "ids": [],
+   "limit": 2,
+   "set": "empty",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": []
+   },
+   "calls": [
+    [
+     "kylling",
+     3
+    ]
+   ],
+   "ids": [],
+   "limit": 3,
+   "set": "empty",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": []
+   },
+   "calls": [
+    [
+     "kylling",
+     10
+    ]
+   ],
+   "ids": [],
+   "limit": 10,
+   "set": "empty",
+   "sort": "relevance"
+  },
+  {
+   "answer": {
+    "s": []
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [],
+   "limit": 1,
+   "set": "empty",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": []
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [],
+   "limit": 2,
+   "set": "empty",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": []
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [],
+   "limit": 3,
+   "set": "empty",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": []
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [],
+   "limit": 10,
+   "set": "empty",
+   "sort": "price"
+  },
+  {
+   "answer": {
+    "s": []
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [],
+   "limit": 1,
+   "set": "empty",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": []
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [],
+   "limit": 2,
+   "set": "empty",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": []
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [],
+   "limit": 3,
+   "set": "empty",
+   "sort": "unit_price"
+  },
+  {
+   "answer": {
+    "s": []
+   },
+   "calls": [
+    [
+     "kylling",
+     50
+    ]
+   ],
+   "ids": [],
+   "limit": 10,
+   "set": "empty",
+   "sort": "unit_price"
+  }
+ ]
+}

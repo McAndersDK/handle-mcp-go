@@ -1,0 +1,25 @@
+{
+ "args": [
+  "karry",
+  5
+ ],
+ "env": {},
+ "error": {
+  "message": "",
+  "type": "NotImplementedError"
+ },
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "recipes",
+ "name": "recipes",
+ "requests": [],
+ "session_after": null,
+ "store": "bilkatogo"
+}

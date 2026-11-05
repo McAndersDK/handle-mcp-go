@@ -1,0 +1,7582 @@
+{
+ "items": {
+  "": {
+   "asked": [],
+   "quantity": 1,
+   "query": "",
+   "size": null,
+   "words": []
+  },
+  " ": {
+   "asked": [],
+   "quantity": 1,
+   "query": " ",
+   "size": null,
+   "words": []
+  },
+  "   ": {
+   "asked": [],
+   "quantity": 1,
+   "query": "   ",
+   "size": null,
+   "words": []
+  },
+  "0 x mælk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mælk",
+   "size": null,
+   "words": [
+    "mælk"
+   ]
+  },
+  "00 x mælk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mælk",
+   "size": null,
+   "words": [
+    "mælk"
+   ]
+  },
+  "01 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "01 kg",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": []
+  },
+  "1 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "1 kg",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": []
+  },
+  "1 l": {
+   "asked": [],
+   "quantity": 1,
+   "query": "1 l",
+   "size": [
+    "ml",
+    "1000"
+   ],
+   "words": []
+  },
+  "1 ltr mælk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mælk",
+   "size": [
+    "ml",
+    "1000"
+   ],
+   "words": [
+    "mælk"
+   ]
+  },
+  "1 Kg mel": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mel",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "mel"
+   ]
+  },
+  "1,5 kg æbler": {
+   "asked": [],
+   "quantity": 1,
+   "query": "æbler",
+   "size": [
+    "g",
+    "1500"
+   ],
+   "words": [
+    "æbler"
+   ]
+  },
+  "1,5,5 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "1",
+   "size": [
+    "g",
+    "5500"
+   ],
+   "words": [
+    "1"
+   ]
+  },
+  "1.000 g mel": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mel",
+   "size": [
+    "g",
+    "1"
+   ],
+   "words": [
+    "mel"
+   ]
+  },
+  "1.5 kg æbler": {
+   "asked": [],
+   "quantity": 1,
+   "query": "æbler",
+   "size": [
+    "g",
+    "1500"
+   ],
+   "words": [
+    "æbler"
+   ]
+  },
+  "10 x bananer": {
+   "asked": [],
+   "quantity": 10,
+   "query": "bananer",
+   "size": null,
+   "words": [
+    "bananer"
+   ]
+  },
+  "100 gr smør": {
+   "asked": [],
+   "quantity": 1,
+   "query": "smør",
+   "size": [
+    "g",
+    "100"
+   ],
+   "words": [
+    "smør"
+   ]
+  },
+  "12 x 0,25 l / Classic": {
+   "asked": [],
+   "quantity": 1,
+   "query": "classic",
+   "size": [
+    "ml",
+    "3000"
+   ],
+   "words": [
+    "classic"
+   ]
+  },
+  "12 × 0,25 l cola": {
+   "asked": [],
+   "quantity": 1,
+   "query": "cola",
+   "size": [
+    "ml",
+    "3000"
+   ],
+   "words": [
+    "cola"
+   ]
+  },
+  "12x0,25 l cola": {
+   "asked": [],
+   "quantity": 1,
+   "query": "cola",
+   "size": [
+    "ml",
+    "3000"
+   ],
+   "words": [
+    "cola"
+   ]
+  },
+  "12 × 0,25 l cola": {
+   "asked": [],
+   "quantity": 1,
+   "query": "cola",
+   "size": [
+    "ml",
+    "3000"
+   ],
+   "words": [
+    "cola"
+   ]
+  },
+  "12×0,25 l cola": {
+   "asked": [],
+   "quantity": 1,
+   "query": "cola",
+   "size": [
+    "ml",
+    "3000"
+   ],
+   "words": [
+    "cola"
+   ]
+  },
+  "14 x banan": {
+   "asked": [],
+   "quantity": 14,
+   "query": "banan",
+   "size": null,
+   "words": [
+    "banan"
+   ]
+  },
+  "1l mælk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mælk",
+   "size": [
+    "ml",
+    "1000"
+   ],
+   "words": [
+    "mælk"
+   ]
+  },
+  "2 x": {
+   "asked": [],
+   "quantity": 1,
+   "query": "2 x",
+   "size": null,
+   "words": [
+    "2",
+    "x"
+   ]
+  },
+  "2 x 8 ruller toiletpapir": {
+   "asked": [],
+   "quantity": 1,
+   "query": "toiletpapir",
+   "size": [
+    "rl",
+    "16"
+   ],
+   "words": [
+    "toiletpapir"
+   ]
+  },
+  "2 x broccoli": {
+   "asked": [],
+   "quantity": 2,
+   "query": "broccoli",
+   "size": null,
+   "words": [
+    "broccoli"
+   ]
+  },
+  "2 x letmælk": {
+   "asked": [],
+   "quantity": 2,
+   "query": "letmælk",
+   "size": null,
+   "words": [
+    "letmælk"
+   ]
+  },
+  "2 x letmælk 1 l": {
+   "asked": [],
+   "quantity": 2,
+   "query": "letmælk",
+   "size": [
+    "ml",
+    "1000"
+   ],
+   "words": [
+    "letmælk"
+   ]
+  },
+  "2 x rosinboller 6 stk": {
+   "asked": [],
+   "quantity": 2,
+   "query": "rosinboller",
+   "size": [
+    "stk",
+    "6"
+   ],
+   "words": [
+    "rosinboller"
+   ]
+  },
+  "2 × letmælk 1 l": {
+   "asked": [],
+   "quantity": 2,
+   "query": "letmælk",
+   "size": [
+    "ml",
+    "1000"
+   ],
+   "words": [
+    "letmælk"
+   ]
+  },
+  "20 x bananer": {
+   "asked": [],
+   "quantity": 20,
+   "query": "bananer",
+   "size": null,
+   "words": [
+    "bananer"
+   ]
+  },
+  "2 x letmælk 1 l": {
+   "asked": [],
+   "quantity": 2,
+   "query": "letmælk",
+   "size": [
+    "ml",
+    "1000"
+   ],
+   "words": [
+    "letmælk"
+   ]
+  },
+  "2 × letmælk": {
+   "asked": [],
+   "quantity": 2,
+   "query": "letmælk",
+   "size": null,
+   "words": [
+    "letmælk"
+   ]
+  },
+  "2×letmælk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "2 letmælk",
+   "size": null,
+   "words": [
+    "2",
+    "letmælk"
+   ]
+  },
+  "3 x 2 x mælk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "3 x 2 x mælk",
+   "size": null,
+   "words": [
+    "3",
+    "x",
+    "2",
+    "x",
+    "mælk"
+   ]
+  },
+  "3 x fior di latte": {
+   "asked": [],
+   "quantity": 3,
+   "query": "fior di latte",
+   "size": null,
+   "words": [
+    "fior",
+    "di",
+    "latte"
+   ]
+  },
+  "4 x cheasy skyr passionsfrugt": {
+   "asked": [],
+   "quantity": 4,
+   "query": "cheasy skyr passionsfrugt",
+   "size": null,
+   "words": [
+    "cheasy",
+    "skyr",
+    "passionsfrugt"
+   ]
+  },
+  "4 x hakkede tomater 400 g": {
+   "asked": [],
+   "quantity": 4,
+   "query": "hakkede tomater",
+   "size": [
+    "g",
+    "400"
+   ],
+   "words": [
+    "hakkede",
+    "tomater"
+   ]
+  },
+  "4 x pærer": {
+   "asked": [],
+   "quantity": 4,
+   "query": "pærer",
+   "size": null,
+   "words": [
+    "pærer"
+   ]
+  },
+  "5 dl fløde": {
+   "asked": [],
+   "quantity": 1,
+   "query": "fløde",
+   "size": [
+    "ml",
+    "500"
+   ],
+   "words": [
+    "fløde"
+   ]
+  },
+  "50 cl øl": {
+   "asked": [],
+   "quantity": 1,
+   "query": "øl",
+   "size": [
+    "ml",
+    "500"
+   ],
+   "words": [
+    "øl"
+   ]
+  },
+  "500 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "500 g",
+   "size": [
+    "g",
+    "500"
+   ],
+   "words": []
+  },
+  "6 x bananer": {
+   "asked": [],
+   "quantity": 6,
+   "query": "bananer",
+   "size": null,
+   "words": [
+    "bananer"
+   ]
+  },
+  "6 x køkkenrulle": {
+   "asked": [],
+   "quantity": 6,
+   "query": "køkkenrulle",
+   "size": null,
+   "words": [
+    "køkkenrulle"
+   ]
+  },
+  "6 x bananer": {
+   "asked": [],
+   "quantity": 6,
+   "query": "bananer",
+   "size": null,
+   "words": [
+    "bananer"
+   ]
+  },
+  "99999999999999999999 g mel": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mel",
+   "size": [
+    "g",
+    "99999999999999999999"
+   ],
+   "words": [
+    "mel"
+   ]
+  },
+  "99999999999999999999 x mælk": {
+   "asked": [],
+   "quantity": 99999999999999999999,
+   "query": "mælk",
+   "size": null,
+   "words": [
+    "mælk"
+   ]
+  },
+  "Cheasy skyr 1 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "cheasy skyr",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "cheasy",
+    "skyr"
+   ]
+  },
+  "Fløde 38%": {
+   "asked": [],
+   "quantity": 1,
+   "query": "fløde 38",
+   "size": null,
+   "words": [
+    "fløde",
+    "38"
+   ]
+  },
+  "MÆLK": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mælk",
+   "size": null,
+   "words": [
+    "mælk"
+   ]
+  },
+  "Mælk, 1 l": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mælk",
+   "size": [
+    "ml",
+    "1000"
+   ],
+   "words": [
+    "mælk"
+   ]
+  },
+  "Rugbrød": {
+   "asked": [],
+   "quantity": 1,
+   "query": "rugbrød",
+   "size": null,
+   "words": [
+    "rugbrød"
+   ]
+  },
+  "Stryhns leverpostej bacon peber 275 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "stryhns leverpostej bacon peber",
+   "size": [
+    "g",
+    "275"
+   ],
+   "words": [
+    "stryhns",
+    "leverpostej",
+    "bacon",
+    "peber"
+   ]
+  },
+  "agurk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "agurk",
+   "size": null,
+   "words": [
+    "agurk"
+   ]
+  },
+  "bananer": {
+   "asked": [],
+   "quantity": 1,
+   "query": "bananer",
+   "size": null,
+   "words": [
+    "bananer"
+   ]
+  },
+  "bananer 1 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "bananer",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "bananer"
+   ]
+  },
+  "basilikum": {
+   "asked": [],
+   "quantity": 1,
+   "query": "basilikum",
+   "size": null,
+   "words": [
+    "basilikum"
+   ]
+  },
+  "blomkål": {
+   "asked": [],
+   "quantity": 1,
+   "query": "blomkål",
+   "size": null,
+   "words": [
+    "blomkål"
+   ]
+  },
+  "blåbær": {
+   "asked": [],
+   "quantity": 1,
+   "query": "blåbær",
+   "size": null,
+   "words": [
+    "blåbær"
+   ]
+  },
+  "blåbær 250 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "blåbær",
+   "size": [
+    "g",
+    "250"
+   ],
+   "words": [
+    "blåbær"
+   ]
+  },
+  "cheasy skyr passionsfrugt": {
+   "asked": [],
+   "quantity": 1,
+   "query": "cheasy skyr passionsfrugt",
+   "size": null,
+   "words": [
+    "cheasy",
+    "skyr",
+    "passionsfrugt"
+   ]
+  },
+  "cherrytomater": {
+   "asked": [],
+   "quantity": 1,
+   "query": "cherrytomater",
+   "size": null,
+   "words": [
+    "cherrytomater"
+   ]
+  },
+  "cherrytomater 250 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "cherrytomater",
+   "size": [
+    "g",
+    "250"
+   ],
+   "words": [
+    "cherrytomater"
+   ]
+  },
+  "citroner 2 stk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "citroner",
+   "size": [
+    "stk",
+    "2"
+   ],
+   "words": [
+    "citroner"
+   ]
+  },
+  "clementiner 500 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "clementiner",
+   "size": [
+    "g",
+    "500"
+   ],
+   "words": [
+    "clementiner"
+   ]
+  },
+  "creme fraiche 200 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "creme fraiche",
+   "size": [
+    "g",
+    "200"
+   ],
+   "words": [
+    "creme",
+    "fraiche"
+   ]
+  },
+  "e-vitamin": {
+   "asked": [],
+   "quantity": 1,
+   "query": "e vitamin",
+   "size": null,
+   "words": [
+    "e",
+    "vitamin"
+   ]
+  },
+  "findes ikke xyz": {
+   "asked": [],
+   "quantity": 1,
+   "query": "findes ikke xyz",
+   "size": null,
+   "words": [
+    "findes",
+    "ikke",
+    "xyz"
+   ]
+  },
+  "fior di latte": {
+   "asked": [],
+   "quantity": 1,
+   "query": "fior di latte",
+   "size": null,
+   "words": [
+    "fior",
+    "di",
+    "latte"
+   ]
+  },
+  "fior di latte 200 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "fior di latte",
+   "size": [
+    "g",
+    "200"
+   ],
+   "words": [
+    "fior",
+    "di",
+    "latte"
+   ]
+  },
+  "fior di latte 300 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "fior di latte",
+   "size": [
+    "g",
+    "300"
+   ],
+   "words": [
+    "fior",
+    "di",
+    "latte"
+   ]
+  },
+  "frosne blåbær": {
+   "asked": [],
+   "quantity": 1,
+   "query": "frosne blåbær",
+   "size": null,
+   "words": [
+    "frosne",
+    "blåbær"
+   ]
+  },
+  "græsk yoghurt 1 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "græsk yoghurt",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "græsk",
+    "yoghurt"
+   ]
+  },
+  "gulerødder 1 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "gulerødder",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "gulerødder"
+   ]
+  },
+  "gær 50 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "gær",
+   "size": [
+    "g",
+    "50"
+   ],
+   "words": [
+    "gær"
+   ]
+  },
+  "hakkede tomater 400 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "hakkede tomater",
+   "size": [
+    "g",
+    "400"
+   ],
+   "words": [
+    "hakkede",
+    "tomater"
+   ]
+  },
+  "hakket grisekød 1 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "hakket grisekød",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "hakket",
+    "grisekød"
+   ]
+  },
+  "hakket kylling 1 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "hakket kylling",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "hakket",
+    "kylling"
+   ]
+  },
+  "hakket kyllingekød 700 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "hakket kyllingekød",
+   "size": [
+    "g",
+    "700"
+   ],
+   "words": [
+    "hakket",
+    "kyllingekød"
+   ]
+  },
+  "hakket oksekød": {
+   "asked": [],
+   "quantity": 1,
+   "query": "hakket oksekød",
+   "size": null,
+   "words": [
+    "hakket",
+    "oksekød"
+   ]
+  },
+  "hakket oksekød 1,5 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "hakket oksekød",
+   "size": [
+    "g",
+    "1500"
+   ],
+   "words": [
+    "hakket",
+    "oksekød"
+   ]
+  },
+  "hakket oksekød 1,5 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "hakket oksekød",
+   "size": [
+    "g",
+    "1500"
+   ],
+   "words": [
+    "hakket",
+    "oksekød"
+   ]
+  },
+  "hakket oksekød 500 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "hakket oksekød",
+   "size": [
+    "g",
+    "500"
+   ],
+   "words": [
+    "hakket",
+    "oksekød"
+   ]
+  },
+  "hakket oksekød 8-12%": {
+   "asked": [],
+   "quantity": 1,
+   "query": "hakket oksekød 8 12",
+   "size": null,
+   "words": [
+    "hakket",
+    "oksekød",
+    "8",
+    "12"
+   ]
+  },
+  "hakket oksekød med fedt": {
+   "asked": [
+    "fedt"
+   ],
+   "quantity": 1,
+   "query": "hakket oksekød fedt",
+   "size": null,
+   "words": [
+    "hakket",
+    "oksekød",
+    "fedt"
+   ]
+  },
+  "havregryn 1 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "havregryn",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "havregryn"
+   ]
+  },
+  "hvidløg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "hvidløg",
+   "size": null,
+   "words": [
+    "hvidløg"
+   ]
+  },
+  "hvidløg 1 stk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "hvidløg",
+   "size": [
+    "stk",
+    "1"
+   ],
+   "words": [
+    "hvidløg"
+   ]
+  },
+  "hytteost 500 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "hytteost",
+   "size": [
+    "g",
+    "500"
+   ],
+   "words": [
+    "hytteost"
+   ]
+  },
+  "kaffe 1 KG": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kaffe",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "kaffe"
+   ]
+  },
+  "kaffe 400 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kaffe",
+   "size": [
+    "g",
+    "400"
+   ],
+   "words": [
+    "kaffe"
+   ]
+  },
+  "kaffe filter": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kaffe filter",
+   "size": null,
+   "words": [
+    "kaffe",
+    "filter"
+   ]
+  },
+  "kaffe filter brun": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kaffe filter brun",
+   "size": null,
+   "words": [
+    "kaffe",
+    "filter",
+    "brun"
+   ]
+  },
+  "kaffebønner 1 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kaffebønner",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "kaffebønner"
+   ]
+  },
+  "kartofler 1 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kartofler",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "kartofler"
+   ]
+  },
+  "kartofler 2 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kartofler",
+   "size": [
+    "g",
+    "2000"
+   ],
+   "words": [
+    "kartofler"
+   ]
+  },
+  "kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kg",
+   "size": null,
+   "words": [
+    "kg"
+   ]
+  },
+  "kikærter 400 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kikærter",
+   "size": [
+    "g",
+    "400"
+   ],
+   "words": [
+    "kikærter"
+   ]
+  },
+  "klementiner": {
+   "asked": [],
+   "quantity": 1,
+   "query": "klementiner",
+   "size": null,
+   "words": [
+    "klementiner"
+   ]
+  },
+  "kogt skinke 150 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kogt skinke",
+   "size": [
+    "g",
+    "150"
+   ],
+   "words": [
+    "kogt",
+    "skinke"
+   ]
+  },
+  "kokosmælk 400 ml": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kokosmælk",
+   "size": [
+    "ml",
+    "400"
+   ],
+   "words": [
+    "kokosmælk"
+   ]
+  },
+  "kyllingebryst": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kyllingebryst",
+   "size": null,
+   "words": [
+    "kyllingebryst"
+   ]
+  },
+  "kyllingebryst - 450 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kyllingebryst",
+   "size": [
+    "g",
+    "450"
+   ],
+   "words": [
+    "kyllingebryst"
+   ]
+  },
+  "kyllingebryst 0,45 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kyllingebryst",
+   "size": [
+    "g",
+    "450"
+   ],
+   "words": [
+    "kyllingebryst"
+   ]
+  },
+  "kyllingebryst 4,5 dl": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kyllingebryst",
+   "size": [
+    "ml",
+    "450"
+   ],
+   "words": [
+    "kyllingebryst"
+   ]
+  },
+  "kyllingebryst 400 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kyllingebryst",
+   "size": [
+    "g",
+    "400"
+   ],
+   "words": [
+    "kyllingebryst"
+   ]
+  },
+  "kyllingebryst 450 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kyllingebryst",
+   "size": [
+    "g",
+    "450"
+   ],
+   "words": [
+    "kyllingebryst"
+   ]
+  },
+  "kyllingebryst 450g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kyllingebryst",
+   "size": [
+    "g",
+    "450"
+   ],
+   "words": [
+    "kyllingebryst"
+   ]
+  },
+  "kyllingebryst 500 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kyllingebryst",
+   "size": [
+    "g",
+    "500"
+   ],
+   "words": [
+    "kyllingebryst"
+   ]
+  },
+  "kyllingelår 1 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kyllingelår",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "kyllingelår"
+   ]
+  },
+  "kyllingelår 1,2 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kyllingelår",
+   "size": [
+    "g",
+    "1200"
+   ],
+   "words": [
+    "kyllingelår"
+   ]
+  },
+  "kyllingelår 1,25 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kyllingelår",
+   "size": [
+    "g",
+    "1250"
+   ],
+   "words": [
+    "kyllingelår"
+   ]
+  },
+  "laks 600 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "laks",
+   "size": [
+    "g",
+    "600"
+   ],
+   "words": [
+    "laks"
+   ]
+  },
+  "laks fersk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "laks fersk",
+   "size": null,
+   "words": [
+    "laks",
+    "fersk"
+   ]
+  },
+  "laksefilet 600 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "laksefilet",
+   "size": [
+    "g",
+    "600"
+   ],
+   "words": [
+    "laksefilet"
+   ]
+  },
+  "letmælk 1 l": {
+   "asked": [],
+   "quantity": 1,
+   "query": "letmælk",
+   "size": [
+    "ml",
+    "1000"
+   ],
+   "words": [
+    "letmælk"
+   ]
+  },
+  "letmælk 2 l": {
+   "asked": [],
+   "quantity": 1,
+   "query": "letmælk",
+   "size": [
+    "ml",
+    "2000"
+   ],
+   "words": [
+    "letmælk"
+   ]
+  },
+  "løg 1 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "løg",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "løg"
+   ]
+  },
+  "majs 340 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "majs",
+   "size": [
+    "g",
+    "340"
+   ],
+   "words": [
+    "majs"
+   ]
+  },
+  "makrel i tomat 125 g": {
+   "asked": [
+    "tomat"
+   ],
+   "quantity": 1,
+   "query": "makrel tomat",
+   "size": [
+    "g",
+    "125"
+   ],
+   "words": [
+    "makrel",
+    "tomat"
+   ]
+  },
+  "makrel med tomat": {
+   "asked": [
+    "tomat"
+   ],
+   "quantity": 1,
+   "query": "makrel tomat",
+   "size": null,
+   "words": [
+    "makrel",
+    "tomat"
+   ]
+  },
+  "mandariner 1 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mandariner",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "mandariner"
+   ]
+  },
+  "mozzarella 250 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mozzarella",
+   "size": [
+    "g",
+    "250"
+   ],
+   "words": [
+    "mozzarella"
+   ]
+  },
+  "mælk\t1 l": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mælk",
+   "size": [
+    "ml",
+    "1000"
+   ],
+   "words": [
+    "mælk"
+   ]
+  },
+  "mælk\n1 l": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mælk",
+   "size": [
+    "ml",
+    "1000"
+   ],
+   "words": [
+    "mælk"
+   ]
+  },
+  "mælk  1  l": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mælk",
+   "size": [
+    "ml",
+    "1000"
+   ],
+   "words": [
+    "mælk"
+   ]
+  },
+  "mælk 0,5% fedt": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mælk 0 5 fedt",
+   "size": null,
+   "words": [
+    "mælk",
+    "0",
+    "5",
+    "fedt"
+   ]
+  },
+  "mælk 1 l": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mælk",
+   "size": [
+    "ml",
+    "1000"
+   ],
+   "words": [
+    "mælk"
+   ]
+  },
+  "mælk ١ l": {
+   "asked": [],
+   "quantity": 1,
+   "query": "mælk",
+   "size": [
+    "ml",
+    "1000"
+   ],
+   "words": [
+    "mælk"
+   ]
+  },
+  "ost i skiver 500 g": {
+   "asked": [
+    "skiver"
+   ],
+   "quantity": 1,
+   "query": "ost skiver",
+   "size": [
+    "g",
+    "500"
+   ],
+   "words": [
+    "ost",
+    "skiver"
+   ]
+  },
+  "pancetta i tern 150 g": {
+   "asked": [
+    "tern"
+   ],
+   "quantity": 1,
+   "query": "pancetta tern",
+   "size": [
+    "g",
+    "150"
+   ],
+   "words": [
+    "pancetta",
+    "tern"
+   ]
+  },
+  "pasta": {
+   "asked": [],
+   "quantity": 1,
+   "query": "pasta",
+   "size": null,
+   "words": [
+    "pasta"
+   ]
+  },
+  "pasta 500 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "pasta",
+   "size": [
+    "g",
+    "500"
+   ],
+   "words": [
+    "pasta"
+   ]
+  },
+  "peber": {
+   "asked": [],
+   "quantity": 1,
+   "query": "peber",
+   "size": null,
+   "words": [
+    "peber"
+   ]
+  },
+  "peberfrugt 3 stk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "peberfrugt",
+   "size": [
+    "stk",
+    "3"
+   ],
+   "words": [
+    "peberfrugt"
+   ]
+  },
+  "peberfrugt rød": {
+   "asked": [],
+   "quantity": 1,
+   "query": "peberfrugt rød",
+   "size": null,
+   "words": [
+    "peberfrugt",
+    "rød"
+   ]
+  },
+  "pizzamel 1 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "pizzamel",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "pizzamel"
+   ]
+  },
+  "pærer": {
+   "asked": [],
+   "quantity": 1,
+   "query": "pærer",
+   "size": null,
+   "words": [
+    "pærer"
+   ]
+  },
+  "ris 1 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "ris",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "ris"
+   ]
+  },
+  "ris 1 kg ris": {
+   "asked": [],
+   "quantity": 1,
+   "query": "ris ris",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "ris",
+    "ris"
+   ]
+  },
+  "rosinboller 6 stk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "rosinboller",
+   "size": [
+    "stk",
+    "6"
+   ],
+   "words": [
+    "rosinboller"
+   ]
+  },
+  "rugbrød": {
+   "asked": [],
+   "quantity": 1,
+   "query": "rugbrød",
+   "size": null,
+   "words": [
+    "rugbrød"
+   ]
+  },
+  "røde linser 500 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "røde linser",
+   "size": [
+    "g",
+    "500"
+   ],
+   "words": [
+    "røde",
+    "linser"
+   ]
+  },
+  "røget kyllingebryst": {
+   "asked": [],
+   "quantity": 1,
+   "query": "røget kyllingebryst",
+   "size": null,
+   "words": [
+    "røget",
+    "kyllingebryst"
+   ]
+  },
+  "røget kyllingebryst 100 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "røget kyllingebryst",
+   "size": [
+    "g",
+    "100"
+   ],
+   "words": [
+    "røget",
+    "kyllingebryst"
+   ]
+  },
+  "skyr 1 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "skyr",
+   "size": [
+    "g",
+    "1000"
+   ],
+   "words": [
+    "skyr"
+   ]
+  },
+  "smør 250 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "smør",
+   "size": [
+    "g",
+    "250"
+   ],
+   "words": [
+    "smør"
+   ]
+  },
+  "snackpeber": {
+   "asked": [],
+   "quantity": 1,
+   "query": "snackpeber",
+   "size": null,
+   "words": [
+    "snackpeber"
+   ]
+  },
+  "snackpeber 250 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "snackpeber",
+   "size": [
+    "g",
+    "250"
+   ],
+   "words": [
+    "snackpeber"
+   ]
+  },
+  "spaghetti": {
+   "asked": [],
+   "quantity": 1,
+   "query": "spaghetti",
+   "size": null,
+   "words": [
+    "spaghetti"
+   ]
+  },
+  "spaghetti 500 g": {
+   "asked": [],
+   "quantity": 1,
+   "query": "spaghetti",
+   "size": [
+    "g",
+    "500"
+   ],
+   "words": [
+    "spaghetti"
+   ]
+  },
+  "toiletpapir": {
+   "asked": [],
+   "quantity": 1,
+   "query": "toiletpapir",
+   "size": null,
+   "words": [
+    "toiletpapir"
+   ]
+  },
+  "toiletpapir 8 rl": {
+   "asked": [],
+   "quantity": 1,
+   "query": "toiletpapir",
+   "size": [
+    "rl",
+    "8"
+   ],
+   "words": [
+    "toiletpapir"
+   ]
+  },
+  "toiletpapir 8 ruller": {
+   "asked": [],
+   "quantity": 1,
+   "query": "toiletpapir",
+   "size": [
+    "rl",
+    "8"
+   ],
+   "words": [
+    "toiletpapir"
+   ]
+  },
+  "toiletpapir 8 stk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "toiletpapir",
+   "size": [
+    "stk",
+    "8"
+   ],
+   "words": [
+    "toiletpapir"
+   ]
+  },
+  "tortilla wraps 6 stk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "tortilla wraps",
+   "size": [
+    "stk",
+    "6"
+   ],
+   "words": [
+    "tortilla",
+    "wraps"
+   ]
+  },
+  "uden sukker": {
+   "asked": [
+    "sukker"
+   ],
+   "quantity": 1,
+   "query": "sukker",
+   "size": null,
+   "words": [
+    "sukker"
+   ]
+  },
+  "x": {
+   "asked": [],
+   "quantity": 1,
+   "query": "x",
+   "size": null,
+   "words": [
+    "x"
+   ]
+  },
+  "x2 mælk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "x2 mælk",
+   "size": null,
+   "words": [
+    "x2",
+    "mælk"
+   ]
+  },
+  "yoghurt m banan": {
+   "asked": [
+    "banan"
+   ],
+   "quantity": 1,
+   "query": "yoghurt m banan",
+   "size": null,
+   "words": [
+    "yoghurt",
+    "m",
+    "banan"
+   ]
+  },
+  " 2 x mælk": {
+   "asked": [],
+   "quantity": 2,
+   "query": "mælk",
+   "size": null,
+   "words": [
+    "mælk"
+   ]
+  },
+  "ÅRHUS": {
+   "asked": [],
+   "quantity": 1,
+   "query": "århus",
+   "size": null,
+   "words": [
+    "århus"
+   ]
+  },
+  "ÆG 10 STK": {
+   "asked": [],
+   "quantity": 1,
+   "query": "æg",
+   "size": [
+    "stk",
+    "10"
+   ],
+   "words": [
+    "æg"
+   ]
+  },
+  "Øko æg 10 stk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "øko æg",
+   "size": [
+    "stk",
+    "10"
+   ],
+   "words": [
+    "øko",
+    "æg"
+   ]
+  },
+  "æbler": {
+   "asked": [],
+   "quantity": 1,
+   "query": "æbler",
+   "size": null,
+   "words": [
+    "æbler"
+   ]
+  },
+  "æbler 1,5 kg": {
+   "asked": [],
+   "quantity": 1,
+   "query": "æbler",
+   "size": [
+    "g",
+    "1500"
+   ],
+   "words": [
+    "æbler"
+   ]
+  },
+  "æbler/pærer": {
+   "asked": [],
+   "quantity": 1,
+   "query": "æbler pærer",
+   "size": null,
+   "words": [
+    "æbler",
+    "pærer"
+   ]
+  },
+  "æg 10 stk": {
+   "asked": [],
+   "quantity": 1,
+   "query": "æg",
+   "size": [
+    "stk",
+    "10"
+   ],
+   "words": [
+    "æg"
+   ]
+  },
+  "İs": {
+   "asked": [],
+   "quantity": 1,
+   "query": "s",
+   "size": null,
+   "words": [
+    "s"
+   ]
+  },
+  "٢ x mælk": {
+   "asked": [],
+   "quantity": 2,
+   "query": "mælk",
+   "size": null,
+   "words": [
+    "mælk"
+   ]
+  },
+  "Kg mel": {
+   "asked": [],
+   "quantity": 1,
+   "query": "kg mel",
+   "size": null,
+   "words": [
+    "kg",
+    "mel"
+   ]
+  }
+ },
+ "parse_size": {
+  "": null,
+  " ": null,
+  "   ": null,
+  "0 x mælk": null,
+  "0,34 l / ex. pant / Bedst før: 11-11-2026": [
+   "ml",
+   "340"
+  ],
+  "0,5 kg": [
+   "g",
+   "500"
+  ],
+  "0,60 l / Classic": [
+   "ml",
+   "600"
+  ],
+  "0,75 l / ex. pant / ex. glas / Bedst før: 29-11-2026": [
+   "ml",
+   "750"
+  ],
+  "0,90-1,30 kg / Friland": [
+   "g",
+   "1300"
+  ],
+  "00 x mælk": null,
+  "01 kg": [
+   "g",
+   "1000"
+  ],
+  "1 kg": [
+   "g",
+   "1000"
+  ],
+  "1 kg / Gårdkylling / Danske Familiegårde": [
+   "g",
+   "1000"
+  ],
+  "1 l": [
+   "ml",
+   "1000"
+  ],
+  "1 ltr mælk": [
+   "ml",
+   "1000"
+  ],
+  "1 stk": [
+   "stk",
+   "1"
+  ],
+  "1 stk.": [
+   "stk",
+   "1"
+  ],
+  "1 stk. / Stevns": [
+   "stk",
+   "1"
+  ],
+  "1 Kg mel": [
+   "g",
+   "1000"
+  ],
+  "1,0 kg / Rose": [
+   "g",
+   "1000"
+  ],
+  "1,0-1,20 kg": [
+   "g",
+   "1200"
+  ],
+  "1,10 kg / Danpo": [
+   "g",
+   "1100"
+  ],
+  "1,20 kg / tilsat vand / Rose": [
+   "g",
+   "1200"
+  ],
+  "1,4-1,70 kg": [
+   "g",
+   "1700"
+  ],
+  "1,40-1,60 kg / Danske Egnsgårde": [
+   "g",
+   "1600"
+  ],
+  "1,5 kg": [
+   "g",
+   "1500"
+  ],
+  "1,5 kg æbler": [
+   "g",
+   "1500"
+  ],
+  "1,5,5 kg": [
+   "g",
+   "5500"
+  ],
+  "1,50 kg / tilsat vand / Rose": [
+   "g",
+   "1500"
+  ],
+  "1,80-2,0 kg": [
+   "g",
+   "2000"
+  ],
+  "1-1,30 kg / frost / Irish Nature": [
+   "g",
+   "1300"
+  ],
+  "1.000 g mel": [
+   "g",
+   "1"
+  ],
+  "1.5 kg æbler": [
+   "g",
+   "1500"
+  ],
+  "10 stk": [
+   "stk",
+   "10"
+  ],
+  "10 x bananer": null,
+  "100 g": [
+   "g",
+   "100"
+  ],
+  "100 g / Amanda": [
+   "g",
+   "100"
+  ],
+  "100 g / Den Grønne Slagter": [
+   "g",
+   "100"
+  ],
+  "100 gr smør": [
+   "g",
+   "100"
+  ],
+  "110 g": [
+   "g",
+   "110"
+  ],
+  "12 rl.": [
+   "rl",
+   "12"
+  ],
+  "12 x 0,25 l / Classic": [
+   "ml",
+   "3000"
+  ],
+  "12 x 400 g / Mutti": [
+   "g",
+   "4800"
+  ],
+  "12 x 400 g / Rodolfi": [
+   "g",
+   "4800"
+  ],
+  "12 x 400 g / Taste of Nature": [
+   "g",
+   "4800"
+  ],
+  "12 × 0,25 l cola": [
+   "ml",
+   "3000"
+  ],
+  "120 g / 4+ mdr. / og gulerod / og broccoli / Ella's Kitchen": [
+   "g",
+   "120"
+  ],
+  "120 g / 6+ mdr. / Ella's Kitchen": [
+   "g",
+   "120"
+  ],
+  "120 g / HARIBO": [
+   "g",
+   "120"
+  ],
+  "120 ml": [
+   "ml",
+   "120"
+  ],
+  "125 g": [
+   "g",
+   "125"
+  ],
+  "125 g / Amanda": [
+   "g",
+   "125"
+  ],
+  "125 g / Elvira": [
+   "g",
+   "125"
+  ],
+  "125 g / SR Food": [
+   "g",
+   "125"
+  ],
+  "125 g / Sidste anv. dato: 06-11-2026": [
+   "g",
+   "125"
+  ],
+  "125 g / Sæby": [
+   "g",
+   "125"
+  ],
+  "125 g / findelt / Sæby": [
+   "g",
+   "125"
+  ],
+  "12x0,25 l cola": [
+   "ml",
+   "3000"
+  ],
+  "12 × 0,25 l cola": [
+   "ml",
+   "3000"
+  ],
+  "12×0,25 l cola": [
+   "ml",
+   "3000"
+  ],
+  "130 g / First Price": [
+   "g",
+   "130"
+  ],
+  "14 x banan": null,
+  "140 g": [
+   "g",
+   "140"
+  ],
+  "150 g": [
+   "g",
+   "150"
+  ],
+  "150 g / sandwich skiver / Rose": [
+   "g",
+   "150"
+  ],
+  "16 stk": [
+   "stk",
+   "16"
+  ],
+  "170 g": [
+   "g",
+   "170"
+  ],
+  "175 g": [
+   "g",
+   "175"
+  ],
+  "180 g": [
+   "g",
+   "180"
+  ],
+  "190 g": [
+   "g",
+   "190"
+  ],
+  "1l mælk": [
+   "ml",
+   "1000"
+  ],
+  "2 kg": [
+   "g",
+   "2000"
+  ],
+  "2 l": [
+   "ml",
+   "2000"
+  ],
+  "2 stk. / 190-210 g": [
+   "stk",
+   "2"
+  ],
+  "2 stk. / 225-300 g / Danske Familiegårde": [
+   "stk",
+   "2"
+  ],
+  "2 stk. / 340 g / Nature & Respect": [
+   "stk",
+   "2"
+  ],
+  "2 stk. / 350 g / Friland": [
+   "stk",
+   "2"
+  ],
+  "2 stk. / 350-400 g": [
+   "stk",
+   "2"
+  ],
+  "2 stk. / 80 g": [
+   "stk",
+   "2"
+  ],
+  "2 x": null,
+  "2 x 8 ruller toiletpapir": [
+   "rl",
+   "16"
+  ],
+  "2 x broccoli": null,
+  "2 x letmælk": null,
+  "2 x letmælk 1 l": [
+   "ml",
+   "1000"
+  ],
+  "2 x rosinboller 6 stk": [
+   "stk",
+   "6"
+  ],
+  "2 × letmælk 1 l": [
+   "ml",
+   "1000"
+  ],
+  "20 x bananer": null,
+  "200 g": [
+   "g",
+   "200"
+  ],
+  "200 g / 3 farver": [
+   "g",
+   "200"
+  ],
+  "200 g / Miss Perfect®": [
+   "g",
+   "200"
+  ],
+  "200 g / Rossini": [
+   "g",
+   "200"
+  ],
+  "200 g / Skyllet og klar til brug": [
+   "g",
+   "200"
+  ],
+  "200 g / Spanien / Klasse 1": [
+   "g",
+   "200"
+  ],
+  "225 g": [
+   "g",
+   "225"
+  ],
+  "24 x 0.33 liter": [
+   "ml",
+   "7920"
+  ],
+  "240 g": [
+   "g",
+   "240"
+  ],
+  "240 g / Kalu": [
+   "g",
+   "240"
+  ],
+  "250 g": [
+   "g",
+   "250"
+  ],
+  "250 g / Rose": [
+   "g",
+   "250"
+  ],
+  "250 g / frost / Ardo": [
+   "g",
+   "250"
+  ],
+  "250 ml": [
+   "ml",
+   "250"
+  ],
+  "280 g": [
+   "g",
+   "280"
+  ],
+  "280 g / Gårdkylling / Danske Familiegårde": [
+   "g",
+   "280"
+  ],
+  "290 g": [
+   "g",
+   "290"
+  ],
+  "290 g / 180 g / Taste of Nature": [
+   "g",
+   "290"
+  ],
+  "2 x letmælk 1 l": [
+   "ml",
+   "1000"
+  ],
+  "2 × letmælk": null,
+  "2×letmælk": null,
+  "3 stk.": [
+   "stk",
+   "3"
+  ],
+  "3 x 125 g / Sæby": [
+   "g",
+   "375"
+  ],
+  "3 x 2 x mælk": null,
+  "3 x 400 g / Mutti": [
+   "g",
+   "1200"
+  ],
+  "3 x 70 g": [
+   "g",
+   "210"
+  ],
+  "3 x fior di latte": null,
+  "30 stk": [
+   "stk",
+   "30"
+  ],
+  "300 g": [
+   "g",
+   "300"
+  ],
+  "300 g / Gårdkylling / Danske Familiegårde": [
+   "g",
+   "300"
+  ],
+  "300 g / Miss Perfect®": [
+   "g",
+   "300"
+  ],
+  "300 g / frost": [
+   "g",
+   "300"
+  ],
+  "320 g / Hopballe Mølle": [
+   "g",
+   "320"
+  ],
+  "33 cl": [
+   "ml",
+   "330"
+  ],
+  "350 g": [
+   "g",
+   "350"
+  ],
+  "350-400 g / Rossini": [
+   "g",
+   "400"
+  ],
+  "390 g / Cirio": [
+   "g",
+   "390"
+  ],
+  "390 g / m. basilikum / Cirio": [
+   "g",
+   "390"
+  ],
+  "390 g / m. løg og hvidløg / Cirio": [
+   "g",
+   "390"
+  ],
+  "4 kg": [
+   "g",
+   "4000"
+  ],
+  "4 rl.": [
+   "rl",
+   "4"
+  ],
+  "4 stk": [
+   "stk",
+   "4"
+  ],
+  "4 x 125 g": [
+   "g",
+   "500"
+  ],
+  "4 x 125 g / Sæby": [
+   "g",
+   "500"
+  ],
+  "4 x 20 g / Castus": [
+   "g",
+   "80"
+  ],
+  "4 x 50 g": [
+   "g",
+   "200"
+  ],
+  "4 x cheasy skyr passionsfrugt": null,
+  "4 x hakkede tomater 400 g": [
+   "g",
+   "400"
+  ],
+  "4 x pærer": null,
+  "400 g": [
+   "g",
+   "400"
+  ],
+  "400 g / Delicate": [
+   "g",
+   "400"
+  ],
+  "400 g / Mutti": [
+   "g",
+   "400"
+  ],
+  "400 g / Rodolfi": [
+   "g",
+   "400"
+  ],
+  "400 g / Taste of Nature": [
+   "g",
+   "400"
+  ],
+  "400 g / frost / Gestus": [
+   "g",
+   "400"
+  ],
+  "400 g / frost / Grøn Balance": [
+   "g",
+   "400"
+  ],
+  "400-600 g / frost / Irish Nature": [
+   "g",
+   "600"
+  ],
+  "42 stk.": [
+   "stk",
+   "42"
+  ],
+  "450 g / tilsat vand / Rose": [
+   "g",
+   "450"
+  ],
+  "49 g / Santa Maria": [
+   "g",
+   "49"
+  ],
+  "5 dl fløde": [
+   "ml",
+   "500"
+  ],
+  "5 x 20 g / Castus": [
+   "g",
+   "100"
+  ],
+  "50 cl øl": [
+   "ml",
+   "500"
+  ],
+  "50 g": [
+   "g",
+   "50"
+  ],
+  "500 g": [
+   "g",
+   "500"
+  ],
+  "500 g / Casaneo": [
+   "g",
+   "500"
+  ],
+  "500 g / Chrisco - PAW": [
+   "g",
+   "500"
+  ],
+  "500 g / Spanien / Klasse 1": [
+   "g",
+   "500"
+  ],
+  "550 g / Danske Familiegårde": [
+   "g",
+   "550"
+  ],
+  "550 g / Gårdkylling / Danske Familiegårde": [
+   "g",
+   "550"
+  ],
+  "560 g / Hopballe Mølle": [
+   "g",
+   "560"
+  ],
+  "570 g / 350 g / i skiver": [
+   "g",
+   "570"
+  ],
+  "6 stk": [
+   "stk",
+   "6"
+  ],
+  "6 stk. / 350 g  / Schulstad - Det Gode": [
+   "stk",
+   "6"
+  ],
+  "6 x 10 g / m. tranebær / Castus - Grinebidder": [
+   "g",
+   "60"
+  ],
+  "6 x 400 g / Mutti": [
+   "g",
+   "2400"
+  ],
+  "6 x 400 g / Rodolfi": [
+   "g",
+   "2400"
+  ],
+  "6 x bananer": null,
+  "6 x køkkenrulle": null,
+  "600 g": [
+   "g",
+   "600"
+  ],
+  "600 g / frost / Frigodan": [
+   "g",
+   "600"
+  ],
+  "650 g": [
+   "g",
+   "650"
+  ],
+  "650 g / Rose": [
+   "g",
+   "650"
+  ],
+  "6 x bananer": null,
+  "7 x 12,5 g": [
+   "g",
+   "87.5"
+  ],
+  "70 g / Hammel": [
+   "g",
+   "70"
+  ],
+  "700 g / frost / First Price": [
+   "g",
+   "700"
+  ],
+  "75 g": [
+   "g",
+   "75"
+  ],
+  "750 g / frost / Frigodan": [
+   "g",
+   "750"
+  ],
+  "8 stk": [
+   "stk",
+   "8"
+  ],
+  "80 g": [
+   "g",
+   "80"
+  ],
+  "80 g / 3-Stjernet": [
+   "g",
+   "80"
+  ],
+  "80 g / 3-Stjernet / Bedst før: 10-11-2026": [
+   "g",
+   "80"
+  ],
+  "80 g / Den Grønne Slagter": [
+   "g",
+   "80"
+  ],
+  "80 g / Italiensk inspireret / 3-Stjernet": [
+   "g",
+   "80"
+  ],
+  "80 g / m. tomat / 3-stjernet": [
+   "g",
+   "80"
+  ],
+  "800 g": [
+   "g",
+   "800"
+  ],
+  "90 g": [
+   "g",
+   "90"
+  ],
+  "90 g / Den Grønne Slagter": [
+   "g",
+   "90"
+  ],
+  "90 g / Sidste anv. dato: 05-11-2026": [
+   "g",
+   "90"
+  ],
+  "90 g / m. groft peber / Tulip - Pålækker": [
+   "g",
+   "90"
+  ],
+  "900 g": [
+   "g",
+   "900"
+  ],
+  "99999999999999999999 g mel": [
+   "g",
+   "99999999999999999999"
+  ],
+  "99999999999999999999 x mælk": null,
+  "Abrikosmarmelade øko": null,
+  "Agurk øko.": null,
+  "Aloe Vera fugtigt toiletpapir": null,
+  "Angus XL bov steak øko.": null,
+  "Angus cuvettesteg øko.": null,
+  "Angus oksesteak øko.": null,
+  "Appetit agurker": null,
+  "Babymajs": null,
+  "Bananer": null,
+  "Bananer 4 pak øko": null,
+  "Basissalat": null,
+  "Bimi broccoli": null,
+  "Blåbær": null,
+  "Blåbærfrugtstænger": null,
+  "Blåbærfrugtstænger øko.": null,
+  "Broccoli": null,
+  "Broccoli buketter": null,
+  "Broccoli buketter øko.": null,
+  "Broccoli øko.": null,
+  "Broccoliblanding": null,
+  "Broccolisalat": null,
+  "Broccolispirer øko.": null,
+  "Burrata 24% fedt": null,
+  "Burrata 24% fedt øko": null,
+  "Burrata di Andria": null,
+  "Burratina 15% fedt": null,
+  "Cheasy skyr 1 kg": [
+   "g",
+   "1000"
+  ],
+  "Cherry tomater øko": null,
+  "Cherrytomater Snackmix": null,
+  "Cherrytomater i tomatjuice": null,
+  "Cherrytomater m. stilk": null,
+  "Cherrytomater m. stilk øko.": null,
+  "Cherrytomater øko.": null,
+  "Classic toiletpapir": null,
+  "Click mix": null,
+  "Cocio kakaomælk": null,
+  "Cocio kakaomælk (dåse)": null,
+  "Danbo ost i skiver mellemlagret 45+": null,
+  "Energidrik m. lime/citron øko.": null,
+  "Energidrik m. passion øko.": null,
+  "Entrecote øko.": null,
+  "Figenfrugtstænger": null,
+  "Figenfrugtstænger øko.": null,
+  "Findelt makrel i tomat": null,
+  "Finthakkede tomater": null,
+  "Finthakkede tomater m. basilikum": null,
+  "Finthakkede tomater m. hvidløg": null,
+  "Fior di Frutta marmelade": null,
+  "Fior di latte": null,
+  "Flanksteak": null,
+  "Flydende hvidløg øko": null,
+  "Flåede tomater øko": null,
+  "Flæskesteg": null,
+  "Fløde 38%": null,
+  "Frilandsæg": null,
+  "Frilandsæg S/M/L": null,
+  "Frugtfigurer m. blåbær øko.": null,
+  "Fynsk rygeost 10% fedt øko": null,
+  "Gourmet tomater på stilk": null,
+  "Grissini m. hvidløg og persille": null,
+  "Gulerødder": null,
+  "Hakkede tomater": null,
+  "Hakkede tomater m. basilikum": null,
+  "Hakkede tomater m. chili": null,
+  "Hakkede tomater m. hvidløg": null,
+  "Hakkede tomater m. urter øko": null,
+  "Hakkede tomater øko": null,
+  "Hakkede tomater øko.": null,
+  "Hakket oksekød 14-18%": null,
+  "Hakket oksekød 8-12%": null,
+  "Hakket oksekød m. 50% grønt": null,
+  "Hamburgerryg": null,
+  "Hamburgerryg i skiver": null,
+  "Havregryn": null,
+  "Hvidløg": null,
+  "Hvidløg (finthakket)": null,
+  "Hvidløg (sorte) øko.": null,
+  "Hvidløg Solo": null,
+  "Hvidløg dansk øko.": null,
+  "Hvidløg i chiliolie": null,
+  "Hvidløg i krydderolie": null,
+  "Hvidløg i net": null,
+  "Hvidløg i tern": null,
+  "Hvidløg røde/pink": null,
+  "Hvidløg øko": null,
+  "Hvidløg øko.": null,
+  "Hvidløgsolie m. persille": null,
+  "Hvidløgspulver": null,
+  "Indbagt laksefilet m. spinat": null,
+  "Jacobsen BARBARAS": null,
+  "Jordbær- og skovjordbærmarmelade øko": null,
+  "Kaffe": null,
+  "Kaffe formalet": null,
+  "Kakaomælk": null,
+  "Kakaomælk 0,5% fedt": null,
+  "Kartofler": null,
+  "Kiwi": null,
+  "Knust hvidløg": null,
+  "Kyllingebryst": null,
+  "Kyllingebryst (i skiver)": null,
+  "Kyllingebryst (klassisk)": null,
+  "Kyllingebryst (silkeskåret)": null,
+  "Kyllingebryst i skiver": null,
+  "Kyllingebryst i skiver (stegt)": null,
+  "Kyllingebryst m. BBQ": null,
+  "Kyllingebryst m. chili": null,
+  "Kyllingebryst øko.": null,
+  "Kyllingebrystfilet": null,
+  "Kyllingebrystfilet butterfly": null,
+  "Kyllingebrystfilet i tern": null,
+  "Kyllingebrystfilet m. skind": null,
+  "Kyllingebrystfilet øko": null,
+  "Kyllingebrystfilet øko.": null,
+  "Kyllingelår": null,
+  "Kyllingeoverlår": null,
+  "Kyllingepålæg m. urter": null,
+  "Køkkenrulle 3-lags": null,
+  "Lagerøl": null,
+  "Laksefilet": null,
+  "Laksestykke": null,
+  "Landskinke": null,
+  "Latte": null,
+  "Latte Karamel": null,
+  "Latte Macchiato Caramel kaffekapsler": null,
+  "Latte Macchiato kaffekapsler": null,
+  "Latte cappuccino 1,3% fedt": null,
+  "Latte macchiato 4,1% fedt": null,
+  "Letmælk": null,
+  "Letmælk 0,5% fedt": null,
+  "Majs": null,
+  "Makrel i små stykker i tomat": null,
+  "Makrel i tomat": null,
+  "Makrel i tomat smørbar": null,
+  "Makrelfilet i tomat": null,
+  "Makrelfilet i tomat m. chili": null,
+  "Makrelfilet i øko. tomatsauce": null,
+  "Makrelguf": null,
+  "Makrelkræs": null,
+  "Makrelstykker i tomat": null,
+  "Marry Me Chicken": null,
+  "Mascarpone Italiano 42% fedt": null,
+  "Mascarpone laktosefri 35% fedt": null,
+  "Mini Mozzarella 19% fedt": null,
+  "Mini Mozzarella laktosefri 18% fedt": null,
+  "Mini frugtstænger m blåbær øko": null,
+  "Mini mozzarelle 16% fedt": null,
+  "Minimælk med 0,5% fedt": null,
+  "Mos m. pære og broccoli øko.": null,
+  "Mos m. sød kartoffel øko.": null,
+  "Mozzarella 16% fedt": null,
+  "Mozzarella 16% fedt laktosefri": null,
+  "Mozzarella 17% fedt øko": null,
+  "Mozzarella 19% fedt": null,
+  "Mozzarella di Bufala 21% fedt": null,
+  "Mozzarella i tern 21 % fedt": null,
+  "Mozzarella mini 5% fedt": null,
+  "Mozzarella sticks": null,
+  "Mozzarella tern 21% fedt": null,
+  "Mums rosinboller": null,
+  "MÆLK": null,
+  "Mælk": null,
+  "Mælk, 1 l": [
+   "ml",
+   "1000"
+  ],
+  "Nakkefilet øko.": null,
+  "Oksecuvette": null,
+  "Pasta fusilli": null,
+  "Pasta penne": null,
+  "Pepsi Max": null,
+  "Pikant flødeost 23% fedt": null,
+  "Plantebaserede fileter i tomat øko": null,
+  "Post-it": null,
+  "Protein Cheese natural 10+": null,
+  "Pærer": null,
+  "Revet mozzarella 17% fedt": null,
+  "Revet mozzarella 20% fedt øko": null,
+  "Revet mozzarella 22% fedt": null,
+  "Revet mozzarella ost 15% fedt": null,
+  "Revet ost m. mozzarella 13% fedt": null,
+  "Ricotta Italiana": null,
+  "Rugbrød": null,
+  "Rugbrød m. kerner": null,
+  "Rygeost 10% fedt øko": null,
+  "Røget kyllingebryst": null,
+  "Røget makrel (hel)": null,
+  "Røget pebermakrel": null,
+  "Salt & peber": null,
+  "San Marzano tomater øko.": null,
+  "Sandwich kyllingebryst": null,
+  "Short ribs": null,
+  "Skovbærmarmelade øko": null,
+  "Skyr m. skovbær 0,2%": null,
+  "Skyr m. vanilje 0,2 % fedt øko": null,
+  "Skyr m. vanilje 0,2% fedt u. tilsat sukker": null,
+  "Skyr naturel": null,
+  "Skyr vanilje": null,
+  "Smør": null,
+  "Spaghetti øko.": null,
+  "Spaghettisquash øko.": null,
+  "Stracciatella di Burrata": null,
+  "Stryhns leverpostej bacon peber 275 g": [
+   "g",
+   "275"
+  ],
+  "Summer mix tomater": null,
+  "Toiletpapir": null,
+  "Toiletpapir 8 ruller": [
+   "rl",
+   "8"
+  ],
+  "Tomater": null,
+  "Tomater m. stilk øko.": null,
+  "Tomater øko.": null,
+  "Tun i tomat": null,
+  "Tærte m. skinke og broccoli": null,
+  "agurk": null,
+  "bananer": null,
+  "bananer 1 kg": [
+   "g",
+   "1000"
+  ],
+  "basilikum": null,
+  "blomkål": null,
+  "blåbær": null,
+  "blåbær 250 g": [
+   "g",
+   "250"
+  ],
+  "cheasy skyr passionsfrugt": null,
+  "cherrytomater": null,
+  "cherrytomater 250 g": [
+   "g",
+   "250"
+  ],
+  "citroner 2 stk": [
+   "stk",
+   "2"
+  ],
+  "clementiner 500 g": [
+   "g",
+   "500"
+  ],
+  "creme fraiche 200 g": [
+   "g",
+   "200"
+  ],
+  "e-vitamin": null,
+  "findes ikke xyz": null,
+  "fior di latte": null,
+  "fior di latte 200 g": [
+   "g",
+   "200"
+  ],
+  "fior di latte 300 g": [
+   "g",
+   "300"
+  ],
+  "frosne blåbær": null,
+  "græsk yoghurt 1 kg": [
+   "g",
+   "1000"
+  ],
+  "gulerødder 1 kg": [
+   "g",
+   "1000"
+  ],
+  "gær 50 g": [
+   "g",
+   "50"
+  ],
+  "hakkede tomater 400 g": [
+   "g",
+   "400"
+  ],
+  "hakket grisekød 1 kg": [
+   "g",
+   "1000"
+  ],
+  "hakket kylling 1 kg": [
+   "g",
+   "1000"
+  ],
+  "hakket kyllingekød 700 g": [
+   "g",
+   "700"
+  ],
+  "hakket oksekød": null,
+  "hakket oksekød 1,5 kg": [
+   "g",
+   "1500"
+  ],
+  "hakket oksekød 1,5 kg": [
+   "g",
+   "1500"
+  ],
+  "hakket oksekød 500 g": [
+   "g",
+   "500"
+  ],
+  "hakket oksekød 8-12%": null,
+  "hakket oksekød med fedt": null,
+  "havregryn 1 kg": [
+   "g",
+   "1000"
+  ],
+  "hvidløg": null,
+  "hvidløg 1 stk": [
+   "stk",
+   "1"
+  ],
+  "hytteost 500 g": [
+   "g",
+   "500"
+  ],
+  "kaffe 1 KG": [
+   "g",
+   "1000"
+  ],
+  "kaffe 400 g": [
+   "g",
+   "400"
+  ],
+  "kaffe filter": null,
+  "kaffe filter brun": null,
+  "kaffebønner 1 kg": [
+   "g",
+   "1000"
+  ],
+  "kartofler 1 kg": [
+   "g",
+   "1000"
+  ],
+  "kartofler 2 kg": [
+   "g",
+   "2000"
+  ],
+  "kg": null,
+  "kikærter 400 g": [
+   "g",
+   "400"
+  ],
+  "klementiner": null,
+  "kogt skinke 150 g": [
+   "g",
+   "150"
+  ],
+  "kokosmælk 400 ml": [
+   "ml",
+   "400"
+  ],
+  "kyllingebryst": null,
+  "kyllingebryst - 450 g": [
+   "g",
+   "450"
+  ],
+  "kyllingebryst 0,45 kg": [
+   "g",
+   "450"
+  ],
+  "kyllingebryst 4,5 dl": [
+   "ml",
+   "450"
+  ],
+  "kyllingebryst 400 g": [
+   "g",
+   "400"
+  ],
+  "kyllingebryst 450 g": [
+   "g",
+   "450"
+  ],
+  "kyllingebryst 450g": [
+   "g",
+   "450"
+  ],
+  "kyllingebryst 500 g": [
+   "g",
+   "500"
+  ],
+  "kyllingelår 1 kg": [
+   "g",
+   "1000"
+  ],
+  "kyllingelår 1,2 kg": [
+   "g",
+   "1200"
+  ],
+  "kyllingelår 1,25 kg": [
+   "g",
+   "1250"
+  ],
+  "laks 600 g": [
+   "g",
+   "600"
+  ],
+  "laks fersk": null,
+  "laksefilet 600 g": [
+   "g",
+   "600"
+  ],
+  "letmælk 1 l": [
+   "ml",
+   "1000"
+  ],
+  "letmælk 2 l": [
+   "ml",
+   "2000"
+  ],
+  "løg 1 kg": [
+   "g",
+   "1000"
+  ],
+  "majs 340 g": [
+   "g",
+   "340"
+  ],
+  "makrel i tomat 125 g": [
+   "g",
+   "125"
+  ],
+  "makrel med tomat": null,
+  "mandariner 1 kg": [
+   "g",
+   "1000"
+  ],
+  "mozzarella 250 g": [
+   "g",
+   "250"
+  ],
+  "mælk\t1 l": [
+   "ml",
+   "1000"
+  ],
+  "mælk\n1 l": [
+   "ml",
+   "1000"
+  ],
+  "mælk  1  l": [
+   "ml",
+   "1000"
+  ],
+  "mælk 0,5% fedt": null,
+  "mælk 1 l": [
+   "ml",
+   "1000"
+  ],
+  "mælk ١ l": [
+   "ml",
+   "1000"
+  ],
+  "ost i skiver 500 g": [
+   "g",
+   "500"
+  ],
+  "pancetta i tern 150 g": [
+   "g",
+   "150"
+  ],
+  "pasta": null,
+  "pasta 500 g": [
+   "g",
+   "500"
+  ],
+  "peber": null,
+  "peberfrugt 3 stk": [
+   "stk",
+   "3"
+  ],
+  "peberfrugt rød": null,
+  "pizzamel 1 kg": [
+   "g",
+   "1000"
+  ],
+  "pærer": null,
+  "ris 1 kg": [
+   "g",
+   "1000"
+  ],
+  "ris 1 kg ris": [
+   "g",
+   "1000"
+  ],
+  "rosinboller 6 stk": [
+   "stk",
+   "6"
+  ],
+  "rugbrød": null,
+  "røde linser 500 g": [
+   "g",
+   "500"
+  ],
+  "røget kyllingebryst": null,
+  "røget kyllingebryst 100 g": [
+   "g",
+   "100"
+  ],
+  "skyr 1 kg": [
+   "g",
+   "1000"
+  ],
+  "smør 250 g": [
+   "g",
+   "250"
+  ],
+  "snackpeber": null,
+  "snackpeber 250 g": [
+   "g",
+   "250"
+  ],
+  "spaghetti": null,
+  "spaghetti 500 g": [
+   "g",
+   "500"
+  ],
+  "toiletpapir": null,
+  "toiletpapir 8 rl": [
+   "rl",
+   "8"
+  ],
+  "toiletpapir 8 ruller": [
+   "rl",
+   "8"
+  ],
+  "toiletpapir 8 stk": [
+   "stk",
+   "8"
+  ],
+  "tortilla wraps 6 stk": [
+   "stk",
+   "6"
+  ],
+  "uden sukker": null,
+  "x": null,
+  "x2 mælk": null,
+  "yoghurt m banan": null,
+  " 2 x mælk": null,
+  "ÅRHUS": null,
+  "ÆG 10 STK": [
+   "stk",
+   "10"
+  ],
+  "Æbler": null,
+  "Æbler Pink Lady": null,
+  "Æg fra fritgående høns": null,
+  "Æg økologiske": null,
+  "Øko fior di latte": null,
+  "Øko æg 10 stk": [
+   "stk",
+   "10"
+  ],
+  "Økologiske æg": null,
+  "æbler": null,
+  "æbler 1,5 kg": [
+   "g",
+   "1500"
+  ],
+  "æbler/pærer": null,
+  "æg 10 stk": [
+   "stk",
+   "10"
+  ],
+  "İs": null,
+  "٢ x mælk": null,
+  "Kg mel": null
+ },
+ "products": {
+  "bilkatogo": [
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "800"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "800"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "800"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "800"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "800"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "800"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "650"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "650"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "650"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "650"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "650"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "650"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "10"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "10"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "90"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "90"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "ml",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "ml",
+     "7920"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "7920"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "240"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "240"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "250"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "250"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "250"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "ml",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "250"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "ml",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "250"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "8"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "8"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "10"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "10"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "10"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "10"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "16"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "16"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "30"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "30"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "100"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "100"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "250"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "100"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "100"
+    ],
+    "processed": "frost"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "75"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "75"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "110"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "110"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "ml",
+     "120"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "120"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "75"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "75"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "50"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "50"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "190"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "190"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "80"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "80"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "90"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "90"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "180"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "180"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "175"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "175"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "150"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "150"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "140"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "140"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "150"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "150"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "250"
+    ],
+    "processed": "frost"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "100"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "100"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "250"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "150"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "150"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "140"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "140"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "150"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "150"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "100"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "100"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "150"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "150"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "250"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "175"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "175"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "170"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "170"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   }
+  ],
+  "nemlig": [
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "ml",
+     "3000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "3000"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "ml",
+     "600"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "600"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "6"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "6"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "stk",
+     "2"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "2"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "280"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "280"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "650"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "650"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "550"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "550"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "320"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "320"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1100"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1100"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "2"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "2"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "300"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "300"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "560"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "560"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "240"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "240"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "550"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "550"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "70"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "70"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "90"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "90"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "130"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "130"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "100"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "100"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "80"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "80"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "80"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "80"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "80"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "80"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "80"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "80"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "80"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "80"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "80"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "80"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "100"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "100"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "90"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "90"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "150"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "150"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "450"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "450"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "250"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": "frost"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "600"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "600"
+    ],
+    "processed": "frost"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "750"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "750"
+    ],
+    "processed": "frost"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "700"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "700"
+    ],
+    "processed": "frost"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": "frost"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "120"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "120"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "50"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "50"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "120"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "120"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "4800"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "4800"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "390"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "390"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "2400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "2400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "2400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "2400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "390"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "390"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "390"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "390"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "4800"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "4800"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "390"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "390"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "2400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "2400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "2400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "2400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "390"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "390"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "390"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "390"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "4800"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "4800"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "4800"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "4800"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "4800"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "4800"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "250"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "250"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "800"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "800"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "300"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "300"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "250"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "3"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "3"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "stk",
+     "2"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "2"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "250"
+    ],
+    "processed": "frost"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "49"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "49"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "290"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "290"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "290"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "290"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "375"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "375"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "100"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "100"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1300"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1300"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "600"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "600"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1600"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1600"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "2000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "2000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "1300"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1300"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "100"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "100"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "80"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "80"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "100"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "100"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "80"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "80"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "60"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "60"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "120"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "120"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "6"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "6"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "1700"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1700"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "stk",
+     "2"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "2"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "stk",
+     "2"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "2"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "stk",
+     "2"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "2"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "90"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "90"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "ml",
+     "750"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "750"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "ml",
+     "340"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "340"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "ml",
+     "340"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "340"
+    ],
+    "processed": null
+   }
+  ],
+  "synthetic": [
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "ml",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "ml",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "stk",
+     "10"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "10"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "250"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "900"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "900"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "2000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "2000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "rl",
+     "8"
+    ],
+    "parse_size_name": [
+     "rl",
+     "8"
+    ],
+    "parse_size_size": [
+     "stk",
+     "8"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "ml",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "ml",
+     "2000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "2000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "10"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "10"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "250"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "900"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "900"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "2000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "2000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "8"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "8"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "100"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "100"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "350"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "350"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "280"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "280"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "650"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "650"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "4000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "4000"
+    ],
+    "processed": "frost"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "225"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "225"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "600"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "600"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "300"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "300"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "250"
+    ],
+    "processed": "frost"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "210"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "210"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "ml",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "125"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "125"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "300"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "300"
+    ],
+    "processed": "frost"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "87.5"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "87.5"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "250"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "250"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "290"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "290"
+    ],
+    "processed": "konserves"
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "ml",
+     "330"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "330"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "rl",
+     "12"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "rl",
+     "12"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "42"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "42"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "rl",
+     "4"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "rl",
+     "4"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "300"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "300"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "570"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "570"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "ml",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "ml",
+     "1000"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "ml",
+     "1000"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": null,
+    "parse_size_name": null,
+    "parse_size_size": null,
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": null,
+    "parse_size_name": null,
+    "parse_size_size": null,
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "800"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "800"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "10"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "10"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "stk",
+     "10"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "10"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "stk",
+     "4"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "4"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": null,
+    "parse_size_name": null,
+    "parse_size_size": null,
+    "processed": null
+   },
+   {
+    "is_fresh": true,
+    "is_oeko": true,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "200"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "200"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": true,
+    "pack_size": [
+     "g",
+     "100"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "100"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "600"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "600"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "600"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "600"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "6"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "6"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "stk",
+     "1"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "stk",
+     "1"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "400"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "400"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "1500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "1500"
+    ],
+    "processed": null
+   },
+   {
+    "is_fresh": false,
+    "is_oeko": false,
+    "pack_size": [
+     "g",
+     "500"
+    ],
+    "parse_size_name": null,
+    "parse_size_size": [
+     "g",
+     "500"
+    ],
+    "processed": null
+   }
+  ]
+ }
+}

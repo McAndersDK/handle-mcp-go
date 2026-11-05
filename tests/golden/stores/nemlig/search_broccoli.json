@@ -1,0 +1,471 @@
+{
+ "answer": [
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": null,
+   "category": "Grønt",
+   "ean": null,
+   "id": "5068435",
+   "max_per_order": null,
+   "name": "Broccoli øko.",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "18.00",
+   "size": "500 g / Spanien / Klasse 1",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "36.00"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": null,
+   "category": "Grønt",
+   "ean": null,
+   "id": "5009355",
+   "max_per_order": null,
+   "name": "Bimi broccoli",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "25.00",
+   "size": "200 g / Spanien / Klasse 1",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "125.00"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": null,
+   "category": "Grønt",
+   "ean": null,
+   "id": "2301185",
+   "max_per_order": null,
+   "name": "Broccoli",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "15.00",
+   "size": "500 g",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "30.00"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Torup Bakkegård",
+   "campaign": null,
+   "category": "Grønt",
+   "ean": null,
+   "id": "5002549",
+   "max_per_order": null,
+   "name": "Broccoli",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "18.00",
+   "size": "1 stk.",
+   "store": "nemlig",
+   "unit": "stk",
+   "unit_price": "18.00"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Grøn Balance",
+   "campaign": null,
+   "category": "Frost",
+   "ean": null,
+   "id": "5060611",
+   "max_per_order": null,
+   "name": "Broccoli buketter øko.",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "13.95",
+   "size": "400 g / frost / Grøn Balance",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "34.88"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Frigodan",
+   "campaign": "Fast mixtilbud",
+   "category": "Frost",
+   "ean": null,
+   "id": "101634",
+   "max_per_order": null,
+   "name": "Broccoli buketter",
+   "offer_text": "3 for 70 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "28.50",
+   "size": "600 g / frost / Frigodan",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "47.50"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Frigodan",
+   "campaign": null,
+   "category": "Frost",
+   "ean": null,
+   "id": "103205",
+   "max_per_order": null,
+   "name": "Broccoliblanding",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "16.19",
+   "size": "750 g / frost / Frigodan",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "21.59"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "First Price",
+   "campaign": null,
+   "category": "Frost",
+   "ean": null,
+   "id": "5062911",
+   "max_per_order": null,
+   "name": "Broccoliblanding",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "15.11",
+   "size": "700 g / frost / First Price",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "21.59"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Gestus",
+   "campaign": "Fast mixtilbud",
+   "category": "Frost",
+   "ean": null,
+   "id": "5070877",
+   "max_per_order": null,
+   "name": "Tærte m. skinke og broccoli",
+   "offer_text": "2 for 78 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "41.95",
+   "size": "400 g / frost / Gestus",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "104.88"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Ella's Kitchen",
+   "campaign": "Fast mixtilbud",
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5037262",
+   "max_per_order": null,
+   "name": "Mos m. pære og broccoli øko.",
+   "offer_text": "3 for 60 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "25.25",
+   "size": "120 g / 6+ mdr. / Ella's Kitchen",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "210.42"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Dangrow Convenience",
+   "campaign": null,
+   "category": "Grønt",
+   "ean": null,
+   "id": "5043696",
+   "max_per_order": null,
+   "name": "Basissalat",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "16.00",
+   "size": "200 g / Skyllet og klar til brug",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "80.00"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": "Fast mixtilbud",
+   "category": "Grønt",
+   "ean": null,
+   "id": "5065030",
+   "max_per_order": null,
+   "name": "Broccolispirer øko.",
+   "offer_text": "2 for 30 kr",
+   "offer_until": "2026-12-31",
+   "on_offer": true,
+   "price": "16.00",
+   "size": "50 g",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "320.00"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Delicate",
+   "campaign": "Fast mixtilbud",
+   "category": "Køl",
+   "ean": null,
+   "id": "5017577",
+   "max_per_order": null,
+   "name": "Broccolisalat",
+   "offer_text": "2 for 70 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "42.66",
+   "size": "400 g / Delicate",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "106.65"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Ella's Kitchen",
+   "campaign": "Fast mixtilbud",
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5037269",
+   "max_per_order": null,
+   "name": "Mos m. sød kartoffel øko.",
+   "offer_text": "3 for 60 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "25.25",
+   "size": "120 g / 4+ mdr. / og gulerod / og broccoli / Ella's Kitchen",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "210.42"
+  }
+ ],
+ "args": [
+  "broccoli",
+  50
+ ],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   ".ASPXAUTH": "auth-1"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "search",
+ "name": "search_broccoli",
+ "requests": [
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": {
+    "AppInstalled": false,
+    "CheckForExistingProducts": true,
+    "DoMerge": true,
+    "Password": "hemmeligt",
+    "SaveExistingBasket": false,
+    "Username": "kunde@example.com"
+   },
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "content-type": "application/json",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/login"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/v2/AppSettings/Website"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/basket/GetBasket"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "query",
+     "broccoli"
+    ],
+    [
+     "take",
+     "50"
+    ],
+    [
+     "skip",
+     "0"
+    ],
+    [
+     "recipeCount",
+     "0"
+    ],
+    [
+     "timestamp",
+     "ts-1"
+    ],
+    [
+     "timeslotUtc",
+     "2026110316-60-180"
+    ],
+    [
+     "deliveryZoneId",
+     "3"
+    ]
+   ],
+   "url": "https://webapi.prod.knl.nemlig.it/searchgateway/api/search"
+  }
+ ],
+ "session_after": {
+  ".ASPXAUTH": "auth-1"
+ },
+ "store": "nemlig"
+}

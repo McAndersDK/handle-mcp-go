@@ -1,0 +1,735 @@
+{
+ "answer": {
+  "description": "Prøv denne lækre og nemme opskrift på kebabfad, en nem måde at få smagen af take away, hjemme i dit eget køkken 🌯",
+  "id": "kebabfad-med-fladbrod-98001303",
+  "image": "https://media.umbraco.io/nemlig3/zu0cfnyn/kebabfad-med-fladbr-d-og-hvidl-gsdressing-opskrift-16x9.jpg?mode=crop&anchor=center&width=912&height=513",
+  "ingredients": [
+   "2 stk. rødløg",
+   "2 fed hvidløg",
+   "1 bdt. persille",
+   "500 g hakket grise- og kalvekød",
+   "3 tsk. kebab krydderi",
+   "1 spsk. neutral olie",
+   "salt",
+   "peber",
+   "200 g tomater",
+   "1 stk. agurk",
+   "1 stk. icebergsalat (alternativt hjertesalat)",
+   "1 spsk. olivenolie",
+   "3 dl yoghurt naturel",
+   "1 tsk. sukker",
+   "salt",
+   "peber",
+   "8 stk. fladbrød"
+  ],
+  "ingredients_persons": 4,
+  "items": [
+   {
+    "alternatives": [
+     {
+      "available": true,
+      "id": "5042129",
+      "name": "Rødløg øko.",
+      "offer_text": null,
+      "price": "24.00",
+      "quantity": 1,
+      "size": "750 g"
+     }
+    ],
+    "have_at_home": false,
+    "ingredient": "Rødløg",
+    "product": {
+     "available": true,
+     "id": "2301108",
+     "name": "Rødløg",
+     "offer_text": null,
+     "price": "16.00",
+     "quantity": 1,
+     "size": "1 kg"
+    }
+   },
+   {
+    "alternatives": [
+     {
+      "available": true,
+      "id": "5053384",
+      "name": "Hvidløg i net",
+      "offer_text": null,
+      "price": "13.33",
+      "quantity": 1,
+      "size": "200 g"
+     },
+     {
+      "available": true,
+      "id": "1101017",
+      "name": "Hvidløg dansk øko.",
+      "offer_text": null,
+      "price": "12.00",
+      "quantity": 1,
+      "size": "1 stk. / Stevns"
+     }
+    ],
+    "have_at_home": false,
+    "ingredient": "Hvidløg",
+    "product": {
+     "available": true,
+     "id": "100160",
+     "name": "Hvidløg øko.",
+     "offer_text": null,
+     "price": "5.00",
+     "quantity": 1,
+     "size": "1 stk."
+    }
+   },
+   {
+    "alternatives": [
+     {
+      "available": true,
+      "id": "5016781",
+      "name": "Persille bredbladet øko.",
+      "offer_text": "Mix 3 stk. 40,-",
+      "price": "15.00",
+      "quantity": 1,
+      "size": "10,5 cm pt."
+     },
+     {
+      "available": true,
+      "id": "5003207",
+      "name": "Persille bredbladet",
+      "offer_text": null,
+      "price": "25.00",
+      "quantity": 1,
+      "size": "180 g"
+     }
+    ],
+    "have_at_home": false,
+    "ingredient": "Persille",
+    "product": {
+     "available": true,
+     "id": "2301153",
+     "name": "Persille krus",
+     "offer_text": null,
+     "price": "10.00",
+     "quantity": 1,
+     "size": "7 cm pt."
+    }
+   },
+   {
+    "alternatives": [
+     {
+      "available": true,
+      "id": "5026539",
+      "name": "Hakket grise og kalvekød 8-12%",
+      "offer_text": null,
+      "price": "59.03",
+      "quantity": 1,
+      "size": "1 kg / Danish Crown"
+     },
+     {
+      "available": true,
+      "id": "5062387",
+      "name": "Hakket grise og kalvekød 4-7%",
+      "offer_text": null,
+      "price": "37.44",
+      "quantity": 1,
+      "size": "500 g / Danish Crown"
+     }
+    ],
+    "have_at_home": false,
+    "ingredient": "Hakket grise- og kalvekød",
+    "product": {
+     "available": true,
+     "id": "5026536",
+     "name": "Hakket grise og kalvekød 8-12%",
+     "offer_text": null,
+     "price": "29.95",
+     "quantity": 1,
+     "size": "500 g / Danish Crown"
+    }
+   },
+   {
+    "alternatives": [
+     {
+      "available": true,
+      "id": "5066215",
+      "name": "Kebab krydderi øko.",
+      "offer_text": null,
+      "price": "8.95",
+      "quantity": 1,
+      "size": "10 g / Pure Garden"
+     }
+    ],
+    "have_at_home": false,
+    "ingredient": "Kebab krydderi",
+    "product": {
+     "available": true,
+     "id": "5066258",
+     "name": "Kebab krydderi",
+     "offer_text": "Mix 3 stk. 70,-",
+     "price": "24.75",
+     "quantity": 1,
+     "size": "29 g / Santa Maria"
+    }
+   },
+   {
+    "alternatives": [
+     {
+      "available": true,
+      "id": "5006127",
+      "name": "Tomater øko.",
+      "offer_text": null,
+      "price": "21.25",
+      "quantity": 1,
+      "size": "500 g"
+     },
+     {
+      "available": true,
+      "id": "5007510",
+      "name": "Tomater øko.",
+      "offer_text": null,
+      "price": "20.00",
+      "quantity": 1,
+      "size": "400 g"
+     }
+    ],
+    "have_at_home": false,
+    "ingredient": "Tomater",
+    "product": {
+     "available": true,
+     "id": "5006443",
+     "name": "Tomater",
+     "offer_text": null,
+     "price": "20.00",
+     "quantity": 1,
+     "size": "500 g"
+    }
+   },
+   {
+    "alternatives": [
+     {
+      "available": true,
+      "id": "5057157",
+      "name": "Agurk dansk",
+      "offer_text": null,
+      "price": "20.00",
+      "quantity": 1,
+      "size": "1 stk."
+     },
+     {
+      "available": true,
+      "id": "2301199",
+      "name": "Agurk",
+      "offer_text": null,
+      "price": "10.00",
+      "quantity": 1,
+      "size": "1 stk."
+     }
+    ],
+    "have_at_home": false,
+    "ingredient": "Agurk",
+    "product": {
+     "available": true,
+     "id": "106593",
+     "name": "Agurk øko.",
+     "offer_text": null,
+     "price": "12.00",
+     "quantity": 1,
+     "size": "1 stk."
+    }
+   },
+   {
+    "alternatives": [],
+    "have_at_home": false,
+    "ingredient": "Icebergsalat",
+    "product": {
+     "available": true,
+     "id": "5004705",
+     "name": "Iceberg salat",
+     "offer_text": null,
+     "price": "12.00",
+     "quantity": 1,
+     "size": "1 stk. / Spanien / Klasse 1"
+    }
+   },
+   {
+    "alternatives": [
+     {
+      "available": true,
+      "id": "5004336",
+      "name": "Yoghurt naturel 0,5% øko.",
+      "offer_text": null,
+      "price": "19.95",
+      "quantity": 1,
+      "size": "1 kg / Arla ØKO"
+     },
+     {
+      "available": true,
+      "id": "102656",
+      "name": "Yoghurt naturel øko.",
+      "offer_text": "Mix 3 stk. 83,-",
+      "price": "29.50",
+      "quantity": 1,
+      "size": "1 l / Naturmælk"
+     }
+    ],
+    "have_at_home": false,
+    "ingredient": "Yoghurt naturel",
+    "product": {
+     "available": true,
+     "id": "703017",
+     "name": "Yoghurt naturel 3,5%",
+     "offer_text": null,
+     "price": "9.95",
+     "quantity": 1,
+     "size": "1 kg / Kløver"
+    }
+   },
+   {
+    "alternatives": [
+     {
+      "available": true,
+      "id": "5065779",
+      "name": "Fladbrød",
+      "offer_text": "2 stk. 45,-",
+      "price": "25.29",
+      "quantity": 1,
+      "size": "3 stk. / 330 g / frost / Orienten & Co"
+     },
+     {
+      "available": true,
+      "id": "5068766",
+      "name": "Tortilla wraps",
+      "offer_text": "2 stk. 20,-",
+      "price": "10.70",
+      "quantity": 1,
+      "size": "6 stk. / 370 g / Taste of Nature"
+     }
+    ],
+    "have_at_home": false,
+    "ingredient": "Fladbrød",
+    "product": {
+     "available": true,
+     "id": "5050643",
+     "name": "Fladbrød",
+     "offer_text": null,
+     "price": "15.75",
+     "quantity": 1,
+     "size": "6 stk. / 360 g / Ali Bageri"
+    }
+   },
+   {
+    "alternatives": [
+     {
+      "available": true,
+      "id": "5602671",
+      "name": "Rapsolie",
+      "offer_text": "2 stk. 36,-",
+      "price": "19.09",
+      "quantity": 1,
+      "size": "1 l / Taste of Nature"
+     },
+     {
+      "available": true,
+      "id": "5019577",
+      "name": "Stegeolie øko.",
+      "offer_text": "2 stk. 80,-",
+      "price": "41.95",
+      "quantity": 1,
+      "size": "0,50 l / Urtekram"
+     }
+    ],
+    "have_at_home": true,
+    "ingredient": "Neutral olie",
+    "product": {
+     "available": true,
+     "id": "5059176",
+     "name": "Solsikkeolie",
+     "offer_text": null,
+     "price": "19.09",
+     "quantity": 1,
+     "size": "1 l / Taste of Nature"
+    }
+   },
+   {
+    "alternatives": [
+     {
+      "available": true,
+      "id": "918009",
+      "name": "Fint bordsalt m. jod",
+      "offer_text": "2 stk. 16,-",
+      "price": "8.95",
+      "quantity": 1,
+      "size": "1 kg / Jozo"
+     },
+     {
+      "available": true,
+      "id": "5015441",
+      "name": "Atlanterhavssalt (fint)",
+      "offer_text": "2 stk. 50,-",
+      "price": "26.75",
+      "quantity": 1,
+      "size": "1 kg / Urtekram - Krydderier"
+     }
+    ],
+    "have_at_home": true,
+    "ingredient": "Salt",
+    "product": {
+     "available": true,
+     "id": "5602504",
+     "name": "Salt m. jod (fint)",
+     "offer_text": null,
+     "price": "4.75",
+     "quantity": 1,
+     "size": "1 kg / Salina"
+    }
+   },
+   {
+    "alternatives": [
+     {
+      "available": true,
+      "id": "5602931",
+      "name": "Sort peber (stødt) øko.",
+      "offer_text": "Mix 2 stk. 38,-",
+      "price": "20.17",
+      "quantity": 1,
+      "size": "60 g / Dava - krydderier"
+     },
+     {
+      "available": true,
+      "id": "5601605",
+      "name": "Sort peber (kværnet) øko.",
+      "offer_text": "2 stk. 115,-",
+      "price": "63.50",
+      "quantity": 1,
+      "size": "75 g / Urtekram - Krydderier"
+     }
+    ],
+    "have_at_home": true,
+    "ingredient": "Peber",
+    "product": {
+     "available": true,
+     "id": "5051157",
+     "name": "Sort peber (stødt)",
+     "offer_text": null,
+     "price": "7.50",
+     "quantity": 1,
+     "size": "100 g / Krydderispecialisten"
+    }
+   },
+   {
+    "alternatives": [
+     {
+      "available": true,
+      "id": "5058627",
+      "name": "Ekstra jomfru olivenolie øko",
+      "offer_text": null,
+      "price": "49.95",
+      "quantity": 1,
+      "size": "0,50 l / koldpresset / Casaneo"
+     },
+     {
+      "available": true,
+      "id": "5062662",
+      "name": "Olivenolie Pomace",
+      "offer_text": null,
+      "price": "89.45",
+      "quantity": 1,
+      "size": "1 l / Le Terrazze"
+     }
+    ],
+    "have_at_home": true,
+    "ingredient": "Olivenolie",
+    "product": {
+     "available": true,
+     "id": "5049714",
+     "name": "Ekstra jomfru olivenolie",
+     "offer_text": null,
+     "price": "41.30",
+     "quantity": 1,
+     "size": "0,50 l / koldpresset / Casaneo"
+    }
+   },
+   {
+    "alternatives": [
+     {
+      "available": true,
+      "id": "908035",
+      "name": "Sukker",
+      "offer_text": "2 stk. 40,-",
+      "price": "21.95",
+      "quantity": 1,
+      "size": "2 kg / Dansukker"
+     },
+     {
+      "available": true,
+      "id": "908053",
+      "name": "Sukker øko.",
+      "offer_text": "2 stk. 38,-",
+      "price": "21.50",
+      "quantity": 1,
+      "size": "1 kg / Dansukker"
+     }
+    ],
+    "have_at_home": true,
+    "ingredient": "Sukker",
+    "product": {
+     "available": true,
+     "id": "908032",
+     "name": "Sukker",
+     "offer_text": null,
+     "price": "7.50",
+     "quantity": 1,
+     "size": "1 kg /"
+    }
+   }
+  ],
+  "max_persons": 12,
+  "method": [
+   {
+    "steps": [
+     "Tænd ovnen på 200 grader varmluft og sæt en bagerist i ovnen",
+     "Pil rødløg, gem halvdelen til salaten og hak resten fint på et skærebræt",
+     "Pil hvidløg og hak fint. Gem halvdelen af hvidløget til dressingen",
+     "Skyl og hak persille fint (både blade og stilk). Gem halvdelen til salaten",
+     "Kom kødet i en røreskål sammen med hakket løg, hvidløg og persille samt krydderimix, salt og peber. Rør det godt sammen til en fars",
+     "Fordel farsen jævnt i et smurt ovnfast fad, så den dækker hele bunden i et lag på ca. 2 cm.",
+     "Brug en kniv eller dejskraber til at trække aflange riller i farsen – det giver små “kebabstykker”, som bliver nemme at tage op, når retten er bagt. Lav f.eks. 1 lang strimmel pr. fladbrød",
+     "Bag fadet i ovnen i ca. 15-20 min. og slut af med ca. 2-3 min. på grillfunktion, til kødet er gennemstegt og gyldent"
+    ],
+    "title": "Kebabfad"
+   },
+   {
+    "steps": [
+     "Snit resterende rødløg i tynde skiver",
+     "Skyl tomat og skær i tern",
+     "Skyl agurk og halver på langs. Skrab kerner ud og snit i skiver",
+     "Skyl salat og skær i tynde strimler",
+     "Vend rødløg, tomat, agurk, salat og hakket persille sammen i en salatskål. Dryp med lidt olivenolie og krydr let med salt og peber"
+    ],
+    "title": "Salat"
+   },
+   {
+    "steps": [
+     "Rør yoghurt sammen med det gemte hvidløg, sukker, salt og peber. Tilføj evt. også lidt af krydderiblandingen efter ønsket smag"
+    ],
+    "title": "Dressing"
+   },
+   {
+    "steps": [
+     "Lun fladbrød ca. 1-2 min. på bageristen i ovnen eller hurtigt på en brødrister/i mikroovnen, indtil de er bløde og lune",
+     "Lad hver medspiser samle sit eget fladbrød med hvidløgsdressing, kebabkød og frisk salat"
+    ],
+    "title": "Servering"
+   }
+  ],
+  "min_persons": 2,
+  "name": "Kebabfad med fladbrød og hvidløgsdressing",
+  "persons": 4,
+  "store": "nemlig",
+  "time": "40 min",
+  "tip": null,
+  "total": "155.40",
+  "url": "https://www.nemlig.com/maaltider/opskrift/kebabfad-med-fladbrod-98001303"
+ },
+ "args": [
+  "kebabfad-med-fladbrod-98001303"
+ ],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   ".ASPXAUTH": "auth-1"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "recipe",
+ "name": "recipe_kebab_no_persons",
+ "requests": [
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": {
+    "AppInstalled": false,
+    "CheckForExistingProducts": true,
+    "DoMerge": true,
+    "Password": "hemmeligt",
+    "SaveExistingBasket": false,
+    "Username": "kunde@example.com"
+   },
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "content-type": "application/json",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/login"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/v2/AppSettings/Website"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/basket/GetBasket"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://webapi.prod.knl.nemlig.it/productbff/api/web/meals/recipeDetails/kebabfad-med-fladbrod-98001303"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "recipeId",
+     "kebabfad-med-fladbrod-98001303"
+    ],
+    [
+     "maxProductsPerIngredient",
+     "10"
+    ],
+    [
+     "timeSlotId",
+     "2435672"
+    ]
+   ],
+   "url": "https://webapi.prod.knl.nemlig.it/productbff/api/web/meals/recipeProductDialog"
+  }
+ ],
+ "session_after": {
+  ".ASPXAUTH": "auth-1"
+ },
+ "store": "nemlig"
+}

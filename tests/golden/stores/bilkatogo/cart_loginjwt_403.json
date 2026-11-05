@@ -1,0 +1,88 @@
+{
+ "args": [],
+ "env": {},
+ "error": {
+  "message": "BilkaToGo login fejlede (403).",
+  "type": "StoreError"
+ },
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "get_cart",
+ "name": "cart_loginjwt_403",
+ "requests": [
+  {
+   "body": [
+    [
+     "loginID",
+     "kunde@example.com"
+    ],
+    [
+     "password",
+     "hemmeligt"
+    ],
+    [
+     "apiKey",
+     "3_tA6BbV434FQqN73HnUG1KA3qFv8KiG4OqLu9eWPh7sKRqRizH5Vfv5Larmgrb4I2"
+    ],
+    [
+     "httpStatusCodes",
+     "true"
+    ]
+   ],
+   "cookies": [],
+   "headers": {
+    "content-type": "application/x-www-form-urlencoded"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://accounts.eu1.gigya.com/accounts.login"
+  },
+  {
+   "body": [
+    [
+     "apiKey",
+     "3_tA6BbV434FQqN73HnUG1KA3qFv8KiG4OqLu9eWPh7sKRqRizH5Vfv5Larmgrb4I2"
+    ],
+    [
+     "login_token",
+     "st2.fake-login-token"
+    ],
+    [
+     "expiration",
+     "86400"
+    ]
+   ],
+   "cookies": [],
+   "headers": {
+    "content-type": "application/x-www-form-urlencoded"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://accounts.eu1.gigya.com/accounts.getJWT"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "jwt_token": "eyFake.jwt.token"
+   },
+   "method": "POST",
+   "params": [
+    [
+     "u",
+     "w"
+    ]
+   ],
+   "url": "https://api.bilkatogo.dk/api/auth/LoginJWT"
+  }
+ ],
+ "session_after": null,
+ "store": "bilkatogo"
+}

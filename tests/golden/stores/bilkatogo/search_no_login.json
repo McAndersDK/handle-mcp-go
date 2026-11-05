@@ -1,0 +1,18 @@
+{
+ "args": [
+  "mælk"
+ ],
+ "env": {},
+ "error": {
+  "message": "BilkaToGo viser priser og tilbud for butikken bag din leveringsadresse, så et login skal til. Kør: handle-mcp login bilkatogo",
+  "type": "StoreError"
+ },
+ "keychain_after": null,
+ "keychain_before": null,
+ "login": null,
+ "method": "search",
+ "name": "search_no_login",
+ "requests": [],
+ "session_after": null,
+ "store": "bilkatogo"
+}

@@ -1,0 +1,24 @@
+{
+ "args": [
+  ""
+ ],
+ "env": {},
+ "error": {
+  "message": "Ordrenummeret skal være tal, som i get_orders.",
+  "type": "StoreError"
+ },
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "order",
+ "name": "order_id_empty",
+ "requests": [],
+ "session_after": null,
+ "store": "nemlig"
+}

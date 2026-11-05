@@ -1,0 +1,16 @@
+{
+ "args": [],
+ "env": {},
+ "error": {
+  "message": "Intet login til bilkatogo. Kør i en terminal: handle-mcp login bilkatogo. Uden terminal: sæt HANDLE_BILKATOGO_EMAIL og _PASSWORD, og kør: handle-mcp login bilkatogo --from-env",
+  "type": "StoreError"
+ },
+ "keychain_after": null,
+ "keychain_before": null,
+ "login": null,
+ "method": "get_cart",
+ "name": "cart_no_login",
+ "requests": [],
+ "session_after": null,
+ "store": "bilkatogo"
+}

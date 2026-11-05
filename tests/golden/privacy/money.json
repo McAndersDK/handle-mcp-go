@@ -1,0 +1,259 @@
+{
+ "datetimes": [
+  {
+   "fold": 0,
+   "input": "2026-11-03T16:00:00",
+   "output": "2026-11-03T16:00:00"
+  },
+  {
+   "fold": 0,
+   "input": "2026-11-03T16:00:00.000005",
+   "output": "2026-11-03T16:00:00.000005"
+  },
+  {
+   "fold": 0,
+   "input": "2026-11-03T16:00:00+00:00",
+   "output": "2026-11-03T16:00:00+00:00"
+  },
+  {
+   "fold": 0,
+   "input": "2026-03-29T02:30:00+01:00",
+   "output": "2026-03-29T02:30:00+01:00"
+  },
+  {
+   "fold": 0,
+   "input": "2026-10-25T02:30:00+02:00",
+   "output": "2026-10-25T02:30:00+02:00"
+  },
+  {
+   "fold": 1,
+   "input": "2026-10-25T02:30:00+01:00",
+   "output": "2026-10-25T02:30:00+01:00"
+  },
+  {
+   "input": "2026-11-02",
+   "output": "2026-11-02"
+  }
+ ],
+ "decimals": [
+  {
+   "input": "0",
+   "output": "0.00"
+  },
+  {
+   "input": "0.0",
+   "output": "0.00"
+  },
+  {
+   "input": "0.00",
+   "output": "0.00"
+  },
+  {
+   "input": "-0",
+   "output": "-0.00"
+  },
+  {
+   "input": "39",
+   "output": "39.00"
+  },
+  {
+   "input": "39.00",
+   "output": "39.00"
+  },
+  {
+   "input": "12.95",
+   "output": "12.95"
+  },
+  {
+   "input": "0.125",
+   "output": "0.13"
+  },
+  {
+   "input": "0.135",
+   "output": "0.14"
+  },
+  {
+   "input": "12.995",
+   "output": "13.00"
+  },
+  {
+   "input": "0.005",
+   "output": "0.01"
+  },
+  {
+   "input": "0.015",
+   "output": "0.02"
+  },
+  {
+   "input": "0.025",
+   "output": "0.03"
+  },
+  {
+   "input": "1.005",
+   "output": "1.01"
+  },
+  {
+   "input": "-0.005",
+   "output": "-0.01"
+  },
+  {
+   "input": "-0.125",
+   "output": "-0.13"
+  },
+  {
+   "input": "-0.126",
+   "output": "-0.13"
+  },
+  {
+   "input": "-1.005",
+   "output": "-1.01"
+  },
+  {
+   "input": "0.004999",
+   "output": "0.00"
+  },
+  {
+   "input": "1E+2",
+   "output": "100.00"
+  },
+  {
+   "input": "1e-7",
+   "output": "0.00"
+  },
+  {
+   "input": "1E+40",
+   "output": "1E+40"
+  },
+  {
+   "input": "NaN",
+   "output": "NaN"
+  },
+  {
+   "input": "sNaN",
+   "output": "sNaN"
+  },
+  {
+   "input": "Infinity",
+   "output": "Infinity"
+  },
+  {
+   "input": "-Infinity",
+   "output": "-Infinity"
+  },
+  {
+   "input": "9999999999999999999999.995",
+   "output": "10000000000000000000000.00"
+  },
+  {
+   "input": "99999999999999999999999999.99",
+   "output": "99999999999999999999999999.99"
+  },
+  {
+   "input": "999999999999999999999999999.99",
+   "output": "999999999999999999999999999.99"
+  },
+  {
+   "input": "123456789012345678901234567890.125",
+   "output": "123456789012345678901234567890.125"
+  },
+  {
+   "input": "0.1234567890123456789",
+   "output": "0.12"
+  },
+  {
+   "input": "1234.5",
+   "output": "1234.50"
+  },
+  {
+   "input": "7",
+   "output": "7.00"
+  },
+  {
+   "input": "100",
+   "output": "100.00"
+  }
+ ],
+ "nested": {
+  "output": {
+   "fees": {
+    "levering": "39.00",
+    "poser": "0.00"
+   },
+   "flags": [
+    true,
+    false,
+    null,
+    3,
+    1.5,
+    249.87
+   ],
+   "lines": [
+    {
+     "unit_price": "0.13",
+     "when": null
+    },
+    {
+     "unit_price": "13.00",
+     "when": "2026-11-02"
+    }
+   ],
+   "tuple": [
+    "1.00",
+    "x",
+    null
+   ]
+  }
+ },
+ "recipe_text_is_unchanged": {
+  "output": {
+   "description": "Prøv denne lækre opskrift",
+   "id": "kebab",
+   "image": "https://media.example.com/a.jpg",
+   "ingredients": [],
+   "ingredients_persons": null,
+   "items": [],
+   "max_persons": null,
+   "method": [
+    {
+     "steps": [
+      "Tænd ovnen på 200 grader"
+     ],
+     "title": "Kebabfad"
+    }
+   ],
+   "min_persons": null,
+   "name": "Kebabfad",
+   "persons": 4,
+   "store": "nemlig",
+   "time": null,
+   "tip": "Server med citron",
+   "total": "0.00",
+   "url": "https://example.com/x"
+  },
+  "scrubbed": {
+   "description": "Prøv denne lækre opskrift",
+   "id": "kebab",
+   "image": "https://media.example.com/a.jpg",
+   "ingredients": [],
+   "ingredients_persons": null,
+   "items": [],
+   "max_persons": null,
+   "method": [
+    {
+     "steps": [
+      "Tænd ovnen på 200 grader"
+     ],
+     "title": "Kebabfad"
+    }
+   ],
+   "min_persons": null,
+   "name": "Kebabfad",
+   "persons": 4,
+   "store": "nemlig",
+   "time": null,
+   "tip": "Server med citron",
+   "total": "0.00",
+   "url": "https://example.com/x"
+  }
+ }
+}

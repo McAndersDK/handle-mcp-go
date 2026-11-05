@@ -1,0 +1,117 @@
+{
+ "answer": {
+  "chosen_end": "2036-11-01T16:00:00+01:00",
+  "chosen_start": "2036-11-01T14:00:00+01:00",
+  "edit_deadline": null,
+  "next_available": "2026-11-03",
+  "note": null,
+  "store": "bilkatogo"
+ },
+ "args": [],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   "login_token": "st2.fake-login-token"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "delivery_info",
+ "name": "delivery_info_default",
+ "requests": [
+  {
+   "body": [
+    [
+     "loginID",
+     "kunde@example.com"
+    ],
+    [
+     "password",
+     "hemmeligt"
+    ],
+    [
+     "apiKey",
+     "3_tA6BbV434FQqN73HnUG1KA3qFv8KiG4OqLu9eWPh7sKRqRizH5Vfv5Larmgrb4I2"
+    ],
+    [
+     "httpStatusCodes",
+     "true"
+    ]
+   ],
+   "cookies": [],
+   "headers": {
+    "content-type": "application/x-www-form-urlencoded"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://accounts.eu1.gigya.com/accounts.login"
+  },
+  {
+   "body": [
+    [
+     "apiKey",
+     "3_tA6BbV434FQqN73HnUG1KA3qFv8KiG4OqLu9eWPh7sKRqRizH5Vfv5Larmgrb4I2"
+    ],
+    [
+     "login_token",
+     "st2.fake-login-token"
+    ],
+    [
+     "expiration",
+     "86400"
+    ]
+   ],
+   "cookies": [],
+   "headers": {
+    "content-type": "application/x-www-form-urlencoded"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://accounts.eu1.gigya.com/accounts.getJWT"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "jwt_token": "eyFake.jwt.token"
+   },
+   "method": "POST",
+   "params": [
+    [
+     "u",
+     "w"
+    ]
+   ],
+   "url": "https://api.bilkatogo.dk/api/auth/LoginJWT"
+  },
+  {
+   "body": null,
+   "cookies": [
+    "cart"
+   ],
+   "headers": {
+    "jwt_token": "eyFake.jwt.token"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "u",
+     "w"
+    ],
+    [
+     "extra",
+     "deliveryAddress,deliveryDate"
+    ]
+   ],
+   "url": "https://api.bilkatogo.dk/api/shop/v6/Cart"
+  }
+ ],
+ "session_after": {
+  "login_token": "st2.fake-login-token"
+ },
+ "store": "bilkatogo"
+}

@@ -1,0 +1,24 @@
+{
+ "args": [
+  "1/../basket/ClearBasket"
+ ],
+ "env": {},
+ "error": {
+  "message": "Ordrenummeret skal være tal, som i get_orders.",
+  "type": "StoreError"
+ },
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "order",
+ "name": "order_id_path",
+ "requests": [],
+ "session_after": null,
+ "store": "nemlig"
+}

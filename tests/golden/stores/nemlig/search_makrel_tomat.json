@@ -1,0 +1,395 @@
+{
+ "answer": [
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Sæby",
+   "campaign": "Fast mixtilbud",
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5046619",
+   "max_per_order": null,
+   "name": "Makrelfilet i tomat",
+   "offer_text": "2 for 100 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "53.85",
+   "size": "3 x 125 g / Sæby",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "143.60"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Sæby",
+   "campaign": "Fast mixtilbud",
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5046618",
+   "max_per_order": null,
+   "name": "Makrelstykker i tomat",
+   "offer_text": "5 for 70 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "14.95",
+   "size": "125 g / findelt / Sæby",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "119.60"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Sæby",
+   "campaign": "Fast mixtilbud",
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5046610",
+   "max_per_order": null,
+   "name": "Makrelfilet i tomat",
+   "offer_text": "5 for 80 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "17.95",
+   "size": "125 g / Sæby",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "143.60"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Amanda",
+   "campaign": "Fast mixtilbud",
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5010216",
+   "max_per_order": null,
+   "name": "Makrelfilet i tomat",
+   "offer_text": "2 for 43 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "22.75",
+   "size": "125 g / Amanda",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "182.00"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Elvira",
+   "campaign": "Fast mixtilbud",
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5602038",
+   "max_per_order": null,
+   "name": "Tun i tomat",
+   "offer_text": "3 for 44 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "15.75",
+   "size": "125 g / Elvira",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "126.00"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Sæby",
+   "campaign": "Fast mixtilbud",
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5046933",
+   "max_per_order": null,
+   "name": "Makrel i små stykker i tomat",
+   "offer_text": "2 for 113 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "59.80",
+   "size": "4 x 125 g / Sæby",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "119.60"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Amanda",
+   "campaign": "Fast mixtilbud",
+   "category": "Køl",
+   "ean": null,
+   "id": "5014983",
+   "max_per_order": null,
+   "name": "Makrelkræs",
+   "offer_text": "2 for 36 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "19.95",
+   "size": "100 g / Amanda",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "199.50"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Rossini",
+   "campaign": null,
+   "category": "Køl",
+   "ean": null,
+   "id": "5015193",
+   "max_per_order": null,
+   "name": "Røget makrel (hel)",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "78.75",
+   "size": "350-400 g / Rossini",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "225.00"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Rossini",
+   "campaign": null,
+   "category": "Køl",
+   "ean": null,
+   "id": "5015194",
+   "max_per_order": null,
+   "name": "Røget pebermakrel",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "73.50",
+   "size": "200 g / Rossini",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "367.50"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Amanda",
+   "campaign": "Fast mixtilbud",
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5025051",
+   "max_per_order": null,
+   "name": "Makrelfilet i øko. tomatsauce",
+   "offer_text": "2 for 46 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "24.25",
+   "size": "125 g / Amanda",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "194.00"
+  }
+ ],
+ "args": [
+  "makrel i tomat",
+  50
+ ],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   ".ASPXAUTH": "auth-1"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "search",
+ "name": "search_makrel_tomat",
+ "requests": [
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": {
+    "AppInstalled": false,
+    "CheckForExistingProducts": true,
+    "DoMerge": true,
+    "Password": "hemmeligt",
+    "SaveExistingBasket": false,
+    "Username": "kunde@example.com"
+   },
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "content-type": "application/json",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/login"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/v2/AppSettings/Website"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/basket/GetBasket"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "query",
+     "makrel i tomat"
+    ],
+    [
+     "take",
+     "50"
+    ],
+    [
+     "skip",
+     "0"
+    ],
+    [
+     "recipeCount",
+     "0"
+    ],
+    [
+     "timestamp",
+     "ts-1"
+    ],
+    [
+     "timeslotUtc",
+     "2026110316-60-180"
+    ],
+    [
+     "deliveryZoneId",
+     "3"
+    ]
+   ],
+   "url": "https://webapi.prod.knl.nemlig.it/searchgateway/api/search"
+  }
+ ],
+ "session_after": {
+  ".ASPXAUTH": "auth-1"
+ },
+ "store": "nemlig"
+}

@@ -1,0 +1,150 @@
+{
+ "args": [
+  [
+   "Pizza"
+  ]
+ ],
+ "env": {},
+ "error": {
+  "message": "nemlig kender ikke tagget 'Pizza'. Brug et af: Under 20 min, Under 30 min, Budgetvenlig, Familievenlig, Populær, Mad til flere dage, Kylling, Oksekød, Gris, Fisk, Laks, Skaldyr, Vegetarisk, Vegansk, And, Kalkun, Lam, Vildt, Bælgfrugter, Halloumi, Tofu, Æg, Glutenfri, Laktosefri, Airfryer, Babymad, Gæstemad, Mad til mange, Grill, Tapas, Buffet, Natmad, Bålmad, Forår, Sommer, Efterår, Vinter, Påske, Jul, Nytår, Halloween, Mortensaften, Fastelavn, Sankt hans, Pinse, Picnic, Fødselsdag, Konfirmation, Studentergilde, Asiatisk, Italiensk, Mexicansk, Indisk, Græsk, Mellemøstlig, Dansk, Nordisk, Thailandsk, Vietnamesisk, Japansk, Kinesisk, Koreansk, Fransk, Spansk, Amerikansk, Britisk, Asparges, Blomkål, Butternut squash, Citroner, Fennikel, Græskar, Grønkål, Gulerødder, Hvidkål, Jordbær, Kartofler, Kirsebær, Knoldselleri, Kål, Pære, Porre, Rabarber, Spidskål, Squash, Svampe, Søde kartofler, Tomater, Æbler.",
+  "type": "StoreError"
+ },
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   ".ASPXAUTH": "auth-1"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "recipes_by_tag",
+ "name": "by_tag_unknown",
+ "requests": [
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": {
+    "AppInstalled": false,
+    "CheckForExistingProducts": true,
+    "DoMerge": true,
+    "Password": "hemmeligt",
+    "SaveExistingBasket": false,
+    "Username": "kunde@example.com"
+   },
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "content-type": "application/json",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/login"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "skip",
+     "0"
+    ],
+    [
+     "take",
+     "1"
+    ]
+   ],
+   "url": "https://webapi.prod.knl.nemlig.it/productbff/api/web/meals/allRecipes"
+  }
+ ],
+ "session_after": {
+  ".ASPXAUTH": "auth-1"
+ },
+ "store": "nemlig"
+}

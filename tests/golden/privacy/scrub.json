@@ -1,0 +1,281 @@
+{
+ "cases": [
+  {
+   "input": {
+    "DeliveryAddress": {
+     "Name": "Anders And",
+     "StreetName": "Vesterbrogade"
+    },
+    "DoorCode": "1234",
+    "Email": "a@example.com",
+    "InvoiceAddress": {
+     "PostalCode": "1620"
+    },
+    "Lines": [
+     {
+      "Id": "701025",
+      "Name": "Kakaomælk",
+      "Quantity": 2
+     }
+    ],
+    "TotalPrice": 249.87
+   },
+   "input_unchanged": true,
+   "name": "nemlig_basket",
+   "output": {
+    "DeliveryAddress": "[fjernet af handle-mcp]",
+    "DoorCode": "[fjernet af handle-mcp]",
+    "Email": "[fjernet af handle-mcp]",
+    "InvoiceAddress": "[fjernet af handle-mcp]",
+    "Lines": [
+     {
+      "Id": "701025",
+      "Name": "Kakaomælk",
+      "Quantity": 2
+     }
+    ],
+    "TotalPrice": 249.87
+   }
+  },
+  {
+   "input": {
+    "deliveryAddress": {
+     "recipient_name": "Anders",
+     "zip": "7100"
+    },
+    "orders": [
+     {
+      "order_pickup_code": "87654321",
+      "phone_number": "12345678"
+     }
+    ],
+    "stat": {
+     "price": 12700
+    },
+    "tid": "abc",
+    "uid": 123456
+   },
+   "input_unchanged": true,
+   "name": "bilka_cart",
+   "output": {
+    "deliveryAddress": "[fjernet af handle-mcp]",
+    "orders": [
+     {
+      "order_pickup_code": "[fjernet af handle-mcp]",
+      "phone_number": "[fjernet af handle-mcp]"
+     }
+    ],
+    "stat": {
+     "price": 12700
+    },
+    "tid": "[fjernet af handle-mcp]",
+    "uid": "[fjernet af handle-mcp]"
+   }
+  },
+  {
+   "input": {
+    "dawa_uid": "0a3f50a0-0000-0000-0000-000000000000",
+    "stat": {
+     "price": 1
+    }
+   },
+   "input_unchanged": true,
+   "name": "dawa_address_id",
+   "output": {
+    "dawa_uid": "[fjernet af handle-mcp]",
+    "stat": {
+     "price": 1
+    }
+   }
+  },
+  {
+   "input": {
+    "name": "Mælk 1 l, Kildevej Mejeri",
+    "results": [
+     {
+      "message": "Sendt til anders@example.com"
+     }
+    ],
+    "warnings": [
+     "Ring til os på 98765432",
+     "Adresse: Kildevej 12, 2100 København"
+    ]
+   },
+   "input_unchanged": true,
+   "name": "free_text_under_harmless_keys",
+   "output": {
+    "name": "Mælk 1 l, Kildevej Mejeri",
+    "results": [
+     {
+      "message": "Sendt til [fjernet af handle-mcp]"
+     }
+    ],
+    "warnings": [
+     "Ring til os på [fjernet af handle-mcp]",
+     "Adresse: [fjernet af handle-mcp], [fjernet af handle-mcp]"
+    ]
+   }
+  },
+  {
+   "input": {
+    "messages": [
+     {
+      "text": "Ring 98765432"
+     }
+    ],
+    "warnings": {
+     "d": "a@b.dk"
+    }
+   },
+   "input_unchanged": true,
+   "name": "free_text_in_dicts",
+   "output": {
+    "messages": [
+     {
+      "text": "Ring [fjernet af handle-mcp]"
+     }
+    ],
+    "warnings": {
+     "d": "[fjernet af handle-mcp]"
+    }
+   }
+  },
+  {
+   "input": {
+    "note": "Ring 98765432",
+    "notes": "Ring 98765432"
+   },
+   "input_unchanged": true,
+   "name": "notes_key_python_does_not_scrub",
+   "output": {
+    "note": "Ring [fjernet af handle-mcp]",
+    "notes": "Ring 98765432"
+   }
+  },
+  {
+   "input": {
+    "a": [
+     {
+      "email": "x"
+     },
+     [
+      {
+       "City": "y"
+      }
+     ]
+    ],
+    "b": [
+     [
+      {
+       "zip": 1
+      }
+     ]
+    ]
+   },
+   "input_unchanged": true,
+   "name": "tuple_and_nested_lists",
+   "output": {
+    "a": [
+     {
+      "email": "[fjernet af handle-mcp]"
+     },
+     [
+      {
+       "City": "[fjernet af handle-mcp]"
+      }
+     ]
+    ],
+    "b": [
+     [
+      {
+       "zip": "[fjernet af handle-mcp]"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "input": [
+    {
+     "phone": "1"
+    },
+    {
+     "name": "ok"
+    }
+   ],
+   "input_unchanged": true,
+   "name": "top_level_list",
+   "output": [
+    {
+     "phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "name": "ok"
+    }
+   ]
+  },
+  {
+   "input": {
+    "f": 1.5,
+    "n": 1,
+    "s": "Kildevej 12",
+    "t": true,
+    "z": null
+   },
+   "input_unchanged": true,
+   "name": "scalars_pass",
+   "output": {
+    "f": 1.5,
+    "n": 1,
+    "s": "Kildevej 12",
+    "t": true,
+    "z": null
+   }
+  },
+  {
+   "input": {},
+   "input_unchanged": true,
+   "name": "empty",
+   "output": {}
+  },
+  {
+   "input": "x",
+   "name": "top_level_str",
+   "output": "x"
+  },
+  {
+   "input": 5,
+   "name": "top_level_int",
+   "output": 5
+  },
+  {
+   "input": null,
+   "name": "top_level_NoneType",
+   "output": null
+  },
+  {
+   "input": [
+    "Kildevej 12"
+   ],
+   "name": "top_level_list",
+   "output": [
+    "Kildevej 12"
+   ]
+  },
+  {
+   "input": [
+    "a",
+    {
+     "email": "b"
+    }
+   ],
+   "name": "top_level_tuple",
+   "output": [
+    "a",
+    {
+     "email": "[fjernet af handle-mcp]"
+    }
+   ]
+  }
+ ]
+}

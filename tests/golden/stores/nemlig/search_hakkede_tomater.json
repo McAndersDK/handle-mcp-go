@@ -1,0 +1,395 @@
+{
+ "answer": [
+  {
+   "available": true,
+   "before_price": "16.80",
+   "brand": "Rodolfi",
+   "campaign": null,
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5054625",
+   "max_per_order": null,
+   "name": "Hakkede tomater øko.",
+   "offer_text": "-30 %",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "11.76",
+   "size": "400 g / Rodolfi",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "29.40"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Mutti",
+   "campaign": null,
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5066392",
+   "max_per_order": null,
+   "name": "Hakkede tomater",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "185.00",
+   "size": "12 x 400 g / Mutti",
+   "store": "nemlig",
+   "unit": "stk",
+   "unit_price": "15.42"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Cirio",
+   "campaign": "Fast mixtilbud",
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5016017",
+   "max_per_order": null,
+   "name": "Hakkede tomater",
+   "offer_text": "4 for 50 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "13.95",
+   "size": "390 g / Cirio",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "35.77"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Mutti",
+   "campaign": null,
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5066376",
+   "max_per_order": null,
+   "name": "Hakkede tomater",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "16.75",
+   "size": "400 g / Mutti",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "41.88"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Mutti",
+   "campaign": null,
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5068421",
+   "max_per_order": null,
+   "name": "Hakkede tomater øko.",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "105.00",
+   "size": "6 x 400 g / Mutti",
+   "store": "nemlig",
+   "unit": "stk",
+   "unit_price": "17.50"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Rodolfi",
+   "campaign": null,
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5603315",
+   "max_per_order": null,
+   "name": "Hakkede tomater øko.",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "99.00",
+   "size": "6 x 400 g / Rodolfi",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "41.25"
+  },
+  {
+   "available": true,
+   "before_price": "16.25",
+   "brand": "Rodolfi",
+   "campaign": null,
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5054624",
+   "max_per_order": null,
+   "name": "Hakkede tomater",
+   "offer_text": "-30 %",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "11.38",
+   "size": "400 g / Rodolfi",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "28.44"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Cirio",
+   "campaign": "Fast mixtilbud",
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5016015",
+   "max_per_order": null,
+   "name": "Hakkede tomater",
+   "offer_text": "4 for 50 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "13.95",
+   "size": "390 g / m. løg og hvidløg / Cirio",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "35.77"
+  },
+  {
+   "available": false,
+   "before_price": null,
+   "brand": "Cirio",
+   "campaign": "Fast mixtilbud",
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5016016",
+   "max_per_order": null,
+   "name": "Hakkede tomater",
+   "offer_text": "4 for 50 kr",
+   "offer_until": "2026-11-08",
+   "on_offer": true,
+   "price": "13.95",
+   "size": "390 g / m. basilikum / Cirio",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "35.77"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Mutti",
+   "campaign": null,
+   "category": "Kolonial",
+   "ean": null,
+   "id": "5066382",
+   "max_per_order": null,
+   "name": "Hakkede tomater øko.",
+   "offer_text": null,
+   "offer_until": null,
+   "on_offer": false,
+   "price": "18.95",
+   "size": "400 g / Mutti",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "47.38"
+  }
+ ],
+ "args": [
+  "hakkede tomater",
+  50
+ ],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   ".ASPXAUTH": "auth-1"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "search",
+ "name": "search_hakkede_tomater",
+ "requests": [
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": {
+    "AppInstalled": false,
+    "CheckForExistingProducts": true,
+    "DoMerge": true,
+    "Password": "hemmeligt",
+    "SaveExistingBasket": false,
+    "Username": "kunde@example.com"
+   },
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "content-type": "application/json",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/login"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/v2/AppSettings/Website"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/basket/GetBasket"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "query",
+     "hakkede tomater"
+    ],
+    [
+     "take",
+     "50"
+    ],
+    [
+     "skip",
+     "0"
+    ],
+    [
+     "recipeCount",
+     "0"
+    ],
+    [
+     "timestamp",
+     "ts-1"
+    ],
+    [
+     "timeslotUtc",
+     "2026110316-60-180"
+    ],
+    [
+     "deliveryZoneId",
+     "3"
+    ]
+   ],
+   "url": "https://webapi.prod.knl.nemlig.it/searchgateway/api/search"
+  }
+ ],
+ "session_after": {
+  ".ASPXAUTH": "auth-1"
+ },
+ "store": "nemlig"
+}

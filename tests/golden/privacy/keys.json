@@ -1,0 +1,6770 @@
+{
+ "free_text_keys": [
+  "error",
+  "message",
+  "messages",
+  "note",
+  "warnings"
+ ],
+ "personal_keys": [
+  "address",
+  "billingaddress",
+  "card",
+  "cardnumber",
+  "cards",
+  "city",
+  "contactperson",
+  "creditcard",
+  "customerid",
+  "customername",
+  "dawauid",
+  "deliveryaddress",
+  "deliverycomment",
+  "deliverynote",
+  "deliverynotes",
+  "deliveryplacement",
+  "door",
+  "doorcode",
+  "email",
+  "emailaddress",
+  "firstname",
+  "floor",
+  "fullname",
+  "homeaddress",
+  "housenumber",
+  "iban",
+  "invoiceaddress",
+  "lastname",
+  "lat",
+  "latitude",
+  "lng",
+  "longitude",
+  "mail",
+  "maskedcardnumber",
+  "memberid",
+  "membername",
+  "mobile",
+  "mobilenumber",
+  "mobilephone",
+  "orderpickupcode",
+  "phone",
+  "phonenumber",
+  "pickupcode",
+  "postalcode",
+  "postcode",
+  "recipientname",
+  "street",
+  "streetname",
+  "telephone",
+  "tid",
+  "uid",
+  "unattendednotes",
+  "userid",
+  "username",
+  "zip",
+  "zipcode"
+ ],
+ "redacted": "[fjernet af handle-mcp]",
+ "scrub_by_key": {
+  "address": {
+   "ADDRESS": [
+    {
+     "ADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "ADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "ADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "ADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "ADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "ADDRESS": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Address": [
+    {
+     "Address": "[fjernet af handle-mcp]"
+    },
+    {
+     "Address": "[fjernet af handle-mcp]"
+    },
+    {
+     "Address": "[fjernet af handle-mcp]"
+    },
+    {
+     "Address": "[fjernet af handle-mcp]"
+    },
+    {
+     "Address": "[fjernet af handle-mcp]"
+    },
+    {
+     "Address": "[fjernet af handle-mcp]"
+    }
+   ],
+   "add-ress": [
+    {
+     "add-ress": "[fjernet af handle-mcp]"
+    },
+    {
+     "add-ress": "[fjernet af handle-mcp]"
+    },
+    {
+     "add-ress": "[fjernet af handle-mcp]"
+    },
+    {
+     "add-ress": "[fjernet af handle-mcp]"
+    },
+    {
+     "add-ress": "[fjernet af handle-mcp]"
+    },
+    {
+     "add-ress": "[fjernet af handle-mcp]"
+    }
+   ],
+   "add_ress": [
+    {
+     "add_ress": "[fjernet af handle-mcp]"
+    },
+    {
+     "add_ress": "[fjernet af handle-mcp]"
+    },
+    {
+     "add_ress": "[fjernet af handle-mcp]"
+    },
+    {
+     "add_ress": "[fjernet af handle-mcp]"
+    },
+    {
+     "add_ress": "[fjernet af handle-mcp]"
+    },
+    {
+     "add_ress": "[fjernet af handle-mcp]"
+    }
+   ],
+   "address": [
+    {
+     "address": "[fjernet af handle-mcp]"
+    },
+    {
+     "address": "[fjernet af handle-mcp]"
+    },
+    {
+     "address": "[fjernet af handle-mcp]"
+    },
+    {
+     "address": "[fjernet af handle-mcp]"
+    },
+    {
+     "address": "[fjernet af handle-mcp]"
+    },
+    {
+     "address": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "billingaddress": {
+   "BILLINGADDRESS": [
+    {
+     "BILLINGADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "BILLINGADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "BILLINGADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "BILLINGADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "BILLINGADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "BILLINGADDRESS": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Billingaddress": [
+    {
+     "Billingaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Billingaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Billingaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Billingaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Billingaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Billingaddress": "[fjernet af handle-mcp]"
+    }
+   ],
+   "billing-address": [
+    {
+     "billing-address": "[fjernet af handle-mcp]"
+    },
+    {
+     "billing-address": "[fjernet af handle-mcp]"
+    },
+    {
+     "billing-address": "[fjernet af handle-mcp]"
+    },
+    {
+     "billing-address": "[fjernet af handle-mcp]"
+    },
+    {
+     "billing-address": "[fjernet af handle-mcp]"
+    },
+    {
+     "billing-address": "[fjernet af handle-mcp]"
+    }
+   ],
+   "billing_address": [
+    {
+     "billing_address": "[fjernet af handle-mcp]"
+    },
+    {
+     "billing_address": "[fjernet af handle-mcp]"
+    },
+    {
+     "billing_address": "[fjernet af handle-mcp]"
+    },
+    {
+     "billing_address": "[fjernet af handle-mcp]"
+    },
+    {
+     "billing_address": "[fjernet af handle-mcp]"
+    },
+    {
+     "billing_address": "[fjernet af handle-mcp]"
+    }
+   ],
+   "billingaddress": [
+    {
+     "billingaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "billingaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "billingaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "billingaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "billingaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "billingaddress": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "card": {
+   "CARD": [
+    {
+     "CARD": "[fjernet af handle-mcp]"
+    },
+    {
+     "CARD": "[fjernet af handle-mcp]"
+    },
+    {
+     "CARD": "[fjernet af handle-mcp]"
+    },
+    {
+     "CARD": "[fjernet af handle-mcp]"
+    },
+    {
+     "CARD": "[fjernet af handle-mcp]"
+    },
+    {
+     "CARD": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Card": [
+    {
+     "Card": "[fjernet af handle-mcp]"
+    },
+    {
+     "Card": "[fjernet af handle-mcp]"
+    },
+    {
+     "Card": "[fjernet af handle-mcp]"
+    },
+    {
+     "Card": "[fjernet af handle-mcp]"
+    },
+    {
+     "Card": "[fjernet af handle-mcp]"
+    },
+    {
+     "Card": "[fjernet af handle-mcp]"
+    }
+   ],
+   "ca-rd": [
+    {
+     "ca-rd": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca-rd": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca-rd": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca-rd": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca-rd": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca-rd": "[fjernet af handle-mcp]"
+    }
+   ],
+   "ca_rd": [
+    {
+     "ca_rd": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca_rd": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca_rd": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca_rd": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca_rd": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca_rd": "[fjernet af handle-mcp]"
+    }
+   ],
+   "card": [
+    {
+     "card": "[fjernet af handle-mcp]"
+    },
+    {
+     "card": "[fjernet af handle-mcp]"
+    },
+    {
+     "card": "[fjernet af handle-mcp]"
+    },
+    {
+     "card": "[fjernet af handle-mcp]"
+    },
+    {
+     "card": "[fjernet af handle-mcp]"
+    },
+    {
+     "card": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "cardnumber": {
+   "CARDNUMBER": [
+    {
+     "CARDNUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "CARDNUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "CARDNUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "CARDNUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "CARDNUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "CARDNUMBER": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Cardnumber": [
+    {
+     "Cardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Cardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Cardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Cardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Cardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Cardnumber": "[fjernet af handle-mcp]"
+    }
+   ],
+   "cardn-umber": [
+    {
+     "cardn-umber": "[fjernet af handle-mcp]"
+    },
+    {
+     "cardn-umber": "[fjernet af handle-mcp]"
+    },
+    {
+     "cardn-umber": "[fjernet af handle-mcp]"
+    },
+    {
+     "cardn-umber": "[fjernet af handle-mcp]"
+    },
+    {
+     "cardn-umber": "[fjernet af handle-mcp]"
+    },
+    {
+     "cardn-umber": "[fjernet af handle-mcp]"
+    }
+   ],
+   "cardn_umber": [
+    {
+     "cardn_umber": "[fjernet af handle-mcp]"
+    },
+    {
+     "cardn_umber": "[fjernet af handle-mcp]"
+    },
+    {
+     "cardn_umber": "[fjernet af handle-mcp]"
+    },
+    {
+     "cardn_umber": "[fjernet af handle-mcp]"
+    },
+    {
+     "cardn_umber": "[fjernet af handle-mcp]"
+    },
+    {
+     "cardn_umber": "[fjernet af handle-mcp]"
+    }
+   ],
+   "cardnumber": [
+    {
+     "cardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "cardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "cardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "cardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "cardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "cardnumber": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "cards": {
+   "CARDS": [
+    {
+     "CARDS": "[fjernet af handle-mcp]"
+    },
+    {
+     "CARDS": "[fjernet af handle-mcp]"
+    },
+    {
+     "CARDS": "[fjernet af handle-mcp]"
+    },
+    {
+     "CARDS": "[fjernet af handle-mcp]"
+    },
+    {
+     "CARDS": "[fjernet af handle-mcp]"
+    },
+    {
+     "CARDS": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Cards": [
+    {
+     "Cards": "[fjernet af handle-mcp]"
+    },
+    {
+     "Cards": "[fjernet af handle-mcp]"
+    },
+    {
+     "Cards": "[fjernet af handle-mcp]"
+    },
+    {
+     "Cards": "[fjernet af handle-mcp]"
+    },
+    {
+     "Cards": "[fjernet af handle-mcp]"
+    },
+    {
+     "Cards": "[fjernet af handle-mcp]"
+    }
+   ],
+   "ca-rds": [
+    {
+     "ca-rds": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca-rds": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca-rds": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca-rds": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca-rds": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca-rds": "[fjernet af handle-mcp]"
+    }
+   ],
+   "ca_rds": [
+    {
+     "ca_rds": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca_rds": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca_rds": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca_rds": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca_rds": "[fjernet af handle-mcp]"
+    },
+    {
+     "ca_rds": "[fjernet af handle-mcp]"
+    }
+   ],
+   "cards": [
+    {
+     "cards": "[fjernet af handle-mcp]"
+    },
+    {
+     "cards": "[fjernet af handle-mcp]"
+    },
+    {
+     "cards": "[fjernet af handle-mcp]"
+    },
+    {
+     "cards": "[fjernet af handle-mcp]"
+    },
+    {
+     "cards": "[fjernet af handle-mcp]"
+    },
+    {
+     "cards": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "city": {
+   "CITY": [
+    {
+     "CITY": "[fjernet af handle-mcp]"
+    },
+    {
+     "CITY": "[fjernet af handle-mcp]"
+    },
+    {
+     "CITY": "[fjernet af handle-mcp]"
+    },
+    {
+     "CITY": "[fjernet af handle-mcp]"
+    },
+    {
+     "CITY": "[fjernet af handle-mcp]"
+    },
+    {
+     "CITY": "[fjernet af handle-mcp]"
+    }
+   ],
+   "City": [
+    {
+     "City": "[fjernet af handle-mcp]"
+    },
+    {
+     "City": "[fjernet af handle-mcp]"
+    },
+    {
+     "City": "[fjernet af handle-mcp]"
+    },
+    {
+     "City": "[fjernet af handle-mcp]"
+    },
+    {
+     "City": "[fjernet af handle-mcp]"
+    },
+    {
+     "City": "[fjernet af handle-mcp]"
+    }
+   ],
+   "ci-ty": [
+    {
+     "ci-ty": "[fjernet af handle-mcp]"
+    },
+    {
+     "ci-ty": "[fjernet af handle-mcp]"
+    },
+    {
+     "ci-ty": "[fjernet af handle-mcp]"
+    },
+    {
+     "ci-ty": "[fjernet af handle-mcp]"
+    },
+    {
+     "ci-ty": "[fjernet af handle-mcp]"
+    },
+    {
+     "ci-ty": "[fjernet af handle-mcp]"
+    }
+   ],
+   "ci_ty": [
+    {
+     "ci_ty": "[fjernet af handle-mcp]"
+    },
+    {
+     "ci_ty": "[fjernet af handle-mcp]"
+    },
+    {
+     "ci_ty": "[fjernet af handle-mcp]"
+    },
+    {
+     "ci_ty": "[fjernet af handle-mcp]"
+    },
+    {
+     "ci_ty": "[fjernet af handle-mcp]"
+    },
+    {
+     "ci_ty": "[fjernet af handle-mcp]"
+    }
+   ],
+   "city": [
+    {
+     "city": "[fjernet af handle-mcp]"
+    },
+    {
+     "city": "[fjernet af handle-mcp]"
+    },
+    {
+     "city": "[fjernet af handle-mcp]"
+    },
+    {
+     "city": "[fjernet af handle-mcp]"
+    },
+    {
+     "city": "[fjernet af handle-mcp]"
+    },
+    {
+     "city": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "contactperson": {
+   "CONTACTPERSON": [
+    {
+     "CONTACTPERSON": "[fjernet af handle-mcp]"
+    },
+    {
+     "CONTACTPERSON": "[fjernet af handle-mcp]"
+    },
+    {
+     "CONTACTPERSON": "[fjernet af handle-mcp]"
+    },
+    {
+     "CONTACTPERSON": "[fjernet af handle-mcp]"
+    },
+    {
+     "CONTACTPERSON": "[fjernet af handle-mcp]"
+    },
+    {
+     "CONTACTPERSON": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Contactperson": [
+    {
+     "Contactperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "Contactperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "Contactperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "Contactperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "Contactperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "Contactperson": "[fjernet af handle-mcp]"
+    }
+   ],
+   "contac-tperson": [
+    {
+     "contac-tperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "contac-tperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "contac-tperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "contac-tperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "contac-tperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "contac-tperson": "[fjernet af handle-mcp]"
+    }
+   ],
+   "contac_tperson": [
+    {
+     "contac_tperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "contac_tperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "contac_tperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "contac_tperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "contac_tperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "contac_tperson": "[fjernet af handle-mcp]"
+    }
+   ],
+   "contactperson": [
+    {
+     "contactperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "contactperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "contactperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "contactperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "contactperson": "[fjernet af handle-mcp]"
+    },
+    {
+     "contactperson": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "creditcard": {
+   "CREDITCARD": [
+    {
+     "CREDITCARD": "[fjernet af handle-mcp]"
+    },
+    {
+     "CREDITCARD": "[fjernet af handle-mcp]"
+    },
+    {
+     "CREDITCARD": "[fjernet af handle-mcp]"
+    },
+    {
+     "CREDITCARD": "[fjernet af handle-mcp]"
+    },
+    {
+     "CREDITCARD": "[fjernet af handle-mcp]"
+    },
+    {
+     "CREDITCARD": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Creditcard": [
+    {
+     "Creditcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "Creditcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "Creditcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "Creditcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "Creditcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "Creditcard": "[fjernet af handle-mcp]"
+    }
+   ],
+   "credi-tcard": [
+    {
+     "credi-tcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "credi-tcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "credi-tcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "credi-tcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "credi-tcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "credi-tcard": "[fjernet af handle-mcp]"
+    }
+   ],
+   "credi_tcard": [
+    {
+     "credi_tcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "credi_tcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "credi_tcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "credi_tcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "credi_tcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "credi_tcard": "[fjernet af handle-mcp]"
+    }
+   ],
+   "creditcard": [
+    {
+     "creditcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "creditcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "creditcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "creditcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "creditcard": "[fjernet af handle-mcp]"
+    },
+    {
+     "creditcard": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "customerid": {
+   "CUSTOMERID": [
+    {
+     "CUSTOMERID": "[fjernet af handle-mcp]"
+    },
+    {
+     "CUSTOMERID": "[fjernet af handle-mcp]"
+    },
+    {
+     "CUSTOMERID": "[fjernet af handle-mcp]"
+    },
+    {
+     "CUSTOMERID": "[fjernet af handle-mcp]"
+    },
+    {
+     "CUSTOMERID": "[fjernet af handle-mcp]"
+    },
+    {
+     "CUSTOMERID": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Customerid": [
+    {
+     "Customerid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Customerid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Customerid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Customerid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Customerid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Customerid": "[fjernet af handle-mcp]"
+    }
+   ],
+   "custo-merid": [
+    {
+     "custo-merid": "[fjernet af handle-mcp]"
+    },
+    {
+     "custo-merid": "[fjernet af handle-mcp]"
+    },
+    {
+     "custo-merid": "[fjernet af handle-mcp]"
+    },
+    {
+     "custo-merid": "[fjernet af handle-mcp]"
+    },
+    {
+     "custo-merid": "[fjernet af handle-mcp]"
+    },
+    {
+     "custo-merid": "[fjernet af handle-mcp]"
+    }
+   ],
+   "custo_merid": [
+    {
+     "custo_merid": "[fjernet af handle-mcp]"
+    },
+    {
+     "custo_merid": "[fjernet af handle-mcp]"
+    },
+    {
+     "custo_merid": "[fjernet af handle-mcp]"
+    },
+    {
+     "custo_merid": "[fjernet af handle-mcp]"
+    },
+    {
+     "custo_merid": "[fjernet af handle-mcp]"
+    },
+    {
+     "custo_merid": "[fjernet af handle-mcp]"
+    }
+   ],
+   "customerid": [
+    {
+     "customerid": "[fjernet af handle-mcp]"
+    },
+    {
+     "customerid": "[fjernet af handle-mcp]"
+    },
+    {
+     "customerid": "[fjernet af handle-mcp]"
+    },
+    {
+     "customerid": "[fjernet af handle-mcp]"
+    },
+    {
+     "customerid": "[fjernet af handle-mcp]"
+    },
+    {
+     "customerid": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "customername": {
+   "CUSTOMERNAME": [
+    {
+     "CUSTOMERNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "CUSTOMERNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "CUSTOMERNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "CUSTOMERNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "CUSTOMERNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "CUSTOMERNAME": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Customername": [
+    {
+     "Customername": "[fjernet af handle-mcp]"
+    },
+    {
+     "Customername": "[fjernet af handle-mcp]"
+    },
+    {
+     "Customername": "[fjernet af handle-mcp]"
+    },
+    {
+     "Customername": "[fjernet af handle-mcp]"
+    },
+    {
+     "Customername": "[fjernet af handle-mcp]"
+    },
+    {
+     "Customername": "[fjernet af handle-mcp]"
+    }
+   ],
+   "custom-ername": [
+    {
+     "custom-ername": "[fjernet af handle-mcp]"
+    },
+    {
+     "custom-ername": "[fjernet af handle-mcp]"
+    },
+    {
+     "custom-ername": "[fjernet af handle-mcp]"
+    },
+    {
+     "custom-ername": "[fjernet af handle-mcp]"
+    },
+    {
+     "custom-ername": "[fjernet af handle-mcp]"
+    },
+    {
+     "custom-ername": "[fjernet af handle-mcp]"
+    }
+   ],
+   "custom_ername": [
+    {
+     "custom_ername": "[fjernet af handle-mcp]"
+    },
+    {
+     "custom_ername": "[fjernet af handle-mcp]"
+    },
+    {
+     "custom_ername": "[fjernet af handle-mcp]"
+    },
+    {
+     "custom_ername": "[fjernet af handle-mcp]"
+    },
+    {
+     "custom_ername": "[fjernet af handle-mcp]"
+    },
+    {
+     "custom_ername": "[fjernet af handle-mcp]"
+    }
+   ],
+   "customername": [
+    {
+     "customername": "[fjernet af handle-mcp]"
+    },
+    {
+     "customername": "[fjernet af handle-mcp]"
+    },
+    {
+     "customername": "[fjernet af handle-mcp]"
+    },
+    {
+     "customername": "[fjernet af handle-mcp]"
+    },
+    {
+     "customername": "[fjernet af handle-mcp]"
+    },
+    {
+     "customername": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "dawauid": {
+   "DAWAUID": [
+    {
+     "DAWAUID": "[fjernet af handle-mcp]"
+    },
+    {
+     "DAWAUID": "[fjernet af handle-mcp]"
+    },
+    {
+     "DAWAUID": "[fjernet af handle-mcp]"
+    },
+    {
+     "DAWAUID": "[fjernet af handle-mcp]"
+    },
+    {
+     "DAWAUID": "[fjernet af handle-mcp]"
+    },
+    {
+     "DAWAUID": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Dawauid": [
+    {
+     "Dawauid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Dawauid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Dawauid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Dawauid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Dawauid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Dawauid": "[fjernet af handle-mcp]"
+    }
+   ],
+   "daw-auid": [
+    {
+     "daw-auid": "[fjernet af handle-mcp]"
+    },
+    {
+     "daw-auid": "[fjernet af handle-mcp]"
+    },
+    {
+     "daw-auid": "[fjernet af handle-mcp]"
+    },
+    {
+     "daw-auid": "[fjernet af handle-mcp]"
+    },
+    {
+     "daw-auid": "[fjernet af handle-mcp]"
+    },
+    {
+     "daw-auid": "[fjernet af handle-mcp]"
+    }
+   ],
+   "daw_auid": [
+    {
+     "daw_auid": "[fjernet af handle-mcp]"
+    },
+    {
+     "daw_auid": "[fjernet af handle-mcp]"
+    },
+    {
+     "daw_auid": "[fjernet af handle-mcp]"
+    },
+    {
+     "daw_auid": "[fjernet af handle-mcp]"
+    },
+    {
+     "daw_auid": "[fjernet af handle-mcp]"
+    },
+    {
+     "daw_auid": "[fjernet af handle-mcp]"
+    }
+   ],
+   "dawauid": [
+    {
+     "dawauid": "[fjernet af handle-mcp]"
+    },
+    {
+     "dawauid": "[fjernet af handle-mcp]"
+    },
+    {
+     "dawauid": "[fjernet af handle-mcp]"
+    },
+    {
+     "dawauid": "[fjernet af handle-mcp]"
+    },
+    {
+     "dawauid": "[fjernet af handle-mcp]"
+    },
+    {
+     "dawauid": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "deliveryaddress": {
+   "DELIVERYADDRESS": [
+    {
+     "DELIVERYADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYADDRESS": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Deliveryaddress": [
+    {
+     "Deliveryaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliveryaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliveryaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliveryaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliveryaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliveryaddress": "[fjernet af handle-mcp]"
+    }
+   ],
+   "deliver-yaddress": [
+    {
+     "deliver-yaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver-yaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver-yaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver-yaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver-yaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver-yaddress": "[fjernet af handle-mcp]"
+    }
+   ],
+   "deliver_yaddress": [
+    {
+     "deliver_yaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver_yaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver_yaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver_yaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver_yaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver_yaddress": "[fjernet af handle-mcp]"
+    }
+   ],
+   "deliveryaddress": [
+    {
+     "deliveryaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliveryaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliveryaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliveryaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliveryaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliveryaddress": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "deliverycomment": {
+   "DELIVERYCOMMENT": [
+    {
+     "DELIVERYCOMMENT": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYCOMMENT": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYCOMMENT": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYCOMMENT": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYCOMMENT": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYCOMMENT": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Deliverycomment": [
+    {
+     "Deliverycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliverycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliverycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliverycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliverycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliverycomment": "[fjernet af handle-mcp]"
+    }
+   ],
+   "deliver-ycomment": [
+    {
+     "deliver-ycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver-ycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver-ycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver-ycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver-ycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver-ycomment": "[fjernet af handle-mcp]"
+    }
+   ],
+   "deliver_ycomment": [
+    {
+     "deliver_ycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver_ycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver_ycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver_ycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver_ycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliver_ycomment": "[fjernet af handle-mcp]"
+    }
+   ],
+   "deliverycomment": [
+    {
+     "deliverycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliverycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliverycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliverycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliverycomment": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliverycomment": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "deliverynote": {
+   "DELIVERYNOTE": [
+    {
+     "DELIVERYNOTE": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYNOTE": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYNOTE": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYNOTE": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYNOTE": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYNOTE": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Deliverynote": [
+    {
+     "Deliverynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliverynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliverynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliverynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliverynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliverynote": "[fjernet af handle-mcp]"
+    }
+   ],
+   "delive-rynote": [
+    {
+     "delive-rynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive-rynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive-rynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive-rynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive-rynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive-rynote": "[fjernet af handle-mcp]"
+    }
+   ],
+   "delive_rynote": [
+    {
+     "delive_rynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive_rynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive_rynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive_rynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive_rynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive_rynote": "[fjernet af handle-mcp]"
+    }
+   ],
+   "deliverynote": [
+    {
+     "deliverynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliverynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliverynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliverynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliverynote": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliverynote": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "deliverynotes": {
+   "DELIVERYNOTES": [
+    {
+     "DELIVERYNOTES": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYNOTES": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYNOTES": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYNOTES": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYNOTES": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYNOTES": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Deliverynotes": [
+    {
+     "Deliverynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliverynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliverynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliverynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliverynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliverynotes": "[fjernet af handle-mcp]"
+    }
+   ],
+   "delive-rynotes": [
+    {
+     "delive-rynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive-rynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive-rynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive-rynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive-rynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive-rynotes": "[fjernet af handle-mcp]"
+    }
+   ],
+   "delive_rynotes": [
+    {
+     "delive_rynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive_rynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive_rynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive_rynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive_rynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "delive_rynotes": "[fjernet af handle-mcp]"
+    }
+   ],
+   "deliverynotes": [
+    {
+     "deliverynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliverynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliverynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliverynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliverynotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliverynotes": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "deliveryplacement": {
+   "DELIVERYPLACEMENT": [
+    {
+     "DELIVERYPLACEMENT": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYPLACEMENT": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYPLACEMENT": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYPLACEMENT": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYPLACEMENT": "[fjernet af handle-mcp]"
+    },
+    {
+     "DELIVERYPLACEMENT": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Deliveryplacement": [
+    {
+     "Deliveryplacement": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliveryplacement": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliveryplacement": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliveryplacement": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliveryplacement": "[fjernet af handle-mcp]"
+    },
+    {
+     "Deliveryplacement": "[fjernet af handle-mcp]"
+    }
+   ],
+   "delivery-placement": [
+    {
+     "delivery-placement": "[fjernet af handle-mcp]"
+    },
+    {
+     "delivery-placement": "[fjernet af handle-mcp]"
+    },
+    {
+     "delivery-placement": "[fjernet af handle-mcp]"
+    },
+    {
+     "delivery-placement": "[fjernet af handle-mcp]"
+    },
+    {
+     "delivery-placement": "[fjernet af handle-mcp]"
+    },
+    {
+     "delivery-placement": "[fjernet af handle-mcp]"
+    }
+   ],
+   "delivery_placement": [
+    {
+     "delivery_placement": "[fjernet af handle-mcp]"
+    },
+    {
+     "delivery_placement": "[fjernet af handle-mcp]"
+    },
+    {
+     "delivery_placement": "[fjernet af handle-mcp]"
+    },
+    {
+     "delivery_placement": "[fjernet af handle-mcp]"
+    },
+    {
+     "delivery_placement": "[fjernet af handle-mcp]"
+    },
+    {
+     "delivery_placement": "[fjernet af handle-mcp]"
+    }
+   ],
+   "deliveryplacement": [
+    {
+     "deliveryplacement": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliveryplacement": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliveryplacement": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliveryplacement": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliveryplacement": "[fjernet af handle-mcp]"
+    },
+    {
+     "deliveryplacement": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "door": {
+   "DOOR": [
+    {
+     "DOOR": "[fjernet af handle-mcp]"
+    },
+    {
+     "DOOR": "[fjernet af handle-mcp]"
+    },
+    {
+     "DOOR": "[fjernet af handle-mcp]"
+    },
+    {
+     "DOOR": "[fjernet af handle-mcp]"
+    },
+    {
+     "DOOR": "[fjernet af handle-mcp]"
+    },
+    {
+     "DOOR": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Door": [
+    {
+     "Door": "[fjernet af handle-mcp]"
+    },
+    {
+     "Door": "[fjernet af handle-mcp]"
+    },
+    {
+     "Door": "[fjernet af handle-mcp]"
+    },
+    {
+     "Door": "[fjernet af handle-mcp]"
+    },
+    {
+     "Door": "[fjernet af handle-mcp]"
+    },
+    {
+     "Door": "[fjernet af handle-mcp]"
+    }
+   ],
+   "do-or": [
+    {
+     "do-or": "[fjernet af handle-mcp]"
+    },
+    {
+     "do-or": "[fjernet af handle-mcp]"
+    },
+    {
+     "do-or": "[fjernet af handle-mcp]"
+    },
+    {
+     "do-or": "[fjernet af handle-mcp]"
+    },
+    {
+     "do-or": "[fjernet af handle-mcp]"
+    },
+    {
+     "do-or": "[fjernet af handle-mcp]"
+    }
+   ],
+   "do_or": [
+    {
+     "do_or": "[fjernet af handle-mcp]"
+    },
+    {
+     "do_or": "[fjernet af handle-mcp]"
+    },
+    {
+     "do_or": "[fjernet af handle-mcp]"
+    },
+    {
+     "do_or": "[fjernet af handle-mcp]"
+    },
+    {
+     "do_or": "[fjernet af handle-mcp]"
+    },
+    {
+     "do_or": "[fjernet af handle-mcp]"
+    }
+   ],
+   "door": [
+    {
+     "door": "[fjernet af handle-mcp]"
+    },
+    {
+     "door": "[fjernet af handle-mcp]"
+    },
+    {
+     "door": "[fjernet af handle-mcp]"
+    },
+    {
+     "door": "[fjernet af handle-mcp]"
+    },
+    {
+     "door": "[fjernet af handle-mcp]"
+    },
+    {
+     "door": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "doorcode": {
+   "DOORCODE": [
+    {
+     "DOORCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "DOORCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "DOORCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "DOORCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "DOORCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "DOORCODE": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Doorcode": [
+    {
+     "Doorcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Doorcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Doorcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Doorcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Doorcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Doorcode": "[fjernet af handle-mcp]"
+    }
+   ],
+   "door-code": [
+    {
+     "door-code": "[fjernet af handle-mcp]"
+    },
+    {
+     "door-code": "[fjernet af handle-mcp]"
+    },
+    {
+     "door-code": "[fjernet af handle-mcp]"
+    },
+    {
+     "door-code": "[fjernet af handle-mcp]"
+    },
+    {
+     "door-code": "[fjernet af handle-mcp]"
+    },
+    {
+     "door-code": "[fjernet af handle-mcp]"
+    }
+   ],
+   "door_code": [
+    {
+     "door_code": "[fjernet af handle-mcp]"
+    },
+    {
+     "door_code": "[fjernet af handle-mcp]"
+    },
+    {
+     "door_code": "[fjernet af handle-mcp]"
+    },
+    {
+     "door_code": "[fjernet af handle-mcp]"
+    },
+    {
+     "door_code": "[fjernet af handle-mcp]"
+    },
+    {
+     "door_code": "[fjernet af handle-mcp]"
+    }
+   ],
+   "doorcode": [
+    {
+     "doorcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "doorcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "doorcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "doorcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "doorcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "doorcode": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "email": {
+   "EMAIL": [
+    {
+     "EMAIL": "[fjernet af handle-mcp]"
+    },
+    {
+     "EMAIL": "[fjernet af handle-mcp]"
+    },
+    {
+     "EMAIL": "[fjernet af handle-mcp]"
+    },
+    {
+     "EMAIL": "[fjernet af handle-mcp]"
+    },
+    {
+     "EMAIL": "[fjernet af handle-mcp]"
+    },
+    {
+     "EMAIL": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Email": [
+    {
+     "Email": "[fjernet af handle-mcp]"
+    },
+    {
+     "Email": "[fjernet af handle-mcp]"
+    },
+    {
+     "Email": "[fjernet af handle-mcp]"
+    },
+    {
+     "Email": "[fjernet af handle-mcp]"
+    },
+    {
+     "Email": "[fjernet af handle-mcp]"
+    },
+    {
+     "Email": "[fjernet af handle-mcp]"
+    }
+   ],
+   "em-ail": [
+    {
+     "em-ail": "[fjernet af handle-mcp]"
+    },
+    {
+     "em-ail": "[fjernet af handle-mcp]"
+    },
+    {
+     "em-ail": "[fjernet af handle-mcp]"
+    },
+    {
+     "em-ail": "[fjernet af handle-mcp]"
+    },
+    {
+     "em-ail": "[fjernet af handle-mcp]"
+    },
+    {
+     "em-ail": "[fjernet af handle-mcp]"
+    }
+   ],
+   "em_ail": [
+    {
+     "em_ail": "[fjernet af handle-mcp]"
+    },
+    {
+     "em_ail": "[fjernet af handle-mcp]"
+    },
+    {
+     "em_ail": "[fjernet af handle-mcp]"
+    },
+    {
+     "em_ail": "[fjernet af handle-mcp]"
+    },
+    {
+     "em_ail": "[fjernet af handle-mcp]"
+    },
+    {
+     "em_ail": "[fjernet af handle-mcp]"
+    }
+   ],
+   "email": [
+    {
+     "email": "[fjernet af handle-mcp]"
+    },
+    {
+     "email": "[fjernet af handle-mcp]"
+    },
+    {
+     "email": "[fjernet af handle-mcp]"
+    },
+    {
+     "email": "[fjernet af handle-mcp]"
+    },
+    {
+     "email": "[fjernet af handle-mcp]"
+    },
+    {
+     "email": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "emailaddress": {
+   "EMAILADDRESS": [
+    {
+     "EMAILADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "EMAILADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "EMAILADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "EMAILADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "EMAILADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "EMAILADDRESS": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Emailaddress": [
+    {
+     "Emailaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Emailaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Emailaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Emailaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Emailaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Emailaddress": "[fjernet af handle-mcp]"
+    }
+   ],
+   "emaila-ddress": [
+    {
+     "emaila-ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "emaila-ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "emaila-ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "emaila-ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "emaila-ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "emaila-ddress": "[fjernet af handle-mcp]"
+    }
+   ],
+   "emaila_ddress": [
+    {
+     "emaila_ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "emaila_ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "emaila_ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "emaila_ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "emaila_ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "emaila_ddress": "[fjernet af handle-mcp]"
+    }
+   ],
+   "emailaddress": [
+    {
+     "emailaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "emailaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "emailaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "emailaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "emailaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "emailaddress": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "error": {
+   "ERROR": [
+    {
+     "ERROR": "x"
+    },
+    {
+     "ERROR": ""
+    },
+    {
+     "ERROR": null
+    },
+    {
+     "ERROR": 5
+    },
+    {
+     "ERROR": [
+      "a"
+     ]
+    },
+    {
+     "ERROR": {
+      "k": "v"
+     }
+    }
+   ],
+   "Error": [
+    {
+     "Error": "x"
+    },
+    {
+     "Error": ""
+    },
+    {
+     "Error": null
+    },
+    {
+     "Error": 5
+    },
+    {
+     "Error": [
+      "a"
+     ]
+    },
+    {
+     "Error": {
+      "k": "v"
+     }
+    }
+   ],
+   "er-ror": [
+    {
+     "er-ror": "x"
+    },
+    {
+     "er-ror": ""
+    },
+    {
+     "er-ror": null
+    },
+    {
+     "er-ror": 5
+    },
+    {
+     "er-ror": [
+      "a"
+     ]
+    },
+    {
+     "er-ror": {
+      "k": "v"
+     }
+    }
+   ],
+   "er_ror": [
+    {
+     "er_ror": "x"
+    },
+    {
+     "er_ror": ""
+    },
+    {
+     "er_ror": null
+    },
+    {
+     "er_ror": 5
+    },
+    {
+     "er_ror": [
+      "a"
+     ]
+    },
+    {
+     "er_ror": {
+      "k": "v"
+     }
+    }
+   ],
+   "error": [
+    {
+     "error": "x"
+    },
+    {
+     "error": ""
+    },
+    {
+     "error": null
+    },
+    {
+     "error": 5
+    },
+    {
+     "error": [
+      "a"
+     ]
+    },
+    {
+     "error": {
+      "k": "v"
+     }
+    }
+   ]
+  },
+  "firstname": {
+   "FIRSTNAME": [
+    {
+     "FIRSTNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "FIRSTNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "FIRSTNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "FIRSTNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "FIRSTNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "FIRSTNAME": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Firstname": [
+    {
+     "Firstname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Firstname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Firstname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Firstname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Firstname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Firstname": "[fjernet af handle-mcp]"
+    }
+   ],
+   "firs-tname": [
+    {
+     "firs-tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "firs-tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "firs-tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "firs-tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "firs-tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "firs-tname": "[fjernet af handle-mcp]"
+    }
+   ],
+   "firs_tname": [
+    {
+     "firs_tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "firs_tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "firs_tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "firs_tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "firs_tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "firs_tname": "[fjernet af handle-mcp]"
+    }
+   ],
+   "firstname": [
+    {
+     "firstname": "[fjernet af handle-mcp]"
+    },
+    {
+     "firstname": "[fjernet af handle-mcp]"
+    },
+    {
+     "firstname": "[fjernet af handle-mcp]"
+    },
+    {
+     "firstname": "[fjernet af handle-mcp]"
+    },
+    {
+     "firstname": "[fjernet af handle-mcp]"
+    },
+    {
+     "firstname": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "floor": {
+   "FLOOR": [
+    {
+     "FLOOR": "[fjernet af handle-mcp]"
+    },
+    {
+     "FLOOR": "[fjernet af handle-mcp]"
+    },
+    {
+     "FLOOR": "[fjernet af handle-mcp]"
+    },
+    {
+     "FLOOR": "[fjernet af handle-mcp]"
+    },
+    {
+     "FLOOR": "[fjernet af handle-mcp]"
+    },
+    {
+     "FLOOR": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Floor": [
+    {
+     "Floor": "[fjernet af handle-mcp]"
+    },
+    {
+     "Floor": "[fjernet af handle-mcp]"
+    },
+    {
+     "Floor": "[fjernet af handle-mcp]"
+    },
+    {
+     "Floor": "[fjernet af handle-mcp]"
+    },
+    {
+     "Floor": "[fjernet af handle-mcp]"
+    },
+    {
+     "Floor": "[fjernet af handle-mcp]"
+    }
+   ],
+   "fl-oor": [
+    {
+     "fl-oor": "[fjernet af handle-mcp]"
+    },
+    {
+     "fl-oor": "[fjernet af handle-mcp]"
+    },
+    {
+     "fl-oor": "[fjernet af handle-mcp]"
+    },
+    {
+     "fl-oor": "[fjernet af handle-mcp]"
+    },
+    {
+     "fl-oor": "[fjernet af handle-mcp]"
+    },
+    {
+     "fl-oor": "[fjernet af handle-mcp]"
+    }
+   ],
+   "fl_oor": [
+    {
+     "fl_oor": "[fjernet af handle-mcp]"
+    },
+    {
+     "fl_oor": "[fjernet af handle-mcp]"
+    },
+    {
+     "fl_oor": "[fjernet af handle-mcp]"
+    },
+    {
+     "fl_oor": "[fjernet af handle-mcp]"
+    },
+    {
+     "fl_oor": "[fjernet af handle-mcp]"
+    },
+    {
+     "fl_oor": "[fjernet af handle-mcp]"
+    }
+   ],
+   "floor": [
+    {
+     "floor": "[fjernet af handle-mcp]"
+    },
+    {
+     "floor": "[fjernet af handle-mcp]"
+    },
+    {
+     "floor": "[fjernet af handle-mcp]"
+    },
+    {
+     "floor": "[fjernet af handle-mcp]"
+    },
+    {
+     "floor": "[fjernet af handle-mcp]"
+    },
+    {
+     "floor": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "fullname": {
+   "FULLNAME": [
+    {
+     "FULLNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "FULLNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "FULLNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "FULLNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "FULLNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "FULLNAME": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Fullname": [
+    {
+     "Fullname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Fullname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Fullname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Fullname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Fullname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Fullname": "[fjernet af handle-mcp]"
+    }
+   ],
+   "full-name": [
+    {
+     "full-name": "[fjernet af handle-mcp]"
+    },
+    {
+     "full-name": "[fjernet af handle-mcp]"
+    },
+    {
+     "full-name": "[fjernet af handle-mcp]"
+    },
+    {
+     "full-name": "[fjernet af handle-mcp]"
+    },
+    {
+     "full-name": "[fjernet af handle-mcp]"
+    },
+    {
+     "full-name": "[fjernet af handle-mcp]"
+    }
+   ],
+   "full_name": [
+    {
+     "full_name": "[fjernet af handle-mcp]"
+    },
+    {
+     "full_name": "[fjernet af handle-mcp]"
+    },
+    {
+     "full_name": "[fjernet af handle-mcp]"
+    },
+    {
+     "full_name": "[fjernet af handle-mcp]"
+    },
+    {
+     "full_name": "[fjernet af handle-mcp]"
+    },
+    {
+     "full_name": "[fjernet af handle-mcp]"
+    }
+   ],
+   "fullname": [
+    {
+     "fullname": "[fjernet af handle-mcp]"
+    },
+    {
+     "fullname": "[fjernet af handle-mcp]"
+    },
+    {
+     "fullname": "[fjernet af handle-mcp]"
+    },
+    {
+     "fullname": "[fjernet af handle-mcp]"
+    },
+    {
+     "fullname": "[fjernet af handle-mcp]"
+    },
+    {
+     "fullname": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "homeaddress": {
+   "HOMEADDRESS": [
+    {
+     "HOMEADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "HOMEADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "HOMEADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "HOMEADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "HOMEADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "HOMEADDRESS": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Homeaddress": [
+    {
+     "Homeaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Homeaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Homeaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Homeaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Homeaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Homeaddress": "[fjernet af handle-mcp]"
+    }
+   ],
+   "homea-ddress": [
+    {
+     "homea-ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "homea-ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "homea-ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "homea-ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "homea-ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "homea-ddress": "[fjernet af handle-mcp]"
+    }
+   ],
+   "homea_ddress": [
+    {
+     "homea_ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "homea_ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "homea_ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "homea_ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "homea_ddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "homea_ddress": "[fjernet af handle-mcp]"
+    }
+   ],
+   "homeaddress": [
+    {
+     "homeaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "homeaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "homeaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "homeaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "homeaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "homeaddress": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "housenumber": {
+   "HOUSENUMBER": [
+    {
+     "HOUSENUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "HOUSENUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "HOUSENUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "HOUSENUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "HOUSENUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "HOUSENUMBER": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Housenumber": [
+    {
+     "Housenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Housenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Housenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Housenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Housenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Housenumber": "[fjernet af handle-mcp]"
+    }
+   ],
+   "house-number": [
+    {
+     "house-number": "[fjernet af handle-mcp]"
+    },
+    {
+     "house-number": "[fjernet af handle-mcp]"
+    },
+    {
+     "house-number": "[fjernet af handle-mcp]"
+    },
+    {
+     "house-number": "[fjernet af handle-mcp]"
+    },
+    {
+     "house-number": "[fjernet af handle-mcp]"
+    },
+    {
+     "house-number": "[fjernet af handle-mcp]"
+    }
+   ],
+   "house_number": [
+    {
+     "house_number": "[fjernet af handle-mcp]"
+    },
+    {
+     "house_number": "[fjernet af handle-mcp]"
+    },
+    {
+     "house_number": "[fjernet af handle-mcp]"
+    },
+    {
+     "house_number": "[fjernet af handle-mcp]"
+    },
+    {
+     "house_number": "[fjernet af handle-mcp]"
+    },
+    {
+     "house_number": "[fjernet af handle-mcp]"
+    }
+   ],
+   "housenumber": [
+    {
+     "housenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "housenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "housenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "housenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "housenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "housenumber": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "iban": {
+   "IBAN": [
+    {
+     "IBAN": "[fjernet af handle-mcp]"
+    },
+    {
+     "IBAN": "[fjernet af handle-mcp]"
+    },
+    {
+     "IBAN": "[fjernet af handle-mcp]"
+    },
+    {
+     "IBAN": "[fjernet af handle-mcp]"
+    },
+    {
+     "IBAN": "[fjernet af handle-mcp]"
+    },
+    {
+     "IBAN": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Iban": [
+    {
+     "Iban": "[fjernet af handle-mcp]"
+    },
+    {
+     "Iban": "[fjernet af handle-mcp]"
+    },
+    {
+     "Iban": "[fjernet af handle-mcp]"
+    },
+    {
+     "Iban": "[fjernet af handle-mcp]"
+    },
+    {
+     "Iban": "[fjernet af handle-mcp]"
+    },
+    {
+     "Iban": "[fjernet af handle-mcp]"
+    }
+   ],
+   "ib-an": [
+    {
+     "ib-an": "[fjernet af handle-mcp]"
+    },
+    {
+     "ib-an": "[fjernet af handle-mcp]"
+    },
+    {
+     "ib-an": "[fjernet af handle-mcp]"
+    },
+    {
+     "ib-an": "[fjernet af handle-mcp]"
+    },
+    {
+     "ib-an": "[fjernet af handle-mcp]"
+    },
+    {
+     "ib-an": "[fjernet af handle-mcp]"
+    }
+   ],
+   "ib_an": [
+    {
+     "ib_an": "[fjernet af handle-mcp]"
+    },
+    {
+     "ib_an": "[fjernet af handle-mcp]"
+    },
+    {
+     "ib_an": "[fjernet af handle-mcp]"
+    },
+    {
+     "ib_an": "[fjernet af handle-mcp]"
+    },
+    {
+     "ib_an": "[fjernet af handle-mcp]"
+    },
+    {
+     "ib_an": "[fjernet af handle-mcp]"
+    }
+   ],
+   "iban": [
+    {
+     "iban": "[fjernet af handle-mcp]"
+    },
+    {
+     "iban": "[fjernet af handle-mcp]"
+    },
+    {
+     "iban": "[fjernet af handle-mcp]"
+    },
+    {
+     "iban": "[fjernet af handle-mcp]"
+    },
+    {
+     "iban": "[fjernet af handle-mcp]"
+    },
+    {
+     "iban": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "id": {
+   "ID": [
+    {
+     "ID": "x"
+    },
+    {
+     "ID": ""
+    },
+    {
+     "ID": null
+    },
+    {
+     "ID": 5
+    },
+    {
+     "ID": [
+      "a"
+     ]
+    },
+    {
+     "ID": {
+      "k": "v"
+     }
+    }
+   ],
+   "Id": [
+    {
+     "Id": "x"
+    },
+    {
+     "Id": ""
+    },
+    {
+     "Id": null
+    },
+    {
+     "Id": 5
+    },
+    {
+     "Id": [
+      "a"
+     ]
+    },
+    {
+     "Id": {
+      "k": "v"
+     }
+    }
+   ],
+   "i-d": [
+    {
+     "i-d": "x"
+    },
+    {
+     "i-d": ""
+    },
+    {
+     "i-d": null
+    },
+    {
+     "i-d": 5
+    },
+    {
+     "i-d": [
+      "a"
+     ]
+    },
+    {
+     "i-d": {
+      "k": "v"
+     }
+    }
+   ],
+   "i_d": [
+    {
+     "i_d": "x"
+    },
+    {
+     "i_d": ""
+    },
+    {
+     "i_d": null
+    },
+    {
+     "i_d": 5
+    },
+    {
+     "i_d": [
+      "a"
+     ]
+    },
+    {
+     "i_d": {
+      "k": "v"
+     }
+    }
+   ],
+   "id": [
+    {
+     "id": "x"
+    },
+    {
+     "id": ""
+    },
+    {
+     "id": null
+    },
+    {
+     "id": 5
+    },
+    {
+     "id": [
+      "a"
+     ]
+    },
+    {
+     "id": {
+      "k": "v"
+     }
+    }
+   ]
+  },
+  "invoiceaddress": {
+   "INVOICEADDRESS": [
+    {
+     "INVOICEADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "INVOICEADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "INVOICEADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "INVOICEADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "INVOICEADDRESS": "[fjernet af handle-mcp]"
+    },
+    {
+     "INVOICEADDRESS": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Invoiceaddress": [
+    {
+     "Invoiceaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Invoiceaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Invoiceaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Invoiceaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Invoiceaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "Invoiceaddress": "[fjernet af handle-mcp]"
+    }
+   ],
+   "invoice-address": [
+    {
+     "invoice-address": "[fjernet af handle-mcp]"
+    },
+    {
+     "invoice-address": "[fjernet af handle-mcp]"
+    },
+    {
+     "invoice-address": "[fjernet af handle-mcp]"
+    },
+    {
+     "invoice-address": "[fjernet af handle-mcp]"
+    },
+    {
+     "invoice-address": "[fjernet af handle-mcp]"
+    },
+    {
+     "invoice-address": "[fjernet af handle-mcp]"
+    }
+   ],
+   "invoice_address": [
+    {
+     "invoice_address": "[fjernet af handle-mcp]"
+    },
+    {
+     "invoice_address": "[fjernet af handle-mcp]"
+    },
+    {
+     "invoice_address": "[fjernet af handle-mcp]"
+    },
+    {
+     "invoice_address": "[fjernet af handle-mcp]"
+    },
+    {
+     "invoice_address": "[fjernet af handle-mcp]"
+    },
+    {
+     "invoice_address": "[fjernet af handle-mcp]"
+    }
+   ],
+   "invoiceaddress": [
+    {
+     "invoiceaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "invoiceaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "invoiceaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "invoiceaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "invoiceaddress": "[fjernet af handle-mcp]"
+    },
+    {
+     "invoiceaddress": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "lastname": {
+   "LASTNAME": [
+    {
+     "LASTNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "LASTNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "LASTNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "LASTNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "LASTNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "LASTNAME": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Lastname": [
+    {
+     "Lastname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Lastname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Lastname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Lastname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Lastname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Lastname": "[fjernet af handle-mcp]"
+    }
+   ],
+   "last-name": [
+    {
+     "last-name": "[fjernet af handle-mcp]"
+    },
+    {
+     "last-name": "[fjernet af handle-mcp]"
+    },
+    {
+     "last-name": "[fjernet af handle-mcp]"
+    },
+    {
+     "last-name": "[fjernet af handle-mcp]"
+    },
+    {
+     "last-name": "[fjernet af handle-mcp]"
+    },
+    {
+     "last-name": "[fjernet af handle-mcp]"
+    }
+   ],
+   "last_name": [
+    {
+     "last_name": "[fjernet af handle-mcp]"
+    },
+    {
+     "last_name": "[fjernet af handle-mcp]"
+    },
+    {
+     "last_name": "[fjernet af handle-mcp]"
+    },
+    {
+     "last_name": "[fjernet af handle-mcp]"
+    },
+    {
+     "last_name": "[fjernet af handle-mcp]"
+    },
+    {
+     "last_name": "[fjernet af handle-mcp]"
+    }
+   ],
+   "lastname": [
+    {
+     "lastname": "[fjernet af handle-mcp]"
+    },
+    {
+     "lastname": "[fjernet af handle-mcp]"
+    },
+    {
+     "lastname": "[fjernet af handle-mcp]"
+    },
+    {
+     "lastname": "[fjernet af handle-mcp]"
+    },
+    {
+     "lastname": "[fjernet af handle-mcp]"
+    },
+    {
+     "lastname": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "lat": {
+   "LAT": [
+    {
+     "LAT": "[fjernet af handle-mcp]"
+    },
+    {
+     "LAT": "[fjernet af handle-mcp]"
+    },
+    {
+     "LAT": "[fjernet af handle-mcp]"
+    },
+    {
+     "LAT": "[fjernet af handle-mcp]"
+    },
+    {
+     "LAT": "[fjernet af handle-mcp]"
+    },
+    {
+     "LAT": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Lat": [
+    {
+     "Lat": "[fjernet af handle-mcp]"
+    },
+    {
+     "Lat": "[fjernet af handle-mcp]"
+    },
+    {
+     "Lat": "[fjernet af handle-mcp]"
+    },
+    {
+     "Lat": "[fjernet af handle-mcp]"
+    },
+    {
+     "Lat": "[fjernet af handle-mcp]"
+    },
+    {
+     "Lat": "[fjernet af handle-mcp]"
+    }
+   ],
+   "l-at": [
+    {
+     "l-at": "[fjernet af handle-mcp]"
+    },
+    {
+     "l-at": "[fjernet af handle-mcp]"
+    },
+    {
+     "l-at": "[fjernet af handle-mcp]"
+    },
+    {
+     "l-at": "[fjernet af handle-mcp]"
+    },
+    {
+     "l-at": "[fjernet af handle-mcp]"
+    },
+    {
+     "l-at": "[fjernet af handle-mcp]"
+    }
+   ],
+   "l_at": [
+    {
+     "l_at": "[fjernet af handle-mcp]"
+    },
+    {
+     "l_at": "[fjernet af handle-mcp]"
+    },
+    {
+     "l_at": "[fjernet af handle-mcp]"
+    },
+    {
+     "l_at": "[fjernet af handle-mcp]"
+    },
+    {
+     "l_at": "[fjernet af handle-mcp]"
+    },
+    {
+     "l_at": "[fjernet af handle-mcp]"
+    }
+   ],
+   "lat": [
+    {
+     "lat": "[fjernet af handle-mcp]"
+    },
+    {
+     "lat": "[fjernet af handle-mcp]"
+    },
+    {
+     "lat": "[fjernet af handle-mcp]"
+    },
+    {
+     "lat": "[fjernet af handle-mcp]"
+    },
+    {
+     "lat": "[fjernet af handle-mcp]"
+    },
+    {
+     "lat": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "latitude": {
+   "LATITUDE": [
+    {
+     "LATITUDE": "[fjernet af handle-mcp]"
+    },
+    {
+     "LATITUDE": "[fjernet af handle-mcp]"
+    },
+    {
+     "LATITUDE": "[fjernet af handle-mcp]"
+    },
+    {
+     "LATITUDE": "[fjernet af handle-mcp]"
+    },
+    {
+     "LATITUDE": "[fjernet af handle-mcp]"
+    },
+    {
+     "LATITUDE": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Latitude": [
+    {
+     "Latitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "Latitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "Latitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "Latitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "Latitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "Latitude": "[fjernet af handle-mcp]"
+    }
+   ],
+   "lati-tude": [
+    {
+     "lati-tude": "[fjernet af handle-mcp]"
+    },
+    {
+     "lati-tude": "[fjernet af handle-mcp]"
+    },
+    {
+     "lati-tude": "[fjernet af handle-mcp]"
+    },
+    {
+     "lati-tude": "[fjernet af handle-mcp]"
+    },
+    {
+     "lati-tude": "[fjernet af handle-mcp]"
+    },
+    {
+     "lati-tude": "[fjernet af handle-mcp]"
+    }
+   ],
+   "lati_tude": [
+    {
+     "lati_tude": "[fjernet af handle-mcp]"
+    },
+    {
+     "lati_tude": "[fjernet af handle-mcp]"
+    },
+    {
+     "lati_tude": "[fjernet af handle-mcp]"
+    },
+    {
+     "lati_tude": "[fjernet af handle-mcp]"
+    },
+    {
+     "lati_tude": "[fjernet af handle-mcp]"
+    },
+    {
+     "lati_tude": "[fjernet af handle-mcp]"
+    }
+   ],
+   "latitude": [
+    {
+     "latitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "latitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "latitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "latitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "latitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "latitude": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "lng": {
+   "LNG": [
+    {
+     "LNG": "[fjernet af handle-mcp]"
+    },
+    {
+     "LNG": "[fjernet af handle-mcp]"
+    },
+    {
+     "LNG": "[fjernet af handle-mcp]"
+    },
+    {
+     "LNG": "[fjernet af handle-mcp]"
+    },
+    {
+     "LNG": "[fjernet af handle-mcp]"
+    },
+    {
+     "LNG": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Lng": [
+    {
+     "Lng": "[fjernet af handle-mcp]"
+    },
+    {
+     "Lng": "[fjernet af handle-mcp]"
+    },
+    {
+     "Lng": "[fjernet af handle-mcp]"
+    },
+    {
+     "Lng": "[fjernet af handle-mcp]"
+    },
+    {
+     "Lng": "[fjernet af handle-mcp]"
+    },
+    {
+     "Lng": "[fjernet af handle-mcp]"
+    }
+   ],
+   "l-ng": [
+    {
+     "l-ng": "[fjernet af handle-mcp]"
+    },
+    {
+     "l-ng": "[fjernet af handle-mcp]"
+    },
+    {
+     "l-ng": "[fjernet af handle-mcp]"
+    },
+    {
+     "l-ng": "[fjernet af handle-mcp]"
+    },
+    {
+     "l-ng": "[fjernet af handle-mcp]"
+    },
+    {
+     "l-ng": "[fjernet af handle-mcp]"
+    }
+   ],
+   "l_ng": [
+    {
+     "l_ng": "[fjernet af handle-mcp]"
+    },
+    {
+     "l_ng": "[fjernet af handle-mcp]"
+    },
+    {
+     "l_ng": "[fjernet af handle-mcp]"
+    },
+    {
+     "l_ng": "[fjernet af handle-mcp]"
+    },
+    {
+     "l_ng": "[fjernet af handle-mcp]"
+    },
+    {
+     "l_ng": "[fjernet af handle-mcp]"
+    }
+   ],
+   "lng": [
+    {
+     "lng": "[fjernet af handle-mcp]"
+    },
+    {
+     "lng": "[fjernet af handle-mcp]"
+    },
+    {
+     "lng": "[fjernet af handle-mcp]"
+    },
+    {
+     "lng": "[fjernet af handle-mcp]"
+    },
+    {
+     "lng": "[fjernet af handle-mcp]"
+    },
+    {
+     "lng": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "longitude": {
+   "LONGITUDE": [
+    {
+     "LONGITUDE": "[fjernet af handle-mcp]"
+    },
+    {
+     "LONGITUDE": "[fjernet af handle-mcp]"
+    },
+    {
+     "LONGITUDE": "[fjernet af handle-mcp]"
+    },
+    {
+     "LONGITUDE": "[fjernet af handle-mcp]"
+    },
+    {
+     "LONGITUDE": "[fjernet af handle-mcp]"
+    },
+    {
+     "LONGITUDE": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Longitude": [
+    {
+     "Longitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "Longitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "Longitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "Longitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "Longitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "Longitude": "[fjernet af handle-mcp]"
+    }
+   ],
+   "long-itude": [
+    {
+     "long-itude": "[fjernet af handle-mcp]"
+    },
+    {
+     "long-itude": "[fjernet af handle-mcp]"
+    },
+    {
+     "long-itude": "[fjernet af handle-mcp]"
+    },
+    {
+     "long-itude": "[fjernet af handle-mcp]"
+    },
+    {
+     "long-itude": "[fjernet af handle-mcp]"
+    },
+    {
+     "long-itude": "[fjernet af handle-mcp]"
+    }
+   ],
+   "long_itude": [
+    {
+     "long_itude": "[fjernet af handle-mcp]"
+    },
+    {
+     "long_itude": "[fjernet af handle-mcp]"
+    },
+    {
+     "long_itude": "[fjernet af handle-mcp]"
+    },
+    {
+     "long_itude": "[fjernet af handle-mcp]"
+    },
+    {
+     "long_itude": "[fjernet af handle-mcp]"
+    },
+    {
+     "long_itude": "[fjernet af handle-mcp]"
+    }
+   ],
+   "longitude": [
+    {
+     "longitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "longitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "longitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "longitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "longitude": "[fjernet af handle-mcp]"
+    },
+    {
+     "longitude": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "mail": {
+   "MAIL": [
+    {
+     "MAIL": "[fjernet af handle-mcp]"
+    },
+    {
+     "MAIL": "[fjernet af handle-mcp]"
+    },
+    {
+     "MAIL": "[fjernet af handle-mcp]"
+    },
+    {
+     "MAIL": "[fjernet af handle-mcp]"
+    },
+    {
+     "MAIL": "[fjernet af handle-mcp]"
+    },
+    {
+     "MAIL": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Mail": [
+    {
+     "Mail": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mail": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mail": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mail": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mail": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mail": "[fjernet af handle-mcp]"
+    }
+   ],
+   "ma-il": [
+    {
+     "ma-il": "[fjernet af handle-mcp]"
+    },
+    {
+     "ma-il": "[fjernet af handle-mcp]"
+    },
+    {
+     "ma-il": "[fjernet af handle-mcp]"
+    },
+    {
+     "ma-il": "[fjernet af handle-mcp]"
+    },
+    {
+     "ma-il": "[fjernet af handle-mcp]"
+    },
+    {
+     "ma-il": "[fjernet af handle-mcp]"
+    }
+   ],
+   "ma_il": [
+    {
+     "ma_il": "[fjernet af handle-mcp]"
+    },
+    {
+     "ma_il": "[fjernet af handle-mcp]"
+    },
+    {
+     "ma_il": "[fjernet af handle-mcp]"
+    },
+    {
+     "ma_il": "[fjernet af handle-mcp]"
+    },
+    {
+     "ma_il": "[fjernet af handle-mcp]"
+    },
+    {
+     "ma_il": "[fjernet af handle-mcp]"
+    }
+   ],
+   "mail": [
+    {
+     "mail": "[fjernet af handle-mcp]"
+    },
+    {
+     "mail": "[fjernet af handle-mcp]"
+    },
+    {
+     "mail": "[fjernet af handle-mcp]"
+    },
+    {
+     "mail": "[fjernet af handle-mcp]"
+    },
+    {
+     "mail": "[fjernet af handle-mcp]"
+    },
+    {
+     "mail": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "maskedcardnumber": {
+   "MASKEDCARDNUMBER": [
+    {
+     "MASKEDCARDNUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "MASKEDCARDNUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "MASKEDCARDNUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "MASKEDCARDNUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "MASKEDCARDNUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "MASKEDCARDNUMBER": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Maskedcardnumber": [
+    {
+     "Maskedcardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Maskedcardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Maskedcardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Maskedcardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Maskedcardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Maskedcardnumber": "[fjernet af handle-mcp]"
+    }
+   ],
+   "maskedca-rdnumber": [
+    {
+     "maskedca-rdnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "maskedca-rdnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "maskedca-rdnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "maskedca-rdnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "maskedca-rdnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "maskedca-rdnumber": "[fjernet af handle-mcp]"
+    }
+   ],
+   "maskedca_rdnumber": [
+    {
+     "maskedca_rdnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "maskedca_rdnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "maskedca_rdnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "maskedca_rdnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "maskedca_rdnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "maskedca_rdnumber": "[fjernet af handle-mcp]"
+    }
+   ],
+   "maskedcardnumber": [
+    {
+     "maskedcardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "maskedcardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "maskedcardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "maskedcardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "maskedcardnumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "maskedcardnumber": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "memberid": {
+   "MEMBERID": [
+    {
+     "MEMBERID": "[fjernet af handle-mcp]"
+    },
+    {
+     "MEMBERID": "[fjernet af handle-mcp]"
+    },
+    {
+     "MEMBERID": "[fjernet af handle-mcp]"
+    },
+    {
+     "MEMBERID": "[fjernet af handle-mcp]"
+    },
+    {
+     "MEMBERID": "[fjernet af handle-mcp]"
+    },
+    {
+     "MEMBERID": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Memberid": [
+    {
+     "Memberid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Memberid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Memberid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Memberid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Memberid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Memberid": "[fjernet af handle-mcp]"
+    }
+   ],
+   "memb-erid": [
+    {
+     "memb-erid": "[fjernet af handle-mcp]"
+    },
+    {
+     "memb-erid": "[fjernet af handle-mcp]"
+    },
+    {
+     "memb-erid": "[fjernet af handle-mcp]"
+    },
+    {
+     "memb-erid": "[fjernet af handle-mcp]"
+    },
+    {
+     "memb-erid": "[fjernet af handle-mcp]"
+    },
+    {
+     "memb-erid": "[fjernet af handle-mcp]"
+    }
+   ],
+   "memb_erid": [
+    {
+     "memb_erid": "[fjernet af handle-mcp]"
+    },
+    {
+     "memb_erid": "[fjernet af handle-mcp]"
+    },
+    {
+     "memb_erid": "[fjernet af handle-mcp]"
+    },
+    {
+     "memb_erid": "[fjernet af handle-mcp]"
+    },
+    {
+     "memb_erid": "[fjernet af handle-mcp]"
+    },
+    {
+     "memb_erid": "[fjernet af handle-mcp]"
+    }
+   ],
+   "memberid": [
+    {
+     "memberid": "[fjernet af handle-mcp]"
+    },
+    {
+     "memberid": "[fjernet af handle-mcp]"
+    },
+    {
+     "memberid": "[fjernet af handle-mcp]"
+    },
+    {
+     "memberid": "[fjernet af handle-mcp]"
+    },
+    {
+     "memberid": "[fjernet af handle-mcp]"
+    },
+    {
+     "memberid": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "membername": {
+   "MEMBERNAME": [
+    {
+     "MEMBERNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "MEMBERNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "MEMBERNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "MEMBERNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "MEMBERNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "MEMBERNAME": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Membername": [
+    {
+     "Membername": "[fjernet af handle-mcp]"
+    },
+    {
+     "Membername": "[fjernet af handle-mcp]"
+    },
+    {
+     "Membername": "[fjernet af handle-mcp]"
+    },
+    {
+     "Membername": "[fjernet af handle-mcp]"
+    },
+    {
+     "Membername": "[fjernet af handle-mcp]"
+    },
+    {
+     "Membername": "[fjernet af handle-mcp]"
+    }
+   ],
+   "membe-rname": [
+    {
+     "membe-rname": "[fjernet af handle-mcp]"
+    },
+    {
+     "membe-rname": "[fjernet af handle-mcp]"
+    },
+    {
+     "membe-rname": "[fjernet af handle-mcp]"
+    },
+    {
+     "membe-rname": "[fjernet af handle-mcp]"
+    },
+    {
+     "membe-rname": "[fjernet af handle-mcp]"
+    },
+    {
+     "membe-rname": "[fjernet af handle-mcp]"
+    }
+   ],
+   "membe_rname": [
+    {
+     "membe_rname": "[fjernet af handle-mcp]"
+    },
+    {
+     "membe_rname": "[fjernet af handle-mcp]"
+    },
+    {
+     "membe_rname": "[fjernet af handle-mcp]"
+    },
+    {
+     "membe_rname": "[fjernet af handle-mcp]"
+    },
+    {
+     "membe_rname": "[fjernet af handle-mcp]"
+    },
+    {
+     "membe_rname": "[fjernet af handle-mcp]"
+    }
+   ],
+   "membername": [
+    {
+     "membername": "[fjernet af handle-mcp]"
+    },
+    {
+     "membername": "[fjernet af handle-mcp]"
+    },
+    {
+     "membername": "[fjernet af handle-mcp]"
+    },
+    {
+     "membername": "[fjernet af handle-mcp]"
+    },
+    {
+     "membername": "[fjernet af handle-mcp]"
+    },
+    {
+     "membername": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "message": {
+   "MESSAGE": [
+    {
+     "MESSAGE": "x"
+    },
+    {
+     "MESSAGE": ""
+    },
+    {
+     "MESSAGE": null
+    },
+    {
+     "MESSAGE": 5
+    },
+    {
+     "MESSAGE": [
+      "a"
+     ]
+    },
+    {
+     "MESSAGE": {
+      "k": "v"
+     }
+    }
+   ],
+   "Message": [
+    {
+     "Message": "x"
+    },
+    {
+     "Message": ""
+    },
+    {
+     "Message": null
+    },
+    {
+     "Message": 5
+    },
+    {
+     "Message": [
+      "a"
+     ]
+    },
+    {
+     "Message": {
+      "k": "v"
+     }
+    }
+   ],
+   "mes-sage": [
+    {
+     "mes-sage": "x"
+    },
+    {
+     "mes-sage": ""
+    },
+    {
+     "mes-sage": null
+    },
+    {
+     "mes-sage": 5
+    },
+    {
+     "mes-sage": [
+      "a"
+     ]
+    },
+    {
+     "mes-sage": {
+      "k": "v"
+     }
+    }
+   ],
+   "mes_sage": [
+    {
+     "mes_sage": "x"
+    },
+    {
+     "mes_sage": ""
+    },
+    {
+     "mes_sage": null
+    },
+    {
+     "mes_sage": 5
+    },
+    {
+     "mes_sage": [
+      "a"
+     ]
+    },
+    {
+     "mes_sage": {
+      "k": "v"
+     }
+    }
+   ],
+   "message": [
+    {
+     "message": "x"
+    },
+    {
+     "message": ""
+    },
+    {
+     "message": null
+    },
+    {
+     "message": 5
+    },
+    {
+     "message": [
+      "a"
+     ]
+    },
+    {
+     "message": {
+      "k": "v"
+     }
+    }
+   ]
+  },
+  "messages": {
+   "MESSAGES": [
+    {
+     "MESSAGES": "x"
+    },
+    {
+     "MESSAGES": ""
+    },
+    {
+     "MESSAGES": null
+    },
+    {
+     "MESSAGES": 5
+    },
+    {
+     "MESSAGES": [
+      "a"
+     ]
+    },
+    {
+     "MESSAGES": {
+      "k": "v"
+     }
+    }
+   ],
+   "Messages": [
+    {
+     "Messages": "x"
+    },
+    {
+     "Messages": ""
+    },
+    {
+     "Messages": null
+    },
+    {
+     "Messages": 5
+    },
+    {
+     "Messages": [
+      "a"
+     ]
+    },
+    {
+     "Messages": {
+      "k": "v"
+     }
+    }
+   ],
+   "mess-ages": [
+    {
+     "mess-ages": "x"
+    },
+    {
+     "mess-ages": ""
+    },
+    {
+     "mess-ages": null
+    },
+    {
+     "mess-ages": 5
+    },
+    {
+     "mess-ages": [
+      "a"
+     ]
+    },
+    {
+     "mess-ages": {
+      "k": "v"
+     }
+    }
+   ],
+   "mess_ages": [
+    {
+     "mess_ages": "x"
+    },
+    {
+     "mess_ages": ""
+    },
+    {
+     "mess_ages": null
+    },
+    {
+     "mess_ages": 5
+    },
+    {
+     "mess_ages": [
+      "a"
+     ]
+    },
+    {
+     "mess_ages": {
+      "k": "v"
+     }
+    }
+   ],
+   "messages": [
+    {
+     "messages": "x"
+    },
+    {
+     "messages": ""
+    },
+    {
+     "messages": null
+    },
+    {
+     "messages": 5
+    },
+    {
+     "messages": [
+      "a"
+     ]
+    },
+    {
+     "messages": {
+      "k": "v"
+     }
+    }
+   ]
+  },
+  "mobile": {
+   "MOBILE": [
+    {
+     "MOBILE": "[fjernet af handle-mcp]"
+    },
+    {
+     "MOBILE": "[fjernet af handle-mcp]"
+    },
+    {
+     "MOBILE": "[fjernet af handle-mcp]"
+    },
+    {
+     "MOBILE": "[fjernet af handle-mcp]"
+    },
+    {
+     "MOBILE": "[fjernet af handle-mcp]"
+    },
+    {
+     "MOBILE": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Mobile": [
+    {
+     "Mobile": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mobile": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mobile": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mobile": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mobile": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mobile": "[fjernet af handle-mcp]"
+    }
+   ],
+   "mob-ile": [
+    {
+     "mob-ile": "[fjernet af handle-mcp]"
+    },
+    {
+     "mob-ile": "[fjernet af handle-mcp]"
+    },
+    {
+     "mob-ile": "[fjernet af handle-mcp]"
+    },
+    {
+     "mob-ile": "[fjernet af handle-mcp]"
+    },
+    {
+     "mob-ile": "[fjernet af handle-mcp]"
+    },
+    {
+     "mob-ile": "[fjernet af handle-mcp]"
+    }
+   ],
+   "mob_ile": [
+    {
+     "mob_ile": "[fjernet af handle-mcp]"
+    },
+    {
+     "mob_ile": "[fjernet af handle-mcp]"
+    },
+    {
+     "mob_ile": "[fjernet af handle-mcp]"
+    },
+    {
+     "mob_ile": "[fjernet af handle-mcp]"
+    },
+    {
+     "mob_ile": "[fjernet af handle-mcp]"
+    },
+    {
+     "mob_ile": "[fjernet af handle-mcp]"
+    }
+   ],
+   "mobile": [
+    {
+     "mobile": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobile": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobile": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobile": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobile": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobile": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "mobilenumber": {
+   "MOBILENUMBER": [
+    {
+     "MOBILENUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "MOBILENUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "MOBILENUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "MOBILENUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "MOBILENUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "MOBILENUMBER": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Mobilenumber": [
+    {
+     "Mobilenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mobilenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mobilenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mobilenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mobilenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mobilenumber": "[fjernet af handle-mcp]"
+    }
+   ],
+   "mobile-number": [
+    {
+     "mobile-number": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobile-number": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobile-number": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobile-number": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobile-number": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobile-number": "[fjernet af handle-mcp]"
+    }
+   ],
+   "mobile_number": [
+    {
+     "mobile_number": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobile_number": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobile_number": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobile_number": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobile_number": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobile_number": "[fjernet af handle-mcp]"
+    }
+   ],
+   "mobilenumber": [
+    {
+     "mobilenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobilenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobilenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobilenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobilenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobilenumber": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "mobilephone": {
+   "MOBILEPHONE": [
+    {
+     "MOBILEPHONE": "[fjernet af handle-mcp]"
+    },
+    {
+     "MOBILEPHONE": "[fjernet af handle-mcp]"
+    },
+    {
+     "MOBILEPHONE": "[fjernet af handle-mcp]"
+    },
+    {
+     "MOBILEPHONE": "[fjernet af handle-mcp]"
+    },
+    {
+     "MOBILEPHONE": "[fjernet af handle-mcp]"
+    },
+    {
+     "MOBILEPHONE": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Mobilephone": [
+    {
+     "Mobilephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mobilephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mobilephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mobilephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mobilephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "Mobilephone": "[fjernet af handle-mcp]"
+    }
+   ],
+   "mobil-ephone": [
+    {
+     "mobil-ephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobil-ephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobil-ephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobil-ephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobil-ephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobil-ephone": "[fjernet af handle-mcp]"
+    }
+   ],
+   "mobil_ephone": [
+    {
+     "mobil_ephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobil_ephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobil_ephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobil_ephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobil_ephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobil_ephone": "[fjernet af handle-mcp]"
+    }
+   ],
+   "mobilephone": [
+    {
+     "mobilephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobilephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobilephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobilephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobilephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "mobilephone": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "name": {
+   "NAME": [
+    {
+     "NAME": "x"
+    },
+    {
+     "NAME": ""
+    },
+    {
+     "NAME": null
+    },
+    {
+     "NAME": 5
+    },
+    {
+     "NAME": [
+      "a"
+     ]
+    },
+    {
+     "NAME": {
+      "k": "v"
+     }
+    }
+   ],
+   "Name": [
+    {
+     "Name": "x"
+    },
+    {
+     "Name": ""
+    },
+    {
+     "Name": null
+    },
+    {
+     "Name": 5
+    },
+    {
+     "Name": [
+      "a"
+     ]
+    },
+    {
+     "Name": {
+      "k": "v"
+     }
+    }
+   ],
+   "na-me": [
+    {
+     "na-me": "x"
+    },
+    {
+     "na-me": ""
+    },
+    {
+     "na-me": null
+    },
+    {
+     "na-me": 5
+    },
+    {
+     "na-me": [
+      "a"
+     ]
+    },
+    {
+     "na-me": {
+      "k": "v"
+     }
+    }
+   ],
+   "na_me": [
+    {
+     "na_me": "x"
+    },
+    {
+     "na_me": ""
+    },
+    {
+     "na_me": null
+    },
+    {
+     "na_me": 5
+    },
+    {
+     "na_me": [
+      "a"
+     ]
+    },
+    {
+     "na_me": {
+      "k": "v"
+     }
+    }
+   ],
+   "name": [
+    {
+     "name": "x"
+    },
+    {
+     "name": ""
+    },
+    {
+     "name": null
+    },
+    {
+     "name": 5
+    },
+    {
+     "name": [
+      "a"
+     ]
+    },
+    {
+     "name": {
+      "k": "v"
+     }
+    }
+   ]
+  },
+  "note": {
+   "NOTE": [
+    {
+     "NOTE": "x"
+    },
+    {
+     "NOTE": ""
+    },
+    {
+     "NOTE": null
+    },
+    {
+     "NOTE": 5
+    },
+    {
+     "NOTE": [
+      "a"
+     ]
+    },
+    {
+     "NOTE": {
+      "k": "v"
+     }
+    }
+   ],
+   "Note": [
+    {
+     "Note": "x"
+    },
+    {
+     "Note": ""
+    },
+    {
+     "Note": null
+    },
+    {
+     "Note": 5
+    },
+    {
+     "Note": [
+      "a"
+     ]
+    },
+    {
+     "Note": {
+      "k": "v"
+     }
+    }
+   ],
+   "no-te": [
+    {
+     "no-te": "x"
+    },
+    {
+     "no-te": ""
+    },
+    {
+     "no-te": null
+    },
+    {
+     "no-te": 5
+    },
+    {
+     "no-te": [
+      "a"
+     ]
+    },
+    {
+     "no-te": {
+      "k": "v"
+     }
+    }
+   ],
+   "no_te": [
+    {
+     "no_te": "x"
+    },
+    {
+     "no_te": ""
+    },
+    {
+     "no_te": null
+    },
+    {
+     "no_te": 5
+    },
+    {
+     "no_te": [
+      "a"
+     ]
+    },
+    {
+     "no_te": {
+      "k": "v"
+     }
+    }
+   ],
+   "note": [
+    {
+     "note": "x"
+    },
+    {
+     "note": ""
+    },
+    {
+     "note": null
+    },
+    {
+     "note": 5
+    },
+    {
+     "note": [
+      "a"
+     ]
+    },
+    {
+     "note": {
+      "k": "v"
+     }
+    }
+   ]
+  },
+  "notes": {
+   "NOTES": [
+    {
+     "NOTES": "x"
+    },
+    {
+     "NOTES": ""
+    },
+    {
+     "NOTES": null
+    },
+    {
+     "NOTES": 5
+    },
+    {
+     "NOTES": [
+      "a"
+     ]
+    },
+    {
+     "NOTES": {
+      "k": "v"
+     }
+    }
+   ],
+   "Notes": [
+    {
+     "Notes": "x"
+    },
+    {
+     "Notes": ""
+    },
+    {
+     "Notes": null
+    },
+    {
+     "Notes": 5
+    },
+    {
+     "Notes": [
+      "a"
+     ]
+    },
+    {
+     "Notes": {
+      "k": "v"
+     }
+    }
+   ],
+   "no-tes": [
+    {
+     "no-tes": "x"
+    },
+    {
+     "no-tes": ""
+    },
+    {
+     "no-tes": null
+    },
+    {
+     "no-tes": 5
+    },
+    {
+     "no-tes": [
+      "a"
+     ]
+    },
+    {
+     "no-tes": {
+      "k": "v"
+     }
+    }
+   ],
+   "no_tes": [
+    {
+     "no_tes": "x"
+    },
+    {
+     "no_tes": ""
+    },
+    {
+     "no_tes": null
+    },
+    {
+     "no_tes": 5
+    },
+    {
+     "no_tes": [
+      "a"
+     ]
+    },
+    {
+     "no_tes": {
+      "k": "v"
+     }
+    }
+   ],
+   "notes": [
+    {
+     "notes": "x"
+    },
+    {
+     "notes": ""
+    },
+    {
+     "notes": null
+    },
+    {
+     "notes": 5
+    },
+    {
+     "notes": [
+      "a"
+     ]
+    },
+    {
+     "notes": {
+      "k": "v"
+     }
+    }
+   ]
+  },
+  "orderpickupcode": {
+   "ORDERPICKUPCODE": [
+    {
+     "ORDERPICKUPCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "ORDERPICKUPCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "ORDERPICKUPCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "ORDERPICKUPCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "ORDERPICKUPCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "ORDERPICKUPCODE": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Orderpickupcode": [
+    {
+     "Orderpickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Orderpickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Orderpickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Orderpickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Orderpickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Orderpickupcode": "[fjernet af handle-mcp]"
+    }
+   ],
+   "orderpi-ckupcode": [
+    {
+     "orderpi-ckupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "orderpi-ckupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "orderpi-ckupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "orderpi-ckupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "orderpi-ckupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "orderpi-ckupcode": "[fjernet af handle-mcp]"
+    }
+   ],
+   "orderpi_ckupcode": [
+    {
+     "orderpi_ckupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "orderpi_ckupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "orderpi_ckupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "orderpi_ckupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "orderpi_ckupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "orderpi_ckupcode": "[fjernet af handle-mcp]"
+    }
+   ],
+   "orderpickupcode": [
+    {
+     "orderpickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "orderpickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "orderpickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "orderpickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "orderpickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "orderpickupcode": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "phone": {
+   "PHONE": [
+    {
+     "PHONE": "[fjernet af handle-mcp]"
+    },
+    {
+     "PHONE": "[fjernet af handle-mcp]"
+    },
+    {
+     "PHONE": "[fjernet af handle-mcp]"
+    },
+    {
+     "PHONE": "[fjernet af handle-mcp]"
+    },
+    {
+     "PHONE": "[fjernet af handle-mcp]"
+    },
+    {
+     "PHONE": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Phone": [
+    {
+     "Phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "Phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "Phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "Phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "Phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "Phone": "[fjernet af handle-mcp]"
+    }
+   ],
+   "ph-one": [
+    {
+     "ph-one": "[fjernet af handle-mcp]"
+    },
+    {
+     "ph-one": "[fjernet af handle-mcp]"
+    },
+    {
+     "ph-one": "[fjernet af handle-mcp]"
+    },
+    {
+     "ph-one": "[fjernet af handle-mcp]"
+    },
+    {
+     "ph-one": "[fjernet af handle-mcp]"
+    },
+    {
+     "ph-one": "[fjernet af handle-mcp]"
+    }
+   ],
+   "ph_one": [
+    {
+     "ph_one": "[fjernet af handle-mcp]"
+    },
+    {
+     "ph_one": "[fjernet af handle-mcp]"
+    },
+    {
+     "ph_one": "[fjernet af handle-mcp]"
+    },
+    {
+     "ph_one": "[fjernet af handle-mcp]"
+    },
+    {
+     "ph_one": "[fjernet af handle-mcp]"
+    },
+    {
+     "ph_one": "[fjernet af handle-mcp]"
+    }
+   ],
+   "phone": [
+    {
+     "phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "phone": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "phonenumber": {
+   "PHONENUMBER": [
+    {
+     "PHONENUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "PHONENUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "PHONENUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "PHONENUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "PHONENUMBER": "[fjernet af handle-mcp]"
+    },
+    {
+     "PHONENUMBER": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Phonenumber": [
+    {
+     "Phonenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Phonenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Phonenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Phonenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Phonenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "Phonenumber": "[fjernet af handle-mcp]"
+    }
+   ],
+   "phone-number": [
+    {
+     "phone-number": "[fjernet af handle-mcp]"
+    },
+    {
+     "phone-number": "[fjernet af handle-mcp]"
+    },
+    {
+     "phone-number": "[fjernet af handle-mcp]"
+    },
+    {
+     "phone-number": "[fjernet af handle-mcp]"
+    },
+    {
+     "phone-number": "[fjernet af handle-mcp]"
+    },
+    {
+     "phone-number": "[fjernet af handle-mcp]"
+    }
+   ],
+   "phone_number": [
+    {
+     "phone_number": "[fjernet af handle-mcp]"
+    },
+    {
+     "phone_number": "[fjernet af handle-mcp]"
+    },
+    {
+     "phone_number": "[fjernet af handle-mcp]"
+    },
+    {
+     "phone_number": "[fjernet af handle-mcp]"
+    },
+    {
+     "phone_number": "[fjernet af handle-mcp]"
+    },
+    {
+     "phone_number": "[fjernet af handle-mcp]"
+    }
+   ],
+   "phonenumber": [
+    {
+     "phonenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "phonenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "phonenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "phonenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "phonenumber": "[fjernet af handle-mcp]"
+    },
+    {
+     "phonenumber": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "pickupcode": {
+   "PICKUPCODE": [
+    {
+     "PICKUPCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "PICKUPCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "PICKUPCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "PICKUPCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "PICKUPCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "PICKUPCODE": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Pickupcode": [
+    {
+     "Pickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Pickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Pickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Pickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Pickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Pickupcode": "[fjernet af handle-mcp]"
+    }
+   ],
+   "picku-pcode": [
+    {
+     "picku-pcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "picku-pcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "picku-pcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "picku-pcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "picku-pcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "picku-pcode": "[fjernet af handle-mcp]"
+    }
+   ],
+   "picku_pcode": [
+    {
+     "picku_pcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "picku_pcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "picku_pcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "picku_pcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "picku_pcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "picku_pcode": "[fjernet af handle-mcp]"
+    }
+   ],
+   "pickupcode": [
+    {
+     "pickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "pickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "pickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "pickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "pickupcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "pickupcode": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "postalcode": {
+   "POSTALCODE": [
+    {
+     "POSTALCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "POSTALCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "POSTALCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "POSTALCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "POSTALCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "POSTALCODE": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Postalcode": [
+    {
+     "Postalcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Postalcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Postalcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Postalcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Postalcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Postalcode": "[fjernet af handle-mcp]"
+    }
+   ],
+   "posta-lcode": [
+    {
+     "posta-lcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "posta-lcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "posta-lcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "posta-lcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "posta-lcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "posta-lcode": "[fjernet af handle-mcp]"
+    }
+   ],
+   "posta_lcode": [
+    {
+     "posta_lcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "posta_lcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "posta_lcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "posta_lcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "posta_lcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "posta_lcode": "[fjernet af handle-mcp]"
+    }
+   ],
+   "postalcode": [
+    {
+     "postalcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "postalcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "postalcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "postalcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "postalcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "postalcode": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "postcode": {
+   "POSTCODE": [
+    {
+     "POSTCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "POSTCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "POSTCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "POSTCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "POSTCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "POSTCODE": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Postcode": [
+    {
+     "Postcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Postcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Postcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Postcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Postcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Postcode": "[fjernet af handle-mcp]"
+    }
+   ],
+   "post-code": [
+    {
+     "post-code": "[fjernet af handle-mcp]"
+    },
+    {
+     "post-code": "[fjernet af handle-mcp]"
+    },
+    {
+     "post-code": "[fjernet af handle-mcp]"
+    },
+    {
+     "post-code": "[fjernet af handle-mcp]"
+    },
+    {
+     "post-code": "[fjernet af handle-mcp]"
+    },
+    {
+     "post-code": "[fjernet af handle-mcp]"
+    }
+   ],
+   "post_code": [
+    {
+     "post_code": "[fjernet af handle-mcp]"
+    },
+    {
+     "post_code": "[fjernet af handle-mcp]"
+    },
+    {
+     "post_code": "[fjernet af handle-mcp]"
+    },
+    {
+     "post_code": "[fjernet af handle-mcp]"
+    },
+    {
+     "post_code": "[fjernet af handle-mcp]"
+    },
+    {
+     "post_code": "[fjernet af handle-mcp]"
+    }
+   ],
+   "postcode": [
+    {
+     "postcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "postcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "postcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "postcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "postcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "postcode": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "recipientname": {
+   "RECIPIENTNAME": [
+    {
+     "RECIPIENTNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "RECIPIENTNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "RECIPIENTNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "RECIPIENTNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "RECIPIENTNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "RECIPIENTNAME": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Recipientname": [
+    {
+     "Recipientname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Recipientname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Recipientname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Recipientname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Recipientname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Recipientname": "[fjernet af handle-mcp]"
+    }
+   ],
+   "recipi-entname": [
+    {
+     "recipi-entname": "[fjernet af handle-mcp]"
+    },
+    {
+     "recipi-entname": "[fjernet af handle-mcp]"
+    },
+    {
+     "recipi-entname": "[fjernet af handle-mcp]"
+    },
+    {
+     "recipi-entname": "[fjernet af handle-mcp]"
+    },
+    {
+     "recipi-entname": "[fjernet af handle-mcp]"
+    },
+    {
+     "recipi-entname": "[fjernet af handle-mcp]"
+    }
+   ],
+   "recipi_entname": [
+    {
+     "recipi_entname": "[fjernet af handle-mcp]"
+    },
+    {
+     "recipi_entname": "[fjernet af handle-mcp]"
+    },
+    {
+     "recipi_entname": "[fjernet af handle-mcp]"
+    },
+    {
+     "recipi_entname": "[fjernet af handle-mcp]"
+    },
+    {
+     "recipi_entname": "[fjernet af handle-mcp]"
+    },
+    {
+     "recipi_entname": "[fjernet af handle-mcp]"
+    }
+   ],
+   "recipientname": [
+    {
+     "recipientname": "[fjernet af handle-mcp]"
+    },
+    {
+     "recipientname": "[fjernet af handle-mcp]"
+    },
+    {
+     "recipientname": "[fjernet af handle-mcp]"
+    },
+    {
+     "recipientname": "[fjernet af handle-mcp]"
+    },
+    {
+     "recipientname": "[fjernet af handle-mcp]"
+    },
+    {
+     "recipientname": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "street": {
+   "STREET": [
+    {
+     "STREET": "[fjernet af handle-mcp]"
+    },
+    {
+     "STREET": "[fjernet af handle-mcp]"
+    },
+    {
+     "STREET": "[fjernet af handle-mcp]"
+    },
+    {
+     "STREET": "[fjernet af handle-mcp]"
+    },
+    {
+     "STREET": "[fjernet af handle-mcp]"
+    },
+    {
+     "STREET": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Street": [
+    {
+     "Street": "[fjernet af handle-mcp]"
+    },
+    {
+     "Street": "[fjernet af handle-mcp]"
+    },
+    {
+     "Street": "[fjernet af handle-mcp]"
+    },
+    {
+     "Street": "[fjernet af handle-mcp]"
+    },
+    {
+     "Street": "[fjernet af handle-mcp]"
+    },
+    {
+     "Street": "[fjernet af handle-mcp]"
+    }
+   ],
+   "str-eet": [
+    {
+     "str-eet": "[fjernet af handle-mcp]"
+    },
+    {
+     "str-eet": "[fjernet af handle-mcp]"
+    },
+    {
+     "str-eet": "[fjernet af handle-mcp]"
+    },
+    {
+     "str-eet": "[fjernet af handle-mcp]"
+    },
+    {
+     "str-eet": "[fjernet af handle-mcp]"
+    },
+    {
+     "str-eet": "[fjernet af handle-mcp]"
+    }
+   ],
+   "str_eet": [
+    {
+     "str_eet": "[fjernet af handle-mcp]"
+    },
+    {
+     "str_eet": "[fjernet af handle-mcp]"
+    },
+    {
+     "str_eet": "[fjernet af handle-mcp]"
+    },
+    {
+     "str_eet": "[fjernet af handle-mcp]"
+    },
+    {
+     "str_eet": "[fjernet af handle-mcp]"
+    },
+    {
+     "str_eet": "[fjernet af handle-mcp]"
+    }
+   ],
+   "street": [
+    {
+     "street": "[fjernet af handle-mcp]"
+    },
+    {
+     "street": "[fjernet af handle-mcp]"
+    },
+    {
+     "street": "[fjernet af handle-mcp]"
+    },
+    {
+     "street": "[fjernet af handle-mcp]"
+    },
+    {
+     "street": "[fjernet af handle-mcp]"
+    },
+    {
+     "street": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "streetname": {
+   "STREETNAME": [
+    {
+     "STREETNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "STREETNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "STREETNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "STREETNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "STREETNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "STREETNAME": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Streetname": [
+    {
+     "Streetname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Streetname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Streetname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Streetname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Streetname": "[fjernet af handle-mcp]"
+    },
+    {
+     "Streetname": "[fjernet af handle-mcp]"
+    }
+   ],
+   "stree-tname": [
+    {
+     "stree-tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "stree-tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "stree-tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "stree-tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "stree-tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "stree-tname": "[fjernet af handle-mcp]"
+    }
+   ],
+   "stree_tname": [
+    {
+     "stree_tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "stree_tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "stree_tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "stree_tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "stree_tname": "[fjernet af handle-mcp]"
+    },
+    {
+     "stree_tname": "[fjernet af handle-mcp]"
+    }
+   ],
+   "streetname": [
+    {
+     "streetname": "[fjernet af handle-mcp]"
+    },
+    {
+     "streetname": "[fjernet af handle-mcp]"
+    },
+    {
+     "streetname": "[fjernet af handle-mcp]"
+    },
+    {
+     "streetname": "[fjernet af handle-mcp]"
+    },
+    {
+     "streetname": "[fjernet af handle-mcp]"
+    },
+    {
+     "streetname": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "telephone": {
+   "TELEPHONE": [
+    {
+     "TELEPHONE": "[fjernet af handle-mcp]"
+    },
+    {
+     "TELEPHONE": "[fjernet af handle-mcp]"
+    },
+    {
+     "TELEPHONE": "[fjernet af handle-mcp]"
+    },
+    {
+     "TELEPHONE": "[fjernet af handle-mcp]"
+    },
+    {
+     "TELEPHONE": "[fjernet af handle-mcp]"
+    },
+    {
+     "TELEPHONE": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Telephone": [
+    {
+     "Telephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "Telephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "Telephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "Telephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "Telephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "Telephone": "[fjernet af handle-mcp]"
+    }
+   ],
+   "tele-phone": [
+    {
+     "tele-phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "tele-phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "tele-phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "tele-phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "tele-phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "tele-phone": "[fjernet af handle-mcp]"
+    }
+   ],
+   "tele_phone": [
+    {
+     "tele_phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "tele_phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "tele_phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "tele_phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "tele_phone": "[fjernet af handle-mcp]"
+    },
+    {
+     "tele_phone": "[fjernet af handle-mcp]"
+    }
+   ],
+   "telephone": [
+    {
+     "telephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "telephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "telephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "telephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "telephone": "[fjernet af handle-mcp]"
+    },
+    {
+     "telephone": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "tid": {
+   "TID": [
+    {
+     "TID": "[fjernet af handle-mcp]"
+    },
+    {
+     "TID": "[fjernet af handle-mcp]"
+    },
+    {
+     "TID": "[fjernet af handle-mcp]"
+    },
+    {
+     "TID": "[fjernet af handle-mcp]"
+    },
+    {
+     "TID": "[fjernet af handle-mcp]"
+    },
+    {
+     "TID": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Tid": [
+    {
+     "Tid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Tid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Tid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Tid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Tid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Tid": "[fjernet af handle-mcp]"
+    }
+   ],
+   "t-id": [
+    {
+     "t-id": "[fjernet af handle-mcp]"
+    },
+    {
+     "t-id": "[fjernet af handle-mcp]"
+    },
+    {
+     "t-id": "[fjernet af handle-mcp]"
+    },
+    {
+     "t-id": "[fjernet af handle-mcp]"
+    },
+    {
+     "t-id": "[fjernet af handle-mcp]"
+    },
+    {
+     "t-id": "[fjernet af handle-mcp]"
+    }
+   ],
+   "t_id": [
+    {
+     "t_id": "[fjernet af handle-mcp]"
+    },
+    {
+     "t_id": "[fjernet af handle-mcp]"
+    },
+    {
+     "t_id": "[fjernet af handle-mcp]"
+    },
+    {
+     "t_id": "[fjernet af handle-mcp]"
+    },
+    {
+     "t_id": "[fjernet af handle-mcp]"
+    },
+    {
+     "t_id": "[fjernet af handle-mcp]"
+    }
+   ],
+   "tid": [
+    {
+     "tid": "[fjernet af handle-mcp]"
+    },
+    {
+     "tid": "[fjernet af handle-mcp]"
+    },
+    {
+     "tid": "[fjernet af handle-mcp]"
+    },
+    {
+     "tid": "[fjernet af handle-mcp]"
+    },
+    {
+     "tid": "[fjernet af handle-mcp]"
+    },
+    {
+     "tid": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "uid": {
+   "UID": [
+    {
+     "UID": "[fjernet af handle-mcp]"
+    },
+    {
+     "UID": "[fjernet af handle-mcp]"
+    },
+    {
+     "UID": "[fjernet af handle-mcp]"
+    },
+    {
+     "UID": "[fjernet af handle-mcp]"
+    },
+    {
+     "UID": "[fjernet af handle-mcp]"
+    },
+    {
+     "UID": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Uid": [
+    {
+     "Uid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Uid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Uid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Uid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Uid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Uid": "[fjernet af handle-mcp]"
+    }
+   ],
+   "u-id": [
+    {
+     "u-id": "[fjernet af handle-mcp]"
+    },
+    {
+     "u-id": "[fjernet af handle-mcp]"
+    },
+    {
+     "u-id": "[fjernet af handle-mcp]"
+    },
+    {
+     "u-id": "[fjernet af handle-mcp]"
+    },
+    {
+     "u-id": "[fjernet af handle-mcp]"
+    },
+    {
+     "u-id": "[fjernet af handle-mcp]"
+    }
+   ],
+   "u_id": [
+    {
+     "u_id": "[fjernet af handle-mcp]"
+    },
+    {
+     "u_id": "[fjernet af handle-mcp]"
+    },
+    {
+     "u_id": "[fjernet af handle-mcp]"
+    },
+    {
+     "u_id": "[fjernet af handle-mcp]"
+    },
+    {
+     "u_id": "[fjernet af handle-mcp]"
+    },
+    {
+     "u_id": "[fjernet af handle-mcp]"
+    }
+   ],
+   "uid": [
+    {
+     "uid": "[fjernet af handle-mcp]"
+    },
+    {
+     "uid": "[fjernet af handle-mcp]"
+    },
+    {
+     "uid": "[fjernet af handle-mcp]"
+    },
+    {
+     "uid": "[fjernet af handle-mcp]"
+    },
+    {
+     "uid": "[fjernet af handle-mcp]"
+    },
+    {
+     "uid": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "unattendednotes": {
+   "UNATTENDEDNOTES": [
+    {
+     "UNATTENDEDNOTES": "[fjernet af handle-mcp]"
+    },
+    {
+     "UNATTENDEDNOTES": "[fjernet af handle-mcp]"
+    },
+    {
+     "UNATTENDEDNOTES": "[fjernet af handle-mcp]"
+    },
+    {
+     "UNATTENDEDNOTES": "[fjernet af handle-mcp]"
+    },
+    {
+     "UNATTENDEDNOTES": "[fjernet af handle-mcp]"
+    },
+    {
+     "UNATTENDEDNOTES": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Unattendednotes": [
+    {
+     "Unattendednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "Unattendednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "Unattendednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "Unattendednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "Unattendednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "Unattendednotes": "[fjernet af handle-mcp]"
+    }
+   ],
+   "unatten-dednotes": [
+    {
+     "unatten-dednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "unatten-dednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "unatten-dednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "unatten-dednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "unatten-dednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "unatten-dednotes": "[fjernet af handle-mcp]"
+    }
+   ],
+   "unatten_dednotes": [
+    {
+     "unatten_dednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "unatten_dednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "unatten_dednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "unatten_dednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "unatten_dednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "unatten_dednotes": "[fjernet af handle-mcp]"
+    }
+   ],
+   "unattendednotes": [
+    {
+     "unattendednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "unattendednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "unattendednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "unattendednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "unattendednotes": "[fjernet af handle-mcp]"
+    },
+    {
+     "unattendednotes": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "userid": {
+   "USERID": [
+    {
+     "USERID": "[fjernet af handle-mcp]"
+    },
+    {
+     "USERID": "[fjernet af handle-mcp]"
+    },
+    {
+     "USERID": "[fjernet af handle-mcp]"
+    },
+    {
+     "USERID": "[fjernet af handle-mcp]"
+    },
+    {
+     "USERID": "[fjernet af handle-mcp]"
+    },
+    {
+     "USERID": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Userid": [
+    {
+     "Userid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Userid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Userid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Userid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Userid": "[fjernet af handle-mcp]"
+    },
+    {
+     "Userid": "[fjernet af handle-mcp]"
+    }
+   ],
+   "use-rid": [
+    {
+     "use-rid": "[fjernet af handle-mcp]"
+    },
+    {
+     "use-rid": "[fjernet af handle-mcp]"
+    },
+    {
+     "use-rid": "[fjernet af handle-mcp]"
+    },
+    {
+     "use-rid": "[fjernet af handle-mcp]"
+    },
+    {
+     "use-rid": "[fjernet af handle-mcp]"
+    },
+    {
+     "use-rid": "[fjernet af handle-mcp]"
+    }
+   ],
+   "use_rid": [
+    {
+     "use_rid": "[fjernet af handle-mcp]"
+    },
+    {
+     "use_rid": "[fjernet af handle-mcp]"
+    },
+    {
+     "use_rid": "[fjernet af handle-mcp]"
+    },
+    {
+     "use_rid": "[fjernet af handle-mcp]"
+    },
+    {
+     "use_rid": "[fjernet af handle-mcp]"
+    },
+    {
+     "use_rid": "[fjernet af handle-mcp]"
+    }
+   ],
+   "userid": [
+    {
+     "userid": "[fjernet af handle-mcp]"
+    },
+    {
+     "userid": "[fjernet af handle-mcp]"
+    },
+    {
+     "userid": "[fjernet af handle-mcp]"
+    },
+    {
+     "userid": "[fjernet af handle-mcp]"
+    },
+    {
+     "userid": "[fjernet af handle-mcp]"
+    },
+    {
+     "userid": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "username": {
+   "USERNAME": [
+    {
+     "USERNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "USERNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "USERNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "USERNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "USERNAME": "[fjernet af handle-mcp]"
+    },
+    {
+     "USERNAME": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Username": [
+    {
+     "Username": "[fjernet af handle-mcp]"
+    },
+    {
+     "Username": "[fjernet af handle-mcp]"
+    },
+    {
+     "Username": "[fjernet af handle-mcp]"
+    },
+    {
+     "Username": "[fjernet af handle-mcp]"
+    },
+    {
+     "Username": "[fjernet af handle-mcp]"
+    },
+    {
+     "Username": "[fjernet af handle-mcp]"
+    }
+   ],
+   "user-name": [
+    {
+     "user-name": "[fjernet af handle-mcp]"
+    },
+    {
+     "user-name": "[fjernet af handle-mcp]"
+    },
+    {
+     "user-name": "[fjernet af handle-mcp]"
+    },
+    {
+     "user-name": "[fjernet af handle-mcp]"
+    },
+    {
+     "user-name": "[fjernet af handle-mcp]"
+    },
+    {
+     "user-name": "[fjernet af handle-mcp]"
+    }
+   ],
+   "user_name": [
+    {
+     "user_name": "[fjernet af handle-mcp]"
+    },
+    {
+     "user_name": "[fjernet af handle-mcp]"
+    },
+    {
+     "user_name": "[fjernet af handle-mcp]"
+    },
+    {
+     "user_name": "[fjernet af handle-mcp]"
+    },
+    {
+     "user_name": "[fjernet af handle-mcp]"
+    },
+    {
+     "user_name": "[fjernet af handle-mcp]"
+    }
+   ],
+   "username": [
+    {
+     "username": "[fjernet af handle-mcp]"
+    },
+    {
+     "username": "[fjernet af handle-mcp]"
+    },
+    {
+     "username": "[fjernet af handle-mcp]"
+    },
+    {
+     "username": "[fjernet af handle-mcp]"
+    },
+    {
+     "username": "[fjernet af handle-mcp]"
+    },
+    {
+     "username": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "warnings": {
+   "WARNINGS": [
+    {
+     "WARNINGS": "x"
+    },
+    {
+     "WARNINGS": ""
+    },
+    {
+     "WARNINGS": null
+    },
+    {
+     "WARNINGS": 5
+    },
+    {
+     "WARNINGS": [
+      "a"
+     ]
+    },
+    {
+     "WARNINGS": {
+      "k": "v"
+     }
+    }
+   ],
+   "Warnings": [
+    {
+     "Warnings": "x"
+    },
+    {
+     "Warnings": ""
+    },
+    {
+     "Warnings": null
+    },
+    {
+     "Warnings": 5
+    },
+    {
+     "Warnings": [
+      "a"
+     ]
+    },
+    {
+     "Warnings": {
+      "k": "v"
+     }
+    }
+   ],
+   "warn-ings": [
+    {
+     "warn-ings": "x"
+    },
+    {
+     "warn-ings": ""
+    },
+    {
+     "warn-ings": null
+    },
+    {
+     "warn-ings": 5
+    },
+    {
+     "warn-ings": [
+      "a"
+     ]
+    },
+    {
+     "warn-ings": {
+      "k": "v"
+     }
+    }
+   ],
+   "warn_ings": [
+    {
+     "warn_ings": "x"
+    },
+    {
+     "warn_ings": ""
+    },
+    {
+     "warn_ings": null
+    },
+    {
+     "warn_ings": 5
+    },
+    {
+     "warn_ings": [
+      "a"
+     ]
+    },
+    {
+     "warn_ings": {
+      "k": "v"
+     }
+    }
+   ],
+   "warnings": [
+    {
+     "warnings": "x"
+    },
+    {
+     "warnings": ""
+    },
+    {
+     "warnings": null
+    },
+    {
+     "warnings": 5
+    },
+    {
+     "warnings": [
+      "a"
+     ]
+    },
+    {
+     "warnings": {
+      "k": "v"
+     }
+    }
+   ]
+  },
+  "zip": {
+   "ZIP": [
+    {
+     "ZIP": "[fjernet af handle-mcp]"
+    },
+    {
+     "ZIP": "[fjernet af handle-mcp]"
+    },
+    {
+     "ZIP": "[fjernet af handle-mcp]"
+    },
+    {
+     "ZIP": "[fjernet af handle-mcp]"
+    },
+    {
+     "ZIP": "[fjernet af handle-mcp]"
+    },
+    {
+     "ZIP": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Zip": [
+    {
+     "Zip": "[fjernet af handle-mcp]"
+    },
+    {
+     "Zip": "[fjernet af handle-mcp]"
+    },
+    {
+     "Zip": "[fjernet af handle-mcp]"
+    },
+    {
+     "Zip": "[fjernet af handle-mcp]"
+    },
+    {
+     "Zip": "[fjernet af handle-mcp]"
+    },
+    {
+     "Zip": "[fjernet af handle-mcp]"
+    }
+   ],
+   "z-ip": [
+    {
+     "z-ip": "[fjernet af handle-mcp]"
+    },
+    {
+     "z-ip": "[fjernet af handle-mcp]"
+    },
+    {
+     "z-ip": "[fjernet af handle-mcp]"
+    },
+    {
+     "z-ip": "[fjernet af handle-mcp]"
+    },
+    {
+     "z-ip": "[fjernet af handle-mcp]"
+    },
+    {
+     "z-ip": "[fjernet af handle-mcp]"
+    }
+   ],
+   "z_ip": [
+    {
+     "z_ip": "[fjernet af handle-mcp]"
+    },
+    {
+     "z_ip": "[fjernet af handle-mcp]"
+    },
+    {
+     "z_ip": "[fjernet af handle-mcp]"
+    },
+    {
+     "z_ip": "[fjernet af handle-mcp]"
+    },
+    {
+     "z_ip": "[fjernet af handle-mcp]"
+    },
+    {
+     "z_ip": "[fjernet af handle-mcp]"
+    }
+   ],
+   "zip": [
+    {
+     "zip": "[fjernet af handle-mcp]"
+    },
+    {
+     "zip": "[fjernet af handle-mcp]"
+    },
+    {
+     "zip": "[fjernet af handle-mcp]"
+    },
+    {
+     "zip": "[fjernet af handle-mcp]"
+    },
+    {
+     "zip": "[fjernet af handle-mcp]"
+    },
+    {
+     "zip": "[fjernet af handle-mcp]"
+    }
+   ]
+  },
+  "zipcode": {
+   "ZIPCODE": [
+    {
+     "ZIPCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "ZIPCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "ZIPCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "ZIPCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "ZIPCODE": "[fjernet af handle-mcp]"
+    },
+    {
+     "ZIPCODE": "[fjernet af handle-mcp]"
+    }
+   ],
+   "Zipcode": [
+    {
+     "Zipcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Zipcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Zipcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Zipcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Zipcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "Zipcode": "[fjernet af handle-mcp]"
+    }
+   ],
+   "zip-code": [
+    {
+     "zip-code": "[fjernet af handle-mcp]"
+    },
+    {
+     "zip-code": "[fjernet af handle-mcp]"
+    },
+    {
+     "zip-code": "[fjernet af handle-mcp]"
+    },
+    {
+     "zip-code": "[fjernet af handle-mcp]"
+    },
+    {
+     "zip-code": "[fjernet af handle-mcp]"
+    },
+    {
+     "zip-code": "[fjernet af handle-mcp]"
+    }
+   ],
+   "zip_code": [
+    {
+     "zip_code": "[fjernet af handle-mcp]"
+    },
+    {
+     "zip_code": "[fjernet af handle-mcp]"
+    },
+    {
+     "zip_code": "[fjernet af handle-mcp]"
+    },
+    {
+     "zip_code": "[fjernet af handle-mcp]"
+    },
+    {
+     "zip_code": "[fjernet af handle-mcp]"
+    },
+    {
+     "zip_code": "[fjernet af handle-mcp]"
+    }
+   ],
+   "zipcode": [
+    {
+     "zipcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "zipcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "zipcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "zipcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "zipcode": "[fjernet af handle-mcp]"
+    },
+    {
+     "zipcode": "[fjernet af handle-mcp]"
+    }
+   ]
+  }
+ },
+ "values": [
+  "x",
+  "",
+  null,
+  5,
+  [
+   "a"
+  ],
+  {
+   "k": "v"
+  }
+ ]
+}

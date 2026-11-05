@@ -1,0 +1,163 @@
+{
+ "answer": [
+  {
+   "available": true,
+   "before_price": "20.45",
+   "brand": null,
+   "campaign": "Gratis",
+   "category": null,
+   "ean": null,
+   "id": "2",
+   "max_per_order": 1,
+   "name": "Gave",
+   "offer_text": "Gratis (max 1 stk.)",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "0.00",
+   "size": null,
+   "store": "nemlig",
+   "unit": null,
+   "unit_price": null
+  },
+  {
+   "available": false,
+   "before_price": null,
+   "brand": null,
+   "campaign": "Skarp pris",
+   "category": null,
+   "ean": null,
+   "id": "3",
+   "max_per_order": null,
+   "name": "Uden før-pris",
+   "offer_text": "Skarp pris",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "10.00",
+   "size": "200 g",
+   "store": "nemlig",
+   "unit": "kg",
+   "unit_price": "50.00"
+  },
+  {
+   "available": true,
+   "before_price": "20.00",
+   "brand": null,
+   "campaign": "Skarp pris",
+   "category": null,
+   "ean": null,
+   "id": "4",
+   "max_per_order": 3,
+   "name": "Mix",
+   "offer_text": "Mix 2 stk. 35,- (max 3 stk.)",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "15.00",
+   "size": null,
+   "store": "nemlig",
+   "unit": "stk",
+   "unit_price": "75.50"
+  },
+  {
+   "available": true,
+   "before_price": "19.99",
+   "brand": null,
+   "campaign": "Skarp pris",
+   "category": null,
+   "ean": null,
+   "id": "6",
+   "max_per_order": null,
+   "name": "Volumen",
+   "offer_text": "Tilbud, før 19,99 kr",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "9.99",
+   "size": null,
+   "store": "nemlig",
+   "unit": "l",
+   "unit_price": "0.01"
+  }
+ ],
+ "args": [
+  10
+ ],
+ "env": {},
+ "keychain_after": null,
+ "keychain_before": null,
+ "login": null,
+ "method": "offers",
+ "name": "offers_parsing_edge_cases",
+ "requests": [
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/v2/AppSettings/Website"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "path",
+     "/tilbud"
+    ]
+   ],
+   "url": "https://webapi.prod.knl.nemlig.it/productbff/api/web/page"
+  }
+ ],
+ "session_after": null,
+ "store": "nemlig"
+}

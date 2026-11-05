@@ -1,0 +1,256 @@
+{
+ "answer": [
+  {
+   "group": "Aftensmad",
+   "id": "mac-and-cheese-med-bacon-og-porrer-98004555",
+   "name": "Mac and cheese med bacon og porrer",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/mac-and-cheese-med-bacon-og-porrer-98004555"
+  },
+  {
+   "group": "Aftensmad",
+   "id": "enchiladas-med-tomatsauce-og-hytteost-98001179",
+   "name": "Enchiladas med tomatsauce og hytteost",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/enchiladas-med-tomatsauce-og-hytteost-98001179"
+  },
+  {
+   "group": "Aftensmad",
+   "id": "melanzane-alla-parmigiana-98004335",
+   "name": "Melanzane alla parmigiana ",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/melanzane-alla-parmigiana-98004335"
+  },
+  {
+   "group": "Aftensmad",
+   "id": "hokkaidosuppe-98000734",
+   "name": "Hokkaidosuppe",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/hokkaidosuppe-98000734"
+  },
+  {
+   "group": "Aftensmad",
+   "id": "gnocchi-med-mozzarella-98001579",
+   "name": "Gnocchi med mozzarella",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/gnocchi-med-mozzarella-98001579"
+  },
+  {
+   "group": "Aftensmad",
+   "id": "bagt-tomatsuppe-hjemmelavede-croutoner-98004277",
+   "name": "Bagt tomatsuppe med croutoner",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/bagt-tomatsuppe-hjemmelavede-croutoner-98004277"
+  },
+  {
+   "group": "Aftensmad",
+   "id": "skinkestang-med-butterdej-98004417",
+   "name": "Skinkestang med butterdej",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/skinkestang-med-butterdej-98004417"
+  },
+  {
+   "group": "Aftensmad",
+   "id": "samosa-krydret-fyld-myntedip-98003851",
+   "name": "Samosa med grøntsagsfyld",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/samosa-krydret-fyld-myntedip-98003851"
+  }
+ ],
+ "args": [
+  [
+   "Under 30 min"
+  ],
+  "Madpakke",
+  20
+ ],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   ".ASPXAUTH": "auth-1"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "recipes_by_tag",
+ "name": "by_tag_under_30_madpakke",
+ "requests": [
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": {
+    "AppInstalled": false,
+    "CheckForExistingProducts": true,
+    "DoMerge": true,
+    "Password": "hemmeligt",
+    "SaveExistingBasket": false,
+    "Username": "kunde@example.com"
+   },
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "content-type": "application/json",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/login"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "skip",
+     "0"
+    ],
+    [
+     "take",
+     "1"
+    ]
+   ],
+   "url": "https://webapi.prod.knl.nemlig.it/productbff/api/web/meals/allRecipes"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "skip",
+     "0"
+    ],
+    [
+     "take",
+     "20"
+    ],
+    [
+     "filters",
+     "under-30"
+    ],
+    [
+     "categoryPath",
+     "madpakke"
+    ]
+   ],
+   "url": "https://webapi.prod.knl.nemlig.it/productbff/api/web/meals/allRecipes"
+  }
+ ],
+ "session_after": {
+  ".ASPXAUTH": "auth-1"
+ },
+ "store": "nemlig"
+}

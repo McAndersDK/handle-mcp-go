@@ -1,0 +1,26 @@
+{
+ "args": [],
+ "env": {},
+ "error": {
+  "message": "Login til bilkatogo er udløbet. Kør i en terminal: handle-mcp login bilkatogo",
+  "type": "StoreError"
+ },
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   "other": "x"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "session": {
+   "other": "x"
+  }
+ },
+ "login": "no_token",
+ "method": "get_cart",
+ "name": "cart_session_without_token",
+ "requests": [],
+ "session_after": null,
+ "store": "bilkatogo"
+}

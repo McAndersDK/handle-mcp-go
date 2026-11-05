@@ -1,0 +1,50 @@
+{
+ "args": [],
+ "env": {},
+ "error": {
+  "message": "Login til bilkatogo er udløbet. Kør i en terminal: handle-mcp login bilkatogo",
+  "type": "StoreError"
+ },
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   "login_token": "st2.dead"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "session": {
+   "login_token": "st2.dead"
+  }
+ },
+ "login": "dead_session",
+ "method": "get_cart",
+ "name": "cart_dead_session",
+ "requests": [
+  {
+   "body": [
+    [
+     "apiKey",
+     "3_tA6BbV434FQqN73HnUG1KA3qFv8KiG4OqLu9eWPh7sKRqRizH5Vfv5Larmgrb4I2"
+    ],
+    [
+     "login_token",
+     "st2.dead"
+    ],
+    [
+     "expiration",
+     "86400"
+    ]
+   ],
+   "cookies": [],
+   "headers": {
+    "content-type": "application/x-www-form-urlencoded"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://accounts.eu1.gigya.com/accounts.getJWT"
+  }
+ ],
+ "session_after": null,
+ "store": "bilkatogo"
+}

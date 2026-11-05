@@ -1,0 +1,3751 @@
+{
+ "cases": [
+  {
+   "args": {},
+   "lines": {
+    "106593": {
+     "ingredients": [
+      "Agurk"
+     ],
+     "name": "Agurk øko.",
+     "quantity": 2
+    },
+    "2301108": {
+     "ingredients": [
+      "Rødløg"
+     ],
+     "name": "Rødløg",
+     "quantity": 1
+    },
+    "5026536": {
+     "ingredients": [
+      "Hakket grise- og kalvekød"
+     ],
+     "name": "Hakket 8-12%",
+     "quantity": 2
+    }
+   },
+   "name": "default",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Iceberg",
+     "name": "Iceberg",
+     "reason": "udsolgt"
+    },
+    {
+     "ingredient": "Salt",
+     "name": "Salt",
+     "reason": "har du (butikken regner med det)"
+    },
+    {
+     "ingredient": "Olivenolie",
+     "name": "Olivenolie",
+     "reason": "har du (butikken regner med det)"
+    }
+   ]
+  },
+  {
+   "args": {
+    "skip": [
+     "agurk"
+    ]
+   },
+   "lines": {
+    "2301108": {
+     "ingredients": [
+      "Rødløg"
+     ],
+     "name": "Rødløg",
+     "quantity": 1
+    },
+    "5026536": {
+     "ingredients": [
+      "Hakket grise- og kalvekød"
+     ],
+     "name": "Hakket 8-12%",
+     "quantity": 2
+    }
+   },
+   "name": "skip_by_name",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Agurk",
+     "name": "Agurk øko.",
+     "reason": "fravalgt"
+    },
+    {
+     "ingredient": "Iceberg",
+     "name": "Iceberg",
+     "reason": "udsolgt"
+    },
+    {
+     "ingredient": "Salt",
+     "name": "Salt",
+     "reason": "har du (butikken regner med det)"
+    },
+    {
+     "ingredient": "Olivenolie",
+     "name": "Olivenolie",
+     "reason": "har du (butikken regner med det)"
+    }
+   ]
+  },
+  {
+   "args": {
+    "skip": [
+     "  HAKKET GRISE- OG KALVEKØD "
+    ]
+   },
+   "lines": {
+    "106593": {
+     "ingredients": [
+      "Agurk"
+     ],
+     "name": "Agurk øko.",
+     "quantity": 2
+    },
+    "2301108": {
+     "ingredients": [
+      "Rødløg"
+     ],
+     "name": "Rødløg",
+     "quantity": 1
+    }
+   },
+   "name": "skip_by_name_with_spaces_and_case",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Hakket grise- og kalvekød",
+     "name": "Hakket 8-12%",
+     "reason": "fravalgt"
+    },
+    {
+     "ingredient": "Iceberg",
+     "name": "Iceberg",
+     "reason": "udsolgt"
+    },
+    {
+     "ingredient": "Salt",
+     "name": "Salt",
+     "reason": "har du (butikken regner med det)"
+    },
+    {
+     "ingredient": "Olivenolie",
+     "name": "Olivenolie",
+     "reason": "har du (butikken regner med det)"
+    }
+   ]
+  },
+  {
+   "args": {
+    "skip": [
+     "106593",
+     "2301108"
+    ]
+   },
+   "lines": {
+    "5026536": {
+     "ingredients": [
+      "Hakket grise- og kalvekød"
+     ],
+     "name": "Hakket 8-12%",
+     "quantity": 2
+    }
+   },
+   "name": "skip_by_id",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Rødløg",
+     "name": "Rødløg",
+     "reason": "fravalgt"
+    },
+    {
+     "ingredient": "Agurk",
+     "name": "Agurk øko.",
+     "reason": "fravalgt"
+    },
+    {
+     "ingredient": "Iceberg",
+     "name": "Iceberg",
+     "reason": "udsolgt"
+    },
+    {
+     "ingredient": "Salt",
+     "name": "Salt",
+     "reason": "har du (butikken regner med det)"
+    },
+    {
+     "ingredient": "Olivenolie",
+     "name": "Olivenolie",
+     "reason": "har du (butikken regner med det)"
+    }
+   ]
+  },
+  {
+   "args": {
+    "skip": [
+     "Salt"
+    ]
+   },
+   "lines": {
+    "106593": {
+     "ingredients": [
+      "Agurk"
+     ],
+     "name": "Agurk øko.",
+     "quantity": 2
+    },
+    "2301108": {
+     "ingredients": [
+      "Rødløg"
+     ],
+     "name": "Rødløg",
+     "quantity": 1
+    },
+    "5026536": {
+     "ingredients": [
+      "Hakket grise- og kalvekød"
+     ],
+     "name": "Hakket 8-12%",
+     "quantity": 2
+    }
+   },
+   "name": "skip_have_at_home",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Iceberg",
+     "name": "Iceberg",
+     "reason": "udsolgt"
+    },
+    {
+     "ingredient": "Salt",
+     "name": "Salt",
+     "reason": "fravalgt"
+    },
+    {
+     "ingredient": "Olivenolie",
+     "name": "Olivenolie",
+     "reason": "har du (butikken regner med det)"
+    }
+   ]
+  },
+  {
+   "args": {
+    "skip": [
+     "Iceberg"
+    ]
+   },
+   "lines": {
+    "106593": {
+     "ingredients": [
+      "Agurk"
+     ],
+     "name": "Agurk øko.",
+     "quantity": 2
+    },
+    "2301108": {
+     "ingredients": [
+      "Rødløg"
+     ],
+     "name": "Rødløg",
+     "quantity": 1
+    },
+    "5026536": {
+     "ingredients": [
+      "Hakket grise- og kalvekød"
+     ],
+     "name": "Hakket 8-12%",
+     "quantity": 2
+    }
+   },
+   "name": "skip_sold_out",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Iceberg",
+     "name": "Iceberg",
+     "reason": "fravalgt"
+    },
+    {
+     "ingredient": "Salt",
+     "name": "Salt",
+     "reason": "har du (butikken regner med det)"
+    },
+    {
+     "ingredient": "Olivenolie",
+     "name": "Olivenolie",
+     "reason": "har du (butikken regner med det)"
+    }
+   ]
+  },
+  {
+   "args": {
+    "swap": {
+     "5026536": "5062387"
+    }
+   },
+   "lines": {
+    "106593": {
+     "ingredients": [
+      "Agurk"
+     ],
+     "name": "Agurk øko.",
+     "quantity": 2
+    },
+    "2301108": {
+     "ingredients": [
+      "Rødløg"
+     ],
+     "name": "Rødløg",
+     "quantity": 1
+    },
+    "5062387": {
+     "ingredients": [
+      "Hakket grise- og kalvekød"
+     ],
+     "name": "Hakket 4-7%",
+     "quantity": 2
+    }
+   },
+   "name": "swap_by_id",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Iceberg",
+     "name": "Iceberg",
+     "reason": "udsolgt"
+    },
+    {
+     "ingredient": "Salt",
+     "name": "Salt",
+     "reason": "har du (butikken regner med det)"
+    },
+    {
+     "ingredient": "Olivenolie",
+     "name": "Olivenolie",
+     "reason": "har du (butikken regner med det)"
+    }
+   ]
+  },
+  {
+   "args": {
+    "swap": {
+     "hakket grise- og kalvekød": "5062387"
+    }
+   },
+   "lines": {
+    "106593": {
+     "ingredients": [
+      "Agurk"
+     ],
+     "name": "Agurk øko.",
+     "quantity": 2
+    },
+    "2301108": {
+     "ingredients": [
+      "Rødløg"
+     ],
+     "name": "Rødløg",
+     "quantity": 1
+    },
+    "5062387": {
+     "ingredients": [
+      "Hakket grise- og kalvekød"
+     ],
+     "name": "Hakket 4-7%",
+     "quantity": 2
+    }
+   },
+   "name": "swap_by_name",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Iceberg",
+     "name": "Iceberg",
+     "reason": "udsolgt"
+    },
+    {
+     "ingredient": "Salt",
+     "name": "Salt",
+     "reason": "har du (butikken regner med det)"
+    },
+    {
+     "ingredient": "Olivenolie",
+     "name": "Olivenolie",
+     "reason": "har du (butikken regner med det)"
+    }
+   ]
+  },
+  {
+   "args": {
+    "swap": {
+     "5026536": " 5062387"
+    }
+   },
+   "error": {
+    "message": " 5062387 er ikke et alternativ til Hakket grise- og kalvekød: 5062387 Hakket 4-7%.",
+    "type": "PlanError"
+   },
+   "name": "swap_int_like_id",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   }
+  },
+  {
+   "args": {
+    "include": [
+     "Olivenolie"
+    ]
+   },
+   "lines": {
+    "106593": {
+     "ingredients": [
+      "Agurk"
+     ],
+     "name": "Agurk øko.",
+     "quantity": 2
+    },
+    "2301108": {
+     "ingredients": [
+      "Rødløg"
+     ],
+     "name": "Rødløg",
+     "quantity": 1
+    },
+    "5026536": {
+     "ingredients": [
+      "Hakket grise- og kalvekød"
+     ],
+     "name": "Hakket 8-12%",
+     "quantity": 2
+    },
+    "5049714": {
+     "ingredients": [
+      "Olivenolie"
+     ],
+     "name": "Olivenolie",
+     "quantity": 1
+    }
+   },
+   "name": "include_have_at_home",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Iceberg",
+     "name": "Iceberg",
+     "reason": "udsolgt"
+    },
+    {
+     "ingredient": "Salt",
+     "name": "Salt",
+     "reason": "har du (butikken regner med det)"
+    }
+   ]
+  },
+  {
+   "args": {
+    "include": [
+     "5602504",
+     "5049714"
+    ]
+   },
+   "lines": {
+    "106593": {
+     "ingredients": [
+      "Agurk"
+     ],
+     "name": "Agurk øko.",
+     "quantity": 2
+    },
+    "2301108": {
+     "ingredients": [
+      "Rødløg"
+     ],
+     "name": "Rødløg",
+     "quantity": 1
+    },
+    "5026536": {
+     "ingredients": [
+      "Hakket grise- og kalvekød"
+     ],
+     "name": "Hakket 8-12%",
+     "quantity": 2
+    },
+    "5049714": {
+     "ingredients": [
+      "Olivenolie"
+     ],
+     "name": "Olivenolie",
+     "quantity": 1
+    },
+    "5602504": {
+     "ingredients": [
+      "Salt"
+     ],
+     "name": "Salt",
+     "quantity": 1
+    }
+   },
+   "name": "include_by_id",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Iceberg",
+     "name": "Iceberg",
+     "reason": "udsolgt"
+    }
+   ]
+  },
+  {
+   "args": {
+    "include": [
+     "Agurk"
+    ]
+   },
+   "lines": {
+    "106593": {
+     "ingredients": [
+      "Agurk"
+     ],
+     "name": "Agurk øko.",
+     "quantity": 2
+    },
+    "2301108": {
+     "ingredients": [
+      "Rødløg"
+     ],
+     "name": "Rødløg",
+     "quantity": 1
+    },
+    "5026536": {
+     "ingredients": [
+      "Hakket grise- og kalvekød"
+     ],
+     "name": "Hakket 8-12%",
+     "quantity": 2
+    }
+   },
+   "name": "include_normal_item",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Iceberg",
+     "name": "Iceberg",
+     "reason": "udsolgt"
+    },
+    {
+     "ingredient": "Salt",
+     "name": "Salt",
+     "reason": "har du (butikken regner med det)"
+    },
+    {
+     "ingredient": "Olivenolie",
+     "name": "Olivenolie",
+     "reason": "har du (butikken regner med det)"
+    }
+   ]
+  },
+  {
+   "args": {
+    "include": [
+     "Olivenolie"
+    ],
+    "skip": [
+     "agurk"
+    ],
+    "swap": {
+     "5026536": "5062387"
+    }
+   },
+   "lines": {
+    "2301108": {
+     "ingredients": [
+      "Rødløg"
+     ],
+     "name": "Rødløg",
+     "quantity": 1
+    },
+    "5049714": {
+     "ingredients": [
+      "Olivenolie"
+     ],
+     "name": "Olivenolie",
+     "quantity": 1
+    },
+    "5062387": {
+     "ingredients": [
+      "Hakket grise- og kalvekød"
+     ],
+     "name": "Hakket 4-7%",
+     "quantity": 2
+    }
+   },
+   "name": "skip_swap_include",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Agurk",
+     "name": "Agurk øko.",
+     "reason": "fravalgt"
+    },
+    {
+     "ingredient": "Iceberg",
+     "name": "Iceberg",
+     "reason": "udsolgt"
+    },
+    {
+     "ingredient": "Salt",
+     "name": "Salt",
+     "reason": "har du (butikken regner med det)"
+    }
+   ]
+  },
+  {
+   "args": {
+    "skip": [
+     "Hakket grise- og kalvekød"
+    ],
+    "swap": {
+     "5026536": "5062387"
+    }
+   },
+   "lines": {
+    "106593": {
+     "ingredients": [
+      "Agurk"
+     ],
+     "name": "Agurk øko.",
+     "quantity": 2
+    },
+    "2301108": {
+     "ingredients": [
+      "Rødløg"
+     ],
+     "name": "Rødløg",
+     "quantity": 1
+    }
+   },
+   "name": "skip_and_swap_same_item",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Hakket grise- og kalvekød",
+     "name": "Hakket 4-7%",
+     "reason": "fravalgt"
+    },
+    {
+     "ingredient": "Iceberg",
+     "name": "Iceberg",
+     "reason": "udsolgt"
+    },
+    {
+     "ingredient": "Salt",
+     "name": "Salt",
+     "reason": "har du (butikken regner med det)"
+    },
+    {
+     "ingredient": "Olivenolie",
+     "name": "Olivenolie",
+     "reason": "har du (butikken regner med det)"
+    }
+   ]
+  },
+  {
+   "args": {
+    "swap": {
+     "Hakket": "2"
+    }
+   },
+   "lines": {},
+   "name": "swap_to_sold_out_alternative",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [
+       {
+        "available": false,
+        "id": "2",
+        "name": "4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 1,
+        "size": null
+       },
+       {
+        "available": true,
+        "id": "3",
+        "name": "x",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 3,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket",
+      "product": {
+       "available": true,
+       "id": "1",
+       "name": "8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Hakket",
+     "name": "4-7%",
+     "reason": "udsolgt"
+    }
+   ]
+  },
+  {
+   "args": {
+    "swap": {
+     "Hakket": "3"
+    }
+   },
+   "lines": {
+    "3": {
+     "ingredients": [
+      "Hakket"
+     ],
+     "name": "x",
+     "quantity": 3
+    }
+   },
+   "name": "swap_to_second_alternative",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [
+       {
+        "available": false,
+        "id": "2",
+        "name": "4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 1,
+        "size": null
+       },
+       {
+        "available": true,
+        "id": "3",
+        "name": "x",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 3,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket",
+      "product": {
+       "available": true,
+       "id": "1",
+       "name": "8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": []
+  },
+  {
+   "args": {},
+   "lines": {
+    "10": {
+     "ingredients": [
+      "Løg",
+      "Rødløg"
+     ],
+     "name": "Løg",
+     "quantity": 5
+    }
+   },
+   "name": "same_product_twice_adds_up",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Løg",
+      "product": {
+       "available": true,
+       "id": "10",
+       "name": "Løg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "10",
+       "name": "Løg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 3,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "11",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Salt",
+     "name": "Salt",
+     "reason": "har du (butikken regner med det)"
+    }
+   ]
+  },
+  {
+   "args": {},
+   "lines": {},
+   "name": "only_have_at_home",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Salt",
+     "name": "Salt",
+     "reason": "har du (butikken regner med det)"
+    },
+    {
+     "ingredient": "Olivenolie",
+     "name": "Olivenolie",
+     "reason": "har du (butikken regner med det)"
+    }
+   ]
+  },
+  {
+   "args": {},
+   "lines": {},
+   "name": "no_items",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": []
+  },
+  {
+   "args": {
+    "include": null,
+    "skip": null,
+    "swap": null
+   },
+   "lines": {
+    "106593": {
+     "ingredients": [
+      "Agurk"
+     ],
+     "name": "Agurk øko.",
+     "quantity": 2
+    },
+    "2301108": {
+     "ingredients": [
+      "Rødløg"
+     ],
+     "name": "Rødløg",
+     "quantity": 1
+    },
+    "5026536": {
+     "ingredients": [
+      "Hakket grise- og kalvekød"
+     ],
+     "name": "Hakket 8-12%",
+     "quantity": 2
+    }
+   },
+   "name": "none_arguments",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   },
+   "skipped": [
+    {
+     "ingredient": "Iceberg",
+     "name": "Iceberg",
+     "reason": "udsolgt"
+    },
+    {
+     "ingredient": "Salt",
+     "name": "Salt",
+     "reason": "har du (butikken regner med det)"
+    },
+    {
+     "ingredient": "Olivenolie",
+     "name": "Olivenolie",
+     "reason": "har du (butikken regner med det)"
+    }
+   ]
+  },
+  {
+   "args": {
+    "skip": [
+     "Pizza"
+    ]
+   },
+   "error": {
+    "message": "Opskriften har ikke 'Pizza'. Ingredienser: Rødløg, Hakket grise- og kalvekød, Agurk, Iceberg, Salt, Olivenolie.",
+    "type": "PlanError"
+   },
+   "name": "error_skip_unknown",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   }
+  },
+  {
+   "args": {
+    "include": [
+     "Peber"
+    ]
+   },
+   "error": {
+    "message": "Opskriften har ikke 'Peber'. Ingredienser: Rødløg, Hakket grise- og kalvekød, Agurk, Iceberg, Salt, Olivenolie.",
+    "type": "PlanError"
+   },
+   "name": "error_include_unknown",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   }
+  },
+  {
+   "args": {
+    "swap": {
+     "Pizza": "1"
+    }
+   },
+   "error": {
+    "message": "Opskriften har ikke 'Pizza'. Ingredienser: Rødløg, Hakket grise- og kalvekød, Agurk, Iceberg, Salt, Olivenolie.",
+    "type": "PlanError"
+   },
+   "name": "error_swap_unknown_ingredient",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   }
+  },
+  {
+   "args": {
+    "swap": {
+     "Rødløg": "999"
+    }
+   },
+   "error": {
+    "message": "999 er ikke et alternativ til Rødløg: ingen.",
+    "type": "PlanError"
+   },
+   "name": "error_swap_not_an_alternative",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   }
+  },
+  {
+   "args": {
+    "swap": {
+     "106593": "5026536"
+    }
+   },
+   "error": {
+    "message": "5026536 er ikke et alternativ til Agurk: ingen.",
+    "type": "PlanError"
+   },
+   "name": "error_swap_item_without_alternatives_by_id",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   }
+  },
+  {
+   "args": {
+    "include": [
+     "Peber"
+    ],
+    "skip": [
+     "agurk",
+     "Pizza"
+    ]
+   },
+   "error": {
+    "message": "Opskriften har ikke 'Pizza'. Ingredienser: Rødløg, Hakket grise- og kalvekød, Agurk, Iceberg, Salt, Olivenolie.",
+    "type": "PlanError"
+   },
+   "name": "error_first_unknown_wins",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   }
+  },
+  {
+   "args": {
+    "skip": [
+     ""
+    ]
+   },
+   "error": {
+    "message": "Opskriften har ikke ''. Ingredienser: Rødløg, Hakket grise- og kalvekød, Agurk, Iceberg, Salt, Olivenolie.",
+    "type": "PlanError"
+   },
+   "name": "error_empty_key",
+   "recipe": {
+    "description": null,
+    "id": "kebabfad-98001303",
+    "image": null,
+    "ingredients": [],
+    "ingredients_persons": null,
+    "items": [
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Rødløg",
+      "product": {
+       "available": true,
+       "id": "2301108",
+       "name": "Rødløg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [
+       {
+        "available": true,
+        "id": "5062387",
+        "name": "Hakket 4-7%",
+        "offer_text": null,
+        "price": "10.00",
+        "quantity": 2,
+        "size": null
+       }
+      ],
+      "have_at_home": false,
+      "ingredient": "Hakket grise- og kalvekød",
+      "product": {
+       "available": true,
+       "id": "5026536",
+       "name": "Hakket 8-12%",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Agurk",
+      "product": {
+       "available": true,
+       "id": "106593",
+       "name": "Agurk øko.",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": false,
+      "ingredient": "Iceberg",
+      "product": {
+       "available": false,
+       "id": "5004705",
+       "name": "Iceberg",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 2,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Salt",
+      "product": {
+       "available": true,
+       "id": "5602504",
+       "name": "Salt",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     },
+     {
+      "alternatives": [],
+      "have_at_home": true,
+      "ingredient": "Olivenolie",
+      "product": {
+       "available": true,
+       "id": "5049714",
+       "name": "Olivenolie",
+       "offer_text": null,
+       "price": "10.00",
+       "quantity": 1,
+       "size": null
+      }
+     }
+    ],
+    "max_persons": null,
+    "method": [],
+    "min_persons": null,
+    "name": "Kebabfad",
+    "persons": 6,
+    "store": "fake",
+    "time": null,
+    "tip": null,
+    "total": "0.00",
+    "url": "https://example.com/kebabfad"
+   }
+  }
+ ],
+ "in_cart": {
+  "cart": {
+   "lines": [
+    {
+     "line_total": "30.00",
+     "name": "Rødløg",
+     "product_id": "2301108",
+     "quantity": 3
+    },
+    {
+     "line_total": "0.00",
+     "name": "x",
+     "product_id": 5,
+     "quantity": 1
+    }
+   ]
+  },
+  "output": {
+   "2301108": 3,
+   "5": 1
+  }
+ },
+ "in_cart_empty": {
+  "cart": {},
+  "output": {}
+ },
+ "in_cart_lines_null": {
+  "cart": {
+   "lines": null
+  },
+  "output": {}
+ },
+ "report": {
+  "before": {
+   "2301108": 3
+  },
+  "lines": {
+   "106593": {
+    "ingredients": [
+     "Agurk"
+    ],
+    "name": "Agurk øko.",
+    "quantity": 2
+   },
+   "2301108": {
+    "ingredients": [
+     "Rødløg"
+    ],
+    "name": "Rødløg",
+    "quantity": 1
+   },
+   "5026536": {
+    "ingredients": [
+     "Hakket grise- og kalvekød"
+    ],
+    "name": "Hakket 8-12%",
+    "quantity": 2
+   }
+  },
+  "output": [
+   {
+    "added": 1,
+    "after": 4,
+    "before": 3,
+    "ingredients": [
+     "Rødløg"
+    ],
+    "message": null,
+    "name": "Rødløg",
+    "ok": true,
+    "product_id": "2301108"
+   },
+   {
+    "added": 2,
+    "after": 1,
+    "before": 0,
+    "ingredients": [
+     "Hakket grise- og kalvekød"
+    ],
+    "message": "kun 1",
+    "name": "Hakket 8-12%",
+    "ok": false,
+    "product_id": "5026536"
+   },
+   {
+    "added": 2,
+    "after": null,
+    "before": 0,
+    "ingredients": [
+     "Agurk"
+    ],
+    "message": null,
+    "name": "Agurk øko.",
+    "ok": false,
+    "product_id": "106593"
+   }
+  ],
+  "results": [
+   {
+    "applied": 4,
+    "message": null,
+    "ok": true,
+    "product_id": "2301108",
+    "requested": 4
+   },
+   {
+    "applied": 1,
+    "message": "kun 1",
+    "ok": false,
+    "product_id": "5026536",
+    "requested": 2
+   }
+  ]
+ },
+ "report_no_results": {
+  "before": {},
+  "lines": {
+   "106593": {
+    "ingredients": [
+     "Agurk"
+    ],
+    "name": "Agurk øko.",
+    "quantity": 2
+   },
+   "2301108": {
+    "ingredients": [
+     "Rødløg"
+    ],
+    "name": "Rødløg",
+    "quantity": 1
+   },
+   "5026536": {
+    "ingredients": [
+     "Hakket grise- og kalvekød"
+    ],
+    "name": "Hakket 8-12%",
+    "quantity": 2
+   }
+  },
+  "output": [
+   {
+    "added": 1,
+    "after": null,
+    "before": 0,
+    "ingredients": [
+     "Rødløg"
+    ],
+    "message": null,
+    "name": "Rødløg",
+    "ok": false,
+    "product_id": "2301108"
+   },
+   {
+    "added": 2,
+    "after": null,
+    "before": 0,
+    "ingredients": [
+     "Hakket grise- og kalvekød"
+    ],
+    "message": null,
+    "name": "Hakket 8-12%",
+    "ok": false,
+    "product_id": "5026536"
+   },
+   {
+    "added": 2,
+    "after": null,
+    "before": 0,
+    "ingredients": [
+     "Agurk"
+    ],
+    "message": null,
+    "name": "Agurk øko.",
+    "ok": false,
+    "product_id": "106593"
+   }
+  ]
+ }
+}

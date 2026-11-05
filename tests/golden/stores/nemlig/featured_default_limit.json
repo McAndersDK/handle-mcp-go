@@ -1,0 +1,284 @@
+{
+ "answer": [
+  {
+   "group": "Mad i fad",
+   "id": "hakkeboeffer-i-paprikafad-98004606",
+   "name": "Hakkebøffer i paprikafad med ovnfritter",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/hakkeboeffer-i-paprikafad-98004606"
+  },
+  {
+   "group": "Mad i fad",
+   "id": "kebabfad-med-fladbrod-98001303",
+   "name": "Kebabfad med fladbrød og hvidløgsdressing",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/kebabfad-med-fladbrod-98001303"
+  },
+  {
+   "group": "Mad i fad",
+   "id": "roed-karry-laks-ris-i-et-fad-98004164",
+   "name": "Rød karry med laks og ris - i ét fad",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/roed-karry-laks-ris-i-et-fad-98004164"
+  },
+  {
+   "group": "Mad i fad",
+   "id": "marry-me-chicken-lasagne-98001260",
+   "name": "Marry me chicken lasagne",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/marry-me-chicken-lasagne-98001260"
+  },
+  {
+   "group": "Cremet pasta",
+   "id": "pappardelle-i-bacon-broccoli-floedesauce-98004607",
+   "name": "Pappardelle i bacon-broccoli flødesauce",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/pappardelle-i-bacon-broccoli-floedesauce-98004607"
+  },
+  {
+   "group": "Cremet pasta",
+   "id": "salsiccia-pasta-98004316",
+   "name": "Cremet pasta med salsiccia",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/salsiccia-pasta-98004316"
+  },
+  {
+   "group": "Cremet pasta",
+   "id": "mac-and-cheese-med-bacon-og-porrer-98004555",
+   "name": "Mac and cheese med bacon og porrer",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/mac-and-cheese-med-bacon-og-porrer-98004555"
+  },
+  {
+   "group": "Cremet pasta",
+   "id": "ovnbagt-laks-med-frisk-pasta-i-citronsauce-98000860",
+   "name": "Ovnbagt laks med frisk pasta i citronsauce",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/ovnbagt-laks-med-frisk-pasta-i-citronsauce-98000860"
+  },
+  {
+   "group": "Et mexi-twist",
+   "id": "one-pot-enchilada-med-smeltet-ost-98004476",
+   "name": "One pot enchilada med smeltet ost",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/one-pot-enchilada-med-smeltet-ost-98004476"
+  },
+  {
+   "group": "Et mexi-twist",
+   "id": "hotdog-salsa-boennesalat-98001348",
+   "name": "Hotdogs med salsa, guacamole og bønnesalat",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/hotdog-salsa-boennesalat-98001348"
+  },
+  {
+   "group": "Et mexi-twist",
+   "id": "mexi-salat-krydret-oksekoed-98000937",
+   "name": "Mexisalat med krydret oksekød",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/mexi-salat-krydret-oksekoed-98000937"
+  },
+  {
+   "group": "Et mexi-twist",
+   "id": "lune-fajitas-med-kylling-og-avocado-98002880",
+   "name": "Lune fajitas med kylling og grønt",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/lune-fajitas-med-kylling-og-avocado-98002880"
+  },
+  {
+   "group": "Suppe",
+   "id": "groenkaalssuppe-med-bacon-og-bloede-loeg-98002658",
+   "name": "Grønkålssuppe",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/groenkaalssuppe-med-bacon-og-bloede-loeg-98002658"
+  },
+  {
+   "group": "Suppe",
+   "id": "ingefaer-gulerodssuppe-98000576",
+   "name": "Gulerodssuppe med ingefær og chorizo",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/ingefaer-gulerodssuppe-98000576"
+  },
+  {
+   "group": "Suppe",
+   "id": "suppe-kylling-kartofler-roedbede-98004085",
+   "name": "Kyllingesuppe med rødbeder og kartofler",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/suppe-kylling-kartofler-roedbede-98004085"
+  },
+  {
+   "group": "Suppe",
+   "id": "nem-gnocchi-suppe-98004613",
+   "name": "Nem gnocchisuppe",
+   "persons": null,
+   "store": "nemlig",
+   "time": null,
+   "url": "https://www.nemlig.com/maaltider/opskrift/nem-gnocchi-suppe-98004613"
+  }
+ ],
+ "args": [],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   ".ASPXAUTH": "auth-1"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "featured_recipes",
+ "name": "featured_default_limit",
+ "requests": [
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": {
+    "AppInstalled": false,
+    "CheckForExistingProducts": true,
+    "DoMerge": true,
+    "Password": "hemmeligt",
+    "SaveExistingBasket": false,
+    "Username": "kunde@example.com"
+   },
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-1",
+    "content-type": "application/json",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/login"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/Token"
+  },
+  {
+   "body": null,
+   "cookies": [
+    ".ASPXAUTH"
+   ],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [],
+   "url": "https://www.nemlig.com/webapi/AntiForgery"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer bearer-2",
+    "device-size": "desktop",
+    "platform": "web",
+    "referer": "https://www.nemlig.com/",
+    "user-agent": "Mozilla/5.0 (handle-mcp)",
+    "version": "11.201.0",
+    "x-xsrf-token": "xsrf-1"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "path",
+     "/maaltider"
+    ]
+   ],
+   "url": "https://webapi.prod.knl.nemlig.it/productbff/api/web/page"
+  }
+ ],
+ "session_after": {
+  ".ASPXAUTH": "auth-1"
+ },
+ "store": "nemlig"
+}

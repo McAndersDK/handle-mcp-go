@@ -1,0 +1,20 @@
+{
+ "args": [],
+ "env": {},
+ "error": {
+  "message": "Ugyldigt login i nøgleringen. Kør: handle-mcp login bilkatogo",
+  "type": "StoreError"
+ },
+ "keychain_after": {
+  "email": "kunde@example.com"
+ },
+ "keychain_before": {
+  "email": "kunde@example.com"
+ },
+ "login": "invalid",
+ "method": "get_cart",
+ "name": "cart_invalid_keychain",
+ "requests": [],
+ "session_after": null,
+ "store": "bilkatogo"
+}

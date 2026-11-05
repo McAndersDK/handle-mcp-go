@@ -1,0 +1,204 @@
+{
+ "answer": [
+  {
+   "applied": 1,
+   "message": null,
+   "ok": true,
+   "product_id": "a",
+   "requested": 1
+  },
+  {
+   "applied": 0,
+   "message": null,
+   "ok": true,
+   "product_id": "b",
+   "requested": 0
+  },
+  {
+   "applied": 50,
+   "message": null,
+   "ok": true,
+   "product_id": "c",
+   "requested": 50
+  }
+ ],
+ "args": [
+  {
+   "a": 1,
+   "b": 0,
+   "c": 50
+  }
+ ],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   "login_token": "st2.fake-login-token"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "set_quantities",
+ "name": "set_sends_absolute_count_per_product",
+ "requests": [
+  {
+   "body": [
+    [
+     "loginID",
+     "kunde@example.com"
+    ],
+    [
+     "password",
+     "hemmeligt"
+    ],
+    [
+     "apiKey",
+     "3_tA6BbV434FQqN73HnUG1KA3qFv8KiG4OqLu9eWPh7sKRqRizH5Vfv5Larmgrb4I2"
+    ],
+    [
+     "httpStatusCodes",
+     "true"
+    ]
+   ],
+   "cookies": [],
+   "headers": {
+    "content-type": "application/x-www-form-urlencoded"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://accounts.eu1.gigya.com/accounts.login"
+  },
+  {
+   "body": [
+    [
+     "apiKey",
+     "3_tA6BbV434FQqN73HnUG1KA3qFv8KiG4OqLu9eWPh7sKRqRizH5Vfv5Larmgrb4I2"
+    ],
+    [
+     "login_token",
+     "st2.fake-login-token"
+    ],
+    [
+     "expiration",
+     "86400"
+    ]
+   ],
+   "cookies": [],
+   "headers": {
+    "content-type": "application/x-www-form-urlencoded"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://accounts.eu1.gigya.com/accounts.getJWT"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "jwt_token": "eyFake.jwt.token"
+   },
+   "method": "POST",
+   "params": [
+    [
+     "u",
+     "w"
+    ]
+   ],
+   "url": "https://api.bilkatogo.dk/api/auth/LoginJWT"
+  },
+  {
+   "body": null,
+   "cookies": [
+    "cart"
+   ],
+   "headers": {
+    "jwt_token": "eyFake.jwt.token"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "u",
+     "w"
+    ],
+    [
+     "productId",
+     "a"
+    ],
+    [
+     "count",
+     "1"
+    ],
+    [
+     "fullCart",
+     "0"
+    ]
+   ],
+   "url": "https://api.bilkatogo.dk/api/shop/v6/ChangeLineCount"
+  },
+  {
+   "body": null,
+   "cookies": [
+    "cart"
+   ],
+   "headers": {
+    "jwt_token": "eyFake.jwt.token"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "u",
+     "w"
+    ],
+    [
+     "productId",
+     "b"
+    ],
+    [
+     "count",
+     "0"
+    ],
+    [
+     "fullCart",
+     "0"
+    ]
+   ],
+   "url": "https://api.bilkatogo.dk/api/shop/v6/ChangeLineCount"
+  },
+  {
+   "body": null,
+   "cookies": [
+    "cart"
+   ],
+   "headers": {
+    "jwt_token": "eyFake.jwt.token"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "u",
+     "w"
+    ],
+    [
+     "productId",
+     "c"
+    ],
+    [
+     "count",
+     "50"
+    ],
+    [
+     "fullCart",
+     "0"
+    ]
+   ],
+   "url": "https://api.bilkatogo.dk/api/shop/v6/ChangeLineCount"
+  }
+ ],
+ "session_after": {
+  "login_token": "st2.fake-login-token"
+ },
+ "store": "bilkatogo"
+}

@@ -1,0 +1,322 @@
+{
+ "answer": [
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": "Mix",
+   "category": "Bananer",
+   "ean": "5712873461653",
+   "id": "18381",
+   "max_per_order": null,
+   "name": "Bananer",
+   "offer_text": "Mix 10 for 25,00",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "2.75",
+   "size": "1 stk",
+   "store": "bilkatogo",
+   "unit": "stk",
+   "unit_price": "2.75"
+  },
+  {
+   "available": true,
+   "before_price": "40.95",
+   "brand": "Dava",
+   "campaign": "Skarp pris",
+   "category": "Frilandsæg",
+   "ean": "5701607590233",
+   "id": "40258",
+   "max_per_order": null,
+   "name": "Frilandsæg S/M/L",
+   "offer_text": "Skarp pris",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "25.00",
+   "size": "10 stk",
+   "store": "bilkatogo",
+   "unit": "stk",
+   "unit_price": "2.50"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": "Tulip",
+   "campaign": "Mix",
+   "category": "Hamburgerryg i skiver",
+   "ean": "5707196154573",
+   "id": "21251",
+   "max_per_order": null,
+   "name": "Hamburgerryg i skiver",
+   "offer_text": "Mix 6 for 69,00",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "13.95",
+   "size": "90 g",
+   "store": "bilkatogo",
+   "unit": "kg",
+   "unit_price": "155.00"
+  },
+  {
+   "available": true,
+   "before_price": "21.95",
+   "brand": "Matilde",
+   "campaign": "Skarp pris",
+   "category": "Kakaomælk",
+   "ean": "5704062370846",
+   "id": "19668",
+   "max_per_order": null,
+   "name": "Kakaomælk 0,5% fedt",
+   "offer_text": "Skarp pris",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "10.00",
+   "size": "1 l",
+   "store": "bilkatogo",
+   "unit": "l",
+   "unit_price": "10.00"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": "Mix",
+   "category": "Pærer",
+   "ean": "5710405055844",
+   "id": "50998",
+   "max_per_order": null,
+   "name": "Pærer",
+   "offer_text": "Mix 10 for 25,00",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "3.00",
+   "size": "1 stk",
+   "store": "bilkatogo",
+   "unit": "stk",
+   "unit_price": "3.00"
+  },
+  {
+   "available": true,
+   "before_price": "24.95",
+   "brand": "Buko",
+   "campaign": "Skarp pris",
+   "category": "Flødeost",
+   "ean": "5760466101240",
+   "id": "19982",
+   "max_per_order": null,
+   "name": "Pikant flødeost 23% fedt",
+   "offer_text": "Skarp pris",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "18.00",
+   "size": "200 g",
+   "store": "bilkatogo",
+   "unit": "kg",
+   "unit_price": "90.00"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": "Mix",
+   "category": "Æbler",
+   "ean": "5710405055851",
+   "id": "18379",
+   "max_per_order": null,
+   "name": "Æbler",
+   "offer_text": "Mix 10 for 25,00",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "2.75",
+   "size": "1 stk",
+   "store": "bilkatogo",
+   "unit": "stk",
+   "unit_price": "2.75"
+  },
+  {
+   "available": true,
+   "before_price": "109.95",
+   "brand": "Pepsi",
+   "campaign": "Skarp pris",
+   "category": "Cola",
+   "ean": "5741000139769",
+   "id": "29575",
+   "max_per_order": null,
+   "name": "Pepsi Max",
+   "offer_text": "Skarp pris",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "64.95",
+   "size": "24 x 0.33 liter",
+   "store": "bilkatogo",
+   "unit": "l",
+   "unit_price": "8.20"
+  },
+  {
+   "available": true,
+   "before_price": null,
+   "brand": null,
+   "campaign": "Mix",
+   "category": "Kiwi",
+   "ean": "5711044363598",
+   "id": "40810",
+   "max_per_order": null,
+   "name": "Kiwi",
+   "offer_text": "Mix 10 for 25,00",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "2.75",
+   "size": "1 stk",
+   "store": "bilkatogo",
+   "unit": "stk",
+   "unit_price": "2.75"
+  },
+  {
+   "available": true,
+   "before_price": "30.95",
+   "brand": "Arla Klovborg",
+   "campaign": "Tilbud",
+   "category": "Danbo ost i skiver",
+   "ean": "5711953084676",
+   "id": "61096",
+   "max_per_order": null,
+   "name": "Danbo ost i skiver mellemlagret 45+",
+   "offer_text": "Tilbud, før 30,95 kr",
+   "offer_until": null,
+   "on_offer": true,
+   "price": "25.00",
+   "size": "240 g",
+   "store": "bilkatogo",
+   "unit": "kg",
+   "unit_price": "104.17"
+  }
+ ],
+ "args": [
+  10
+ ],
+ "env": {},
+ "keychain_after": {
+  "email": "kunde@example.com",
+  "session": {
+   "login_token": "st2.fake-login-token"
+  }
+ },
+ "keychain_before": {
+  "email": "kunde@example.com",
+  "password": "hemmeligt"
+ },
+ "login": "password",
+ "method": "offers",
+ "name": "offers_sid_1653",
+ "requests": [
+  {
+   "body": [
+    [
+     "loginID",
+     "kunde@example.com"
+    ],
+    [
+     "password",
+     "hemmeligt"
+    ],
+    [
+     "apiKey",
+     "3_tA6BbV434FQqN73HnUG1KA3qFv8KiG4OqLu9eWPh7sKRqRizH5Vfv5Larmgrb4I2"
+    ],
+    [
+     "httpStatusCodes",
+     "true"
+    ]
+   ],
+   "cookies": [],
+   "headers": {
+    "content-type": "application/x-www-form-urlencoded"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://accounts.eu1.gigya.com/accounts.login"
+  },
+  {
+   "body": [
+    [
+     "apiKey",
+     "3_tA6BbV434FQqN73HnUG1KA3qFv8KiG4OqLu9eWPh7sKRqRizH5Vfv5Larmgrb4I2"
+    ],
+    [
+     "login_token",
+     "st2.fake-login-token"
+    ],
+    [
+     "expiration",
+     "86400"
+    ]
+   ],
+   "cookies": [],
+   "headers": {
+    "content-type": "application/x-www-form-urlencoded"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://accounts.eu1.gigya.com/accounts.getJWT"
+  },
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {
+    "jwt_token": "eyFake.jwt.token"
+   },
+   "method": "POST",
+   "params": [
+    [
+     "u",
+     "w"
+    ]
+   ],
+   "url": "https://api.bilkatogo.dk/api/auth/LoginJWT"
+  },
+  {
+   "body": null,
+   "cookies": [
+    "cart"
+   ],
+   "headers": {
+    "jwt_token": "eyFake.jwt.token"
+   },
+   "method": "GET",
+   "params": [
+    [
+     "u",
+     "w"
+    ],
+    [
+     "extra",
+     "deliveryAddress,deliveryDate"
+    ]
+   ],
+   "url": "https://api.bilkatogo.dk/api/shop/v6/Cart"
+  },
+  {
+   "body": {
+    "requests": [
+     {
+      "indexName": "prod_BILKATOGO_PRODUCTS",
+      "params": "query=&hitsPerPage=10&removeWordsIfNoResults=allOptional&filters=isInOffer%3A1653+AND+isInAssortmentIn%3A1653+AND+nonsearchable%3Afalse&attributesToRetrieve=%5B%22name%22%2C+%22brand%22%2C+%22gtin%22%2C+%22netcontent%22%2C+%22productType%22%2C+%22deepestCategoryPath%22%2C+%22price%22%2C+%22storeData.1653%22%5D"
+     }
+    ]
+   },
+   "cookies": [],
+   "headers": {
+    "content-type": "application/json",
+    "x-algolia-api-key": "1deaf41c87e729779f7695c00f190cc9",
+    "x-algolia-application-id": "F9VBJLR1BK"
+   },
+   "method": "POST",
+   "params": [],
+   "url": "https://f9vbjlr1bk-dsn.algolia.net/1/indexes/*/queries"
+  }
+ ],
+ "session_after": {
+  "login_token": "st2.fake-login-token"
+ },
+ "store": "bilkatogo"
+}

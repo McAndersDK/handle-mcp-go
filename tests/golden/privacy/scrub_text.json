@@ -1,0 +1,311 @@
+{
+ "redacted": "[fjernet af handle-mcp]",
+ "strings": [
+  {
+   "input": "Kontakt anders@example.com om ordren",
+   "output": "Kontakt [fjernet af handle-mcp] om ordren"
+  },
+  {
+   "input": "Ring på +45 98 76 54 32",
+   "output": "Ring på [fjernet af handle-mcp]"
+  },
+  {
+   "input": "Ring på 98765432",
+   "output": "Ring på [fjernet af handle-mcp]"
+  },
+  {
+   "input": "Levering til Kildevej 12B",
+   "output": "Levering til [fjernet af handle-mcp]"
+  },
+  {
+   "input": "Levering til H.C. Andersens Boulevard 2",
+   "output": "Levering til H.C. Andersens [fjernet af handle-mcp]"
+  },
+  {
+   "input": "2100 København Ø",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "Du mangler 123,45 kr. for at nå minimumsbeløbet",
+   "output": "Du mangler 123,45 kr. for at nå minimumsbeløbet"
+  },
+  {
+   "input": "Kildevand 0,5 l 24 stk",
+   "output": "Kildevand 0,5 l 24 stk"
+  },
+  {
+   "input": "Max 6 stk. pr. ordre",
+   "output": "Max 6 stk. pr. ordre"
+  },
+  {
+   "input": "Varen 5064654 er udsolgt",
+   "output": "Varen 5064654 er udsolgt"
+  },
+  {
+   "input": "EAN 5701234567890",
+   "output": "EAN 5701234567890"
+  },
+  {
+   "input": "Bestil senest 04/11 kl. 23:59",
+   "output": "Bestil senest 04/11 kl. 23:59"
+  },
+  {
+   "input": "Varen 12345678 er udsolgt",
+   "output": "Varen [fjernet af handle-mcp] er udsolgt"
+  },
+  {
+   "input": "Max 1000 Stk pr. ordre",
+   "output": "Max [fjernet af handle-mcp] pr. ordre"
+  },
+  {
+   "input": "Ring til os på 98765432",
+   "output": "Ring til os på [fjernet af handle-mcp]"
+  },
+  {
+   "input": "Adresse: Kildevej 12, 2100 København",
+   "output": "Adresse: [fjernet af handle-mcp], [fjernet af handle-mcp]"
+  },
+  {
+   "input": "Sendt til anders@example.com",
+   "output": "Sendt til [fjernet af handle-mcp]"
+  },
+  {
+   "input": "Ring 98765432",
+   "output": "Ring [fjernet af handle-mcp]"
+  },
+  {
+   "input": "a@b.dk",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "Ordren til Kildevej 12, 2100 København er sendt til a@b.dk",
+   "output": "Ordren til [fjernet af handle-mcp], [fjernet af handle-mcp] er sendt til [fjernet af handle-mcp]"
+  },
+  {
+   "input": "Kunden 98765432 findes ikke",
+   "output": "Kunden [fjernet af handle-mcp] findes ikke"
+  },
+  {
+   "input": "123456789",
+   "output": "123456789"
+  },
+  {
+   "input": "12345678 9",
+   "output": "[fjernet af handle-mcp] 9"
+  },
+  {
+   "input": "0045 98 76 54 32",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "Ærøvej 12",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "Østergade 3B",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "Søndre Allé 4",
+   "output": "Søndre [fjernet af handle-mcp]"
+  },
+  {
+   "input": "blåbær@mælk.dk",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "2100 København Ø",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "1000 Stk",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "+4598765432",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "45 98 76 54 32",
+   "output": "[fjernet af handle-mcp] 32"
+  },
+  {
+   "input": "98 76 54 32",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "9876 5432",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "98-76-54-32",
+   "output": "98-76-54-32"
+  },
+  {
+   "input": "1234567",
+   "output": "1234567"
+  },
+  {
+   "input": "٩٨٧٦٥٤٣٢",
+   "output": "٩٨٧٦٥٤٣٢"
+  },
+  {
+   "input": "a.b+c@d-e.co.uk",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "user@localhost",
+   "output": "user@localhost"
+  },
+  {
+   "input": "@",
+   "output": "@"
+  },
+  {
+   "input": "Kildevej 12 B",
+   "output": "[fjernet af handle-mcp] B"
+  },
+  {
+   "input": "Kildevej 12",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "kildevej 12",
+   "output": "kildevej 12"
+  },
+  {
+   "input": "Vej 5",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "vej 5",
+   "output": "vej 5"
+  },
+  {
+   "input": "Gade 3.",
+   "output": "[fjernet af handle-mcp]."
+  },
+  {
+   "input": "Boulevard 10-12",
+   "output": "[fjernet af handle-mcp]-12"
+  },
+  {
+   "input": "Torv 1234",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "Torv 12345",
+   "output": "Torv 12345"
+  },
+  {
+   "input": "Vænget 7",
+   "output": "Vænget 7"
+  },
+  {
+   "input": "Stensparken 3",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "Møllehaven 2A, 2. th.",
+   "output": "[fjernet af handle-mcp], 2. th."
+  },
+  {
+   "input": "2100  København",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "2100 københavn",
+   "output": "2100 københavn"
+  },
+  {
+   "input": "9999 Eksempelby",
+   "output": "[fjernet af handle-mcp]"
+  },
+  {
+   "input": "Ring 12 34 56 78 eller 87 65 43 21",
+   "output": "Ring [fjernet af handle-mcp] eller [fjernet af handle-mcp]"
+  },
+  {
+   "input": "tlf: 12345678.",
+   "output": "tlf: [fjernet af handle-mcp]."
+  },
+  {
+   "input": "ABC12345678",
+   "output": "ABC[fjernet af handle-mcp]"
+  },
+  {
+   "input": "12345678ABC",
+   "output": "[fjernet af handle-mcp]ABC"
+  },
+  {
+   "input": "Ordre 123456789012",
+   "output": "Ordre 123456789012"
+  },
+  {
+   "input": "Åløkke Alle 4",
+   "output": "Åløkke [fjernet af handle-mcp]"
+  },
+  {
+   "input": "Strøget 12",
+   "output": "Strøget 12"
+  },
+  {
+   "input": "Bredgade 12 og Nyhavn 3",
+   "output": "[fjernet af handle-mcp] og Nyhavn 3"
+  },
+  {
+   "input": "Kildevej 12",
+   "output": "Kildevej 12"
+  },
+  {
+   "input": "2100 København",
+   "output": "2100 København"
+  },
+  {
+   "input": "",
+   "output": ""
+  },
+  {
+   "input": " ",
+   "output": " "
+  },
+  {
+   "input": "kr. 1000 København",
+   "output": "kr. [fjernet af handle-mcp]"
+  }
+ ],
+ "structures": [
+  {
+   "input": {
+    "a": [
+     "Ring 98765432",
+     [
+      "a@b.dk"
+     ]
+    ],
+    "b": {
+     "c": "Kildevej 12"
+    },
+    "n": 5,
+    "z": null
+   },
+   "output": {
+    "a": [
+     "Ring [fjernet af handle-mcp]",
+     [
+      "[fjernet af handle-mcp]"
+     ]
+    ],
+    "b": {
+     "c": "[fjernet af handle-mcp]"
+    },
+    "n": 5,
+    "z": null
+   }
+  },
+  {
+   "input": 5,
+   "output": 5
+  }
+ ]
+}
