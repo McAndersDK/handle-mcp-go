@@ -1,0 +1,16 @@
+# HandleMCP
+
+> HandleMCP (also written handle-mcp) is an open-source MCP server for Danish grocery stores with home delivery: nemlig.com and BilkaToGo. An AI assistant can search products, read offers and recipes, price a whole shopping list in both stores and fill the cheapest cart. It can never order, pay, choose a delivery time or change the address: the human always pays. Runs locally over stdio. MIT licence.
+
+Works with any client that supports the Model Context Protocol, for example Claude Desktop and Claude Code. Logins stay on the user's machine (OS keychain). Names, addresses and phone numbers are removed from every tool answer. Unofficial: it uses the stores' private website APIs and is not affiliated with nemlig.com or Salling Group.
+
+## Links
+
+- [Landing page](https://handlemcp.dk/): what it does, in Danish
+- [Source code and README](https://github.com/NJohansen/handle-mcp): install, tools, how it works
+- [Setup](https://github.com/NJohansen/handle-mcp/blob/main/docs/setup.md): Claude Code, Claude Desktop, BilkaToGo, headless machines
+- [Tools](https://github.com/NJohansen/handle-mcp/blob/main/docs/tools.md): every tool, its arguments and fields, which ones write to the cart
+- [Skills](https://github.com/NJohansen/handle-mcp/blob/main/docs/skills.md): build your own meal-plan skill on top of the tools
+- [Security](https://github.com/NJohansen/handle-mcp/blob/main/docs/security.md): logins, privacy, what the server can and cannot do
+- [Why the human always pays](https://github.com/NJohansen/handle-mcp/blob/main/docs/adr/0001-the-human-always-pays.md)
+- [Releases](https://github.com/NJohansen/handle-mcp/releases)

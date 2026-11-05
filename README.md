@@ -2,7 +2,9 @@
 
 <img src="docs/hero.svg" alt="Give AI a budget, fill it cheaply, you pay and they deliver, unpack the week, enjoy dinner" width="800">
 
-# 🧺 handle-mcp
+<img src="docs/logo.svg" alt="" height="56">
+
+# handle-mcp
 
 <a href="https://modelcontextprotocol.io"><img src="docs/badges/mcp.svg" alt="made for MCP" height="26"></a>
 <img src="docs/badges/stores.svg" alt="stores: nemlig, BilkaToGo" height="26">

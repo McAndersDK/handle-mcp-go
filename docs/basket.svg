@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" fill="none">
+  <!-- handle -->
+  <path d="M120 120 C 120 30, 300 30, 300 120" stroke="#2ba0ff" stroke-width="22" stroke-linecap="round"/>
+  <path d="M131 112 C 136 52, 284 52, 289 112" stroke="#2C2E2A" stroke-width="2.4" stroke-linecap="round"/>
+  <!-- produce -->
+  <path d="M232 128 C 222 80, 236 34, 262 22 C 282 14, 292 34, 284 58 C 276 84, 262 108, 258 130 Z" fill="#f5e211"/>
+  <path d="M262 40 l14 6 M258 62 l14 6 M253 84 l13 6" stroke="#2C2E2A" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M150 128 C 128 104, 132 66, 160 54 C 176 48, 186 62, 182 78 C 196 62, 214 70, 210 90 C 206 108, 190 124, 176 130 Z" fill="#8ed462"/>
+  <path d="M168 126 C 168 104, 172 86, 178 74" stroke="#2C2E2A" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="218" cy="112" r="34" fill="#ff705d"/>
+  <path d="M210 80 c 4 -8 12 -10 18 -6" stroke="#2C2E2A" stroke-width="2.4" stroke-linecap="round"/>
+  <ellipse cx="204" cy="98" rx="8" ry="4.5" transform="rotate(-40 204 98)" fill="#fff"/>
+  <!-- body -->
+  <path d="M54 132 C 50 118, 60 110, 76 110 L 344 110 C 360 110, 370 118, 366 132 L 336 276 C 333 292, 322 300, 306 300 L 114 300 C 98 300, 87 292, 84 276 Z" fill="#2ba0ff"/>
+  <!-- rim line -->
+  <path d="M60 146 C 160 152, 260 152, 360 146" stroke="#2C2E2A" stroke-width="2.6" stroke-linecap="round"/>
+  <!-- slats -->
+  <path d="M140 176 C 142 210, 146 240, 150 272" stroke="#2C2E2A" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M210 178 C 210 212, 210 242, 210 274" stroke="#2C2E2A" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M280 176 C 278 210, 274 240, 270 272" stroke="#2C2E2A" stroke-width="2.6" stroke-linecap="round"/>
+  <!-- highlight -->
+  <path d="M76 126 C 92 123, 110 122, 128 122" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="146" cy="122" r="3.6" fill="#fff"/>
+</svg>
