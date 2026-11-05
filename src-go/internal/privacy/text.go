@@ -14,7 +14,8 @@ import (
 
 const (
 	streetEnd = "vej|gade|allé|alle|vænge|vænget|stræde|plads|torv|boulevard|parken|park|" +
-		"haven|have|bakken|toften|engen|marken|stien|sti|høj|lund|ager"
+		"haven|have|bakken|toften|engen|marken|stien|sti|høj|lund|ager|" +
+		"vejen|gaden|alléen|alleen|strædet|pladsen|torvet|boulevarden|højen|lunden|ageren"
 	streetWord = "Vej|Gade|Allé|Alle|Boulevard|Plads|Torv|Stræde|Vænge"
 	word       = `\p{L}\p{N}_`
 )

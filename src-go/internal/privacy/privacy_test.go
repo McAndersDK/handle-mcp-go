@@ -120,6 +120,25 @@ func TestDanishLettersAreWordCharacters(t *testing.T) {
 	}
 }
 
+// Definite-form street names are a leak Python has and Go fixes (ADR 0005).
+func TestDefiniteStreetNames(t *testing.T) {
+	for in, want := range map[string]string{
+		"Åboulevarden 12":                privacy.Redacted,
+		"Søndergaden 5":                  privacy.Redacted,
+		"Rådhuspladsen 1":                privacy.Redacted,
+		"Kongens Nytorvet 3":             "Kongens " + privacy.Redacted,
+		"Birkealléen 7B":                 privacy.Redacted,
+		"Vesterbrogaden 12":              privacy.Redacted,
+		"Kildevand 0,5 l 24 stk":         "Kildevand 0,5 l 24 stk",
+		"Levering fra torvet i morgen":   "Levering fra torvet i morgen",
+		"Levering til Nytorvet i morgen": "Levering til Nytorvet i morgen",
+	} {
+		if got := privacy.ScrubText(in); got != want {
+			t.Errorf("ScrubText(%q) = %q, want %q", in, got, want)
+		}
+	}
+}
+
 func TestNotesIsFreeText(t *testing.T) {
 	got := privacy.Scrub(map[string]any{"notes": []any{"Ring 98765432"}})
 	want := map[string]any{"notes": []any{"Ring " + privacy.Redacted}}

@@ -27,6 +27,8 @@ Deliberate differences from Python 1.2.1:
 - `true` is refused as an integer. A boolean must not set a cart quantity.
 - Money in free text always has two decimals (the spirit of ADR 0002), e.g. `278.00 kr. mangler til 300.00 kr.`
 - The `notes` key is scrubbed as free text. Python's `FREE_TEXT_KEYS` in `privacy.py` lacks it; the gap is fixed only in Go.
+- Free-text addresses also match definite-form street names (`-vejen`, `-gaden`, `-boulevarden` ...), e.g. `Søndergaden 5`. Python misses them, which leaks an address; the gap is fixed only in Go.
+- Odd numeric strings are refused as integers (see Arguments).
 - NaN money becomes a `StoreError`, because `shopspring/decimal` cannot represent it. This amends ADR 0002 ("shown as it is"). ADR 0002 itself is not edited.
 
 ## Tools
@@ -41,8 +43,10 @@ Deliberate differences from Python 1.2.1:
 A small hand-written decoder:
 
 - A top-level string for a non-string field is parsed as JSON and replaced only if the result is an array, object or null. This copies the Python SDK's `pre_parse_json`; clients send lists this way.
-- Integers accept `2`, `2.0` and `"2"`. They refuse `2.5`, `"mange"`, `[]`, `{}` and `true`.
-- Exotic numeric strings follow what the golden export records.
+- Integers accept the numbers `2` and `2.0` and the strings `"2"` and `" 2 "`. A string is accepted only as ASCII digits with optional surrounding whitespace and no leading zero, except `"0"` itself, because `0` removes a cart line.
+- Everything else is refused: `2.5`, `"mange"`, `[]`, `{}`, `true`, and strings such as `"2_0"`, `"+2"`, `"02"`, `"2.0"`, `"-1"` and `"٢"`. A clear error beats a wrong quantity (Python reads `"2_0"` as 20).
+- `tests/golden/wire/args.json` records Python's behaviour. The refused strings are named exceptions for the server phase.
+- Negative numbers given as numbers are not this rule's business: they reach each tool's existing range check.
 - A string field given a number is refused.
 - `null` is accepted only for args whose schema allows it. It is refused for `limit`, `days`, `sort` and required args.
 - Unknown keys are ignored.
