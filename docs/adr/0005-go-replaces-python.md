@@ -29,6 +29,8 @@ Deliberate differences from Python 1.2.1:
 - The `notes` key is scrubbed as free text. Python's `FREE_TEXT_KEYS` in `privacy.py` lacks it; the gap is fixed only in Go.
 - Free-text addresses also match definite-form street names (`-vejen`, `-gaden`, `-boulevarden` ...), e.g. `Søndergaden 5`. Python misses them, which leaks an address; the gap is fixed only in Go.
 - Odd numeric strings are refused as integers (see Arguments).
+- A refused login during search (wrong email or password, or a dead saved session) is tried once, not twice, because repeated attempts can lock an account. Python swallowed the failure in the settings step and `search` logged in again. A network failure or a 5xx during login in that step is still tried once more by `search`.
+- A missing price in search, offers or recipes is a format-change error, not 0.00 kr, because that would read as a free product. An explicit price of 0 is still 0.00 kr.
 - NaN money becomes a `StoreError`, because `shopspring/decimal` cannot represent it. This amends ADR 0002 ("shown as it is"). ADR 0002 itself is not edited.
 
 ## Tools
