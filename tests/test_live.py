@@ -109,6 +109,9 @@ async def test_nemlig_featured_recipe_has_products():
             f"  {'(har du)' if item.have_at_home else ''} {item.ingredient}: {p.name} x{p.quantity}"
         )
     assert recipe.persons == 6 and recipe.total > 0
+    assert recipe.method and all(s.steps for s in recipe.method)
+    assert recipe.image is None or recipe.image.startswith("https://")
+    assert recipe.ingredients_persons is None or 1 <= recipe.ingredients_persons <= 12
     assert any(not i.have_at_home for i in recipe.items)
 
 

@@ -61,6 +61,14 @@ class RecipeItem:
 
 
 @dataclass
+class RecipeSection:
+    """One part of the method, e.g. "Salat", with its steps in order."""
+
+    title: str | None
+    steps: list[str] = field(default_factory=list)
+
+
+@dataclass
 class RecipeDetails:
     store: str
     id: str
@@ -70,7 +78,12 @@ class RecipeDetails:
     min_persons: int | None = None
     max_persons: int | None = None
     time: str | None = None
+    description: str | None = None  # the store's short intro to the dish
+    image: str | None = None  # link to the store's photo of the dish
     ingredients: list[str] = field(default_factory=list)  # the recipe's text, e.g. "2 stk. rødløg"
+    ingredients_persons: int | None = None  # the persons that text is written for, not `persons`
+    method: list[RecipeSection] = field(default_factory=list)  # how to cook it
+    tip: str | None = None
     items: list[RecipeItem] = field(default_factory=list)
     total: Decimal = Decimal(0)  # the items to buy, without have_at_home items
 

@@ -89,6 +89,67 @@ async def test_get_recipe_tool_clamps_persons(monkeypatch):
     assert seen["persons"] == server.MIN_PERSONS
 
 
+async def test_recipe_has_photo_intro_and_method(store):
+    r = await store.recipe(KEBAB, 4)
+    assert r.image.startswith("https://media.umbraco.io/nemlig3/zu0cfnyn/kebabfad")
+    assert r.description.startswith("Prøv denne lækre og nemme opskrift på kebabfad")
+    assert [s.title for s in r.method] == ["Kebabfad", "Salat", "Dressing", "Servering"]
+    assert [len(s.steps) for s in r.method] == [8, 5, 1, 2]
+    assert r.method[0].steps[0] == "Tænd ovnen på 200 grader varmluft og sæt en bagerist i ovnen"
+    assert r.tip is None  # nemlig sends "" when there is no tip
+
+
+async def test_recipe_text_keeps_the_recipes_own_persons(store, monkeypatch):
+    row = {"ingredientTitle": "Laks", "item": {"product": {"id": "1", "title": "Laks"}}}
+
+    async def api(_method, url, **_kwargs):
+        if url.endswith("/recipeProductDialog"):
+            return {"includedProducts": [row], "servings": 6}
+        return {"servings": 4, "ingredients": [{"ingredients": [{"text": "600 g laksefilet"}]}]}
+
+    monkeypatch.setattr(store, "_api", api)
+    r = await store.recipe(KEBAB, 6)
+    assert (r.persons, r.ingredients_persons) == (6, 4)  # products for 6, text for 4
+    assert r.ingredients == ["600 g laksefilet"]
+
+
+async def test_recipe_with_odd_servings_or_images_does_not_crash(store, monkeypatch):
+    row = {"ingredientTitle": "Laks", "item": {"product": {"id": "1", "title": "Laks"}}}
+
+    async def api(_method, url, **_kwargs):
+        if url.endswith("/recipeProductDialog"):
+            return {"includedProducts": [row], "servings": "4-6"}
+        return {
+            "servings": "4-6",
+            "images": [{"source": "http://x/plain.jpg"}, {"source": None}],
+            "instructions": [{"title": None, "steps": [{"description": "  "}]}],
+        }
+
+    monkeypatch.setattr(store, "_api", api)
+    r = await store.recipe(KEBAB, 4)
+    assert (r.persons, r.ingredients_persons, r.image, r.method) == (4, None, None, [])
+
+
+async def test_recipe_without_photo_or_method(store, monkeypatch):
+    details = {
+        "images": [{"source": "http://insecure.example/x.jpg"}, {"source": None}],
+        "instructions": [
+            {"title": "Tom", "steps": [{"description": "  "}, {}]},
+            {"title": None, "steps": [{"description": " Rør rundt "}]},
+        ],
+        "tip": "  Server med brød  ",
+    }
+    row = {"ingredientTitle": "Løg", "item": {"product": {"id": "1", "title": "Løg"}}}
+
+    async def api(_method, url, **_kwargs):
+        return {"includedProducts": [row]} if url.endswith("/recipeProductDialog") else details
+
+    monkeypatch.setattr(store, "_api", api)
+    r = await store.recipe(KEBAB)
+    assert (r.image, r.description, r.tip) == (None, None, "Server med brød")
+    assert [(s.title, s.steps) for s in r.method] == [(None, ["Rør rundt"])]
+
+
 async def test_recipe_without_price_or_servings(store, monkeypatch):
     row = {"ingredientTitle": "Løg", "item": {"product": {"id": "1", "title": "Løg"}}}
 

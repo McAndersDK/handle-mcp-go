@@ -176,3 +176,25 @@ def test_free_text_in_dicts_under_a_free_text_key_is_scrubbed():
 def test_scrub_text_false_positives_are_accepted(text):
     """An 8-digit id looks like a phone, "1000 Stk" like a postal code: hidden on purpose."""
     assert REDACTED in scrub_text(text)
+
+
+def test_recipe_text_passes_scrub_unchanged():
+    """get_recipe's photo link, intro, method and tip are the store's recipe text, not personal
+    data: _out() keeps them as the store wrote them."""
+    from handle_mcp.models import RecipeDetails, RecipeSection
+
+    recipe = RecipeDetails(
+        store="nemlig",
+        id="kebabfad-med-fladbrod-98001303",
+        name="Kebabfad med fladbrød",
+        url="https://www.nemlig.com/maaltider/kebabfad-med-fladbrod-98001303",
+        persons=4,
+        description="Prøv denne lækre og nemme opskrift på kebabfad 🌯",
+        image="https://media.umbraco.io/nemlig3/zu0cfnyn/kebabfad.jpg?mode=crop",
+        ingredients_persons=4,
+        method=[RecipeSection(title="Kebabfad", steps=["Tænd ovnen på 200 grader varmluft"])],
+        tip="Server med citron",
+    )
+    out = server._out(recipe)
+    assert out == jsonable(recipe)
+    assert out["method"] == [{"title": "Kebabfad", "steps": ["Tænd ovnen på 200 grader varmluft"]}]
