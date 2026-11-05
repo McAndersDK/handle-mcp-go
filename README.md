@@ -2,8 +2,6 @@
 
 <img src="docs/hero.svg" alt="Give AI a budget, fill it cheaply, you pay and they deliver, unpack the week, enjoy dinner" width="800">
 
-<img src="docs/logo.svg" alt="" height="56">
-
 # handle-mcp
 
 <a href="https://modelcontextprotocol.io"><img src="docs/badges/mcp.svg" alt="made for MCP" height="26"></a>
@@ -29,6 +27,13 @@ Danish grocery stores with home delivery, as an MCP server: [nemlig.com](https:/
 4. **Pay.** You open nemlig.com or BilkaToGo, check the cart, pick a delivery time and pay.
 
 Taste, budget and meal rules live in your own prompt or skill. The server finds and counts. [Build your own skill](docs/skills.md).
+
+## Requirements
+
+- macOS, Linux or Windows (x64). Windows on ARM is not supported yet: a dependency (`cryptography`) has no ready-made build for it.
+- [uv](https://docs.astral.sh/uv/). It fetches Python 3.12+ if you do not have it.
+- An MCP client, such as Claude Code or Claude Desktop.
+- An account at nemlig.com or BilkaToGo with home delivery to your address.
 
 ## Try it
 
