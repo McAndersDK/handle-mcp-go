@@ -83,7 +83,7 @@ HANDLE_LIVE=1 uv run pytest -m live -s tests/test_live_list.py   # 50 fixed item
 
 This repo is a permanent fork: `origin` is `McAndersDK/handle-mcp-go`, `upstream` is `NJohansen/handle-mcp`.
 
-Normal work is pushed straight to `main` of the fork. No PR, no release, and a branch is not required. Run the tests before each push and show the result.
+Normal work is pushed straight to `main` of the fork. No PR, no release, and a branch is not required. Run the tests locally before each push and show the result. CI runs only on release PRs, or by hand with `gh workflow run ci --repo McAndersDK/handle-mcp-go`.
 
 - A change that touches a store file: run the live tests for that store before you push. Stores change without notice.
 - A change to the matcher (`match.py`, `pricing.py`, `candidates.py`): run the live list before you push.
