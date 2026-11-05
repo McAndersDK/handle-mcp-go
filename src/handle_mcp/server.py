@@ -135,6 +135,7 @@ async def get_recipe(store: str, recipe: str, persons: int | None = None) -> dic
     """The products to buy for one of the store's recipes, as on its "Se varer og læg i kurv":
     per ingredient the store's product, packs for `persons` and alternatives. `have_at_home`
     items (salt, oil) are what the store assumes you have: left out of `total`, ask first.
+    Also `image`, `description`, `method`, `tip`. Scale `ingredients` from `ingredients_persons`.
     `recipe` is the recipe's link or id from search_recipes or list_recipes. Put the products
     in the cart with add_recipe_to_cart after the human says yes.
     nemlig only for now; BilkaToGo answers that it cannot yet."""
