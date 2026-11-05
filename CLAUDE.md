@@ -81,22 +81,27 @@ HANDLE_LIVE=1 uv run pytest -m live -s tests/test_live_list.py   # 50 fixed item
 
 ## Workflow
 
-One PR per change. Run the tests before you push, show the result, wait for OK.
+This repo is a permanent fork: `origin` is `McAndersDK/handle-mcp-go`, `upstream` is `NJohansen/handle-mcp`.
 
-- A change that touches a store file: run the live tests for that store before merge. Stores change without notice.
-- A change to the matcher (`match.py`, `pricing.py`, `candidates.py`): run the live list before merge.
-- A new tool or a changed one: update `docs/tools.md` and the snapshot in the same PR.
-- Squash and merge. The squash message is the PR title.
+Normal work is pushed straight to `main` of the fork. No PR, no release, and a branch is not required. Run the tests before each push and show the result.
+
+- A change that touches a store file: run the live tests for that store before you push. Stores change without notice.
+- A change to the matcher (`match.py`, `pricing.py`, `candidates.py`): run the live list before you push.
+- A new tool or a changed one: update `docs/tools.md` and the snapshot in the same commit.
+- Never open a PR or push anything to `upstream`. We only pull from it. Upstream changes are pulled in and rewritten to Go when they come.
 
 ## Release
 
+A PR inside the fork is used only to release a new version. Always `gh pr create --repo McAndersDK/handle-mcp-go`: `gh` in a fork can default to the parent.
+
 1. Bump `version` in `pyproject.toml` (`uv lock` follows) and every pin: `grep -rn "@v" README.md docs/` (README, `docs/setup.md`, `docs/index.html`, `docs/security.md`).
-2. Merge, then tag the merge commit on `main`: `git fetch origin main && git tag vX.Y.Z origin/main && git push origin vX.Y.Z`.
-3. Semver: a tool's args or answer shape changes in a way old skills notice → major. New tool or field → minor. Fix → patch.
+2. Open the release PR in the fork, with the tests run. Squash and merge. The squash message is the PR title.
+3. Tag the merge commit on `main`: `git fetch origin main && git tag vX.Y.Z origin/main && git push origin vX.Y.Z`.
+4. Semver: a tool's args or answer shape changes in a way old skills notice → major. New tool or field → minor. Fix → patch.
 
-## Branches, commits and PRs (gitmoji)
+## Branches and commits (gitmoji)
 
-Branch name = type + short slug. The type says what the branch solves:
+Branches are not required for normal work. When you use one (for a release PR or a long change), the name is type + short slug. The type says what the branch solves:
 
 | Type | Gitmoji | Use for |
 |---|---|---|
@@ -108,8 +113,8 @@ Branch name = type + short slug. The type says what the branch solves:
 | `test/` | ✅ | tests only |
 | `chore/` | 🔧 | config, CI, dependencies |
 
-Example: branch `feature/compare-basket`, PR title `✨ Compare a basket across stores`.
+Example: branch `chore/release-v1.3.0`, PR title `🔧 Release v1.3.0`.
 
-- Start every commit message and PR title with the gitmoji ([gitmoji.dev](https://gitmoji.dev)).
+- Start every commit message and PR title with the gitmoji ([gitmoji.dev](https://gitmoji.dev)). The type table also tells which gitmoji fits a commit on `main`.
 - No emoji in branch names: they break shells and URLs. The prefix is enough.
-- One type per branch. Split mixed work into two branches.
+- One type per branch and per commit. Split mixed work in two.
