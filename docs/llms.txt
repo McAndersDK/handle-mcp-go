@@ -6,11 +6,10 @@ Works with any client that supports the Model Context Protocol, for example Clau
 
 ## Links
 
-- [Landing page](https://handlemcp.dk/): what it does, in Danish
-- [Source code and README](https://github.com/NJohansen/handle-mcp): install, tools, how it works
-- [Setup](https://github.com/NJohansen/handle-mcp/blob/main/docs/setup.md): Claude Code, Claude Desktop, BilkaToGo, headless machines
-- [Tools](https://github.com/NJohansen/handle-mcp/blob/main/docs/tools.md): every tool, its arguments and fields, which ones write to the cart
-- [Skills](https://github.com/NJohansen/handle-mcp/blob/main/docs/skills.md): build your own meal-plan skill on top of the tools
-- [Security](https://github.com/NJohansen/handle-mcp/blob/main/docs/security.md): logins, privacy, what the server can and cannot do
-- [Why the human always pays](https://github.com/NJohansen/handle-mcp/blob/main/docs/adr/0001-the-human-always-pays.md)
-- [Releases](https://github.com/NJohansen/handle-mcp/releases)
+- [Source code and README](https://github.com/McAndersDK/handle-mcp-go): install, tools, how it works
+- [Setup](https://github.com/McAndersDK/handle-mcp-go/blob/main/docs/setup.md): Claude Code, Claude Desktop, BilkaToGo, headless machines
+- [Tools](https://github.com/McAndersDK/handle-mcp-go/blob/main/docs/tools.md): every tool, its arguments and fields, which ones write to the cart
+- [Skills](https://github.com/McAndersDK/handle-mcp-go/blob/main/docs/skills.md): build your own meal-plan skill on top of the tools
+- [Security](https://github.com/McAndersDK/handle-mcp-go/blob/main/docs/security.md): logins, privacy, what the server can and cannot do
+- [Why the human always pays](https://github.com/McAndersDK/handle-mcp-go/blob/main/docs/adr/0001-the-human-always-pays.md)
+- [Releases](https://github.com/McAndersDK/handle-mcp-go/releases)

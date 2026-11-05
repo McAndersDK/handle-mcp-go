@@ -125,4 +125,3 @@ Old keychain entries are not read. Python's Windows entries use target `handle-m
 Not decided here.
 
 - Whether `src-go/` keeps that name after Python is deleted. Renaming it changes the `go install` path, so decide before `v1.0.0`.
-- What happens to upstream leftovers: `.github/FUNDING.yml`, the author and links in `docs/index.html` and `docs/llms.txt`, and `docs/CNAME`.
