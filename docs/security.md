@@ -5,6 +5,6 @@
 - **Logins** live in your OS keychain, env vars or `~/.config/handle-mcp/` (chmod 600). Never in code, config in git or test fixtures. `handle-mcp login` uses the password for one login and saves only the store's session, never the password ([ADR 0003](adr/0003-save-the-session-not-the-password.md)). On macOS other programs running as you can read keychain items without a prompt; a stolen session dies when you log out at the store or change the password.
 - **stdout is JSON-RPC.** Logs go to stderr. httpx request logging is off, because some store URLs contain account ids.
 - **Store text reaches the model.** Product names, offer texts and cart messages come from the stores and land in the model's context. A store (or a seller) could put instructions in them. The server cannot order or pay, so the damage is limited to a wrong cart. Check the cart before you pay.
-- **Versions.** The install commands pin a release tag (`@v1.1.0`), so a new push to `main` never reaches your machine by itself. To update, change the tag. Without a tag, `git+https://...` installs the newest `main`.
+- **Versions.** The install commands pin a release tag (`@v1.2.0`), so a new push to `main` never reaches your machine by itself. To update, change the tag. Without a tag, `git+https://...` installs the newest `main`.
 - Use one client at a time per store. Close the store's app or website before an agent changes the cart.
 - Be kind to the stores: the server makes few calls, mostly one at a time per store, and retries only on timeouts, network errors, 429 and 5xx.
