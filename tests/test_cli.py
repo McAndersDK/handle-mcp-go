@@ -98,17 +98,22 @@ def config_dir(monkeypatch, tmp_path):
     return tmp_path / "handle-mcp"
 
 
+def _mode_is(path, mode):
+    """Windows has no mode bits (always 0o666): only POSIX can check them."""
+    return os.name == "nt" or path.stat().st_mode & 0o777 == mode
+
+
 def test_login_from_env_writes_an_owner_only_file(config_dir, monkeypatch, capsys):
     monkeypatch.setenv("HANDLE_FAKE_EMAIL", "a@example.com")
     monkeypatch.setenv("HANDLE_FAKE_PASSWORD", "rigtig")
     assert cli.run(["login", "fake", "--from-env"]) == 0
     path = config_dir / "fake.json"
-    assert path.stat().st_mode & 0o777 == 0o600
-    assert config_dir.stat().st_mode & 0o777 == 0o700
+    assert _mode_is(path, 0o600)
+    assert _mode_is(config_dir, 0o700)
     monkeypatch.delenv("HANDLE_FAKE_EMAIL")
     monkeypatch.delenv("HANDLE_FAKE_PASSWORD")
     assert registry.load_login("fake") == SAVED
-    assert "rigtig" not in path.read_text()
+    assert "rigtig" not in path.read_text(encoding="utf-8")
     out = capsys.readouterr()
     assert out.out == "" and "rigtig" not in out.err and str(path) in out.err
 
@@ -157,13 +162,15 @@ def test_logout_file_only_without_a_keychain(config_dir, monkeypatch, capsys):
 def test_login_from_env_tightens_an_existing_wide_file(config_dir, monkeypatch):
     config_dir.mkdir()
     old = config_dir / "fake.json"
-    old.write_text('{"email": "old@example.com", "password": "gammelt-og-langt-kodeord"}')
+    old.write_text(
+        '{"email": "old@example.com", "password": "gammelt-og-langt-kodeord"}', encoding="utf-8"
+    )
     old.chmod(0o644)
     monkeypatch.setenv("HANDLE_FAKE_EMAIL", "a@example.com")
     monkeypatch.setenv("HANDLE_FAKE_PASSWORD", "rigtig")
     assert cli.run(["login", "fake", "--from-env"]) == 0
-    assert old.stat().st_mode & 0o777 == 0o600
-    assert old.read_text() == json.dumps(SAVED)  # no old tail, no password
+    assert _mode_is(old, 0o600)
+    assert old.read_text(encoding="utf-8") == json.dumps(SAVED)  # no old tail, no password
 
 
 def test_login_from_env_warns_when_the_keychain_wins(config_dir, monkeypatch, capsys):
@@ -213,11 +220,11 @@ def test_an_old_saved_password_is_still_read(memory_keychain):
 def test_save_session_replaces_an_old_password_in_the_file(config_dir):
     config_dir.mkdir(mode=0o700)
     path = config_dir / "fake.json"
-    path.write_text('{"email": "a@example.com", "password": "rigtig"}')
+    path.write_text('{"email": "a@example.com", "password": "rigtig"}', encoding="utf-8")
     path.chmod(0o600)
     registry.save_session("fake", "a@example.com", {"token": "new"})
-    assert "rigtig" not in path.read_text()
-    assert path.stat().st_mode & 0o777 == 0o600
+    assert "rigtig" not in path.read_text(encoding="utf-8")
+    assert _mode_is(path, 0o600)
 
 
 def test_save_session_never_writes_when_env_vars_hold_the_login(config_dir, monkeypatch):

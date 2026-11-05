@@ -39,13 +39,19 @@ def _source_files():
 
 @pytest.mark.parametrize("pattern", FORBIDDEN)
 def test_forbidden_endpoint_not_in_code(pattern):
-    hits = [str(p) for p in _source_files() if re.search(pattern, p.read_text(), re.IGNORECASE)]
+    hits = [
+        str(p)
+        for p in _source_files()
+        if re.search(pattern, p.read_text(encoding="utf-8"), re.IGNORECASE)
+    ]
     assert not hits, f"{pattern} found in {hits}"
 
 
 def test_nothing_prints_to_stdout():
     """stdout is the JSON-RPC stream; a stray print() breaks the protocol."""
-    hits = [str(p) for p in _source_files() if re.search(r"\bprint\(", p.read_text())]
+    hits = [
+        str(p) for p in _source_files() if re.search(r"\bprint\(", p.read_text(encoding="utf-8"))
+    ]
     assert not hits
 
 
@@ -60,7 +66,7 @@ def test_httpx_does_not_log_urls():
 
 
 def test_gitignore_keeps_secrets_out():
-    ignored = (ROOT / ".gitignore").read_text()
+    ignored = (ROOT / ".gitignore").read_text(encoding="utf-8")
     for entry in (".env", "*.secret.json"):
         assert entry in ignored
 
@@ -74,10 +80,11 @@ def test_login_from_env(monkeypatch):
 def test_login_file_must_be_private(tmp_path, monkeypatch):
     monkeypatch.setattr(registry, "CONFIG_DIR", tmp_path)
     path = tmp_path / "fake.json"
-    path.write_text('{"email": "a@example.com", "password": "x"}')
+    path.write_text('{"email": "a@example.com", "password": "x"}', encoding="utf-8")
     os.chmod(path, 0o644)
-    with pytest.raises(registry.StoreError, match="chmod 600"):
-        registry.load_login("fake")
+    if os.name != "nt":  # Windows has no mode bits to check
+        with pytest.raises(registry.StoreError, match="chmod 600"):
+            registry.load_login("fake")
     os.chmod(path, stat.S_IRUSR | stat.S_IWUSR)
     assert registry.load_login("fake")["email"] == "a@example.com"
 
@@ -90,7 +97,9 @@ def test_missing_login_says_how_to_fix(tmp_path, monkeypatch):
 
 def test_login_from_keychain_beats_file(tmp_path, monkeypatch):
     monkeypatch.setattr(registry, "CONFIG_DIR", tmp_path)
-    (tmp_path / "fake.json").write_text('{"email": "file@example.com", "password": "f"}')
+    (tmp_path / "fake.json").write_text(
+        '{"email": "file@example.com", "password": "f"}', encoding="utf-8"
+    )
     registry.keychain_set("fake", "kc@example.com", {"token": "k"})
     assert registry.load_login("fake") == {"email": "kc@example.com", "session": {"token": "k"}}
     monkeypatch.setenv("HANDLE_FAKE_EMAIL", "env@example.com")
@@ -107,7 +116,7 @@ def test_no_keychain_falls_back_to_file(tmp_path, monkeypatch):
     monkeypatch.setattr(registry.keyring, "get_password", broken)
     monkeypatch.setattr(registry, "CONFIG_DIR", tmp_path)
     path = tmp_path / "fake.json"
-    path.write_text('{"email": "a@example.com", "password": "x"}')
+    path.write_text('{"email": "a@example.com", "password": "x"}', encoding="utf-8")
     os.chmod(path, stat.S_IRUSR | stat.S_IWUSR)
     assert registry.load_login("fake")["email"] == "a@example.com"
 

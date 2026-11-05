@@ -113,7 +113,7 @@ def config_set(store: str, email: str, session: dict[str, str]) -> Path:
     if hasattr(os, "fchmod"):  # an existing wider file: tighten before writing (not on Windows)
         os.fchmod(fd, stat.S_IRUSR | stat.S_IWUSR)
     os.ftruncate(fd, 0)
-    with os.fdopen(fd, "w") as f:
+    with os.fdopen(fd, "w", encoding="utf-8") as f:
         json.dump({"email": email, "session": session}, f)
     return path
 
@@ -162,10 +162,11 @@ def load_login(store: str) -> dict:
             f"Uden terminal: sæt HANDLE_{store.upper()}_EMAIL og _PASSWORD, "
             f"og kør: handle-mcp login {store} --from-env"
         )
-    if path.stat().st_mode & (stat.S_IRWXG | stat.S_IRWXO):
+    # Windows has no mode bits (always 0o666); the user profile's ACL keeps the file private.
+    if os.name != "nt" and path.stat().st_mode & (stat.S_IRWXG | stat.S_IRWXO):
         raise StoreError(f"{path} kan læses af andre. Kør: chmod 600 {path}")
     try:
-        login = _parse(json.loads(path.read_text()))
+        login = _parse(json.loads(path.read_text(encoding="utf-8")))
     except ValueError:
         login = None
     if login is None:

@@ -14,7 +14,7 @@ uvx --from git+https://github.com/NJohansen/handle-mcp@v1.2.0 handle-mcp login b
 Other ways, checked in this order:
 1. Env vars `HANDLE_<STORE>_EMAIL` and `HANDLE_<STORE>_PASSWORD` (e.g. `HANDLE_NEMLIG_EMAIL`).
 2. The keychain (above). Recommended.
-3. A file `~/.config/handle-mcp/<store>.json`, written by `--from-env` below. It holds the session, not the password, and the server refuses it unless only you can read it (`chmod 600`).
+3. A file `~/.config/handle-mcp/<store>.json`, written by `--from-env` below. It holds the session, not the password, and the server refuses it unless only you can read it (`chmod 600`). Windows has no file modes, so there it relies on your user profile's permissions ([ADR 0004](adr/0004-windows-has-no-file-modes.md)).
 
 **Headless / AI agent.** No terminal and no keychain (a Linux server, a container, an agent that sets itself up)? Put the login in env vars for one command, which logs in and writes the session to `~/.config/handle-mcp/<store>.json` with `chmod 600`:
 
