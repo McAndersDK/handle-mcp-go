@@ -14,6 +14,7 @@ from handle_mcp import stores as registry
 from handle_mcp.models import Product
 from handle_mcp.stores.bilkatogo import BilkaStore
 from handle_mcp.stores.nemlig_offers import offer_product
+from tests.conftest import BrokenStore
 
 ALLOWED = {
     "search_products": False,
@@ -191,3 +192,25 @@ def test_real_store_parsers_keep_the_offer_fields():
         p for h in hits for sid in h.get("storeData") or {} if (p := BilkaStore()._product(h, sid))
     ]
     assert bilka and all(p.offer_until is None for p in bilka)  # Bilka never says
+
+
+async def test_store_error_text_is_scrubbed(monkeypatch):
+    """A store's own message reaches the model as ToolError text: it goes through scrub_text."""
+
+    async def refuse(self, limit=10):
+        raise registry.StoreError("Ordren til Kildevej 12, 2100 København er sendt til a@b.dk")
+
+    monkeypatch.setattr(BrokenStore, "orders", refuse)
+    with pytest.raises(ToolError) as err:
+        await server.get_orders("broken")
+    assert "Kildevej" not in str(err.value) and "a@b.dk" not in str(err.value)
+    assert "broken:" in str(err.value)
+
+
+async def test_store_error_in_a_many_store_answer_is_scrubbed(monkeypatch):
+    async def refuse(self, query, limit=10):
+        raise registry.StoreError("Kunden 98765432 findes ikke")
+
+    monkeypatch.setattr(BrokenStore, "search", refuse)
+    result = await server.search_products("mælk", stores=["broken"])
+    assert "98765432" not in json.dumps(result)

@@ -301,6 +301,21 @@ async def test_orders_and_order(store):
     assert detail.total == Decimal("167.95")  # sum of lines when the answer has no total
 
 
+@pytest.mark.parametrize("order_id", ["", "1/../basket/ClearBasket", "12?x=1", "١٢"])
+async def test_order_id_must_be_digits(store, fake, order_id):
+    """The id goes into the URL path: only digits, never a path or query from the model."""
+    with pytest.raises(StoreError, match="Ordrenummeret skal være tal"):
+        await store.order(order_id)
+    assert not any("GetOrderHistory" in r.url.path for r in fake.requests)
+
+
+async def test_rejected_call_does_not_show_the_url(store, fake):
+    fake.scripted["/webapi/basket/GetBasket"] = [400]
+    with pytest.raises(StoreError) as err:
+        await store.get_cart()
+    assert str(err.value) == "nemlig.com afviste kaldet (400)."
+
+
 async def test_orders_with_flexible_delivery(store, fake):
     # Real answer: OrderDate is "03/11-2026 kl. 14-21", not a time. It gave a ValueError.
     fake.history, fake.details = "order_history_flex", "order_details_flex"

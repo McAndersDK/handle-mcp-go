@@ -7,7 +7,7 @@ from decimal import Decimal
 import pytest
 
 from handle_mcp import server
-from handle_mcp.privacy import REDACTED, jsonable, scrub
+from handle_mcp.privacy import REDACTED, jsonable, scrub, scrub_text
 from tests.conftest import LEAK
 
 CALLS = [
@@ -118,3 +118,61 @@ def test_money_is_two_decimals_when_nested_and_rounded_half_up():
 def test_money_that_cannot_be_quantized_is_still_shown():
     assert jsonable(Decimal("NaN")) == "NaN"
     assert jsonable(Decimal("1e40")) == "1E+40"
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "Kontakt anders@example.com om ordren",
+        "Ring på +45 98 76 54 32",
+        "Ring på 98765432",
+        "Levering til Kildevej 12B",
+        "Levering til H.C. Andersens Boulevard 2",
+        "2100 København Ø",
+    ],
+)
+def test_scrub_text_removes_contact_and_address(text):
+    out = scrub_text(text)
+    assert REDACTED in out
+    for word in ("anders@", "98 76", "98765432", "Kildevej", "Boulevard 2", "2100"):
+        assert word not in out
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "Du mangler 123,45 kr. for at nå minimumsbeløbet",
+        "Kildevand 0,5 l 24 stk",
+        "Max 6 stk. pr. ordre",
+        "Varen 5064654 er udsolgt",
+        "EAN 5701234567890",
+        "Bestil senest 04/11 kl. 23:59",
+    ],
+)
+def test_scrub_text_leaves_store_messages_alone(text):
+    assert scrub_text(text) == text
+
+
+def test_free_text_under_harmless_keys_is_scrubbed():
+    """Key-based redaction cannot see a name in `warnings`: the value is scrubbed too."""
+    cart = {
+        "name": "Mælk 1 l, Kildevej Mejeri",  # a product name passes as the store wrote it
+        "warnings": ["Ring til os på 98765432", "Adresse: Kildevej 12, 2100 København"],
+        "results": [{"message": "Sendt til anders@example.com"}],
+    }
+    out = scrub(cart)
+    assert out["name"] == cart["name"]
+    text = json.dumps(out, ensure_ascii=False)
+    for word in ("98765432", "Kildevej 12", "2100", "anders@"):
+        assert word not in text
+
+
+def test_free_text_in_dicts_under_a_free_text_key_is_scrubbed():
+    out = scrub({"messages": [{"text": "Ring 98765432"}], "warnings": {"detail": "a@b.dk"}})
+    assert out == {"messages": [{"text": f"Ring {REDACTED}"}], "warnings": {"detail": REDACTED}}
+
+
+@pytest.mark.parametrize("text", ["Varen 12345678 er udsolgt", "Max 1000 Stk pr. ordre"])
+def test_scrub_text_false_positives_are_accepted(text):
+    """An 8-digit id looks like a phone, "1000 Stk" like a postal code: hidden on purpose."""
+    assert REDACTED in scrub_text(text)

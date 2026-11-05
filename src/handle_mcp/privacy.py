@@ -7,11 +7,19 @@ code and delivery notes must never be in it.
 Values are replaced with a marker instead of deleted, so the model can still
 tell that an order *had* a delivery address. Keys are matched without case,
 `_` or `-`, so `doorCode`, `DoorCode` and `door_code` are the same key.
+
+Free text from a store (warnings, messages, errors) can echo personal data
+under a harmless key. `scrub_text()` replaces emails, phone numbers and
+addresses in it. It runs on the free-text keys below and on every error text,
+not on product names: "Kildevand 0,5 l 24 stk" must pass as the store wrote it.
+False positives are accepted in free text: an 8-digit id reads as a phone number
+and "1000 Stk" as a postal code and city. Better a hidden id than a leaked phone.
 """
 
 from __future__ import annotations
 
 import dataclasses
+import re
 from datetime import date, datetime
 from decimal import ROUND_HALF_UP, Decimal, InvalidOperation
 from typing import Any
@@ -86,6 +94,37 @@ PERSONAL_KEYS = frozenset(
 )
 
 
+# store free text: the value may hold personal data even though the key does not
+FREE_TEXT_KEYS = frozenset({"warnings", "message", "messages", "note", "error"})
+
+_STREET_END = (
+    "vej|gade|allé|alle|vænge|vænget|stræde|plads|torv|boulevard|parken|park|"
+    "haven|have|bakken|toften|engen|marken|stien|sti|høj|lund|ager"
+)
+_STREET_WORD = "Vej|Gade|Allé|Alle|Boulevard|Plads|Torv|Stræde|Vænge"
+_TEXT_PATTERNS = (
+    re.compile(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+"),  # email
+    re.compile(r"(?<![0-9])(?:(?:\+|00)45 ?)?(?:[0-9]{2} ?){3}[0-9]{2}(?![0-9])"),  # phone
+    re.compile(  # street: "Kildevej 12B", "H.C. Andersens Boulevard 2"
+        rf"\b(?:[A-ZÆØÅ][\w.'-]*(?:{_STREET_END})|{_STREET_WORD})\.? +[0-9]{{1,4}}[A-Za-z]?\b"
+    ),
+    re.compile(r"\b[0-9]{4} +[A-ZÆØÅ][a-zæøå]+(?: +[A-ZÆØÅ]\b)?"),  # postal code + city
+)
+
+
+def scrub_text(value: Any) -> Any:
+    """Replace emails, Danish phone numbers and addresses in free text (deep)."""
+    if isinstance(value, str):
+        for pattern in _TEXT_PATTERNS:
+            value = pattern.sub(REDACTED, value)
+        return value
+    if isinstance(value, dict):
+        return {k: scrub_text(v) for k, v in value.items()}
+    if isinstance(value, list | tuple):
+        return [scrub_text(v) for v in value]
+    return value
+
+
 def _norm(key: str) -> str:
     return key.replace("_", "").replace("-", "").lower()
 
@@ -93,13 +132,19 @@ def _norm(key: str) -> str:
 def scrub(value: Any) -> Any:
     """Return a copy of a JSON-like value with all personal fields replaced."""
     if isinstance(value, dict):
-        return {
-            k: REDACTED if isinstance(k, str) and _norm(k) in PERSONAL_KEYS else scrub(v)
-            for k, v in value.items()
-        }
+        return {k: _scrub_item(k, v) for k, v in value.items()}
     if isinstance(value, list | tuple):
         return [scrub(v) for v in value]
     return value
+
+
+def _scrub_item(key: Any, value: Any) -> Any:
+    norm = _norm(key) if isinstance(key, str) else None
+    if norm in PERSONAL_KEYS:
+        return REDACTED
+    if norm in FREE_TEXT_KEYS:
+        return scrub_text(scrub(value))
+    return scrub(value)
 
 
 def jsonable(value: Any) -> Any:

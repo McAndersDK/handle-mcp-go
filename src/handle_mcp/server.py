@@ -18,7 +18,7 @@ from mcp.types import ToolAnnotations
 
 from handle_mcp import compare, recipe_cart
 from handle_mcp import stores as registry
-from handle_mcp.privacy import jsonable, scrub
+from handle_mcp.privacy import jsonable, scrub, scrub_text
 
 log = logging.getLogger("handle_mcp")
 
@@ -76,6 +76,11 @@ def _out(value: Any) -> dict[str, Any]:
 
 
 def _error_text(store: str, exc: BaseException) -> str:
+    """The error the model sees. A store's own message may echo personal data: scrub it."""
+    return scrub_text(_error_reason(store, exc))
+
+
+def _error_reason(store: str, exc: BaseException) -> str:
     if isinstance(exc, NotImplementedError):
         return f"{store} kan ikke det endnu."
     if isinstance(exc, registry.StoreError):
