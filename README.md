@@ -11,6 +11,8 @@
 
 **Your AI agent plans the week's meals on a budget, prices them at nemlig.com and BilkaToGo and fills the cheapest cart. You approve and pay.**
 
+[handlemcp.dk](https://handlemcp.dk)
+
 </div>
 
 Danish grocery stores with home delivery, as an MCP server: [nemlig.com](https://www.nemlig.com) and [BilkaToGo](https://www.bilkatogo.dk).
