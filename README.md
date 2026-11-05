@@ -32,7 +32,7 @@ Taste, budget and meal rules live in your own prompt or skill. The server finds 
 
 - macOS, Linux or Windows (x64). Windows on ARM is not supported yet: a dependency (`cryptography`) has no ready-made build for it.
 - [uv](https://docs.astral.sh/uv/). It fetches Python 3.12+ if you do not have it.
-- An MCP client, such as Claude Code or Claude Desktop.
+- An MCP client, Grok, Claude Code, Claude Desktop or Codex etc.
 - An account at nemlig.com or BilkaToGo with home delivery to your address.
 
 ## Try it
