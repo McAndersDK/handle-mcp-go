@@ -1,5 +1,7 @@
 name: claude
 # Write @claude in a PR or issue comment to ask a question or request a change.
+# Never on a PR from a fork: the workspace holds the PR's code, which may hold
+# instructions meant for the agent, and the agent can push.
 on:
   issue_comment:
     types: [created]
@@ -23,13 +25,13 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
-      id-token: write
+      id-token: write  # the action trades this for its GitHub App token
       actions: read
     steps:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 1
-      - uses: anthropics/claude-code-action@v1
+      - uses: anthropics/claude-code-action@c0949c50a78c1ec8ce2647db36629b870e715d0c # v1.0.268
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           additional_permissions: |
