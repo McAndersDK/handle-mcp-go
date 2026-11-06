@@ -21,7 +21,7 @@ Danish grocery stores with home delivery, as an MCP server: [nemlig.com](https:/
 
 ## How it works
 
-1. **Plan.** Give your agent a budget. It reads this week's offers on nemlig.com and BilkaToGo, and nemlig's recipes, and plans the meals around them.
+1. **Plan.** Give your agent a budget. It reads this week's offers on nemlig.com and BilkaToGo, and both stores' recipes, and plans the meals around them.
 2. **Compare.** It prices the whole list in both stores: pack sizes, offers, delivery fee and minimum order.
 3. **Fill.** It puts the list in the cheapest store's cart, with your login. Only the cart, nothing else.
 4. **Pay.** You open nemlig.com or BilkaToGo, check the cart, pick a delivery time and pay.
@@ -56,7 +56,7 @@ BilkaToGo, Claude Desktop, headless machines and AI agents (`handle-mcp login <s
 |---|---|---|
 | `search_products` | no | Price, price per kg/l, offers |
 | `search_recipes` | no | The store's recipes (nemlig) |
-| `list_recipes` | no | Featured recipes, or by tag: Familievenlig, Budgetvenlig, Under 30 min ... (nemlig) |
+| `list_recipes` | no | Featured recipes (BilkaToGo: the week's madplan), by tag (nemlig) or by category (BilkaToGo) |
 | `get_recipe` | no | The products to buy for a recipe, for any number of persons |
 | `list_offers` | no | This week's offers and free gifts |
 | `compare_basket` | no | Prices a list in every store, fees included, cheapest first |

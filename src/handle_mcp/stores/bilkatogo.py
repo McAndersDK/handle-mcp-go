@@ -28,12 +28,11 @@ from handle_mcp.models import (
     Order,
     Product,
     QuantityResult,
-    Recipe,
-    RecipeDetails,
     StoreTerms,
 )
 from handle_mcp.stores import StoreError, expired, has_login, load_login, save_session
 from handle_mcp.stores._http import request
+from handle_mcp.stores.bilkatogo_recipes import BilkaRecipesMixin
 
 log = logging.getLogger(__name__)
 
@@ -141,7 +140,7 @@ class _GigyaRefused(StoreError):
     """Gigya answered with an errorCode: bad login or a dead login_token."""
 
 
-class BilkaStore:
+class BilkaStore(BilkaRecipesMixin):
     name = "bilkatogo"
 
     def __init__(self, client: httpx.AsyncClient | None = None) -> None:
@@ -251,7 +250,10 @@ class BilkaStore:
         """Products on offer in our store: Skarp pris, leaflet offers and mix offers."""
         return await self._algolia("", limit, offers=True)
 
-    async def _algolia(self, query: str, limit: int, offers: bool = False) -> list[Product]:
+    async def _algolia(
+        self, query: str, limit: int, offers: bool = False, ids: list[str] | None = None
+    ) -> list[Product]:
+        """Search, offers, or `ids`: the products with those Bilka item numbers (recipes)."""
         if not has_login(self.name):  # the assortment, prices and offers follow the address
             raise StoreError(
                 "BilkaToGo viser priser og tilbud for butikken bag din leveringsadresse, "
@@ -266,6 +268,8 @@ class BilkaStore:
         filters = f"isInAssortmentIn:{sid} AND nonsearchable:false"
         if offers:  # isInOffer is a list of store ids, not true/false
             filters = f"isInOffer:{sid} AND {filters}"
+        if ids:  # a recipe's products may be hidden from search: no nonsearchable filter
+            filters = f"({' OR '.join(f'objectID:{i}' for i in ids)}) AND isInAssortmentIn:{sid}"
         params = urlencode(
             {
                 "query": query,
@@ -298,20 +302,6 @@ class BilkaStore:
         except (KeyError, IndexError, TypeError) as exc:
             raise StoreError(f"BilkaToGo-{what} har ændret format.") from exc
         return [p for p in (self._product(h, sid) for h in hits) if p]
-
-    async def recipes(self, query: str, limit: int = 5) -> list[Recipe]:
-        raise NotImplementedError  # no recipe API found in BilkaToGo yet
-
-    async def recipe(self, recipe_id: str, persons: int | None = None) -> RecipeDetails:
-        raise NotImplementedError
-
-    async def featured_recipes(self, limit: int = 20) -> list[Recipe]:
-        raise NotImplementedError
-
-    async def recipes_by_tag(
-        self, tags: list[str], category: str | None = None, limit: int = 20
-    ) -> list[Recipe]:
-        raise NotImplementedError
 
     def _product(self, hit: dict, sid: str) -> Product | None:
         store = (hit.get("storeData") or {}).get(sid)

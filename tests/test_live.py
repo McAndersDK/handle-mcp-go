@@ -115,6 +115,25 @@ async def test_nemlig_featured_recipe_has_products():
     assert any(not i.have_at_home for i in recipe.items)
 
 
+async def test_bilkatogo_madplan_recipe_has_products():
+    bilka = STORES["bilkatogo"]()
+    week = await bilka.featured_recipes()
+    recipe = await bilka.recipe(week[0].url)
+    print(f"\n[bilkatogo] {week[0].group}: {[r.name for r in week]}")
+    print(f"[bilkatogo] {recipe.name} | {recipe.persons} pers. | {recipe.total} kr")
+    for item in recipe.items:
+        print(f"  {item.product.id}: {item.product.name} {item.product.price} kr")
+    assert len(week) >= 5 and recipe.ingredients and recipe.method
+    assert recipe.items and recipe.total > 0  # the item numbers are found in Algolia
+
+
+async def test_bilkatogo_recipes_by_category():
+    recipes = await STORES["bilkatogo"]().recipes_by_tag([], "aftensmad", limit=10)
+    for r in recipes:
+        print(f"\n[bilkatogo] {r.group}: {r.name} | {r.url}")
+    assert len({r.group for r in recipes}) > 3  # mixed across sub-categories
+
+
 async def test_nemlig_recipes_by_tag():
     recipes = await STORES["nemlig"]().recipes_by_tag(["Familievenlig", "Under 30 min"], limit=5)
     for r in recipes:

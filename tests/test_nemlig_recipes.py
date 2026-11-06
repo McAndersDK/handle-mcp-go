@@ -6,7 +6,6 @@ import pytest
 
 from handle_mcp import server
 from handle_mcp.stores import StoreError
-from handle_mcp.stores.bilkatogo import BilkaStore
 from handle_mcp.stores.nemlig_recipes import category_path, recipe_slug
 from tests import test_nemlig
 
@@ -241,8 +240,3 @@ async def test_no_tags_from_nemlig_is_a_format_change(store, monkeypatch):
     monkeypatch.setattr(store, "_api", api)
     with pytest.raises(StoreError, match="ændret format"):
         await store.recipes_by_tag(["Familievenlig"])
-
-
-async def test_bilkatogo_has_no_recipes_by_tag():
-    with pytest.raises(NotImplementedError):
-        await BilkaStore().recipes_by_tag(["Familievenlig"])
