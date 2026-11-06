@@ -1,4 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-<path d="M22 24 C 30 20, 40 26, 46 36 C 58 56, 72 74, 92 84 C 72 92, 46 82, 30 62 C 20 50, 14 32, 22 24 Z" fill="#d92b1e"/>
-<path d="M22 24 C 18 16, 20 8, 28 4" stroke="#3f8a2a" stroke-width="3" stroke-linecap="round"/><path d="M16 26 c 4 -8, 14 -10, 20 -4 c -6 6, -14 8, -20 4 Z" fill="#5fae3a"/><ellipse cx="30" cy="38" rx="6" ry="2.8" transform="rotate(50 30 38)" fill="#fff" fill-opacity=".85"/>
-</svg>
