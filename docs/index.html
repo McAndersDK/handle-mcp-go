@@ -30,6 +30,7 @@
 <link rel="icon" href="/logo.svg" type="image/svg+xml">
 <style>
 @font-face{font-family:Inter;src:url(fonts/inter.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:Newsreader;src:url(fonts/newsreader-italic.woff2) format("woff2");font-weight:200 800;font-style:italic;font-display:swap;ascent-override:97%;descent-override:24%;line-gap-override:0%}
 :root{
   --bg:#fff;--soft:#f4f4f1;--line:#e6e6e1;--ink:#1d1e1b;--mute:#6d6e69;
   --green:#2f8f46;--leaf:#8ed462;--leaf-soft:#eef8e6;--sky:#2ba0ff;--sky-soft:#e6f3ff;--coral:#ff705d;--coral-soft:#ffece8;--sun:#f5e211;--sun-soft:#fdf8c9;
@@ -54,40 +55,137 @@ nav ul a:hover{color:var(--ink)}
 nav ul a.btn{padding:10px 18px;color:#fff}
 
 /* hero */
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;padding:72px 0 40px}
+.hero{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center;padding:72px 0 40px}
 .eyebrow{font-size:14px;font-weight:500;color:var(--mute);margin:0 0 22px}
-.eyebrow b{color:var(--green);font-weight:600}
-h1{font-weight:600;font-size:clamp(56px,8.2vw,112px);line-height:.94;letter-spacing:-.055em;margin:0 0 28px}
-.lead{font-size:20px;line-height:1.5;max-width:520px;margin:0 0 36px;color:var(--mute)}
+.eyebrow b{color:var(--green);font-weight:600}.proof{display:flex;align-items:center;gap:12px;font-size:17px;font-weight:500;color:var(--ink);margin:26px 0 0}.proof .avatar{flex:none;width:44px;height:44px;border-radius:70% 30% 60% 40%/35% 65% 35% 65%;background:var(--green);overflow:hidden;transform:rotate(-8deg)}.proof .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+h1{font-weight:700;font-size:clamp(38px,4.7vw,68px);line-height:1.06;letter-spacing:-.03em;margin:0 0 28px}
+.lead{font-size:20px;line-height:1.55;max-width:540px;margin:0 0 44px;color:var(--mute)}
 .lead strong{color:var(--ink);font-weight:500}
 .ctas{display:flex;gap:10px;flex-wrap:wrap}
 
-/* receipt */
-.receipt-wrap{position:relative;justify-self:center;width:100%;max-width:380px}
-.receipt{background:var(--soft);padding:30px 28px 38px;font:13.5px/1.75 var(--mono);color:var(--ink);
-  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 12px) no-repeat,radial-gradient(circle at 8px 12px,transparent 6px,#000 6.5px) bottom/16px 12px repeat-x;
-          mask:linear-gradient(#000 0 0) top/100% calc(100% - 12px) no-repeat,radial-gradient(circle at 8px 12px,transparent 6px,#000 6.5px) bottom/16px 12px repeat-x;
-  transform:rotate(1.5deg)}
-.receipt .head{text-align:center;margin-bottom:14px}
-.receipt .head b{display:block;font-size:15px;letter-spacing:.12em}
-.receipt .row{display:flex;justify-content:space-between;gap:12px}
-.receipt .row span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.receipt .off{color:var(--green)}
-.receipt hr{border:0;border-top:1px dashed #b9bab4;margin:10px 0}
-.receipt .total{font-weight:700;font-size:16px}
-.receipt .muted{color:var(--mute)}
-.receipt .note{font-size:12px;line-height:1.6;color:var(--mute);margin-bottom:4px}
-.receipt .free{color:var(--green);font-weight:700}
-.receipt .win span:last-child::before{content:"✓ ";color:var(--green)}
-.stamp{position:absolute;right:-18px;bottom:-26px;transform:rotate(-7deg);background:var(--leaf);color:var(--ink);border-radius:999px;padding:10px 18px 10px 14px;font:600 15px/1.2 var(--sans);display:flex;align-items:center;gap:8px}
-.stamp i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--leaf);font-style:normal;font-size:13px}
-/* prints once on load */
-@media (prefers-reduced-motion:no-preference){
-  .receipt>*{opacity:0;animation:line .35s ease-out forwards}
-  .stamp{opacity:0;animation:stamp .45s cubic-bezier(.2,.9,.3,1.3) forwards;animation-delay:5.4s}
-}
+/* demo: agent app in the hero. Left: the use cases. Right: the conversation. */
+.demo{width:calc(100% + max(8px,(100vw - 1337px)/2 + 8px));min-width:0}
+@media (max-width:900px){.demo{width:100%}}
+.demo .agent{max-width:none;background:#faf9f5;border-color:#e3e0d6;border-radius:16px;box-shadow:0 1px 2px rgba(28,36,30,.04),0 18px 48px -24px rgba(28,36,30,.25)}
+.demo .agent{position:relative;z-index:2;will-change:transform}.demo .agent.drag{box-shadow:0 2px 6px rgba(28,36,30,.08),0 30px 60px -24px rgba(28,36,30,.35)}
+.demo .agent .bar{background:#faf9f5;border-bottom:1px solid #ebe8df;padding:10px 14px;justify-content:center;position:relative;cursor:grab;touch-action:none;user-select:none}.demo .agent.drag .bar{cursor:grabbing}
+.demo .bar .dots{position:absolute;left:14px;top:50%;transform:translateY(-50%)}
+.demo .bar .dots i{width:12px;height:12px}.demo .bar .dots i:nth-child(1){background:#fe5f57}.demo .bar .dots i:nth-child(2){background:#febc2e}.demo .bar .dots i:nth-child(3){background:#28c840;cursor:pointer}.demo .bar .dots i:nth-child(3):hover{box-shadow:0 0 0 2px rgba(40,200,64,.3)}
+.demo.max{position:fixed;inset:16px;z-index:60;width:auto;margin:0}.demo.max::before{content:"";position:fixed;inset:0;background:rgba(28,36,30,.4);z-index:-1}
+.demo.max .agent{height:100%;display:flex;flex-direction:column;transform:none!important}.demo.max .body{flex:1;height:auto;min-height:0}.demo.max .agent .bar{cursor:default}
+html{overflow-x:clip}.demo.max .side{padding-top:18px}.demo.max .log{align-items:center}.demo.max .log>*{width:100%;max-width:820px}.demo.max .agent .input{max-width:820px;width:calc(100% - 28px);margin:8px auto 0}.demo.max .foot{max-width:820px;margin:0 auto}.demo.max .recipe .strip{height:200px}@media (max-width:640px){.demo.max{inset:0}.demo.max .agent{border-radius:0}}
+.demo .bar .title{font-weight:500;font-size:13px;color:var(--mute)}.demo .bar .conn{display:none}
+.demo .body{display:grid;grid-template-columns:172px 1fr;height:min(620px,74vh)}
+.demo .side{background:#f3f1ea;border-right:1px solid #ebe8df;padding:14px 8px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.demo .side .grp{font:600 11px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#9a9890;padding:4px 10px 10px}
+.demo .item{display:grid;grid-template-columns:16px 1fr;gap:3px 8px;align-items:center;text-align:left;width:100%;border:0;background:none;border-radius:10px;padding:9px 10px;font:500 13.5px/1.25 var(--sans);color:var(--ink);cursor:pointer;transition:background .15s}
+.demo .item:hover{background:#f1efe7}
+.demo .item .ic{width:16px;height:16px;border-radius:50%;border:1.5px solid #c9c6ba;display:grid;place-items:center}
+.demo .item .ic svg{width:9px;height:9px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:0}
+.demo .item.done .ic{background:var(--green);border-color:var(--green)}.demo .item.done .ic svg{opacity:1}
+.demo .item.on{background:#efece3}
+.demo .item.on.run .ic{border-color:var(--line);border-top-color:var(--green);animation:spin .8s linear infinite}
+.demo .item.next .ic{border-color:var(--leaf);animation:pulse 1.2s ease-in-out infinite}
+.demo .item small{grid-column:2;display:block;font-weight:400;font-size:12px;color:#9a9890;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@keyframes pulse{50%{transform:scale(1.35);opacity:.5}}
+.demo .main{display:flex;flex-direction:column;min-width:0;min-height:0}
+.demo .agent .log>*{flex-shrink:0}
+.demo .agent .log{flex:1;min-height:0;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#d9d6cb transparent;padding:20px 22px 8px;gap:18px}
+.demo .agent .you{text-align:right}
+.demo .you .bubble{display:inline-block;background:#f0eee6;border:0;border-radius:14px;padding:10px 14px;font-size:14.5px;line-height:1.5;max-width:82%;text-align:left}
+.demo .ai{display:block}
+.demo .ai::before{content:none;width:20px;height:20px;margin-top:2px;background:#d97757;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.5 14 9l7.5 3-7.5 3-2 7.5-2-7.5L2.5 12 10 9z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.5 14 9l7.5 3-7.5 3-2 7.5-2-7.5L2.5 12 10 9z'/%3E%3C/svg%3E") center/contain no-repeat}
+.demo .ai .bubble{font-size:15px;line-height:1.6;min-width:0;display:block;max-width:none}
+.demo .tools{border:0;background:none;display:flex;flex-direction:column;gap:6px;margin:0}
+.demo .tool{display:block;padding:0;font:13px/1.4 var(--sans);background:#f5f4ed;border:1px solid #e8e6dc;border-radius:12px;overflow:hidden}
+.demo .tool+.tool{border-top:1px solid #e6e3d9}
+.demo .tool .hd{display:flex;align-items:center;gap:8px;padding:9px 12px;color:var(--ink)}
+.demo .tool .hd b{font-weight:500;line-height:1.35}.demo .tool .hd .n{color:var(--mute)}
+.demo .tool .hd svg.chev{width:12px;height:12px;margin-left:auto;fill:none;stroke:var(--mute);stroke-width:1.8;stroke-linecap:round}
+.demo .tool em{display:block;padding:7px 12px;border-top:1px solid #e8e6dc;color:var(--mute);white-space:normal;font-size:12.5px;font-style:normal}
+.demo .tool .ti{width:14px;height:14px;display:inline-block;color:var(--mute);font-size:13px;line-height:14px;text-align:center}
+.demo .tool .ok{display:inline-flex}.demo .tool .ok svg{width:12px;height:12px}
+.demo .tool.run .hd b{background:linear-gradient(90deg,#6d6b63 0%,#6d6b63 40%,#c9c6ba 50%,#6d6b63 60%,#6d6b63 100%) 0 0/200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 1.4s linear infinite}
+.demo .thought{display:flex;align-items:center;gap:6px;font-size:13.5px;color:var(--mute)}.demo .thought svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.tool .ti.doc{color:var(--mute)}
+.tool .wait{width:13px;height:13px;border:2px solid var(--line);border-top-color:var(--green);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.demo .agent .input{margin:8px 14px 0;display:block;padding:0;border:0;background:none;box-shadow:none}
+.demo .agent .input .field{display:flex;align-items:center;gap:10px;padding:13px 16px 13px 18px;border:1px solid #e3e0d6;border-radius:22px;background:#fff;box-shadow:0 1px 2px rgba(28,36,30,.04);color:#9a9890;font-size:15px}
+.demo .agent .input .field{margin:0}.demo .agent .input .field input{flex:1;min-width:0;border:0;background:none;font:inherit;font-size:15px;color:var(--ink);outline:none;padding:0}.demo .agent .input .field input::placeholder{color:#9a9890}.demo .agent .input .field button{border:0;background:none;padding:0;margin:0;display:flex;cursor:pointer;border-radius:6px}.demo .agent .input .field button:focus-visible{outline:2px solid var(--green)}.demo .agent .input .field:focus-within{border-color:#cfccc2}
+.demo .agent .input .field svg{width:16px;height:16px;fill:none;stroke:#b4b2a8;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.demo .agent .input .row{display:flex;align-items:center;gap:14px;padding:10px 10px 0 12px;color:var(--mute)}
+.demo .agent .input .row svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.demo .agent .input .mic{display:flex;align-items:center;gap:4px}.demo .agent .input .mic svg+svg{width:10px;height:10px}
+.demo .agent .input .mdl{margin-left:auto;font-size:13.5px;color:var(--ink);display:flex;align-items:center;gap:10px}
+.demo .agent .input .mdl i{margin:0;width:14px;height:14px;border-radius:50%;background:none;border:2px solid #e3e0d6;border-top-color:var(--green)}
+.demo .foot{font-size:11.5px;color:#9a9890;text-align:center;padding:10px 14px 10px}
+.plan{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:14px;margin:12px 0 0}
+.plan b{color:var(--mute);font-weight:500}
+.plan .lager{color:var(--green);font-weight:500}
+.recipe{border:1px solid #e6e3d9;border-radius:16px;background:#fff;overflow:hidden;margin:12px 0 0}
+.recipe .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;height:118px;background:#f0eee6}
+.recipe .ph{background:var(--leaf-soft);overflow:hidden;cursor:pointer;position:relative}.recipe .ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.recipe .ph:hover img{transform:scale(1.04)}.recipe .ph.on::after{content:"";position:absolute;inset:0;box-shadow:inset 0 -3px 0 var(--green)}
+.recipe .rbody{padding:16px 18px 18px}
+.recipe h3{margin:0 0 4px;font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+.recipe .sub{margin:0 0 12px;color:var(--mute);font-size:14px}
+.recipe .serv{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--mute);margin:0 0 16px}
+.recipe .serv button{width:26px;height:26px;border:0;border-radius:7px;background:#f0eee6;color:var(--ink);font:500 17px/1 var(--sans);cursor:pointer}.recipe .serv button:hover{background:#e6e3d9}
+.recipe .serv b{color:var(--ink);font-weight:500;min-width:14px;text-align:center}
+.recipe .serv .ic{margin-left:auto;display:flex;gap:14px}.recipe .serv .ic svg{width:16px;height:16px;fill:none;stroke:var(--mute);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.recipe h4{margin:0 0 6px;font-size:15px;font-weight:600}
+.recipe ul{list-style:none;margin:0 0 16px;padding:0;font-size:14px;line-height:1.75}
+.recipe ol{margin:0;padding:0;list-style:none;counter-reset:st;font-size:14px;line-height:1.5}
+.recipe ol li{display:grid;grid-template-columns:22px 1fr;gap:10px;margin:0 0 8px}
+.recipe ol li::before{counter-increment:st;content:counter(st);width:22px;height:22px;border-radius:50%;background:#f0eee6;font-size:12px;font-weight:600;display:grid;place-items:center;color:var(--ink)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 0}
+.store{border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14px;min-width:0}
+.store.win{border-color:var(--green);background:var(--leaf-soft)}
+.store .tot{font-size:24px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.store .tag{font-size:12px;color:var(--green);font-weight:600}
+.store ul{list-style:none;margin:10px 0 0;padding:0;color:var(--mute);font-size:13px;line-height:1.6}
+.store li{display:flex;justify-content:space-between;gap:8px}
+.store li span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}.store li span:last-child{flex:none}
+.store li.free span:last-child{color:var(--green);font-weight:600}
+.cartrow{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:14px 0 0}
+.cartrow .pay{font-size:13px;color:var(--mute)}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 0}
+.slot{border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px;line-height:1.35;background:#fff}.slot b{display:block;font-weight:600}.slot span{color:var(--mute);font-size:12px}
+.slot.win{border-color:var(--green);background:var(--leaf-soft)}
+.q{background:#fff;border:1px solid #e6e3d9;border-radius:14px;overflow:hidden;font-size:14px}
+.q .qh{display:flex;align-items:center;gap:10px;padding:12px 14px;font-weight:500;line-height:1.3}
+.q .pg{margin-left:auto;display:flex;align-items:center;gap:6px;color:var(--mute);font-size:12.5px;font-weight:400;white-space:nowrap}
+.q .qh svg{width:12px;height:12px;flex:none;fill:none;stroke:var(--mute);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.q .opt{display:flex;gap:12px;align-items:center;width:100%;text-align:left;padding:9px 14px;border:0;border-top:1px solid #eeece4;background:none;font:inherit;color:var(--ink);cursor:pointer;transition:background .2s}.q .opt:hover{background:#f7f6f1}.q .opt:focus-visible,.q .qf button:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+.q .opt i{width:26px;height:26px;flex:none;border-radius:7px;background:#f0eee6;color:var(--mute);font:500 12.5px/26px var(--sans);text-align:center;transition:background .2s,color .2s}
+.q .opt b{display:block;font-weight:400}.q .opt small{display:block;color:var(--mute);font-size:12.5px}
+.q .opt.pick{background:#f7f6f1}.q .opt.pick i{background:var(--ink);color:#fff}
+.q .opt.other b{color:var(--mute)}
+.q.multi .opt i{width:20px;height:20px;line-height:17px;margin:0 3px;border:1.5px solid #cfccc2;border-radius:6px;background:#fff;color:transparent;font-size:12px}
+.q.multi .opt.pick i{background:var(--green);border-color:var(--green);color:#fff}
+.q .qf{display:flex;align-items:center;gap:8px;padding:10px 14px;border-top:1px solid #eeece4}
+.q .qf .cnt{color:var(--mute);font-size:12.5px;margin-right:auto}
+.q .qf .skip,.q .qf .go{border:0;background:#f0eee6;border-radius:8px;font:inherit;font-size:13px;color:var(--ink);padding:6px 12px;cursor:pointer}.q .qf .skip:hover,.q .qf .go:hover{background:#e6e3d9}
+.q .qf .skip{margin-left:auto}.q .qf .cnt+.skip{margin-left:0}
+.q .qf .go{width:30px;height:30px;padding:0;display:inline-flex;align-items:center;justify-content:center;transition:background .2s,color .2s}.q .qf .go svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.q .qf .go.hot{background:var(--ink);color:#fff}
+.q .qin{animation:qslide .35s cubic-bezier(.2,.7,.2,1)}
+@keyframes qslide{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+.sum{background:#fff;border:1px solid #e6e3d9;border-radius:14px;padding:12px 14px;display:grid;gap:10px;font-size:14px;line-height:1.4}
+.sum span{display:block;color:var(--mute);font-size:13px}.sum b{display:block;font-weight:400}
+.fade{animation:rise .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.think{font-size:14px;color:var(--mute);padding:2px 0;background:linear-gradient(90deg,#8a887f 0%,#8a887f 40%,#d2cfc4 50%,#8a887f 60%,#8a887f 100%) 0 0/200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 1.4s linear infinite}
+@keyframes shimmer{to{background-position:-200% 0}}
+.demo .ai .bubble .w{display:inline;animation:wfade .32s ease-out both}
+@keyframes wfade{from{opacity:0}to{opacity:1}}
+.tool .ok svg{stroke-dasharray:12;stroke-dashoffset:12;animation:tick .35s ease-out forwards}
+@keyframes tick{to{stroke-dashoffset:0}}
+
 @keyframes line{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
-@keyframes stamp{from{opacity:0;transform:rotate(-7deg) scale(1.5)}to{opacity:1;transform:rotate(-7deg) scale(1)}}
+@media (prefers-reduced-motion:reduce){.fade,.q .qin,.demo .item.next .ic,.demo .item.run .ic,.demo .tool.run .hd b,.tool .wait,.tool .ok svg,.think,.demo .ai .bubble .w{animation:none}.think{color:var(--mute)}.tool .ok svg{stroke-dashoffset:0}}
+@media (max-width:640px){.demo .body{grid-template-columns:1fr;min-height:0}.demo .body{height:min(640px,78svh)}.demo .side{border-right:0;border-bottom:1px solid #ebe8df;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:8px}.demo .side .grp,.demo .item small{display:none}.demo .item{width:100%;min-width:0;padding:7px 10px 7px 9px;white-space:nowrap;border:1px solid #e6e3d9;border-radius:999px;background:#fff;gap:0 6px}.demo .item.on{background:var(--ink);color:#fff;border-color:var(--ink)}.demo .agent .log{min-height:0;padding:16px 14px 8px}.demo .agent .input{margin:6px 10px 0}.demo .agent .input .row{display:none}.demo .foot{padding:8px 12px 10px}.slots{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.cmp{grid-template-columns:1fr}.recipe .strip{height:84px}}
 
 /* sections */
 section{padding-top:136px}
@@ -246,7 +344,7 @@ body{overflow-x:clip}
 @media(max-width:700px){.agent .log{padding:20px 16px 4px}.tool{grid-template-columns:18px 1fr 16px}.tool em{grid-column:2}.agent .conn{display:none}}
 
 /* v6: sand hero, boxed nav, white CTA with round dot */
-:root{--sand:#f4f0e6}
+:root{--sand:#9ccbf3;--navy:#0a1c35}.hero h1{color:#2c2e2a}@media (min-width:901px){.hero>div:first-child{align-self:start;padding-top:24px}}.hero .proof,.hero .textlink,.hero .lead strong{color:var(--navy)}.hero .lead{color:#1c3a60}.hero .textlink{text-decoration-color:#5f7a94}.hero h1 .soft{font-family:Newsreader,Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
 .hero{position:relative;padding-bottom:88px}
 .hero::before{content:"";position:absolute;top:-140px;bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);z-index:-1;background:var(--sand)}
 .navwrap{position:relative;top:0}
@@ -255,13 +353,14 @@ nav{background:none;border:0;border-radius:0;padding:0;gap:12px}
 .navbox{flex:1;display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:12px;padding:10px 12px 10px 18px;min-height:68px}
 nav ul{gap:2px}
 nav ul a{padding:10px 14px;border-radius:8px;color:var(--ink);font-size:16px}
-nav ul a:hover{background:var(--sand)}
+nav ul a:hover{background:#eaf3fc}
 .btn{gap:16px;padding:8px 8px 8px 22px;border-radius:12px;background:#fff;color:var(--ink);font-size:16px;font-weight:500;box-shadow:inset 0 0 0 1px var(--line)}
 .btn i{width:40px;height:40px;background:#8ed462;color:#1c241e}
 .btn i svg{width:13px;height:13px;stroke-width:2}
 .btn.coral,.btn.line{background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
 .btn.coral i,.btn.line i{background:#8ed462;color:#1c241e}
 .hero .btn,nav .btn{box-shadow:none}
+.hero .btn.coral{background:var(--sun);color:var(--ink)}.hero .btn.coral i{background:var(--ink);color:#fff}.hero .btn.coral:hover{background:#eedc0a}
 nav .navcta{min-height:68px;padding:8px 12px 8px 22px}
 .receipt{background:#fff}
 @media (max-width:900px){.navwrap{padding-top:12px}.navbox{min-height:56px;padding:8px 12px}nav .navcta{min-height:56px;padding:6px 8px 6px 16px}.hero::before{top:-120px}}
@@ -269,7 +368,7 @@ nav .navcta{min-height:68px;padding:8px 12px 8px 22px}
 /* v7: one primary CTA, wordmark weight, travelling basket */
 .brand{font-weight:500;font-size:26px;gap:12px}.logo,.logo svg{width:46px;height:38px}
 .ctas{align-items:center;gap:22px}
-.textlink{font-size:16px;color:var(--ink);text-decoration:underline;text-decoration-color:#c9c4b5;text-underline-offset:4px}
+.textlink{font-size:16px;white-space:nowrap;color:var(--ink);text-decoration:underline;text-decoration-color:#c9c4b5;text-underline-offset:4px}
 .textlink:hover{text-decoration-color:var(--ink)}
 main{position:relative}
 .hero{padding-bottom:340px}
@@ -283,7 +382,7 @@ main{position:relative}
 .hero-basket{position:absolute;left:0;top:0;width:600px;height:auto;z-index:4;pointer-events:none;will-change:transform;visibility:hidden}
 @media (max-width:900px){.hero{padding-bottom:190px}#hvorfor.band{padding-top:130px}.brand{font-size:21px;gap:9px}.logo,.logo svg{width:38px;height:32px}.hero-basket{width:300px}}
 .preload{display:none}
-.pl .preload{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:var(--sand);pointer-events:none;animation:pl-out .55s cubic-bezier(.7,0,.25,1) 1.7s forwards}
+.pl .preload{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:#f4f0e6;pointer-events:none;animation:pl-out .55s cubic-bezier(.7,0,.25,1) 1.7s forwards}
 .preload svg{width:min(260px,56vw);height:auto;overflow:visible}
 .pl-draw{stroke-dasharray:1 2;stroke-dashoffset:1.02;opacity:.35;animation:pl-draw .9s cubic-bezier(.6,0,.3,1) .1s forwards}
 .pl-fade{opacity:0;animation:pl-in .2s ease .9s forwards}
@@ -347,39 +446,33 @@ main{position:relative}
   <div class="stage">
   <div class="hero">
     <div>
-      <p class="eyebrow"><b>Gratis og open source</b> · nemlig.com og BilkaToGo</p>
-      <h1>Tom madkonto<br>den 20.?</h1>
-      <p class="lead"><strong>Og sjette tur i butikken i denne uge?</strong> Din AI laver madplanen ud fra jeres budget og ugens tilbud, og fylder den billigste kurv. Én levering, hele ugen. Du betaler selv.</p>
+      <h1>Spar penge på ugens indkøb. <span class="soft">Få ro resten af ugen.</span></h1>
+      <p class="lead">Aftensmaden er planlagt, budgettet holder, og kurven er fyldt med ugens bedste tilbud fra nemlig.com eller BilkaToGo. <strong>Du godkender og betaler selv.</strong></p>
       <div class="ctas">
-        <a class="btn coral" href="#kom-i-gang" data-umami-event="kom-i-gang" data-umami-event-sted="hero">Kom i gang <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 2v8M2.5 6.5L6 10l3.5-3.5"/></svg></i></a>
-        <a class="textlink" href="https://github.com/NJohansen/handle-mcp" data-umami-event="github" data-umami-event-sted="hero">eller se koden på GitHub</a>
+        <a class="btn coral" href="https://tally.so/r/ArKdkW" data-tally="ArKdkW" data-sted="hero">Skriv mig på ventelisten <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></i></a>
+        <a class="textlink" href="https://github.com/NJohansen/handle-mcp" data-umami-event="github" data-umami-event-sted="hero">eller host det selv på GitHub</a>
       </div>
+      <p class="proof"><span class="avatar"><img src="niclas.jpg" alt="" width="44" height="44" style="transform:rotate(8deg) scale(1.15)"></span>Vores familie på 4 sparer ca. 2.500 kr. om måneden.</p>
     </div>
 
-    <div class="receipt-wrap" role="img" aria-label="Eksempel på ugens kurv som kvittering: tilbud fra begge butikker, opskrifter fra nemlig.com, en gratis vare, nemlig.com 842 kr mod BilkaToGo 879 kr, 58 kr under budget">
-      <div class="receipt">
-        <div class="head" style="animation-delay:0.20s"><b>UGENS KURV</b>5 aftener · 4 pers.</div>
-        <div class="note" style="animation-delay:0.45s">Tilbud tjekket: nemlig.com + BilkaToGo</div>
-        <div class="note" style="animation-delay:0.70s">Opskrifter: karry, laks, pizza (nemlig.com)</div>
-        <hr style="animation-delay:0.95s">
-        <div class="row" style="animation-delay:1.20s"><span>Kyllingelår 1 kg</span><span>59,00</span></div>
-        <div class="row off" style="animation-delay:1.45s"><span>&nbsp; tilbud</span><span>−20,00</span></div>
-        <div class="row" style="animation-delay:1.70s"><span>Laks 600 g</span><span>84,53</span></div>
-        <div class="row off" style="animation-delay:1.95s"><span>&nbsp; −30 %</span><span>−36,22</span></div>
-        <div class="row" style="animation-delay:2.20s"><span>Kikærter 2 stk</span><span>14,00</span></div>
-        <div class="row" style="animation-delay:2.45s"><span>Kokosmælk 2 stk</span><span>17,90</span></div>
-        <div class="row" style="animation-delay:2.70s"><span>Mozzarella 3 stk</span><span>60,00</span></div>
-        <div class="row off" style="animation-delay:2.95s"><span>&nbsp; 3 for 48</span><span>−12,00</span></div>
-        <div class="row" style="animation-delay:3.20s"><span>Broccoli 2 stk</span><span>30,00</span></div>
-        <div class="row free" style="animation-delay:3.45s"><span>Kaffe 400 g · gratis</span><span>0,00</span></div>
-        <div class="row muted" style="animation-delay:3.70s"><span>+ 19 varer</span><span>615,79</span></div>
-        <div class="row" style="animation-delay:3.95s"><span>Levering</span><span>29,00</span></div>
-        <hr style="animation-delay:4.20s">
-        <div class="row total win" style="animation-delay:4.45s"><span>nemlig.com</span><span>842,00</span></div>
-        <div class="row muted" style="animation-delay:4.70s"><span>BilkaToGo</span><span>879,00</span></div>
-        <div class="row muted" style="animation-delay:4.95s"><span>Budget 900 · tilbage</span><span>58,00</span></div>
+    <div class="demo" id="demo">
+      <div class="agent" aria-label="Eksempel på en AI-assistent med HandleMCP">
+        <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="title">Fremtidens måde at købe ind på</span></div>
+        <div class="body">
+          <div class="side" aria-label="Eksempler">
+            <div class="grp">Denne uge</div>
+            <button class="item" type="button" aria-pressed="false"><span class="ic"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span>Lav madplan<small>700 kr · tilbud · lager</small></button>
+            <button class="item" type="button" aria-pressed="false"><span class="ic"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span>Vis opskrifter<small>3 nye retter til 4</small></button>
+            <button class="item" type="button" aria-pressed="false"><span class="ic"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span>Find billigste<small>nemlig eller Bilka</small></button>
+            <button class="item" type="button" aria-pressed="false"><span class="ic"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span>Godkend kurven<small>Du betaler selv</small></button>
+          </div>
+          <div class="main">
+            <div class="log"></div>
+            <div class="input"><form class="field"><input type="text" name="q" autocomplete="off" aria-label="Skriv til HandleMCP" placeholder="Stil et spørgsmål eller start en opgave …"><button type="submit" aria-label="Send"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 3v5H4M6.5 5.5 4 8l2.5 2.5"/></svg></button></form><div class="row"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg><span class="mic"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="1.5" width="5" height="8" rx="2.5"/><path d="M3.5 7.5a4.5 4.5 0 0 0 9 0M8 12v2.5"/></svg><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5l3-3"/></svg></span><span class="mdl">HandleMCP <i></i></span></div></div>
+            <div class="foot">Du betaler selv. HandleMCP bestiller aldrig.</div>
+          </div>
+        </div>
       </div>
-      <div class="stamp"><i>✓</i>Du betaler selv</div>
     </div>
   </div>
 
@@ -408,15 +501,15 @@ main{position:relative}
     <div class="agent" aria-label="Eksempel på en samtale med en AI-assistent">
       <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="title">AI-assistent</span><span class="conn"><i></i>HandleMCP tilsluttet</span></div>
       <div class="log">
-        <div class="you"><div class="bubble">Der er 900 kr til mad i denne uge. Lav en madplan til 4 ud fra tilbuddene, og fyld den billigste kurv.</div></div>
+        <div class="you"><div class="bubble">Der er 700 kr til mad i denne uge. Lav en madplan til 4 ud fra tilbuddene, og fyld den billigste kurv.</div></div>
         <div class="tools">
-          <div class="tool"><span class="ti">⚙</span><span><b>handle</b> · list_offers</span><em>nemlig.com + BilkaToGo · 214 tilbud · 1 gratis vare</em><span class="ok"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span></div>
-          <div class="tool"><span class="ti">⚙</span><span><b>handle</b> · list_recipes</span><em>nemlig.com · Familievenlig</em><span class="ok"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span></div>
-          <div class="tool"><span class="ti">⚙</span><span><b>handle</b> · get_recipe</span><em>3 opskrifter · 4 personer</em><span class="ok"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span></div>
-          <div class="tool"><span class="ti">⚙</span><span><b>handle</b> · compare_basket</span><em>31 varer · nemlig.com 842 kr · BilkaToGo 879 kr</em><span class="ok"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span></div>
-          <div class="tool"><span class="ti">⚙</span><span><b>handle</b> · set_cart_quantities</span><em>31 varer i kurven hos nemlig.com</em><span class="ok"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span></div>
+          <div class="tool"><span class="ti">⚙</span><span><b>Finder ugens tilbud</b></span><em>nemlig.com + BilkaToGo · 214 tilbud · 1 gratis vare</em><span class="ok"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span></div>
+          <div class="tool"><span class="ti">⚙</span><span><b>Finder opskrifter</b></span><em>nemlig.com · Familievenlig</em><span class="ok"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span></div>
+          <div class="tool"><span class="ti">⚙</span><span><b>Henter opskrifter</b></span><em>3 opskrifter · 4 personer</em><span class="ok"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span></div>
+          <div class="tool"><span class="ti">⚙</span><span><b>Sammenligner butikker</b></span><em>28 varer · nemlig.com 693 kr · BilkaToGo 741 kr</em><span class="ok"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span></div>
+          <div class="tool"><span class="ti">⚙</span><span><b>Fylder kurven</b></span><em>28 varer i kurven hos nemlig.com</em><span class="ok"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span></div>
         </div>
-        <div class="ai"><div class="bubble">Fem aftener: kyllingekarry, laks med ris, rugbrødsaften, spaghetti med kødsovs og hjemmelavet pizza. Bygget på ugens tilbud i begge butikker, og en gratis pose kaffe kommer med. nemlig.com er 37 kr billigere end BilkaToGo, og I har 58 kr tilbage. Kurven er klar: åbn den, vælg en tid og betal.</div></div>
+        <div class="ai"><div class="bubble">Hele ugen: one pot-lasagne i stor portion, rugbrødsaften med frikadeller, sprøde kyllingenuggets, laks i citronsauce og harira. Bygget på ugens tilbud i begge butikker, og gratis rosinboller kommer med. nemlig.com er 48 kr billigere end BilkaToGo, og I har 7 kr tilbage. Kurven er klar: åbn den, vælg en tid og betal.</div></div>
       </div>
       <div class="input"><span>Skriv en besked …</span><i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5"/></svg></i></div>
     </div>
@@ -492,8 +585,8 @@ claude mcp add handle -- uvx --from git+https://github.com/NJohansen/handle-mcp@
 (()=>{const b=document.getElementById('basket'),hero=document.querySelector('.hero'),sec=document.getElementById('hvorfor'),main=b&&b.parentElement;if(!b||!hero||!sec)return;
 const still=matchMedia('(prefers-reduced-motion: reduce)');let a,z,raf=0;
 const box=e=>{const r=e.getBoundingClientRect(),m=main.getBoundingClientRect();return{x:r.left-m.left,y:r.top-m.top,w:r.width,h:r.height}};
-function measure(){hero.style.position='relative';hero.style.top='';const m0=main.getBoundingClientRect().top+scrollY,h=box(hero),s=box(sec),f=box(sec.querySelector('.facts')),c=box(hero.querySelector('.ctas')),w=b.offsetWidth,bh=b.offsetHeight;
-const sm=innerWidth<900;a=sm?{x:h.x+h.w/2-w/2,y:h.y+h.h-bh*0.62}:{x:h.x+h.w/2-w/2-70,y:Math.max(c.y+c.h+28,Math.min(h.y+h.h-bh*0.62,innerHeight-m0-bh*0.62,box(sec.querySelector('h2')).y-bh-20))};
+function measure(){hero.style.position='relative';hero.style.top='';const m0=main.getBoundingClientRect().top+scrollY,h=box(hero),s=box(sec),f=box(sec.querySelector('.facts')),c=box(hero.querySelector('.ctas')),pr=box(hero.querySelector('.proof')||hero.querySelector('.ctas')),w=b.offsetWidth,bh=b.offsetHeight;
+const sm=innerWidth<900;a=sm?{x:h.x+h.w/2-w/2,y:h.y+h.h-bh*0.62}:{x:c.x+c.w/2-w/2,y:Math.max(pr.y+pr.h+28,Math.min(h.y+h.h-bh*0.62,innerHeight-m0-bh*0.62,box(sec.querySelector('h2')).y-bh-20))};
 const k=sm?1:.62;z=sm?a:{x:s.x+s.w-w*k/2-8-w/2,y:f.y+24-bh*k/2-bh/2};z.k=k;z.top=s.y;
 hero.style.position='';hero.style.top=Math.min(0,innerHeight-h.h)+'px';z.dim=m0+h.y+Math.max(0,h.h-innerHeight)}
 function draw(){raf=0;let p=still.matches?0:Math.min(1,Math.max(0,scrollY/Math.max(1,z.top-innerHeight*0.35)));p=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
@@ -501,6 +594,85 @@ const x=a.x+(z.x-a.x)*p,y=a.y+(z.y-a.y)*p,k=1+(z.k-1)*p,r=-6+10*p;b.style.transf
 const go=()=>{if(!raf)raf=requestAnimationFrame(draw)};
 const init=()=>{measure();draw()};
 addEventListener('scroll',go,{passive:true});addEventListener('resize',init);addEventListener('load',init);b.complete?init():b.addEventListener('load',init)})();
+</script>
+<script>
+// Hero demo: four example conversations. Numbers are an example, not live prices.
+(()=>{
+const D=document.getElementById('demo');if(!D)return;
+const log=D.querySelector('.log'),items=[...D.querySelectorAll('.item')],still=matchMedia('(prefers-reduced-motion: reduce)');
+const el=h=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstChild};
+const wait=ms=>new Promise(r=>setTimeout(r,still.matches?0:ms));
+const kr=n=>n.toLocaleString('da-DK')+' kr';
+const dn=()=>{log.scrollTop=log.scrollHeight};
+// The green dot maximises the window; Escape or the dot restores it.
+{const dot=D.querySelector('.bar .dots i:nth-child(3)');dot.setAttribute('role','button');dot.setAttribute('tabindex','0');dot.setAttribute('aria-label','Maksimér vinduet');const ph=document.createElement('div');const tog=()=>{const on=D.classList.toggle('max');if(on){ph.style.height=D.offsetHeight+'px';D.before(ph);document.body.appendChild(D);document.documentElement.style.overflow='hidden'}else{ph.replaceWith(D);document.documentElement.style.overflow=''}[...document.body.children].forEach(c=>{if(c!==D&&c.tagName!=='SCRIPT')c.toggleAttribute('inert',on)});if(on){D.setAttribute('role','dialog');D.setAttribute('aria-modal','true');D.setAttribute('aria-label','Ugens indkøb, maksimeret')}else{D.removeAttribute('role');D.removeAttribute('aria-modal');D.removeAttribute('aria-label')}dot.setAttribute('aria-label',on?'Gendan vinduet':'Maksimér vinduet');dot.focus();dn();dispatchEvent(new Event('resize'))};dot.addEventListener('click',tog);dot.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});addEventListener('keydown',e=>{if(e.key==='Escape'&&D.classList.contains('max'))tog()})}
+// The window can be dragged by its title bar.
+{const win=D.querySelector('.agent'),bar=win.querySelector('.bar');let dx=0,dy=0;bar.addEventListener('pointerdown',e=>{if(e.button||D.classList.contains('max')||e.target.closest('.dots'))return;const sx=e.clientX-dx,sy=e.clientY-dy;bar.setPointerCapture(e.pointerId);win.classList.add('drag');const mv=e=>{dx=e.clientX-sx;dy=e.clientY-sy;win.style.transform=`translate(${dx}px,${dy}px)`};const up=()=>{bar.removeEventListener('pointermove',mv);bar.removeEventListener('pointerup',up);bar.removeEventListener('pointercancel',up);win.classList.remove('drag')};bar.addEventListener('pointermove',mv);bar.addEventListener('pointerup',up);bar.addEventListener('pointercancel',up)})}
+const RC=[
+ {n:'One pot lasagne med kylling og mascarpone',s:'Cremet lasagne i én pande.',t:'40 min',i:'https://media.umbraco.io/nemlig3/52weelyh/maaltider-uge-48-2025-one-pot-lasagne-med-kylling-og-mascarpone-ubeskaaret.jpg?crop=0.373133205897067,0.21692917722216115,0.1030630137559129,0.15524837537173686&cropmode=percentage&width=600&height=338',
+  ing:[[1,'stk.','løg'],[2,'fed','hvidløg'],[300,'g','gulerødder'],[400,'g','lasagneplader'],[1,'spsk.','neutral olie'],[400,'g','hakket kylling'],[4,'spsk.','tomatpuré'],[390,'g','hakkede tomater'],[3,'tsk.','italiensk krydderimix'],[1,'stk.','hønsebouillonterning'],[8,'dl','vand'],[150,'g','mascarpone'],[0,'','salt og peber'],[0.25,'bdt.','basilikum']],
+  st:['Pil og hak løg og hvidløg. Riv gulerødderne groft, og knæk lasagnepladerne i små stykker.','Steg løg og hvidløg i olie på en stor pande. Tilsæt kyllingen, og brun den i ca. 5 min.','Kom gulerod, tomatpuré og krydderimix på panden, og lad det stege et par minutter.','Tilsæt lasagneplader, hakkede tomater, bouillon og vand. Læg låg på, og lad det simre 15–20 min. Rør undervejs.','Vend mascarpone i, smag til med salt og peber, og top med frisk basilikum.']},
+ {n:'Sprøde kyllingenuggets',s:'Hjemmelavede nuggets i sprød rasp.',t:'30 min',i:'https://media.umbraco.io/nemlig3/4sddjlj5/nuggets-web-1.jpeg?crop=0.0,0.078,0.0,0.07825000000000004&cropmode=percentage&width=600&height=338',
+  ing:[[2,'tsk.','paprika'],[1,'tsk.','dijonsennep'],[2,'tsk.','salt'],[0.5,'tsk.','peber'],[1,'fed','hvidløg'],[4,'spsk.','neutral yoghurt'],[500,'g','kyllingebryst'],[100,'g','rasp'],[0,'','neutral olie til stegning']],
+  st:['Bland paprika, sennep, salt, peber, presset hvidløg og yoghurt til en marinade.','Skær kyllingen i mundrette stykker, og vend dem i marinaden. Lad dem gerne stå 30 min.','Vend stykkerne i rasp.','Steg dem gyldne i 1–2 cm olie. Læg dem på køkkenrulle, og drys med lidt salt.']},
+ {n:'Harira, marokkansk suppe',s:'Fyldig suppe med linser og kikærter.',t:'75 min',i:'https://media.umbraco.io/nemlig3/n1vpwtc1/camillas-opskrifter-september-2022-16-x-9.jpg?mode=crop&anchor=center&width=600&height=338',
+  ing:[[300,'g','oksebov'],[1,'stk.','løg'],[3,'tsk.','frisk ingefær, revet'],[3,'stk.','bladselleri'],[25,'g','smør'],[3,'spsk.','tomatpuré'],[1,'tsk.','stødt kanel'],[1,'tsk.','stødt koriander'],[0.5,'tsk.','gurkemeje'],[1,'ds.','flåede tomater'],[0.5,'dl','røde linser'],[2,'stk.','oksebouillonterninger'],[1,'l','vand'],[0.5,'dl','jasminris'],[2,'ds.','kikærter'],[1,'spsk.','majsstivelse'],[1,'stk.','citron, saften'],[0.25,'bdt.','koriander'],[0.25,'bdt.','bredbladet persille'],[1,'stk.','rød chili'],[0,'','salt og peber']],
+  st:['Skær kødet i mundrette stykker, og brun det i en stor gryde.','Hak løg, riv ingefær, og snit bladselleri. Steg løg i smør, og rist tomatpuréen med.','Tilsæt ingefær, kanel, bladselleri, koriander, gurkemeje, linser, flåede tomater, bouillon og vand. Lad det simre under låg i 1 time.','Kom ris i efter 40 min. og kikærter 10 min. før servering. Jævn med majsstivelse rørt ud i lidt vand.','Smag til med salt, peber og citronsaft. Top med krydderurter og chili.']}];
+const fmt=(x,u)=>{const st=/^(stk|fed|ds)/.test(u)?.5:u==='bdt.'?.25:x<10?.1:1;return String(Math.max(st,Math.round(x/st)*st)).replace('.',',')};
+const ICONS='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11.5 2.5l2 2L6 12H4v-2z"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 10V2M4.5 5.5 8 2l3.5 3.5M3 9v4h10V9"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6V2h8v4M4 11H2V6h12v5h-2M4 9h8v5H4z"/></svg>';
+const recipe=(k,n)=>{const r=RC[k],f=n/4;return `<div class="recipe"><div class="strip">${RC.map((q,j)=>`<div class="ph${j===k?' on':''}" data-k="${j}" role="button" tabindex="0" aria-label="${q.n}"><img src="${q.i}" alt="" loading="lazy" width="600" height="338" onerror="this.remove()"></div>`).join('')}</div><div class="rbody"><h3>${r.n}</h3><p class="sub">${r.s} ${r.t}. Fra nemlig.com.</p><div class="serv"><button type="button" data-d="-1" aria-label="Færre personer">−</button><b>${n}</b><button type="button" data-d="1" aria-label="Flere personer">+</button><span>personer</span><span class="ic">${ICONS}</span></div><h4>Ingredienser</h4><ul>${r.ing.map(a=>`<li>${a[0]?fmt(a[0]*f,a[1])+' '+a[1]+' ':''}${a[2]}</li>`).join('')}</ul><h4>Fremgangsmåde</h4><ol>${r.st.map(t=>`<li>${t}</li>`).join('')}</ol></div></div>`};
+const cases=[
+ {t:'Lav madplan',you:'Der er 700 kr til mad i denne uge. Lav en madplan til 4 ud fra det vi har og ugens tilbud.',
+  intro:'Første gang. Tre hurtige spørgsmål, så husker jeg det til næste uge. Vælg selv.',
+  ask:[{t:'Hvem skal jeg handle til?',o:[['2 voksne og 2 børn','7 og 2 år'],['2 voksne',''],['Flere personer','Skriv hvem under Noget andet']]},
+       {t:'Hvad må en uge koste?',o:[['Under 500 kr',''],['Ca. 700 kr','Det, du skrev'],['Over 1.000 kr','']]},
+       {t:'Hvad elsker børnene? Vælg alle, der passer.',multi:true,o:[['Spaghetti med kødsovs',''],['Pizza',''],['Kylling i karry',''],['Rugbrødsaften','']]}],
+  tools:[['doc','Tjekker hvad I har og mangler','røde linser, ris, laks i fryseren · mangler toiletpapir og opvasketabs'],['','Finder ugens tilbud hos nemlig.com og BilkaToGo','214 tilbud · 1 gratis vare'],['','Regner hele ugens indkøb ud i begge butikker','28 varer · nemlig.com 693 kr · BilkaToGo 741 kr']],
+  ai:'Hele ugen, to aftener er rester. Toiletpapir og opvasketabs er med. nemlig.com: <b>693 kr, 7 kr under budget.</b>',
+  html:'<div class="plan"><b>Tir</b><span>One pot-lasagne med kylling (stor portion)</span><b>Ons</b><span>Lasagne, dag 2</span><b>Tor</b><span>Rugbrødsaften med frikadeller</span><b>Fre</b><span>Sprøde kyllingenuggets</span><b>Lør</b><span>Laks i citronsauce <span class="lager">· fra fryseren</span></span><b>Søn</b><span>Harira på jeres linser <span class="lager">· fra lageret</span></span></div>'},
+ {t:'Vis opskrifter',you:'Vis mig de tre retter, børnene ikke har prøvet før.',
+  tools:[['','Finder familievenlige opskrifter på nemlig.com','48 opskrifter'],['','Henter tre opskrifter med ingredienser og trin','3 opskrifter til 4 personer']],
+  ai:'Her er tre fra nemligs familievenlige. Jeg viser lasagnen først. Tryk på et billede for at se de andre, og skru op for personer, så regner jeg mængderne om.',
+  html:recipe(0,4),
+  after(a){let k=0,n=4;const w=a.querySelector('.fade');const bind=()=>{w.querySelectorAll('.ph').forEach(p=>{p.onclick=()=>{k=+p.dataset.k;n=4;w.innerHTML=recipe(k,n);bind();dispatchEvent(new Event('resize'))};p.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();p.onclick()}}});w.querySelectorAll('.serv button').forEach(b=>b.onclick=()=>{n=Math.min(12,Math.max(2,n+ +b.dataset.d));w.innerHTML=recipe(k,n);bind();w.querySelector(`.serv button[data-d="${b.dataset.d}"]`).focus();dispatchEvent(new Event('resize'))})};bind()}},
+ {t:'Find billigste',you:'Hvilken butik er billigst for hele ugen? Fyld kurven der.',
+  tools:[['','Sammenligner nemlig.com og BilkaToGo','28 varer · samme mængder i begge butikker'],['','Lægger varerne i kurven hos nemlig.com','28 varer i kurven · intet bestilt']],
+  ai:'nemlig.com er <b>48 kr billigere</b> i denne uge. Forskellen er kyllingen, skyren og en gratis vare. Kurven er fyldt. Skriv <b>ja tak</b>, så åbner jeg den hos nemlig.com, hvor du vælger tid og betaler.',go:'https://www.nemlig.com/',
+  html:'<div class="cmp"><div class="store win"><div class="tag">Billigst ✓</div><div class="tot">693 kr</div>nemlig.com<ul><li><span>Kyllingeinderfilet 1 kg</span><span>100,00</span></li><li><span>Skyr 2 kg</span><span>40,00</span></li><li class="free"><span>Rosinboller</span><span>gratis</span></li><li><span>Levering</span><span>29,00</span></li><li><span>+ 25 varer</span><span>524,00</span></li></ul></div><div class="store"><div class="tag">&nbsp;</div><div class="tot">741 kr</div>BilkaToGo<ul><li><span>Kyllingeinderfilet 1 kg</span><span>129,00</span></li><li><span>Skyr 2 kg</span><span>52,00</span></li><li><span>Rosinboller</span><span>18,00</span></li><li><span>Levering</span><span>39,00</span></li><li><span>+ 25 varer</span><span>503,00</span></li></ul></div></div><div class="cartrow"><a class="btn" href="https://www.nemlig.com/" target="_blank" rel="noopener">Se kurv hos nemlig.com <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></i></a></div>'},
+ {t:'Godkend kurven',you:'Er kurven klar? Så vil jeg godkende og betale.',
+  tools:[['','Tjekker kurven hos nemlig.com','28 varer · 693 kr · intet bestilt'],['','Finder ledige leveringstider hos nemlig.com','søndag · 6 ledige tider']],
+  ai:'Kurven er klar. Billigste levering søndag er <b>kl. 8–12 for 29 kr.</b> Jeg bestiller aldrig. Skriv <b>ja tak</b>, så åbner jeg nemlig.com, hvor du godkender kurven, vælger tid og betaler.',go:'https://www.nemlig.com/',
+  html:'<div class="slots"><div class="slot win"><b>8–12</b><span>29 kr</span></div><div class="slot"><b>12–16</b><span>39 kr</span></div><div class="slot"><b>16–18</b><span>49 kr</span></div><div class="slot"><b>18–20</b><span>49 kr</span></div><div class="slot"><b>20–22</b><span>39 kr</span></div><div class="slot"><b>22–24</b><span>39 kr</span></div></div><div class="cartrow"><a class="btn" href="https://www.nemlig.com/" target="_blank" rel="noopener">Godkend kurven hos nemlig.com <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></i></a></div>'}];
+const ARR='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+// First-time questions: a question card. The visitor answers; the plan waits for the last answer.
+async function ask(qs,id){const card=el('<div class="q fade"></div>');log.appendChild(card);const ans=[];
+ for(let n=0;n<qs.length;n++){const q=qs[n];if(id!==run)return;card.classList.toggle('multi',!!q.multi);
+  card.innerHTML=`<div class="qin"><div class="qh"><span>${q.t}</span><span class="pg"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M7.5 3 4.5 6l3 3"/></svg><span>${n+1} af ${qs.length}</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 3 7.5 6l-3 3"/></svg></span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 3l6 6M9 3l-6 6"/></svg></div>${q.o.map((o,j)=>`<button type="button" class="opt"${q.multi?' role="checkbox" aria-checked="false"':''}><i>${q.multi?'✓':j+1}</i><span><b>${o[0]}</b>${o[1]?`<small>${o[1]}</small>`:''}</span></button>`).join('')}<button type="button" class="opt other"${q.multi?' role="checkbox" aria-checked="false"':''}><i>✎</i><span><b>Noget andet</b></span></button><div class="qf">${q.multi?'<span class="cnt">0 valgt</span>':''}<button type="button" class="skip">Spring over</button>${q.multi?`<button type="button" class="go" aria-label="Videre">${ARR}</button>`:''}</div></div>`;dn();
+  const opts=[...card.querySelectorAll('.opt')],cnt=card.querySelector('.cnt'),go=card.querySelector('.go'),skip=card.querySelector('.skip');
+  const picked=await new Promise(res=>{const sel=new Set();
+   opts.forEach((o,j)=>o.onclick=()=>{if(q.multi){const on=o.classList.toggle('pick');o.setAttribute('aria-checked',on);on?sel.add(j):sel.delete(j);cnt.textContent=sel.size+' valgt';go.classList.toggle('hot',sel.size>0)}else{opts.forEach(x=>x.classList.remove('pick'));o.classList.add('pick');setTimeout(()=>res([j]),still.matches?0:350)}});
+   skip.onclick=()=>res([]);if(go)go.onclick=()=>res([...sel].sort((x,y)=>x-y))});
+  if(id!==run)return;const lab=opts.map(o=>o.querySelector('b').textContent);ans.push([q.t,picked.length?picked.map(j=>lab[j]).join(', '):'Sprunget over']);if(q.multi)await wait(250)}
+ if(id!==run)return;card.outerHTML=`<div class="sum fade">${ans.map(a=>`<div><span>${a[0]}</span><b>${a[1]}</b></div>`).join('')}</div>`;dn();await wait(500)}
+let asked=false;
+let run=0,pending=null;
+// The composer is real: after a case that ends at a store, "ja tak" opens the store in a new tab. Nothing is ordered.
+{const form=D.querySelector('.field'),inp=form.querySelector('input');const say=(cls,h)=>{log.appendChild(el(`<div class="${cls}"><div class="bubble">${h}</div></div>`));dn()};
+ form.addEventListener('submit',e=>{e.preventDefault();const t=inp.value.trim();if(!t||log.hasAttribute('aria-busy')||log.querySelector('.q'))return;inp.value='';say('you',t.replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c])));
+  if(pending&&/^(ja|jo|yes|ok|okay|gerne)\b/i.test(t)){window.open(pending,'_blank','noopener');say('ai','Åbner nemlig.com i en ny fane. Sker der ikke noget, så <a href="'+pending+'" target="_blank" rel="noopener">åbn den her</a>. Du vælger tid og betaler selv.')}
+  else if(pending)say('ai','Skriv <b>ja tak</b>, så åbner jeg nemlig.com. Jeg bestiller ikke noget.');
+  else say('ai','Det her er en demo. Prøv <b>Find billigste</b> i menuen, og skriv <b>ja tak</b>, når kurven er fyldt.')})}
+const PH=matchMedia('(max-width:640px)').matches?'Spørg om noget …':'Stil et spørgsmål eller start en opgave …';async function play(i){const id=++run;pending=null;D.querySelector('.field input').placeholder=PH;items.forEach((c,j)=>{c.classList.toggle('on',j===i);c.classList.toggle('run',j===i);c.setAttribute('aria-pressed',j===i);c.classList.remove('next')});log.innerHTML='';log.setAttribute('aria-busy','true');const c=cases[i];
+ const you=el('<div class="you"><div class="bubble"></div></div>');log.appendChild(you);const b=you.firstChild;
+ if(still.matches)b.textContent=c.you;else{for(const ch of c.you){if(id!==run)return;b.textContent+=ch;await wait(11)}}
+ const th=el('<div class="think">Tænker …</div>');log.appendChild(th);dn();await wait(1000);if(id!==run)return;th.outerHTML='<div class="thought">Tænkte i 1 sek. <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5l3-3"/></svg></div>';if(c.ask&&!asked){const pre=el(`<div class="ai"><div class="bubble">${c.intro}</div></div>`);log.appendChild(pre);dn();await wait(500);items[i].classList.remove('run');log.removeAttribute('aria-busy');await ask(c.ask,id);if(id!==run)return;asked=true;items[i].classList.add('run');log.setAttribute('aria-busy','true');log.appendChild(el('<div class="think">Tænker …</div>'));dn();await wait(1000);if(id!==run)return;log.lastChild.outerHTML='<div class="thought">Tænkte i 1 sek. <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5l3-3"/></svg></div>'}const tools=el('<div class="tools"></div>');log.appendChild(tools);
+ for(const t of c.tools){const row=el(`<div class="tool run"><div class="hd"><span class="ti">${t[0]?'≡':'⚙'}</span><span><b>${t[1]}</b></span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5l3-3"/></svg></div></div>`);tools.appendChild(row);dn();await wait(520);if(id!==run)return;row.classList.remove('run');row.insertAdjacentHTML('beforeend',`<em>${t[2]}</em>`);dn()}
+ await wait(300);if(id!==run)return;const ai=el('<div class="ai"><div class="bubble"><span class="txt"></span></div></div>');log.appendChild(ai);const tx=ai.querySelector('.txt');
+ if(still.matches)tx.innerHTML=c.ai;else{const parts=c.ai.split(/(<[^>]+>|\s+)/).filter(Boolean);let acc='';for(const w of parts){if(id!==run)return;acc+=(w.startsWith('<')||/^\s+$/.test(w))?w:`<span class="w">${w}</span>`;tx.innerHTML=acc;dn();if(!/^\s+$/.test(w)&&!w.startsWith('<'))await wait(24)}}if(c.html){await wait(150);if(id!==run)return;tx.insertAdjacentHTML('afterend',`<div class="fade">${c.html}</div>`);dn()}if(c.after)c.after(ai);if(c.go){pending=c.go;D.querySelector('.field input').placeholder='Skriv ja tak …'}log.removeAttribute('aria-busy');items[i].classList.remove('run');items[i].classList.add('done');
+ const n=items[i+1];if(n&&!n.classList.contains('done'))n.classList.add('next');dispatchEvent(new Event('resize'))}
+items.forEach((c,i)=>c.addEventListener('click',()=>play(i)));
+setTimeout(()=>play(0),document.documentElement.classList.contains('pl')?1900:300);
+})();
 </script>
 <script>
 // Waitlist popup. Any link with data-tally="<form id>" opens the Tally form as a popup.
