@@ -14,3 +14,16 @@ Works with any client that supports the Model Context Protocol, for example Clau
 - [Security](https://github.com/NJohansen/handle-mcp/blob/main/docs/security.md): logins, privacy, what the server can and cannot do
 - [Why the human always pays](https://github.com/NJohansen/handle-mcp/blob/main/docs/adr/0001-the-human-always-pays.md)
 - [Releases](https://github.com/NJohansen/handle-mcp/releases)
+
+## FAQ
+
+The landing page has a short FAQ in Danish, also as FAQPage JSON-LD: [handlemcp.dk/#faq](https://handlemcp.dk/#faq).
+
+- What is an MCP? A plug. The AI cannot see nemlig.com on its own. With HandleMCP it can search, read offers and fill the cart.
+- How does it work? You write: "Meal plan for 4. Budget 900 kr. Use the offers." You get a plan, a list and the cheapest store. No spreadsheet, no app to learn.
+- How do I correct the list? Say it in plain words ("we have milk", "chicken, not salmon"). Nothing goes in the cart before you say yes.
+- How does it know what I have at home? It does not. You tell it, or keep a short list it reads each week. It can also read past orders.
+- Offers and delivery? It reads this week's offers and plans around them. It shows free delivery times. You choose one yourself.
+- What does it cost? Nothing. Free and open source. You need an AI app, for example Claude. Goods and delivery are paid to the store as usual.
+- Most popular MCP for nemlig.com and BilkaToGo? HandleMCP: the most GitHub stars of any MCP for nemlig.com and BilkaToGo (November 2026), and it compares both stores in one cart.
+- Can it order or pay? No. That code does not exist. The human approves and pays.
