@@ -6,5 +6,6 @@
 - **stdout is JSON-RPC.** Logs go to stderr. httpx request logging is off, because some store URLs contain account ids.
 - **Store text reaches the model.** Product names, offer texts and cart messages come from the stores and land in the model's context. A store (or a seller) could put instructions in them. The server cannot order or pay, so the damage is limited to a wrong cart. Check the cart before you pay.
 - **Versions.** The install commands pin a release tag (`@v1.2.1`), so a new push to `main` never reaches your machine by itself. To update, change the tag. Without a tag, `git+https://...` installs the newest `main`.
+- **The website** (handlemcp.dk) counts visits and button clicks with [Umami Cloud](https://umami.is): no cookies, no IP addresses stored, Do Not Track respected. The MCP server itself sends nothing anywhere except to the stores.
 - Use one client at a time per store. Close the store's app or website before an agent changes the cart.
 - Be kind to the stores: the server makes few calls, mostly one at a time per store, and retries only on timeouts, network errors, 429 and 5xx.
