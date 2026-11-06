@@ -339,7 +339,7 @@ main{position:relative}
       <li class="opt"><a class="gh" href="https://github.com/NJohansen/handle-mcp" data-umami-event="github" data-umami-event-sted="nav">GitHub<span class="stars" id="stars" hidden aria-label="stjerner på GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 .9l2.2 4.5 4.9.7-3.6 3.5.9 4.9L8 12.2l-4.4 2.3.9-4.9L.9 6.1l4.9-.7z"/></svg><span id="stars-n"></span></span></a></li>
     </ul>
     </div>
-    <a class="btn navcta" href="https://tally.so/r/ArKdkW" data-tally="ArKdkW" data-umami-event="skriv-mig-op" data-umami-event-sted="nav">Kom i gang <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></i></a>
+    <a class="btn navcta" href="https://tally.so/r/ArKdkW" data-tally="ArKdkW" data-sted="nav">Kom i gang <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></i></a>
   </nav>
 </header>
 
@@ -458,7 +458,7 @@ claude mcp add handle -- uvx --from git+https://github.com/NJohansen/handle-mcp@
         <p class="small">BilkaToGo og Claude Desktop: se <a href="https://github.com/NJohansen/handle-mcp/blob/main/docs/setup.md">vejledningen</a> (på engelsk).</p>
         <div class="extra" id="venteliste">
           <p class="small" style="margin-bottom:14px">Snart med ét klik, uden terminal. Skriv dig op, så får du besked først. Formularen ligger hos Tally.</p>
-          <a class="btn coral" href="https://tally.so/r/ArKdkW" data-tally="ArKdkW" data-umami-event="skriv-mig-op" data-umami-event-sted="kom-i-gang">Skriv mig op <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></i></a>
+          <a class="btn coral" href="https://tally.so/r/ArKdkW" data-tally="ArKdkW" data-sted="kom-i-gang">Skriv mig op <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></i></a>
         </div>
         <div class="extra">
           <p class="small" style="margin-bottom:14px">Gratis, og det bliver det ved med. Sparer den jer tid eller penge? En kop kaffe holder projektet i gang.</p>
@@ -506,6 +506,7 @@ addEventListener('scroll',go,{passive:true});addEventListener('resize',init);add
 // Waitlist popup. Any link with data-tally="<form id>" opens the Tally form as a popup.
 // Tally's script loads only on the first click, so no third party runs before that.
 // Without JS, or if the script fails, the link opens the form on tally.so.
+// No data-umami-event on these links: Umami follows such links itself and would skip the popup.
 (function(){
   var state='idle';
   function openForm(id){window.Tally.openPopup(id,{layout:'modal',width:560,autoClose:4000})}
@@ -513,6 +514,7 @@ addEventListener('scroll',go,{passive:true});addEventListener('resize',init);add
     var btn=e.target.closest&&e.target.closest('[data-tally]');if(!btn)return;
     if(state==='loading')return; // a second click while loading falls through to tally.so
     e.preventDefault();var id=btn.getAttribute('data-tally');
+    try{window.umami&&window.umami.track('skriv-mig-op',{sted:btn.getAttribute('data-sted')||''})}catch(err){}
     if(window.Tally){openForm(id);return}
     state='loading';
     var s=document.createElement('script');s.src='https://tally.so/widgets/embed.js';s.async=true;
