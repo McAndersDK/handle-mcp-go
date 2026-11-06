@@ -344,7 +344,7 @@ body{overflow-x:clip}
 @media(max-width:700px){.agent .log{padding:20px 16px 4px}.tool{grid-template-columns:18px 1fr 16px}.tool em{grid-column:2}.agent .conn{display:none}}
 
 /* v6: sand hero, boxed nav, white CTA with round dot */
-:root{--sand:#9ccbf3;--navy:#0a1c35}.hero h1{color:#2c2e2a}nav .navcta .sm{display:none}@media (max-width:640px){nav .navcta .lg{display:none}nav .navcta .sm{display:inline}}@media (min-width:901px){.hero>div:first-child{align-self:start;padding-top:24px}}.hero .proof,.hero .textlink,.hero .lead strong{color:var(--navy)}.hero .lead{color:#1c3a60}.hero .textlink{text-decoration-color:#5f7a94}.hero h1 .soft{font-family:Newsreader,Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+:root{--sand:#9ccbf3;--navy:#0a1c35}.hero h1{color:#2c2e2a}#saadan,#kom-i-gang,footer{position:relative}.doodles{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}.doodle{position:absolute;height:auto;transform:rotate(var(--r));animation:bob var(--d) ease-in-out infinite}@keyframes bob{50%{transform:translateY(-8px) rotate(calc(var(--r) + 5deg))}}.band>:not(.doodles),#saadan>:not(.doodles),#kom-i-gang>:not(.doodles),footer>:not(.doodles){position:relative;z-index:1}@media (max-width:900px){.doodle{scale:.7}.doodle:not(.m){display:none}}@media (prefers-reduced-motion:reduce){.doodle{animation:none}}nav .navcta .sm{display:none}@media (max-width:640px){nav .navcta .lg{display:none}nav .navcta .sm{display:inline}}@media (min-width:901px){.hero>div:first-child{align-self:start;padding-top:24px}}.hero .proof,.hero .textlink,.hero .lead strong{color:var(--navy)}.hero .lead{color:#1c3a60}.hero .textlink{text-decoration-color:#5f7a94}.hero h1 .soft{font-family:Newsreader,Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
 .hero{position:relative;padding-bottom:88px}
 .hero::before{content:"";position:absolute;top:-140px;bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);z-index:-1;background:var(--sand)}
 .navwrap{position:relative;top:0}
@@ -478,7 +478,7 @@ main{position:relative}
 
   <img class="hero-basket" id="basket" src="basket.svg" alt="" aria-hidden="true" width="420" height="300">
 
-  <section id="hvorfor" class="band coral">
+  <section id="hvorfor" class="band coral"><div class="doodles" aria-hidden="true"><img class="doodle m" src="doodles/apple.svg" alt="" width="84" style="top:70px;right:7%;--r:-8deg;--d:7s"><img class="doodle" src="doodles/cloud.svg" alt="" width="120" style="top:36px;left:52%;--r:0deg;--d:9s"><img class="doodle" src="doodles/lemon.svg" alt="" width="74" style="bottom:48px;left:3%;--r:14deg;--d:8s"><img class="doodle" src="doodles/spark.svg" alt="" width="26" style="top:118px;left:43%;--r:0deg;--d:5s"></div>
     <h2>Kender I det her?</h2>
     <div class="facts">
       <div class="fact">
@@ -495,7 +495,7 @@ main{position:relative}
   </section>
   </div>
 
-  <section class="band">
+  <section class="band"><div class="doodles" aria-hidden="true"><img class="doodle m" src="doodles/pear.svg" alt="" width="96" style="top:200px;right:10%;--r:10deg;--d:8s"><img class="doodle" src="doodles/cloud.svg" alt="" width="140" style="top:96px;right:20%;--r:0deg;--d:10s"><img class="doodle" src="doodles/egg.svg" alt="" width="62" style="bottom:130px;right:5%;--r:-14deg;--d:7s"><img class="doodle" src="doodles/carrot.svg" alt="" width="80" style="bottom:14px;left:1%;--r:8deg;--d:6s"><img class="doodle" src="doodles/tomato.svg" alt="" width="50" style="top:70px;left:47%;--r:0deg;--d:6s"></div>
     <h2>Sådan ser det ud</h2>
     <p class="sub">Du skriver én besked. Den tjekker begge butikker og fylder kurven. Betalingen er din.</p>
     <div class="agent" aria-label="Eksempel på en samtale med en AI-assistent">
@@ -516,7 +516,7 @@ main{position:relative}
     <p class="note">Et eksempel. Rigtige svar bruger butikkernes priser lige nu.</p>
   </section>
 
-  <section id="saadan">
+  <section id="saadan"><div class="doodles" aria-hidden="true"><img class="doodle" src="doodles/banana.svg" alt="" width="112" style="top:84px;right:9%;--r:-10deg;--d:8s"><img class="doodle" src="doodles/spark.svg" alt="" width="30" style="top:70px;right:26%;--r:0deg;--d:5s"><img class="doodle" src="doodles/tomato.svg" alt="" width="40" style="top:150px;left:56%;--r:-20deg;--d:7s"></div>
     <h2>Sådan virker det</h2>
     <div class="steps">
       <div><span>1</span><h3>Sig budgettet</h3><p>"900 kr til 4 personer." Og hvad I kan lide, og hvad I har hjemme.</p></div>
@@ -526,7 +526,7 @@ main{position:relative}
     </div>
   </section>
 
-  <section class="band leaf">
+  <section class="band leaf"><div class="doodles" aria-hidden="true"><img class="doodle m" src="doodles/milk.svg" alt="" width="72" style="top:46px;right:6%;--r:8deg;--d:8s"><img class="doodle" src="doodles/chili.svg" alt="" width="96" style="bottom:44px;left:44%;--r:-6deg;--d:7s"><img class="doodle" src="doodles/cloud.svg" alt="" width="120" style="top:30px;left:30%;--r:0deg;--d:10s"><img class="doodle" src="doodles/bread.svg" alt="" width="70" style="bottom:70px;right:30%;--r:0deg;--d:6s"></div>
     <div class="promise">
       <h2>Du har styr på pengene</h2>
       <div>
@@ -538,7 +538,7 @@ main{position:relative}
     </div>
   </section>
 
-  <section id="kom-i-gang">
+  <section id="kom-i-gang"><div class="doodles" aria-hidden="true"><img class="doodle m" src="doodles/cheese.svg" alt="" width="104" style="bottom:90px;left:3%;--r:-6deg;--d:8s"><img class="doodle" src="doodles/spark.svg" alt="" width="26" style="top:118px;left:37%;--r:0deg;--d:5s"></div>
     <div class="start">
       <div>
         <h2>Kom i gang</h2>
@@ -562,7 +562,7 @@ claude mcp add handle -- uvx --from git+https://github.com/NJohansen/handle-mcp@
   </section>
 </main>
 
-<footer>
+<footer><div class="doodles" aria-hidden="true"><img class="doodle m" src="doodles/kitchenroll.svg" alt="" width="84" style="top:56px;right:9%;--r:-12deg;--d:8s"><img class="doodle" src="doodles/cloud.svg" alt="" width="120" style="top:24px;right:22%;--r:0deg;--d:10s"><img class="doodle" src="doodles/spark.svg" alt="" width="24" style="bottom:70px;right:40%;--r:0deg;--d:5s"></div>
   <div class="wrap">
     <p class="big">Handl én gang.<br>Spis hele ugen.</p>
     <p>Ikke officiel. Bruger butikkernes egne hjemmesider, så det kan gå i stykker uden varsel. Ikke tilknyttet nemlig.com eller Salling Group.</p>
