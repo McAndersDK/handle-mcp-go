@@ -362,8 +362,9 @@ body{overflow-x:clip}
 :root{--sand:#9ccbf3;--navy:#0a1c35}.hero h1{color:#2c2e2a}#saadan,#kom-i-gang,footer{position:relative}.doodles{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}.doodle{position:absolute;height:auto;transform:rotate(var(--r));animation:bob var(--d) ease-in-out infinite}@keyframes bob{50%{transform:translateY(-8px) rotate(calc(var(--r) + 5deg))}}.band>:not(.doodles),#saadan>:not(.doodles),#kom-i-gang>:not(.doodles),footer>:not(.doodles){position:relative;z-index:1}@media (max-width:900px){.doodle{scale:.7}.doodle:not(.m){display:none}}@media (prefers-reduced-motion:reduce){.doodle{animation:none}}nav .navcta .sm{display:none}@media (max-width:640px){nav .navcta .lg{display:none}nav .navcta .sm{display:inline}}@media (min-width:901px){.hero>div:first-child{align-self:start;padding-top:24px}}.hero .proof,.hero .textlink,.hero .lead strong{color:var(--navy)}.hero .lead{color:#1c3a60}.hero .textlink{text-decoration-color:#5f7a94}.hero h1 .soft{font-family:Newsreader,Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
 .hero{position:relative;padding-bottom:88px}
 .hero::before{content:"";position:absolute;top:-140px;bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);z-index:-1;background:var(--sand)}
-.navwrap{position:relative;top:0}
-.navwrap::before{content:"";position:absolute;top:0;bottom:-2px;left:calc(50% - 50vw);right:calc(50% - 50vw);z-index:-1;background:var(--sand)}
+.navwrap{position:sticky;top:0;z-index:50}
+html{scroll-padding-top:104px}
+.navbox,.navcta{transition:box-shadow .25s}.scrolled .navbox,.scrolled .navcta{box-shadow:0 6px 24px rgba(28,36,30,.12)}
 nav{background:none;border:0;border-radius:0;padding:0;gap:12px}
 .navbox{flex:1;display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:12px;padding:10px 12px 10px 18px;min-height:68px}
 nav ul{gap:2px}
@@ -747,5 +748,6 @@ setTimeout(()=>play(0),document.documentElement.classList.contains('pl')?1900:30
   });
 })();
 </script>
+<script>(()=>{const n=document.querySelector(".navwrap");const f=()=>n.classList.toggle("scrolled",scrollY>8);addEventListener("scroll",f,{passive:true});f()})()</script>
 </body>
 </html>
