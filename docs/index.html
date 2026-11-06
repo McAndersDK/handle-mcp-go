@@ -197,8 +197,8 @@ h2{font-weight:600;font-size:clamp(38px,5.4vw,68px);line-height:1;letter-spacing
 
 /* faq */
 .faq{display:grid;gap:8px;margin-top:56px;max-width:820px}
-.faq details{background:var(--sky-soft);border-radius:16px;transition:background .2s}
-.faq details:hover{background:#d9ecff}
+.faq details{background:#f4f0e6;border-radius:16px;transition:background .2s}
+.faq details:hover{background:#ece6d8}
 .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:16px 14px 16px 26px;min-height:60px;font-weight:500;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.04em;line-height:1.15}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--leaf);color:#1c241e;font-weight:500;font-size:24px}
@@ -286,13 +286,12 @@ nav ul a.btn:hover{background:#fff}
 .kicker.sky{border-color:var(--sky)}.kicker.coral{border-color:var(--coral)}.kicker.sun{border-color:var(--sun)}
 .facts{border-top:0;gap:20px}
 .fact,.fact+.fact{border-radius:50px;padding:44px;border-left:0}
-.fact:first-child{background:var(--coral-soft)}.fact+.fact{background:var(--leaf-soft)}
-.num s{color:#b4b5ae;text-decoration-color:var(--coral)}
+.num s{color:#b4b5ae;text-decoration-color:var(--ink)}
 .fact p{color:#55564f}
 .chat{border-radius:50px;background:var(--sky-soft);padding:48px}
 .steps{border-top:0;gap:16px}
 .steps div,.steps div+div{border-left:0;border-radius:40px;padding:30px}
-.steps div:nth-child(1){background:var(--sun-soft)}.steps div:nth-child(2){background:var(--sky-soft)}.steps div:nth-child(3){background:var(--leaf-soft)}.steps div:nth-child(4){background:var(--coral-soft)}
+.steps div{background:#f4f0e6}
 .steps span{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--ink);font:600 14px var(--sans);margin-bottom:36px}
 .steps p{color:#55564f}
 .promise{background:var(--leaf);color:var(--ink);border-radius:50px}
@@ -307,12 +306,12 @@ footer a{font-weight:500}
 body{overflow-x:clip}
 .band{position:relative;padding-bottom:128px;margin-top:136px;padding-top:120px}
 .band::before{content:"";position:absolute;top:0;bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);z-index:-1;background:var(--sky-soft)}
-.band.leaf::before{background:var(--leaf)}
-.band.coral::before{background:var(--coral-soft)}
-.band.coral .fact,.band.coral .fact+.fact{background:#fff}
+.band.sky::before{background:var(--sky-soft)}
+.band.sand::before{background:#f4f0e6}
+.band.sand .fact,.band.sand .fact+.fact{background:#fff}
 .band .chat{background:#fff}
 .band .ai .bubble{background:var(--sky-soft)}
-.band.leaf .promise{background:transparent;padding:0;border-radius:0}
+.band.sky .promise{background:transparent;padding:0;border-radius:0}
 .band+section{padding-top:128px}
 .band+.band{margin-top:0}
 
@@ -348,11 +347,11 @@ body{overflow-x:clip}
 .agent .you .bubble{background:var(--soft);color:var(--ink);border-bottom-right-radius:6px}
 .agent .ai .bubble{background:none;padding:0;max-width:none;font-size:16px}
 .tools{border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.tool{display:grid;grid-template-columns:22px auto 1fr 18px;gap:10px;align-items:center;padding:9px 14px;font:13px/1.4 var(--mono);color:var(--mute)}
+.tool{display:grid;grid-template-columns:22px auto 1fr 18px;gap:10px;align-items:center;padding:9px 14px;font:14px/1.4 var(--sans);color:var(--mute)}
 .tool+.tool{border-top:1px solid var(--line)}
 .tool b{color:var(--ink);font-weight:600}.tool span{white-space:nowrap}
 .tool em{font-style:normal;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
-.tool .ti{color:var(--sky);font-size:15px}
+.tool .ti{color:var(--mute);font-size:15px}
 .tool .ok svg{width:14px;height:14px;fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .agent .input{display:flex;align-items:center;margin:16px 20px 20px;padding:8px 8px 8px 18px;border:1px solid var(--line);border-radius:999px;color:var(--mute);font-size:15px}
 .agent .input i{margin-left:auto;width:32px;height:32px;border-radius:50%;background:var(--ink);display:grid;place-items:center}
@@ -399,7 +398,7 @@ main{position:relative}
 /* rounded top on every section, the previous colour shows in the corners */
 main>section{position:relative;z-index:1}
 main>section::before{content:"";position:absolute;top:0;bottom:-44px;left:calc(50% - 50vw);right:calc(50% - 50vw);z-index:-1;background:#fff;border-radius:44px 44px 0 0}
-main>section.band::before{bottom:-44px}main>section.band.leaf::before{background:var(--leaf)}main>section.band.coral::before{background:var(--coral-soft)}main>section.band:not(.leaf):not(.coral):not(.sol)::before{background:var(--sky-soft)}
+main>section.band::before{bottom:-44px}main>section.band.sand::before,main>section.band.sol::before{background:#f4f0e6}main>section.band:not(.sand):not(.sol)::before{background:var(--sky-soft)}
 footer{z-index:1;border-radius:44px 44px 0 0}
 @media (max-width:640px){main>section::before,footer{border-radius:28px 28px 0 0}}
 /* solution: full-colour band, text left, photo right */
@@ -521,7 +520,7 @@ footer{z-index:1;border-radius:44px 44px 0 0}
   <div class="hero-basket basketx" id="basketx" aria-hidden="true"><svg viewBox="0 0 420 300" overflow="visible"><g class="drop" data-out="0.78" data-back=".55"><ellipse cx="10" cy="289" rx="24" ry="8" fill="#e0b800"/><rect x="-14" y="284" width="48" height="5" fill="#e0b800"/><ellipse cx="10" cy="284" rx="24" ry="8" fill="#f5e211"/><ellipse cx="10" cy="284" rx="15" ry="4.6" fill="none" stroke="#e0b800" stroke-width="2"/></g><g class="drop" data-out="0.66" data-back=".7"><ellipse cx="10" cy="280" rx="24" ry="8" fill="#e0b800"/><rect x="-14" y="275" width="48" height="5" fill="#e0b800"/><ellipse cx="10" cy="275" rx="24" ry="8" fill="#f5e211"/><ellipse cx="10" cy="275" rx="15" ry="4.6" fill="none" stroke="#e0b800" stroke-width="2"/></g><g class="drop" data-out="0.54" data-back=".85"><ellipse cx="10" cy="271" rx="24" ry="8" fill="#e0b800"/><rect x="-14" y="266" width="48" height="5" fill="#e0b800"/><ellipse cx="10" cy="266" rx="24" ry="8" fill="#f5e211"/><ellipse cx="10" cy="266" rx="15" ry="4.6" fill="none" stroke="#e0b800" stroke-width="2"/></g><g class="drop" data-out="0.42"><ellipse cx="10" cy="262" rx="24" ry="8" fill="#e0b800"/><rect x="-14" y="257" width="48" height="5" fill="#e0b800"/><ellipse cx="10" cy="257" rx="24" ry="8" fill="#f5e211"/><ellipse cx="10" cy="257" rx="15" ry="4.6" fill="none" stroke="#e0b800" stroke-width="2"/></g><g class="drop" data-out="0.3"><ellipse cx="10" cy="253" rx="24" ry="8" fill="#e0b800"/><rect x="-14" y="248" width="48" height="5" fill="#e0b800"/><ellipse cx="10" cy="248" rx="24" ry="8" fill="#f5e211"/><ellipse cx="10" cy="248" rx="15" ry="4.6" fill="none" stroke="#e0b800" stroke-width="2"/></g><g class="pop" data-at=".9"><rect x="296" y="52" width="30" height="74" rx="9" fill="#2ba0ff"/><rect x="304" y="38" width="14" height="18" rx="3" fill="#2ba0ff"/><rect x="306" y="30" width="10" height="10" rx="2" fill="#46b35f"/><rect x="301" y="74" width="20" height="24" rx="4" fill="#fff"/><path d="M302 60 v20" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".6"/></g><g class="pop" data-at=".95"><rect x="88" y="56" width="40" height="70" rx="8" fill="#f1ede2"/><ellipse cx="108" cy="58" rx="20" ry="7" fill="#e2ddcf"/><ellipse cx="108" cy="58" rx="7" ry="3" fill="#c9c4b6"/><path d="M90 84 h36 M90 104 h36" stroke="#e2ddcf" stroke-width="2"/></g><g class="pop" data-at=".45"><g transform="translate(-4 -20)"><circle cx="112" cy="104" r="22" fill="#ff705d"/><path d="M112 82 l5 -6 M103 86 q9 -8 18 0 q-9 4 -18 0z" stroke="#46b35f" stroke-width="3" stroke-linecap="round" fill="#8ed462"/><ellipse cx="104" cy="98" rx="5" ry="3.4" fill="#fff" opacity=".8"/></g></g><g class="pop" data-at=".6"><g transform="translate(0 -22)"><ellipse cx="318" cy="104" rx="26" ry="19" fill="#f5e211" transform="rotate(-20 318 104)"/><path d="M297 113 l-6 4 M339 95 l6 -4" stroke="#f5e211" stroke-width="7" stroke-linecap="round"/><path d="M307 96 q8 -6 18 -4" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none" opacity=".85"/></g></g><g class="pop" data-at=".75"><g transform="translate(-30 -22)"><path d="M156 118 v-14" stroke="#46b35f" stroke-width="7" stroke-linecap="round"/><circle cx="146" cy="96" r="11" fill="#46b35f"/><circle cx="162" cy="90" r="12" fill="#46b35f"/><circle cx="155" cy="80" r="10" fill="#5fc477"/></g></g></svg></div>
   <img class="hero-basket" id="basket" src="basket.svg" alt="" aria-hidden="true" width="420" height="300">
 
-  <section id="hvorfor" class="band coral"><div class="doodles" aria-hidden="true"><img class="doodle m" src="doodles/apple.svg" alt="" width="84" style="top:70px;right:7%;--r:-8deg;--d:7s"><img class="doodle" src="doodles/cloud.svg" alt="" width="120" style="top:36px;left:52%;--r:0deg;--d:9s"><img class="doodle" src="doodles/lemon.svg" alt="" width="74" style="bottom:48px;left:3%;--r:14deg;--d:8s"><img class="doodle" src="doodles/spark.svg" alt="" width="26" style="top:118px;left:43%;--r:0deg;--d:5s"></div>
+  <section id="hvorfor" class="band sand"><div class="doodles" aria-hidden="true"><img class="doodle m" src="doodles/apple.svg" alt="" width="84" style="top:70px;right:7%;--r:-8deg;--d:7s"><img class="doodle" src="doodles/cloud.svg" alt="" width="120" style="top:36px;left:52%;--r:0deg;--d:9s"><img class="doodle" src="doodles/lemon.svg" alt="" width="74" style="bottom:48px;left:3%;--r:14deg;--d:8s"><img class="doodle" src="doodles/spark.svg" alt="" width="26" style="top:118px;left:43%;--r:0deg;--d:5s"></div>
     <h2>Kender I det her?</h2>
     <div class="facts">
       <div class="fact">
@@ -585,7 +584,7 @@ footer{z-index:1;border-radius:44px 44px 0 0}
     </div>
   </section>
 
-  <section class="band leaf"><div class="doodles" aria-hidden="true"><img class="doodle m" src="doodles/milk.svg" alt="" width="72" style="top:46px;right:6%;--r:8deg;--d:8s"><img class="doodle" src="doodles/chili.svg" alt="" width="96" style="bottom:44px;left:44%;--r:-6deg;--d:7s"><img class="doodle" src="doodles/cloud.svg" alt="" width="120" style="top:30px;left:30%;--r:0deg;--d:10s"><img class="doodle" src="doodles/bread.svg" alt="" width="70" style="bottom:70px;right:30%;--r:0deg;--d:6s"></div>
+  <section class="band sky"><div class="doodles" aria-hidden="true"><img class="doodle m" src="doodles/milk.svg" alt="" width="72" style="top:46px;right:6%;--r:8deg;--d:8s"><img class="doodle" src="doodles/chili.svg" alt="" width="96" style="bottom:44px;left:44%;--r:-6deg;--d:7s"><img class="doodle" src="doodles/cloud.svg" alt="" width="120" style="top:30px;left:30%;--r:0deg;--d:10s"><img class="doodle" src="doodles/bread.svg" alt="" width="70" style="bottom:70px;right:30%;--r:0deg;--d:6s"></div>
     <div class="promise">
       <h2>Du har styr på pengene</h2>
       <div>
