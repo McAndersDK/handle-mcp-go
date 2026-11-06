@@ -339,7 +339,7 @@ main{position:relative}
       <li class="opt"><a class="gh" href="https://github.com/NJohansen/handle-mcp" data-umami-event="github" data-umami-event-sted="nav">GitHub<span class="stars" id="stars" hidden aria-label="stjerner på GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 .9l2.2 4.5 4.9.7-3.6 3.5.9 4.9L8 12.2l-4.4 2.3.9-4.9L.9 6.1l4.9-.7z"/></svg><span id="stars-n"></span></span></a></li>
     </ul>
     </div>
-    <a class="btn navcta" href="#kom-i-gang" data-umami-event="kom-i-gang" data-umami-event-sted="nav">Kom i gang <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 2v8M2.5 6.5L6 10l3.5-3.5"/></svg></i></a>
+    <a class="btn navcta" href="https://tally.so/r/ArKdkW" data-tally="ArKdkW" data-umami-event="skriv-mig-op" data-umami-event-sted="nav">Kom i gang <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></i></a>
   </nav>
 </header>
 
@@ -456,10 +456,9 @@ main{position:relative}
 <pre>uvx --from git+https://github.com/NJohansen/handle-mcp@v1.2.1 handle-mcp login nemlig
 claude mcp add handle -- uvx --from git+https://github.com/NJohansen/handle-mcp@v1.2.1 handle-mcp</pre>
         <p class="small">BilkaToGo og Claude Desktop: se <a href="https://github.com/NJohansen/handle-mcp/blob/main/docs/setup.md">vejledningen</a> (på engelsk).</p>
-        <!-- Hidden until the Tally URL exists: set href, then remove "hidden". -->
-        <div class="extra" hidden>
-          <p class="small" style="margin-bottom:14px">Uden terminal? Vi arbejder på en nemmere vej. Skriv dig op, så får du besked.</p>
-          <a class="btn coral" href="#" data-placeholder="tally" data-umami-event="skriv-mig-op">Skriv mig op <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></i></a>
+        <div class="extra" id="venteliste">
+          <p class="small" style="margin-bottom:14px">Snart med ét klik, uden terminal. Skriv dig op, så får du besked først. Formularen ligger hos Tally.</p>
+          <a class="btn coral" href="https://tally.so/r/ArKdkW" data-tally="ArKdkW" data-umami-event="skriv-mig-op" data-umami-event-sted="kom-i-gang">Skriv mig op <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></i></a>
         </div>
         <div class="extra">
           <p class="small" style="margin-bottom:14px">Gratis, og det bliver det ved med. Sparer den jer tid eller penge? En kop kaffe holder projektet i gang.</p>
@@ -502,6 +501,26 @@ const x=a.x+(z.x-a.x)*p,y=a.y+(z.y-a.y)*p,k=1+(z.k-1)*p,r=-6+10*p;b.style.transf
 const go=()=>{if(!raf)raf=requestAnimationFrame(draw)};
 const init=()=>{measure();draw()};
 addEventListener('scroll',go,{passive:true});addEventListener('resize',init);addEventListener('load',init);b.complete?init():b.addEventListener('load',init)})();
+</script>
+<script>
+// Waitlist popup. Any link with data-tally="<form id>" opens the Tally form as a popup.
+// Tally's script loads only on the first click, so no third party runs before that.
+// Without JS, or if the script fails, the link opens the form on tally.so.
+(function(){
+  var state='idle';
+  function openForm(id){window.Tally.openPopup(id,{layout:'modal',width:560,autoClose:4000})}
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest&&e.target.closest('[data-tally]');if(!btn)return;
+    if(state==='loading')return; // a second click while loading falls through to tally.so
+    e.preventDefault();var id=btn.getAttribute('data-tally');
+    if(window.Tally){openForm(id);return}
+    state='loading';
+    var s=document.createElement('script');s.src='https://tally.so/widgets/embed.js';s.async=true;
+    s.onload=function(){state='idle';window.Tally?openForm(id):location.href=btn.href};
+    s.onerror=function(){state='idle';location.href=btn.href};
+    document.head.appendChild(s);
+  });
+})();
 </script>
 <script>
 // Analytics events that need JS. Umami is cookie-free; without it nothing happens.
