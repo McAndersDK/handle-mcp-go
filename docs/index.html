@@ -31,6 +31,7 @@
 <link rel="icon" href="/logo.svg" type="image/svg+xml">
 <style>
 @font-face{font-family:Inter;src:url(fonts/inter.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Homemade Apple";src:url(fonts/homemade-apple.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:Newsreader;src:url(fonts/newsreader-italic.woff2) format("woff2");font-weight:200 800;font-style:italic;font-display:swap;ascent-override:97%;descent-override:24%;line-gap-override:0%}
 :root{
   --bg:#fff;--soft:#f4f4f1;--line:#e6e6e1;--ink:#1d1e1b;--mute:#6d6e69;
@@ -398,9 +399,25 @@ main{position:relative}
 /* rounded top on every section, the previous colour shows in the corners */
 main>section{position:relative;z-index:1}
 main>section::before{content:"";position:absolute;top:0;bottom:-44px;left:calc(50% - 50vw);right:calc(50% - 50vw);z-index:-1;background:#fff;border-radius:44px 44px 0 0}
-main>section.band::before{bottom:-44px}main>section.band.leaf::before{background:var(--leaf)}main>section.band.coral::before{background:var(--coral-soft)}main>section.band:not(.leaf):not(.coral)::before{background:var(--sky-soft)}
+main>section.band::before{bottom:-44px}main>section.band.leaf::before{background:var(--leaf)}main>section.band.coral::before{background:var(--coral-soft)}main>section.band:not(.leaf):not(.coral):not(.sol)::before{background:var(--sky-soft)}
 footer{z-index:1;border-radius:44px 44px 0 0}
 @media (max-width:640px){main>section::before,footer{border-radius:28px 28px 0 0}}
+/* solution: full-colour band, text left, photo right */
+.band.sol::before{background:#f4f0e6}
+.sol .split{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start}
+.sol h2{margin:0 0 28px}.sol .kicker{border:0;padding:0;background:none;border-radius:0;display:block;font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin:0 0 18px;opacity:.6}
+.sol p{font-size:clamp(20px,1.9vw,25px);line-height:1.55;color:#2c2e2a;margin:0 0 26px;max-width:620px}
+.sol .asks{margin:0 0 18px;padding:0;list-style:none;counter-reset:a;font-size:clamp(20px,1.9vw,25px);line-height:1.55;font-weight:600;max-width:620px}.sol .asks li{counter-increment:a;display:flex;gap:12px;margin:0 0 8px}.sol .asks li::before{content:counter(a);flex:none;display:grid;place-items:center;width:34px;height:34px;margin-top:2px;border-radius:50%;background:#fff;font-size:16px;font-weight:700}
+.sol .blob{width:100%;height:auto;max-width:600px;aspect-ratio:6/7;justify-self:end;object-fit:cover;border-radius:62% 38% 55% 45%/42% 58% 42% 58%;display:block}
+.sol .lead{font-size:clamp(22px,2.1vw,28px);line-height:1.45;opacity:1;font-weight:500;letter-spacing:-.01em}
+.sol .said{font-weight:600;opacity:1;margin:34px 0 18px}
+.sol .end{margin-top:26px;opacity:1}
+.sol .me{position:sticky;top:110px;margin:0;justify-self:end;width:100%;max-width:600px}
+.sol .me .blob{max-width:none}
+.sol .me figcaption{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:20px;text-align:center}
+.sol .me figcaption b{display:flex;align-items:center;gap:10px;font:400 34px/1.3 "Homemade Apple",cursive;color:#1d1e1b;transform:rotate(-4deg)}.sol .me figcaption b svg{width:64px;height:16px;flex:none}
+.sol .me figcaption span{font-size:16px;color:#1d1e1b}
+@media (max-width:900px){.sol .split{grid-template-columns:1fr;gap:40px}.sol .me{position:relative;top:0;justify-self:center;max-width:420px}.sol .blob{justify-self:center;max-width:420px}.sol p,.sol .asks{font-size:18px}.sol .lead{font-size:21px}}
 .hero-basket{position:absolute;left:0;top:0;width:600px;height:auto;z-index:4;pointer-events:none;will-change:transform;visibility:hidden}
 .basketx{aspect-ratio:420/300;z-index:3}.basketx svg{display:block;width:100%;height:100%;overflow:visible}.basketx .pop{transform-box:fill-box;transform-origin:center;transform:scale(0);transition:transform .45s cubic-bezier(.34,1.7,.5,1)}.basketx .pop.on{transform:scale(1)}.basketx .drop{transform:translateY(-60px);opacity:0;transition:transform .5s cubic-bezier(.3,1.5,.5,1),opacity .2s}.basketx .drop.on{transform:none;opacity:1}.basketx .gl{transform-box:fill-box;transform-origin:center;transform:scale(0);animation:gl 4.6s ease-out infinite 2s}@keyframes gl{0%,84%,100%{transform:scale(0) rotate(0)}89%{transform:scale(1.2) rotate(45deg)}95%{transform:scale(0) rotate(90deg)}}@media (prefers-reduced-motion:reduce){.basketx{display:none}}
 @media (max-width:900px){.hero{padding-bottom:190px}#hvorfor.band{padding-top:130px}.brand{font-size:21px;gap:9px}.logo,.logo svg{width:38px;height:32px}.hero-basket{width:300px}}
@@ -542,6 +559,22 @@ footer{z-index:1;border-radius:44px 44px 0 0}
     <p class="note">Et eksempel. Rigtige svar bruger butikkernes priser lige nu.</p>
   </section>
 
+  <section id="losning" class="band sol">
+    <div class="split">
+      <div>
+        <p class="kicker">Historien bag HandleMCP</p>
+        <h2>Én handel om ugen.<br>Pengene holder.</h2>
+        <p class="lead">Jeg gad ikke i Rema 6 gange om ugen mere. Og madkontoen skulle altid have 2.000 kr. ekstra den 20.</p>
+        <p class="said">"Vi handler bare ind om søndagen."</p>
+        <p>Det virkede ikke. Måske er jeg bare ikke god til at planlægge. Men jeg er nok ikke den eneste.</p>
+        <p>Så nu beder jeg min AI om tre ting:</p>
+        <ol class="asks"><li>Handl ind én gang om ugen.</li><li>Hold budgettet på 4.000 kr.</li><li>Ingen selleri til børnene.</li></ol>
+        <p>Hver lørdag ligger madplanen klar, og kurven er fyldt i den billigste butik. Jeg skimmer kurven og betaler selv. Færdig.</p>
+        <p class="end">Vi sparer <b>ca. 2.500 kr. om måneden</b>. Og børnene beder ikke om en tur i Rema efter skole.</p>
+      </div>
+      <figure class="me"><img class="blob" src="niclas-nemlig.jpg" alt="Niclas ved hoveddøren med ugens kasser fra nemlig.com" width="864" height="1008" loading="lazy"><figcaption><b><svg viewBox="0 0 64 16" aria-hidden="true"><path d="M2 3c8 6 20 10 60 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Niclas</b><span>Far til 2. Har bygget HandleMCP.</span></figcaption></figure>
+    </div>
+  </section>
   <section id="saadan"><div class="doodles" aria-hidden="true"><img class="doodle" src="doodles/banana.svg" alt="" width="112" style="top:84px;right:9%;--r:-10deg;--d:8s"><img class="doodle" src="doodles/spark.svg" alt="" width="30" style="top:70px;right:26%;--r:0deg;--d:5s"><img class="doodle" src="doodles/tomato.svg" alt="" width="40" style="top:150px;left:56%;--r:-20deg;--d:7s"></div>
     <h2>Sådan virker det</h2>
     <div class="steps">
