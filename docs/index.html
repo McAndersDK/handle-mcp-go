@@ -344,7 +344,7 @@ body{overflow-x:clip}
 @media(max-width:700px){.agent .log{padding:20px 16px 4px}.tool{grid-template-columns:18px 1fr 16px}.tool em{grid-column:2}.agent .conn{display:none}}
 
 /* v6: sand hero, boxed nav, white CTA with round dot */
-:root{--sand:#9ccbf3;--navy:#0a1c35}.hero h1{color:#2c2e2a}@media (min-width:901px){.hero>div:first-child{align-self:start;padding-top:24px}}.hero .proof,.hero .textlink,.hero .lead strong{color:var(--navy)}.hero .lead{color:#1c3a60}.hero .textlink{text-decoration-color:#5f7a94}.hero h1 .soft{font-family:Newsreader,Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+:root{--sand:#9ccbf3;--navy:#0a1c35}.hero h1{color:#2c2e2a}nav .navcta .sm{display:none}@media (max-width:640px){nav .navcta .lg{display:none}nav .navcta .sm{display:inline}}@media (min-width:901px){.hero>div:first-child{align-self:start;padding-top:24px}}.hero .proof,.hero .textlink,.hero .lead strong{color:var(--navy)}.hero .lead{color:#1c3a60}.hero .textlink{text-decoration-color:#5f7a94}.hero h1 .soft{font-family:Newsreader,Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
 .hero{position:relative;padding-bottom:88px}
 .hero::before{content:"";position:absolute;top:-140px;bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);z-index:-1;background:var(--sand)}
 .navwrap{position:relative;top:0}
@@ -438,7 +438,7 @@ main{position:relative}
       <li class="opt"><a class="gh" href="https://github.com/NJohansen/handle-mcp" data-umami-event="github" data-umami-event-sted="nav">GitHub<span class="stars" id="stars" hidden aria-label="stjerner på GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 .9l2.2 4.5 4.9.7-3.6 3.5.9 4.9L8 12.2l-4.4 2.3.9-4.9L.9 6.1l4.9-.7z"/></svg><span id="stars-n"></span></span></a></li>
     </ul>
     </div>
-    <a class="btn navcta" href="https://tally.so/r/ArKdkW" data-tally="ArKdkW" data-sted="nav">Kom i gang <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></i></a>
+    <a class="btn navcta" href="https://tally.so/r/ArKdkW" data-tally="ArKdkW" data-sted="nav"><span class="lg">Kom på ventelisten</span><span class="sm">Venteliste</span> <i><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></i></a>
   </nav>
 </header>
 
