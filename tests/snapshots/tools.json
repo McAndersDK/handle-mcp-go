@@ -510,7 +510,7 @@
    "openWorldHint": true,
    "readOnlyHint": false
   },
-  "description": "Set ABSOLUTE quantities in one store's cart (0 removes the product). Never orders or pays. Returns a result per product and the new cart.",
+  "description": "Set ABSOLUTE quantities in one store's cart (0 removes the product): read get_cart first and add to what is there. Never orders or pays. Returns a result per product and the new cart.",
   "inputSchema": {
    "properties": {
     "items": {
