@@ -16,6 +16,7 @@ import (
 
 	"github.com/McAndersDK/handle-mcp-go/internal/candidates"
 	"github.com/McAndersDK/handle-mcp-go/internal/compare"
+	"github.com/McAndersDK/handle-mcp-go/internal/match"
 	"github.com/McAndersDK/handle-mcp-go/internal/model"
 )
 
@@ -71,7 +72,7 @@ const oekoNum, oekoDen = 110, 100
 
 // problems is what is wrong with one candidate for one entry. Empty when it fits.
 func problems(e Entry, c candidates.Candidate) []string {
-	text := strings.ToLower(c.Name + " " + deref(c.Brand))
+	text := searchText(c.Name, deref(c.Brand))
 	var out []string
 	for _, w := range e.Has {
 		if !anyWord(w, text) {
@@ -130,7 +131,7 @@ func check(e Entry, line *compare.BasketLine) (fail, warn []string) {
 // fits: an alternative counts for the øko rule only when it is the same kind of thing: not
 // 'Citron peber' for citroner, not a tin ('Konserves') for cherrytomater.
 func fits(e Entry, c candidates.Candidate) bool {
-	text := strings.ToLower(c.Name + " " + deref(c.Brand) + " " + deref(c.Category))
+	text := searchText(c.Name, deref(c.Brand), deref(c.Category))
 	for _, w := range e.Has {
 		if !anyWord(w, text) {
 			return false
@@ -170,6 +171,34 @@ func anyWord(word, text string) bool {
 		}
 	}
 	return false
+}
+
+// searchText is the lower-case text the word rule searches. The matcher reads 'HK.' as 'hakket'
+// (match.Words, with its abbreviation table), so the full form of such a word is added at the end
+// as one more word. Only words in the matcher's alphabet are asked, so a Unicode word such as
+// 'café' is never split into 'caf'; the text keeps its Unicode word boundaries.
+func searchText(parts ...string) string {
+	text := strings.ToLower(strings.Join(parts, " "))
+	var full []string
+	for _, w := range strings.FieldsFunc(text, func(r rune) bool { return !isWord(r) }) {
+		if !matcherAlphabet(w) {
+			continue
+		}
+		if ws := match.Words(w); len(ws) == 1 && ws[0] != w {
+			full = append(full, ws[0])
+		}
+	}
+	return text + " " + strings.Join(full, " ")
+}
+
+// matcherAlphabet: only a-z, 0-9 and æøå, the letters match.Words keeps in a word.
+func matcherAlphabet(w string) bool {
+	for _, r := range w {
+		if !((r >= 'a' && r <= 'z') || (r >= '0' && r <= '9') || r == 'æ' || r == 'ø' || r == 'å') {
+			return false
+		}
+	}
+	return true
 }
 
 func isWord(r rune) bool { return unicode.IsLetter(r) || unicode.IsNumber(r) || r == '_' }

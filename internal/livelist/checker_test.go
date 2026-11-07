@@ -151,6 +151,28 @@ func TestWordRuleIsUnicodeAware(t *testing.T) {
 	}
 }
 
+func TestWordRuleReadsHkAsHakket(t *testing.T) {
+	// The matcher picks 'HK.' for 'hakket': the checker must read it the same way.
+	for _, name := range []string{"HK. GRISEKØD 8-12%", "HK. KYLLINGEKØD 7-10%", "HK. OKSEKØD 15-18%"} {
+		if !anyWord("hakket", searchText(name)) {
+			t.Errorf("%q: no 'hakket' in %q", name, searchText(name))
+		}
+	}
+	grise := Entry{Item: "hakket grisekød 1 kg", Has: []string{"hakket", "grisekød"}}
+	eq(t, "hk grise", problems(grise, cand(t, "HK. GRISEKØD 8-12%", "40")), nil)
+	eq(t, "no hk", problems(grise, cand(t, "GRISEKØD 8-12%", "40")), []string{"mangler 'hakket'"})
+	// Only a whole word 'hk' is an abbreviation: 'HKX' and 'HKHK' are not 'hakket'.
+	eq(t, "hkx", problems(grise, cand(t, "HKX GRISEKØD", "40")), []string{"mangler 'hakket'"})
+	eq(t, "hkhk", problems(grise, cand(t, "HKHK GRISEKØD", "40")), []string{"mangler 'hakket'"})
+	// The abbreviation counts in 'not' too, and a name without hk is unaffected.
+	eq(t, "not hk", problems(Entry{Item: "x", Not: []string{"hakket"}}, cand(t, "HK. GRISEKØD", "40")),
+		[]string{"har 'hakket'"})
+	eq(t, "plain", problems(Entry{Item: "x", Has: []string{"grisekød"}}, cand(t, "Svinekød", "40")),
+		[]string{"mangler 'grisekød'"})
+	// A Unicode word is not split by the abbreviation step: 'Café' adds no 'caf' word.
+	eq(t, "unicode word", []string{searchText("Café")}, []string{"café "})
+}
+
 func TestFailsOnlyWhenNoCandidateFits(t *testing.T) {
 	corn := Entry{Item: "majs", Has: []string{"majs"}, Not: []string{"baby"}}
 	fail, warn := check(corn, line(false, cand(t, "Majs 3 stk", "10")))
