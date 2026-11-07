@@ -17,7 +17,7 @@ var forbidden = []string{
 	`Checkout/`,
 	`GetCreditCards`,
 	`GetCardsFees`,
-	`/payment`,
+	`/payment`, // also covers /payments (REMA 1000 payment jobs)
 	`SetDeliveryAddress`,
 	`SetDeliveryTime`,
 	`UpdateDeliveryTime`, // nemlig: also TryUpdateDeliveryTime; chooses a slot
@@ -29,6 +29,13 @@ var forbidden = []string{
 	`ClearBasket`, // nemlig: empties the whole cart
 	`CancelOrder`,
 	`AddRecipeToBasket`, // nemlig: fills the cart without the human's yes
+	// REMA 1000 (docs/adr/0008): the only legal writes are to today's own shopping list.
+	`v3/cart`,                      // the cart, with store, time and coupon
+	`v3/jobs`,                      // payments
+	`vendor-baskets`,               // imports a vendor's basket into a list
+	`checkoutCallback`,             // the payment's way back
+	`primary\\?"\s*:\s*true`,       // makes a list the primary one; the adapter only ever sends false
+	`MethodDelete|"DELETE"\s*[,)]`, // deleting a list (the adapter removes lines with a PATCH)
 }
 
 // stdoutUses are ways to write to stdout. stdout is the JSON-RPC stream.
@@ -197,8 +204,50 @@ func TestScanFindsPlantedWords(t *testing.T) {
 }
 
 func TestForbiddenListIsComplete(t *testing.T) {
-	// The Python list has 16 entries; a shorter list means a word was dropped.
-	if len(forbidden) != 16 {
-		t.Fatalf("%d forbidden words, want 16", len(forbidden))
+	// The Python list has 16 entries and REMA 1000 added 6 (docs/adr/0008); a shorter list means a
+	// word was dropped.
+	if len(forbidden) != 22 {
+		t.Fatalf("%d forbidden words, want 22", len(forbidden))
+	}
+}
+
+// The REMA 1000 words catch what they are meant to, and not the adapter's own legal calls
+// (a PATCH of a list's lines, a primary flag that is false, a delete flag on a line).
+func TestRemaWordsCatchOnlyTheForbiddenCalls(t *testing.T) {
+	dir := t.TempDir()
+	check := func(body string) []hit {
+		t.Helper()
+		if err := os.WriteFile(filepath.Join(dir, "x.go"), []byte("package x\n\n"+body+"\n"), 0o600); err != nil {
+			t.Fatal(err)
+		}
+		hits, err := scan([]string{dir}, forbidden, true)
+		if err != nil {
+			t.Fatal(err)
+		}
+		return hits
+	}
+	for _, bad := range []string{
+		`const a = "v3/cart/12"`,
+		`const a = "v3/jobs/5/payments"`,
+		`const a = "api/v3/vendor-baskets/x/items"`,
+		`const a = "checkoutCallback"`,
+		"const a = `{\"primary\": true}`",
+		`const a = "{\"primary\":true}"`,
+		`var c = call{method: http.MethodDelete}`,
+		`var c = request{Method: "DELETE", URL: u}`,
+	} {
+		if len(check(bad)) == 0 {
+			t.Errorf("not caught: %s", bad)
+		}
+	}
+	for _, good := range []string{
+		"type body struct {\n\tPrimary bool `json:\"primary\"`\n}",
+		"type gone struct {\n\tDelete bool `json:\"delete\"`\n}",
+		`const a = "v2/shoppinglists/1"`,
+		`var c = request{Method: "PATCH", URL: u}`,
+	} {
+		if hits := check(good); len(hits) != 0 {
+			t.Errorf("false positive for %s: %v", good, hits)
+		}
 	}
 }
