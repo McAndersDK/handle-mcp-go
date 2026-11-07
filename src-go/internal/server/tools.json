@@ -1,0 +1,526 @@
+[
+ {
+  "name": "add_recipe_to_cart",
+  "description": "Put a recipe's products in one store's cart, as get_recipe shows them.\nASK THE HUMAN FIRST: show the list from get_recipe and get a yes. Never orders or pays.\nAdds to what is already in the cart, so calling it twice adds twice.\n`have_at_home` items (salt, oil) are left out unless named in `include`. `skip` leaves out\ningredients; `swap` maps an ingredient (or product id) to one of its alternatives' product\nids. Names: ingredient or product id. Returns before/added/after per product, the skipped\nitems and the new cart. Check `ok` per product: a store can refuse some lines; tell the\nhuman which ones failed. BilkaToGo: one pack per product; `persons` is not used.",
+  "inputSchema": {
+   "properties": {
+    "store": {
+     "title": "Store",
+     "type": "string"
+    },
+    "recipe": {
+     "title": "Recipe",
+     "type": "string"
+    },
+    "persons": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Persons"
+    },
+    "skip": {
+     "anyOf": [
+      {
+       "items": {
+        "type": "string"
+       },
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Skip"
+    },
+    "swap": {
+     "anyOf": [
+      {
+       "additionalProperties": {
+        "type": "string"
+       },
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Swap"
+    },
+    "include": {
+     "anyOf": [
+      {
+       "items": {
+        "type": "string"
+       },
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Include"
+    }
+   },
+   "required": [
+    "store",
+    "recipe"
+   ],
+   "type": "object",
+   "title": "add_recipe_to_cartArguments"
+  },
+  "annotations": {
+   "readOnlyHint": false,
+   "destructiveHint": true,
+   "idempotentHint": false,
+   "openWorldHint": true
+  }
+ },
+ {
+  "name": "compare_basket",
+  "description": "Price a shopping list in each store, e.g. [\"2 x letmælk 1 l\", \"rugbrød\", \"æg 10 stk\"].\nWrite the amount you need (\"fior di latte 300 g\"), not a pack size. Returns per item a\nsuggested product and up to 5 \"candidates\" (the suggestion first, one øko when found) with\nthe cost for the amount and flags: name_match, size_fits, prepared (cold cuts, smoked,\nbreaded), processed (frost/konserves), blend, oeko. The suggestion is a guess by word rules:\npick the candidate that fits the user, and ask when \"sure\" is false or none fits\n(search_products finds more). Unknown facts and false flags are left out. Also total incl.\nfees and minimum order met. Each store has `delivery_mode` and `pickup_store`; a pickup store is noted, and when one store\ndelivers and another is pickup, the summary names the cheapest of each (the trip to the store\nis not counted). Only reads: use set_cart_quantities with the chosen ids after.",
+  "inputSchema": {
+   "properties": {
+    "items": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Items",
+     "type": "array"
+    },
+    "stores": {
+     "anyOf": [
+      {
+       "items": {
+        "type": "string"
+       },
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Stores"
+    }
+   },
+   "required": [
+    "items"
+   ],
+   "type": "object",
+   "title": "compare_basketArguments"
+  },
+  "annotations": {
+   "readOnlyHint": true,
+   "destructiveHint": false,
+   "openWorldHint": true
+  }
+ },
+ {
+  "name": "get_cart",
+  "description": "Show the cart: lines, fees, total and whether the minimum order is met. With `store`\nthat store's cart; without, every store's cart keyed by store name, a failing store\n(e.g. no login) as {\"error\": ...} next to the others. `delivery_mode` is \"home\", \"pickup\" or\nnull (the store does not say); `pickup_store` is the store's name, only for pickup.",
+  "inputSchema": {
+   "properties": {
+    "store": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Store"
+    }
+   },
+   "type": "object",
+   "title": "get_cartArguments"
+  },
+  "annotations": {
+   "readOnlyHint": true,
+   "destructiveHint": false,
+   "openWorldHint": true
+  }
+ },
+ {
+  "name": "get_delivery_info",
+  "description": "Show the chosen delivery or pickup time, edit deadline and next free day, plus fees and\nminimum order. `delivery_mode` is \"home\", \"pickup\" or null (the store does not say: the human\nchooses on the store's website); `pickup_store` is set only for pickup. Only reads: it never\nchooses a time, a pickup store or home delivery or pickup.",
+  "inputSchema": {
+   "properties": {
+    "store": {
+     "title": "Store",
+     "type": "string"
+    }
+   },
+   "required": [
+    "store"
+   ],
+   "type": "object",
+   "title": "get_delivery_infoArguments"
+  },
+  "annotations": {
+   "readOnlyHint": true,
+   "destructiveHint": false,
+   "openWorldHint": true
+  }
+ },
+ {
+  "name": "get_order",
+  "description": "Show one order with what was bought.",
+  "inputSchema": {
+   "properties": {
+    "store": {
+     "title": "Store",
+     "type": "string"
+    },
+    "order_id": {
+     "title": "Order Id",
+     "type": "string"
+    }
+   },
+   "required": [
+    "store",
+    "order_id"
+   ],
+   "type": "object",
+   "title": "get_orderArguments"
+  },
+  "annotations": {
+   "readOnlyHint": true,
+   "destructiveHint": false,
+   "openWorldHint": true
+  }
+ },
+ {
+  "name": "get_orders",
+  "description": "List recent orders in one store (newest first). Use get_order for the lines.",
+  "inputSchema": {
+   "properties": {
+    "store": {
+     "title": "Store",
+     "type": "string"
+    },
+    "limit": {
+     "default": 10,
+     "title": "Limit",
+     "type": "integer"
+    }
+   },
+   "required": [
+    "store"
+   ],
+   "type": "object",
+   "title": "get_ordersArguments"
+  },
+  "annotations": {
+   "readOnlyHint": true,
+   "destructiveHint": false,
+   "openWorldHint": true
+  }
+ },
+ {
+  "name": "get_recipe",
+  "description": "The products to buy for one of the store's recipes, as on its \"Se varer og læg i kurv\":\nper ingredient the store's product, packs for `persons` and alternatives. `have_at_home`\nitems (salt, oil) are what the store assumes you have: left out of `total`, ask first.\nAlso `image`, `description`, `method`, `tip`. Scale `ingredients` from `ingredients_persons`.\n`recipe` is the recipe's link or id from search_recipes or list_recipes. Put the products\nin the cart with add_recipe_to_cart after the human says yes.\nBilkaToGo: one pack per product, no alternatives; `persons` is fixed (null for pieces).\n`missing`: product ids not sold at the address: say so to the human.",
+  "inputSchema": {
+   "properties": {
+    "store": {
+     "title": "Store",
+     "type": "string"
+    },
+    "recipe": {
+     "title": "Recipe",
+     "type": "string"
+    },
+    "persons": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Persons"
+    }
+   },
+   "required": [
+    "store",
+    "recipe"
+   ],
+   "type": "object",
+   "title": "get_recipeArguments"
+  },
+  "annotations": {
+   "readOnlyHint": true,
+   "destructiveHint": false,
+   "openWorldHint": true
+  }
+ },
+ {
+  "name": "list_delivery_slots",
+  "description": "List free delivery or pickup times for the next `days` days with the fee per slot, in time\norder, plus the 3 cheapest per store. nemlig: \"Personlig\" (you are home) or \"Fleksibel\"\n(left at the door). BilkaToGo: home delivery has one flat fee and night delivery; a pickup\ncart gives pickup times with kind \"Afhentning\", `pickup_store` and the fee (\"0.00\" when free).\nOnly reads: it never chooses a time, a pickup store or home delivery or pickup. The human\nchooses on the store's website.",
+  "inputSchema": {
+   "properties": {
+    "stores": {
+     "anyOf": [
+      {
+       "items": {
+        "type": "string"
+       },
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Stores"
+    },
+    "days": {
+     "default": 7,
+     "title": "Days",
+     "type": "integer"
+    }
+   },
+   "type": "object",
+   "title": "list_delivery_slotsArguments"
+  },
+  "annotations": {
+   "readOnlyHint": true,
+   "destructiveHint": false,
+   "openWorldHint": true
+  }
+ },
+ {
+  "name": "list_offers",
+  "description": "List this week's offers in each store, also items you would not search for: nemlig's\nSkarp pris, Priskup, Dagstilbud, Undgå madspild and gifts; BilkaToGo's offers. `limit` is\nper list; a product on two lists is shown once. A list the store fails to send is left out\n(see the server log). Free gifts come from a separate search and are not cut by `limit`.\nThey have price 0 and \"max_per_order\". Use them when they fit the plan.",
+  "inputSchema": {
+   "properties": {
+    "stores": {
+     "anyOf": [
+      {
+       "items": {
+        "type": "string"
+       },
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Stores"
+    },
+    "limit": {
+     "default": 25,
+     "title": "Limit",
+     "type": "integer"
+    }
+   },
+   "type": "object",
+   "title": "list_offersArguments"
+  },
+  "annotations": {
+   "readOnlyHint": true,
+   "destructiveHint": false,
+   "openWorldHint": true
+  }
+ },
+ {
+  "name": "list_recipes",
+  "description": "Browse the store's recipes, with link. No tags or category: this week's featured\nrecipes (nemlig: \"Ugens udvalgte\"). With `tags`: recipes that have every tag, e.g.\n[\"Familievenlig\", \"Budgetvenlig\"] or [\"Under 30 min\", \"Kylling\"]. nemlig's tags include\nUnder 20/30 min, Budgetvenlig, Familievenlig, Populær, Mad til flere dage, Vegetarisk,\nKylling, Fisk, Oksekød, Gris and cuisines; an unknown tag answers with the full list.\n`category` (nemlig: aftensmad by default, frokost, madpakke, morgenmad, ...).\nBilkaToGo: no tags; no category is this week's \"Madplan\" (7 dinners); `category` is a path\nlike aftensmad or aftensmad/pastaretter, an unknown one answers with the list. Use get_recipe.",
+  "inputSchema": {
+   "properties": {
+    "stores": {
+     "anyOf": [
+      {
+       "items": {
+        "type": "string"
+       },
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Stores"
+    },
+    "tags": {
+     "anyOf": [
+      {
+       "items": {
+        "type": "string"
+       },
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Tags"
+    },
+    "category": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Category"
+    },
+    "limit": {
+     "default": 20,
+     "title": "Limit",
+     "type": "integer"
+    }
+   },
+   "type": "object",
+   "title": "list_recipesArguments"
+  },
+  "annotations": {
+   "readOnlyHint": true,
+   "destructiveHint": false,
+   "openWorldHint": true
+  }
+ },
+ {
+  "name": "search_products",
+  "description": "Search products in one or more stores. Returns price, price per kg/l, offers and EAN when\nknown. Stores rank by relevance and put cheap products far down: when the human asks for the\ncheapest, use sort=\"unit_price\" (per kg/l/stk) or \"price\".",
+  "inputSchema": {
+   "properties": {
+    "query": {
+     "title": "Query",
+     "type": "string"
+    },
+    "stores": {
+     "anyOf": [
+      {
+       "items": {
+        "type": "string"
+       },
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Stores"
+    },
+    "limit": {
+     "default": 10,
+     "title": "Limit",
+     "type": "integer"
+    },
+    "sort": {
+     "default": "relevance",
+     "enum": [
+      "relevance",
+      "price",
+      "unit_price"
+     ],
+     "title": "Sort",
+     "type": "string"
+    }
+   },
+   "required": [
+    "query"
+   ],
+   "type": "object",
+   "title": "search_productsArguments"
+  },
+  "annotations": {
+   "readOnlyHint": true,
+   "destructiveHint": false,
+   "openWorldHint": true
+  }
+ },
+ {
+  "name": "search_recipes",
+  "description": "Find the stores' own recipes, e.g. \"kylling karry\". Returns name and link.\nUse get_recipe for time, persons and the products to buy.\nnemlig only: BilkaToGo has no recipe search, use list_recipes with `category` there.",
+  "inputSchema": {
+   "properties": {
+    "query": {
+     "title": "Query",
+     "type": "string"
+    },
+    "stores": {
+     "anyOf": [
+      {
+       "items": {
+        "type": "string"
+       },
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Stores"
+    },
+    "limit": {
+     "default": 5,
+     "title": "Limit",
+     "type": "integer"
+    }
+   },
+   "required": [
+    "query"
+   ],
+   "type": "object",
+   "title": "search_recipesArguments"
+  },
+  "annotations": {
+   "readOnlyHint": true,
+   "destructiveHint": false,
+   "openWorldHint": true
+  }
+ },
+ {
+  "name": "set_cart_quantities",
+  "description": "Set ABSOLUTE quantities in one store's cart (0 removes the product). Never orders or pays. Returns a result per product and the new cart.",
+  "inputSchema": {
+   "properties": {
+    "store": {
+     "title": "Store",
+     "type": "string"
+    },
+    "items": {
+     "additionalProperties": {
+      "type": "integer"
+     },
+     "title": "Items",
+     "type": "object"
+    }
+   },
+   "required": [
+    "store",
+    "items"
+   ],
+   "type": "object",
+   "title": "set_cart_quantitiesArguments"
+  },
+  "annotations": {
+   "readOnlyHint": false,
+   "destructiveHint": true,
+   "idempotentHint": true,
+   "openWorldHint": true
+  }
+ }
+]

@@ -31,6 +31,10 @@ var PassthroughKeys = setOf(
 	"other_fees", "source", "chosen_start", "chosen_end", "edit_deadline",
 	"next_available", "start", "end", "kind", "status", "placed_at",
 	"delivery_start", "delivery_end", "missing", "delivery_mode", "pickup_store",
+	// the answers of the server tools (package server)
+	"stores", "cheapest", "comparable_totals", "summary", "results", "cart", "added", "skipped",
+	"orders", "slots", "terms", "item", "sure", "guess", "candidates", "oeko", "before", "after",
+	"reason", "suggested", "name_match", "size_fits", "prepared", "processed", "blend",
 )
 
 // Classify returns how Scrub treats a key. Personal wins over free text, as in scrubItem.
@@ -65,6 +69,10 @@ func JSONKeys(types ...reflect.Type) []string {
 			f := t.Field(i)
 			name, _, _ := strings.Cut(f.Tag.Get("json"), ",")
 			if name == "-" || !f.IsExported() {
+				continue
+			}
+			if name == "" && f.Anonymous { // an embedded struct is flattened into its parent
+				walk(f.Type)
 				continue
 			}
 			if name == "" {

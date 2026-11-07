@@ -46,22 +46,34 @@ func scan(root string, patterns []string, caseInsensitive bool) ([]hit, error) {
 		res = append(res, regexp.MustCompile(p))
 	}
 	var hits []hit
-	err := filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
-		if err != nil || d.IsDir() || !strings.HasSuffix(path, ".go") || strings.HasSuffix(path, "_test.go") {
-			return err
-		}
+	files, err := goFiles(root)
+	if err != nil {
+		return nil, err
+	}
+	for _, path := range files {
 		data, err := os.ReadFile(path)
 		if err != nil {
-			return err
+			return nil, err
 		}
 		for i, re := range res {
 			if re.Match(data) {
 				hits = append(hits, hit{path, patterns[i]})
 			}
 		}
-		return nil
+	}
+	return hits, nil
+}
+
+// goFiles are the non-test .go files under root: the files scan reads, whatever build tags they have.
+func goFiles(root string) ([]string, error) {
+	var files []string
+	err := filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
+		if err == nil && !d.IsDir() && strings.HasSuffix(path, ".go") && !strings.HasSuffix(path, "_test.go") {
+			files = append(files, path)
+		}
+		return err
 	})
-	return hits, err
+	return files, err
 }
 
 // repoRoot walks up from the test's folder to go.mod.
@@ -98,6 +110,31 @@ func TestNothingWritesToStdout(t *testing.T) {
 	hits, err := scan(filepath.Join(repoRoot(t), "src-go"), stdoutUses, false)
 	if err != nil || len(hits) > 0 {
 		t.Fatalf("stdout use found: %v (err %v)", hits, err)
+	}
+}
+
+// The binary (cmd/handle-mcp) and the server write the answers, so both must be under the scans.
+func TestScansCoverTheCommandAndTheServer(t *testing.T) {
+	root := filepath.Join(repoRoot(t), "src-go")
+	files, err := goFiles(root)
+	if err != nil {
+		t.Fatal(err)
+	}
+	found := map[string]bool{}
+	for _, f := range files {
+		rel, _ := filepath.Rel(root, f)
+		rel = filepath.ToSlash(rel)
+		for _, want := range []string{"cmd/handle-mcp/main.go", "internal/server/out.go", "internal/server/server.go", "internal/server/registry_e2e.go"} {
+			found[want] = found[want] || rel == want
+		}
+	}
+	for want, ok := range found {
+		if !ok {
+			t.Errorf("%s is not scanned", want)
+		}
+	}
+	if len(found) != 4 {
+		t.Errorf("checked %d files", len(found))
 	}
 }
 
