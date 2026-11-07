@@ -54,3 +54,6 @@ Also seen in the website's code, not used: `meals/filters/{path}` (one tag, all 
 `meals/purchased` ("Mine opskrifter", 401 without login) and
 `POST /webapi/basket/AddRecipeToBasket` (never call it: we fill the cart with
 `set_cart_quantities` after the human says yes).
+
+No real store, street or city appears in these files: names and addresses are the fictional
+Kunde Eksempel, Testvej 1, 9999 Eksempelby.

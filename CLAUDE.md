@@ -94,7 +94,7 @@ Normal work is pushed straight to `main` of the fork. No PR, no release, and a b
 
 A PR inside the fork is used only to release a new version. Always `gh pr create --repo McAndersDK/handle-mcp-go`: `gh` in a fork can default to the parent.
 
-1. Bump `version` in `pyproject.toml` (`uv lock` follows) and every pin: `grep -rn "@v" README.md docs/` (README, `docs/setup.md`, `docs/index.html`, `docs/security.md`).
+1. Bump `version` in `pyproject.toml` (`uv lock` follows) and every pin: `grep -rn "@v" README.md docs/` (README, `docs/setup.md`, `docs/security.md`).
 2. Open the release PR in the fork, with the tests run. Squash and merge. The squash message is the PR title.
 3. Tag the merge commit on `main`: `git fetch origin main && git tag vX.Y.Z origin/main && git push origin vX.Y.Z`.
 4. Semver: a tool's args or answer shape changes in a way old skills notice → major. New tool or field → minor. Fix → patch.

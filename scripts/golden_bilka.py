@@ -178,10 +178,10 @@ SEARCH_CASES = [
     C("search_default_limit", "search", ("mælk",)),
     C("search_session", "search", ("skyr", 5), login="session"),
     C(
-        "search_sid_1653",
+        "search_sid_9001",
         "search",
         ("skyr", 5),
-        setup=cart(deliveryAddress={**HOME["deliveryAddress"], "sid": "1653"}),
+        setup=cart(deliveryAddress={**HOME["deliveryAddress"], "sid": "9001"}),
     ),
     C("search_no_login", "search", ("mælk",), login=None),
     C("search_no_address", "search", ("mælk",), setup=cart(deliveryAddress=None)),
@@ -204,10 +204,10 @@ SEARCH_CASES = [
     C("offers_default", "offers", (10,)),
     C("offers_default_limit", "offers"),
     C(
-        "offers_sid_1653",
+        "offers_sid_9001",
         "offers",
         (10,),
-        setup=cart(deliveryAddress={**HOME["deliveryAddress"], "sid": "1653"}),
+        setup=cart(deliveryAddress={**HOME["deliveryAddress"], "sid": "9001"}),
     ),
     C("offers_no_login", "offers", (10,), login=None),
 ]

@@ -60,6 +60,15 @@ Krævede headers: `Platform: web`, `Device-Size: desktop`, `Version: <app-versio
 - Samme klasse har `UpdateDeliveryTime` / `TryUpdateDeliveryTime` (POST, vælger tid). Må aldrig kaldes: står i `tests/test_safety.py`.
 - `list_delivery_slots` viser listen. `get_delivery_info` viser valgt tid + `EditDeadline`. Ingen valg af tid.
 
+### Opskrifter og madplan (fundet 2026-11-06, kun GET, intet login)
+- Intet opskrift-API. bilkatogo.dk er et statisk Nuxt-build: hver side har sine data i `/_nuxt/static/<build>/inspiration/opskrifter/<sti>/payload.js` (`__NUXT_JSONP__`, Magnolia CMS). Det er et JavaScript-objekt: nøgler uden anførselstegn, `void 0` for undefined.
+- Build-id'et skifter ved hver deploy. Det står i hver HTML-side (`staticAssetsBase:"/_nuxt/static/<build>"`). En ukendt side eller et gammelt build svarer HTTP 200 med hjemmesidens HTML, ikke 404.
+- Opskrift: titel (Heading h1), fakta ("4 personer", "35 minutter"; nogle "16 stk." eller "1 glas"), tekst som HTML under h2 "Ingredienser" og "Fremgangsmåde" (eller "Sådan gør du"), tips under "Alternativer og justeringer", billede (`imageJCR` på digitalassets.sallinggroup.com).
+- "Det skal du bruge": `CuratedSlider.sourceProperties.curatedSkuList`, Bilka-varenumre (samme som Algolia `objectID` og kurven). Ingen mængde pr. vare, ingen kobling ingredienslinje → varenummer, intet "har du hjemme". Kan have huller (`void 0`).
+- Kategorier: `ContentCard.hierarchy` med egne undersider (eller en underkategoris, fx "Pita"), og `CarouselContentCard` under en overskrift. `aftensmad` har 15 underkategorier, nogle med endnu et niveau (`sandwiches-pita-og-wraps/sandwiches`).
+- Madplan: `/inspiration/opskrifter/madplaner/`: 7 aftensmåltider (man-søn) i en carousel under "Madplan til uge NN", plus "Køb alt" (alle varenumre) og en indkøbsliste som tekst.
+- Ingen søgning og ingen tags.
+
 ### Ordrer
 Kendt i `nemlig_cli` (ordrehistorik og ordredetaljer). Indeholder adresse og navn → privacy-filter.
 

@@ -4,12 +4,12 @@
   "nbPages": 1,
   "hitsPerPage": 5,
   "query": "skyr",
-  "params": "query=skyr&hitsPerPage=5&filters=isInAssortmentIn%3A1653%20AND%20inStockStore%3A1653%20AND%20nonsearchable%3Afalse%20&attributesToRetrieve=%5B%22*%22%5D&facets=%5B%22*%22%5D&distinct=false&clickAnalytics=true&getRankingInfo=true&analyticsTags=%5B%22ext-alg%23query-category%3Aquery-matched%22%2C%22ext-alg%23auto-filter%3Ahas-filters%22%5D&optionalFacetFilters=%5B%22searchHierachy%3Askyr%3Cscore%3D2%3E%22%5D",
+  "params": "query=skyr&hitsPerPage=5&filters=isInAssortmentIn%3A9001%20AND%20inStockStore%3A9001%20AND%20nonsearchable%3Afalse%20&attributesToRetrieve=%5B%22*%22%5D&facets=%5B%22*%22%5D&distinct=false&clickAnalytics=true&getRankingInfo=true&analyticsTags=%5B%22ext-alg%23query-category%3Aquery-matched%22%2C%22ext-alg%23auto-filter%3Ahas-filters%22%5D&optionalFacetFilters=%5B%22searchHierachy%3Askyr%3Cscore%3D2%3E%22%5D",
   "index": "prod_BILKATOGO_PRODUCTS",
   "hits": [
     {
       "storeData": {
-        "1653": {
+        "9001": {
           "inStock": true,
           "multipromo": "",
           "offerDescription": "",
@@ -26,7 +26,7 @@
           "unitsOfMeasureOfferPrice": 0,
           "unitsOfMeasureShowPrice": 3095
         },
-        "1661": {
+        "9002": {
           "inStock": true,
           "multipromo": "",
           "offerDescription": "",
@@ -91,8 +91,8 @@
       "isGlobalOffer": false,
       "inStockStore": [
         1651,
-        1661,
-        1653,
+        9002,
+        9001,
         1658,
         1659,
         1662,
@@ -151,8 +151,8 @@
       },
       "isInAssortmentIn": [
         1651,
-        1661,
-        1653,
+        9002,
+        9001,
         1658,
         1659,
         1662,
@@ -196,7 +196,7 @@
     },
     {
       "storeData": {
-        "1653": {
+        "9001": {
           "inStock": true,
           "multipromo": "",
           "offerDescription": "Skarp pris",
@@ -213,7 +213,7 @@
           "unitsOfMeasureOfferPrice": 3125,
           "unitsOfMeasureShowPrice": 3125
         },
-        "1661": {
+        "9002": {
           "inStock": true,
           "multipromo": "",
           "offerDescription": "Skarp pris",
@@ -276,8 +276,8 @@
       "isInStock": 1,
       "isInOffer": [
         1651,
-        1661,
-        1653,
+        9002,
+        9001,
         1658,
         1659,
         1662,
@@ -297,8 +297,8 @@
       "isGlobalOffer": true,
       "inStockStore": [
         1651,
-        1661,
-        1653,
+        9002,
+        9001,
         1658,
         1659,
         1662,
@@ -359,8 +359,8 @@
       },
       "isInAssortmentIn": [
         1651,
-        1661,
-        1653,
+        9002,
+        9001,
         1658,
         1659,
         1662,
@@ -404,7 +404,7 @@
     },
     {
       "storeData": {
-        "1653": {
+        "9001": {
           "inStock": true,
           "multipromo": "2680",
           "offerDescription": "Mix 10 for 25,00",
@@ -421,7 +421,7 @@
           "unitsOfMeasureOfferPrice": 250,
           "unitsOfMeasureShowPrice": 275
         },
-        "1661": {
+        "9002": {
           "inStock": true,
           "multipromo": "2680",
           "offerDescription": "Mix 10 for 25,00",
@@ -486,8 +486,8 @@
       "isInStock": 1,
       "isInOffer": [
         1651,
-        1661,
-        1653,
+        9002,
+        9001,
         1658,
         1659,
         1662,
@@ -507,8 +507,8 @@
       "isGlobalOffer": true,
       "inStockStore": [
         1651,
-        1661,
-        1653,
+        9002,
+        9001,
         1658,
         1659,
         1662,
@@ -564,8 +564,8 @@
       },
       "isInAssortmentIn": [
         1651,
-        1661,
-        1653,
+        9002,
+        9001,
         1658,
         1659,
         1662,
@@ -611,7 +611,7 @@
     },
     {
       "storeData": {
-        "1653": {
+        "9001": {
           "inStock": false,
           "multipromo": "",
           "offerDescription": "",
@@ -628,7 +628,7 @@
           "unitsOfMeasureOfferPrice": 0,
           "unitsOfMeasureShowPrice": 7175
         },
-        "1661": {
+        "9002": {
           "inStock": true,
           "multipromo": "",
           "offerDescription": "",
@@ -693,7 +693,7 @@
       "isGlobalOffer": false,
       "inStockStore": [
         1651,
-        1661,
+        9002,
         1659,
         1662,
         1664,
@@ -706,7 +706,7 @@
         1669
       ],
       "outStockStore": [
-        1653,
+        9001,
         1658,
         1663,
         1655,
@@ -754,8 +754,8 @@
       },
       "isInAssortmentIn": [
         1651,
-        1661,
-        1653,
+        9002,
+        9001,
         1658,
         1659,
         1662,
@@ -799,7 +799,7 @@
     },
     {
       "storeData": {
-        "1653": {
+        "9001": {
           "inStock": false,
           "multipromo": "",
           "offerDescription": "Spar 4,95",
@@ -816,7 +816,7 @@
           "unitsOfMeasureOfferPrice": 9231,
           "unitsOfMeasureShowPrice": 9231
         },
-        "1661": {
+        "9002": {
           "inStock": true,
           "multipromo": "",
           "offerDescription": "Spar 4,95",
@@ -881,8 +881,8 @@
       "isInStock": 1,
       "isInOffer": [
         1651,
-        1661,
-        1653,
+        9002,
+        9001,
         1658,
         1659,
         1662,
@@ -902,7 +902,7 @@
       "isGlobalOffer": true,
       "inStockStore": [
         1651,
-        1661,
+        9002,
         1658,
         1659,
         1662,
@@ -920,7 +920,7 @@
         1669
       ],
       "outStockStore": [
-        1653
+        9001
       ],
       "targetOffer": 1,
       "targetCSR": 1,
@@ -962,8 +962,8 @@
       },
       "isInAssortmentIn": [
         1651,
-        1661,
-        1653,
+        9002,
+        9001,
         1658,
         1659,
         1662,

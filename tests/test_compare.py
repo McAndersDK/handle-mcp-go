@@ -763,7 +763,7 @@ def _nemlig(name):
 def _bilka(name):
     store = BilkaStore(httpx.AsyncClient())
     hits = json.loads((BILKA_FIX / f"{name}.json").read_text(encoding="utf-8"))["hits"]
-    return [x for h in hits if (x := store._product(h, "1653"))]
+    return [x for h in hits if (x := store._product(h, "9001"))]
 
 
 def test_fresh_garlic_beats_garlic_in_oil():

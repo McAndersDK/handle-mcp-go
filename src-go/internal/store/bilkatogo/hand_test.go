@@ -33,7 +33,7 @@ package bilkatogo
 //	test_offer_has_before_price_and_offer...     TestOfferHasBeforePrice
 //	test_se_her_gets_a_real_text                 TestSeHerGetsARealText
 //	test_no_offer_has_no_before_price            TestNoOfferHasNoBeforePrice
-//	test_offers_filter_on_our_store              golden offers_sid_1653
+//	test_offers_filter_on_our_store              golden offers_sid_9001
 //	test_delivery_slots_flat_fee_and_night...    golden slots_7
 //	test_delivery_slots_keep_exactly_days        golden slots_1, slots_3
 //	test_delivery_slots_say_when_the_fee...      golden slots_fee_unknown
@@ -319,7 +319,7 @@ func TestMissingPriceIsNotAFreeProduct(t *testing.T) {
 	for _, offers := range []bool{false, true} {
 		h := envLogin(t)
 		h.f.respond[pAlgolia] = []any{jsonResp(200, obj{"results": []any{obj{"hits": []any{
-			obj{"objectID": "1", "name": "Uden pris", "storeData": obj{"1661": obj{"inStock": true}}},
+			obj{"objectID": "1", "name": "Uden pris", "storeData": obj{"9002": obj{"inStock": true}}},
 		}}}})}
 		var err error
 		if offers {

@@ -228,7 +228,7 @@ func table() map[string][]hook {
 		"search_skyr":                   nothing,
 		"search_default_limit":          nothing,
 		"search_session":                nothing,
-		"search_sid_1653":               C(addressWith(`{"sid": "1653"}`)),
+		"search_sid_9001":               C(addressWith(`{"sid": "9001"}`)),
 		"search_no_login":               nothing,
 		"search_no_address":             C(cartWith(`{"deliveryAddress": null}`)),
 		"search_address_without_sid":    C(cartWith(`{"deliveryAddress": {"sid": null}}`)),
@@ -244,7 +244,7 @@ func table() map[string][]hook {
 		"search_hit_without_store_data": C(bodyAt(pAlgolia, `{"results": [{"hits": [{"objectID": "1", "name": "A"}]}]}`)),
 		"offers_default":                nothing,
 		"offers_default_limit":          nothing,
-		"offers_sid_1653":               C(addressWith(`{"sid": "1653"}`)),
+		"offers_sid_9001":               C(addressWith(`{"sid": "9001"}`)),
 		"offers_no_login":               nothing,
 		// set_quantities
 		"set_ok_refused_limited":               nothing,

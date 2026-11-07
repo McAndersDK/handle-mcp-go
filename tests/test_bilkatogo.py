@@ -221,7 +221,7 @@ async def test_search_uses_cart_store_and_parses(store, fake):
     )
     algolia = next(r for r in fake.requests if r.url.host.endswith(".algolia.net"))
     params = parse_qs(json.loads(algolia.content)["requests"][0]["params"])
-    assert params["filters"] == ["isInAssortmentIn:1661 AND nonsearchable:false"]
+    assert params["filters"] == ["isInAssortmentIn:9002 AND nonsearchable:false"]
     assert params["removeWordsIfNoResults"] == ["allOptional"]
     assert algolia.headers["x-algolia-api-key"]
 
@@ -397,10 +397,10 @@ def test_no_offer_has_no_before_price(store):
 
 
 async def test_offers_filter_on_our_store(store, fake):
-    fake.cart = {**fake.cart, "deliveryAddress": {**fake.cart["deliveryAddress"], "sid": "1653"}}
+    fake.cart = {**fake.cart, "deliveryAddress": {**fake.cart["deliveryAddress"], "sid": "9001"}}
     offers = await store.offers(10)
     [call] = [r for r in fake.requests if r.url.path == "/1/indexes/*/queries"]
-    assert "isInOffer%3A1653" in json.loads(call.content)["requests"][0]["params"]
+    assert "isInOffer%3A9001" in json.loads(call.content)["requests"][0]["params"]
     by_id = {p.id: p for p in offers}
     assert (by_id["40258"].campaign, by_id["40258"].price) == ("Skarp pris", Decimal(25))
     assert (by_id["18381"].campaign, by_id["18381"].offer_text) == ("Mix", "Mix 10 for 25,00")

@@ -2,7 +2,7 @@
   "hits": [
     {
       "storeData": {
-        "1653": {
+        "9001": {
           "inStock": true,
           "multipromo": "2680",
           "offerDescription": "Mix 10 for 25,00",
@@ -35,7 +35,7 @@
     },
     {
       "storeData": {
-        "1653": {
+        "9001": {
           "inStock": true,
           "multipromo": "",
           "offerDescription": "Skarp pris",
@@ -66,7 +66,7 @@
     },
     {
       "storeData": {
-        "1653": {
+        "9001": {
           "inStock": true,
           "multipromo": "1504",
           "offerDescription": "Mix 6 for 69,00",
@@ -99,7 +99,7 @@
     },
     {
       "storeData": {
-        "1653": {
+        "9001": {
           "inStock": true,
           "multipromo": "",
           "offerDescription": "Skarp pris",
@@ -130,7 +130,7 @@
     },
     {
       "storeData": {
-        "1653": {
+        "9001": {
           "inStock": true,
           "multipromo": "2680",
           "offerDescription": "Mix 10 for 25,00",
@@ -163,7 +163,7 @@
     },
     {
       "storeData": {
-        "1653": {
+        "9001": {
           "inStock": true,
           "multipromo": "",
           "offerDescription": "Skarp pris",
@@ -194,7 +194,7 @@
     },
     {
       "storeData": {
-        "1653": {
+        "9001": {
           "inStock": true,
           "multipromo": "2680",
           "offerDescription": "Mix 10 for 25,00",
@@ -227,7 +227,7 @@
     },
     {
       "storeData": {
-        "1653": {
+        "9001": {
           "inStock": true,
           "multipromo": "",
           "offerDescription": "Skarp pris",
@@ -258,7 +258,7 @@
     },
     {
       "storeData": {
-        "1653": {
+        "9001": {
           "inStock": true,
           "multipromo": "2680",
           "offerDescription": "Mix 10 for 25,00",
@@ -291,7 +291,7 @@
     },
     {
       "storeData": {
-        "1653": {
+        "9001": {
           "inStock": true,
           "multipromo": "",
           "offerDescription": "Se Her",
@@ -327,7 +327,7 @@
   "hitsPerPage": 10,
   "exhaustiveTypo": true,
   "query": "",
-  "params": "query=&hitsPerPage=10&filters=isInOffer%3A1653%20AND%20isInAssortmentIn%3A1653%20AND%20nonsearchable%3Afalse&attributesToRetrieve=%5B%22name%22%2C%22brand%22%2C%22gtin%22%2C%22netcontent%22%2C%22productType%22%2C%22price%22%2C%22isInCurrentLeaflet%22%2C%22cpOffer%22%2C%22multipromos%22%2C%22storeData.1653%22%5D&attributesToHighlight=%5B%5D",
+  "params": "query=&hitsPerPage=10&filters=isInOffer%3A9001%20AND%20isInAssortmentIn%3A9001%20AND%20nonsearchable%3Afalse&attributesToRetrieve=%5B%22name%22%2C%22brand%22%2C%22gtin%22%2C%22netcontent%22%2C%22productType%22%2C%22price%22%2C%22isInCurrentLeaflet%22%2C%22cpOffer%22%2C%22multipromos%22%2C%22storeData.9001%22%5D&attributesToHighlight=%5B%5D",
   "index": "prod_BILKATOGO_PRODUCTS",
   "extensions": {
     "queryCategorization": {}

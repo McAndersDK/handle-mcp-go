@@ -114,8 +114,8 @@ func TestCanaryMergeKeepsRealValues(t *testing.T) {
 
 func readAll(t *testing.T, h *harness) map[string]func() (any, error) {
 	return map[string]func() (any, error){
-		"search": func() (any, error) { addressWith(`{"sid": "1661"}`)(h); return h.s.Search(bg, "skyr", 5) },
-		"offers": func() (any, error) { addressWith(`{"sid": "1653"}`)(h); return h.s.Offers(bg, 10) }, // each store id has its own fixture products
+		"search": func() (any, error) { addressWith(`{"sid": "9002"}`)(h); return h.s.Search(bg, "skyr", 5) },
+		"offers": func() (any, error) { addressWith(`{"sid": "9001"}`)(h); return h.s.Offers(bg, 10) }, // each store id has its own fixture products
 		"cart":   func() (any, error) { return h.s.GetCart(bg) },
 		"terms":  func() (any, error) { return h.s.Terms(bg) },
 		"info":   func() (any, error) { return h.s.DeliveryInfo(bg) },
