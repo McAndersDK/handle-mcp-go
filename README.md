@@ -34,12 +34,12 @@ Taste, budget and meal rules live in your own prompt or skill. The server finds 
 
 ## Install
 
-Download the archive for your system from [the v1.0.0 release](https://github.com/McAndersDK/handle-mcp-go/releases/tag/v1.0.0), unpack `handle-mcp` (`handle-mcp.exe` on Windows), and put it somewhere on PATH or remember its absolute path.
+Download the archive for your system from [the v1.1.0 release](https://github.com/McAndersDK/handle-mcp-go/releases/tag/v1.1.0), unpack `handle-mcp` (`handle-mcp.exe` on Windows), and put it somewhere on PATH or remember its absolute path.
 
 With Go 1.27.3 or newer:
 
 ```sh
-go install github.com/McAndersDK/handle-mcp-go/cmd/handle-mcp@v1.0.0
+go install github.com/McAndersDK/handle-mcp-go/cmd/handle-mcp@v1.1.0
 ```
 
 Unsigned binaries: macOS and Windows may warn on the first run. See [setup](docs/setup.md).

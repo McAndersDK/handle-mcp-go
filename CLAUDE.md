@@ -85,7 +85,7 @@ No change to the tools is needed.
 
 ```
 go vet ./...
-gofmt -l cmd internal                  # prints nothing when formatted (a CRLF checkout on Windows lists every file: ignore that)
+gofmt -l cmd internal                  # must print nothing (Go files are checked out with LF, also on Windows)
 go test -count=1 ./...                 # unit tests, no network
 go test -race ./...                    # CI only, because it needs gcc
 HANDLE_UPDATE_SNAPSHOT=1 go test ./internal/server -run TestToolSurface   # after changing a tool's name, description or args on purpose

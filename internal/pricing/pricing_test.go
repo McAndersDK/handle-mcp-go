@@ -123,7 +123,7 @@ func TestPacks(t *testing.T) {
 		{"8 ruller", 1, "42 stk", 0},
 		{"1 l", 2, "1 l", 2},
 		{"1/2 dl", 1, "2 dl", 1}, // a fraction is an amount: 50 ml, one pack
-		{"½ l", 2, "2 dl", 5},     // 1000 ml from 200 ml packs
+		{"½ l", 2, "2 dl", 5},    // 1000 ml from 200 ml packs
 	}
 	for _, c := range cases {
 		p := prod(t, "10")
