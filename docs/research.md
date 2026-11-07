@@ -126,6 +126,15 @@ Nyttige felter pr. hit: `objectID` (varenummer til kurven), `gtin` (**EAN findes
 - **nemlig:** leveringsgebyret afhænger af den valgte tid (19-51 kr). Aflæst i tidsvælgeren på hjemmesiden, ikke fra et API-felt. Tiderne kan ses uden login.
 - **Privacy:** hele `deliveryAddress`-blokken fjernes af `privacy.scrub()`, så `dawa_uid` og `recipient_name` når aldrig modellen.
 
+## Afhentning, bekræftet live 2026-11-05 med en Go-probe
+
+Kun GET, en konto der er sat til afhentning. Antal kurvlinjer var 0 i den kørsel: gebyrfakta herunder gælder en kurv, der blev meldt tom.
+
+- **Kurven:** øverst `hd_available: true` og `missing_hd_address: false`, mens `deliveryAddress.hd_available` er `false`. Øverste værdi skelner altså ikke afhentning fra hjemlevering. `deliveryAddress.facility` er 3, `customer_chosen_pickupzone` er 1, `dawa_uid` og `recipient_name` er tomme, `sid` er der, og `name` er butikkens navn og starter med `Bilka`.
+- **Gebyrer og minimum:** `minimum_buy: 0`, `stat.minimum_left: 0` og ingen `minimum_left_text`: intet minimumskøb set. `stat.delivery_price: 0` er der, `stat.packing: 3900` (Pakkeservice, 39 kr) og `packaging_price: 0`. `specifications` har Pakkeservice og Emballage.
+- **Leveringstider:** `shop/v3/AvailableDeliveryDates` virker for en afhentningskurv, med de samme nøgler (`availableDates`, `availableIntervals`, dag- og intervalnøglerne): 14 dage, 36 intervaller, 35 åbne. Dag- og aftenintervaller fra 08-10 til 18-22, ikke natlevering.
+- **Gammel valgt tid:** kurven beholder en valgt tid fra for længe siden (2024), som `_slot_ended` regner med.
+
 ## Åbne spørgsmål
 
 Hvis du finder svaret i DevTools → Network (Fetch/XHR): kopier kun URL og svar-felter, aldrig cookies, og læg et redigeret svar i `tests/fixtures/`.

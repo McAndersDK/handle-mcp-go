@@ -1,0 +1,44 @@
+{
+  "availableDates": [
+    "2026-11-06",
+    "2026-11-07",
+    "2026-11-08"
+  ],
+  "availableIntervals": [
+    {
+      "availability_bit": 0,
+      "closed_text": "",
+      "date": "2026-11-02",
+      "dayofweek": 1,
+      "holiday": false,
+      "intervals": []
+    },
+    {
+      "availability_bit": 0,
+      "closed_text": "",
+      "date": "2026-11-03",
+      "dayofweek": 2,
+      "holiday": false,
+      "intervals": []
+    },
+    {
+      "availability_bit": 0,
+      "closed_text": "",
+      "date": "2026-11-04",
+      "dayofweek": 3,
+      "holiday": false,
+      "intervals": []
+    }
+  ],
+  "deliveryDate": null,
+  "eid": "X",
+  "info_object": "X",
+  "intervalEnd": "22:00",
+  "intervalStart": "18:00",
+  "msg": "Det valgte udleveringstidspunkt er desværre ikke tilgængelig på det valgte udleveringssted.",
+  "noAvailableDates": "X",
+  "orderBeforeMessage": "X",
+  "orderBeforeMessageSuffix": "X",
+  "tid": "X",
+  "uid": "X"
+}

@@ -23,3 +23,10 @@ store id. Offer fields are in `storeData.<sid>`: `offerDescription` ("Skarp pris
 `GET https://api.bilkatogo.dk/api/shop/v3/AvailableDeliveryDates?u=w`, trimmed to 3 days. `uid`,
 `eid` and `tid` (personal/session ids) are replaced with "X". Home delivery, night slot only.
 Mon is closed (past deadline), Tue is sold out (`closed_text` "udsolgt", no intervals), Wed is open.
+
+## `cart_pickup.json` and `available_delivery_dates_pickup.json` (live capture, 2026-11-05, read-only)
+
+Captured live on 2026-11-05 from an empty pickup cart. The store's details (name, address, street,
+city, zip, coordinates, store id) are replaced by fictional ones ("Bilka Eksempelby",
+"Eksempelvej 1, 0000 Eksempelby", lat/lng "0.0", sid "0000"). Personal and session ids are masked
+as "X". Dates and times in the slot data are as captured.
