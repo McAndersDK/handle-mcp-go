@@ -4,11 +4,11 @@ Works on macOS, Linux and Windows, on x64 or ARM64. No Python or `uv` needed.
 
 **0. Install.** Either the prebuilt binary, or Go:
 
-- Prebuilt: download the archive for your system from [the v1.0.0 release](https://github.com/McAndersDK/handle-mcp-go/releases/tag/v1.0.0), unpack `handle-mcp` (`handle-mcp.exe` on Windows), and put it somewhere on PATH or remember its absolute path.
+- Prebuilt: download the archive for your system from [the v1.1.0 release](https://github.com/McAndersDK/handle-mcp-go/releases/tag/v1.1.0), unpack `handle-mcp` (`handle-mcp.exe` on Windows), and put it somewhere on PATH or remember its absolute path.
 - With Go 1.27.3 or newer:
 
 ```sh
-go install github.com/McAndersDK/handle-mcp-go/cmd/handle-mcp@v1.0.0
+go install github.com/McAndersDK/handle-mcp-go/cmd/handle-mcp@v1.1.0
 ```
 
 The binary goes to your Go bin folder (`go env GOBIN`, or `$(go env GOPATH)/bin` when GOBIN is not set).
