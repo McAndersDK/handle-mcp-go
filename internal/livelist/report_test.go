@@ -225,3 +225,25 @@ func TestReportFailsAnItemWithNoFittingCandidateAndHidesThePickupStore(t *testin
 		t.Errorf("the pickup store leaked into the report:\n%s", all)
 	}
 }
+
+func TestReportKeepsAGapBeforeAPriceUnderTen(t *testing.T) {
+	fake := fakeStore{products: []model.Product{
+		model.NewProduct("fake", "1", "MØRKT RUGBRØD", money(t, "5.95")),
+		model.NewProduct("fake", "2", "GÆR", money(t, "1.5")),
+	}}
+	entries := []Entry{{Item: "rugbrød", Has: []string{"rugbrød"}}, {Item: "gær", Has: []string{"gær"}}}
+	var out []string
+	logf := func(format string, args ...any) { out = append(out, fmt.Sprintf(format, args...)) }
+	if _, err := priceList(context.Background(), "fake", fake, entries, logf); err != nil {
+		t.Fatal(err)
+	}
+	all := strings.Join(out, "\n")
+	for _, bad := range []string{"RUGBRØD5.95", "GÆR1.50"} {
+		if strings.Contains(all, bad) {
+			t.Errorf("no gap before the price (%s):\n%s", bad, all)
+		}
+	}
+	if !strings.Contains(all, " 5.95") || !strings.Contains(all, " 1.50") {
+		t.Errorf("prices should have two decimals:\n%s", all)
+	}
+}
