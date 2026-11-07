@@ -9,6 +9,7 @@ import (
 	"os/exec"
 	"path/filepath"
 	"runtime"
+	"runtime/debug"
 	"strings"
 	"sync"
 	"testing"
@@ -42,7 +43,7 @@ func binary(t *testing.T, tags string) string {
 		exe += ".exe"
 	}
 	once, _ := buildOnce.LoadOrStore(exe, sync.OnceValue(func() string {
-		args := []string{"build", "-o", exe}
+		args := []string{"build", "-buildvcs=false", "-o", exe} // no git stamp: serverInfo says "dev"
 		if tags != "" {
 			args = append(args, "-tags", tags)
 		}
@@ -243,6 +244,31 @@ func TestRealRegistryNeedsNoStoreForAToolListOrAnUnknownStore(t *testing.T) {
 	}
 	if text, isErr := textOf(t, byID[3]); !isErr || text != "Ukendt butik 'nope'. Kendte butikker: bilkatogo, nemlig." {
 		t.Errorf("%v %q", isErr, text)
+	}
+}
+
+func TestResolveVersion(t *testing.T) {
+	info := func(v string) *debug.BuildInfo {
+		return &debug.BuildInfo{Main: debug.Module{Version: v}}
+	}
+	cases := []struct {
+		name    string
+		ldflags string
+		info    *debug.BuildInfo
+		ok      bool
+		want    string
+	}{
+		{"ldflags wins over the module version", "2.0.0", info("v1.0.0"), true, "2.0.0"},
+		{"module version without its v", "dev", info("v1.2.3"), true, "1.2.3"},
+		{"devel is dev", "dev", info("(devel)"), true, "dev"},
+		{"empty module version is dev", "dev", info(""), true, "dev"},
+		{"a bare v is dev", "dev", info("v"), true, "dev"},
+		{"no build info is dev", "dev", nil, false, "dev"},
+	}
+	for _, c := range cases {
+		if got := resolveVersion(c.ldflags, c.info, c.ok); got != c.want {
+			t.Errorf("%s: got %q, want %q", c.name, got, c.want)
+		}
 	}
 }
 

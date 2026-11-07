@@ -13,6 +13,8 @@ import (
 	"log/slog"
 	"os"
 	"os/signal"
+	"runtime/debug"
+	"strings"
 	"syscall"
 	_ "time/tzdata" // Danish delivery times must work on a machine with no zone database
 
@@ -26,6 +28,28 @@ import (
 var version = "dev"
 
 func main() { os.Exit(run(os.Args[1:])) }
+
+// buildVersion returns the release version. A `go install ...@v1.0.0` binary has no ldflags, so it
+// takes the module version from the build info instead.
+func buildVersion() string {
+	info, ok := debug.ReadBuildInfo()
+	return resolveVersion(version, info, ok)
+}
+
+// resolveVersion prefers the ldflags version. If that is still "dev", it uses the module version
+// without its leading "v", or "dev" when the build info has none (a local build says "(devel)").
+func resolveVersion(ldflags string, info *debug.BuildInfo, ok bool) string {
+	if ldflags != "dev" {
+		return ldflags
+	}
+	if !ok || info == nil || info.Main.Version == "(devel)" {
+		return "dev"
+	}
+	if v := strings.TrimPrefix(info.Main.Version, "v"); v != "" {
+		return v
+	}
+	return "dev"
+}
 
 func run(args []string) int {
 	// INFO to stderr. Nothing logs a URL: a URL can hold ids and tokens, and clients keep stderr in log files.
@@ -41,7 +65,7 @@ func run(args []string) int {
 		}
 		return cli.Run(ctx, args, stores, cli.DefaultTerminal())
 	}
-	if err := server.New(registry, version).Run(ctx, &mcp.StdioTransport{}); err != nil && ctx.Err() == nil {
+	if err := server.New(registry, buildVersion()).Run(ctx, &mcp.StdioTransport{}); err != nil && ctx.Err() == nil {
 		slog.Error("server stopped", "type", fmt.Sprintf("%T", err))
 		return 1
 	}
