@@ -80,7 +80,7 @@ type Store struct {
 	userID     int64
 	cookies    map[string]string // access_token and refresh_token, raw, as saved in the session
 	savedStore string            // the pickup store id in the saved session
-	gate       *pickupStore // set once the store has been checked
+	gate       *pickupStore      // set once the store has been checked
 }
 
 var (
