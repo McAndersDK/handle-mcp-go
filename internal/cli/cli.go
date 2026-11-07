@@ -192,6 +192,9 @@ func (r runner) check(name, email, password string) (map[string]string, bool) {
 func (r runner) tryLogin(name, email, password string) (map[string]string, error) {
 	ctx := store.WithLogin(r.ctx, name, store.Login{Email: email, Password: password})
 	st := r.stores[name]()
+	if ch, ok := st.(store.Chooser); ok { // a store that needs one more choice saved: choose.go
+		return r.loginAndChoose(ctx, name, st, ch)
+	}
 	if _, err := st.GetCart(ctx); err != nil {
 		return nil, err
 	}
