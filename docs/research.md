@@ -109,7 +109,7 @@ Nyttige felter pr. hit: `objectID` (varenummer til kurven), `gtin` (**EAN findes
 - Gebyrer i `stat`: `delivery_price`, `packing` (Pakkeservice, 3900 øre = 39 kr i fixture), `packaging_price`, `deposit`. Linjerne "Papirpose" og "Pakkeservice" er gebyrer, ikke varer.
 - Minimumskøb: `stat.minimum_left` (+ tekst) og `deliveryAddress.minimum_buy`.
 - Hjemlevering: kurven har `hd_available` og `missing_hd_address`. Fixturen er afhentning (`hd_available: false`). **Bekræftet live 2026-11-01:** `delivery_price` = 39 kr + pakkeservice 39 kr, minimum 500 kr, `deliveryAddress` = hjemmeadresse (filtreres).
-- Skift til hjemlevering ændrer tilstand (`SetDeliveryAddress`). v1 gør det **ikke**. Er kurven sat til afhentning, svarer tool'et klart: "Vælg hjemlevering på bilkatogo.dk".
+- Skift mellem hjemlevering og afhentning ændrer tilstand (`SetDeliveryAddress`). Koden gør det **aldrig**: mennesket vælger på bilkatogo.dk. En afhentningskurv understøttes (se ADR 0006). Kan kurvens tilstand ikke aflæses, svarer tool'et: "BilkaToGo viser ikke, om kurven er sat til hjemlevering eller afhentning. Vælg det på bilkatogo.dk."
 
 ### Leveringstider
 - Valgt tid: kurvens `deliveryDate` (`deliveryDate`, `intervalStart`, `intervalEnd`, `delivery_message`).
