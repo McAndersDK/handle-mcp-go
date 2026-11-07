@@ -57,7 +57,7 @@ Then ask:
 - *"What is on offer this week? Any free gifts?"*
 - *"Which delivery times are cheapest tomorrow?"*
 
-BilkaToGo, REMA 1000 (`handle-mcp login rema1000` also asks which Køb & Hent store you pick up in), Claude Desktop, headless machines and AI agents (`handle-mcp login <store> --from-env`): [setup](docs/setup.md). nemlig's offers work with no login at all.
+BilkaToGo, REMA 1000 (`handle-mcp login rema1000` also asks which stores you pick up in, in order of preference), Claude Desktop, headless machines and AI agents (`handle-mcp login <store> --from-env`): [setup](docs/setup.md). nemlig's offers work with no login at all.
 
 ## Tools
 

@@ -16,11 +16,14 @@ REMA 1000's webshop is pickup only (Køb & Hent). The webshop's own basket is a 
 
 ## The pickup store gate
 
-REMA only works with a known store that has Køb & Hent. `handle-mcp login rema1000` logs in, lists the stores with `is_click_and_collect_active` (paged) and asks the human to choose one by number. The store id is saved on this machine with the session (keychain, or the `--from-env` file); `HANDLE_REMA1000_STORE_ID` overrides it. This is a local choice: nothing is set at REMA, and no `PATCH` to the cart exists.
+REMA only works while at least one store the human chose has Køb & Hent (`is_click_and_collect_active`). Køb & Hent exists in only a few places, so the human can choose the local stores anyway, and REMA switches on by itself the day one of them gets it.
 
-Before any method does any work, the adapter checks once per process that the store is still on the Køb & Hent list. If not, every method answers `REMA 1000: ingen afhentningsbutik med Køb & Hent er valgt. Kør: handle-mcp login rema1000`, or, when the store lost Køb & Hent, `REMA 1000: din afhentningsbutik har ikke Køb & Hent længere. Vælg en anden: handle-mcp login rema1000`. A failed check is not cached, so a fixed setting works without a restart.
+- **Choosing.** `handle-mcp login rema1000` logs in and asks for a search text (a postcode or part of a name or city). REMA's `GET v3/stores` is the only call, and no search parameter is known for it, so it is paged (10 pages of 100 at most) and filtered on this machine. Each line shows number, name, postcode and city, and Køb & Hent `ja`/`nej`, on the human's own terminal only (never in a tool answer or a log). The human picks one or more numbers in order of preference (`2,1`); whether Køb & Hent is active does not matter. The store ids are saved in that order as `store_ids` (comma-separated) with the session (keychain, or the `--from-env` file). A session saved with one `store_id` is read as a list of one. `HANDLE_REMA1000_STORE_ID` is a comma-separated list that overrides the saved one. This is a local choice: nothing is set at REMA, and no `PATCH` to the cart exists.
+- **Using.** The first chosen store, in the human's order, that exists and has Køb & Hent is the pickup store, for slots, `pickup_store` and everything else. A chosen id that no longer exists is skipped. `get_delivery_info` adds a line when a store ranked higher exists but has no Køb & Hent yet; it names only the active store.
+- **The hourly check.** The store list is read at the first call and again when an hour has passed, whatever the last verdict was: so REMA switches on when a chosen store gets Køb & Hent and off when it loses it, without a restart. The paging stops as soon as every chosen id has been seen, so it is a few calls per hour at most. A call that fails (network, login) is not a verdict; it is tried again on the next call. A change of the chosen stores (the env var, a new login) is checked at once.
+- **The messages** carry no store names: `REMA 1000: ingen butik valgt. Kør: handle-mcp login rema1000`; `REMA 1000: ingen af dine valgte butikker har Køb & Hent endnu. REMA bruges, så snart en af dem får det.`; `REMA 1000: dine valgte butikker findes ikke længere. Vælg igen: handle-mcp login rema1000`.
 
-`pickup_store` is the store's name only. A store's phone, address and opening hours are never decoded; the user's email, phone, name, birthday and photo are never decoded either.
+`pickup_store` is the active store's name only. A store's phone, address and opening hours are never decoded; the postcode and city are read only for the login list on the human's terminal. The user's email, phone, name, birthday and photo are never decoded either.
 
 ## What is forbidden
 
@@ -31,11 +34,11 @@ The adapter never: touches another list, deletes a list, changes which list is p
 - The list is the one place REMA lets a program write that the human can see and clear, and that cannot place an order, pick a time or take money.
 - A date in the name keeps handle-mcp away from the human's own lists, and a stale basket from last week does not grow. It costs one extra list per day of use.
 - The webshop's SDK does the same calls, so they are what REMA expects to see.
-- Pickup is a mode (ADR 0006); the store is the one thing REMA cannot do without, so it is asked once, locally.
+- Pickup is a mode (ADR 0006); a store with Køb & Hent is the one thing REMA cannot do without, so the stores are asked once, locally, and checked every hour.
 
 ## Session
 
-The login is the site's own OAuth login (one POST of email and password; the password is then forgotten, ADR 0003). The session saved is the two cookies the site callback sets, `access_token` (a JWT, about an hour) and `refresh_token`, and the chosen store id. The access token is renewed with `POST https://shop.rema1000.dk/api/auth/refresh`, the call the webshop makes; that is an auth call, not a write, like nemlig's token renewal. A rotated refresh cookie is saved again where the session was found. When REMA refuses the renewal, the tool says `Login til rema1000 er udløbet` and the human logs in again. How long the refresh cookie lives is set by REMA and is not known from the site's code.
+The login is the site's own OAuth login (one POST of email and password; the password is then forgotten, ADR 0003). The session saved is the two cookies the site callback sets, `access_token` (a JWT, about an hour) and `refresh_token`, and the chosen store ids (`store_ids`). The access token is renewed with `POST https://shop.rema1000.dk/api/auth/refresh`, the call the webshop makes; that is an auth call, not a write, like nemlig's token renewal. A rotated refresh cookie is saved again where the session was found. When REMA refuses the renewal, the tool says `Login til rema1000 er udløbet` and the human logs in again. How long the refresh cookie lives is set by REMA and is not known from the site's code.
 
 ## Consequences
 
