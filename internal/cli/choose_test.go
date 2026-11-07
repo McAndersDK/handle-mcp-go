@@ -3,6 +3,7 @@ package cli
 import (
 	"bytes"
 	"context"
+	"fmt"
 	"os"
 	"strings"
 	"testing"
@@ -103,11 +104,69 @@ func TestLoginWithOneChoice(t *testing.T) {
 }
 
 func TestBadChoiceInputSavesNothing(t *testing.T) {
-	for _, typed := range []string{"0", "3", "3,3", "1,1", "x", "1,x", "", " ", ",", "1,,2", "-1"} {
+	// The search lists 2 butiks, so 3 is out of range.
+	for _, typed := range []string{"0", "3", "3,3", "x", "1,x", "", " ", ",", "1,,2", "-1", "a-2", "1-9", "2-", "1-2-3"} {
 		pickEnv(t)
-		code, out := runPick(t, true, "butik\n"+typed+"\n", "login", "pick")
+		code, out := runPick(t, true, "butik\n"+strings.Repeat(typed+"\n", 3), "login", "pick")
 		if code != 1 || savedIDs(t) != "" || !strings.Contains(out, "Ugyldigt valg") {
 			t.Errorf("input %q: code=%d saved=%q\n%s", typed, code, savedIDs(t), out)
+		}
+	}
+}
+
+func TestRangesSaveInOrder(t *testing.T) {
+	for typed, want := range map[string]string{"1-2\n": "11,22", "2-1\n": "22,11", " 1 - 2 \n": "11,22", "1,1-2\n": "11,22"} {
+		pickEnv(t)
+		code, out := runPick(t, true, "butik\n"+typed, "login", "pick")
+		if code != 0 || savedIDs(t) != want {
+			t.Errorf("input %q: code=%d saved=%q want %q\n%s", typed, code, savedIDs(t), want, out)
+		}
+	}
+	pickEnv(t)
+	if code, out := runPick(t, true, "butik\n1-2\n", "login", "pick"); code != 0 || !strings.Contains(out, "f.eks. 2,1 eller 1-2") {
+		t.Fatalf("code=%d, the question does not mention ranges:\n%s", code, out)
+	}
+}
+
+func TestInvalidThenValidAsksAgain(t *testing.T) {
+	pickEnv(t)
+	code, out := runPick(t, true, "butik\nx\n2,1\n", "login", "pick")
+	if code != 0 || savedIDs(t) != "22,11" || strings.Count(out, "Ugyldigt valg. Skriv numre som 2,1 eller 1-2.") != 1 {
+		t.Fatalf("code=%d saved=%q\n%s", code, savedIDs(t), out)
+	}
+}
+
+func TestThreeInvalidAnswersSaveNothing(t *testing.T) {
+	pickEnv(t)
+	// The fourth answer is valid, but the login must have given up by then.
+	code, out := runPick(t, true, "butik\n0\n3\nx\n1\n", "login", "pick")
+	if code != 1 || savedIDs(t) != "" || !strings.Contains(out, "Ugyldigt valg.") {
+		t.Fatalf("code=%d saved=%q\n%s", code, savedIDs(t), out)
+	}
+}
+
+func TestParseNumbers(t *testing.T) {
+	ok := map[string][]int{
+		"2,1":     {2, 1},
+		"1-2":     {1, 2},
+		"3-1":     {3, 2, 1},
+		"2,4-5":   {2, 4, 5},
+		" 1 - 2 ": {1, 2},
+		"2,1-2":   {2, 1},
+		"4-4":     {4},
+		"5-4,4,5": {5, 4},
+		"1, 2 ,3": {1, 2, 3},
+		"1-2,2-1": {1, 2},
+	}
+	for line, want := range ok {
+		got, valid := parseNumbers(line, 5)
+		if !valid || fmt.Sprint(got) != fmt.Sprint(want) {
+			t.Errorf("%q: got %v valid=%v, want %v", line, got, valid, want)
+		}
+	}
+	for _, line := range []string{"", " ", ",", "1,,2", "0", "6", "1-9", "a-2", "-1", "1-", "2-", "1-2-3", "x", "1,x", "1--2", "+"} {
+		if got, valid := parseNumbers(line, 5); valid {
+			t.Errorf("%q: accepted as %v", line, got)
 		}
 	}
 }

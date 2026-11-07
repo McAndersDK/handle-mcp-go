@@ -86,30 +86,66 @@ func (r runner) askAndPick(ctx context.Context, ch store.Chooser) ([]store.Choic
 	for i, c := range choices {
 		r.say(fmt.Sprintf("  %d. %s", i+1, c.Label))
 	}
-	fmt.Fprintf(r.t.Stderr, "Vælg et eller flere numre (1-%d), den foretrukne først, f.eks. 2,1: ", len(choices))
-	idx, ok := parseNumbers(readLine(r.t.In), len(choices))
-	if !ok {
-		return nil, store.Errorf("Ugyldigt valg.")
+	for invalid := 1; ; invalid++ {
+		fmt.Fprintf(r.t.Stderr, "Vælg et eller flere numre (1-%d), den foretrukne først, f.eks. 2,1 eller 1-2: ", len(choices))
+		idx, ok := parseNumbers(readLine(r.t.In), len(choices))
+		if ok {
+			out := make([]store.Choice, len(idx))
+			for i, n := range idx {
+				out[i] = choices[n-1]
+			}
+			return out, nil
+		}
+		if invalid == maxChoiceTries {
+			return nil, store.Errorf("Ugyldigt valg.")
+		}
+		r.say("Ugyldigt valg. Skriv numre som 2,1 eller 1-2.")
 	}
-	out := make([]store.Choice, len(idx))
-	for i, n := range idx {
-		out[i] = choices[n-1]
-	}
-	return out, nil
 }
 
-// parseNumbers reads "2,1" as [2 1]. Every number must be 1..max and appear once; nothing else
-// is allowed, and an empty line is not a choice.
+// maxChoiceTries is how many invalid answers are allowed before the login gives up.
+const maxChoiceTries = 3
+
+// parseNumbers reads "2,1" as [2 1], "1-3" as [1 2 3] and "3-1" as [3 2 1]; ranges and numbers
+// mix ("2,4-5"). Every number must be 1..max. A number that comes twice is dropped at its
+// second place. Anything else, and an empty line, is not a choice.
 func parseNumbers(line string, max int) ([]int, bool) {
 	var out []int
 	seen := map[int]bool{}
-	for _, part := range strings.Split(strings.TrimSpace(line), ",") {
-		n, err := strconv.Atoi(strings.TrimSpace(part))
-		if err != nil || n < 1 || n > max || seen[n] {
+	for _, part := range strings.Split(line, ",") {
+		from, to, isRange := strings.Cut(part, "-")
+		lo, ok := parseNumber(from, max)
+		if !ok {
 			return nil, false
 		}
-		seen[n] = true
-		out = append(out, n)
+		hi := lo
+		if isRange {
+			if hi, ok = parseNumber(to, max); !ok {
+				return nil, false
+			}
+		}
+		step := 1
+		if hi < lo {
+			step = -1
+		}
+		for n := lo; ; n += step {
+			if !seen[n] {
+				seen[n] = true
+				out = append(out, n)
+			}
+			if n == hi {
+				break
+			}
+		}
 	}
 	return out, len(out) > 0
+}
+
+// parseNumber reads one number of a choice, spaces allowed, and checks it is 1..max.
+func parseNumber(s string, max int) (int, bool) {
+	n, err := strconv.Atoi(strings.TrimSpace(s))
+	if err != nil || n < 1 || n > max {
+		return 0, false
+	}
+	return n, true
 }
