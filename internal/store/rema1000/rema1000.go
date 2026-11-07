@@ -13,7 +13,8 @@
 //
 // Locks, as in the other stores: lock is one login or renewal at a time, held across the
 // network; mu guards the fields below it for a moment only; gateLock is held across the one
-// store check. Order: gateLock, then lock, then mu. Never the other way round.
+// store check; writeLock is held by one SetQuantities from finding today's list to the read-back.
+// Order: writeLock or gateLock (never both), then lock, then mu. Never the other way round.
 package rema1000
 
 import (
@@ -71,8 +72,9 @@ type Store struct {
 	jar    http.CookieJar
 	now    func() time.Time
 
-	gateLock sync.Mutex // see the package comment
-	lock     sync.Mutex
+	writeLock sync.Mutex // one SetQuantities at a time, from finding today's list to the read-back
+	gateLock  sync.Mutex // see the package comment
+	lock      sync.Mutex
 
 	mu         sync.Mutex // guards everything below
 	token      string     // the access token as a Bearer value

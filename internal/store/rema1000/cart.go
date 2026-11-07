@@ -8,6 +8,7 @@ import (
 	"strconv"
 
 	"github.com/McAndersDK/handle-mcp-go/internal/model"
+	"github.com/McAndersDK/handle-mcp-go/internal/store"
 )
 
 // The basket is a shopping list called "handle-mcp 2026-11-07" (docs/adr/0008). It is the only
@@ -64,12 +65,41 @@ func (s *Store) findToday(ctx context.Context) (*apiList, error) {
 		return nil, err
 	}
 	want := s.listName()
+	var found []apiList
 	for _, l := range lists {
 		if l.Name == want {
-			return &l, nil
+			found = append(found, l)
 		}
 	}
-	return nil, nil
+	switch len(found) {
+	case 0:
+		return nil, nil
+	case 1:
+		return &found[0], nil
+	}
+	return nil, store.Errorf("Der er flere lister med navnet %q i REMA 1000. Slet de ekstra i appen, så der kun er én, og prøv igen.", want)
+}
+
+// mergeLines is the lines still to buy, with a product on several lines made one line of their
+// sum, in the order of the first one. Free text (no product, no price) is only counted.
+func mergeLines(items []apiItem) (products []apiItem, texts int) {
+	at := map[json.Number]int{}
+	for _, it := range items {
+		switch {
+		case it.Bought:
+			continue
+		case it.StoreItem == nil || it.StoreItemID == "":
+			texts++
+			continue
+		}
+		if i, there := at[it.StoreItemID]; there {
+			products[i].Amount = json.Number(strconv.Itoa(qty(products[i].Amount) + qty(it.Amount)))
+			continue
+		}
+		at[it.StoreItemID] = len(products)
+		products = append(products, it)
+	}
+	return products, texts
 }
 
 // readList reads one list with its items. Never with=users: that brings names and emails.
@@ -136,15 +166,8 @@ func (s *Store) GetCart(ctx context.Context) (model.Cart, error) {
 		return model.Cart{}, err
 	}
 	var deposits model.Money
-	texts := 0
-	for _, it := range full.Items {
-		switch {
-		case it.Bought:
-			continue
-		case it.StoreItem == nil || it.StoreItemID == "":
-			texts++ // free text, no product and no price
-			continue
-		}
+	products, texts := mergeLines(full.Items)
+	for _, it := range products {
 		total, deposit, err := lineTotal(it)
 		if err != nil {
 			return model.Cart{}, err

@@ -17,6 +17,7 @@ type call struct {
 	query  url.Values
 	body   any // sent as JSON
 	auth   bool
+	once   bool // never retried: a POST that creates something (see setqty.go)
 }
 
 // envelope is the shape of every list answer: data and a page count.
@@ -58,7 +59,7 @@ func (s *Store) api(ctx context.Context, c call) (*store.Response, error) {
 		if data != nil {
 			h.Set("Content-Type", "application/json")
 		}
-		resp, err := s.sender.Send(ctx, store.Request{Method: c.method, URL: u, Header: h, Body: data})
+		resp, err := s.sender.Send(ctx, store.Request{Method: c.method, URL: u, Header: h, Body: data, NoRetry: c.once})
 		if err != nil {
 			return nil, err
 		}

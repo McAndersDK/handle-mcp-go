@@ -91,19 +91,22 @@ type fake struct {
 	tb testing.TB
 	mu sync.Mutex
 
-	log           []request
-	lists         []*fakeList
-	nextID        int
-	storeActive   bool
-	createPrimary bool   // a list created now is primary
-	refusePOST    string // a product id that POST items answers 422 for
-	access        string // the access token the API accepts
-	refreshCookie string // the refresh cookie the site holds; "" = refresh refuses
-	nextAccess    string // what a refresh hands out
-	rotate        string // a new refresh cookie a refresh sets
-	loginOK       bool
-	queueOnLogin  bool
-	leak          bool // add personal data to every JSON object (canary_test.go)
+	log               []request
+	lists             []*fakeList
+	nextID            int
+	storeActive       bool
+	createPrimary     bool   // a list created now is primary
+	refusePOST        string // a product id that POST items answers 422 for
+	access            string // the access token the API accepts
+	refreshCookie     string // the refresh cookie the site holds; "" = refresh refuses
+	nextAccess        string // what a refresh hands out
+	rotate            string // a new refresh cookie a refresh sets
+	loginOK           bool
+	queueOnLogin      bool
+	leak              bool              // add personal data to every JSON object (canary_test.go)
+	listDelay         time.Duration     // the list of lists answers this slowly (concurrent_test.go)
+	lose              map[string]string // "POST list" or "POST items": the change is made, then the answer is "500" or "net"
+	loseWithoutEffect bool              // a lost answer means the change was not made
 }
 
 func newFake(tb testing.TB) *fake {
@@ -151,10 +154,31 @@ func (f *fake) RoundTrip(req *http.Request) (*http.Response, error) {
 		body, _ = io.ReadAll(req.Body)
 		req.Body.Close()
 	}
+	if f.listDelay > 0 && req.Method == "GET" && strings.HasSuffix(req.URL.Path, "/shopping-lists") {
+		time.Sleep(f.listDelay)
+	}
 	f.mu.Lock()
 	f.log = append(f.log, request{req.Method, req.URL.Host, req.URL.Path, req.URL.RawQuery, string(body), req.Header.Get("Authorization")})
-	r := f.route(req, body)
+	r := reply{}
+	kind := ""
+	switch {
+	case req.Method == "POST" && req.URL.Path == "/api/v2/shoppinglists":
+		kind = "POST list"
+	case req.Method == "POST" && itemsRe.MatchString(req.URL.Path):
+		kind = "POST items"
+	}
+	lost := f.lose[kind]
+	delete(f.lose, kind) // once
+	if lost == "" || !f.loseWithoutEffect {
+		r = f.route(req, body)
+	}
 	f.mu.Unlock()
+	switch lost {
+	case "500":
+		r = reply{status: 500}
+	case "net":
+		return nil, timeoutErr{}
+	}
 	var raw []byte
 	switch b := r.body.(type) {
 	case nil:
