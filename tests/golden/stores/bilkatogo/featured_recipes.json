@@ -4,8 +4,8 @@
  ],
  "env": {},
  "error": {
-  "message": "",
-  "type": "NotImplementedError"
+  "message": "BilkaToGo-opskrifter har ændret format: ingen build.",
+  "type": "StoreError"
  },
  "keychain_after": {
   "email": "kunde@example.com",
@@ -18,7 +18,16 @@
  "login": "password",
  "method": "featured_recipes",
  "name": "featured_recipes",
- "requests": [],
+ "requests": [
+  {
+   "body": null,
+   "cookies": [],
+   "headers": {},
+   "method": "GET",
+   "params": [],
+   "url": "https://www.bilkatogo.dk/inspiration/opskrifter/"
+  }
+ ],
  "session_after": null,
  "store": "bilkatogo"
 }

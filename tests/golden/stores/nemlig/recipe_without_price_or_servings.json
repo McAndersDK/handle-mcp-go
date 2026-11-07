@@ -24,6 +24,7 @@
   "max_persons": null,
   "method": [],
   "min_persons": null,
+  "missing": [],
   "name": "",
   "persons": 6,
   "store": "nemlig",

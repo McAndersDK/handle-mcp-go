@@ -33,6 +33,7 @@
    }
   ],
   "min_persons": 2,
+  "missing": [],
   "name": "",
   "persons": 6,
   "store": "nemlig",

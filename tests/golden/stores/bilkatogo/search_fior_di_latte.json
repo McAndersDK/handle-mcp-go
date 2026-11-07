@@ -110,7 +110,7 @@
     "requests": [
      {
       "indexName": "prod_BILKATOGO_PRODUCTS",
-      "params": "query=fior+di+latte&hitsPerPage=50&removeWordsIfNoResults=allOptional&filters=isInAssortmentIn%3A1661+AND+nonsearchable%3Afalse&attributesToRetrieve=%5B%22name%22%2C+%22brand%22%2C+%22gtin%22%2C+%22netcontent%22%2C+%22productType%22%2C+%22deepestCategoryPath%22%2C+%22price%22%2C+%22storeData.1661%22%5D"
+      "params": "query=fior+di+latte&hitsPerPage=50&removeWordsIfNoResults=allOptional&filters=isInAssortmentIn%3A9002+AND+nonsearchable%3Afalse&attributesToRetrieve=%5B%22name%22%2C+%22brand%22%2C+%22gtin%22%2C+%22netcontent%22%2C+%22productType%22%2C+%22deepestCategoryPath%22%2C+%22price%22%2C+%22storeData.9002%22%5D"
      }
     ]
    },

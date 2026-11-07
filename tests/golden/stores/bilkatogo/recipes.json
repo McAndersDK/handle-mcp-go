@@ -5,8 +5,8 @@
  ],
  "env": {},
  "error": {
-  "message": "",
-  "type": "NotImplementedError"
+  "message": "BilkaToGo har ingen opskriftssøgning. Brug list_recipes med category, fx aftensmad eller aftensmad/danske-retter.",
+  "type": "StoreError"
  },
  "keychain_after": {
   "email": "kunde@example.com",

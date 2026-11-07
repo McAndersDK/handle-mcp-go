@@ -207,7 +207,7 @@
  },
  "login": "password",
  "method": "offers",
- "name": "offers_sid_1653",
+ "name": "offers_sid_9001",
  "requests": [
   {
    "body": [
@@ -300,7 +300,7 @@
     "requests": [
      {
       "indexName": "prod_BILKATOGO_PRODUCTS",
-      "params": "query=&hitsPerPage=10&removeWordsIfNoResults=allOptional&filters=isInOffer%3A1653+AND+isInAssortmentIn%3A1653+AND+nonsearchable%3Afalse&attributesToRetrieve=%5B%22name%22%2C+%22brand%22%2C+%22gtin%22%2C+%22netcontent%22%2C+%22productType%22%2C+%22deepestCategoryPath%22%2C+%22price%22%2C+%22storeData.1653%22%5D"
+      "params": "query=&hitsPerPage=10&removeWordsIfNoResults=allOptional&filters=isInOffer%3A9001+AND+isInAssortmentIn%3A9001+AND+nonsearchable%3Afalse&attributesToRetrieve=%5B%22name%22%2C+%22brand%22%2C+%22gtin%22%2C+%22netcontent%22%2C+%22productType%22%2C+%22deepestCategoryPath%22%2C+%22price%22%2C+%22storeData.9001%22%5D"
      }
     ]
    },

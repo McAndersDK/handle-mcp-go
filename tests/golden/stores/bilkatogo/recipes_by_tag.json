@@ -8,8 +8,8 @@
  ],
  "env": {},
  "error": {
-  "message": "",
-  "type": "NotImplementedError"
+  "message": "BilkaToGo har ingen tags. Brug category, fx aftensmad, aftensmad/pastaretter, boern-i-koekkenet eller nemme.",
+  "type": "StoreError"
  },
  "keychain_after": {
   "email": "kunde@example.com",

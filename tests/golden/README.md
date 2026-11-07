@@ -3,8 +3,8 @@
 What the Python code of handle-mcp answers, recorded as JSON. The Go port (ADR 0005) is tested
 against these files. They are made once and kept; the script that made them is deleted at cutover.
 
-- Made: 2026-11-05, from the Python code of commit `6648b86be73203ef8ad29106eb8498b552350b33`, the last commit that changed
-  `src/`, `tests/`, `pyproject.toml` or `uv.lock`. `git HEAD` when it ran: `206d1e2fd6d7123d1e93231a615c545459da01a2` (later commits
+- Made: 2026-11-05, from the Python code of commit `a9f9837167a38e8714c9ac23de52627fecdcc654`, the last commit that changed
+  `src/`, `tests/`, `pyproject.toml` or `uv.lock`. `git HEAD` when it ran: `3c4f0c65eac5049a019f88070fa850b3e0fde37c` (later commits
   are Go and CI). `manifest.json` has both, the library versions, the pinned clock and the sha256
   of every fixture, Python source file and golden file.
 - Command: `uv run --frozen python -m scripts.export_golden`, from the repo root. Run twice, the
