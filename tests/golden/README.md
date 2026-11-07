@@ -3,12 +3,14 @@
 What the Python code of handle-mcp answers, recorded as JSON. The Go port (ADR 0005) is tested
 against these files. They are made once and kept; the script that made them is deleted at cutover.
 
-- Made: 2026-11-05, from the Python code of commit `a9f9837167a38e8714c9ac23de52627fecdcc654`, the last commit that changed
-  `src/`, `tests/`, `pyproject.toml` or `uv.lock`. `git HEAD` when it ran: `3c4f0c65eac5049a019f88070fa850b3e0fde37c` (later commits
-  are Go and CI). `manifest.json` has both, the library versions, the pinned clock and the sha256
-  of every fixture, Python source file and golden file.
-- Command: `uv run --frozen python -m scripts.export_golden`, from the repo root. Run twice, the
-  files are byte for byte the same.
+- Made: 2026-11-05, from the Python code of commit `8a3f52a64cec127809fa241b493d8a5d996e605a`, the last commit that changed
+  `upstream/src/`, `upstream/tests/`, `upstream/pyproject.toml` or `upstream/uv.lock`. `git HEAD`
+  when it ran: `8eb9f8b4810517ca7a0d7d7b901c5190606df07c` (later commits are Go and CI). `manifest.json` has both, the library
+  versions, the pinned clock and the sha256 of every fixture, Python source file and golden file.
+- Command: `uv run --frozen --project upstream python -m scripts.export_golden`, from the repo
+  root. The Python code, its tests and its environment (`pyproject.toml`, `uv.lock`) are the
+  `upstream/` mirror; the fixtures are the root `tests/fixtures`. Run twice, the files are byte for
+  byte the same.
 - Offline: fixtures and `httpx.MockTransport` only. A temp `HANDLE_CONFIG_DIR`, an in-memory
   keyring, every `HANDLE_*` variable removed, `socket.connect` blocked, no logins, no store calls.
   Fake sessions exist only in the memory keyring: `{".ASPXAUTH": "auth-1"}`, a fake `login_token`

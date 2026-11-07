@@ -6,7 +6,7 @@ BilkaToGo carts can be set to pickup in a store. handle-mcp reads pickup carts a
 
 `delivery_mode` is `"home"`, `"pickup"` or `null`. `pickup_store` is the store's name or `null`. Both keys are always in the answer of `get_cart`, in both parts of `get_delivery_info` (`delivery` and `terms`) and in each store of `compare_basket`; `pickup_store` is also on each delivery slot. A missing fact is `null`, never omitted and never guessed.
 
-BilkaToGo decides from the cart's `deliveryAddress`, in one place (`deliveryMode` in `stores/bilkatogo/delivery.go`):
+BilkaToGo decides from the cart's `deliveryAddress`, in one place (`deliveryMode` in `internal/store/bilkatogo/delivery.go`):
 
 - **home:** `dawa_uid` or `recipient_name` is present.
 - **pickup:** `sid` is present, `dawa_uid` and `recipient_name` are empty, and `name` starts with `Bilka`.
@@ -44,7 +44,7 @@ The account used to test proves pickup live. The home path is proven by goldens 
 
 ## Porting upstream fixes
 
-Check these by hand when a fix touches them: `_is_home`, `NOT_HOME` and `delivery_slots` in `src/handle_mcp/stores/bilkatogo.py`, and the notes in the quote in `src/handle_mcp/compare.py`. Python still maps every non-home cart to `NOT_HOME`.
+Check these by hand when a fix touches them: `_is_home`, `NOT_HOME` and `delivery_slots` in `upstream/src/handle_mcp/stores/bilkatogo.py`, and the notes in the quote in `upstream/src/handle_mcp/compare.py`. Python still maps every non-home cart to `NOT_HOME`.
 
 ## Consequences
 

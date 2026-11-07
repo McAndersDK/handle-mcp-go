@@ -41,7 +41,7 @@
    "input": {
     "deliveryAddress": {
      "recipient_name": "Anders",
-     "zip": "7100"
+     "zip": "0000"
     },
     "orders": [
      {

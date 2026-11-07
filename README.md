@@ -6,14 +6,14 @@
 
 <a href="https://modelcontextprotocol.io"><img src="docs/badges/mcp.svg" alt="made for MCP" height="26"></a>
 <img src="docs/badges/stores.svg" alt="stores: nemlig, BilkaToGo" height="26">
-<img src="docs/badges/python.svg" alt="built with Python 3.12+" height="26">
+<img src="docs/badges/go.svg" alt="built with Go 1.27+" height="26">
 <a href="LICENSE"><img src="docs/badges/license.svg" alt="license MIT" height="26"></a>
 
 **Your AI agent plans the week's meals on a budget, prices them at nemlig.com and BilkaToGo and fills the cheapest cart. You approve and pay.**
 
 </div>
 
-Danish grocery stores with home delivery, as an MCP server: [nemlig.com](https://www.nemlig.com) and [BilkaToGo](https://www.bilkatogo.dk).
+Danish grocery stores as an MCP server: [nemlig.com](https://www.nemlig.com) (home delivery) and [BilkaToGo](https://www.bilkatogo.dk) (home delivery or pickup).
 
 **It can never order or pay. You do.** That code does not exist, and a test fails if it shows up ([why](docs/adr/0001-the-human-always-pays.md)).
 
@@ -28,16 +28,27 @@ Taste, budget and meal rules live in your own prompt or skill. The server finds 
 
 ## Requirements
 
-- macOS, Linux or Windows (x64). Windows on ARM is not supported yet: a dependency (`cryptography`) has no ready-made build for it.
-- [uv](https://docs.astral.sh/uv/). It fetches Python 3.12+ if you do not have it.
+- macOS, Linux or Windows, on x64 or ARM64. No Python or `uv` needed: the server is one binary.
 - An MCP client, Grok, Claude Code, Claude Desktop or Codex etc.
-- An account at nemlig.com or BilkaToGo with home delivery to your address.
+- An account at nemlig.com (home delivery) or BilkaToGo (home delivery or pickup).
+
+## Install
+
+Download the archive for your system from [the v1.0.0 release](https://github.com/McAndersDK/handle-mcp-go/releases/tag/v1.0.0), unpack `handle-mcp` (`handle-mcp.exe` on Windows), and put it somewhere on PATH or remember its absolute path.
+
+With Go 1.27.3 or newer:
+
+```sh
+go install github.com/McAndersDK/handle-mcp-go/cmd/handle-mcp@v1.0.0
+```
+
+Unsigned binaries: macOS and Windows may warn on the first run. See [setup](docs/setup.md).
 
 ## Try it
 
 ```sh
-uvx --from git+https://github.com/NJohansen/handle-mcp@v1.2.1 handle-mcp login nemlig
-claude mcp add handle -- uvx --from git+https://github.com/NJohansen/handle-mcp@v1.2.1 handle-mcp
+handle-mcp login nemlig
+claude mcp add handle -- /absolute/path/to/handle-mcp
 ```
 
 Then ask:
@@ -72,5 +83,7 @@ Full arguments and fields: [docs/tools.md](docs/tools.md).
 [Setup](docs/setup.md) · [Skills](docs/skills.md) · [Security](docs/security.md) · [Troubleshooting](docs/troubleshooting.md) · [Testing](docs/testing.md) · [Roadmap](docs/roadmap.md) · [Contributing](CONTRIBUTING.md) · [Credits](CREDITS.md)
 
 Unofficial. Uses the stores' private website APIs, so it can break any day. Not affiliated with nemlig.com or Salling Group.
+
+A fork of [NJohansen/handle-mcp](https://github.com/NJohansen/handle-mcp), rewritten in Go. Credits: [CREDITS.md](CREDITS.md).
 
 [MIT](LICENSE)

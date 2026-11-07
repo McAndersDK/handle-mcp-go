@@ -1,0 +1,772 @@
+{
+ "Products": {
+  "Products": [
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "CampaignAttribute": "Fast mixtilbud",
+    "Id": "5031743",
+    "Name": "Kyllingebrystfilet øko.",
+    "Category": "Kød & fisk",
+    "Brand": "Danske Familiegårde",
+    "UnitPriceCalc": 437.2,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "2 stk. / 225-300 g / Danske Familiegårde",
+    "Price": 98.37,
+    "Campaign": {
+     "MinQuantity": 2,
+     "MaxQuantity": 0,
+     "TotalPrice": 185.0,
+     "CampaignPrice": 185.0,
+     "Type": "ProductCampaignBuyXForY",
+     "Code": "KF",
+     "DiscountSavings": 11.74,
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": false
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "CampaignAttribute": "Fast mixtilbud",
+    "Id": "5056387",
+    "Name": "Kyllingebrystfilet",
+    "Category": "Kød & fisk",
+    "Brand": "Danske Familiegårde",
+    "UnitPriceCalc": 156.96,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "280 g / Gårdkylling / Danske Familiegårde",
+    "Price": 43.95,
+    "Campaign": {
+     "MinQuantity": 3,
+     "MaxQuantity": 0,
+     "TotalPrice": 118.0,
+     "VariousPriceProductsCampaign": true,
+     "CampaignPrice": 118.0,
+     "Type": "ProductCampaignMixOffer",
+     "Code": "KF",
+     "DiscountSavings": 13.85,
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": false
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5056393",
+    "Name": "Kyllingebrystfilet",
+    "Category": "Kød & fisk",
+    "Brand": "Danske Familiegårde",
+    "UnitPriceCalc": 139.95,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "1 kg / Gårdkylling / Danske Familiegårde",
+    "Price": 139.95,
+    "Campaign": {
+     "DiscountPercent": 25,
+     "DiscountSavings": 34.988,
+     "CampaignPrice": 104.96,
+     "CampaignUnitPrice": 104.96,
+     "Type": "ProductCampaignDiscountPercent",
+     "Code": "U",
+     "IntervalStart": "2026-10-31T23:00:00Z",
+     "IntervalEnd": "2026-11-30T22:59:59Z",
+     "ShowCampaignInterval": true
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5064235",
+    "Name": "Kyllingebrystfilet",
+    "Category": "Kød & fisk",
+    "Brand": "Rose",
+    "UnitPriceCalc": 127.31,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "650 g / Rose",
+    "Price": 82.75
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "CampaignAttribute": "Fast mixtilbud",
+    "Id": "5056391",
+    "Name": "Kyllingebrystfilet",
+    "Category": "Kød & fisk",
+    "Brand": "Danske Familiegårde",
+    "UnitPriceCalc": 145.36,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "550 g / Gårdkylling / Danske Familiegårde",
+    "Price": 79.95,
+    "Campaign": {
+     "MinQuantity": 2,
+     "MaxQuantity": 0,
+     "TotalPrice": 150.0,
+     "CampaignPrice": 150.0,
+     "Type": "ProductCampaignBuyXForY",
+     "Code": "KF",
+     "DiscountSavings": 9.9,
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": false
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "CampaignAttribute": "Fast mixtilbud",
+    "Id": "5065343",
+    "Name": "Kyllingebrystfilet m. skind",
+    "Category": "Kød & fisk",
+    "Brand": "Hopballe Mølle",
+    "UnitPriceCalc": 354.69,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "320 g / Hopballe Mølle",
+    "Price": 113.5,
+    "Campaign": {
+     "MinQuantity": 2,
+     "MaxQuantity": 0,
+     "TotalPrice": 206.95,
+     "CampaignPrice": 206.95,
+     "Type": "ProductCampaignBuyXForY",
+     "Code": "KF",
+     "DiscountSavings": -56.95,
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": false
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5602318",
+    "Name": "Kyllingebrystfilet",
+    "Category": "Kød & fisk",
+    "Brand": "Danpo",
+    "UnitPriceCalc": 108.14,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "1,10 kg / Danpo",
+    "Price": 118.95
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "CampaignAttribute": "Fast mixtilbud",
+    "Id": "5069520",
+    "Name": "Kyllingebrystfilet",
+    "Category": "Kød & fisk",
+    "Brand": "Rose",
+    "UnitPriceCalc": 117.95,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "1,0 kg / Rose",
+    "Price": 117.95,
+    "Campaign": {
+     "MinQuantity": 2,
+     "MaxQuantity": 0,
+     "TotalPrice": 190.0,
+     "CampaignPrice": 190.0,
+     "Type": "ProductCampaignBuyXForY",
+     "Code": "KF",
+     "DiscountSavings": 45.9,
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": false
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "CampaignAttribute": "Fast mixtilbud",
+    "Id": "5030649",
+    "Name": "Kyllingebrystfilet",
+    "Category": "Kød & fisk",
+    "Brand": "Kalu",
+    "UnitPriceCalc": 252.79,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "2 stk. / 340 g / Nature & Respect",
+    "Price": 85.95,
+    "Campaign": {
+     "MinQuantity": 2,
+     "MaxQuantity": 0,
+     "TotalPrice": 152.95,
+     "CampaignPrice": 152.95,
+     "Type": "ProductCampaignBuyXForY",
+     "Code": "KF",
+     "DiscountSavings": -13.05,
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": false
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "CampaignAttribute": "Fast mixtilbud",
+    "Id": "5606249",
+    "Name": "Marry Me Chicken",
+    "Category": "Kød & fisk",
+    "Brand": "Danske Familiegårde",
+    "UnitPriceCalc": 154.17,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "300 g / Gårdkylling / Danske Familiegårde",
+    "Price": 46.25,
+    "Campaign": {
+     "MinQuantity": 2,
+     "MaxQuantity": 0,
+     "TotalPrice": 75.0,
+     "VariousPriceProductsCampaign": false,
+     "CampaignPrice": 75.0,
+     "Type": "ProductCampaignMixOffer",
+     "Code": "KF",
+     "DiscountSavings": 0.0,
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": false
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "CampaignAttribute": "Fast mixtilbud",
+    "Id": "5069764",
+    "Name": "Kyllingebrystfilet butterfly",
+    "Category": "Kød & fisk",
+    "Brand": "Hopballe Mølle",
+    "UnitPriceCalc": 285.62,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "560 g / Hopballe Mølle",
+    "Price": 159.95,
+    "Campaign": {
+     "MinQuantity": 2,
+     "MaxQuantity": 0,
+     "TotalPrice": 290.0,
+     "CampaignPrice": 290.0,
+     "Type": "ProductCampaignBuyXForY",
+     "Code": "KF",
+     "DiscountSavings": 29.9,
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": false
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "CampaignAttribute": "Fast mixtilbud",
+    "Id": "5019290",
+    "Name": "Kyllingebrystfilet øko.",
+    "Category": "Kød & fisk",
+    "Brand": "Kalu",
+    "UnitPriceCalc": 458.33,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "240 g / Kalu",
+    "Price": 110.0,
+    "Campaign": {
+     "MinQuantity": 2,
+     "MaxQuantity": 0,
+     "TotalPrice": 206.95,
+     "CampaignPrice": 206.95,
+     "Type": "ProductCampaignBuyXForY",
+     "Code": "KF",
+     "DiscountSavings": -36.95,
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": false
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "CampaignAttribute": "Fast mixtilbud",
+    "Id": "5068835",
+    "Name": "Kyllingebryst m. BBQ",
+    "Category": "Kød & fisk",
+    "Brand": "Danske Familiegårde",
+    "UnitPriceCalc": 174.45,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "550 g / Danske Familiegårde",
+    "Price": 95.95,
+    "Campaign": {
+     "MinQuantity": 2,
+     "MaxQuantity": 0,
+     "TotalPrice": 170.0,
+     "CampaignPrice": 170.0,
+     "Type": "ProductCampaignBuyXForY",
+     "Code": "KF",
+     "DiscountSavings": 21.9,
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": false
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5605612",
+    "Name": "Kyllingebryst øko.",
+    "Category": "Køl",
+    "Brand": "Hammel",
+    "UnitPriceCalc": 356.43,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "70 g / Hammel",
+    "Price": 24.95
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "922322",
+    "Name": "Kyllingebryst",
+    "Category": "Køl",
+    "Brand": "Den Grønne Slagter",
+    "UnitPriceCalc": 186.11,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "90 g / Den Grønne Slagter",
+    "Price": 16.75,
+    "Campaign": {
+     "DiscountSavings": 6.75,
+     "MaxQuantity": 0,
+     "CampaignPrice": 10.0,
+     "CampaignUnitPrice": 111.11,
+     "Type": "ProductCampaignDiscount",
+     "Code": "US",
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": true
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5010887",
+    "Name": "Kyllingebryst",
+    "Category": "Køl",
+    "Brand": "First Price",
+    "UnitPriceCalc": 107.92,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "130 g / First Price",
+    "Price": 14.03
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "CampaignAttribute": "Fast mixtilbud",
+    "Id": "5057352",
+    "Name": "Kyllingebryst",
+    "Category": "Husholdning",
+    "Brand": "Chrisco",
+    "UnitPriceCalc": 167.9,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "500 g / Chrisco - PAW",
+    "Price": 83.95,
+    "Campaign": {
+     "MinQuantity": 2,
+     "MaxQuantity": 0,
+     "TotalPrice": 150.0,
+     "VariousPriceProductsCampaign": false,
+     "CampaignPrice": 150.0,
+     "Type": "ProductCampaignMixOffer",
+     "Code": "KF",
+     "DiscountSavings": 0.0,
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": false
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5016209",
+    "Name": "Kyllingebryst (klassisk)",
+    "Category": "Køl",
+    "Brand": "Den Grønne Slagter",
+    "UnitPriceCalc": 167.5,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "100 g / Den Grønne Slagter",
+    "Price": 16.75,
+    "Campaign": {
+     "DiscountSavings": 6.75,
+     "MaxQuantity": 0,
+     "CampaignPrice": 10.0,
+     "CampaignUnitPrice": 100.0,
+     "Type": "ProductCampaignDiscount",
+     "Code": "US",
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": true
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5055288",
+    "Name": "Kyllingebryst (silkeskåret)",
+    "Category": "Køl",
+    "Brand": "Den Grønne Slagter",
+    "UnitPriceCalc": 209.38,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "80 g / Den Grønne Slagter",
+    "Price": 16.75,
+    "Campaign": {
+     "DiscountSavings": 6.75,
+     "MaxQuantity": 0,
+     "CampaignPrice": 10.0,
+     "CampaignUnitPrice": 125.0,
+     "Type": "ProductCampaignDiscount",
+     "Code": "US",
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": true
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5602559",
+    "Name": "Kyllingebryst i skiver",
+    "Category": "Køl",
+    "Brand": "3-Stjernet",
+    "UnitPriceCalc": 236.88,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "80 g / 3-Stjernet",
+    "Price": 18.95,
+    "Campaign": {
+     "DiscountSavings": 4.95,
+     "MaxQuantity": 0,
+     "CampaignPrice": 14.0,
+     "CampaignUnitPrice": 175.0,
+     "Type": "ProductCampaignDiscount",
+     "Code": "U",
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": true
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5071620",
+    "Name": "Sandwich kyllingebryst",
+    "Category": "Køl",
+    "Brand": "3-Stjernet",
+    "UnitPriceCalc": 249.38,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "80 g / 3-Stjernet",
+    "Price": 19.95,
+    "Campaign": {
+     "DiscountSavings": 5.95,
+     "MaxQuantity": 0,
+     "CampaignPrice": 14.0,
+     "CampaignUnitPrice": 175.0,
+     "Type": "ProductCampaignDiscount",
+     "Code": "U",
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": true
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5602561",
+    "Name": "Kyllingebryst i skiver",
+    "Category": "Køl",
+    "Brand": "3-Stjernet",
+    "UnitPriceCalc": 249.38,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "80 g / m. tomat / 3-stjernet",
+    "Price": 19.95,
+    "Campaign": {
+     "DiscountSavings": 5.95,
+     "MaxQuantity": 0,
+     "CampaignPrice": 14.0,
+     "CampaignUnitPrice": 175.0,
+     "Type": "ProductCampaignDiscount",
+     "Code": "U",
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": true
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5071621",
+    "Name": "Sandwich kyllingebryst",
+    "Category": "Køl",
+    "Brand": "3-Stjernet",
+    "UnitPriceCalc": 249.38,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "80 g / Italiensk inspireret / 3-Stjernet",
+    "Price": 19.95,
+    "Campaign": {
+     "DiscountSavings": 5.95,
+     "MaxQuantity": 0,
+     "CampaignPrice": 14.0,
+     "CampaignUnitPrice": 175.0,
+     "Type": "ProductCampaignDiscount",
+     "Code": "U",
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": true
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "CampaignAttribute": "Undgå madspild",
+    "Id": "5601806",
+    "Name": "Sandwich kyllingebryst",
+    "Category": "Køl",
+    "Brand": "3-Stjernet",
+    "UnitPriceCalc": 175.0,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "80 g / 3-Stjernet / Bedst før: 10-11-2026",
+    "Price": 14.0,
+    "Campaign": {
+     "DiscountSavings": 4.0,
+     "MaxQuantity": 0,
+     "CampaignPrice": 10.0,
+     "CampaignUnitPrice": 125.0,
+     "Type": "ProductCampaignDiscount",
+     "Code": "UM",
+     "IntervalStart": "2026-11-03T23:00:00Z",
+     "IntervalEnd": "2026-11-04T22:59:59Z",
+     "ShowCampaignInterval": false
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5016210",
+    "Name": "Kyllingebryst m. chili",
+    "Category": "Køl",
+    "Brand": "Den Grønne Slagter",
+    "UnitPriceCalc": 167.5,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "100 g / Den Grønne Slagter",
+    "Price": 16.75,
+    "Campaign": {
+     "DiscountSavings": 6.75,
+     "MaxQuantity": 0,
+     "CampaignPrice": 10.0,
+     "CampaignUnitPrice": 100.0,
+     "Type": "ProductCampaignDiscount",
+     "Code": "US",
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": true
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5008343",
+    "Name": "Kyllingebryst (i skiver)",
+    "Category": "Køl",
+    "Brand": "Tulip - Pålækker",
+    "UnitPriceCalc": 143.89,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "90 g / m. groft peber / Tulip - Pålækker",
+    "Price": 12.95
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "CampaignAttribute": "Fast mixtilbud",
+    "Id": "5021509",
+    "Name": "Kyllingebryst (i skiver)",
+    "Category": "Køl",
+    "Brand": "SR Food",
+    "UnitPriceCalc": 183.6,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "125 g / SR Food",
+    "Price": 22.95,
+    "Campaign": {
+     "MinQuantity": 3,
+     "MaxQuantity": 0,
+     "TotalPrice": 60.0,
+     "CampaignPrice": 60.0,
+     "Type": "ProductCampaignBuyXForY",
+     "Code": "KF",
+     "DiscountSavings": 8.85,
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": false
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "CampaignAttribute": "Fast mixtilbud",
+    "Id": "5061248",
+    "Name": "Kyllingebryst i skiver (stegt)",
+    "Category": "Køl",
+    "Brand": "Rose",
+    "UnitPriceCalc": 168.33,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "150 g / sandwich skiver / Rose",
+    "Price": 25.25,
+    "Campaign": {
+     "MinQuantity": 2,
+     "MaxQuantity": 0,
+     "TotalPrice": 42.0,
+     "VariousPriceProductsCampaign": false,
+     "CampaignPrice": 42.0,
+     "Type": "ProductCampaignMixOffer",
+     "Code": "KF",
+     "DiscountSavings": 0.0,
+     "IntervalStart": "2026-11-01T23:00:00Z",
+     "IntervalEnd": "2026-11-08T22:59:59Z",
+     "ShowCampaignInterval": false
+    }
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5069891",
+    "Name": "Kyllingebrystfilet",
+    "Category": "Kød & fisk",
+    "Brand": "Rose",
+    "UnitPriceCalc": 77.58,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "1,20 kg / tilsat vand / Rose",
+    "Price": 93.1
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5604407",
+    "Name": "Kyllingebrystfilet",
+    "Category": "Kød & fisk",
+    "Brand": "Rose",
+    "UnitPriceCalc": 77.67,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "450 g / tilsat vand / Rose",
+    "Price": 34.95
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5604408",
+    "Name": "Kyllingebrystfilet",
+    "Category": "Kød & fisk",
+    "Brand": "Rose",
+    "UnitPriceCalc": 76.33,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "1,50 kg / tilsat vand / Rose",
+    "Price": 114.5
+   },
+   {
+    "Availability": {
+     "IsDeliveryAvailable": true,
+     "IsAvailableInStock": true,
+     "ReasonMessageKeys": []
+    },
+    "Id": "5069148",
+    "Name": "Kyllingebrystfilet i tern",
+    "Category": "Kød & fisk",
+    "Brand": "Rose",
+    "UnitPriceCalc": 139.8,
+    "UnitPriceLabel": "kr/kg",
+    "Description": "250 g / Rose",
+    "Price": 34.95
+   }
+  ],
+  "NumFound": 32
+ },
+ "Recipes": []
+}

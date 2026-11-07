@@ -3,8 +3,8 @@
 handle-mcp-go is a permanent fork of NJohansen/handle-mcp. Go replaces Python. Upstream fixes are ported by hand.
 
 - Module path: `github.com/McAndersDK/handle-mcp-go`. The binary stays `handle-mcp`.
-- `go.mod` is at the repo root; the Go code is in `src-go/`. A nested module would need tags like `src-go/v1.0.0`, while a root module keeps plain `v1.0.0`.
-- Distribution: GoReleaser binaries on GitHub Releases, plus `go install github.com/McAndersDK/handle-mcp-go/src-go/cmd/handle-mcp@v1.0.0`.
+- `go.mod` is at the repo root and the Go code is in `cmd/` and `internal/`, so the module keeps plain tags like `v1.0.0`. The Python code lives on in `upstream/`, a mirror of upstream's tree.
+- Distribution: GoReleaser binaries on GitHub Releases, plus `go install github.com/McAndersDK/handle-mcp-go/cmd/handle-mcp@v1.0.0`.
 - The first release is `v1.0.0`, on a new numbering line. Origin had no tags when this was checked on 2026-11-05. From then on the semver rule in `CLAUDE.md` applies unchanged. A published tag is never moved.
 - The six rules in `CLAUDE.md` keep their content. `LICENSE` keeps the upstream copyright.
 
@@ -40,9 +40,8 @@ Deliberate differences from Python 1.2.1:
 
 ## Tools
 
-- `src-go/internal/server/tools.json` is embedded with `go:embed` and is the source of truth. It is a copy, because embed cannot reach `tests/`.
-- `tests/snapshots/tools.json` stays as the wire contract. Until cutover it is not changed, because Python's tests read it. The Go test applies one named adjustment: add `idempotentHint: false` to tools with `readOnlyHint: true`.
-- At cutover the snapshot is regenerated from Go in its own commit, and the adjustment is deleted.
+- `internal/server/tools.json` is embedded with `go:embed` and is the source of truth. It is a copy, because embed cannot reach `tests/`.
+- `tests/snapshots/tools.json` is the wire contract. It was regenerated from the Go server in its own commit before `v1.0.0`, and the Go test compares the live tool list with it exactly. The Python mirror in `upstream/` has its own copy and does not read this one.
 - Tools are registered with the low-level `Server.AddTool` only.
 
 ## Arguments
@@ -76,7 +75,7 @@ Every tool answer has one exit. `FakeStore` in Python can smuggle dicts past `sc
 
 ## Goldens
 
-`tests/golden/` is made once by an agent from the unchanged Python code, offline: fixtures and mocked HTTP only, an in-memory keyring, a temp `HANDLE_CONFIG_DIR`, sockets blocked, no logins. The human runs nothing. The script is deleted at cutover; the goldens stay.
+`tests/golden/` is made once by an agent from the unchanged Python code, offline: fixtures and mocked HTTP only, an in-memory keyring, a temp `HANDLE_CONFIG_DIR`, sockets blocked, no logins. The human runs nothing. The script stays in `scripts/` and runs against the `upstream/` mirror, so goldens can be re-exported after a merge (see 0007).
 
 Goldens cannot prove:
 
@@ -88,7 +87,7 @@ Goldens cannot prove:
 
 ## Python
 
-Python is not changed and not run by the human. It stays on `main` as the reference and is deleted last, in the cutover PR.
+Python is not deleted: it lives on in `upstream/` as a mirror of upstream's tree, never edited except for redactions, and never run by the human. See 0007.
 
 ## Gate
 
@@ -106,16 +105,16 @@ There is no Python live baseline, because no logins exist for it. A side-by-side
 ## Layout and rule text
 
 ```
-src-go/cmd/handle-mcp
-src-go/internal/{model,privacy,match,pricing,candidates,compare,recipecart,
+cmd/handle-mcp
+internal/{model,privacy,match,pricing,candidates,compare,recipecart,
                  server,cli,store,store/nemlig,store/bilkatogo}
 ```
 
 The store registry lives outside `store`, to avoid an import cycle. Goldens stay in `tests/golden/`.
 
-`CLAUDE.md` changes at cutover, in the PR that deletes Python:
+`CLAUDE.md` was rewritten for Go before `v1.0.0`:
 
-- Rule 2: "Every tool answer goes through `privacy.Scrub()` in the one exit, `server.out()`. Never return raw store JSON without it."
+- Rule 2: "Every tool answer goes through `privacy.Scrub()` in the one exit, `internal/server/out.go`. Never return raw store JSON without it."
 - Rule 3: "stdout is JSON-RPC. Never use `fmt.Print*`, `println` or `os.Stdout`. Log to stderr with `log/slog`."
 - Rule 5: keeps < ~550 lines per store file and < ~300 in every other file, excluding `_test.go`. "A store that grows past the limit splits into files by topic in its own package, never into a second layer."
 
@@ -127,7 +126,7 @@ Old keychain entries are not read. Python's Windows entries use target `handle-m
 
 ## Consequences
 
-- Python stays on `main` until cutover, so two codebases exist for a while.
+- Python stays in `upstream/`, so two codebases exist side by side (0007).
 - Upstream fixes need a manual port and a golden check.
 - Users must log in again after the switch.
 
@@ -135,4 +134,4 @@ Old keychain entries are not read. Python's Windows entries use target `handle-m
 
 Not decided here.
 
-- Whether `src-go/` keeps that name after Python is deleted. Renaming it changes the `go install` path, so decide before `v1.0.0`.
+- Nothing about the folder name: `src-go/` was dropped before `v1.0.0`, so the `go install` path is `.../cmd/handle-mcp`.

@@ -1,0 +1,34 @@
+{
+  "Orders": [
+    {
+      "Status": 0,
+      "OrderNumber": "1000001",
+      "Total": 702.08,
+      "SubTotal": 759.23,
+      "OrderDate": "03/11-2026 kl. 14-21",
+      "EstimatedArrivalTime": null,
+      "ActualArrivalTime": null,
+      "Id": 1000001,
+      "Buttons": null,
+      "DeliveryStatus": 0,
+      "DeliveryDeadlineDate": "03/11-2026",
+      "DeliveryDeadlineDateTimezoneOffset": 60.0,
+      "DeliveryDeadlineDateTime": "2026-11-02T23:59:00",
+      "DeliveryAddress": "X",
+      "IsDeliveryOnWay": true,
+      "DeliveryTime": {
+        "Start": "2026-11-03T14:00:00",
+        "End": "2026-11-03T21:00:00"
+      },
+      "DeliveryType": 1,
+      "TimeSlotAttributesTypes": [],
+      "ValidationFailures": null,
+      "IsEditable": true,
+      "IsCancellable": true,
+      "HasInvoice": false,
+      "IsMinimumOrderTotalAchieved": true,
+      "IsDeadlinePassed": false
+    }
+  ],
+  "NumberOfPages": 1
+}

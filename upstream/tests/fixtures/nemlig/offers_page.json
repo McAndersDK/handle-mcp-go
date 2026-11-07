@@ -1,0 +1,1678 @@
+{
+ "id": "566a9d12-f1a0-404d-a55f-a87afb16d26f",
+ "pageType": "themePage",
+ "title": "Tilbud",
+ "description": null,
+ "seo": {
+  "title": "",
+  "description": "",
+  "content": "",
+  "noIndex": false
+ },
+ "pageContent": [
+  {
+   "contentType": "AdformBanner",
+   "tagId": "2266511",
+   "banners": [
+    {
+     "imgType": 3,
+     "width": 1600,
+     "height": 300
+    },
+    {
+     "imgType": 1,
+     "width": 440,
+     "height": 137
+    }
+   ],
+   "page": "/tilbud",
+   "path": "/tilbud"
+  },
+  {
+   "contentType": "ProductList",
+   "anchorId": "2-88b4e263-59f7-44ee-96b9-290fe463646b",
+   "products": [
+    {
+     "id": "5060880",
+     "url": "5060880",
+     "title": "Short ribs",
+     "description": "1-1,30 kg / frost / Irish Nature",
+     "price": 10000,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 10000,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 30,
+     "labelHighlighted": {
+      "type": "Premium",
+      "url": "/dagligvarer/nye-varer-inspiration/premium"
+     },
+     "certificates": [
+      {
+       "type": "frozen",
+       "text": "Frost"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Skarp pris",
+       "accessibilityText": "Skarp pris",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "God pris",
+      "secondaryText": null,
+      "accessibilityText": "God pris"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5060880.webp",
+      "accessibilityText": "Billede af Short ribs"
+     }
+    },
+    {
+     "id": "5027322",
+     "url": "5027322",
+     "title": "Flanksteak",
+     "description": "400-600 g / frost / Irish Nature",
+     "price": 10000,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 25000,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 30,
+     "labelHighlighted": {
+      "type": "Premium",
+      "url": "/dagligvarer/nye-varer-inspiration/premium"
+     },
+     "certificates": [
+      {
+       "type": "frozen",
+       "text": "Frost"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Skarp pris",
+       "accessibilityText": "Skarp pris",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "God pris",
+      "secondaryText": null,
+      "accessibilityText": "God pris"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5027322.webp",
+      "accessibilityText": "Billede af Flanksteak"
+     }
+    },
+    {
+     "id": "5067616",
+     "url": "5067616",
+     "title": "Flæskesteg",
+     "description": "1,40-1,60 kg / Danske Egnsgårde",
+     "price": 10000,
+     "priceOriginal": 15895,
+     "priceDiscount": 5895,
+     "pricePerUnit": {
+      "value": 7143,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 6,
+     "labelHighlighted": null,
+     "certificates": [
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      },
+      {
+       "type": "animalWelfareHearts2",
+       "text": "Bedre dyrevelfærd (2 hjerter)"
+      },
+      {
+       "type": "refrigerated",
+       "text": "Køl"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Skarp pris",
+       "accessibilityText": "Skarp pris",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "58,95",
+      "secondaryText": "Spar",
+      "accessibilityText": "Spar 58,95 kroner"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5067616.webp",
+      "accessibilityText": "Billede af Flæskesteg"
+     }
+    },
+    {
+     "id": "5602285",
+     "url": "5602285",
+     "title": "Landskinke",
+     "description": "1,80-2,0 kg",
+     "price": 10000,
+     "priceOriginal": 13295,
+     "priceDiscount": 3295,
+     "pricePerUnit": {
+      "value": 5556,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 7,
+     "labelHighlighted": null,
+     "certificates": [
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      },
+      {
+       "type": "refrigerated",
+       "text": "Køl"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Skarp pris",
+       "accessibilityText": "Skarp pris",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "32,95",
+      "secondaryText": "Spar",
+      "accessibilityText": "Spar 32,95 kroner"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5602285.webp",
+      "accessibilityText": "Billede af Landskinke"
+     }
+    },
+    {
+     "id": "5064067",
+     "url": "5064067",
+     "title": "Nakkefilet øko.",
+     "description": "0,90-1,30 kg / Friland",
+     "price": 10000,
+     "priceOriginal": 16898,
+     "priceDiscount": 6898,
+     "pricePerUnit": {
+      "value": 9091,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 6,
+     "labelHighlighted": null,
+     "certificates": [
+      {
+       "type": "dkOrganic",
+       "text": "Øko (dansk)"
+      },
+      {
+       "type": "animalWelfareHearts3",
+       "text": "Bedre dyrevelfærd (3 hjerter)"
+      },
+      {
+       "type": "refrigerated",
+       "text": "Køl"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Skarp pris",
+       "accessibilityText": "Skarp pris",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "68,98",
+      "secondaryText": "Spar",
+      "accessibilityText": "Spar 68,98 kroner"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5064067.webp",
+      "accessibilityText": "Billede af Nakkefilet øko."
+     }
+    }
+   ],
+   "layout": "Showall",
+   "header": {
+    "title": "Skarp pris",
+    "subtitle": null,
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/042px1js/skarppris.png?mode=crop&anchor=center&width=64&height=64",
+     "accessibilityText": "Skarp Pris"
+    },
+    "button": null
+   }
+  },
+  {
+   "contentType": "ProductList",
+   "anchorId": "4-3779700e-3897-4ca5-8e37-7510942c2267",
+   "products": [
+    {
+     "id": "5003217",
+     "url": "5003217",
+     "title": "Blåbærfrugtstænger",
+     "description": "5 x 20 g / Castus",
+     "price": 1197,
+     "priceOriginal": 1995,
+     "priceDiscount": 798,
+     "pricePerUnit": {
+      "value": 11970,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 90,
+     "labelHighlighted": null,
+     "certificates": [
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Priskup",
+       "accessibilityText": "Priskup",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "40%",
+      "secondaryText": "Spar",
+      "accessibilityText": "Spar 40 procent"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5003217.webp",
+      "accessibilityText": "Billede af Blåbærfrugtstænger"
+     }
+    },
+    {
+     "id": "5034625",
+     "url": "5034625",
+     "title": "Blåbærfrugtstænger øko.",
+     "description": "4 x 20 g / Castus",
+     "price": 1197,
+     "priceOriginal": 1995,
+     "priceDiscount": 798,
+     "pricePerUnit": {
+      "value": 14963,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 90,
+     "labelHighlighted": null,
+     "certificates": [
+      {
+       "type": "dkOrganic",
+       "text": "Øko (dansk)"
+      },
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      },
+      {
+       "type": "euOrganic",
+       "text": "Øko (europæisk)"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Priskup",
+       "accessibilityText": "Priskup",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "40%",
+      "secondaryText": "Spar",
+      "accessibilityText": "Spar 40 procent"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5034625.webp",
+      "accessibilityText": "Billede af Blåbærfrugtstænger øko."
+     }
+    },
+    {
+     "id": "103666",
+     "url": "103666",
+     "title": "Figenfrugtstænger",
+     "description": "5 x 20 g / Castus",
+     "price": 1082,
+     "priceOriginal": 1803,
+     "priceDiscount": 721,
+     "pricePerUnit": {
+      "value": 10818,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 90,
+     "labelHighlighted": {
+      "type": "PriceMatch",
+      "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+     },
+     "certificates": [
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Priskup",
+       "accessibilityText": "Priskup",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "40%",
+      "secondaryText": "Spar",
+      "accessibilityText": "Spar 40 procent"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/103666.webp",
+      "accessibilityText": "Billede af Figenfrugtstænger"
+     }
+    },
+    {
+     "id": "5003221",
+     "url": "5003221",
+     "title": "Figenfrugtstænger øko.",
+     "description": "4 x 20 g / Castus",
+     "price": 1197,
+     "priceOriginal": 1995,
+     "priceDiscount": 798,
+     "pricePerUnit": {
+      "value": 14963,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 90,
+     "labelHighlighted": null,
+     "certificates": [
+      {
+       "type": "dkOrganic",
+       "text": "Øko (dansk)"
+      },
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      },
+      {
+       "type": "euOrganic",
+       "text": "Øko (europæisk)"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Priskup",
+       "accessibilityText": "Priskup",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "40%",
+      "secondaryText": "Spar",
+      "accessibilityText": "Spar 40 procent"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5003221.webp",
+      "accessibilityText": "Billede af Figenfrugtstænger øko."
+     }
+    },
+    {
+     "id": "5064772",
+     "url": "5064772",
+     "title": "Frugtfigurer m. blåbær øko.",
+     "description": "6 x 10 g / m. tranebær / Castus - Grinebidder",
+     "price": 1257,
+     "priceOriginal": 2095,
+     "priceDiscount": 838,
+     "pricePerUnit": {
+      "value": 20950,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 90,
+     "labelHighlighted": null,
+     "certificates": [
+      {
+       "type": "dkOrganic",
+       "text": "Øko (dansk)"
+      },
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      },
+      {
+       "type": "euOrganic",
+       "text": "Øko (europæisk)"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Priskup",
+       "accessibilityText": "Priskup",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "40%",
+      "secondaryText": "Spar",
+      "accessibilityText": "Spar 40 procent"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5064772.webp",
+      "accessibilityText": "Billede af Frugtfigurer m. blåbær øko."
+     }
+    },
+    {
+     "id": "5012574",
+     "url": "5012574",
+     "title": "Click mix",
+     "description": "120 g / HARIBO",
+     "price": 2525,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 21041,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 90,
+     "labelHighlighted": null,
+     "certificates": [],
+     "campaignLines": [
+      {
+       "text": "Mix 2 stk. 35,-",
+       "accessibilityText": "Mix 2 styk 35 kroner",
+       "url": null,
+       "campaignType": "Mix"
+      },
+      {
+       "text": "Priskup",
+       "accessibilityText": "Priskup",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "God pris",
+      "secondaryText": null,
+      "accessibilityText": "God pris"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5012574.webp",
+      "accessibilityText": "Billede af Click mix"
+     }
+    }
+   ],
+   "layout": "Showall",
+   "header": {
+    "title": "Ugens priskup",
+    "subtitle": null,
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/luzg50su/priskup.png?mode=crop&anchor=center&width=64&height=64",
+     "accessibilityText": "Priskup"
+    },
+    "button": null
+   }
+  },
+  {
+   "contentType": "ProductList",
+   "anchorId": "6-495d0786-0cd1-428f-8e71-910e2b8c31c9",
+   "products": [
+    {
+     "id": "5606321",
+     "url": "5606321",
+     "title": "Mums rosinboller",
+     "description": "6 stk. / 350 g  / Schulstad - Det Gode",
+     "price": 0,
+     "priceOriginal": 2045,
+     "priceDiscount": 2045,
+     "pricePerUnit": {
+      "value": 0,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": 1,
+     "labelFreshnessDays": 2,
+     "labelHighlighted": null,
+     "certificates": [],
+     "campaignLines": [
+      {
+       "text": "En gave til dig",
+       "accessibilityText": "En gave til dig",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "Gratis",
+      "secondaryText": null,
+      "accessibilityText": "Gratis"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5606321.webp",
+      "accessibilityText": "Billede af Mums rosinboller"
+     }
+    }
+   ],
+   "layout": "Showall",
+   "header": {
+    "title": "En gave til dig",
+    "subtitle": null,
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/cuudx4w0/graftis-gave.png?mode=crop&anchor=center&width=64&height=64",
+     "accessibilityText": "Gratis gave"
+    },
+    "button": null
+   }
+  },
+  {
+   "contentType": "ProductList",
+   "anchorId": "7-f1da6c7c-b068-44c1-b970-3aa57809e965",
+   "products": [
+    {
+     "id": "5071252",
+     "url": "5071252",
+     "title": "Angus cuvettesteg øko.",
+     "description": "1,4-1,70 kg",
+     "price": 39495,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 28211,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 6,
+     "labelHighlighted": {
+      "type": "Premium",
+      "url": "/dagligvarer/nye-varer-inspiration/premium"
+     },
+     "certificates": [
+      {
+       "type": "dkOrganic",
+       "text": "Øko (dansk)"
+      },
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      },
+      {
+       "type": "animalWelfareHearts3",
+       "text": "Bedre dyrevelfærd (3 hjerter)"
+      },
+      {
+       "type": "refrigerated",
+       "text": "Køl"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Dagstilbud",
+       "accessibilityText": "Dagstilbud",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "God pris",
+      "secondaryText": null,
+      "accessibilityText": "God pris"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5071252.webp",
+      "accessibilityText": "Billede af Angus cuvettesteg øko."
+     }
+    },
+    {
+     "id": "5605025",
+     "url": "5605025",
+     "title": "Oksecuvette",
+     "description": "1,0-1,20 kg",
+     "price": 12000,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 12000,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 6,
+     "labelHighlighted": {
+      "type": "Premium",
+      "url": "/dagligvarer/nye-varer-inspiration/premium"
+     },
+     "certificates": [
+      {
+       "type": "refrigerated",
+       "text": "Køl"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Dagstilbud",
+       "accessibilityText": "Dagstilbud",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "God pris",
+      "secondaryText": null,
+      "accessibilityText": "God pris"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5605025.webp",
+      "accessibilityText": "Billede af Oksecuvette"
+     }
+    },
+    {
+     "id": "5604024",
+     "url": "5604024",
+     "title": "Angus oksesteak øko.",
+     "description": "2 stk. / 350-400 g",
+     "price": 9695,
+     "priceOriginal": 9727,
+     "priceDiscount": 32,
+     "pricePerUnit": {
+      "value": 27700,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 4,
+     "labelHighlighted": {
+      "type": "Premium",
+      "url": "/dagligvarer/nye-varer-inspiration/premium"
+     },
+     "certificates": [
+      {
+       "type": "dkOrganic",
+       "text": "Øko (dansk)"
+      },
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      },
+      {
+       "type": "animalWelfareHearts3",
+       "text": "Bedre dyrevelfærd (3 hjerter)"
+      },
+      {
+       "type": "refrigerated",
+       "text": "Køl"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Dagstilbud",
+       "accessibilityText": "Dagstilbud",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "0,32",
+      "secondaryText": "Spar",
+      "accessibilityText": "Spar 0,32 kroner"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5604024.webp",
+      "accessibilityText": "Billede af Angus oksesteak øko."
+     }
+    },
+    {
+     "id": "5604022",
+     "url": "5604022",
+     "title": "Angus XL bov steak øko.",
+     "description": "2 stk. / 190-210 g",
+     "price": 9295,
+     "priceOriginal": 10357,
+     "priceDiscount": 1062,
+     "pricePerUnit": {
+      "value": 48921,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 4,
+     "labelHighlighted": {
+      "type": "Premium",
+      "url": "/dagligvarer/nye-varer-inspiration/premium"
+     },
+     "certificates": [
+      {
+       "type": "dkOrganic",
+       "text": "Øko (dansk)"
+      },
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      },
+      {
+       "type": "animalWelfareHearts3",
+       "text": "Bedre dyrevelfærd (3 hjerter)"
+      },
+      {
+       "type": "refrigerated",
+       "text": "Køl"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Dagstilbud",
+       "accessibilityText": "Dagstilbud",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "10,62",
+      "secondaryText": "Spar",
+      "accessibilityText": "Spar 10,62 kroner"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5604022.webp",
+      "accessibilityText": "Billede af Angus XL bov steak øko."
+     }
+    },
+    {
+     "id": "5045717",
+     "url": "5045717",
+     "title": "Entrecote øko.",
+     "description": "2 stk. / 350 g / Friland",
+     "price": 9595,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 27414,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 4,
+     "labelHighlighted": null,
+     "certificates": [
+      {
+       "type": "dkOrganic",
+       "text": "Øko (dansk)"
+      },
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      },
+      {
+       "type": "euOrganic",
+       "text": "Øko (europæisk)"
+      },
+      {
+       "type": "animalWelfareHearts3",
+       "text": "Bedre dyrevelfærd (3 hjerter)"
+      },
+      {
+       "type": "refrigerated",
+       "text": "Køl"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Dagstilbud",
+       "accessibilityText": "Dagstilbud",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "God pris",
+      "secondaryText": null,
+      "accessibilityText": "God pris"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5045717.webp",
+      "accessibilityText": "Billede af Entrecote øko."
+     }
+    }
+   ],
+   "layout": "Showall",
+   "header": {
+    "title": "Dagstilbud",
+    "subtitle": null,
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/gwroeuxd/dagstilbud.png?mode=crop&anchor=center&width=64&height=64",
+     "accessibilityText": "Dagstilbud"
+    },
+    "button": null
+   }
+  },
+  {
+   "contentType": "ProductList",
+   "anchorId": "8-c71e5a7d-ac48-452e-a34f-8dda66e4b73f",
+   "products": [
+    {
+     "id": "5601872",
+     "url": "5601872",
+     "title": "Kyllingepålæg m. urter",
+     "description": "125 g / Sidste anv. dato: 06-11-2026",
+     "price": 1295,
+     "priceOriginal": 2095,
+     "priceDiscount": 800,
+     "pricePerUnit": {
+      "value": 10360,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 0,
+     "labelHighlighted": null,
+     "certificates": [
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      },
+      {
+       "type": "nordicKeyholeLabel",
+       "text": "Nøglehulsmærket"
+      },
+      {
+       "type": "refrigerated",
+       "text": "Køl"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Undgå Madspild",
+       "accessibilityText": "Undgå Madspild",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "8,-",
+      "secondaryText": "Spar",
+      "accessibilityText": "Spar 8 kroner"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5601872.webp",
+      "accessibilityText": "Billede af Kyllingepålæg m. urter"
+     }
+    },
+    {
+     "id": "5602712",
+     "url": "5602712",
+     "title": "Hamburgerryg",
+     "description": "90 g / Sidste anv. dato: 05-11-2026",
+     "price": 1395,
+     "priceOriginal": 2425,
+     "priceDiscount": 1030,
+     "pricePerUnit": {
+      "value": 15500,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 0,
+     "labelHighlighted": null,
+     "certificates": [
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      },
+      {
+       "type": "refrigerated",
+       "text": "Køl"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Undgå Madspild",
+       "accessibilityText": "Undgå Madspild",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "10,30",
+      "secondaryText": "Spar",
+      "accessibilityText": "Spar 10,30 kroner"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5602712.webp",
+      "accessibilityText": "Billede af Hamburgerryg"
+     }
+    },
+    {
+     "id": "5607213",
+     "url": "5607213",
+     "title": "Jacobsen BARBARAS",
+     "description": "0,75 l / ex. pant / ex. glas / Bedst før: 29-11-2026",
+     "price": 2595,
+     "priceOriginal": 3675,
+     "priceDiscount": 1080,
+     "pricePerUnit": {
+      "value": 3460,
+      "unitType": "Volume"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 0,
+     "labelHighlighted": null,
+     "certificates": [],
+     "campaignLines": [
+      {
+       "text": "Undgå Madspild",
+       "accessibilityText": "Undgå Madspild",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "10,80",
+      "secondaryText": "Spar",
+      "accessibilityText": "Spar 10,80 kroner"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Ltr.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5607213.webp",
+      "accessibilityText": "Billede af Jacobsen BARBARAS"
+     }
+    },
+    {
+     "id": "5607192",
+     "url": "5607192",
+     "title": "Energidrik m. lime/citron øko.",
+     "description": "0,34 l / ex. pant / Bedst før: 11-11-2026",
+     "price": 1195,
+     "priceOriginal": 1495,
+     "priceDiscount": 300,
+     "pricePerUnit": {
+      "value": 3515,
+      "unitType": "Volume"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 0,
+     "labelHighlighted": null,
+     "certificates": [
+      {
+       "type": "dkOrganic",
+       "text": "Øko (dansk)"
+      },
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      },
+      {
+       "type": "euOrganic",
+       "text": "Øko (europæisk)"
+      },
+      {
+       "type": "refrigerated",
+       "text": "Køl"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Undgå Madspild",
+       "accessibilityText": "Undgå Madspild",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "3,-",
+      "secondaryText": "Spar",
+      "accessibilityText": "Spar 3 kroner"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Ltr.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5607192.webp",
+      "accessibilityText": "Billede af Energidrik m. lime/citron øko."
+     }
+    },
+    {
+     "id": "5607191",
+     "url": "5607191",
+     "title": "Energidrik m. passion øko.",
+     "description": "0,34 l / ex. pant / Bedst før: 11-11-2026",
+     "price": 1195,
+     "priceOriginal": 1495,
+     "priceDiscount": 300,
+     "pricePerUnit": {
+      "value": 3515,
+      "unitType": "Volume"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 0,
+     "labelHighlighted": null,
+     "certificates": [
+      {
+       "type": "dkOrganic",
+       "text": "Øko (dansk)"
+      },
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      },
+      {
+       "type": "euOrganic",
+       "text": "Øko (europæisk)"
+      },
+      {
+       "type": "refrigerated",
+       "text": "Køl"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "Undgå Madspild",
+       "accessibilityText": "Undgå Madspild",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "3,-",
+      "secondaryText": "Spar",
+      "accessibilityText": "Spar 3 kroner"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Ltr.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5607191.webp",
+      "accessibilityText": "Billede af Energidrik m. passion øko."
+     }
+    }
+   ],
+   "layout": "Showall",
+   "header": {
+    "title": "Undgå madspild",
+    "subtitle": null,
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/riegccg0/undgaa-madspild.png?mode=crop&anchor=center&width=64&height=64",
+     "accessibilityText": "Undgå madspild"
+    },
+    "button": null
+   }
+  },
+  {
+   "contentType": "ProductList",
+   "anchorId": "10-49c65160-bf50-435b-97cf-097ebb4b70fc",
+   "products": [
+    {
+     "id": "5066321",
+     "url": "5066321",
+     "title": "Æbler Kanzi",
+     "description": "8 stk. / ca. 1000g",
+     "price": 2000,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 250,
+      "unitType": "Pieces"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": null,
+     "labelHighlighted": null,
+     "certificates": [],
+     "campaignLines": [],
+     "campaignBadge": {
+      "primaryText": "God pris",
+      "secondaryText": null,
+      "accessibilityText": "God pris"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Stk.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5066321.webp",
+      "accessibilityText": "Billede af Æbler Kanzi"
+     }
+    },
+    {
+     "id": "5024698",
+     "url": "5024698",
+     "title": "Bergamotte citron øko.",
+     "description": "1 stk.",
+     "price": 1000,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 1000,
+      "unitType": "Pieces"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": null,
+     "labelHighlighted": {
+      "type": "Premium",
+      "url": "/dagligvarer/nye-varer-inspiration/premium"
+     },
+     "certificates": [
+      {
+       "type": "euOrganic",
+       "text": "Øko (europæisk)"
+      }
+     ],
+     "campaignLines": [
+      {
+       "text": "2 stk. 15,-",
+       "accessibilityText": "2 styk 15 kroner",
+       "url": null,
+       "campaignType": null
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "5,-",
+      "secondaryText": "Spar",
+      "accessibilityText": "Spar 5 kroner"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Stk.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5024698.webp",
+      "accessibilityText": "Billede af Bergamotte citron øko."
+     }
+    }
+   ],
+   "layout": "Showall",
+   "header": {
+    "title": "Frugt og grønt",
+    "subtitle": null,
+    "image": null,
+    "button": null
+   }
+  }
+ ],
+ "topBanner": {
+  "contentType": "AdformBanner",
+  "tagId": "2266511",
+  "banners": [
+   {
+    "imgType": 3,
+    "width": 1600,
+    "height": 300
+   },
+   {
+    "imgType": 1,
+    "width": 440,
+    "height": 137
+   }
+  ],
+  "page": "/tilbud",
+  "path": "/tilbud"
+ },
+ "breadcrumbs": [
+  {
+   "title": "Tilbud",
+   "url": "/tilbud"
+  }
+ ],
+ "navigationItems": [
+  {
+   "title": "Skarp pris",
+   "anchorId": "2-88b4e263-59f7-44ee-96b9-290fe463646b",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/042px1js/skarppris.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Skarp Pris"
+   }
+  },
+  {
+   "title": "Priskup",
+   "anchorId": "4-3779700e-3897-4ca5-8e37-7510942c2267",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/luzg50su/priskup.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Priskup"
+   }
+  },
+  {
+   "title": "Gratis",
+   "anchorId": "6-495d0786-0cd1-428f-8e71-910e2b8c31c9",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/cuudx4w0/graftis-gave.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Gratis gave"
+   }
+  },
+  {
+   "title": "Dagstilbud",
+   "anchorId": "7-f1da6c7c-b068-44c1-b970-3aa57809e965",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/gwroeuxd/dagstilbud.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Dagstilbud"
+   }
+  },
+  {
+   "title": "Undgå madspild",
+   "anchorId": "8-c71e5a7d-ac48-452e-a34f-8dda66e4b73f",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/riegccg0/undgaa-madspild.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Undgå madspild"
+   }
+  },
+  {
+   "title": "Frugt og grønt",
+   "anchorId": "10-49c65160-bf50-435b-97cf-097ebb4b70fc",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/vd3lb3yg/frugt-og-groent.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Frugt og grønt"
+   }
+  },
+  {
+   "title": "Kød",
+   "anchorId": "12-fd228920-2cb1-415e-811b-bc0cb58814c7",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/gbii4ffm/koed.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Kød"
+   }
+  },
+  {
+   "title": "Fisk og skaldyr",
+   "anchorId": "14-a72be593-c62c-436c-b244-3e7449279c08",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/rtxl3fjn/fisk-og-skaldyr.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Fisk og skaldyr"
+   }
+  },
+  {
+   "title": "Mejeri og æg",
+   "anchorId": "16-7bc1c888-2abb-49ea-a57d-64bccff83933",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/reyjoedp/mejeri-og-aeg.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Mejeri og æg"
+   }
+  },
+  {
+   "title": "Pålæg",
+   "anchorId": "17-d8caafc2-e482-4e86-b3f5-8dba7fe018c3",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/nbqdqzhp/paalaeg.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Pålæg"
+   }
+  },
+  {
+   "title": "Færdig mad",
+   "anchorId": "18-bfb562c2-5472-475b-a46c-05f070d5d66e",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/pcfjlpuj/faerdig-mad.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Færdig mad"
+   }
+  },
+  {
+   "title": "Plantebaseret",
+   "anchorId": "19-cae01c44-dbcb-4bc3-9502-ef0851bd0474",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/v40hhs5e/plantebaseret.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Plantebaseret"
+   }
+  },
+  {
+   "title": "Drikkevarer",
+   "anchorId": "20-2bdd7c29-fcbe-48cd-a08f-94d871e84ecb",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/4vsltanp/drikkevarer.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Drikkevarer"
+   }
+  },
+  {
+   "title": "Vin og spiritus",
+   "anchorId": "21-1af0ae15-e97d-404b-ab97-a947b861693b",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/rgggx0vh/vin.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Vin"
+   }
+  },
+  {
+   "title": "Ris, pasta og konserves",
+   "anchorId": "22-2dbd30ec-84f9-4898-9dea-e638c18cddf3",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/1qpgch03/ris-pasta-og-konserves.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Konserves3"
+   }
+  },
+  {
+   "title": "Brød, kiks og kager",
+   "anchorId": "23-c310af43-cdb8-4c90-b884-011a5b1e5446",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/ui3bcukg/broed-kiks-kager.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Brød"
+   }
+  },
+  {
+   "title": "Morgenmad og müsli",
+   "anchorId": "25-e8ebf36a-8731-4d01-aca2-781588e9bc3f",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/zzjjii4o/morgenmad-musli.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Morgenmad og musli"
+   }
+  },
+  {
+   "title": "Frost",
+   "anchorId": "26-d925f4e8-440a-49e4-ad3a-058479c43b21",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/crehof4z/frost.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Frost"
+   }
+  },
+  {
+   "title": "Chips, slik og snacks",
+   "anchorId": "27-4f06030f-3c4b-4962-acba-92af0ef726b0",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/bspl420a/chips-slik-snacks.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Chips"
+   }
+  },
+  {
+   "title": "Husholdning",
+   "anchorId": "28-8ed6fe9f-38c1-44b5-b3f7-d9e70ff518d5",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/31ylz0qd/husholdning.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Husholdning"
+   }
+  },
+  {
+   "title": "Pleje",
+   "anchorId": "29-70b10032-e6c4-4225-847c-663ab453d938",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/sh4bhg5q/pleje.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Pleje"
+   }
+  },
+  {
+   "title": "Baby, børn og legetøj",
+   "anchorId": "30-3bd78ae0-dafc-4776-a705-4ec2831224a4",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/35od3gdk/baby-boern-legetoej.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Bleer"
+   }
+  },
+  {
+   "title": "Dyremad og tilbehør",
+   "anchorId": "31-d336384d-2571-4ff5-b44c-b36ea4728bf4",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/du3lgenn/dyremad.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Dyremad"
+   }
+  },
+  {
+   "title": "Blomster og planter",
+   "anchorId": "32-3b37d6a6-bf8b-4fa2-963f-39720ce82bb8",
+   "image": {
+    "source": "https://media.umbraco.io/nemlig3/yj4nhldz/blomster-planter.png?mode=crop&anchor=center&width=64&height=64",
+    "accessibilityText": "Blomster"
+   }
+  }
+ ]
+}

@@ -1,5 +1,5 @@
 {
- "command": "uv run --frozen python -m scripts.export_golden",
+ "command": "uv run --frozen --project upstream python -m scripts.export_golden",
  "counts": {
   "files": 321,
   "match": {
@@ -78,9 +78,9 @@
   "nemlig/search_gift.json": "c523c0ca6e71caa1f3d0870f8a6162ed958451405f6fc3344fe00eb8389e5a87",
   "nemlig/search_kyllingebryst.json": "0dc4f16944b52e924b13e1664bf913c2cb6f0e567b1e438dd2791c6584f4b65e"
  },
- "git_head_at_export": "3c4f0c65eac5049a019f88070fa850b3e0fde37c",
+ "git_head_at_export": "8eb9f8b4810517ca7a0d7d7b901c5190606df07c",
  "golden_files": {
-  "README.md": "dc5646630ade690adb1f8b8e024f62862ca7548929e946f9d2f6ec7b7ad79939",
+  "README.md": "f2bff467dee3610675c0fe381b806d5c508a5b6d7ce02e8907c65a99922a011e",
   "compare/best_match_bilkatogo.json": "696cab2feb062e53a23cdbe10dd8dcfe2da831c67fc6f37790b5d975ef2488b1",
   "compare/best_match_nemlig.json": "633df2e77a6a33852ff693ed5d4aed0a5b2466e163ef77bb707cec3994d836ac",
   "compare/best_match_synthetic.json": "7e6114230dcc03f492f4b5a5ce1a9460166f69b7c1765ec65fd2c5afeb5b46ce",
@@ -96,7 +96,7 @@
   "match/parse.json": "6df9e76ac6e9cfdad0bde2eb9d580ddd1e60d858fe01578c8d48c02ec33d5c4e",
   "privacy/keys.json": "8955de2f46458485a0343ffc8a716c97c6e46d39fff1cb2a8e4b2e07ca053853",
   "privacy/money.json": "1f654f87e1dc2affa593aa92a4b395854f46e5e7bf2ac83b5cc547aa484a0009",
-  "privacy/scrub.json": "9253238f84cf1deecc2644696c1526af26dd48f49f91b01d21d514f73d11cdec",
+  "privacy/scrub.json": "837f0168902eed582d04772704084070c9bff0b0b710bcd30f1f89d496d42406",
   "privacy/scrub_text.json": "1363c1429405f0e1639cd59c5f6dbfe93b4d98d9da9e79f2d5d14cea7e012dfb",
   "recipecart/plan.json": "0e9c3a4b9db38f1ed917a776fcc4102d56a1ed2b83ecb882cfd1d3a7924b2713",
   "stores/bilkatogo/cart_400.json": "0935a9b2d1c4b45de1b923dc1aa126b3ccaa774719c749931ffb88e68f4a425a",
@@ -414,7 +414,7 @@
  },
  "pinned_clock": "2026-11-02T12:00:00+01:00",
  "python": "3.14.7",
- "python_commit": "a9f9837167a38e8714c9ac23de52627fecdcc654",
+ "python_commit": "8a3f52a64cec127809fa241b493d8a5d996e605a",
  "python_files_changed_since_commit": false,
  "python_sources": {
   "handle_mcp/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",

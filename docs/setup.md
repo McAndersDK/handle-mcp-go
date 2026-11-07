@@ -1,15 +1,34 @@
 # Setup
 
-Works on macOS, Linux and Windows. Needs [uv](https://docs.astral.sh/uv/getting-started/installation/).
+Works on macOS, Linux and Windows, on x64 or ARM64. No Python or `uv` needed.
+
+**0. Install.** Either the prebuilt binary, or Go:
+
+- Prebuilt: download the archive for your system from [the v1.0.0 release](https://github.com/McAndersDK/handle-mcp-go/releases/tag/v1.0.0), unpack `handle-mcp` (`handle-mcp.exe` on Windows), and put it somewhere on PATH or remember its absolute path.
+- With Go 1.27.3 or newer:
+
+```sh
+go install github.com/McAndersDK/handle-mcp-go/cmd/handle-mcp@v1.0.0
+```
+
+The binary goes to your Go bin folder (`go env GOBIN`, or `$(go env GOPATH)/bin` when GOBIN is not set).
+
+The binaries are not signed. macOS Gatekeeper may block the first run: allow it under System Settings, Privacy & Security, Open Anyway, or run `xattr -d com.apple.quarantine handle-mcp`. Windows SmartScreen may warn: choose "More info", then "Run anyway". `go install` avoids both.
+
+Below, `handle-mcp` means the binary. Use its absolute path if it is not on PATH.
 
 **1. Logins.** Save each store's login in your OS keychain (macOS Keychain, Windows Credential Locker or Linux Secret Service). It asks for email and password, logs in, and saves only the session the store gives back. The password is never saved ([ADR 0003](adr/0003-save-the-session-not-the-password.md)). When the session expires (nemlig: about once a year), the tool asks you to log in again:
 
 ```sh
-uvx --from git+https://github.com/NJohansen/handle-mcp@v1.2.1 handle-mcp login nemlig
-uvx --from git+https://github.com/NJohansen/handle-mcp@v1.2.1 handle-mcp login bilkatogo
+handle-mcp login nemlig
+handle-mcp login bilkatogo
 ```
 
-`handle-mcp logout <store>` removes it again. From a clone, use `uv run handle-mcp login nemlig`.
+The password prompt needs a real terminal. On Windows, use PowerShell, not Git Bash.
+
+`handle-mcp logout <store>` removes it again. From a clone, use `go run ./cmd/handle-mcp login nemlig`.
+
+Logins saved by the old Python version are not read, so log in again. Its Windows keychain entries can be removed with `cmdkey /delete:handle-mcp` or `cmdkey /delete:<store>@handle-mcp`. Env vars and the config file still work.
 
 Other ways, checked in this order:
 1. Env vars `HANDLE_<STORE>_EMAIL` and `HANDLE_<STORE>_PASSWORD` (e.g. `HANDLE_NEMLIG_EMAIL`).
@@ -20,32 +39,35 @@ Other ways, checked in this order:
 
 ```sh
 HANDLE_NEMLIG_EMAIL=you@example.com HANDLE_NEMLIG_PASSWORD='...' \
-  uvx --from git+https://github.com/NJohansen/handle-mcp@v1.2.1 handle-mcp login nemlig --from-env
+  handle-mcp login nemlig --from-env
 ```
 
 The env vars are only needed for that one command; the MCP server reads the file afterwards. Remove them again: the file has no password. `handle-mcp logout <store>` removes the file. Nothing is written when the login fails.
 
 Without any login, `list_offers` still works for nemlig; `search_products` needs a login (nemlig's search answers 500 without one). BilkaToGo needs a login for everything: the store, prices and offers follow your delivery address.
 
-**2. BilkaToGo:** choose home delivery (not pickup) once on bilkatogo.dk. The server reads the store and fees from your cart.
+**2. BilkaToGo:** choose home delivery or pickup once on bilkatogo.dk. Without an address the server says so. The server reads the store, the fees and the mode (`delivery_mode`) from your cart. The time and the pickup store are yours to choose on the website.
 
 **3. Add it to your MCP client.** Claude Code:
 
 ```sh
-claude mcp add handle -- uvx --from git+https://github.com/NJohansen/handle-mcp@v1.2.1 handle-mcp
+claude mcp add handle -- /absolute/path/to/handle-mcp
 ```
 
-Claude Desktop (`claude_desktop_config.json`):
+On Windows: `claude mcp add handle -- C:\path\to\handle-mcp.exe`
+
+Claude Desktop (`claude_desktop_config.json`). Desktop may not see your PATH, so use the absolute path, with no args:
 
 ```json
 {
   "mcpServers": {
     "handle": {
-      "command": "uvx",
-      "args": ["--from", "git+https://github.com/NJohansen/handle-mcp@v1.2.1", "handle-mcp"]
+      "command": "/absolute/path/to/handle-mcp"
     }
   }
 }
 ```
+
+On Windows, escape the backslashes in JSON: `"command": "C:\\path\\to\\handle-mcp.exe"`.
 
 Then ask: *"Compare this week's list in nemlig and Bilka, and fill the cheapest cart."* Open the store's website to check the cart, choose a time and pay.

@@ -1,0 +1,44 @@
+{
+  "total": 2,
+  "orders": [
+    {
+      "orderId": "900000000002",
+      "status": "Bestilt",
+      "delivered": false,
+      "deliveryDate": "2026-11-03",
+      "deliveryInterval": {"start": "16:00:00", "end": "18:00:00"},
+      "ordered": {"date": "2026-11-01", "time": "20:15:00", "channel": "Web"},
+      "orderedPrice": 45600,
+      "packedPrice": 0,
+      "pickupzone": {
+        "location": "Bilka Eksempelby",
+        "address": "Testvej 1",
+        "zipCode": "9999",
+        "city": "Eksempelby",
+        "home_delivery": false
+      },
+      "content": "Æbler, Havregryn, Letmælk",
+      "name": "Test Kunde",
+      "muah": 1,
+      "uncollected_fee": 0
+    },
+    {
+      "orderId": "900000000001",
+      "status": "Faktureret",
+      "delivered": true,
+      "deliveryDate": "2026-10-27",
+      "deliveryInterval": {"start": "12:00:00", "end": "14:00:00"},
+      "ordered": {"date": "2026-10-26", "time": "18:30:00", "channel": "Web"},
+      "orderedPrice": 51200,
+      "packedPrice": 50900,
+      "pickupzone": {
+        "location": "Bilka Eksempelby",
+        "address": "Testvej 1",
+        "zipCode": "9999",
+        "city": "Eksempelby",
+        "home_delivery": false
+      },
+      "content": "Æbler, Rugbrød"
+    }
+  ]
+}
