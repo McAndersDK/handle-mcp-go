@@ -118,9 +118,19 @@ type roundTrip func(*http.Request) (*http.Response, error)
 
 func (f roundTrip) RoundTrip(r *http.Request) (*http.Response, error) { return f(r) }
 
+// skipIfGateClosed skips the test when the first REMA call hit a closed gate (no chosen store has
+// Køb & Hent yet, or none is left). Any other error is left for the caller to fail on.
+func skipIfGateClosed(t *testing.T, err error) {
+	t.Helper()
+	if err != nil && gateClosed(err) {
+		t.Skipf("%v (add a Køb & Hent store at handle-mcp login rema1000 to test this)", err)
+	}
+}
+
 func TestLiveSearchAndOffers(t *testing.T) {
 	s := liveStore(t)
 	products, err := s.Search(context.Background(), "minimælk", 5)
+	skipIfGateClosed(t, err)
 	if err != nil || len(products) == 0 {
 		t.Fatalf("search: %v (%d products)", err, len(products))
 	}
@@ -144,6 +154,7 @@ func TestLiveCartAndDelivery(t *testing.T) {
 	s := liveStore(t)
 	ctx := context.Background()
 	cart, err := s.GetCart(ctx)
+	skipIfGateClosed(t, err)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -172,6 +183,7 @@ func TestLiveRecipes(t *testing.T) {
 	s := liveStore(t)
 	ctx := context.Background()
 	found, err := s.Recipes(ctx, "kylling", 3)
+	skipIfGateClosed(t, err)
 	if err != nil || len(found) == 0 {
 		t.Fatalf("recipes: %v (%d)", err, len(found))
 	}
@@ -400,6 +412,7 @@ func TestLiveWrite(t *testing.T) {
 	guard := &onlyToday{tb: t, inner: http.DefaultTransport, name: probe.listName()}
 	s := New(&http.Client{Transport: guard})
 	if _, err := s.ready(ctx); err != nil {
+		skipIfGateClosed(t, err)
 		t.Fatal(err)
 	}
 	today := s.listName()

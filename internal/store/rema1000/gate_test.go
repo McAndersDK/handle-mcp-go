@@ -5,6 +5,7 @@ package rema1000
 
 import (
 	"context"
+	"errors"
 	"net/http"
 	"strings"
 	"testing"
@@ -55,6 +56,31 @@ func TestNoStoreChosen(t *testing.T) {
 	_, s, _ := gateStore(t, "")
 	if _, err := s.GetCart(context.Background()); err == nil || err.Error() != msgNoStore {
 		t.Fatalf("got %v", err)
+	}
+}
+
+// gateClosed must know the three closed-gate errors, as the gate returns them, and no other error,
+// not even one with the same text: the live tests skip on it.
+func TestGateClosedRecognisesOnlyTheGateErrors(t *testing.T) {
+	_, none := judge([]int64{1}, []apiStore{{ID: 1}})
+	_, gone := judge([]int64{2}, nil)
+	_, s, _ := gateStore(t, "")
+	_, noStore := s.ready(context.Background())
+	for _, err := range []error{none, gone, noStore} {
+		if !gateClosed(err) {
+			t.Errorf("not recognised: %v", err)
+		}
+	}
+	for _, err := range []error{
+		nil,
+		errors.New("ingen"),
+		store.Errorf("%s", msgNoStore), // the same text, but not the gate's value
+		store.ErrNotImplemented,
+		store.Errorf("REMA 1000 afviste søgningen (500)."),
+	} {
+		if gateClosed(err) {
+			t.Errorf("recognised but not a gate error: %v", err)
+		}
 	}
 }
 

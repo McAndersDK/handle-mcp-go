@@ -2,6 +2,7 @@ package rema1000
 
 import (
 	"context"
+	"errors"
 	"os"
 	"strconv"
 	"strings"
@@ -27,6 +28,20 @@ const (
 	savedKey      = "store_ids"
 	oldSavedKey   = "store_id" // sessions saved before the list: one id
 )
+
+// The gate's closed-gate errors. They are returned as these values, so callers (the live tests)
+// recognise them with gateClosed and not by their text.
+var (
+	errNoStore    = &store.StoreError{Msg: msgNoStore}
+	errNoneActive = &store.StoreError{Msg: msgNoneActive}
+	errGone       = &store.StoreError{Msg: msgGone}
+)
+
+// gateClosed says whether err is one of the three closed-gate errors: no store chosen, none of
+// the chosen stores has Køb & Hent, or the chosen stores no longer exist.
+func gateClosed(err error) bool {
+	return errors.Is(err, errNoStore) || errors.Is(err, errNoneActive) || errors.Is(err, errGone)
+}
 
 // pickupStore is the store REMA works with right now.
 type pickupStore struct {
@@ -125,9 +140,9 @@ func judge(ids []int64, all []apiStore) (*pickupStore, error) {
 		}
 	}
 	if earlier {
-		return nil, store.Errorf("%s", msgNoneActive)
+		return nil, errNoneActive
 	}
-	return nil, store.Errorf("%s", msgGone)
+	return nil, errGone
 }
 
 // ready is the first thing every method does. It logs in if needed and gives the pickup store.
@@ -142,7 +157,7 @@ func (s *Store) ready(ctx context.Context) (*pickupStore, error) {
 	}
 	ids := s.storeIDs()
 	if len(ids) == 0 {
-		return nil, store.Errorf("%s", msgNoStore)
+		return nil, errNoStore
 	}
 	key, now := idsKey(ids), s.now()
 	s.mu.Lock()
