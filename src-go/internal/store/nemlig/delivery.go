@@ -29,12 +29,32 @@ func (s *Store) DeliveryInfo(ctx context.Context) (_ model.DeliveryInfo, err err
 		ChosenEnd:    timeVal(slot["End"]),
 		EditDeadline: timeVal(spot["EditDeadline"]),
 	}
+	// nemlig keeps the slot of the last order in the basket. A slot that has ended is no chosen
+	// slot: compare would price offers on a past day (docs/adr/0005). Unreadable is kept.
+	if s.slotEnded(info.ChosenEnd) {
+		info.ChosenStart, info.ChosenEnd, info.EditDeadline = nil, nil, nil
+		b = obj{}
+	}
 	if chosen := b["FormattedDeliveryTime"]; truthy(chosen) {
 		info.Note = strPtr(fmt.Sprintf("Valgt tid i kurven: %s. Gebyret afhænger af tiden (ca. 19-51 kr.).", pyStr(chosen)))
 	} else {
 		info.Note = strPtr("Ingen tid valgt. Gebyret afhænger af tiden (ca. 19-51 kr.). Vælg på nemlig.com.")
 	}
 	return info, nil
+}
+
+// slotEnded is true when the slot's end is before now. A time with a zone is an instant; one
+// without is the Danish wall clock. No end (unreadable or missing) is not ended.
+func (s *Store) slotEnded(end *model.DateTime) bool {
+	if end == nil {
+		return false
+	}
+	if end.Aware() {
+		return end.Time().Before(s.now())
+	}
+	n := s.now().In(dk)
+	wall := time.Date(n.Year(), n.Month(), n.Day(), n.Hour(), n.Minute(), n.Second(), n.Nanosecond(), time.UTC)
+	return end.Time().Before(wall)
 }
 
 // DeliverySlots is the time picker's list (GET), logged in so prices are for our zone. Never
