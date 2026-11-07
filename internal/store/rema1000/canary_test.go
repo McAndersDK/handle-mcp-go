@@ -93,7 +93,7 @@ func TestCanaryNothingLeaksThroughTheReadMethods(t *testing.T) {
 	}
 	// the canary is really in what the fake sends
 	choices := map[string]bool{}
-	_, list, err := s.Choices(ctx)
+	_, list, err := s.Choices(ctx, "")
 	if err != nil {
 		t.Fatal(err)
 	}

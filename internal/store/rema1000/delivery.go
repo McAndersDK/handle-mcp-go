@@ -112,7 +112,7 @@ func (s *Store) DeliveryInfo(ctx context.Context) (model.DeliveryInfo, error) {
 		return model.DeliveryInfo{}, err
 	}
 	info := model.DeliveryInfo{Store: name, DeliveryMode: strPtr(model.DeliveryPickup),
-		PickupStore: strPtr(pickup.Name), Note: strPtr(infoNote)}
+		PickupStore: strPtr(pickup.Name), Note: strPtr(noteFor(pickup))}
 	for _, sl := range all {
 		if sl.Available {
 			d := sl.Start.Date()
@@ -144,4 +144,13 @@ func (s *Store) Orders(context.Context, int) ([]model.Order, error) {
 // Order: see Orders.
 func (s *Store) Order(context.Context, string) (model.Order, error) {
 	return model.Order{}, store.ErrNotImplemented
+}
+
+// noteFor is infoNote, with a line when a store the human ranked higher has no Køb & Hent yet.
+// Only the active store's name is in it.
+func noteFor(pickup *pickupStore) string {
+	if !pickup.Earlier {
+		return infoNote
+	}
+	return infoNote + " Din foretrukne butik har ikke Køb & Hent endnu; bruger " + pickup.Name + "."
 }

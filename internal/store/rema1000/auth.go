@@ -80,7 +80,7 @@ func (s *Store) adopt(login store.Login) error {
 	s.jar.SetCookies(shopURL, cookiesOf(map[string]string{accessCookie: access, refreshCookie: refresh}))
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	s.savedStore = login.Session["store_id"]
+	s.savedStore = savedIDs(login.Session)
 	s.setCookiesLocked(access, refresh)
 	return nil
 }
@@ -203,7 +203,7 @@ func (s *Store) sessionLocked() map[string]string {
 		out[k] = v
 	}
 	if s.savedStore != "" {
-		out["store_id"] = s.savedStore
+		out[savedKey] = s.savedStore
 	}
 	return out
 }

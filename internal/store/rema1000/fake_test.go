@@ -95,12 +95,13 @@ type fake struct {
 	lists             []*fakeList
 	nextID            int
 	storeActive       bool
-	createPrimary     bool   // a list created now is primary
-	refusePOST        string // a product id that POST items answers 422 for
-	access            string // the access token the API accepts
-	refreshCookie     string // the refresh cookie the site holds; "" = refresh refuses
-	nextAccess        string // what a refresh hands out
-	rotate            string // a new refresh cookie a refresh sets
+	others            []fakeStore // more stores in the list, after the main one (store_test.go)
+	createPrimary     bool        // a list created now is primary
+	refusePOST        string      // a product id that POST items answers 422 for
+	access            string      // the access token the API accepts
+	refreshCookie     string      // the refresh cookie the site holds; "" = refresh refuses
+	nextAccess        string      // what a refresh hands out
+	rotate            string      // a new refresh cookie a refresh sets
 	loginOK           bool
 	queueOnLogin      bool
 	leak              bool              // add personal data to every JSON object (canary_test.go)
@@ -201,9 +202,10 @@ func (f *fake) RoundTrip(req *http.Request) (*http.Response, error) {
 }
 
 var (
-	listPath = regexp.MustCompile(`^/api/v2/shoppinglists/(\d+)$`)
-	itemsRe  = regexp.MustCompile(`^/api/v2/shoppinglists/(\d+)/items$`)
-	itemRe   = regexp.MustCompile(`^/api/v2/shoppinglists/(\d+)/items/(\d+)$`)
+	timeSlotsRe = regexp.MustCompile(`^/api/v3/stores/\d+/time-slots$`)
+	listPath    = regexp.MustCompile(`^/api/v2/shoppinglists/(\d+)$`)
+	itemsRe     = regexp.MustCompile(`^/api/v2/shoppinglists/(\d+)/items$`)
+	itemRe      = regexp.MustCompile(`^/api/v2/shoppinglists/(\d+)/items/(\d+)$`)
 )
 
 func (f *fake) route(req *http.Request, body []byte) reply {
@@ -274,7 +276,7 @@ func (f *fake) route(req *http.Request, body []byte) reply {
 	switch {
 	case path == "/api/v3/stores":
 		return reply{body: f.stores()}
-	case path == fmt.Sprintf("/api/v3/stores/%d/time-slots", storeID):
+	case timeSlotsRe.MatchString(path):
 		return reply{body: fixtureJSON(f.tb, "time_slots.json")}
 	case path == fmt.Sprintf("/api/v3/users/%d/shopping-lists", userID):
 		var data []obj
@@ -390,7 +392,15 @@ func (f *fake) stores() obj {
 	s := data[0].(obj)
 	s["id"], s["is_click_and_collect_active"] = storeID, f.storeActive
 	s["phone"] = "+45 98 76 54 32"
-	return obj{"data": []any{s}, "meta": obj{"pagination": obj{"last_page": 1}}}
+	list := []any{s}
+	for _, o := range f.others {
+		x := fixtureJSON(f.tb, "stores.json")["data"].([]any)[0].(obj)
+		x["id"], x["name"], x["city"], x["postal_code"] = o.ID, o.Name, o.City, o.Post
+		x["is_click_and_collect_active"] = o.Active
+		x["phone"] = "+45 98 76 54 32"
+		list = append(list, x)
+	}
+	return obj{"data": list, "meta": obj{"pagination": obj{"last_page": 1}}}
 }
 
 func (f *fake) entities(q url.Values) reply {
@@ -458,4 +468,11 @@ func newStore(f *fake) *Store {
 	return New(&http.Client{Transport: f},
 		WithClock(func() time.Time { return testNow }),
 		WithSleep(func(context.Context, time.Duration) error { return nil }))
+}
+
+// fakeStore is one more store in the fake's list.
+type fakeStore struct {
+	ID               int
+	Name, City, Post string
+	Active           bool
 }

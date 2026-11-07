@@ -81,8 +81,8 @@ type Store struct {
 	tokenExp   time.Time
 	userID     int64
 	cookies    map[string]string // access_token and refresh_token, raw, as saved in the session
-	savedStore string            // the pickup store id in the saved session
-	gate       *pickupStore      // set once the store has been checked
+	savedStore string            // the chosen store ids in the saved session, comma-separated
+	gate       *gateState        // the last store check (gate.go)
 }
 
 var (
@@ -139,7 +139,7 @@ func (s *Store) Session() map[string]string {
 		out[k] = v
 	}
 	if s.savedStore != "" {
-		out["store_id"] = s.savedStore
+		out[savedKey] = s.savedStore
 	}
 	return out
 }

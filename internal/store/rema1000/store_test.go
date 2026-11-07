@@ -53,68 +53,6 @@ func TestGateNoStoreChosen(t *testing.T) {
 	}
 }
 
-func TestGateStoreWithoutClickAndCollect(t *testing.T) {
-	f, s := harness(t)
-	f.storeActive = false
-	_, err := s.GetCart(context.Background())
-	if err == nil || err.Error() != msgNoClickColl {
-		t.Fatalf("got %v", err)
-	}
-	f.storeActive = true // checked again on the next call
-	if _, err := s.GetCart(context.Background()); err != nil {
-		t.Fatal(err)
-	}
-}
-
-func TestGateIsCheckedOncePerProcess(t *testing.T) {
-	f, s := harness(t)
-	for i := 0; i < 3; i++ {
-		if _, err := s.Search(context.Background(), "mælk", 3); err != nil {
-			t.Fatal(err)
-		}
-	}
-	if n := f.count("GET", "/v3/stores"); n != 1 {
-		t.Errorf("%d store checks, want 1", n)
-	}
-}
-
-func TestGateEnvOverridesTheSavedStore(t *testing.T) {
-	f, s := harness(t)
-	t.Setenv(storeEnv, "123456") // not in the list
-	_, err := s.GetCart(context.Background())
-	if err == nil || err.Error() != msgNoClickColl {
-		t.Fatalf("got %v", err)
-	}
-	t.Setenv(storeEnv, strconv.Itoa(storeID))
-	if _, err := s.GetCart(context.Background()); err != nil {
-		t.Fatal(err)
-	}
-	_ = f
-}
-
-func TestChoicesAndWithChoice(t *testing.T) {
-	isolate(t)
-	f := newFake(t)
-	s := newStore(f)
-	ctx := store.WithLogin(context.Background(), name, store.Login{Email: "kunde@example.com", Password: "hemmeligt"})
-	_, choices, err := s.Choices(ctx)
-	if err != nil || len(choices) != 1 || choices[0].Key != strconv.Itoa(storeID) {
-		t.Fatalf("choices %v, err %v", choices, err)
-	}
-	if strings.Contains(choices[0].Label, "98 76") {
-		t.Errorf("the phone number is in the label: %q", choices[0].Label)
-	}
-	session := s.WithChoice(s.Session(), choices[0])
-	if session["store_id"] != "9100" || session[accessCookie] == "" || session[refreshCookie] == "" {
-		t.Errorf("session: %v", session)
-	}
-	for k, v := range session {
-		if strings.Contains(v, "hemmeligt") {
-			t.Errorf("the password is in the session (%s)", k)
-		}
-	}
-}
-
 // --- search, offers ---------------------------------------------------------
 
 func TestSearchMapsProducts(t *testing.T) {

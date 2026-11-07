@@ -17,7 +17,7 @@ func TestPasswordLoginFollowsTheOAuthHopsAndKeepsTwoCookies(t *testing.T) {
 	isolate(t)
 	f := newFake(t)
 	s := newStore(f)
-	if _, _, err := s.Choices(passwordCtx()); err != nil {
+	if _, _, err := s.Choices(passwordCtx(), ""); err != nil {
 		t.Fatal(err)
 	}
 	session := s.Session()
@@ -50,7 +50,7 @@ func TestBadPasswordIsClear(t *testing.T) {
 	isolate(t)
 	f := newFake(t)
 	f.loginOK = false
-	_, _, err := newStore(f).Choices(passwordCtx())
+	_, _, err := newStore(f).Choices(passwordCtx(), "")
 	wantStoreError(t, err, "afviser login")
 }
 
@@ -58,7 +58,7 @@ func TestQueueIsReportedNotWorkedAround(t *testing.T) {
 	isolate(t)
 	f := newFake(t)
 	f.queueOnLogin = true
-	_, _, err := newStore(f).Choices(passwordCtx())
+	_, _, err := newStore(f).Choices(passwordCtx(), "")
 	wantStoreError(t, err, "kø eller et bot-tjek")
 	for _, r := range f.requests() {
 		if strings.Contains(r.Host, "queue-it") {
@@ -99,7 +99,7 @@ func TestEndedAccessTokenIsRenewedAndTheRotatedCookieSaved(t *testing.T) {
 		t.Errorf("refreshes: %d", f.count("POST", "/api/auth/refresh"))
 	}
 	saved := savedSession(t)
-	if saved[accessCookie] != f.nextAccess || saved[refreshCookie] != "refresh-2" || saved["store_id"] != "9100" {
+	if saved[accessCookie] != f.nextAccess || saved[refreshCookie] != "refresh-2" || saved[savedKey] != "9100" {
 		t.Errorf("saved session: %v", saved)
 	}
 	if f.count("POST", "/oauth2/login") != 0 {
