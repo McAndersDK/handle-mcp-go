@@ -30,12 +30,12 @@ var forbidden = []string{
 	`CancelOrder`,
 	`AddRecipeToBasket`, // nemlig: fills the cart without the human's yes
 	// REMA 1000 (docs/adr/0008): the only legal writes are to today's own shopping list.
-	`v3/cart`,                      // the cart, with store, time and coupon
-	`v3/jobs`,                      // payments
-	`vendor-baskets`,               // imports a vendor's basket into a list
-	`checkoutCallback`,             // the payment's way back
-	`primary\\?"\s*:\s*true`,       // makes a list the primary one; the adapter only ever sends false
-	`MethodDelete|"DELETE"\s*[,)]`, // deleting a list (the adapter removes lines with a PATCH)
+	`v3/cart`,          // the cart, with store, time and coupon
+	`v3/jobs`,          // payments
+	`vendor-baskets`,   // imports a vendor's basket into a list
+	`checkoutCallback`, // the payment's way back
+	`primary\\?"\s*:\s*true|\bPrimary\s*:\s*true`, // makes a list primary, in JSON or a Go literal; the adapter only ever sends false
+	`MethodDelete|(?-i:"DELETE")`,                 // deleting a list, in any form (the adapter removes lines with a PATCH)
 }
 
 // stdoutUses are ways to write to stdout. stdout is the JSON-RPC stream.
@@ -235,6 +235,12 @@ func TestRemaWordsCatchOnlyTheForbiddenCalls(t *testing.T) {
 		`const a = "{\"primary\":true}"`,
 		`var c = call{method: http.MethodDelete}`,
 		`var c = request{Method: "DELETE", URL: u}`,
+		`var c = call{Method: "DELETE"}`,
+		`var c = call{method: "DELETE"}`,
+		`var m = "DELETE"`,
+		`var l = newList{Primary: true}`,
+		`var l = newList{Primary:true}`,
+		`var l = newList{Name: n, Primary   :   true, Items: nil}`,
 	} {
 		if len(check(bad)) == 0 {
 			t.Errorf("not caught: %s", bad)
@@ -245,6 +251,8 @@ func TestRemaWordsCatchOnlyTheForbiddenCalls(t *testing.T) {
 		"type gone struct {\n\tDelete bool `json:\"delete\"`\n}",
 		`const a = "v2/shoppinglists/1"`,
 		`var c = request{Method: "PATCH", URL: u}`,
+		`var l = newList{Primary: false}`,
+		`var r = removeItem{ID: id, Delete: true}`,
 	} {
 		if hits := check(good); len(hits) != 0 {
 			t.Errorf("false positive for %s: %v", good, hits)
