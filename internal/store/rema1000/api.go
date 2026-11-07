@@ -3,7 +3,9 @@ package rema1000
 import (
 	"context"
 	"encoding/json"
+	"log/slog"
 	"net/url"
+	"regexp"
 	"strconv"
 
 	"github.com/McAndersDK/handle-mcp-go/internal/store"
@@ -33,6 +35,9 @@ type envelope[T any] struct {
 // api sends one request. A 401 renews the token once; a second one means the session is over.
 // A redirect or a 403 is a queue or a bot check: it is reported, never worked around. Other
 // statuses are returned for the caller to judge.
+// idsInPath blanks numbers in a logged path: user, list and store ids stay out of the log.
+var idsInPath = regexp.MustCompile(`\d+`)
+
 func (s *Store) api(ctx context.Context, c call) (*store.Response, error) {
 	var data []byte
 	if c.body != nil {
@@ -61,6 +66,8 @@ func (s *Store) api(ctx context.Context, c call) (*store.Response, error) {
 		}
 		resp, err := s.sender.Send(ctx, store.Request{Method: c.method, URL: u, Header: h, Body: data, NoRetry: c.once})
 		if err != nil {
+			// Method and path only, with ids blanked: no query, token or user id reaches the log.
+			slog.Warn("rema1000 call failed", "method", c.method, "path", idsInPath.ReplaceAllString(c.path, "{id}"), "auth", c.auth)
 			return nil, err
 		}
 		switch {
