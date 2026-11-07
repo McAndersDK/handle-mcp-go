@@ -58,6 +58,8 @@ func (s *Store) acquire(ctx context.Context, force bool, used string) (string, e
 		return s.fullLogin(ctx, login)
 	}
 	if hasRefresh {
+		// Why a renewal happens, never the token: a fresh token should not get here.
+		slog.Info("REMA 1000 renewing the session", "forced", force, "has_token", tok != "", "has_exp", !exp.IsZero(), "expired", !exp.IsZero() && !s.now().Add(tokenMargin).Before(exp))
 		next, err := s.renew(ctx, login)
 		if err == nil {
 			return next, nil
