@@ -248,3 +248,21 @@ func TestQtyDivMod(t *testing.T) {
 		t.Error("Min")
 	}
 }
+
+// REMA 1000 writes "HK." for "hakket" (Go-only, ADR 0005).
+func TestHkMeansHakket(t *testing.T) {
+	if got := words("HK. GRISEKØD 8-12%"); !reflect.DeepEqual(got, []string{"hakket", "grisekød", "8", "12"}) {
+		t.Errorf("words: %q", got)
+	}
+	if got := words("Hkl hk2 shk"); !reflect.DeepEqual(got, []string{"hkl", "hk2", "shk"}) {
+		t.Errorf("a word that contains hk must not change: %q", got)
+	}
+	if got := Score([]string{"hakket", "grisekød"}, product("HK. GRISEKØD 8-12%"), nil); got <= 0.5 {
+		t.Errorf("HK. GRISEKØD should match hakket grisekød, score %v", got)
+	}
+	// The blend rule needs a flavour marker ("m."), so REMA's comma form is not flagged as a blend.
+	// Pinned so a change is noticed.
+	if got := Mixed([]string{"hakket", "oksekød"}, product("HK. OKSEKØD, 35% GRØNT")); got != 0 {
+		t.Errorf("Mixed = %d, want 0 (no flavour marker)", got)
+	}
+}

@@ -221,13 +221,22 @@ func blendWords(text string) []string {
 	return out
 }
 
-// words is _words: re.findall(r"[a-zæøå0-9]+", text.lower()). ASCII digits only.
+// abbreviations maps a whole name word to its full form. Go-only (ADR 0005): REMA 1000
+// writes "HK." for "hakket". Only whole words change, never a word that contains them.
+var abbreviations = map[string]string{"hk": "hakket"}
+
+// words is _words: re.findall(r"[a-zæøå0-9]+", text.lower()), plus the abbreviations
+// table. ASCII digits only.
 func words(text string) []string {
 	var out []string
 	var cur []rune
 	flush := func() {
 		if len(cur) > 0 {
-			out = append(out, string(cur))
+			w := string(cur)
+			if full, ok := abbreviations[w]; ok {
+				w = full
+			}
+			out = append(out, w)
 			cur = cur[:0]
 		}
 	}
