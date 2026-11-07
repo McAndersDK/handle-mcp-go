@@ -1,0 +1,1680 @@
+{
+  "data": [
+    {
+      "id": "3phL0AHXwOx61hgSQhlrgj",
+      "type": "recipe",
+      "fields": {
+        "title": "Tortillas med falafler og avocadocreme",
+        "slug": "tortillas-med-falafler-og-avocadocreme",
+        "image": {
+          "id": "3njJqA47lSdDCsNr6438qV",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "Tortillas med falafler og avocadocreme.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/3njJqA47lSdDCsNr6438qV/ffb7c27221dcb261b0132d6491b4803b/Tortillas_med_falafler_og_avocadocreme.jpg",
+          "width": 1340,
+          "height": 1876
+        },
+        "customForm": {
+          "servings": {
+            "type": "person",
+            "amount": 4
+          },
+          "totalTime": 0,
+          "ingredientGroups": [
+            {
+              "id": "TfEJ20REXQbEpxN8R2qEA",
+              "name": "",
+              "ingredients": [
+                {
+                  "id": "UHrkQZFH4vLUOHWXqdQTX",
+                  "ingredient": "falafler",
+                  "unitOfContent": "g",
+                  "digitalProduct": {
+                    "id": 4085,
+                    "title": "FALAFEL",
+                    "description": null,
+                    "amount_of_content": 300,
+                    "unit_of_content": "g",
+                    "price": 25.5,
+                    "is_basic_ingredient": false,
+                    "created_at": "2024-06-11T13:53:53+00:00",
+                    "active_product": {
+                      "id": 43930,
+                      "name": "FALAFEL",
+                      "underline": "300 GR. / HÄLSANS KÖK, VEGANSK",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [],
+                      "description": null,
+                      "info": "",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/43930/1-small-869Dr8MoMa.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/43930/1-medium-869Dr8MoMa.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/43930/1-large-869Dr8MoMa.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 25,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2026-02-05T00:00:00+00:00",
+                          "ending_at": "2026-11-07T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "kg",
+                          "compare_unit_price": 83.33,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": "frozen_18_degrees_celsius",
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": null,
+                      "wine_labels": []
+                    },
+                    "amount": 2
+                  },
+                  "amountOfContent": 600,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "hmXNqOTf-oUAB6YnX46rY",
+                  "ingredient": "avocado",
+                  "unitOfContent": "stk",
+                  "digitalProduct": {
+                    "id": 2263,
+                    "title": "MODNE AVOCADO",
+                    "description": "Oprindelsen kan være forskellig fra dag til dag. Avocadoerne kommer fra et af følgende lande: Spanien, Sydafrika, Tanzania, Marokko, Peru, Kenya, Israel, Columbia, Mexico el. Chile. Oprindelsen af varen i den konkrete pakning, fremgår af mærkningen på pakken.",
+                    "amount_of_content": 1,
+                    "unit_of_content": "tray",
+                    "price": 16.5,
+                    "is_basic_ingredient": false,
+                    "created_at": "2024-06-11T13:53:08+00:00",
+                    "active_product": {
+                      "id": 305415,
+                      "name": "MODNE AVOCADO",
+                      "underline": "1 BAKKE / LAND/KL.: SE VAREN",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [],
+                      "description": "Oprindelsen kan være forskellig fra dag til dag. Avocadoerne kommer fra et af følgende lande: Spanien, Sydafrika, Tanzania, Marokko, Peru, Kenya, Israel, Columbia, Mexico el. Chile. Oprindelsen af varen i den konkrete pakning, fremgår af mærkningen på pakken.",
+                      "info": "Oprindelsesland: Se varen",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/305415/1-small-KpqRXWJRPL.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/305415/1-medium-KpqRXWJRPL.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/305415/1-large-KpqRXWJRPL.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 19,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2026-09-27T00:00:00+00:00",
+                          "ending_at": "2026-11-07T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "bakke",
+                          "compare_unit_price": 19,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": "ØØ",
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 2,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "aGGeffxJG0WhkVZxUrPM0",
+                  "ingredient": "fraiche 5%",
+                  "unitOfContent": "dl",
+                  "digitalProduct": {
+                    "id": 3836,
+                    "title": "FRAICHE 5%",
+                    "description": null,
+                    "amount_of_content": 500,
+                    "unit_of_content": "g",
+                    "price": 17.95,
+                    "is_basic_ingredient": false,
+                    "created_at": "2024-06-11T13:53:43+00:00",
+                    "active_product": {
+                      "id": 21934,
+                      "name": "CHEASY FRAICHE 5%",
+                      "underline": "250 GR.",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [
+                        {
+                          "id": 40,
+                          "name": "Nøglehul",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/40-64.webp"
+                        }
+                      ],
+                      "description": null,
+                      "info": "",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/21934/1-small-yLqGlwK9d4.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/21934/1-medium-yLqGlwK9d4.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/21934/1-large-yLqGlwK9d4.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 10.95,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2026-01-29T00:00:00+00:00",
+                          "ending_at": "2026-11-07T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "kg",
+                          "compare_unit_price": 43.8,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": "refrigerated_5_degrees_celsius",
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": false,
+                      "is_batch_item": false,
+                      "origin_country": null,
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 2.5,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "H8jd2tvpxfooODNdVpJ7z",
+                  "ingredient": "friske koriander",
+                  "unitOfContent": "potte",
+                  "digitalProduct": {
+                    "id": 2332,
+                    "title": "ØKO. KORIANDER",
+                    "description": null,
+                    "amount_of_content": 1,
+                    "unit_of_content": "pcs",
+                    "price": 15,
+                    "is_basic_ingredient": false,
+                    "created_at": "2024-06-11T13:53:09+00:00",
+                    "active_product": {
+                      "id": 306786,
+                      "name": "ØKO. KORIANDER",
+                      "underline": "1 STK. / DANMARK KL.1",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [
+                        {
+                          "id": 6,
+                          "name": "Økologi",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/6-64.webp"
+                        },
+                        {
+                          "id": 70,
+                          "name": "Dansk",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/70-64.webp"
+                        }
+                      ],
+                      "description": null,
+                      "info": "Oprindelsesland: Danmark",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/306786/1-small-A4PypY1n9L.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/306786/1-medium-A4PypY1n9L.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/306786/1-large-A4PypY1n9L.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 15,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2022-10-02T00:00:00+00:00",
+                          "ending_at": "2099-12-31T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "stk",
+                          "compare_unit_price": 15,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": "DK",
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 0.5,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "3Hypg9G-HgBREgHOTC9GJ",
+                  "ingredient": "spidskommen",
+                  "unitOfContent": "tsk",
+                  "digitalProduct": {
+                    "id": 4619,
+                    "title": "SPIDSKOMMEN",
+                    "description": null,
+                    "amount_of_content": 33,
+                    "unit_of_content": "g",
+                    "price": 19.95,
+                    "is_basic_ingredient": true,
+                    "created_at": "2024-06-11T13:54:24+00:00",
+                    "active_product": {
+                      "id": 90039,
+                      "name": "SPIDSKOMMEN",
+                      "underline": "33 GR. / SANTA MARIA",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [],
+                      "description": null,
+                      "info": "",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/90039/1-small-zOPlGlnJ9R.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/90039/1-medium-zOPlGlnJ9R.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/90039/1-large-zOPlGlnJ9R.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 21.39,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2026-01-08T00:00:00+00:00",
+                          "ending_at": "2026-11-28T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "kg",
+                          "compare_unit_price": 648.18,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": null,
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 0.5,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "sS_Hy_GyxlYndrR6Hk1fm",
+                  "ingredient": "lime",
+                  "unitOfContent": "stk",
+                  "digitalProduct": {
+                    "id": 2267,
+                    "title": "ØKO. LIME",
+                    "description": null,
+                    "amount_of_content": 1,
+                    "unit_of_content": "pcs",
+                    "price": 3,
+                    "is_basic_ingredient": false,
+                    "created_at": "2024-06-11T13:53:08+00:00",
+                    "active_product": {
+                      "id": 305659,
+                      "name": "ØKO. LIME",
+                      "underline": "1 STK. / COLOMBIA KL. 2, MIN. 60 GR.",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [
+                        {
+                          "id": 5,
+                          "name": "Økologi",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/5-64.webp"
+                        }
+                      ],
+                      "description": null,
+                      "info": "Oprindelsesland: Colombia",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/305659/1-small-KpqRXWLdPL.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/305659/1-medium-KpqRXWLdPL.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/305659/1-large-KpqRXWLdPL.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 3,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2024-03-24T00:00:00+00:00",
+                          "ending_at": "2099-12-31T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "stk",
+                          "compare_unit_price": 3,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": "CO",
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 1,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "vI15HE33aIvgZCEgpR8sR",
+                  "ingredient": "gulerødder",
+                  "unitOfContent": "g",
+                  "digitalProduct": {
+                    "id": 2307,
+                    "title": "GULERØDDER",
+                    "description": "Oprindelsen kan være forskellig fra dag til dag. Gulerødderne kommer fra et af følgende lande: Italien, Spanien, Tyskland eller Frankrig Oprindelsen af varen i den konkrete pakning, fremgår af mærkningen på pakken.",
+                    "amount_of_content": 1,
+                    "unit_of_content": "kg",
+                    "price": 11,
+                    "is_basic_ingredient": false,
+                    "created_at": "2024-06-11T13:53:09+00:00",
+                    "active_product": {
+                      "id": 306520,
+                      "name": "GULERØDDER",
+                      "underline": "1 KG. / DANMARK KL. 1",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [
+                        {
+                          "id": 70,
+                          "name": "Dansk",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/70-64.webp"
+                        }
+                      ],
+                      "description": null,
+                      "info": "Oprindelsesland: Danmark",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/306520/1-small-AKqexBd2op.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/306520/1-medium-AKqexBd2op.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/306520/1-large-AKqexBd2op.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 12,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2026-07-05T00:00:00+00:00",
+                          "ending_at": "2026-11-07T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "kg",
+                          "compare_unit_price": 12,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": "DK",
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 200,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "wbAsWWQBHUubdE9MrXkCV",
+                  "ingredient": "agurk",
+                  "unitOfContent": "stk",
+                  "digitalProduct": {
+                    "id": 2271,
+                    "title": "DANSK AGURK",
+                    "description": null,
+                    "amount_of_content": 1,
+                    "unit_of_content": "pcs",
+                    "price": 9,
+                    "is_basic_ingredient": false,
+                    "created_at": "2024-06-11T13:53:08+00:00",
+                    "active_product": {
+                      "id": 306008,
+                      "name": "AGURK",
+                      "underline": "1 STK. / SPANIEN KL. 1",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [],
+                      "description": null,
+                      "info": "Oprindelsesland: Spanien",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/306008/1-small-NpP7bGON9O.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/306008/1-medium-NpP7bGON9O.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/306008/1-large-NpP7bGON9O.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 10,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2025-12-27T00:00:00+00:00",
+                          "ending_at": "2026-11-21T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "stk",
+                          "compare_unit_price": 10,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": "ES",
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 0.5,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "YtbFeQnIWf27p5glhcpBf",
+                  "ingredient": "tortillapandekager",
+                  "unitOfContent": "stk",
+                  "digitalProduct": {
+                    "id": 1116,
+                    "title": "TORTILLAS HVEDE",
+                    "description": null,
+                    "amount_of_content": 370,
+                    "unit_of_content": "g",
+                    "price": 10.5,
+                    "is_basic_ingredient": false,
+                    "created_at": "2024-06-11T13:52:53+00:00",
+                    "active_product": {
+                      "id": 102802,
+                      "name": "TORTILLAS HVEDE",
+                      "underline": "370 GR. / TEX MEX",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [
+                        {
+                          "id": 2,
+                          "name": "REMA1000",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/2-64.webp"
+                        }
+                      ],
+                      "description": null,
+                      "info": "",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/102802/1-small-kAonlJrj9x.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/102802/1-medium-kAonlJrj9x.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/102802/1-large-kAonlJrj9x.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 10.7,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2025-10-16T00:00:00+00:00",
+                          "ending_at": "2026-11-07T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "kg",
+                          "compare_unit_price": 28.92,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": null,
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 5,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "ofBuGlCd4n1-RucjT0kZR",
+                  "ingredient": "salatmix",
+                  "unitOfContent": "g",
+                  "digitalProduct": {
+                    "id": 2832,
+                    "title": "SALATMIX",
+                    "description": null,
+                    "amount_of_content": 70,
+                    "unit_of_content": "g",
+                    "price": 10,
+                    "is_basic_ingredient": false,
+                    "created_at": "2024-06-11T13:53:16+00:00",
+                    "active_product": {
+                      "id": 417013,
+                      "name": "SALATMIX",
+                      "underline": "70 GR. / ØKO., SPÆDE SALATBLADE, READY TO SERVE",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [
+                        {
+                          "id": 2,
+                          "name": "REMA1000",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/2-64.webp"
+                        },
+                        {
+                          "id": 5,
+                          "name": "Økologi",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/5-64.webp"
+                        },
+                        {
+                          "id": 6,
+                          "name": "Økologi",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/6-64.webp"
+                        },
+                        {
+                          "id": 40,
+                          "name": "Nøglehul",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/40-64.webp"
+                        }
+                      ],
+                      "description": null,
+                      "info": "",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/417013/1-small-wyPbaxMW9E.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/417013/1-medium-wyPbaxMW9E.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/417013/1-large-wyPbaxMW9E.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 14,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2025-04-10T00:00:00+00:00",
+                          "ending_at": "2026-11-07T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "kg",
+                          "compare_unit_price": 200,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": "refrigerated_5_degrees_celsius",
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": null,
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 70,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "MmxOEtLA0tsKoim7ABUNF",
+                  "ingredient": "dressing efter eget valg",
+                  "unitOfContent": "",
+                  "digitalProduct": {
+                    "id": null,
+                    "name": "",
+                    "amount": 1
+                  },
+                  "amountOfContent": 0,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "Lxp7wJsOBd-cikMxHcYqs",
+                  "ingredient": "salt",
+                  "unitOfContent": "",
+                  "digitalProduct": {
+                    "id": 4767,
+                    "title": "SALT M/ JOD",
+                    "description": null,
+                    "amount_of_content": 1,
+                    "unit_of_content": "kg",
+                    "price": 4.75,
+                    "is_basic_ingredient": true,
+                    "created_at": "2024-06-11T13:54:34+00:00",
+                    "active_product": {
+                      "id": 93605,
+                      "name": "SALT M/ JOD",
+                      "underline": "1 KG. / SALINA, FINT",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [],
+                      "description": null,
+                      "info": "",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/93605/1-small-xQq8gWr2oZ.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/93605/1-medium-xQq8gWr2oZ.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/93605/1-large-xQq8gWr2oZ.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 4.75,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2023-02-09T00:00:00+00:00",
+                          "ending_at": "2099-12-31T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "kg",
+                          "compare_unit_price": 4.75,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": null,
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 0,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "lrt9YxSgKYO5atPUSfwM9",
+                  "ingredient": "peber",
+                  "unitOfContent": "",
+                  "digitalProduct": {
+                    "id": 4707,
+                    "title": "SORT PEBER",
+                    "description": null,
+                    "amount_of_content": 50,
+                    "unit_of_content": "g",
+                    "price": 10.95,
+                    "is_basic_ingredient": true,
+                    "created_at": "2024-06-11T13:54:30+00:00",
+                    "active_product": {
+                      "id": 90929,
+                      "name": "SORT PEBER",
+                      "underline": "50 GR. / REMA 1000",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [
+                        {
+                          "id": 2,
+                          "name": "REMA1000",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/2-64.webp"
+                        }
+                      ],
+                      "description": null,
+                      "info": "",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/90929/1-small-pYqxn3ZpP1.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/90929/1-medium-pYqxn3ZpP1.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/90929/1-large-pYqxn3ZpP1.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 10.67,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2025-10-30T00:00:00+00:00",
+                          "ending_at": "2099-12-31T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "kg",
+                          "compare_unit_price": 213.4,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": null,
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 0,
+                  "isExcludedFromShoppingList": false
+                }
+              ]
+            }
+          ],
+          "preparationGroups": [
+            {
+              "id": "Y6KzYFj0_kimMojwa64Wc",
+              "name": "",
+              "steps": [
+                {
+                  "id": "OdRK78wg6OWvsWER34qLC",
+                  "step": "Tilbered falaflerne efter anvisningen på pakken."
+                },
+                {
+                  "id": "Uu6WXfpgAtW52RPMSoM_H",
+                  "step": "Flæk avocadoerne, fjerne stenene og kom kødet i en skål. Tilsæt fraiche, koriander, spidskommen, lidt limesaft, salt og peber og blend glat med en stavblender."
+                },
+                {
+                  "id": "cRanrVnryd94GHTlX-H3t",
+                  "step": "Skræl gulerødderne og riv dem på den grove side af et rivejern. Skyl agurken og skær den ud efter eget ønske."
+                },
+                {
+                  "id": "ejEtROTA9bOrpQEAszSw5",
+                  "step": "Lun tortillapandekagerne i ovnen."
+                },
+                {
+                  "id": "SUTMfjZsnFQABwysyQEM7",
+                  "step": "Stil alle ingredienserne på bordet og lad hele familien sammensætte deres egen yndlings-tortilla med sprøde falafler og avocadocreme. "
+                }
+              ]
+            }
+          ],
+          "preparationTextAfter": "",
+          "preparationTextBefore": "Denne opskrift indeholder udvalgte varer fra avis uge 46: Falafel, avocado, creme fraiche, tortillas, salatmix"
+        },
+        "tags": [
+          {
+            "id": "5Q5t9rpmNk4jp1ygKZDEHx",
+            "type": "recipeTag",
+            "fields": {
+              "title": "Avisopskrifter",
+              "slug": "ugens-avisopskrifter",
+              "description": null,
+              "image": {
+                "id": "5dBSHNadsZRl1VqkmohzVZ",
+                "type": "Asset",
+                "mime": "image/jpeg",
+                "name": "0138 Paneret flæsk med persillesaucepersillesauce.jpg",
+                "url": "https://downloads.ctfassets.net/r5zg1hgyl5kj/5dBSHNadsZRl1VqkmohzVZ/3c051e9d2922e861222841d7b55ae7b8/0138_Paneret_fl_sk_med_persillesaucepersillesauce.jpg",
+                "width": 4785,
+                "height": 6699
+              }
+            },
+            "updated_at": "2024-09-25T07:00:03.000000Z",
+            "created_at": "2024-09-24T08:09:42.000000Z"
+          }
+        ],
+        "popularity": 11,
+        "allowSearchEngineIndexing": true,
+        "allProductsAvailable": false
+      },
+      "updated_at": "2026-11-07T00:04:12.000000Z",
+      "created_at": "2026-11-05T13:06:32.000000Z"
+    },
+    {
+      "id": "2iGuvB3WETAOalD74FWf9w",
+      "type": "recipe",
+      "fields": {
+        "title": "Thai-inspireret wok med hakket svinekød og basilikum. Hertil spejlæg og ris",
+        "slug": "thai-inspireret-wok-med-hakket-svinekod-og-basilikum-hertil-spejlaeg-og-ris",
+        "image": {
+          "id": "gQwZeQWRokvr5Sh2eMD1s",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "Thai-inspireret wok med spejlaeg.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/gQwZeQWRokvr5Sh2eMD1s/e83e94d0612395fda02ea06b3f4bd554/Thai-inspireret_wok_med_spejlaeg.jpg",
+          "width": 1340,
+          "height": 1876
+        },
+        "customForm": {
+          "servings": {
+            "type": "person",
+            "amount": 4
+          },
+          "totalTime": 0,
+          "ingredientGroups": [
+            {
+              "id": "Wbqoab4ATGwkRMP938mBZ",
+              "name": "",
+              "ingredients": [
+                {
+                  "id": "ANlE8oPar7WACPROy_ntG",
+                  "ingredient": "ris",
+                  "unitOfContent": "g",
+                  "digitalProduct": {
+                    "id": 4787,
+                    "title": "BASMATI RIS",
+                    "description": null,
+                    "amount_of_content": 1,
+                    "unit_of_content": "kg",
+                    "price": 14.95,
+                    "is_basic_ingredient": true,
+                    "created_at": "2024-06-11T13:54:35+00:00",
+                    "active_product": {
+                      "id": 98158,
+                      "name": "BASMATI RIS",
+                      "underline": "1 KG. / REMA 1000",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [
+                        {
+                          "id": 2,
+                          "name": "REMA1000",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/2-64.webp"
+                        }
+                      ],
+                      "description": null,
+                      "info": "",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/98158/1-small-3MovlykG9A.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/98158/1-medium-3MovlykG9A.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/98158/1-large-3MovlykG9A.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 17.95,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2026-02-26T00:00:00+00:00",
+                          "ending_at": "2099-12-31T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "kg",
+                          "compare_unit_price": 17.95,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": null,
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 250,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "1IGEdHTAesMsysgP7mDWu",
+                  "ingredient": "løg",
+                  "unitOfContent": "stk",
+                  "digitalProduct": {
+                    "id": 2359,
+                    "title": "LØG",
+                    "description": null,
+                    "amount_of_content": 1,
+                    "unit_of_content": "kg",
+                    "price": 12,
+                    "is_basic_ingredient": true,
+                    "created_at": "2024-06-11T13:53:09+00:00",
+                    "active_product": {
+                      "id": 306960,
+                      "name": "LØG",
+                      "underline": "1 KG. / DANMARK KL. 1",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [
+                        {
+                          "id": 70,
+                          "name": "Dansk",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/70-64.webp"
+                        }
+                      ],
+                      "description": null,
+                      "info": "Oprindelsesland: Danmark",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/306960/1-small-6xqArGv79D.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/306960/1-medium-6xqArGv79D.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/306960/1-large-6xqArGv79D.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 12,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2023-06-18T00:00:00+00:00",
+                          "ending_at": "2026-11-14T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "kg",
+                          "compare_unit_price": 12,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": "DK",
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 1,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "8NCuyVOxOJAY9y6wRGiM0",
+                  "ingredient": "hvidløg",
+                  "unitOfContent": "fed",
+                  "digitalProduct": {
+                    "id": 2350,
+                    "title": "HVIDLØG I NET",
+                    "description": "Oprindelsen kan være forskelligt fra dag til dag. Hvidløgene kommer fra et af følgende lande : Spanien eller Argentina. Oprindelse af varen i den konkrete pakning fremgår af mærkningen på pakken.",
+                    "amount_of_content": 90,
+                    "unit_of_content": "g",
+                    "price": 5,
+                    "is_basic_ingredient": true,
+                    "created_at": "2024-06-11T13:53:09+00:00",
+                    "active_product": {
+                      "id": 306890,
+                      "name": "HVIDLØG I NET",
+                      "underline": "90 GR. / LAND/KL.: SE VAREN",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [],
+                      "description": "Oprindelsen kan være forskelligt fra dag til dag. Hvidløgene kommer fra et af følgende lande : Spanien eller Argentina. Oprindelse af varen i den konkrete pakning fremgår af mærkningen på pakken.",
+                      "info": "Oprindelsesland: Se varen",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/306890/1-small-kAon205aox.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/306890/1-medium-kAon205aox.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/306890/1-large-kAon205aox.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 6,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2025-03-30T00:00:00+00:00",
+                          "ending_at": "2099-12-31T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "kg",
+                          "compare_unit_price": 66.67,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": "ØØ",
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 3,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "n9Fhmo4r42v9H00NQvs4H",
+                  "ingredient": "hakket svinekød",
+                  "unitOfContent": "g",
+                  "digitalProduct": {
+                    "id": 2436,
+                    "title": "HK. GRISEKØD 8-12%",
+                    "description": null,
+                    "amount_of_content": 400,
+                    "unit_of_content": "g",
+                    "price": 25,
+                    "is_basic_ingredient": false,
+                    "created_at": "2024-06-11T13:53:10+00:00",
+                    "active_product": {
+                      "id": 401001,
+                      "name": "HK. GRISEKØD 8-12%",
+                      "underline": "400 GR. / FRILANDSGRIS",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [
+                        {
+                          "id": 9001,
+                          "name": "Avisvare",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/9001-64.webp"
+                        },
+                        {
+                          "id": 70,
+                          "name": "Dansk",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/70-64.webp"
+                        },
+                        {
+                          "id": 203,
+                          "name": "Bedre dyrevelfærd 3",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/203-64.webp"
+                        }
+                      ],
+                      "description": null,
+                      "info": "Født i: Danmark\nOpvokset i: Danmark\nSlagtet i: Danmark\nSkåret i: Danmark",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/401001/1-small-ElPBrkYlPk.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/401001/1-medium-ElPBrkYlPk.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/401001/1-large-ElPBrkYlPk.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 29,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": true,
+                          "is_campaign": true,
+                          "starting_at": "2026-11-01T00:00:00+00:00",
+                          "ending_at": "2026-11-07T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "kg",
+                          "compare_unit_price": 72.5,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": "refrigerated_5_degrees_celsius",
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": null,
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 400,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "YW76t3kKlRFaDvzwapK0k",
+                  "ingredient": "squash",
+                  "unitOfContent": "stk",
+                  "digitalProduct": {
+                    "id": 4814,
+                    "title": "SQUASH",
+                    "description": null,
+                    "amount_of_content": 1,
+                    "unit_of_content": "pcs",
+                    "price": 8,
+                    "is_basic_ingredient": false,
+                    "created_at": "2024-08-29T12:14:51+00:00",
+                    "active_product": {
+                      "id": 306824,
+                      "name": "SQUASH",
+                      "underline": "1 STK. / SPANIEN KL. 1",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [],
+                      "description": null,
+                      "info": "Oprindelsesland: Spanien",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/306824/1-small-vXodXwrZo3.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/306824/1-medium-vXodXwrZo3.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/306824/1-large-vXodXwrZo3.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 7,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2026-10-04T00:00:00+00:00",
+                          "ending_at": "2026-11-07T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "stk",
+                          "compare_unit_price": 7,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": "ES",
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 1,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "yBOPLJ3dR_f_VgS104nah",
+                  "ingredient": "gulerødder",
+                  "unitOfContent": "g",
+                  "digitalProduct": {
+                    "id": 2307,
+                    "title": "GULERØDDER",
+                    "description": "Oprindelsen kan være forskellig fra dag til dag. Gulerødderne kommer fra et af følgende lande: Italien, Spanien, Tyskland eller Frankrig Oprindelsen af varen i den konkrete pakning, fremgår af mærkningen på pakken.",
+                    "amount_of_content": 1,
+                    "unit_of_content": "kg",
+                    "price": 11,
+                    "is_basic_ingredient": false,
+                    "created_at": "2024-06-11T13:53:09+00:00",
+                    "active_product": {
+                      "id": 306520,
+                      "name": "GULERØDDER",
+                      "underline": "1 KG. / DANMARK KL. 1",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [
+                        {
+                          "id": 70,
+                          "name": "Dansk",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/70-64.webp"
+                        }
+                      ],
+                      "description": null,
+                      "info": "Oprindelsesland: Danmark",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/306520/1-small-AKqexBd2op.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/306520/1-medium-AKqexBd2op.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/306520/1-large-AKqexBd2op.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 12,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2026-07-05T00:00:00+00:00",
+                          "ending_at": "2026-11-07T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "kg",
+                          "compare_unit_price": 12,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": "DK",
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 200,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "LUftmtH75D9QMn-kRSE0z",
+                  "ingredient": "soja",
+                  "unitOfContent": "spsk",
+                  "digitalProduct": {
+                    "id": 1279,
+                    "title": "SOJASAUCE",
+                    "description": null,
+                    "amount_of_content": 250,
+                    "unit_of_content": "ml",
+                    "price": 9.95,
+                    "is_basic_ingredient": true,
+                    "created_at": "2024-06-11T13:52:54+00:00",
+                    "active_product": {
+                      "id": 120053,
+                      "name": "SOJASAUCE",
+                      "underline": "250 ML. / INSPIRING FOOD",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [
+                        {
+                          "id": 2,
+                          "name": "REMA1000",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/2-64.webp"
+                        }
+                      ],
+                      "description": null,
+                      "info": "",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/120053/1-small-aboK80aWqp.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/120053/1-medium-aboK80aWqp.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/120053/1-large-aboK80aWqp.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 10.5,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2026-06-04T00:00:00+00:00",
+                          "ending_at": "2099-12-31T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "ltr",
+                          "compare_unit_price": 42,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": null,
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 2,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "VTOnrum-ilpcRaWW-t7m0",
+                  "ingredient": "østerssauce",
+                  "unitOfContent": "spsk",
+                  "digitalProduct": {
+                    "id": 1289,
+                    "title": "ØSTERSSAUCE",
+                    "description": null,
+                    "amount_of_content": 150,
+                    "unit_of_content": "ml",
+                    "price": 15,
+                    "is_basic_ingredient": false,
+                    "created_at": "2024-06-11T13:52:55+00:00",
+                    "active_product": {
+                      "id": 120132,
+                      "name": "ØSTERSSAUCE",
+                      "underline": "150 ML. / INSPIRING FOOD",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [
+                        {
+                          "id": 2,
+                          "name": "REMA1000",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/2-64.webp"
+                        }
+                      ],
+                      "description": null,
+                      "info": "",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/120132/1-small-nDPWJez69W.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/120132/1-medium-nDPWJez69W.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/120132/1-large-nDPWJez69W.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 16.5,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2026-08-13T00:00:00+00:00",
+                          "ending_at": "2099-12-31T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "ltr",
+                          "compare_unit_price": 110,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": null,
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 2,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "Bacf1TNZG6bamI21tnC7I",
+                  "ingredient": "æg",
+                  "unitOfContent": "stk",
+                  "digitalProduct": {
+                    "id": 2025,
+                    "title": "SKRABEÆG",
+                    "description": null,
+                    "amount_of_content": 15,
+                    "unit_of_content": "pcs",
+                    "price": 34.95,
+                    "is_basic_ingredient": false,
+                    "created_at": "2024-06-11T13:53:05+00:00",
+                    "active_product": {
+                      "id": 220032,
+                      "name": "SKRABEÆG",
+                      "underline": "15 STK. / STR. S/M",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [],
+                      "description": null,
+                      "info": "",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/220032/1-small-nDPWzyBK9W.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/220032/1-medium-nDPWzyBK9W.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/220032/1-large-nDPWzyBK9W.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 45.25,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2026-05-28T00:00:00+00:00",
+                          "ending_at": "2099-12-31T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "stk",
+                          "compare_unit_price": 3.02,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": "refrigerated_5_degrees_celsius",
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": null,
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 4,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "_2dwteRfaF6SBsv2tHFtE",
+                  "ingredient": "frisk basilikum",
+                  "unitOfContent": "potte",
+                  "digitalProduct": {
+                    "id": 2331,
+                    "title": "ØKO. BASILIKUM",
+                    "description": null,
+                    "amount_of_content": 1,
+                    "unit_of_content": "pcs",
+                    "price": 15,
+                    "is_basic_ingredient": false,
+                    "created_at": "2024-06-11T13:53:09+00:00",
+                    "active_product": {
+                      "id": 306783,
+                      "name": "ØKO. BASILIKUM",
+                      "underline": "1 STK. / DANMARK KL.1",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [
+                        {
+                          "id": 70,
+                          "name": "Dansk",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/70-64.webp"
+                        },
+                        {
+                          "id": 6,
+                          "name": "Økologi",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/6-64.webp"
+                        }
+                      ],
+                      "description": null,
+                      "info": "Oprindelsesland: Danmark",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/306783/1-small-zOPlm7OJoR.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/306783/1-medium-zOPlm7OJoR.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/306783/1-large-zOPlm7OJoR.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 15,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2022-10-02T00:00:00+00:00",
+                          "ending_at": "2099-12-31T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "stk",
+                          "compare_unit_price": 15,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": "DK",
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 1,
+                  "isExcludedFromShoppingList": false
+                },
+                {
+                  "id": "FP98SdqdIMhbK3bXObzAx",
+                  "ingredient": "sesamolie",
+                  "unitOfContent": "",
+                  "digitalProduct": {
+                    "id": 1282,
+                    "title": "SESAMOLIE",
+                    "description": "<b>Discount med holdning</b><br />I REMA 1000 har vi fokus på kvalitet til lave priser og overskriften på vores arbejde er Discount med holdning.<br />  <br />Vi har en klar holdning til alle de varer, vi sælger. Vi stiller ikke kun krav til kvaliteten af vores egne mærkevarer – det er også vigtigt for os, at emballagerne er designet til genanvendelse, at indholdet er uden problematiske stoffer, og at varerne er produceret ansvarligt samt mærket med tydelige og valide certificeringer.<br /><br /><b>Om denne vare</b><br />REMA 1000 Inspiring Food sesamolie har en smag af ristede nødder og en mørkgylden farve. Sesamolie er et fast indslag i det mellemøstlige og asiatiske køkken, og bruges bl.a. til stegning og til kolde retter.",
+                    "amount_of_content": 250,
+                    "unit_of_content": "ml",
+                    "price": 28.95,
+                    "is_basic_ingredient": false,
+                    "created_at": "2024-06-11T13:52:54+00:00",
+                    "active_product": {
+                      "id": 120062,
+                      "name": "SESAMOLIE",
+                      "underline": "250 ML. / INSPIRING FOOD",
+                      "age_limit": null,
+                      "hazard_precaution_statements": [],
+                      "labels": [
+                        {
+                          "id": 40,
+                          "name": "Nøglehul",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/40-64.webp"
+                        },
+                        {
+                          "id": 2,
+                          "name": "REMA1000",
+                          "image": "https://static-assets.digital.rema1000.dk/product/labels/2-64.webp"
+                        }
+                      ],
+                      "description": "Til stegning og kolde retter.<br />",
+                      "info": "",
+                      "images": [
+                        {
+                          "small": "https://rema-product-images.digital.rema1000.dk/120062/1-small-2B9438b6qk.webp",
+                          "medium": "https://rema-product-images.digital.rema1000.dk/120062/1-medium-2B9438b6qk.webp",
+                          "large": "https://rema-product-images.digital.rema1000.dk/120062/1-large-2B9438b6qk.webp"
+                        }
+                      ],
+                      "prices": [
+                        {
+                          "price": 30.42,
+                          "price_over_max_quantity": null,
+                          "max_quantity": null,
+                          "is_advertised": false,
+                          "is_campaign": false,
+                          "starting_at": "2026-01-01T00:00:00+00:00",
+                          "ending_at": "2099-12-31T00:00:00+00:00",
+                          "deposit": null,
+                          "compare_unit": "ltr",
+                          "compare_unit_price": 121.68,
+                          "consumption_unit": null,
+                          "consumption_quantity": null
+                        }
+                      ],
+                      "temperature_zone": null,
+                      "is_self_scale_item": false,
+                      "is_weight_item": false,
+                      "is_available_in_all_stores": true,
+                      "is_batch_item": false,
+                      "origin_country": null,
+                      "wine_labels": []
+                    },
+                    "amount": 1
+                  },
+                  "amountOfContent": 0,
+                  "isExcludedFromShoppingList": false
+                }
+              ]
+            }
+          ],
+          "preparationGroups": [
+            {
+              "id": "zC_Yoe7_qRRT4OsHCTVnI",
+              "name": "",
+              "steps": [
+                {
+                  "id": "9T5Cn5aGWIPFDMkTwRxY6",
+                  "step": "Kog risene efter anvisningen på posen."
+                },
+                {
+                  "id": "ri12EwcmTNzLh-Gls3MtV",
+                  "step": "Pil skrællen af løg og hvidløg og hak begge dele fint."
+                },
+                {
+                  "id": "KD-qlmJT2yAuK8_C6Helm",
+                  "step": "Varm en dyb pande eller wok op med sesamolie og svits løg, hvidløg og hakket svinekød."
+                },
+                {
+                  "id": "TyxF0dixZmB3HxWShKul5",
+                  "step": "Skyl squashen og skræl gulerødderne og skær begge dele i små tern. Tilsæt til kødet og steg det hele i 5-7 min."
+                },
+                {
+                  "id": "11IuMIPYWgvJbEA5RQFbo",
+                  "step": "Tilsæt soya og østerssauce og lad det hele simre i ca. 5 min."
+                },
+                {
+                  "id": "nKOu4bxUOg0KyIQZAFkAh",
+                  "step": "Varm en pande op med sesamolie, slå æggene ud og steg dem til spejlæg."
+                },
+                {
+                  "id": "B9Wvo9sN3rBuVRUdLj_BB",
+                  "step": "Skyl basilikummen og pluk bladene af stilkene. Vend basilikumbladene i retten lige inden servering."
+                },
+                {
+                  "id": "_4mvLgn0KDz1p4WH_mR8D",
+                  "step": "Server den lækre wokret med ris og spejlæg på toppen."
+                }
+              ]
+            }
+          ],
+          "preparationTextAfter": "For ekstra smag: Top med sød chilisauce.",
+          "preparationTextBefore": "Denne opskrift indeholder udvalgte varer fra avis uge 46: Hakket svinekød, gulerødder, squash"
+        },
+        "tags": [
+          {
+            "id": "5Q5t9rpmNk4jp1ygKZDEHx",
+            "type": "recipeTag",
+            "fields": {
+              "title": "Avisopskrifter",
+              "slug": "ugens-avisopskrifter",
+              "description": null,
+              "image": {
+                "id": "5dBSHNadsZRl1VqkmohzVZ",
+                "type": "Asset",
+                "mime": "image/jpeg",
+                "name": "0138 Paneret flæsk med persillesaucepersillesauce.jpg",
+                "url": "https://downloads.ctfassets.net/r5zg1hgyl5kj/5dBSHNadsZRl1VqkmohzVZ/3c051e9d2922e861222841d7b55ae7b8/0138_Paneret_fl_sk_med_persillesaucepersillesauce.jpg",
+                "width": 4785,
+                "height": 6699
+              }
+            },
+            "updated_at": "2024-09-25T07:00:03.000000Z",
+            "created_at": "2024-09-24T08:09:42.000000Z"
+          }
+        ],
+        "popularity": 19,
+        "allowSearchEngineIndexing": true,
+        "allProductsAvailable": true
+      },
+      "updated_at": "2026-11-07T00:02:29.000000Z",
+      "created_at": "2026-11-04T15:51:42.000000Z"
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "current_page": 1,
+      "per_page": 3,
+      "last_page": 234,
+      "total": 701,
+      "from": 1,
+      "to": 3
+    }
+  }
+}

@@ -1,0 +1,926 @@
+{
+  "data": [
+    {
+      "age_limit": null,
+      "barcodes": [
+        "5700426101026",
+        "5711953146640",
+        "5760466826044",
+        "5760466963831"
+      ],
+      "category": {
+        "id": 6050,
+        "important_information": null,
+        "is_hidden": false,
+        "name": "Mælk m.v.",
+        "slug": "maelk-mv"
+      },
+      "declaration": "½ liter dansk <b>SØDMÆLK</b> 3,5% fedt. Homogeniseret. Pasteuriseret.",
+      "department": {
+        "id": 60,
+        "important_information": "<h4>Generelt for alle varer</h4> <ul> <li>Producent: vil fremgå af varen ved afhentning</li> <li>Særlige opbevaringsforskrifter: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Pakkemetode: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav til tilberedning: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav i handelsnormer eller varestandarder: vil, hvis relevant, fremgå af varen ved afhentning</li> </ul> <p>&nbsp;</p>",
+        "name": "Mejeri",
+        "products_last_modified_at": "2026-11-07T07:00:14+00:00",
+        "slug": "mejeri"
+      },
+      "description": null,
+      "gpsr": null,
+      "hazard_precaution_statements": [],
+      "id": 20302,
+      "images": [
+        {
+          "large": "https://rema-product-images.digital.rema1000.dk/20302/1-large-kAonyAjPx8.webp",
+          "medium": "https://rema-product-images.digital.rema1000.dk/20302/1-medium-kAonyAjPx8.webp",
+          "small": "https://rema-product-images.digital.rema1000.dk/20302/1-small-kAonyAjPx8.webp"
+        }
+      ],
+      "info": "",
+      "is_available_in_all_stores": false,
+      "is_batch_item": false,
+      "is_self_scale_item": false,
+      "is_weight_item": false,
+      "labels": [
+        {
+          "id": 70,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/70-64.webp",
+          "name": "Dansk"
+        }
+      ],
+      "name": "SØDMÆLK 3,5%",
+      "origin_country": null,
+      "prices": [
+        {
+          "compare_unit": "ltr",
+          "compare_unit_price": 15.9,
+          "consumption_quantity": null,
+          "consumption_unit": null,
+          "deposit": null,
+          "ending_at": "2099-12-31T00:00:00+00:00",
+          "is_advertised": false,
+          "is_campaign": false,
+          "max_quantity": null,
+          "price": 7.95,
+          "price_over_max_quantity": null,
+          "starting_at": "2026-01-29T00:00:00+00:00"
+        }
+      ],
+      "produce": null,
+      "search_words": [
+        "mælk"
+      ],
+      "surface_treatments": null,
+      "temperature_zone": "refrigerated_5_degrees_celsius",
+      "underline": "0.5 LTR. / ARLA",
+      "warnings": [],
+      "wine_labels": []
+    },
+    {
+      "age_limit": null,
+      "barcodes": [
+        "5705830006608",
+        "5705830016423"
+      ],
+      "category": {
+        "id": 8050,
+        "important_information": null,
+        "is_hidden": false,
+        "name": "Kiks, kager & knækbrød",
+        "slug": "kiks-kager-knaekbrod"
+      },
+      "declaration": "63 % <b>mælkechokolade</b> (sukker, kakaosmør*, kakaomasse*, <b>skummetmælkspulver</b>, <b>laktose</b> (af <b>mælk</b>), <b>smørolie</b>, emulgator (E 322 af <b>soja</b>)), 23 % <b>hvedemel</b>, 6 % sukker, 4 % <b>smør</b>, 3 % glukosesirup,  <b>vallepulver</b> (af <b>mælk</b>), <b>sødmælkspulver</b>, salt, hævemidler (E 500, E 503), syre (E 330).<br>Kan indeholde spor af <b>rug</b>, <b>byg</b> og <b>havre</b>.",
+      "department": {
+        "id": 80,
+        "important_information": "<h4>Generelt for alle varer</h4> <ul> <li>Producent: vil fremgå af varen ved afhentning</li> <li>Særlige opbevaringsforskrifter: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Pakkemetode: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav til tilberedning: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav i handelsnormer eller varestandarder: vil, hvis relevant, fremgå af varen ved afhentning</li> </ul> <p>&nbsp;</p>",
+        "name": "Kolonial",
+        "products_last_modified_at": "2026-11-07T07:00:15+00:00",
+        "slug": "kolonial"
+      },
+      "description": "Kiks med mælkechokoladeMed 63 % mælkechokolade med mindst 30 % kakaotørstof.",
+      "gpsr": null,
+      "hazard_precaution_statements": [],
+      "id": 70718,
+      "images": [
+        {
+          "large": "https://rema-product-images.digital.rema1000.dk/70718/1-large-2B947evqkM.webp",
+          "medium": "https://rema-product-images.digital.rema1000.dk/70718/1-medium-2B947evqkM.webp",
+          "small": "https://rema-product-images.digital.rema1000.dk/70718/1-small-2B947evqkM.webp"
+        }
+      ],
+      "info": "",
+      "is_available_in_all_stores": true,
+      "is_batch_item": false,
+      "is_self_scale_item": false,
+      "is_weight_item": false,
+      "labels": [
+        {
+          "id": 2,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/2-64.webp",
+          "name": "REMA1000"
+        },
+        {
+          "id": 95,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/95-64.webp",
+          "name": "Rainforest Alliance"
+        }
+      ],
+      "name": "CHOKOLADEKIKS MÆLK",
+      "origin_country": null,
+      "prices": [
+        {
+          "compare_unit": "kg",
+          "compare_unit_price": 146.4,
+          "consumption_quantity": null,
+          "consumption_unit": null,
+          "deposit": null,
+          "ending_at": "2099-12-31T00:00:00+00:00",
+          "is_advertised": false,
+          "is_campaign": false,
+          "max_quantity": null,
+          "price": 18.3,
+          "price_over_max_quantity": null,
+          "starting_at": "2026-01-08T00:00:00+00:00"
+        }
+      ],
+      "produce": null,
+      "search_words": [
+        "rema 1000 kiks med mælkechoko.",
+        "utz"
+      ],
+      "surface_treatments": null,
+      "temperature_zone": null,
+      "underline": "125 GR. / REMA 1000",
+      "warnings": [],
+      "wine_labels": []
+    },
+    {
+      "age_limit": null,
+      "barcodes": [
+        "5700426293929",
+        "5709310001602"
+      ],
+      "category": {
+        "id": 6050,
+        "important_information": null,
+        "is_hidden": false,
+        "name": "Mælk m.v.",
+        "slug": "maelk-mv"
+      },
+      "declaration": "Økologisk <b>SKUMMETMÆLK</b> 0,1% fedt.",
+      "department": {
+        "id": 60,
+        "important_information": "<h4>Generelt for alle varer</h4> <ul> <li>Producent: vil fremgå af varen ved afhentning</li> <li>Særlige opbevaringsforskrifter: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Pakkemetode: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav til tilberedning: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav i handelsnormer eller varestandarder: vil, hvis relevant, fremgå af varen ved afhentning</li> </ul> <p>&nbsp;</p>",
+        "name": "Mejeri",
+        "products_last_modified_at": "2026-11-07T07:00:14+00:00",
+        "slug": "mejeri"
+      },
+      "description": "Arla produkterne er fremstillet af mælk fra danske økologiske landbrug - hvor der hverken anvendes kunstgødning eller sprøjtemidler. De bærer det røde Ø-mærke som garanti for, at produkterne opfylder de statskontrollerede krav til økologisk produktion. Arla produceres efter oprindelige mejeritraditioner, men med moderne teknologi til rådighed. På mejeriet behandles mælken så skånsomt som muligt.",
+      "gpsr": null,
+      "hazard_precaution_statements": [],
+      "id": 21513,
+      "images": [
+        {
+          "large": "https://rema-product-images.digital.rema1000.dk/21513/1-large-wyPbJaZPEm.webp",
+          "medium": "https://rema-product-images.digital.rema1000.dk/21513/1-medium-wyPbJaZPEm.webp",
+          "small": "https://rema-product-images.digital.rema1000.dk/21513/1-small-wyPbJaZPEm.webp"
+        }
+      ],
+      "info": "",
+      "is_available_in_all_stores": true,
+      "is_batch_item": false,
+      "is_self_scale_item": false,
+      "is_weight_item": false,
+      "labels": [
+        {
+          "id": 6,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/6-64.webp",
+          "name": "Økologi"
+        },
+        {
+          "id": 40,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/40-64.webp",
+          "name": "Nøglehul"
+        },
+        {
+          "id": 70,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/70-64.webp",
+          "name": "Dansk"
+        },
+        {
+          "id": 203,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/203-64.webp",
+          "name": "Bedre dyrevelfærd 3"
+        }
+      ],
+      "name": "SKUMMETMÆLK 0,1%",
+      "origin_country": null,
+      "prices": [
+        {
+          "compare_unit": "ltr",
+          "compare_unit_price": 12.95,
+          "consumption_quantity": null,
+          "consumption_unit": null,
+          "deposit": null,
+          "ending_at": "2099-12-31T00:00:00+00:00",
+          "is_advertised": false,
+          "is_campaign": false,
+          "max_quantity": null,
+          "price": 12.95,
+          "price_over_max_quantity": null,
+          "starting_at": "2026-02-12T00:00:00+00:00"
+        }
+      ],
+      "produce": null,
+      "search_words": [
+        "dyrevelfærdsmærke - 3 hjerter",
+        "mælk",
+        "nøglehul",
+        "økologisk"
+      ],
+      "surface_treatments": null,
+      "temperature_zone": "refrigerated_5_degrees_celsius",
+      "underline": "1 LTR. / ARLA, ØKOLOGISK",
+      "warnings": [],
+      "wine_labels": []
+    },
+    {
+      "age_limit": null,
+      "barcodes": [
+        "5705830606068",
+        "5705830610669",
+        "5707552000643"
+      ],
+      "category": {
+        "id": 6050,
+        "important_information": null,
+        "is_hidden": false,
+        "name": "Mælk m.v.",
+        "slug": "maelk-mv"
+      },
+      "declaration": "Økologisk <b>LETMÆLK</b>, (1,5% fedt)",
+      "department": {
+        "id": 60,
+        "important_information": "<h4>Generelt for alle varer</h4> <ul> <li>Producent: vil fremgå af varen ved afhentning</li> <li>Særlige opbevaringsforskrifter: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Pakkemetode: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav til tilberedning: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav i handelsnormer eller varestandarder: vil, hvis relevant, fremgå af varen ved afhentning</li> </ul> <p>&nbsp;</p>",
+        "name": "Mejeri",
+        "products_last_modified_at": "2026-11-07T07:00:14+00:00",
+        "slug": "mejeri"
+      },
+      "description": "<br /> REMA 1000 er medejer af et af Danmarks største økologiske landbrug, Gram Slot, som dagligt leverer bl.a. økologisk mælk, kartofler, mel og havregryn til REMA 1000s butikker.<br /> <br /> På Gram Slot er dyrevelfærd i højsædet, ligesom Jorden ved Gram Slot dyrkes med stor respekt og omtanke. Køerne ved Gram Slot er på græs hele sommeren. I kløvergræsset på markerne er der sået urter, som indeholder æteriske olier og er rige på mineraler. Vi driver markerne på denne måde, fordi urterne giver køerne et varieret, velsmagende foder.<br /> <br /> Om emballagen:<br /> Let at åbne. Let at hælde af. Minimal affaldsmængde. Med denne letvægtsemballage spares der ressourcer, da den kræver færre råmaterialer - lige fra produktion til transport af affald. <br /> <br />",
+      "gpsr": null,
+      "hazard_precaution_statements": [],
+      "id": 20025,
+      "images": [
+        {
+          "large": "https://rema-product-images.digital.rema1000.dk/20025/1-large-Ea91Ev59zY.webp",
+          "medium": "https://rema-product-images.digital.rema1000.dk/20025/1-medium-Ea91Ev59zY.webp",
+          "small": "https://rema-product-images.digital.rema1000.dk/20025/1-small-Ea91Ev59zY.webp"
+        }
+      ],
+      "info": "",
+      "is_available_in_all_stores": false,
+      "is_batch_item": false,
+      "is_self_scale_item": false,
+      "is_weight_item": false,
+      "labels": [
+        {
+          "id": 5,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/5-64.webp",
+          "name": "Økologi"
+        },
+        {
+          "id": 6,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/6-64.webp",
+          "name": "Økologi"
+        },
+        {
+          "id": 39,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/39-64.webp",
+          "name": "Gram slot"
+        },
+        {
+          "id": 203,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/203-64.webp",
+          "name": "Bedre dyrevelfærd 3"
+        }
+      ],
+      "name": "LETMÆLK 1,5%",
+      "origin_country": null,
+      "prices": [
+        {
+          "compare_unit": "ltr",
+          "compare_unit_price": 14.95,
+          "consumption_quantity": null,
+          "consumption_unit": null,
+          "deposit": null,
+          "ending_at": "2099-12-31T00:00:00+00:00",
+          "is_advertised": false,
+          "is_campaign": false,
+          "max_quantity": null,
+          "price": 14.95,
+          "price_over_max_quantity": null,
+          "starting_at": "2026-03-05T00:00:00+00:00"
+        }
+      ],
+      "produce": null,
+      "search_words": [
+        "dyrevelfærdsmærke - 2 hjerter",
+        "dyrevelfærdsmærke - 3 hjerter",
+        "gram slot",
+        "mælk",
+        "økologisk"
+      ],
+      "surface_treatments": null,
+      "temperature_zone": "refrigerated_5_degrees_celsius",
+      "underline": "1 LTR. / GRAM SLOT, ØKOLOGISK",
+      "warnings": [],
+      "wine_labels": []
+    },
+    {
+      "age_limit": null,
+      "barcodes": [
+        "5705830606075",
+        "5705830610652",
+        "5707552000667"
+      ],
+      "category": {
+        "id": 6050,
+        "important_information": null,
+        "is_hidden": false,
+        "name": "Mælk m.v.",
+        "slug": "maelk-mv"
+      },
+      "declaration": "Økologisk <b>minimælk</b> (0,4 % fedt).",
+      "department": {
+        "id": 60,
+        "important_information": "<h4>Generelt for alle varer</h4> <ul> <li>Producent: vil fremgå af varen ved afhentning</li> <li>Særlige opbevaringsforskrifter: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Pakkemetode: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav til tilberedning: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav i handelsnormer eller varestandarder: vil, hvis relevant, fremgå af varen ved afhentning</li> </ul> <p>&nbsp;</p>",
+        "name": "Mejeri",
+        "products_last_modified_at": "2026-11-07T07:00:14+00:00",
+        "slug": "mejeri"
+      },
+      "description": "<br /> REMA 1000 er medejer af et af Danmarks største økologiske landbrug, Gram Slot, som dagligt leverer bl.a. økologisk mælk, kartofler, mel og havregryn til REMA 1000s butikker.<br /> <br /> På Gram Slot er dyrevelfærd i højsædet, ligesom Jorden ved Gram Slot dyrkes med stor respekt og omtanke. Køerne ved Gram Slot er på græs hele sommeren. I kløvergræsset på markerne er der sået urter, som indeholder æteriske olier og er rige på mineraler. Vi driver markerne på denne måde, fordi urterne giver køerne et varieret, velsmagende foder.<br /> <br /> Om emballagen:<br /> Let at åbne. Let at hælde af. Minimal affaldsmængde. Med denne letvægtsemballage spares der ressourcer, da den kræver færre råmaterialer - lige fra produktion til transport af affald. <br /> <br />",
+      "gpsr": null,
+      "hazard_precaution_statements": [],
+      "id": 20020,
+      "images": [
+        {
+          "large": "https://rema-product-images.digital.rema1000.dk/20020/1-large-AKqeGzjPp1.webp",
+          "medium": "https://rema-product-images.digital.rema1000.dk/20020/1-medium-AKqeGzjPp1.webp",
+          "small": "https://rema-product-images.digital.rema1000.dk/20020/1-small-AKqeGzjPp1.webp"
+        }
+      ],
+      "info": "",
+      "is_available_in_all_stores": true,
+      "is_batch_item": false,
+      "is_self_scale_item": false,
+      "is_weight_item": false,
+      "labels": [
+        {
+          "id": 5,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/5-64.webp",
+          "name": "Økologi"
+        },
+        {
+          "id": 6,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/6-64.webp",
+          "name": "Økologi"
+        },
+        {
+          "id": 39,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/39-64.webp",
+          "name": "Gram slot"
+        },
+        {
+          "id": 40,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/40-64.webp",
+          "name": "Nøglehul"
+        },
+        {
+          "id": 203,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/203-64.webp",
+          "name": "Bedre dyrevelfærd 3"
+        }
+      ],
+      "name": "MINIMÆLK 0,4%",
+      "origin_country": null,
+      "prices": [
+        {
+          "compare_unit": "ltr",
+          "compare_unit_price": 13.95,
+          "consumption_quantity": null,
+          "consumption_unit": null,
+          "deposit": null,
+          "ending_at": "2099-12-31T00:00:00+00:00",
+          "is_advertised": false,
+          "is_campaign": false,
+          "max_quantity": null,
+          "price": 13.95,
+          "price_over_max_quantity": null,
+          "starting_at": "2026-03-05T00:00:00+00:00"
+        }
+      ],
+      "produce": null,
+      "search_words": [
+        "dyrevelfærdsmærke - 2 hjerter",
+        "dyrevelfærdsmærke - 3 hjerter",
+        "gram slot",
+        "mælk",
+        "nøglehul",
+        "økologisk"
+      ],
+      "surface_treatments": null,
+      "temperature_zone": "refrigerated_5_degrees_celsius",
+      "underline": "1 LTR. / GRAM SLOT, ØKOLOGISK",
+      "warnings": [],
+      "wine_labels": []
+    },
+    {
+      "age_limit": null,
+      "barcodes": [
+        "5705830606082",
+        "5705830610645",
+        "5707552000650"
+      ],
+      "category": {
+        "id": 6050,
+        "important_information": null,
+        "is_hidden": false,
+        "name": "Mælk m.v.",
+        "slug": "maelk-mv"
+      },
+      "declaration": "Økologisk <b>skummetmælk</b> (0,1 % fedt).",
+      "department": {
+        "id": 60,
+        "important_information": "<h4>Generelt for alle varer</h4> <ul> <li>Producent: vil fremgå af varen ved afhentning</li> <li>Særlige opbevaringsforskrifter: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Pakkemetode: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav til tilberedning: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav i handelsnormer eller varestandarder: vil, hvis relevant, fremgå af varen ved afhentning</li> </ul> <p>&nbsp;</p>",
+        "name": "Mejeri",
+        "products_last_modified_at": "2026-11-07T07:00:14+00:00",
+        "slug": "mejeri"
+      },
+      "description": "<br /> REMA 1000 er medejer af et af Danmarks største økologiske landbrug, Gram Slot, som dagligt leverer bl.a. økologisk mælk, kartofler, mel og havregryn til REMA 1000s butikker.<br /> <br /> På Gram Slot er dyrevelfærd i højsædet, ligesom Jorden ved Gram Slot dyrkes med stor respekt og omtanke. Køerne ved Gram Slot er på græs hele sommeren. I kløvergræsset på markerne er der sået urter, som indeholder æteriske olier og er rige på mineraler. Vi driver markerne på denne måde, fordi urterne giver køerne et varieret, velsmagende foder.<br /> <br /> Om emballagen:<br /> Let at åbne. Let at hælde af. Minimal affaldsmængde. Med denne letvægtsemballage spares der ressourcer, da den kræver færre råmaterialer - lige fra produktion til transport af affald. <br /> <br />",
+      "gpsr": null,
+      "hazard_precaution_statements": [],
+      "id": 20026,
+      "images": [
+        {
+          "large": "https://rema-product-images.digital.rema1000.dk/20026/1-large-kOq3vBno63.webp",
+          "medium": "https://rema-product-images.digital.rema1000.dk/20026/1-medium-kOq3vBno63.webp",
+          "small": "https://rema-product-images.digital.rema1000.dk/20026/1-small-kOq3vBno63.webp"
+        }
+      ],
+      "info": "",
+      "is_available_in_all_stores": false,
+      "is_batch_item": false,
+      "is_self_scale_item": false,
+      "is_weight_item": false,
+      "labels": [
+        {
+          "id": 5,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/5-64.webp",
+          "name": "Økologi"
+        },
+        {
+          "id": 6,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/6-64.webp",
+          "name": "Økologi"
+        },
+        {
+          "id": 39,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/39-64.webp",
+          "name": "Gram slot"
+        },
+        {
+          "id": 40,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/40-64.webp",
+          "name": "Nøglehul"
+        },
+        {
+          "id": 203,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/203-64.webp",
+          "name": "Bedre dyrevelfærd 3"
+        }
+      ],
+      "name": "SKUMMETMÆLK 0,1%",
+      "origin_country": null,
+      "prices": [
+        {
+          "compare_unit": "ltr",
+          "compare_unit_price": 13.95,
+          "consumption_quantity": null,
+          "consumption_unit": null,
+          "deposit": null,
+          "ending_at": "2099-12-31T00:00:00+00:00",
+          "is_advertised": false,
+          "is_campaign": false,
+          "max_quantity": null,
+          "price": 13.95,
+          "price_over_max_quantity": null,
+          "starting_at": "2026-03-05T00:00:00+00:00"
+        }
+      ],
+      "produce": null,
+      "search_words": [
+        "dyrevelfærdsmærke - 2 hjerter",
+        "dyrevelfærdsmærke - 3 hjerter",
+        "gram slot",
+        "mælk",
+        "nøglehul",
+        "økologisk"
+      ],
+      "surface_treatments": null,
+      "temperature_zone": "refrigerated_5_degrees_celsius",
+      "underline": "1 LTR. / GRAM SLOT, ØKOLOGISK",
+      "warnings": [],
+      "wine_labels": []
+    },
+    {
+      "age_limit": null,
+      "barcodes": [
+        "5700426101019",
+        "5700426290737"
+      ],
+      "category": {
+        "id": 6050,
+        "important_information": null,
+        "is_hidden": false,
+        "name": "Mælk m.v.",
+        "slug": "maelk-mv"
+      },
+      "declaration": "1 liter <b>SØDMÆLK</b> 3,5% fedt.",
+      "department": {
+        "id": 60,
+        "important_information": "<h4>Generelt for alle varer</h4> <ul> <li>Producent: vil fremgå af varen ved afhentning</li> <li>Særlige opbevaringsforskrifter: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Pakkemetode: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav til tilberedning: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav i handelsnormer eller varestandarder: vil, hvis relevant, fremgå af varen ved afhentning</li> </ul> <p>&nbsp;</p>",
+        "name": "Mejeri",
+        "products_last_modified_at": "2026-11-07T07:00:14+00:00",
+        "slug": "mejeri"
+      },
+      "description": null,
+      "gpsr": null,
+      "hazard_precaution_statements": [],
+      "id": 20100,
+      "images": [
+        {
+          "large": "https://rema-product-images.digital.rema1000.dk/20100/1-large-xePwlvEow8.webp",
+          "medium": "https://rema-product-images.digital.rema1000.dk/20100/1-medium-xePwlvEow8.webp",
+          "small": "https://rema-product-images.digital.rema1000.dk/20100/1-small-xePwlvEow8.webp"
+        }
+      ],
+      "info": "",
+      "is_available_in_all_stores": true,
+      "is_batch_item": false,
+      "is_self_scale_item": false,
+      "is_weight_item": false,
+      "labels": [
+        {
+          "id": 70,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/70-64.webp",
+          "name": "Dansk"
+        },
+        {
+          "id": 202,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/202-64.webp",
+          "name": "Bedre dyrevelfærd 2"
+        }
+      ],
+      "name": "SØDMÆLK 3,5%",
+      "origin_country": null,
+      "prices": [
+        {
+          "compare_unit": "ltr",
+          "compare_unit_price": 13.5,
+          "consumption_quantity": null,
+          "consumption_unit": null,
+          "deposit": null,
+          "ending_at": "2099-12-31T00:00:00+00:00",
+          "is_advertised": false,
+          "is_campaign": false,
+          "max_quantity": null,
+          "price": 13.5,
+          "price_over_max_quantity": null,
+          "starting_at": "2026-01-29T00:00:00+00:00"
+        }
+      ],
+      "produce": null,
+      "search_words": [
+        "dansk",
+        "dyrevelfærdsmærke - 2 hjerter",
+        "sødmælk"
+      ],
+      "surface_treatments": null,
+      "temperature_zone": "refrigerated_5_degrees_celsius",
+      "underline": "1 LTR. / ARLA",
+      "warnings": [],
+      "wine_labels": []
+    },
+    {
+      "age_limit": null,
+      "barcodes": [
+        "5705830015549"
+      ],
+      "category": {
+        "id": 8060,
+        "important_information": null,
+        "is_hidden": false,
+        "name": "Konserves & survarer",
+        "slug": "konserves-survarer"
+      },
+      "declaration": "<b>MÆLK</b> 55%, sukker 45%",
+      "department": {
+        "id": 80,
+        "important_information": "<h4>Generelt for alle varer</h4> <ul> <li>Producent: vil fremgå af varen ved afhentning</li> <li>Særlige opbevaringsforskrifter: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Pakkemetode: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav til tilberedning: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav i handelsnormer eller varestandarder: vil, hvis relevant, fremgå af varen ved afhentning</li> </ul> <p>&nbsp;</p>",
+        "name": "Kolonial",
+        "products_last_modified_at": "2026-11-07T07:00:15+00:00",
+        "slug": "kolonial"
+      },
+      "description": "Kondenseret mælk kan bl.a. bruges til at lave kage, is, kokosmakroner eller cremet karamel som dulce de leche.<br />",
+      "gpsr": null,
+      "hazard_precaution_statements": [],
+      "id": 101535,
+      "images": [
+        {
+          "large": "https://rema-product-images.digital.rema1000.dk/101535/1-large-Gb9kMzDdo7.webp",
+          "medium": "https://rema-product-images.digital.rema1000.dk/101535/1-medium-Gb9kMzDdo7.webp",
+          "small": "https://rema-product-images.digital.rema1000.dk/101535/1-small-Gb9kMzDdo7.webp"
+        }
+      ],
+      "info": "",
+      "is_available_in_all_stores": true,
+      "is_batch_item": false,
+      "is_self_scale_item": false,
+      "is_weight_item": false,
+      "labels": [
+        {
+          "id": 2,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/2-64.webp",
+          "name": "REMA1000"
+        }
+      ],
+      "name": "KONDENSERET MÆLK",
+      "origin_country": null,
+      "prices": [
+        {
+          "compare_unit": "kg",
+          "compare_unit_price": 42.7,
+          "consumption_quantity": null,
+          "consumption_unit": null,
+          "deposit": null,
+          "ending_at": "2099-12-31T00:00:00+00:00",
+          "is_advertised": false,
+          "is_campaign": false,
+          "max_quantity": null,
+          "price": 16.95,
+          "price_over_max_quantity": null,
+          "starting_at": "2026-05-21T00:00:00+00:00"
+        }
+      ],
+      "produce": null,
+      "search_words": [],
+      "surface_treatments": null,
+      "temperature_zone": null,
+      "underline": "397 GR. / REMA 1000",
+      "warnings": [],
+      "wine_labels": []
+    },
+    {
+      "age_limit": null,
+      "barcodes": [
+        "5705830013439",
+        "5705830016409"
+      ],
+      "category": {
+        "id": 8050,
+        "important_information": null,
+        "is_hidden": false,
+        "name": "Kiks, kager & knækbrød",
+        "slug": "kiks-kager-knaekbrod"
+      },
+      "declaration": "Til 100 g færdigvare er anvendt: 31 g <b>havreflager</b>, 25 g <b>mælkechokolade</b> (sukker, kakaosmør*, kakaomasse*, <b>sødmælkspulver</b>, <b>vallepulver</b> (af <b>mælk</b>), emulgator (E 322 af <b>soja</b>), aroma), 16 g sukker, 13 g  <b>hvedemel</b>, 13 g solsikkeolie, 4 g <b>hvedeklid</b>, glukose-fruktosesirup, hævemidler (E 500, E 503), salt, emulgator (E 322 af <b>soja</b>), antioxidant (E 306).<br>*Rainforest Alliance-certificeret. Yderligere information på ra.org. Kan  indeholde spor af <b>rug</b>, <b>byg</b>, <b>hasselnødder</b> og <b>sennep</b>.",
+      "department": {
+        "id": 80,
+        "important_information": "<h4>Generelt for alle varer</h4> <ul> <li>Producent: vil fremgå af varen ved afhentning</li> <li>Særlige opbevaringsforskrifter: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Pakkemetode: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav til tilberedning: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav i handelsnormer eller varestandarder: vil, hvis relevant, fremgå af varen ved afhentning</li> </ul> <p>&nbsp;</p>",
+        "name": "Kolonial",
+        "products_last_modified_at": "2026-11-07T07:00:15+00:00",
+        "slug": "kolonial"
+      },
+      "description": null,
+      "gpsr": null,
+      "hazard_precaution_statements": [],
+      "id": 71499,
+      "images": [
+        {
+          "large": "https://rema-product-images.digital.rema1000.dk/71499/1-large-A5qVrGwqaQ.webp",
+          "medium": "https://rema-product-images.digital.rema1000.dk/71499/1-medium-A5qVrGwqaQ.webp",
+          "small": "https://rema-product-images.digital.rema1000.dk/71499/1-small-A5qVrGwqaQ.webp"
+        }
+      ],
+      "info": "",
+      "is_available_in_all_stores": true,
+      "is_batch_item": false,
+      "is_self_scale_item": false,
+      "is_weight_item": false,
+      "labels": [
+        {
+          "id": 2,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/2-64.webp",
+          "name": "REMA1000"
+        },
+        {
+          "id": 95,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/95-64.webp",
+          "name": "Rainforest Alliance"
+        }
+      ],
+      "name": "HAVREKIKS, MÆLK",
+      "origin_country": null,
+      "prices": [
+        {
+          "compare_unit": "kg",
+          "compare_unit_price": 55.36,
+          "consumption_quantity": null,
+          "consumption_unit": null,
+          "deposit": null,
+          "ending_at": "2099-12-31T00:00:00+00:00",
+          "is_advertised": false,
+          "is_campaign": false,
+          "max_quantity": null,
+          "price": 15.5,
+          "price_over_max_quantity": null,
+          "starting_at": "2023-02-02T00:00:00+00:00"
+        }
+      ],
+      "produce": null,
+      "search_words": [],
+      "surface_treatments": null,
+      "temperature_zone": null,
+      "underline": "280 GR. / REMA 1000",
+      "warnings": [],
+      "wine_labels": []
+    },
+    {
+      "age_limit": null,
+      "barcodes": [
+        "[fjernet af handle-mcp]",
+        "5760466783873"
+      ],
+      "category": {
+        "id": 6050,
+        "important_information": null,
+        "is_hidden": false,
+        "name": "Mælk m.v.",
+        "slug": "maelk-mv"
+      },
+      "declaration": "1/4 liter <b>LETMÆLK</b> 1,5% fedt.",
+      "department": {
+        "id": 60,
+        "important_information": "<h4>Generelt for alle varer</h4> <ul> <li>Producent: vil fremgå af varen ved afhentning</li> <li>Særlige opbevaringsforskrifter: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Pakkemetode: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav til tilberedning: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav i handelsnormer eller varestandarder: vil, hvis relevant, fremgå af varen ved afhentning</li> </ul> <p>&nbsp;</p>",
+        "name": "Mejeri",
+        "products_last_modified_at": "2026-11-07T07:00:14+00:00",
+        "slug": "mejeri"
+      },
+      "description": null,
+      "gpsr": null,
+      "hazard_precaution_statements": [],
+      "id": 20758,
+      "images": [
+        {
+          "large": "https://rema-product-images.digital.rema1000.dk/20758/1-large-3MovVxLoAb.webp",
+          "medium": "https://rema-product-images.digital.rema1000.dk/20758/1-medium-3MovVxLoAb.webp",
+          "small": "https://rema-product-images.digital.rema1000.dk/20758/1-small-3MovVxLoAb.webp"
+        }
+      ],
+      "info": "",
+      "is_available_in_all_stores": false,
+      "is_batch_item": false,
+      "is_self_scale_item": false,
+      "is_weight_item": false,
+      "labels": [],
+      "name": "LETMÆLK",
+      "origin_country": null,
+      "prices": [
+        {
+          "compare_unit": "ltr",
+          "compare_unit_price": 15.8,
+          "consumption_quantity": null,
+          "consumption_unit": null,
+          "deposit": null,
+          "ending_at": "2099-12-31T00:00:00+00:00",
+          "is_advertised": false,
+          "is_campaign": false,
+          "max_quantity": null,
+          "price": 3.95,
+          "price_over_max_quantity": null,
+          "starting_at": "2026-01-29T00:00:00+00:00"
+        }
+      ],
+      "produce": null,
+      "search_words": [],
+      "surface_treatments": null,
+      "temperature_zone": "refrigerated_5_degrees_celsius",
+      "underline": "250 ML. / ARLA",
+      "warnings": [],
+      "wine_labels": []
+    }
+  ],
+  "meta": {
+    "filters": {
+      "labels": [
+        {
+          "id": 9001,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/9001-64.webp",
+          "name": "Avisvare",
+          "products_count": 6
+        },
+        {
+          "id": 2,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/2-64.webp",
+          "name": "REMA1000",
+          "products_count": 19
+        },
+        {
+          "id": 5,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/5-64.webp",
+          "name": "Økologi",
+          "products_count": 14
+        },
+        {
+          "id": 6,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/6-64.webp",
+          "name": "Økologi",
+          "products_count": 18
+        },
+        {
+          "id": 31,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/31-64.webp",
+          "name": "Ikke tilsat sukker",
+          "products_count": 2
+        },
+        {
+          "id": 37,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/37-64.webp",
+          "name": "Laktose fri",
+          "products_count": 6
+        },
+        {
+          "id": 38,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/38-64.webp",
+          "name": "Gluten fri",
+          "products_count": 1
+        },
+        {
+          "id": 39,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/39-64.webp",
+          "name": "Gram slot",
+          "products_count": 8
+        },
+        {
+          "id": 40,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/40-64.webp",
+          "name": "Nøglehul",
+          "products_count": 14
+        },
+        {
+          "id": 70,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/70-64.webp",
+          "name": "Dansk",
+          "products_count": 15
+        },
+        {
+          "id": 95,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/95-64.webp",
+          "name": "Rainforest Alliance",
+          "products_count": 12
+        },
+        {
+          "id": 201,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/201-64.webp",
+          "name": "Bedre dyrevelfærd 1",
+          "products_count": 5
+        },
+        {
+          "id": 202,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/202-64.webp",
+          "name": "Bedre dyrevelfærd 2",
+          "products_count": 3
+        },
+        {
+          "id": 203,
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/203-64.webp",
+          "name": "Bedre dyrevelfærd 3",
+          "products_count": 13
+        }
+      ]
+    },
+    "pagination": {
+      "current_page": 1,
+      "from": 1,
+      "last_page": 8,
+      "links": {
+        "first": "http://api.digital.rema1000.dk/api/search/products?per_page=10&query=m%C3%A6lk&page=1",
+        "last": "http://api.digital.rema1000.dk/api/search/products?per_page=10&query=m%C3%A6lk&page=8",
+        "next": "http://api.digital.rema1000.dk/api/search/products?per_page=10&query=m%C3%A6lk&page=2",
+        "prev": null
+      },
+      "path": "http://api.digital.rema1000.dk/api/search/products",
+      "per_page": 10,
+      "to": 10,
+      "total": 78
+    }
+  }
+}

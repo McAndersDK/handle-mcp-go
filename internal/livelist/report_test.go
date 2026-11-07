@@ -119,12 +119,18 @@ func TestGuardsStopWrites(t *testing.T) {
 	probe := &recorder{}
 	n := nemligGuard{tb: probe, inner: okTransport{}}
 	b := bilkaGuard{tb: probe, inner: okTransport{}}
+	r := remaGuard{tb: probe, inner: okTransport{}}
 	type call struct {
 		rt          http.RoundTripper
 		method, url string
 		allowed     bool
 	}
 	calls := []call{
+		{r, "POST", "https://api.digital.rema1000.dk/api/v2/shoppinglists", false},
+		{r, "PATCH", "https://api.digital.rema1000.dk/api/v2/shoppinglists/1", false},
+		{r, "GET", "https://api.digital.rema1000.dk/api/v3/stores", true},
+		{r, "POST", "https://cphapp.rema1000.dk/api/oauth2/login", true},
+		{r, "POST", "https://shop.rema1000.dk/api/auth/refresh", true},
 		{n, "POST", "https://www.nemlig.com/webapi/basket/AddToBasket", false},
 		{n, "PUT", "https://www.nemlig.com/webapi/x", false},
 		{n, "DELETE", "https://www.nemlig.com/webapi/x", false},

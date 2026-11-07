@@ -242,7 +242,7 @@ func TestRealRegistryNeedsNoStoreForAToolListOrAnUnknownStore(t *testing.T) {
 	if n := len(resultOf(t, byID[2])["tools"].([]any)); n != 13 {
 		t.Errorf("%d tools", n)
 	}
-	if text, isErr := textOf(t, byID[3]); !isErr || text != "Ukendt butik 'nope'. Kendte butikker: bilkatogo, nemlig." {
+	if text, isErr := textOf(t, byID[3]); !isErr || text != "Ukendt butik 'nope'. Kendte butikker: bilkatogo, nemlig, rema1000." {
 		t.Errorf("%v %q", isErr, text)
 	}
 }

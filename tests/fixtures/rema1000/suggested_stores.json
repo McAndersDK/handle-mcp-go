@@ -1,0 +1,20 @@
+{
+  "data": [],
+  "meta": {
+    "pagination": {
+      "current_page": 1,
+      "from": null,
+      "last_page": 1,
+      "links": {
+        "first": "http://api.digital.rema1000.dk/api/v3/users/1/suggested-stores?page=1",
+        "last": "http://api.digital.rema1000.dk/api/v3/users/1/suggested-stores?page=1",
+        "next": null,
+        "prev": null
+      },
+      "path": "http://api.digital.rema1000.dk/api/v3/users/1/suggested-stores",
+      "per_page": 3,
+      "to": null,
+      "total": 0
+    }
+  }
+}

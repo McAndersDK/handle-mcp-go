@@ -1,0 +1,671 @@
+{
+  "data": [
+    {
+      "id": 360691,
+      "name": "SALT & PEBER STYKKE",
+      "underline": "50 GR. / BAVINCHI",
+      "department": {
+        "id": 10,
+        "name": "Brød & Bavinchi",
+        "important_information": "<h4>Generelt for alle varer</h4> <ul> <li>Producent: vil fremgå af varen ved afhentning</li> <li>Særlige opbevaringsforskrifter: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Pakkemetode: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav til tilberedning: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav i handelsnormer eller varestandarder: vil, hvis relevant, fremgå af varen ved afhentning</li> </ul> <p>&nbsp;</p>",
+        "slug": "brod-bavinchi",
+        "products_last_modified_at": "2026-11-07T07:00:14+00:00"
+      },
+      "category": {
+        "id": 1080,
+        "name": "Bavinchi bager",
+        "important_information": null,
+        "slug": "bavinchi-bager",
+        "is_hidden": false
+      },
+      "age_limit": null,
+      "barcodes": [
+        "5711156012179"
+      ],
+      "search_words": [],
+      "hazard_precaution_statements": [],
+      "labels": [
+        {
+          "id": 9001,
+          "name": "Avisvare",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/9001-64.webp"
+        }
+      ],
+      "description": null,
+      "info": "",
+      "declaration": "<b>HVEDEMEL</b>, vand, <b>SESAMFRØ</b>, <b>RUGSIGTEMEL</b>, blå birkes, salt tilsat jod, gær, salt groft, <b>HVEDEGLUTEN</b>, melbehandlingsmiddel (E300), dextrose, peber, vegetabilsk fedt (rspo certificeret palme), salt, emulgator (E322, E475, E471 , E472e), <b>HVEDEMALTMEL</b>, vegetabilsk olie (raps) , paprika røget, koriander, løg, <b>SENNEPSMEL</b>, enzymer, chili, kartoffelstivelse, <b>sellerifrø</b>, paprika, aroma, vitamin A fra margarine, surhedsregulerende middel (E330). Kan indeholde  spor af <b>HASSELNØDDER</b>, <b>MANDLER</b>, <b>VALNØDDER</b>, <b>JORDNØDDER</b>, <b>ÆG</b>, <b>MÆLK</b>",
+      "images": [
+        {
+          "small": "https://rema-product-images.digital.rema1000.dk/360691/1-small-3MoMLpwyP5.webp",
+          "medium": "https://rema-product-images.digital.rema1000.dk/360691/1-medium-3MoMLpwyP5.webp",
+          "large": "https://rema-product-images.digital.rema1000.dk/360691/1-large-3MoMLpwyP5.webp"
+        }
+      ],
+      "prices": [
+        {
+          "price": 3,
+          "price_over_max_quantity": null,
+          "max_quantity": null,
+          "is_advertised": true,
+          "is_campaign": true,
+          "starting_at": "2026-11-05T00:00:00+00:00",
+          "ending_at": "2026-11-07T00:00:00+00:00",
+          "deposit": null,
+          "compare_unit": "kg",
+          "compare_unit_price": 60,
+          "consumption_unit": null,
+          "consumption_quantity": null
+        },
+        {
+          "price": 4,
+          "price_over_max_quantity": null,
+          "max_quantity": null,
+          "is_advertised": false,
+          "is_campaign": false,
+          "starting_at": "2026-11-08T00:00:00+00:00",
+          "ending_at": "2099-12-31T00:00:00+00:00",
+          "deposit": null,
+          "compare_unit": "kg",
+          "compare_unit_price": 80,
+          "consumption_unit": null,
+          "consumption_quantity": null
+        }
+      ],
+      "warnings": [],
+      "gpsr": null,
+      "surface_treatments": null,
+      "produce": null,
+      "temperature_zone": null,
+      "is_self_scale_item": false,
+      "is_weight_item": false,
+      "is_available_in_all_stores": true,
+      "is_batch_item": false,
+      "origin_country": null,
+      "wine_labels": []
+    },
+    {
+      "id": 360735,
+      "name": "SKAGENSTYKKE",
+      "underline": "60 GR. / BAVINCHI, FULDKORN",
+      "department": {
+        "id": 10,
+        "name": "Brød & Bavinchi",
+        "important_information": "<h4>Generelt for alle varer</h4> <ul> <li>Producent: vil fremgå af varen ved afhentning</li> <li>Særlige opbevaringsforskrifter: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Pakkemetode: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav til tilberedning: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav i handelsnormer eller varestandarder: vil, hvis relevant, fremgå af varen ved afhentning</li> </ul> <p>&nbsp;</p>",
+        "slug": "brod-bavinchi",
+        "products_last_modified_at": "2026-11-07T07:00:14+00:00"
+      },
+      "category": {
+        "id": 1080,
+        "name": "Bavinchi bager",
+        "important_information": null,
+        "slug": "bavinchi-bager",
+        "is_hidden": false
+      },
+      "age_limit": null,
+      "barcodes": [
+        "5711156006109"
+      ],
+      "search_words": [
+        "bager",
+        "bagerbrød",
+        "bavinchi",
+        "morgenbrød",
+        "rundstykker"
+      ],
+      "hazard_precaution_statements": [],
+      "labels": [
+        {
+          "id": 9001,
+          "name": "Avisvare",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/9001-64.webp"
+        }
+      ],
+      "description": null,
+      "info": "",
+      "declaration": "<b>HVEDEMEL</b>, vand, solsikkekerner, <b>RUGHALVSIGTEMEL</b>, <b>SOJAMEL</b> (groft), salt tilsat jod, blå birkes, gær, <b>BYGMALTMEL</b>, melbehandlingsmiddel (E300), <b>HVEDEGLUTEN</b>, hørfrø, <b>HVEDESURDEJ</b> tørret, <b>maltekstrakt</b>  (<b>BYG</b>, <b>BYGMALT</b>, vand), enzymer, <b>HVEDEKVÆLDEMEL</b>, <b>SOJAMEL</b>, <b>vallepulver</b> (fra <b>MÆLK</b>), <b>HVEDEMALTMEL</b> (ristet), <b>HVEDEMALTMEL</b>, emulgator (E472e), antiklumpningsmiddel (E170), kartoffelstivelse. Kan  indeholde spor af <b>HASSELNØDDER</b>, <b>MANDLER</b>, <b>SESAM</b>, <b>VALNØDDER</b>, <b>JORDNØDDER</b>, <b>ÆG</b>",
+      "images": [
+        {
+          "small": "https://rema-product-images.digital.rema1000.dk/360735/1-small-Gb9kVaLrq7.webp",
+          "medium": "https://rema-product-images.digital.rema1000.dk/360735/1-medium-Gb9kVaLrq7.webp",
+          "large": "https://rema-product-images.digital.rema1000.dk/360735/1-large-Gb9kVaLrq7.webp"
+        }
+      ],
+      "prices": [
+        {
+          "price": 3,
+          "price_over_max_quantity": null,
+          "max_quantity": null,
+          "is_advertised": true,
+          "is_campaign": true,
+          "starting_at": "2026-11-05T00:00:00+00:00",
+          "ending_at": "2026-11-07T00:00:00+00:00",
+          "deposit": null,
+          "compare_unit": "kg",
+          "compare_unit_price": 50,
+          "consumption_unit": null,
+          "consumption_quantity": null
+        },
+        {
+          "price": 4,
+          "price_over_max_quantity": null,
+          "max_quantity": null,
+          "is_advertised": false,
+          "is_campaign": false,
+          "starting_at": "2026-11-08T00:00:00+00:00",
+          "ending_at": "2099-12-31T00:00:00+00:00",
+          "deposit": null,
+          "compare_unit": "kg",
+          "compare_unit_price": 66.67,
+          "consumption_unit": null,
+          "consumption_quantity": null
+        }
+      ],
+      "warnings": [],
+      "gpsr": null,
+      "surface_treatments": null,
+      "produce": null,
+      "temperature_zone": null,
+      "is_self_scale_item": false,
+      "is_weight_item": false,
+      "is_available_in_all_stores": true,
+      "is_batch_item": false,
+      "origin_country": null,
+      "wine_labels": []
+    },
+    {
+      "id": 360738,
+      "name": "HÅNDVÆRKER",
+      "underline": "45 GR. / BAVINCHI",
+      "department": {
+        "id": 10,
+        "name": "Brød & Bavinchi",
+        "important_information": "<h4>Generelt for alle varer</h4> <ul> <li>Producent: vil fremgå af varen ved afhentning</li> <li>Særlige opbevaringsforskrifter: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Pakkemetode: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav til tilberedning: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav i handelsnormer eller varestandarder: vil, hvis relevant, fremgå af varen ved afhentning</li> </ul> <p>&nbsp;</p>",
+        "slug": "brod-bavinchi",
+        "products_last_modified_at": "2026-11-07T07:00:14+00:00"
+      },
+      "category": {
+        "id": 1080,
+        "name": "Bavinchi bager",
+        "important_information": null,
+        "slug": "bavinchi-bager",
+        "is_hidden": false
+      },
+      "age_limit": null,
+      "barcodes": [
+        "2012",
+        "5711156006581"
+      ],
+      "search_words": [
+        "bager",
+        "bagerbrød",
+        "bavinchi",
+        "morgenbreød",
+        "rundstykke"
+      ],
+      "hazard_precaution_statements": [],
+      "labels": [
+        {
+          "id": 9001,
+          "name": "Avisvare",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/9001-64.webp"
+        }
+      ],
+      "description": null,
+      "info": "",
+      "declaration": "<b>HVEDEMEL</b>, vand, <b>RUGSIGTEMEL</b>, blå birkes, salt tilsat jod, gær, <b>HVEDEGLUTEN</b>, melbehandlingsmiddel (E300), dextrose, vegetabilsk fedt (rspo certificeret palme), emulgator (E322, E475, E471, E472e), <b>HVEDEMALTMEL</b>, vegetabilsk  olie (raps) , enzymer, kartoffelstivelse, salt, aroma, vitamin A fra margarine, surhedsregulerende middel (E330). Kan indeholde spor af <b>HASSELNØDDER</b>, <b>MANDLER</b>, <b>SESAM</b>, <b>VALNØDDER</b>, <b>JORDNØDDER</b>, <b>ÆG</b>, <b>MÆLK</b>.",
+      "images": [
+        {
+          "small": "https://rema-product-images.digital.rema1000.dk/360738/1-small-MBoNXmg59v.webp",
+          "medium": "https://rema-product-images.digital.rema1000.dk/360738/1-medium-MBoNXmg59v.webp",
+          "large": "https://rema-product-images.digital.rema1000.dk/360738/1-large-MBoNXmg59v.webp"
+        }
+      ],
+      "prices": [
+        {
+          "price": 3,
+          "price_over_max_quantity": null,
+          "max_quantity": null,
+          "is_advertised": true,
+          "is_campaign": true,
+          "starting_at": "2026-11-05T00:00:00+00:00",
+          "ending_at": "2026-11-07T00:00:00+00:00",
+          "deposit": null,
+          "compare_unit": "kg",
+          "compare_unit_price": 66.67,
+          "consumption_unit": null,
+          "consumption_quantity": null
+        },
+        {
+          "price": 4,
+          "price_over_max_quantity": null,
+          "max_quantity": null,
+          "is_advertised": false,
+          "is_campaign": false,
+          "starting_at": "2026-11-08T00:00:00+00:00",
+          "ending_at": "2099-12-31T00:00:00+00:00",
+          "deposit": null,
+          "compare_unit": "kg",
+          "compare_unit_price": 88.89,
+          "consumption_unit": null,
+          "consumption_quantity": null
+        }
+      ],
+      "warnings": [],
+      "gpsr": null,
+      "surface_treatments": null,
+      "produce": null,
+      "temperature_zone": null,
+      "is_self_scale_item": false,
+      "is_weight_item": false,
+      "is_available_in_all_stores": true,
+      "is_batch_item": false,
+      "origin_country": null,
+      "wine_labels": []
+    },
+    {
+      "id": 360758,
+      "name": "SPANSKSTYKKE",
+      "underline": "45 GR. / BAVINCHI",
+      "department": {
+        "id": 10,
+        "name": "Brød & Bavinchi",
+        "important_information": "<h4>Generelt for alle varer</h4> <ul> <li>Producent: vil fremgå af varen ved afhentning</li> <li>Særlige opbevaringsforskrifter: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Pakkemetode: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav til tilberedning: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav i handelsnormer eller varestandarder: vil, hvis relevant, fremgå af varen ved afhentning</li> </ul> <p>&nbsp;</p>",
+        "slug": "brod-bavinchi",
+        "products_last_modified_at": "2026-11-07T07:00:14+00:00"
+      },
+      "category": {
+        "id": 1080,
+        "name": "Bavinchi bager",
+        "important_information": null,
+        "slug": "bavinchi-bager",
+        "is_hidden": false
+      },
+      "age_limit": null,
+      "barcodes": [
+        "5711156008646"
+      ],
+      "search_words": [
+        "bager",
+        "bagerbrød",
+        "bavinchi",
+        "morgenbrød",
+        "rundstykke"
+      ],
+      "hazard_precaution_statements": [],
+      "labels": [
+        {
+          "id": 9001,
+          "name": "Avisvare",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/9001-64.webp"
+        }
+      ],
+      "description": null,
+      "info": "",
+      "declaration": "<b>hvedemel</b>, vand, <b>rugsigtemel</b>, <b>durumhvedemel</b>, salt tilsat jod, gær, <b>hvedegluten</b>, melbehandlingsmiddel (E300), dextrose, vegetabilsk fedt (rspo certificeret palme),<br>emulgator (E322, E475, E471, E472e), <b>hvedemaltmel</b> , vegetabilsk olie (raps) , enzymer, kartoffelstivelse, salt, surhedsregulerende middel (E330), vitamin A fra margarine, aroma. kan indeholde<br>spor af <b>hasselnødder</b>, <b>mandler</b>, <b>sesam</b>, <b>valnødder</b>, <b>jordnødder</b>,  <b>æg</b>, <b>mælk</b>",
+      "images": [
+        {
+          "small": "https://rema-product-images.digital.rema1000.dk/360758/1-small-3MovgVJwqA.webp",
+          "medium": "https://rema-product-images.digital.rema1000.dk/360758/1-medium-3MovgVJwqA.webp",
+          "large": "https://rema-product-images.digital.rema1000.dk/360758/1-large-3MovgVJwqA.webp"
+        }
+      ],
+      "prices": [
+        {
+          "price": 3,
+          "price_over_max_quantity": null,
+          "max_quantity": null,
+          "is_advertised": true,
+          "is_campaign": true,
+          "starting_at": "2026-11-05T00:00:00+00:00",
+          "ending_at": "2026-11-07T00:00:00+00:00",
+          "deposit": null,
+          "compare_unit": "kg",
+          "compare_unit_price": 66.67,
+          "consumption_unit": null,
+          "consumption_quantity": null
+        },
+        {
+          "price": 4,
+          "price_over_max_quantity": null,
+          "max_quantity": null,
+          "is_advertised": false,
+          "is_campaign": false,
+          "starting_at": "2026-11-08T00:00:00+00:00",
+          "ending_at": "2099-12-31T00:00:00+00:00",
+          "deposit": null,
+          "compare_unit": "kg",
+          "compare_unit_price": 88.89,
+          "consumption_unit": null,
+          "consumption_quantity": null
+        }
+      ],
+      "warnings": [],
+      "gpsr": null,
+      "surface_treatments": null,
+      "produce": null,
+      "temperature_zone": null,
+      "is_self_scale_item": false,
+      "is_weight_item": false,
+      "is_available_in_all_stores": true,
+      "is_batch_item": false,
+      "origin_country": null,
+      "wine_labels": []
+    },
+    {
+      "id": 360759,
+      "name": "TREKORNSSTYKKE",
+      "underline": "60 GR. / BAVINCHI",
+      "department": {
+        "id": 10,
+        "name": "Brød & Bavinchi",
+        "important_information": "<h4>Generelt for alle varer</h4> <ul> <li>Producent: vil fremgå af varen ved afhentning</li> <li>Særlige opbevaringsforskrifter: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Pakkemetode: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav til tilberedning: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav i handelsnormer eller varestandarder: vil, hvis relevant, fremgå af varen ved afhentning</li> </ul> <p>&nbsp;</p>",
+        "slug": "brod-bavinchi",
+        "products_last_modified_at": "2026-11-07T07:00:14+00:00"
+      },
+      "category": {
+        "id": 1080,
+        "name": "Bavinchi bager",
+        "important_information": null,
+        "slug": "bavinchi-bager",
+        "is_hidden": false
+      },
+      "age_limit": null,
+      "barcodes": [
+        "5711156008820"
+      ],
+      "search_words": [
+        "bager",
+        "bagerbrød",
+        "bavinchi",
+        "morgenbrød",
+        "rundstykke"
+      ],
+      "hazard_precaution_statements": [],
+      "labels": [
+        {
+          "id": 9001,
+          "name": "Avisvare",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/9001-64.webp"
+        }
+      ],
+      "description": null,
+      "info": "",
+      "declaration": "<b>HVEDEMEL</b>, vand, hørfrø, <b>SESAMFRØ</b>, <b>RUGSIGTEMEL</b>, skårne <b>RUGKERNER</b>, salt tilsat jod, gær, melbehandlingsmiddel (E300), <b>HVEDEGLUTEN</b>, emulgator (E472e), antiklumpningsmiddel (E170), kartoffelstivelse, enzymer. Kan  indeholde spor af <b>HASSELNØDDER</b>, <b>MANDLER</b>, <b>VALNØDDER</b>, <b>JORDNØDDER</b>, <b>ÆG</b>, <b>MÆLK</b>",
+      "images": [
+        {
+          "small": "https://rema-product-images.digital.rema1000.dk/360759/1-small-KpqRBANXqL.webp",
+          "medium": "https://rema-product-images.digital.rema1000.dk/360759/1-medium-KpqRBANXqL.webp",
+          "large": "https://rema-product-images.digital.rema1000.dk/360759/1-large-KpqRBANXqL.webp"
+        }
+      ],
+      "prices": [
+        {
+          "price": 3,
+          "price_over_max_quantity": null,
+          "max_quantity": null,
+          "is_advertised": true,
+          "is_campaign": true,
+          "starting_at": "2026-11-05T00:00:00+00:00",
+          "ending_at": "2026-11-07T00:00:00+00:00",
+          "deposit": null,
+          "compare_unit": "kg",
+          "compare_unit_price": 50,
+          "consumption_unit": null,
+          "consumption_quantity": null
+        },
+        {
+          "price": 4,
+          "price_over_max_quantity": null,
+          "max_quantity": null,
+          "is_advertised": false,
+          "is_campaign": false,
+          "starting_at": "2026-11-08T00:00:00+00:00",
+          "ending_at": "2099-12-31T00:00:00+00:00",
+          "deposit": null,
+          "compare_unit": "kg",
+          "compare_unit_price": 66.67,
+          "consumption_unit": null,
+          "consumption_quantity": null
+        }
+      ],
+      "warnings": [],
+      "gpsr": null,
+      "surface_treatments": null,
+      "produce": null,
+      "temperature_zone": null,
+      "is_self_scale_item": false,
+      "is_weight_item": false,
+      "is_available_in_all_stores": true,
+      "is_batch_item": false,
+      "origin_country": null,
+      "wine_labels": []
+    },
+    {
+      "id": 60009,
+      "name": "YOGHURTBOLLER",
+      "underline": "500 GR. / SCHULSTAD",
+      "department": {
+        "id": 10,
+        "name": "Brød & Bavinchi",
+        "important_information": "<h4>Generelt for alle varer</h4> <ul> <li>Producent: vil fremgå af varen ved afhentning</li> <li>Særlige opbevaringsforskrifter: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Pakkemetode: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav til tilberedning: vil, hvis relevant, fremgå af varen ved afhentning</li> <li>Krav i handelsnormer eller varestandarder: vil, hvis relevant, fremgå af varen ved afhentning</li> </ul> <p>&nbsp;</p>",
+        "slug": "brod-bavinchi",
+        "products_last_modified_at": "2026-11-07T07:00:14+00:00"
+      },
+      "category": {
+        "id": 1020,
+        "name": "Boller",
+        "important_information": null,
+        "slug": "boller",
+        "is_hidden": false
+      },
+      "age_limit": null,
+      "barcodes": [
+        "5701205006914",
+        "5701205009304"
+      ],
+      "search_words": [
+        "",
+        "fuldkornsmærke",
+        "nøglehul"
+      ],
+      "hazard_precaution_statements": [],
+      "labels": [
+        {
+          "id": 9001,
+          "name": "Avisvare",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/9001-64.webp"
+        },
+        {
+          "id": 40,
+          "name": "Nøglehul",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/40-64.webp"
+        },
+        {
+          "id": 43,
+          "name": "Fuldkorn",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/43-64.webp"
+        }
+      ],
+      "description": null,
+      "info": "",
+      "declaration": "<b>Fuldkornshvedemel</b> 39%, vand , <b>hvedemel</b>, <b>hvedegluten</b>, gær, sukker, rapsolie, <b>yoghurtpulver</b> 1,2%, eddike, salt tilsat jod, sigtet <b>rugmel</b>, emulgatorer (vegetabilsk E 471, vegetabilsk E 472e), <b>hvedemaltmel</b>,  enzymer <b>(<b>hvede</b>)</b>, melbehandlingsmiddel (E 300).",
+      "images": [
+        {
+          "small": "https://rema-product-images.digital.rema1000.dk/60009/1-small-aboKXYmqpM.webp",
+          "medium": "https://rema-product-images.digital.rema1000.dk/60009/1-medium-aboKXYmqpM.webp",
+          "large": "https://rema-product-images.digital.rema1000.dk/60009/1-large-aboKXYmqpM.webp"
+        }
+      ],
+      "prices": [
+        {
+          "price": 15,
+          "price_over_max_quantity": null,
+          "max_quantity": null,
+          "is_advertised": true,
+          "is_campaign": true,
+          "starting_at": "2026-11-01T00:00:00+00:00",
+          "ending_at": "2026-11-07T00:00:00+00:00",
+          "deposit": null,
+          "compare_unit": "kg",
+          "compare_unit_price": 30,
+          "consumption_unit": null,
+          "consumption_quantity": null
+        },
+        {
+          "price": 21.95,
+          "price_over_max_quantity": null,
+          "max_quantity": null,
+          "is_advertised": false,
+          "is_campaign": false,
+          "starting_at": "2026-11-08T00:00:00+00:00",
+          "ending_at": "2099-12-31T00:00:00+00:00",
+          "deposit": null,
+          "compare_unit": "kg",
+          "compare_unit_price": 43.9,
+          "consumption_unit": null,
+          "consumption_quantity": null
+        }
+      ],
+      "warnings": [],
+      "gpsr": null,
+      "surface_treatments": null,
+      "produce": null,
+      "temperature_zone": null,
+      "is_self_scale_item": false,
+      "is_weight_item": false,
+      "is_available_in_all_stores": true,
+      "is_batch_item": false,
+      "origin_country": null,
+      "wine_labels": []
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "current_page": 1,
+      "from": 1,
+      "last_page": 48,
+      "links": {
+        "first": "http://api.digital.rema1000.dk/api/search/products?filter%5Blabels%5D=9001&per_page=6&page=1&sort=department",
+        "last": "http://api.digital.rema1000.dk/api/search/products?filter%5Blabels%5D=9001&per_page=6&page=48&sort=department",
+        "prev": null,
+        "next": "http://api.digital.rema1000.dk/api/search/products?filter%5Blabels%5D=9001&per_page=6&page=2&sort=department"
+      },
+      "path": "http://api.digital.rema1000.dk/api/search/products",
+      "per_page": 6,
+      "to": 6,
+      "total": 285
+    },
+    "filters": {
+      "labels": [
+        {
+          "id": 9001,
+          "name": "Avisvare",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/9001-64.webp",
+          "products_count": 285
+        },
+        {
+          "id": 42,
+          "name": "Svanemærket",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/42-64.webp",
+          "products_count": 3
+        },
+        {
+          "id": 203,
+          "name": "Bedre dyrevelfærd 3",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/203-64.webp",
+          "products_count": 15
+        },
+        {
+          "id": 201,
+          "name": "Bedre dyrevelfærd 1",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/201-64.webp",
+          "products_count": 7
+        },
+        {
+          "id": 190,
+          "name": "Anbefalet af Dyrenes Beskyttelse",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/190-64.webp",
+          "products_count": 7
+        },
+        {
+          "id": 95,
+          "name": "Rainforest Alliance",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/95-64.webp",
+          "products_count": 13
+        },
+        {
+          "id": 87,
+          "name": "Asthma Allergy Nordic",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/87-64.webp",
+          "products_count": 2
+        },
+        {
+          "id": 70,
+          "name": "Dansk",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/70-64.webp",
+          "products_count": 31
+        },
+        {
+          "id": 45,
+          "name": "ASC",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/45-64.webp",
+          "products_count": 2
+        },
+        {
+          "id": 43,
+          "name": "Fuldkorn",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/43-64.webp",
+          "products_count": 2
+        },
+        {
+          "id": 2,
+          "name": "REMA1000",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/2-64.webp",
+          "products_count": 24
+        },
+        {
+          "id": 40,
+          "name": "Nøglehul",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/40-64.webp",
+          "products_count": 13
+        },
+        {
+          "id": 39,
+          "name": "Gram slot",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/39-64.webp",
+          "products_count": 3
+        },
+        {
+          "id": 37,
+          "name": "Laktose fri",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/37-64.webp",
+          "products_count": 3
+        },
+        {
+          "id": 31,
+          "name": "Ikke tilsat sukker",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/31-64.webp",
+          "products_count": 10
+        },
+        {
+          "id": 9,
+          "name": "MSC",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/9-64.webp",
+          "products_count": 7
+        },
+        {
+          "id": 6,
+          "name": "Økologi",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/6-64.webp",
+          "products_count": 6
+        },
+        {
+          "id": 5,
+          "name": "Økologi",
+          "image": "https://static-assets.digital.rema1000.dk/product/labels/5-64.webp",
+          "products_count": 5
+        }
+      ]
+    }
+  }
+}

@@ -22,8 +22,8 @@ import (
 // listPath is the shared list, relative to this package. The Python file stays where it is.
 const listPath = "../../tests/live_list.json"
 
-// storeNames are the stores the list is priced in (the server's registry has the same two).
-var storeNames = []string{"nemlig", "bilkatogo"}
+// storeNames are the stores the list is priced in (the server's registry has the same three).
+var storeNames = []string{"nemlig", "bilkatogo", "rema1000"}
 
 // Entry is one line of the list. Unknown keys are an error (the Python KEYS set).
 type Entry struct {

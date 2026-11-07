@@ -33,6 +33,7 @@ import (
 	"github.com/McAndersDK/handle-mcp-go/internal/store"
 	"github.com/McAndersDK/handle-mcp-go/internal/store/bilkatogo"
 	"github.com/McAndersDK/handle-mcp-go/internal/store/nemlig"
+	"github.com/McAndersDK/handle-mcp-go/internal/store/rema1000"
 )
 
 // --- live ----------------------------------------------------------------------------------------
@@ -48,6 +49,8 @@ func liveStore(t *testing.T, name string) store.Store {
 		return noWrites{Store: nemlig.New(&http.Client{Transport: nemligGuard{tb: t, inner: http.DefaultTransport}}), tb: t}
 	case "bilkatogo":
 		return noWrites{Store: bilkatogo.New(&http.Client{Transport: bilkaGuard{tb: t, inner: http.DefaultTransport}}), tb: t}
+	case "rema1000":
+		return noWrites{Store: rema1000.New(&http.Client{Transport: remaGuard{tb: t, inner: http.DefaultTransport}}), tb: t}
 	}
 	t.Fatalf("unknown store %q", name)
 	return nil

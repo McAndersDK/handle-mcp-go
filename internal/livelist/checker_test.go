@@ -4,6 +4,7 @@ package livelist
 // upstream/tests/test_live_list.py.
 
 import (
+	"slices"
 	"strings"
 	"testing"
 
@@ -43,7 +44,7 @@ func TestListIsAbout50UniqueItems(t *testing.T) {
 			t.Errorf("%q: no has words", e.Item)
 		}
 		for _, s := range e.Stores {
-			if s != "nemlig" && s != "bilkatogo" {
+			if !slices.Contains(storeNames, s) {
 				t.Errorf("%q: unknown store %q", e.Item, s)
 			}
 		}

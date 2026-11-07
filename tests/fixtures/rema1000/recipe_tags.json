@@ -1,0 +1,614 @@
+{
+  "data": [
+    {
+      "id": "3PlIhn9OzmjDzq3i8ozkFe",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Mad på farten",
+        "slug": "mad-pa-farten",
+        "description": null,
+        "image": {
+          "id": "4ZPtkaaHv5p2y4olUsuT5R",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "Foccaciasandwich med mortadella og pistacie.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/4ZPtkaaHv5p2y4olUsuT5R/d5c6ce5ba3985334be74619f3369e04b/Foccaciasandwich_med_mortadella_og_pistacie.jpg",
+          "width": 1311,
+          "height": 1966
+        }
+      },
+      "updated_at": "2026-06-19T08:44:19.000000Z",
+      "created_at": "2026-06-19T08:44:19.000000Z"
+    },
+    {
+      "id": "4Tmy8182uPRYo7gREdMqdA",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Forårsmad",
+        "slug": "opskrifter-med-forarets-saesonvarer",
+        "description": null,
+        "image": {
+          "id": "6i3wQP7O3ifCKsp54VPqcV",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0815 Porre i vinagrette.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/6i3wQP7O3ifCKsp54VPqcV/96b9f6186a18fe2029871ffedac40600/0815_Porre_i_vinagrette.jpg",
+          "width": 4949,
+          "height": 6928
+        }
+      },
+      "updated_at": "2026-04-09T08:55:51.000000Z",
+      "created_at": "2025-03-04T13:29:25.000000Z"
+    },
+    {
+      "id": "2a23bGZVhfYOj0rQdMKRrP",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Vintermad",
+        "slug": "opskrifter-med-vinterens-saesonvarer",
+        "description": null,
+        "image": {
+          "id": "3dpDjhZmJTwOxNEhPEodBQ",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0027 Braiseret kalveskank med rodfrugtpuré.jpg",
+          "url": "https://downloads.ctfassets.net/r5zg1hgyl5kj/3dpDjhZmJTwOxNEhPEodBQ/d31e5b50bc0d30dac300b996399dce7e/0027_Braiseret_kalveskank_med_rodfrugtpure_.jpg",
+          "width": 5468,
+          "height": 7655
+        }
+      },
+      "updated_at": "2026-02-11T08:24:43.000000Z",
+      "created_at": "2025-03-19T08:49:21.000000Z"
+    },
+    {
+      "id": "74xzE2ySXKGMMRJFFtACq5",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Påske",
+        "slug": "paske",
+        "description": null,
+        "image": {
+          "id": "2YHMqqmoxqtr6I02bvZq9Q",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "REMA. Sild i sennepssovs. 6399.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/2YHMqqmoxqtr6I02bvZq9Q/fd9e8ae5407115a14ca791d12a6373c3/REMA._Sild_i_sennepssovs._6399.jpg",
+          "width": 1217,
+          "height": 1824
+        }
+      },
+      "updated_at": "2025-04-02T08:35:21.000000Z",
+      "created_at": "2025-04-02T08:35:21.000000Z"
+    },
+    {
+      "id": "7uwazV4RC6wnbgEE4AQpoR",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Efterårsmad",
+        "slug": "opskrifter-med-efterarets-saesonvarer",
+        "description": null,
+        "image": {
+          "id": "QRZeHW2ME2iZbet5jobox",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0039_Gråand med champignon a la creme.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/QRZeHW2ME2iZbet5jobox/937a499a1a0218c954c099e0df8cd3d4/0039_Gra_and_med_champignon_a_la_creme.jpg",
+          "width": 3873,
+          "height": 5423
+        }
+      },
+      "updated_at": "2025-03-19T09:26:34.000000Z",
+      "created_at": "2025-03-19T08:44:44.000000Z"
+    },
+    {
+      "id": "6mv51DGcyC4VCLeqnbNocJ",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Sommermad",
+        "slug": "opskrifter-med-sommers-saesonvarer",
+        "description": null,
+        "image": {
+          "id": "01BmS9K4Fuqv0iNwNLbj2W",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "Salat med bagte tomater_fra_805.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/01BmS9K4Fuqv0iNwNLbj2W/2defd06af75791adda00e50aaef7e8aa/Salat_med_bagte_tomater_fra_805.jpg",
+          "width": 3439,
+          "height": 4814
+        }
+      },
+      "updated_at": "2025-03-19T09:26:25.000000Z",
+      "created_at": "2025-03-19T08:47:24.000000Z"
+    },
+    {
+      "id": "6mGhhPUQJZfrsG37bDhyn",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Nytår",
+        "slug": "nytar",
+        "description": null,
+        "image": {
+          "id": "64GMHh1a8tRJMcSx1ZvO9f",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "Blinis appetizer.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/64GMHh1a8tRJMcSx1ZvO9f/72f404e456be9eaf9b27d373fc6df3cd/Blinis_appetizer.jpg",
+          "width": 1229,
+          "height": 1843
+        }
+      },
+      "updated_at": "2024-12-06T08:39:31.000000Z",
+      "created_at": "2024-12-06T08:39:31.000000Z"
+    },
+    {
+      "id": "1LFZf5qLJOp4JdsH18jD9U",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Jul",
+        "slug": "jul",
+        "description": null,
+        "image": {
+          "id": "3GoNxDJRua5oq85QAtv9rZ",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0014_Andebryststeg med skysauce.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/3GoNxDJRua5oq85QAtv9rZ/9653c91c1ee5c1aadf6f47c0d6b79f1b/0014_Andebryststeg_med_skysauce.jpg",
+          "width": 4605,
+          "height": 6446
+        }
+      },
+      "updated_at": "2024-11-13T08:23:49.000000Z",
+      "created_at": "2024-11-13T08:23:49.000000Z"
+    },
+    {
+      "id": "6nVXfMWIDj4pH5juLFlBBU",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Sæsonmad",
+        "slug": "saesonmad",
+        "description": null,
+        "image": {
+          "id": "3m8Ydwx6tHQl45KgmP2fMt",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0742 Nykogte kartofler i sommersmør med grillede asparges.jpg",
+          "url": "https://downloads.ctfassets.net/r5zg1hgyl5kj/3m8Ydwx6tHQl45KgmP2fMt/aa23fb8cc53a017c144618c47cffdcd6/0742_Nykogte_kartofler_i_sommersm_r_med_grillede_asparges.jpg",
+          "width": 4634,
+          "height": 6487
+        }
+      },
+      "updated_at": "2024-10-17T06:45:36.000000Z",
+      "created_at": "2024-08-28T10:57:49.000000Z"
+    },
+    {
+      "id": "5Q5t9rpmNk4jp1ygKZDEHx",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Avisopskrifter",
+        "slug": "ugens-avisopskrifter",
+        "description": null,
+        "image": {
+          "id": "5dBSHNadsZRl1VqkmohzVZ",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0138 Paneret flæsk med persillesaucepersillesauce.jpg",
+          "url": "https://downloads.ctfassets.net/r5zg1hgyl5kj/5dBSHNadsZRl1VqkmohzVZ/3c051e9d2922e861222841d7b55ae7b8/0138_Paneret_fl_sk_med_persillesaucepersillesauce.jpg",
+          "width": 4785,
+          "height": 6699
+        }
+      },
+      "updated_at": "2024-09-25T07:00:03.000000Z",
+      "created_at": "2024-09-24T08:09:42.000000Z"
+    },
+    {
+      "id": "3zsq1CZseoxj1JEnhwTkmg",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Halloween",
+        "slug": "halloween",
+        "description": null,
+        "image": {
+          "id": "4aKl6Zj4EezNLV3SRRvAaN",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "Edderkoppepølsehorn.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/4aKl6Zj4EezNLV3SRRvAaN/9b95515cfd611ea342843d77a12b36d5/Edderkoppep_lsehorn.jpg",
+          "width": 4146,
+          "height": 5804
+        }
+      },
+      "updated_at": "2024-09-24T08:48:42.000000Z",
+      "created_at": "2024-09-10T15:20:52.000000Z"
+    },
+    {
+      "id": "1RCnmZMsWBa1PRWB6fU54I",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Glutenfri",
+        "slug": "glutenfri",
+        "description": null,
+        "image": {
+          "id": "cnAhY87u1FokRBNkBzWQb",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0462_Glutenfri overnight oats.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/cnAhY87u1FokRBNkBzWQb/7a381d2b844ff1d227850f31223fc075/0462_Glutenfri_overnight_oats.jpg",
+          "width": 4086,
+          "height": 5720
+        }
+      },
+      "updated_at": "2024-09-23T08:47:54.000000Z",
+      "created_at": "2024-09-23T08:47:54.000000Z"
+    },
+    {
+      "id": "yjCrjDuE43G1VGdmWF2EV",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Vildt",
+        "slug": "vildt",
+        "description": null,
+        "image": {
+          "id": "22iRTcd3azohXwugdQO3yK",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0015_Krondyrkølle.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/22iRTcd3azohXwugdQO3yK/589bcdc76dc49bfbe1da60a98528ecc5/0015_Krondyrk_lle.jpg",
+          "width": 3924,
+          "height": 5493
+        }
+      },
+      "updated_at": "2024-09-12T08:15:39.000000Z",
+      "created_at": "2024-09-12T08:15:39.000000Z"
+    },
+    {
+      "id": "6sR5d42PhbuAeN4fDlQFjT",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Til madpakken",
+        "slug": "til-madpakken",
+        "description": null,
+        "image": {
+          "id": "3iFyadyLYpY5rVLcdOIlVy",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0819 Pølsehorn.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/3iFyadyLYpY5rVLcdOIlVy/731f3cb839451980ca9f7419b72d0da6/0819_P_lsehorn.jpg",
+          "width": 4432,
+          "height": 6205
+        }
+      },
+      "updated_at": "2024-09-11T08:06:31.000000Z",
+      "created_at": "2024-09-10T08:56:22.000000Z"
+    },
+    {
+      "id": "5oEhYB5QOhoQK3jLtNprDX",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Opskrifter til babyshower",
+        "slug": "opskrifter",
+        "description": null,
+        "image": {
+          "id": "2CQ4nslim5JdJaSIftq1t2",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0822 Pyntede makroner.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/2CQ4nslim5JdJaSIftq1t2/9d5c573e55471a68cac72020c6f535d4/0822_Pyntede_makroner.jpg",
+          "width": 4194,
+          "height": 5871
+        }
+      },
+      "updated_at": "2024-09-11T07:20:20.000000Z",
+      "created_at": "2024-09-11T07:18:52.000000Z"
+    },
+    {
+      "id": "3EmQtPjx3v8bkR1y20Btpj",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Fest og højtider",
+        "slug": "fest-og-hojtider",
+        "description": null,
+        "image": {
+          "id": "4GfrlQblceYO04sgmvGhXx",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0136_Oksemørbrad.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/4GfrlQblceYO04sgmvGhXx/aab9b600c61d410acd3cf3d33bce95dc/0136_Oksem_rbrad.jpg",
+          "width": 5080,
+          "height": 7111
+        }
+      },
+      "updated_at": "2024-08-28T11:00:01.000000Z",
+      "created_at": "2024-08-28T11:00:01.000000Z"
+    },
+    {
+      "id": "B4VvVThPxVN9pKTAXxw3G",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Morgenmad",
+        "slug": "morgenmad",
+        "description": null,
+        "image": {
+          "id": "5OQ6vK2CriOvRcDhdC9IFT",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0544_Hjemmelavet müsli med yoghurt og friske bær.jpg",
+          "url": "https://downloads.ctfassets.net/r5zg1hgyl5kj/5OQ6vK2CriOvRcDhdC9IFT/ed38b5370dc3c7332662749d15e148b2/0544_Hjemmelavet_mu_sli_med_yoghurt_og_friske_b_r.jpg",
+          "width": 4348,
+          "height": 6088
+        }
+      },
+      "updated_at": "2024-08-28T10:57:08.000000Z",
+      "created_at": "2024-08-28T10:57:08.000000Z"
+    },
+    {
+      "id": "lw0hPueEJErVe4xopoDEy",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Mad for børn",
+        "slug": "mad-for-born",
+        "description": null,
+        "image": {
+          "id": "3ieePtT5KyPKWw9G6Zm6nL",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0286_Boller i karry - Mad for børn.jpg",
+          "url": "https://downloads.ctfassets.net/r5zg1hgyl5kj/3ieePtT5KyPKWw9G6Zm6nL/7e313534bbf742aed5712fd188fa4610/0286_Boller_i_karry_-_Mad_for_b_rn.jpg",
+          "width": 4023,
+          "height": 5633
+        }
+      },
+      "updated_at": "2024-08-28T10:56:49.000000Z",
+      "created_at": "2024-08-28T10:56:49.000000Z"
+    },
+    {
+      "id": "2rdeKY4498Ma5tPsizr0Er",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Kødfri",
+        "slug": "kodfri",
+        "description": null,
+        "image": {
+          "id": "1Kc1SvPQUfxzPVWMts0QUZ",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0104_Risotto.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/1Kc1SvPQUfxzPVWMts0QUZ/61cdd9f3d1833a2251f595fd8ac3186c/0104_Risotto.jpg",
+          "width": 4348,
+          "height": 6088
+        }
+      },
+      "updated_at": "2024-08-28T10:56:30.000000Z",
+      "created_at": "2024-08-28T10:56:30.000000Z"
+    },
+    {
+      "id": "7y7OZ6ygtgLHrjW6NedXdf",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Frokost",
+        "slug": "frokost",
+        "description": null,
+        "image": {
+          "id": "23hTxVpe7eC35qpJjxncrp",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "1053_Wrap med flødeost, skinke og rucola.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/23hTxVpe7eC35qpJjxncrp/e296e56c2f538c01b46270000de063de/1053_Wrap_med_fl_deost__skinke_og_rucola.jpg",
+          "width": 4023,
+          "height": 5633
+        }
+      },
+      "updated_at": "2024-08-28T10:55:11.000000Z",
+      "created_at": "2024-08-28T10:55:11.000000Z"
+    },
+    {
+      "id": "BhPyWHztD8wOutIedbaXV",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Forretter",
+        "slug": "forretter",
+        "description": null,
+        "image": {
+          "id": "5TF7BHY6965oPY2OKA0X4c",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0998 Tomatsalat med parmaskinke, mozzarella og jalapenos.jpg",
+          "url": "https://downloads.ctfassets.net/r5zg1hgyl5kj/5TF7BHY6965oPY2OKA0X4c/a41d7fc64db82c2f22ff86db968cf82b/0998_Tomatsalat_med_parmaskinke__mozzarella_og_jalapenos.jpg",
+          "width": 5220,
+          "height": 7308
+        }
+      },
+      "updated_at": "2024-08-28T10:54:41.000000Z",
+      "created_at": "2024-08-28T10:54:41.000000Z"
+    },
+    {
+      "id": "6mjo9YHow8fdXyG4LhmHoK",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Aftensmad",
+        "slug": "aftensmad",
+        "description": null,
+        "image": {
+          "id": "2J54oURAaORjUyJWV0MEYM",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0700 Mamma’s oksekødboller i spicy tomat.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/2J54oURAaORjUyJWV0MEYM/8ae1e5611a5e22593847586dfa2163e8/0700_Mamma_s_oksek_dboller_i_spicy_tomat.jpg",
+          "width": 4751,
+          "height": 6652
+        }
+      },
+      "updated_at": "2024-08-28T10:52:25.000000Z",
+      "created_at": "2024-08-28T10:52:25.000000Z"
+    },
+    {
+      "id": "13gnXZJQl6zEqH0Qnse3W5",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Nem hverdagsmad",
+        "slug": "nem-hverdagsmad",
+        "description": null,
+        "image": {
+          "id": "4xOtBkSP2HttPcUc7xjFGa",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0692_Lynpande.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/4xOtBkSP2HttPcUc7xjFGa/98e213f521f73685435947af57cc2391/0692_Lynpande.jpg",
+          "width": 4892,
+          "height": 6849
+        }
+      },
+      "updated_at": "2024-08-28T10:51:28.000000Z",
+      "created_at": "2024-08-28T10:51:28.000000Z"
+    },
+    {
+      "id": "jAeeKhT7mZYiNRwe9tIXf",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Sundere alternativer",
+        "slug": "sundere-alternativer",
+        "description": null,
+        "image": {
+          "id": "5OwgrK6jdZFsPfuI4YAitl",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "1025_Varmrøget peberlaks.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/5OwgrK6jdZFsPfuI4YAitl/e0c26cb4daca610bdcaba64eb1332b0c/1025_Varmr_get_peberlaks.jpg",
+          "width": 4837,
+          "height": 6772
+        }
+      },
+      "updated_at": "2024-08-28T10:50:24.000000Z",
+      "created_at": "2024-08-28T10:50:24.000000Z"
+    },
+    {
+      "id": "SfE2R4iD9lKEhsmRhaboV",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Tilbehør til aftensmad",
+        "slug": "tilbehor-til-aftensmad",
+        "description": null,
+        "image": {
+          "id": "4819ehpDVGurX3yxYri0jp",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0245 Asparges i svøb.jpg",
+          "url": "https://downloads.ctfassets.net/r5zg1hgyl5kj/4819ehpDVGurX3yxYri0jp/60deb61382f1b064407cf6058627d39c/0245_Asparges_i_sv_b.jpg",
+          "width": 4949,
+          "height": 6928
+        }
+      },
+      "updated_at": "2024-08-28T10:47:56.000000Z",
+      "created_at": "2024-08-28T10:47:56.000000Z"
+    },
+    {
+      "id": "1oTNXyZWW9ZmKVdmzu3JzJ",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Udenlandsk",
+        "slug": "udenlandsk",
+        "description": null,
+        "image": {
+          "id": "1utvOR0hfA2vCfRjMDZdA9",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0568_Jacobs pizza.jpg",
+          "url": "https://downloads.ctfassets.net/r5zg1hgyl5kj/1utvOR0hfA2vCfRjMDZdA9/7d9e02d783440cba002b4c6c5807f46c/0568_Jacobs_pizza.jpg",
+          "width": 5225,
+          "height": 7314
+        }
+      },
+      "updated_at": "2024-08-28T10:44:10.000000Z",
+      "created_at": "2024-08-28T10:44:10.000000Z"
+    },
+    {
+      "id": "2UzScXkLBHSd1sWqzNNmev",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Bagværk, sødt & snacks",
+        "slug": "bagvaerk-sodt-og-snacks",
+        "description": null,
+        "image": {
+          "id": "5WCz3nVPLzCA20u8vNjHPf",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0305_Brownies.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/5WCz3nVPLzCA20u8vNjHPf/545de3eb3fca9cbcd308d0dc7d32d9fa/0305_Brownies.jpg",
+          "width": 4529,
+          "height": 6341
+        }
+      },
+      "updated_at": "2024-08-28T10:42:14.000000Z",
+      "created_at": "2024-08-28T10:42:14.000000Z"
+    },
+    {
+      "id": "6jW3N23HdWFdUn67W1QyBa",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Nemt & Grønt",
+        "slug": "nemt-og-gront",
+        "description": null,
+        "image": {
+          "id": "3KvXZnuNP3zKYzxfEFjejS",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "Uge 23 - Stegt hjertesalat med tomat vinaigrette.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/3KvXZnuNP3zKYzxfEFjejS/cae6a6745e6c778ce734c5de33451b00/Uge_23_-_Stegt_hjertesalat_med_tomat_vinaigrette.jpg",
+          "width": 3013,
+          "height": 4018
+        }
+      },
+      "updated_at": "2024-08-28T10:36:53.000000Z",
+      "created_at": "2024-08-26T13:51:42.000000Z"
+    },
+    {
+      "id": "7yfezsL41ufC4kYdHXjN8d",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Fisk & skaldyr",
+        "slug": "fisk-og-skaldyr",
+        "description": null,
+        "image": {
+          "id": "7qyhlSWRSPg1HBP9xsAFma",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0959_Stegt rødspættefilet med spidskål i citroncreme.jpg",
+          "url": "https://downloads.ctfassets.net/r5zg1hgyl5kj/7qyhlSWRSPg1HBP9xsAFma/7b8289263ef016cd79f9370f0e257b71/0959_Stegt_r_dsp_ttefilet_med_spidska_l_i_citroncreme.jpg",
+          "width": 5163,
+          "height": 7228
+        }
+      },
+      "updated_at": "2024-08-26T08:28:33.000000Z",
+      "created_at": "2024-08-26T08:28:33.000000Z"
+    },
+    {
+      "id": "1AxaiOahc3sgG0T4tpxWkR",
+      "type": "recipeTag",
+      "fields": {
+        "title": "Drikkevarer",
+        "slug": "drikkevarer",
+        "description": null,
+        "image": {
+          "id": "2MCbm0h9Kf3VRO6YErbwj7",
+          "type": "Asset",
+          "mime": "image/jpeg",
+          "name": "0910_Smoothie med bær og frugt.jpg",
+          "url": "https://images.ctfassets.net/r5zg1hgyl5kj/2MCbm0h9Kf3VRO6YErbwj7/57212a80748db7845f7278961eca775a/0910_Smoothie_med_b_r_og_frugt.jpg",
+          "width": 4529,
+          "height": 6341
+        }
+      },
+      "updated_at": "2024-08-26T08:26:41.000000Z",
+      "created_at": "2024-08-26T08:26:41.000000Z"
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "current_page": 1,
+      "per_page": 100,
+      "last_page": 1,
+      "total": 30,
+      "from": 1,
+      "to": 30
+    }
+  }
+}

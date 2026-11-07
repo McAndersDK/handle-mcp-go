@@ -6,6 +6,7 @@ import (
 	"github.com/McAndersDK/handle-mcp-go/internal/store"
 	"github.com/McAndersDK/handle-mcp-go/internal/store/bilkatogo"
 	"github.com/McAndersDK/handle-mcp-go/internal/store/nemlig"
+	"github.com/McAndersDK/handle-mcp-go/internal/store/rema1000"
 )
 
 // Registry is every store the server and `handle-mcp login` know. It lives here and not in
@@ -14,5 +15,6 @@ func Registry() map[string]Factory {
 	return map[string]Factory{
 		"nemlig":    func() store.Store { return nemlig.New(nil) },
 		"bilkatogo": func() store.Store { return bilkatogo.New(nil) },
+		"rema1000":  func() store.Store { return rema1000.New(nil) },
 	}
 }

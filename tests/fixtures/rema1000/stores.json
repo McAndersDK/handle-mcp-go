@@ -1,0 +1,228 @@
+{
+  "data": [
+    {
+      "address": "Eksempelvej 1",
+      "city": "Eksempelby",
+      "collect_pre_order_message": null,
+      "facebook_page_url": "Eksempel",
+      "geofence": {
+        "distance": 0
+      },
+      "id": 9100,
+      "internal_id": 412,
+      "is_click_and_collect_active": false,
+      "location": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "merchant": {
+        "name": "REMA 1000 Eksempelby",
+        "photo_url": "Eksempel"
+      },
+      "name": "REMA 1000 Eksempelby",
+      "opening_date": null,
+      "opening_hours": [
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        }
+      ],
+      "phone": null,
+      "postal_code": "0000",
+      "smiley_report_url": "Eksempel"
+    },
+    {
+      "address": "Eksempelvej 1",
+      "city": "Eksempelby",
+      "collect_pre_order_message": null,
+      "facebook_page_url": "Eksempel",
+      "geofence": {
+        "distance": 0
+      },
+      "id": 9101,
+      "internal_id": 945,
+      "is_click_and_collect_active": false,
+      "location": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "merchant": {
+        "name": "REMA 1000 Eksempelby",
+        "photo_url": "Eksempel"
+      },
+      "name": "REMA 1000 Eksempelby",
+      "opening_date": null,
+      "opening_hours": [
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        }
+      ],
+      "phone": null,
+      "postal_code": "0000",
+      "smiley_report_url": "Eksempel"
+    },
+    {
+      "address": "Eksempelvej 1",
+      "city": "Eksempelby",
+      "collect_pre_order_message": null,
+      "facebook_page_url": "Eksempel",
+      "geofence": {
+        "distance": 0
+      },
+      "id": 9102,
+      "internal_id": 705,
+      "is_click_and_collect_active": false,
+      "location": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "merchant": {
+        "name": "REMA 1000 Eksempelby",
+        "photo_url": "Eksempel"
+      },
+      "name": "REMA 1000 Eksempelby",
+      "opening_date": null,
+      "opening_hours": [
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        },
+        {
+          "closing_at": "Eksempel",
+          "date": "Eksempel",
+          "label": null,
+          "opening_at": "Eksempel"
+        }
+      ],
+      "phone": null,
+      "postal_code": "0000",
+      "smiley_report_url": "Eksempel"
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "current_page": 1,
+      "from": 1,
+      "last_page": 148,
+      "links": {
+        "first": "http://api.digital.rema1000.dk/api/v3/stores?per_page=3&page=1",
+        "last": "http://api.digital.rema1000.dk/api/v3/stores?per_page=3&page=148",
+        "next": "http://api.digital.rema1000.dk/api/v3/stores?per_page=3&page=2",
+        "prev": null
+      },
+      "path": "http://api.digital.rema1000.dk/api/v3/stores",
+      "per_page": 3,
+      "to": 3,
+      "total": 443
+    }
+  }
+}

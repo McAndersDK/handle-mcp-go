@@ -89,3 +89,20 @@ func (r bilkaGuard) RoundTrip(req *http.Request) (*http.Response, error) {
 	}
 	return r.inner.RoundTrip(req)
 }
+
+// remaGuard refuses every request that could change something at REMA 1000: only GET, the OAuth
+// login POST and the token renewal POST, which set cookies and nothing in a list.
+type remaGuard struct {
+	tb    errorer
+	inner http.RoundTripper
+}
+
+func (r remaGuard) RoundTrip(req *http.Request) (*http.Response, error) {
+	login := req.Method == http.MethodPost && req.URL.Host == "cphapp.rema1000.dk" && req.URL.Path == "/api/oauth2/login"
+	renew := req.Method == http.MethodPost && req.URL.Host == "shop.rema1000.dk" && req.URL.Path == "/api/auth/refresh"
+	if req.Method != http.MethodGet && !login && !renew {
+		r.tb.Errorf("a live test must only read: %s %s", req.Method, req.URL.Path)
+		return nil, errors.New("live tests only read")
+	}
+	return r.inner.RoundTrip(req)
+}
