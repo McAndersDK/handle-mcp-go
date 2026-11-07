@@ -21,6 +21,7 @@ package rema1000
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"io"
@@ -28,6 +29,7 @@ import (
 	"os"
 	"reflect"
 	"regexp"
+	"slices"
 	"strings"
 	"sync"
 	"testing"
@@ -191,8 +193,81 @@ func TestLiveRecipes(t *testing.T) {
 
 var writePath = regexp.MustCompile(`^/api/v2/shoppinglists(?:/(\d+)(?:/items(?:/\d+)?)?)?$`)
 
-// onlyToday allows writes to one place: creating today's list (not primary), and changing the
-// lines of the one list whose id is set. Everything else that is not a GET is refused.
+// checkWrite is the live write guard's rule for one request that is not a GET. It allows only:
+//   - creating today's list: POST v2/shoppinglists with exactly the create body (the one place
+//     "name" and "primary" may appear, and primary is false);
+//   - on the list whose id is given: a list PATCH with only "items", each with only "id" and
+//     delete:true; an item PATCH with only "amount" and bought:false; an item POST with only
+//     "amount", "store_id" and "store_item_id".
+//
+// It returns nil for an allowed request and a reason otherwise.
+func checkWrite(method, path string, body []byte, name, id string) error {
+	m := writePath.FindStringSubmatch(path)
+	if m == nil {
+		return errors.New("not a shopping-list path")
+	}
+	if m[1] == "" {
+		if method == http.MethodPost && string(body) == fmt.Sprintf(`{"name":%q,"primary":false,"items":[]}`, name) {
+			return nil
+		}
+		return errors.New("only today's list may be created, and only with the exact create body")
+	}
+	if id == "" || m[1] != id {
+		return errors.New("not today's list")
+	}
+	var in map[string]any
+	if err := json.Unmarshal(body, &in); err != nil {
+		return errors.New("the body is not a JSON object")
+	}
+	onlyKeys := func(allowed ...string) error {
+		for k := range in {
+			if !slices.Contains(allowed, k) {
+				return fmt.Errorf("the field %q is not allowed here", k)
+			}
+		}
+		return nil
+	}
+	has := func(keys ...string) bool {
+		for _, k := range keys {
+			if _, ok := in[k]; !ok {
+				return false
+			}
+		}
+		return true
+	}
+	itemPath := strings.Contains(path, "/items/") // one line; "/items" alone is the collection
+	switch {
+	case method == http.MethodPatch && !itemPath && !strings.HasSuffix(path, "/items"): // remove lines
+		items, ok := in["items"].([]any)
+		if err := onlyKeys("items"); err != nil || !ok || len(items) == 0 {
+			return errors.New("a list PATCH may only hold items to delete")
+		}
+		for _, raw := range items {
+			it, ok := raw.(map[string]any)
+			if !ok || len(it) != 2 || it["id"] == nil || it["delete"] != true {
+				return errors.New("a list PATCH item may only be {id, delete:true}")
+			}
+		}
+		return nil
+	case method == http.MethodPatch && itemPath: // change one line
+		if err := onlyKeys("amount", "bought"); err != nil || !has("amount") {
+			return errors.New("an item PATCH may only hold amount and bought:false")
+		}
+		if b, there := in["bought"]; there && b != false {
+			return errors.New("bought may only be false")
+		}
+		return nil
+	case method == http.MethodPost && strings.HasSuffix(path, "/items"):
+		if err := onlyKeys("amount", "store_id", "store_item_id"); err != nil || !has("amount", "store_id", "store_item_id") {
+			return errors.New("an item POST may only hold amount, store_id and store_item_id")
+		}
+		return nil
+	}
+	return errors.New("this method is not allowed here")
+}
+
+// onlyToday allows writes to one place (see checkWrite). Everything else that is not a GET, the
+// login or the token renewal is refused.
 type onlyToday struct {
 	tb    errorer
 	inner http.RoundTripper
@@ -218,15 +293,58 @@ func (g *onlyToday) RoundTrip(req *http.Request) (*http.Response, error) {
 	g.mu.Lock()
 	id := g.id
 	g.mu.Unlock()
-	m := writePath.FindStringSubmatch(req.URL.Path)
-	create := req.Method == http.MethodPost && m != nil && m[1] == "" &&
-		string(body) == fmt.Sprintf(`{"name":%q,"primary":false,"items":[]}`, g.name)
-	other := m != nil && m[1] != "" && m[1] == id && id != "" && (req.Method == http.MethodPost || req.Method == http.MethodPatch)
-	if !create && !other {
-		g.tb.Errorf("a write outside today's list: %s %s", req.Method, req.URL.Path)
+	if err := checkWrite(req.Method, req.URL.Path, body, g.name, id); err != nil {
+		g.tb.Errorf("a write the guard refuses: %s %s %s: %v", req.Method, req.URL.Path, body, err)
 		return nil, errors.New("refused by the live write guard")
 	}
 	return g.inner.RoundTrip(req)
+}
+
+func TestLiveWriteGuardChecksBodies(t *testing.T) {
+	const name, id = "handle-mcp 2026-11-07", "42"
+	base := "/api/v2/shoppinglists"
+	create := fmt.Sprintf(`{"name":%q,"primary":false,"items":[]}`, name)
+	for _, c := range []struct {
+		method, path, body string
+		ok                 bool
+	}{
+		{"POST", base, create, true},
+		{"POST", base, `{"name":"x","primary":false,"items":[]}`, false},
+		{"POST", base, `{"name":"` + name + `","primary":true,"items":[]}`, false},
+		{"POST", base + "/42/items", `{"amount":1,"store_id":1,"store_item_id":5}`, true},
+		{"POST", base + "/42/items", `{"amount":1,"store_id":1,"store_item_id":5,"name":"x"}`, false},
+		{"POST", base + "/42/items", `{"amount":1,"store_id":1}`, false},
+		{"POST", base + "/43/items", `{"amount":1,"store_id":1,"store_item_id":5}`, false},
+		{"PATCH", base + "/42/items/9", `{"amount":2}`, true},
+		{"PATCH", base + "/42/items/9", `{"amount":2,"bought":false}`, true},
+		{"PATCH", base + "/42/items/9", `{"amount":2,"bought":true}`, false},
+		{"PATCH", base + "/42/items/9", `{"amount":2,"name":"x"}`, false},
+		{"PATCH", base + "/42/items/9", `{"amount":2,"primary":true}`, false},
+		{"PATCH", base + "/42", `{"items":[{"id":9,"delete":true}]}`, true},
+		{"PATCH", base + "/42", `{"items":[{"id":9,"delete":false}]}`, false},
+		{"PATCH", base + "/42", `{"items":[{"id":9,"delete":true,"amount":1}]}`, false},
+		{"PATCH", base + "/42", `{"name":"x","items":[{"id":9,"delete":true}]}`, false},
+		{"PATCH", base + "/42", `{"primary":true}`, false},
+		{"PATCH", base + "/42", `{"items":[]}`, false},
+		{"PATCH", base + "/43", `{"items":[{"id":9,"delete":true}]}`, false},
+		{"DELETE", base + "/42", ``, false},
+		{"POST", "/api/v3/cart", `{}`, false},
+	} {
+		err := checkWrite(c.method, c.path, []byte(c.body), name, id)
+		if c.ok != (err == nil) {
+			t.Errorf("%s %s %s: ok=%v err=%v", c.method, c.path, c.body, c.ok, err)
+		}
+	}
+}
+
+// rawLines is one list as it is, bought lines included, one string per line, sorted.
+func rawLines(items []apiItem) []string {
+	out := make([]string, 0, len(items))
+	for _, it := range items {
+		out = append(out, fmt.Sprintf("%s:%s:%s:%t", it.ID, it.StoreItemID, it.Amount, it.Bought))
+	}
+	slices.Sort(out)
+	return out
 }
 
 // snapshot is the human's lists as they are: every list that is not today's, with its lines.
@@ -251,13 +369,26 @@ func snapshot(t *testing.T, s *Store, today string) map[string]string {
 		if err != nil {
 			t.Fatal(err)
 		}
-		lines := make([]string, 0, len(full.Items))
-		for _, it := range full.Items {
-			lines = append(lines, fmt.Sprintf("%s:%s:%t", it.StoreItemID, it.Amount, it.Bought))
-		}
-		out[string(l.ID)] = fmt.Sprintf("%s|primary=%t|%s", l.Name, l.IsPrimary, strings.Join(lines, ","))
+		out[string(l.ID)] = fmt.Sprintf("%s|primary=%t|%s", l.Name, l.IsPrimary, strings.Join(rawLines(full.Items), ","))
 	}
 	return out
+}
+
+// todayRaw is today's list id and its raw lines (bought included), or "" and nil when there is none.
+func todayRaw(t *testing.T, s *Store) (string, []string) {
+	t.Helper()
+	list, err := s.findToday(context.Background())
+	if err != nil {
+		t.Fatal(err)
+	}
+	if list == nil {
+		return "", nil
+	}
+	full, err := s.readList(context.Background(), list.ID)
+	if err != nil {
+		t.Fatal(err)
+	}
+	return string(list.ID), rawLines(full.Items)
 }
 
 func TestLiveWrite(t *testing.T) {
@@ -273,45 +404,63 @@ func TestLiveWrite(t *testing.T) {
 	}
 	today := s.listName()
 	before := snapshot(t, s, today)
+	listBefore, linesBefore := todayRaw(t, s)
 
-	list, err := s.findToday(ctx)
-	if err != nil {
-		t.Fatal(err)
-	}
-	if list != nil {
-		guard.setID(string(list.ID))
-	} else {
-		// creating is allowed by the guard on the exact body; the id is set once it exists
-		if _, err := s.createToday(ctx); err != nil {
+	// A probe product that is not on today's list at all, bought or not, so the cleanup can never
+	// change a line the human bought.
+	onList := map[string]bool{}
+	if listBefore != "" {
+		full, err := s.readList(ctx, json.Number(listBefore))
+		if err != nil {
 			t.Fatal(err)
 		}
-		if list, err = s.findToday(ctx); err != nil || list == nil {
-			t.Fatalf("today's list after creating: %v", err)
+		for _, it := range full.Items {
+			onList[string(it.StoreItemID)] = true
+		}
+	}
+	id := ""
+	for _, term := range []string{"minimælk", "smør", "havregryn", "pasta"} {
+		found, err := s.Search(ctx, term, 10)
+		if err != nil {
+			t.Fatalf("search: %v", err)
+		}
+		for _, p := range found {
+			if id == "" && !onList[p.ID] {
+				id = p.ID
+			}
+		}
+	}
+	if id == "" {
+		t.Skip("every candidate product is already on today's list; nothing safe to probe with")
+	}
+
+	// The restore runs first, then the check that today's list is as it was.
+	defer func() {
+		if _, err := s.SetQuantities(ctx, []store.CartItem{{ProductID: id, Quantity: 0}}); err != nil {
+			t.Errorf("restore: %v", err)
+		}
+		listAfter, linesAfter := todayRaw(t, s)
+		if listBefore != "" && listAfter != listBefore {
+			t.Errorf("today's list changed id: %s -> %s", listBefore, listAfter)
+		}
+		if !slices.Equal(linesBefore, linesAfter) {
+			t.Errorf("today's list is not as it was:\nbefore %v\nafter  %v", linesBefore, linesAfter)
+		}
+		if after := snapshot(t, s, today); !reflect.DeepEqual(before, after) {
+			t.Errorf("the human's lists changed:\nbefore %v\nafter  %v", before, after)
+		}
+	}()
+
+	if listBefore != "" {
+		guard.setID(listBefore)
+	} else {
+		// creating is allowed by the guard on the exact body; the id is set once it exists
+		list, err := s.createToday(ctx)
+		if err != nil {
+			t.Fatal(err)
 		}
 		guard.setID(string(list.ID))
 	}
-
-	products, err := s.Search(ctx, "minimælk", 1)
-	if err != nil || len(products) == 0 {
-		t.Fatalf("search: %v", err)
-	}
-	id := products[0].ID
-	orig := 0
-	cart, err := s.GetCart(ctx)
-	if err != nil {
-		t.Fatal(err)
-	}
-	for _, l := range cart.Lines {
-		if l.ProductID == id {
-			orig = l.Quantity
-		}
-	}
-	t.Cleanup(func() { // put today's list back as it was
-		if _, err := s.SetQuantities(ctx, []store.CartItem{{ProductID: id, Quantity: orig}}); err != nil {
-			t.Errorf("restore: %v", err)
-		}
-	})
-
 	for _, q := range []int{1, 0} {
 		res, err := s.SetQuantities(ctx, []store.CartItem{{ProductID: id, Quantity: q}})
 		if err != nil || len(res) != 1 || !res[0].OK || res[0].Applied == nil || *res[0].Applied != q {
@@ -320,9 +469,5 @@ func TestLiveWrite(t *testing.T) {
 		if res[0].Message != nil {
 			t.Logf("message: %s", *res[0].Message)
 		}
-	}
-	after := snapshot(t, s, today)
-	if !reflect.DeepEqual(before, after) {
-		t.Errorf("the human's lists changed:\nbefore %v\nafter  %v", before, after)
 	}
 }
