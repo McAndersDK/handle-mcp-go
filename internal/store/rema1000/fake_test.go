@@ -72,10 +72,24 @@ func makeJWT(exp time.Time, sub int) string {
 	return enc(obj{"alg": "none"}) + "." + enc(obj{"exp": exp.Unix(), "sub": strconv.Itoa(sub)}) + ".sig"
 }
 
+// jwtWith builds an unsigned JWT with exactly these claims, for the shapes REMA may send.
+func jwtWith(c obj) string {
+	enc := func(v any) string {
+		b, _ := json.Marshal(v)
+		return base64.RawURLEncoding.EncodeToString(b)
+	}
+	return enc(obj{"alg": "none"}) + "." + enc(c) + ".sig"
+}
+
 type request struct{ Method, Host, Path, Query, Body, Auth, Cookie string }
 
-// apiValue is the api_session cookie of the fake's session.
-const apiValue = "api-1"
+// apiValue is the api_session cookie of the fake's session. lbValue and lbcValue are the load
+// balancer's AWSALB and AWSALBCORS cookies of a saved session.
+const (
+	apiValue = "api-1"
+	lbValue  = "lb-saved"
+	lbcValue = "lbc-saved"
+)
 
 // fakeItem and fakeList are the lists the fake keeps.
 type fakeItem struct {
@@ -101,6 +115,8 @@ type fake struct {
 	others            []fakeStore // more stores in the list, after the main one (store_test.go)
 	createPrimary     bool        // a list created now is primary
 	refusePOST        string      // a product id that POST items answers 422 for
+	accessMaxAge      int         // Max-Age of the access cookie the site sets, in seconds; 0 = none
+	lbSeq             int         // how many times a refresh has rotated AWSALB
 	access            string      // the access token the API accepts
 	refreshCookie     string      // the refresh cookie the site holds; "" = refresh refuses
 	nextAccess        string      // what a refresh hands out
@@ -120,6 +136,14 @@ func newFake(tb testing.TB) *fake {
 	f.nextAccess = makeJWT(testNow.Add(2*time.Hour), userID)
 	f.refreshCookie = "refresh-1"
 	return f
+}
+
+// accessAttrs are the attributes of the access cookie the site sets.
+func (f *fake) accessAttrs() string {
+	if f.accessMaxAge > 0 {
+		return fmt.Sprintf("; Path=/; Max-Age=%d", f.accessMaxAge)
+	}
+	return "; Path=/"
 }
 
 func (f *fake) count(method, path string) int {
@@ -241,9 +265,11 @@ func (f *fake) route(req *http.Request, body []byte) reply {
 		return reply{status: 302, header: http.Header{"Location": {"https://shop.rema1000.dk/api/auth/callback/rema?code=1"}}}
 	case host == "shop.rema1000.dk" && path == callbackPath:
 		h := http.Header{}
-		h.Add("Set-Cookie", "access_token="+f.access+"; Path=/")
+		h.Add("Set-Cookie", "access_token="+f.access+f.accessAttrs())
 		h.Add("Set-Cookie", "refresh_token=refresh-login; Path=/")
 		h.Add("Set-Cookie", "api_session=api-login; Path=/")
+		h.Add("Set-Cookie", "AWSALB=lb-login; Path=/")
+		h.Add("Set-Cookie", "AWSALBCORS=lbc-login; Path=/")
 		h.Set("Location", "https://shop.rema1000.dk/konto")
 		return reply{status: 302, header: h}
 	case host == "shop.rema1000.dk" && path == "/api/auth/refresh":
@@ -252,13 +278,19 @@ func (f *fake) route(req *http.Request, body []byte) reply {
 		if c, _ := req.Cookie(apiCookie); c == nil {
 			return reply{status: 500}
 		}
+		if c, _ := req.Cookie(awsCookie); c == nil { // the load balancer routes the call; without it, 500
+			return reply{status: 500}
+		}
 		cookie, _ := req.Cookie(refreshCookie)
 		if f.refreshCookie == "" || cookie == nil || cookie.Value != f.refreshCookie {
 			return reply{status: 401}
 		}
 		f.access = f.nextAccess
+		f.lbSeq++ // the load balancer rotates its cookies on this answer
 		h := http.Header{}
-		h.Add("Set-Cookie", "access_token="+f.access+"; Path=/")
+		h.Add("Set-Cookie", fmt.Sprintf("AWSALB=lb-%d; Path=/", f.lbSeq))
+		h.Add("Set-Cookie", fmt.Sprintf("AWSALBCORS=lbc-%d; Path=/", f.lbSeq))
+		h.Add("Set-Cookie", "access_token="+f.access+f.accessAttrs())
 		if f.rotate != "" {
 			f.refreshCookie = f.rotate
 			h.Add("Set-Cookie", "refresh_token="+f.rotate+"; Path=/")
@@ -473,7 +505,7 @@ func harness(t *testing.T) (*fake, *Store) {
 	t.Helper()
 	isolate(t)
 	f := newFake(t)
-	saveSession(t, map[string]string{accessCookie: f.access, refreshCookie: f.refreshCookie, apiCookie: apiValue, "store_id": strconv.Itoa(storeID)})
+	saveSession(t, map[string]string{accessCookie: f.access, refreshCookie: f.refreshCookie, apiCookie: apiValue, awsCookie: lbValue, awsCorsCookie: lbcValue, "store_id": strconv.Itoa(storeID)})
 	return f, newStore(f)
 }
 
