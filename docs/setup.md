@@ -22,6 +22,7 @@ Below, `handle-mcp` means the binary. Use its absolute path if it is not on PATH
 ```sh
 handle-mcp login nemlig
 handle-mcp login bilkatogo
+handle-mcp login rema1000
 ```
 
 The password prompt needs a real terminal. On Windows, use PowerShell, not Git Bash.
@@ -44,11 +45,13 @@ HANDLE_NEMLIG_EMAIL=you@example.com HANDLE_NEMLIG_PASSWORD='...' \
 
 The env vars are only needed for that one command; the MCP server reads the file afterwards. Remove them again: the file has no password. `handle-mcp logout <store>` removes the file. Nothing is written when the login fails.
 
-Without any login, `list_offers` still works for nemlig; `search_products` needs a login (nemlig's search answers 500 without one). BilkaToGo needs a login for everything: the store, prices and offers follow your delivery address.
+Without any login, `list_offers` still works for nemlig; `search_products` needs a login (nemlig's search answers 500 without one). BilkaToGo needs a login for everything: the store, prices and offers follow your delivery address. REMA 1000 needs a login and a chosen pickup store for everything.
 
-**2. BilkaToGo:** choose home delivery or pickup once on bilkatogo.dk. Without an address the server says so. The server reads the store, the fees and the mode (`delivery_mode`) from your cart. The time and the pickup store are yours to choose on the website.
+**2. REMA 1000:** pickup only (Køb & Hent). `handle-mcp login rema1000` logs in, then lists the REMA 1000 stores that have Køb & Hent and asks for a number. The store is saved with the session, on your machine only; nothing is set at REMA. To change it, log in again. `HANDLE_REMA1000_STORE_ID` overrides the saved store. With `--from-env` and no terminal, set `HANDLE_REMA1000_STORE_ID` too: the command prints the store ids when it is missing. The session lasts about an hour and renews itself while REMA accepts the saved refresh cookie; when it does not, the tool asks you to log in again. The basket is the shopping list "handle-mcp YYYY-MM-DD" (made on first use, never as your primary list). Choose the pickup time and pay on rema1000.dk.
 
-**3. Add it to your MCP client.** Claude Code:
+**3. BilkaToGo:** choose home delivery or pickup once on bilkatogo.dk. Without an address the server says so. The server reads the store, the fees and the mode (`delivery_mode`) from your cart. The time and the pickup store are yours to choose on the website.
+
+**4. Add it to your MCP client.** Claude Code:
 
 ```sh
 claude mcp add handle -- /absolute/path/to/handle-mcp

@@ -13,16 +13,16 @@
 
 </div>
 
-Danish grocery stores as an MCP server: [nemlig.com](https://www.nemlig.com) (home delivery) and [BilkaToGo](https://www.bilkatogo.dk) (home delivery or pickup).
+Danish grocery stores as an MCP server: [nemlig.com](https://www.nemlig.com) (home delivery) and [BilkaToGo](https://www.bilkatogo.dk) (home delivery or pickup) and [REMA 1000](https://shop.rema1000.dk) (pickup).
 
 **It can never order or pay. You do.** That code does not exist, and a test fails if it shows up ([why](docs/adr/0001-the-human-always-pays.md)).
 
 ## How it works
 
-1. **Plan.** Give your agent a budget. It reads this week's offers on nemlig.com and BilkaToGo, and both stores' recipes, and plans the meals around them.
-2. **Compare.** It prices the whole list in both stores: pack sizes, offers, delivery fee and minimum order.
+1. **Plan.** Give your agent a budget. It reads this week's offers on nemlig.com, BilkaToGo and REMA 1000, and the stores' recipes, and plans the meals around them.
+2. **Compare.** It prices the whole list in each store: pack sizes, offers, delivery fee and minimum order.
 3. **Fill.** It puts the list in the cheapest store's cart, with your login. Only the cart, nothing else.
-4. **Pay.** You open nemlig.com or BilkaToGo, check the cart, pick a delivery time and pay.
+4. **Pay.** You open the store's website, check the cart, pick a delivery or pickup time and pay.
 
 Taste, budget and meal rules live in your own prompt or skill. The server finds and counts. [Build your own skill](docs/skills.md).
 
@@ -30,7 +30,7 @@ Taste, budget and meal rules live in your own prompt or skill. The server finds 
 
 - macOS, Linux or Windows, on x64 or ARM64. No Python or `uv` needed: the server is one binary.
 - An MCP client, Grok, Claude Code, Claude Desktop or Codex etc.
-- An account at nemlig.com (home delivery) or BilkaToGo (home delivery or pickup).
+- An account at nemlig.com (home delivery), BilkaToGo (home delivery or pickup) or REMA 1000 (pickup).
 
 ## Install
 
@@ -57,7 +57,7 @@ Then ask:
 - *"What is on offer this week? Any free gifts?"*
 - *"Which delivery times are cheapest tomorrow?"*
 
-BilkaToGo, Claude Desktop, headless machines and AI agents (`handle-mcp login <store> --from-env`): [setup](docs/setup.md). nemlig's offers work with no login at all.
+BilkaToGo, REMA 1000 (`handle-mcp login rema1000` also asks which Køb & Hent store you pick up in), Claude Desktop, headless machines and AI agents (`handle-mcp login <store> --from-env`): [setup](docs/setup.md). nemlig's offers work with no login at all.
 
 ## Tools
 

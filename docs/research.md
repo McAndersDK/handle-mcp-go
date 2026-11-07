@@ -1,4 +1,4 @@
-# Research: nemlig.com og BilkaToGo
+# Research: nemlig.com, BilkaToGo og REMA 1000
 
 Trin 1 af v1. Skrevet 2026-11-01.
 
@@ -143,6 +143,22 @@ Kun GET, en konto der er sat til afhentning. Antal kurvlinjer var 0 i den kørse
 - **Gebyrer og minimum:** `minimum_buy: 0`, `stat.minimum_left: 0` og ingen `minimum_left_text`: intet minimumskøb set. `stat.delivery_price: 0` er der, `stat.packing: 3900` (Pakkeservice, 39 kr) og `packaging_price: 0`. `specifications` har Pakkeservice og Emballage.
 - **Leveringstider:** `shop/v3/AvailableDeliveryDates` virker for en afhentningskurv, med de samme nøgler (`availableDates`, `availableIntervals`, dag- og intervalnøglerne): 14 dage, 36 intervaller, 35 åbne. Dag- og aftenintervaller fra 08-10 til 18-22, ikke natlevering.
 - **Gammel valgt tid:** kurven beholder en valgt tid fra for længe siden (2024), som `_slot_ended` regner med.
+
+## REMA 1000 (2026-11-07)
+
+Kun GET og ét login. Svar i `tests/fixtures/rema1000/` (masket). Nettet er `shop.rema1000.dk` (Nuxt) og API'et `api.digital.rema1000.dk/api`. Webshoppen er kun afhentning (Køb & Hent).
+
+- **Headers:** `Accept: application/json`, `X-Device: web`, `X-Locale: da`, `X-Timezone: Copenhagen/Europe` og `Authorization: Bearer <access_token>`.
+- **Login:** (1) `GET shop.rema1000.dk/konto/auth?redirect_uri=/konto` ender via redirects på `login.rema1000.dk`. (2) `POST cphapp.rema1000.dk/api/oauth2/login` med `{email,password}` svarer `{redirect_uri}`. (3) Redirects via `/oauth/authorize` ender på `shop.rema1000.dk/api/auth/callback/rema`, som sætter cookies `access_token` (JWT, `sub` er bruger-id, ca. 1 time) og `refresh_token`.
+- **Fornyelse:** siden kalder `POST shop.rema1000.dk/api/auth/refresh` med cookies, når `exp` er nået; svaret er `{tokens:{access_token}}` og cookies sættes igen. Hvor længe `refresh_token` lever, står ikke i sidens kode.
+- **Butikker:** `GET v3/stores` (pagineret, `filter[is_click_and_collect_active]=true` som siden bruger). En butik har `id`, `name`, `city`, `is_click_and_collect_active`, og også adresse, telefon og åbningstider (bruges ikke).
+- **Tider:** `GET v3/stores/{id}/time-slots` svarer `data`: et objekt dag -> liste af `{from, to, is_available}` i UTC (2 timer pr. tid). Ingen pris i tiderne.
+- **Søgning:** `GET search/products?query=&per_page=&page=`, offentlig og ens logget ind og ud. `prices` er en liste af perioder, den gældende først: `price`, `compare_unit`/`compare_unit_price`, `is_campaign`, `is_advertised`, `starting_at`, `ending_at` (kampagnens sidste dag), `max_quantity`, `price_over_max_quantity`. `underline` er "størrelse / mærke". `barcodes` er EAN.
+- **Tilbud:** avisvarer er `search/products?filter[labels]=9001&sort=department` (mærket Avisvare; siden `/avisvarer`). 285 varer set 2026-11-07.
+- **Indkøbslister:** `GET v3/users/{id}/shopping-lists` (`id`, `name`, `is_primary`), `GET v2/shoppinglists/{id}?with=items` (`primary`, `items[]` med `amount`, `bought`, `store_item_id`, `store_item.pricing` med `price`, `normal_price`, `max_quantity`, `price_over_max`, `deposit`, `is_on_discount`). Skrivning, som sidens egen SDK gør det: `POST v2/shoppinglists` `{name, primary, items}`, `POST v2/shoppinglists/{id}/items` `{amount, store_id: 1, store_item_id}`, `PATCH .../items/{itemId}` `{amount}`, `PATCH v2/shoppinglists/{id}` `{items:[{id, delete:true}]}`. SDK'ens linjesum: pris gange antal, men over `max_quantity` er prisen `price_over_max`. Ikke prøvet live (se ADR 0008).
+- **Kurv og betaling:** siden har en egentlig kurv knyttet til butik, tid og kupon, og betalingsjobs. Rører vi aldrig (ADR 0001, 0008). Ingen ordre-endpoint kendt.
+- **Opskrifter (offentlige, intet login):** `GET search/recipes?query=&per_page=&page=` og `GET rema1000dk/entities?filter[type]=recipe&filter[slug]=...&per_page=&sort=-popularity`; `filter[tags.sys.id]=<tag-id>` for et tag og `filter[type]=recipeTag` for de 30 tags. En opskrift har `fields.title`, `slug`, `tags`, `customForm.servings` (`type` "person", `amount`), `totalTime`, `ingredientGroups[].ingredients[]` (`ingredient`, `amountOfContent`, `unitOfContent`, `isExcludedFromShoppingList`, `digitalProduct` med `amount` = pakker ved opskriftens egne personer, `is_basic_ingredient` og `active_product`, som kan mangle) og `preparationGroups[].steps[].step`. Siden `/opskrifter/<slug>` har de samme data i `__NUXT_DATA__` og JSON-LD `Recipe`.
+- **Ordrer:** intet kendt endpoint.
 
 ## Åbne spørgsmål
 
