@@ -41,8 +41,7 @@ Deliberate differences from Python 1.2.1:
 ## Tools
 
 - `internal/server/tools.json` is embedded with `go:embed` and is the source of truth. It is a copy, because embed cannot reach `tests/`.
-- `tests/snapshots/tools.json` stays as the wire contract. Until cutover it is not changed, because Python's tests read it. The Go test applies one named adjustment: add `idempotentHint: false` to tools with `readOnlyHint: true`.
-- At cutover the snapshot is regenerated from Go in its own commit, and the adjustment is deleted.
+- `tests/snapshots/tools.json` is the wire contract. It was regenerated from the Go server in its own commit before `v1.0.0`, and the Go test compares the live tool list with it exactly. The Python mirror in `upstream/` has its own copy and does not read this one.
 - Tools are registered with the low-level `Server.AddTool` only.
 
 ## Arguments
@@ -76,7 +75,7 @@ Every tool answer has one exit. `FakeStore` in Python can smuggle dicts past `sc
 
 ## Goldens
 
-`tests/golden/` is made once by an agent from the unchanged Python code, offline: fixtures and mocked HTTP only, an in-memory keyring, a temp `HANDLE_CONFIG_DIR`, sockets blocked, no logins. The human runs nothing. The script is deleted at cutover; the goldens stay.
+`tests/golden/` is made once by an agent from the unchanged Python code, offline: fixtures and mocked HTTP only, an in-memory keyring, a temp `HANDLE_CONFIG_DIR`, sockets blocked, no logins. The human runs nothing. The script stays in `scripts/` and runs against the `upstream/` mirror, so goldens can be re-exported after a merge (see 0007).
 
 Goldens cannot prove:
 
@@ -88,7 +87,7 @@ Goldens cannot prove:
 
 ## Python
 
-Python is not changed and not run by the human. It stays on `main` as the reference and is deleted last, in the cutover PR.
+Python is not deleted: it lives on in `upstream/` as a mirror of upstream's tree, never edited except for redactions, and never run by the human. See 0007.
 
 ## Gate
 
@@ -113,9 +112,9 @@ internal/{model,privacy,match,pricing,candidates,compare,recipecart,
 
 The store registry lives outside `store`, to avoid an import cycle. Goldens stay in `tests/golden/`.
 
-`CLAUDE.md` changes at cutover, in the PR that deletes Python:
+`CLAUDE.md` was rewritten for Go before `v1.0.0`:
 
-- Rule 2: "Every tool answer goes through `privacy.Scrub()` in the one exit, `server.out()`. Never return raw store JSON without it."
+- Rule 2: "Every tool answer goes through `privacy.Scrub()` in the one exit, `internal/server/out.go`. Never return raw store JSON without it."
 - Rule 3: "stdout is JSON-RPC. Never use `fmt.Print*`, `println` or `os.Stdout`. Log to stderr with `log/slog`."
 - Rule 5: keeps < ~550 lines per store file and < ~300 in every other file, excluding `_test.go`. "A store that grows past the limit splits into files by topic in its own package, never into a second layer."
 
@@ -127,7 +126,7 @@ Old keychain entries are not read. Python's Windows entries use target `handle-m
 
 ## Consequences
 
-- Python stays on `main` until cutover, so two codebases exist for a while.
+- Python stays in `upstream/`, so two codebases exist side by side (0007).
 - Upstream fixes need a manual port and a golden check.
 - Users must log in again after the switch.
 

@@ -44,7 +44,7 @@ The account used to test proves pickup live. The home path is proven by goldens 
 
 ## Porting upstream fixes
 
-Check these by hand when a fix touches them: `_is_home`, `NOT_HOME` and `delivery_slots` in `src/handle_mcp/stores/bilkatogo.py`, and the notes in the quote in `src/handle_mcp/compare.py`. Python still maps every non-home cart to `NOT_HOME`.
+Check these by hand when a fix touches them: `_is_home`, `NOT_HOME` and `delivery_slots` in `upstream/src/handle_mcp/stores/bilkatogo.py`, and the notes in the quote in `upstream/src/handle_mcp/compare.py`. Python still maps every non-home cart to `NOT_HOME`.
 
 ## Consequences
 
