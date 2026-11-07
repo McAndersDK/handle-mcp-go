@@ -229,7 +229,7 @@
  },
  {
   "name": "get_recipe",
-  "description": "The products to buy for one of the store's recipes, as on its \"Se varer og læg i kurv\":\nper ingredient the store's product, packs for `persons` and alternatives. `have_at_home`\nitems (salt, oil) are what the store assumes you have: left out of `total`, ask first.\nAlso `image`, `description`, `method`, `tip`. Scale `ingredients` from `ingredients_persons`.\n`recipe` is the recipe's link or id from search_recipes or list_recipes. Put the products\nin the cart with add_recipe_to_cart after the human says yes.\nBilkaToGo: one pack per product, no alternatives; `persons` is fixed (null for pieces).\n`missing`: product ids not sold at the address: say so to the human.",
+  "description": "The products to buy for one of the store's recipes, as on its \"Se varer og læg i kurv\":\nper ingredient the store's product, packs for `persons` and alternatives. `have_at_home`\nitems (salt, oil) are what the store assumes you have: left out of `total`, ask first.\nAlso `image`, `description`, `method`, `tip`. Scale `ingredients` from `ingredients_persons`.\n`recipe` is the recipe's link or id from search_recipes or list_recipes. Put the products\nin the cart with add_recipe_to_cart after the human says yes.\nBilkaToGo: one pack per product, no alternatives; `persons` is fixed (null for pieces).\n`missing`: product ids not sold at the address: say so to the human.\nTo buy this recipe in another store, pass ingredient names with amounts to compare_basket;\nproduct ids here work only in this store.",
   "inputSchema": {
    "properties": {
     "store": {
