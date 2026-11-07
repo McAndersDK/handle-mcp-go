@@ -160,7 +160,7 @@
    "openWorldHint": true,
    "readOnlyHint": true
   },
-  "description": "Show the chosen delivery or pickup time, edit deadline and next free day, plus fees and\nminimum order. `delivery_mode` is \"home\", \"pickup\" or null (the store does not say: the human\nchooses on the store's website); `pickup_store` is set only for pickup. Only reads: it never\nchooses a time, a pickup store or home delivery or pickup.",
+  "description": "Show the chosen delivery or pickup time, edit deadline and next free day, plus fees and\nminimum order. `delivery_mode` is \"home\", \"pickup\" or null (the store does not say: the human\nchooses on the store's website); `pickup_store` is set only for pickup. Only reads: it never\nchooses a time, a pickup store or home delivery or pickup. REMA 1000: pickup in the Køb & Hent\nstore the human chose at login; no time is chosen here, it is chosen and paid on rema1000.dk.",
   "inputSchema": {
    "properties": {
     "store": {
@@ -239,7 +239,7 @@
    "openWorldHint": true,
    "readOnlyHint": true
   },
-  "description": "The products to buy for one of the store's recipes, as on its \"Se varer og læg i kurv\":\nper ingredient the store's product, packs for `persons` and alternatives. `have_at_home`\nitems (salt, oil) are what the store assumes you have: left out of `total`, ask first.\nAlso `image`, `description`, `method`, `tip`. Scale `ingredients` from `ingredients_persons`.\n`recipe` is the recipe's link or id from search_recipes or list_recipes. Put the products\nin the cart with add_recipe_to_cart after the human says yes.\nBilkaToGo: one pack per product, no alternatives; `persons` is fixed (null for pieces).\n`missing`: product ids not sold at the address: say so to the human.\nTo buy this recipe in another store, pass ingredient names with amounts to compare_basket;\nproduct ids here work only in this store.",
+  "description": "The products to buy for one of the store's recipes, as on its \"Se varer og læg i kurv\":\nper ingredient the store's product, packs for `persons` and alternatives. `have_at_home`\nitems (salt, oil) are what the store assumes you have: left out of `total`, ask first.\nAlso `image`, `description`, `method`, `tip`. Scale `ingredients` from `ingredients_persons`.\n`recipe` is the recipe's link or id from search_recipes or list_recipes. Put the products\nin the cart with add_recipe_to_cart after the human says yes.\nBilkaToGo: one pack per product, no alternatives; `persons` is fixed (null for pieces).\n`missing`: product ids not sold at the address: say so to the human.\nTo buy this recipe in another store, pass ingredient names with amounts to compare_basket;\nproduct ids here work only in this store.\nREMA 1000: packs follow `persons`; `have_at_home` also holds its basic items; `missing` lists\ningredient names, not ids.",
   "inputSchema": {
    "properties": {
     "persons": {
@@ -279,7 +279,7 @@
    "openWorldHint": true,
    "readOnlyHint": true
   },
-  "description": "List free delivery or pickup times for the next `days` days with the fee per slot, in time\norder, plus the 3 cheapest per store. nemlig: \"Personlig\" (you are home) or \"Fleksibel\"\n(left at the door). BilkaToGo: home delivery has one flat fee and night delivery; a pickup\ncart gives pickup times with kind \"Afhentning\", `pickup_store` and the fee (\"0.00\" when free).\nOnly reads: it never chooses a time, a pickup store or home delivery or pickup. The human\nchooses on the store's website.",
+  "description": "List free delivery or pickup times for the next `days` days with the fee per slot, in time\norder, plus the 3 cheapest per store. nemlig: \"Personlig\" (you are home) or \"Fleksibel\"\n(left at the door). BilkaToGo: home delivery has one flat fee and night delivery; a pickup\ncart gives pickup times with kind \"Afhentning\", `pickup_store` and the fee (\"0.00\" when free).\nOnly reads: it never chooses a time, a pickup store or home delivery or pickup. The human\nchooses on the store's website. REMA 1000: pickup only, in the Køb & Hent store the human\nchose at login; kind \"Afhentning\", the fee is null (REMA does not say it).",
   "inputSchema": {
    "properties": {
     "days": {
@@ -351,7 +351,7 @@
    "openWorldHint": true,
    "readOnlyHint": true
   },
-  "description": "Browse the store's recipes, with link. No tags or category: this week's featured\nrecipes (nemlig: \"Ugens udvalgte\"). With `tags`: recipes that have every tag, e.g.\n[\"Familievenlig\", \"Budgetvenlig\"] or [\"Under 30 min\", \"Kylling\"]. nemlig's tags include\nUnder 20/30 min, Budgetvenlig, Familievenlig, Populær, Mad til flere dage, Vegetarisk,\nKylling, Fisk, Oksekød, Gris and cuisines; an unknown tag answers with the full list.\n`category` (nemlig: aftensmad by default, frokost, madpakke, morgenmad, ...).\nBilkaToGo: no tags; no category is this week's \"Madplan\" (7 dinners); `category` is a path\nlike aftensmad or aftensmad/pastaretter, an unknown one answers with the list. Use get_recipe.",
+  "description": "Browse the store's recipes, with link. No tags or category: this week's featured\nrecipes (nemlig: \"Ugens udvalgte\"). With `tags`: recipes that have every tag, e.g.\n[\"Familievenlig\", \"Budgetvenlig\"] or [\"Under 30 min\", \"Kylling\"]. nemlig's tags include\nUnder 20/30 min, Budgetvenlig, Familievenlig, Populær, Mad til flere dage, Vegetarisk,\nKylling, Fisk, Oksekød, Gris and cuisines; an unknown tag answers with the full list.\n`category` (nemlig: aftensmad by default, frokost, madpakke, morgenmad, ...).\nBilkaToGo: no tags; no category is this week's \"Madplan\" (7 dinners); `category` is a path\nlike aftensmad or aftensmad/pastaretter, an unknown one answers with the list. Use get_recipe.\nREMA 1000: its recipe tags (Aftensmad, Kødfri, Mad for børn, ...); `category` is one more tag; none\ngives the most popular recipes.",
   "inputSchema": {
    "properties": {
     "category": {
@@ -467,7 +467,7 @@
    "openWorldHint": true,
    "readOnlyHint": true
   },
-  "description": "Find the stores' own recipes, e.g. \"kylling karry\". Returns name and link.\nUse get_recipe for time, persons and the products to buy.\nnemlig only: BilkaToGo has no recipe search, use list_recipes with `category` there.",
+  "description": "Find the stores' own recipes, e.g. \"kylling karry\". Returns name and link.\nUse get_recipe for time, persons and the products to buy.\nnemlig and REMA 1000 only: BilkaToGo has no recipe search, use list_recipes with `category` there.",
   "inputSchema": {
    "properties": {
     "limit": {
