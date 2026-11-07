@@ -20,16 +20,17 @@ const genericOffer = "Se Her"
 // Search finds products in the store behind the cart's delivery address.
 func (s *Store) Search(ctx context.Context, query string, limit int) (_ []model.Product, err error) {
 	defer guard(&err)
-	return s.algolia(ctx, query, limit, false)
+	return s.algolia(ctx, query, limit, false, nil)
 }
 
 // Offers are the products on offer in our store: Skarp pris, leaflet offers and mix offers.
 func (s *Store) Offers(ctx context.Context, limit int) (_ []model.Product, err error) {
 	defer guard(&err)
-	return s.algolia(ctx, "", limit, true)
+	return s.algolia(ctx, "", limit, true, nil)
 }
 
-func (s *Store) algolia(ctx context.Context, query string, limit int, offers bool) ([]model.Product, error) {
+// algolia searches, lists offers, or (with ids) finds the products with those Bilka item numbers.
+func (s *Store) algolia(ctx context.Context, query string, limit int, offers bool, ids []string) ([]model.Product, error) {
 	if !store.HasLogin(ctx, name) { // the assortment, prices and offers follow the address
 		return nil, store.Errorf("BilkaToGo viser priser og tilbud for butikken bag din leveringsadresse, " +
 			"så et login skal til. Kør: handle-mcp login bilkatogo")
@@ -46,6 +47,16 @@ func (s *Store) algolia(ctx context.Context, query string, limit int, offers boo
 	filters := "isInAssortmentIn:" + sid + " AND nonsearchable:false"
 	if offers { // isInOffer is a list of store ids, not true/false
 		filters = "isInOffer:" + sid + " AND " + filters
+	}
+	if len(ids) > 0 { // a recipe's products may be hidden from search: no nonsearchable filter
+		terms := make([]string, len(ids))
+		for i, id := range ids {
+			if !isItemNumber(id) { // never let anything but digits into a filter
+				bad("item number %q is not digits", id)
+			}
+			terms[i] = "objectID:" + id
+		}
+		filters = "(" + strings.Join(terms, " OR ") + ") AND isInAssortmentIn:" + sid
 	}
 	attributes := []string{"name", "brand", "gtin", "netcontent", "productType", "deepestCategoryPath",
 		"price", // the price without the offer

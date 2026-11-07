@@ -248,12 +248,12 @@ func TestLiveFeaturedRecipeHasProducts(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	t.Logf("%v: %s | %d pers. | %s kr", show(featured[0].Group), recipe.Name, recipe.Persons, recipe.Total)
+	t.Logf("%v: %s | %s pers. | %s kr", show(featured[0].Group), recipe.Name, show(recipe.Persons), recipe.Total)
 	for _, it := range recipe.Items {
 		t.Logf("  home=%v %s: %s x%d", it.HaveAtHome, it.Ingredient, it.Product.Name, it.Product.Quantity)
 	}
-	if recipe.Persons != 6 || recipe.Total.Sign() <= 0 {
-		t.Errorf("persons %d, total %s", recipe.Persons, recipe.Total)
+	if recipe.Persons == nil || *recipe.Persons != 6 || recipe.Total.Sign() <= 0 {
+		t.Errorf("persons %s, total %s", show(recipe.Persons), recipe.Total)
 	}
 	if len(recipe.Method) == 0 {
 		t.Error("no method")

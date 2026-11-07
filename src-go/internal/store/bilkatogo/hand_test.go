@@ -365,7 +365,7 @@ func TestMissingUnitPriceIsUnknown(t *testing.T) {
 }
 
 func TestPyJSONString(t *testing.T) {
-	if got, want := pyJSONString("a\"b\\é\n\x7f😀"), "\"a\\\"b\\\\\\u00e9\\n\\u007f\\ud83d\\ude00\""; got != want {
+	if got, want := pyJSONString("a\"b\\é\n\x7f\U0001F600"), "\"a\\\"b\\\\\\u00e9\\n\\u007f\\ud83d\\ude00\""; got != want {
 		t.Errorf("got %s, want %s", got, want)
 	}
 }
@@ -406,19 +406,6 @@ func TestSlotsDaysAreCalendarDaysFromTheClock(t *testing.T) {
 	slots, err := h.s.DeliverySlots(bg, 1)
 	if err != nil || len(slots) != 1 { // Nov 2 is not after Nov 3; Nov 4 is
 		t.Errorf("%d slots (%v)", len(slots), err)
-	}
-}
-
-func TestRecipesAreNotImplemented(t *testing.T) {
-	s := New(nil)
-	_, e1 := s.Recipes(bg, "x", 1)
-	_, e2 := s.Recipe(bg, "x", nil)
-	_, e3 := s.FeaturedRecipes(bg, 1)
-	_, e4 := s.RecipesByTag(bg, nil, nil, 1)
-	for i, err := range []error{e1, e2, e3, e4} {
-		if !errors.Is(err, store.ErrNotImplemented) {
-			t.Errorf("method %d: %v", i, err)
-		}
 	}
 }
 

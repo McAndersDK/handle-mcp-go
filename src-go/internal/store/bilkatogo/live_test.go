@@ -286,3 +286,82 @@ func TestShowPrintsValuesNotAddresses(t *testing.T) {
 		t.Errorf("show = %q", got)
 	}
 }
+
+// BilkaToGo recipes: public GETs of bilkatogo.dk/inspiration/opskrifter/ and the page data
+// (/_nuxt/static/<build>/.../payload.js), and the Algolia search that prices the products. The
+// prices follow the address's store, so this needs the login too. Port of the two BilkaToGo
+// recipe tests of tests/test_live.py.
+//
+//	go test -count=1 -v -run 'LiveMadplan|LiveRecipesByCategory' ./src-go/internal/store/bilkatogo/
+func TestLiveMadplanRecipeHasProducts(t *testing.T) {
+	s := liveStore(t)
+	ctx := context.Background()
+	week, err := s.FeaturedRecipes(ctx, 20)
+	if err != nil {
+		t.Fatal(err)
+	}
+	names := make([]string, len(week))
+	for i, r := range week {
+		names[i] = r.Name
+	}
+	if len(week) < 5 {
+		t.Fatalf("the madplan has %d recipes: %v", len(week), names)
+	}
+	recipe, err := s.Recipe(ctx, week[0].URL, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Logf("%s: %v", show(week[0].Group), names)
+	t.Logf("%s | %s pers. | %s kr | missing %v", recipe.Name, show(recipe.Persons), recipe.Total, recipe.Missing)
+	for _, it := range recipe.Items {
+		t.Logf("  %s: %s %s kr", it.Product.ID, it.Product.Name, it.Product.Price)
+	}
+	if len(recipe.Ingredients) == 0 || len(recipe.Method) == 0 {
+		t.Errorf("no text: %d ingredients, %d method parts", len(recipe.Ingredients), len(recipe.Method))
+	}
+	if len(recipe.Items) == 0 || recipe.Total.Sign() <= 0 { // the item numbers are found in Algolia
+		t.Errorf("no products: %d items, total %s", len(recipe.Items), recipe.Total)
+	}
+}
+
+func TestLiveRecipesByCategory(t *testing.T) {
+	s := liveStore(t)
+	category := "aftensmad"
+	recipes, err := s.RecipesByTag(context.Background(), nil, &category, 10)
+	if err != nil {
+		t.Fatal(err)
+	}
+	groups := map[string]bool{}
+	for _, r := range recipes {
+		t.Logf("%s: %s | %s", show(r.Group), r.Name, r.URL)
+		groups[show(r.Group)] = true
+	}
+	if len(groups) <= 3 { // mixed across sub-categories
+		t.Errorf("only %d groups: %v", len(groups), groups)
+	}
+}
+
+// The recipe pages are plain GETs: the live guard lets them through and still refuses to write there.
+func TestLiveGuardAllowsTheRecipePagesOnly(t *testing.T) {
+	isolate(t)
+	probe := &recorder{}
+	guard := readOnly{tb: probe, inner: newSiteFake(newFake(t))}
+	for _, u := range []string{
+		"https://www.bilkatogo.dk/inspiration/opskrifter/",
+		"https://www.bilkatogo.dk/_nuxt/static/1793920097/inspiration/opskrifter/madplaner/payload.js",
+	} {
+		req, _ := http.NewRequest("GET", u, nil)
+		if _, err := guard.RoundTrip(req); err != nil {
+			t.Errorf("GET %s was stopped: %v", u, err)
+		}
+	}
+	for _, method := range []string{"POST", "PUT", "DELETE", "PATCH"} {
+		req, _ := http.NewRequest(method, "https://www.bilkatogo.dk/inspiration/opskrifter/", strings.NewReader("x"))
+		if _, err := guard.RoundTrip(req); err == nil {
+			t.Errorf("%s to the website got through the live guard", method)
+		}
+	}
+	if len(probe.reports) != 4 {
+		t.Errorf("each write must be reported once: %v", probe.reports)
+	}
+}

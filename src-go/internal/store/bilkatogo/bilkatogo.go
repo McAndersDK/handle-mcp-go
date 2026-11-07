@@ -65,6 +65,7 @@ type Store struct {
 	sender *store.Sender
 	jar    *cartJar
 	now    func() time.Time
+	site   siteState // the recipe pages (recipes.go): their own locks, never held with the two below
 
 	lock sync.Mutex // see the package comment
 

@@ -101,7 +101,7 @@ type RecipeDetails struct {
 	ID                 string              `json:"id"`
 	Name               string              `json:"name"`
 	URL                string              `json:"url"`
-	Persons            int                 `json:"persons"`
+	Persons            *int                `json:"persons"` // nil when the store writes the recipe for pieces, not persons
 	MinPersons         *int                `json:"min_persons"`
 	MaxPersons         *int                `json:"max_persons"`
 	Time               *string             `json:"time"`
@@ -112,7 +112,8 @@ type RecipeDetails struct {
 	Method             List[RecipeSection] `json:"method"`
 	Tip                *string             `json:"tip"`
 	Items              List[RecipeItem]    `json:"items"`
-	Total              Money               `json:"total"` // items to buy, without have_at_home
+	Total              Money               `json:"total"`   // items to buy, without have_at_home
+	Missing            List[string]        `json:"missing"` // product ids the store does not sell here
 }
 
 // CartLine is one product line in a cart or an order.

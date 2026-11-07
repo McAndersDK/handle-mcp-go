@@ -229,14 +229,17 @@ func (s *Store) Recipe(ctx context.Context, recipeID string, persons *int) (_ mo
 	} else {
 		r.Name = textOf(withDefault(details, "title", ""))
 	}
+	// nemlig always has a number of persons: 0 when nothing says (Python: "or persons or 0").
+	shown := 0
 	switch {
 	case softInt(dialog["servings"]) != nil:
-		r.Persons = *softInt(dialog["servings"])
+		shown = *softInt(dialog["servings"])
 	case softInt(details["servings"]) != nil:
-		r.Persons = *softInt(details["servings"])
+		shown = *softInt(details["servings"])
 	case persons != nil:
-		r.Persons = *persons
+		shown = *persons
 	}
+	r.Persons = &shown
 	if minutes := objOrEmpty(details["durationTotal"])["from"]; truthy(minutes) {
 		r.Time = strPtr(fmt.Sprintf("%s min", pyStr(minutes)))
 	}

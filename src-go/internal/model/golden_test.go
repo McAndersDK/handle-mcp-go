@@ -130,7 +130,7 @@ func TestGoldenNestedAndRecipe(t *testing.T) {
 	desc, image, tip := "Prøv denne lækre opskrift", "https://media.example.com/a.jpg", "Server med citron"
 	persons := 4
 	recipe := model.RecipeDetails{
-		Store: "nemlig", ID: "kebab", Name: name, URL: "https://example.com/x", Persons: persons,
+		Store: "nemlig", ID: "kebab", Name: name, URL: "https://example.com/x", Persons: &persons,
 		Description: &desc, Image: &image, Tip: &tip,
 		Method: model.List[model.RecipeSection]{{Title: &title, Steps: model.List[string]{"Tænd ovnen på 200 grader"}}},
 	}

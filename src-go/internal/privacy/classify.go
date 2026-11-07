@@ -30,7 +30,7 @@ var PassthroughKeys = setOf(
 	"delivery", "requested", "applied", "ok", "home_delivery", "delivery_fee",
 	"other_fees", "source", "chosen_start", "chosen_end", "edit_deadline",
 	"next_available", "start", "end", "kind", "status", "placed_at",
-	"delivery_start", "delivery_end",
+	"delivery_start", "delivery_end", "missing",
 )
 
 // Classify returns how Scrub treats a key. Personal wins over free text, as in scrubItem.
