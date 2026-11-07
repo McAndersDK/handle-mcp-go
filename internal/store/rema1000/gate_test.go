@@ -23,7 +23,7 @@ func gateStore(t *testing.T, ids string) (*fake, *Store, *clock) {
 	t.Helper()
 	isolate(t)
 	f := newFake(t)
-	saveSession(t, map[string]string{accessCookie: f.access, refreshCookie: f.refreshCookie, savedKey: ids})
+	saveSession(t, map[string]string{accessCookie: f.access, refreshCookie: f.refreshCookie, apiCookie: apiValue, savedKey: ids})
 	c := &clock{now: testNow}
 	s := New(&http.Client{Transport: f},
 		WithClock(func() time.Time { return c.now }),
@@ -147,7 +147,7 @@ func TestChosenStoresThatAreGone(t *testing.T) {
 		t.Fatalf("got %v", err)
 	}
 	// a gone store is skipped, and it does not count as a better store that is not active
-	saveSession(t, map[string]string{accessCookie: f.access, refreshCookie: f.refreshCookie, savedKey: "9300,9100"})
+	saveSession(t, map[string]string{accessCookie: f.access, refreshCookie: f.refreshCookie, apiCookie: apiValue, savedKey: "9300,9100"})
 	s2 := New(&http.Client{Transport: f}, WithClock(func() time.Time { return c.now }))
 	info, err := s2.DeliveryInfo(ctx)
 	if err != nil || info.PickupStore == nil || *info.PickupStore != nameMain || strings.Contains(*info.Note, "foretrukne") {
@@ -190,7 +190,7 @@ func TestParseIDs(t *testing.T) {
 func TestAnOldSingleStoreIdIsAListOfOne(t *testing.T) {
 	isolate(t)
 	f := newFake(t)
-	saveSession(t, map[string]string{accessCookie: f.access, refreshCookie: f.refreshCookie, oldSavedKey: "9100"})
+	saveSession(t, map[string]string{accessCookie: f.access, refreshCookie: f.refreshCookie, apiCookie: apiValue, oldSavedKey: "9100"})
 	s := newStore(f)
 	if _, err := s.GetCart(context.Background()); err != nil {
 		t.Fatal(err)

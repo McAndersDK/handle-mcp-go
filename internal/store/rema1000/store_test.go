@@ -34,7 +34,7 @@ func wantStoreError(t *testing.T, err error, contains string) {
 func TestGateNoStoreChosen(t *testing.T) {
 	isolate(t)
 	f := newFake(t)
-	saveSession(t, map[string]string{accessCookie: f.access, refreshCookie: f.refreshCookie})
+	saveSession(t, map[string]string{accessCookie: f.access, refreshCookie: f.refreshCookie, apiCookie: apiValue})
 	s := newStore(f)
 	for name, call := range map[string]func() error{
 		"search": func() error { _, err := s.Search(context.Background(), "mælk", 3); return err },

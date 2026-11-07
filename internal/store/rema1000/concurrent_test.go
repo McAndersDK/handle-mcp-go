@@ -53,7 +53,7 @@ func TestOneRefreshUnderConcurrency(t *testing.T) {
 	isolate(t)
 	f := newFake(t)
 	saveSession(t, map[string]string{accessCookie: makeJWT(testNow.Add(-time.Minute), userID),
-		refreshCookie: "refresh-1", "store_id": "9100"})
+		refreshCookie: "refresh-1", apiCookie: apiValue, "store_id": "9100"})
 	s := newStore(f)
 	together(12, func() {
 		if _, err := s.Search(context.Background(), "mælk", 2); err != nil {

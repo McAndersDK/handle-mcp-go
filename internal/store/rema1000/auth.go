@@ -18,6 +18,7 @@ import (
 const (
 	accessCookie  = "access_token"
 	refreshCookie = "refresh_token"
+	apiCookie     = "api_session"             // the site's session cookie; the refresh call answers 500 without it
 	callbackPath  = "/api/auth/callback/rema" // where the OAuth login ends on the site
 	maxHops       = 12
 )
@@ -73,21 +74,21 @@ func (s *Store) acquire(ctx context.Context, force bool, used string) (string, e
 
 // adopt puts a saved session into the cookie jar and the store's state.
 func (s *Store) adopt(login store.Login) error {
-	access, refresh := login.Session[accessCookie], login.Session[refreshCookie]
+	access, refresh, api := login.Session[accessCookie], login.Session[refreshCookie], login.Session[apiCookie]
 	if access == "" && refresh == "" {
 		return store.Expired(name)
 	}
-	s.jar.SetCookies(shopURL, cookiesOf(map[string]string{accessCookie: access, refreshCookie: refresh}))
+	s.jar.SetCookies(shopURL, cookiesOf(map[string]string{accessCookie: access, refreshCookie: refresh, apiCookie: api}))
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	s.savedStore = savedIDs(login.Session)
-	s.setCookiesLocked(access, refresh)
+	s.setCookiesLocked(access, refresh, api)
 	return nil
 }
 
 func cookiesOf(m map[string]string) []*http.Cookie {
 	var out []*http.Cookie
-	for _, k := range []string{accessCookie, refreshCookie} {
+	for _, k := range []string{accessCookie, refreshCookie, apiCookie} {
 		if m[k] != "" {
 			out = append(out, &http.Cookie{Name: k, Value: m[k], Path: "/", Secure: true})
 		}
@@ -97,13 +98,16 @@ func cookiesOf(m map[string]string) []*http.Cookie {
 
 // setCookiesLocked keeps the raw cookie values and reads the Bearer token and its end from the
 // access cookie. An access token that is not a JWT is treated as ended, so it is renewed.
-func (s *Store) setCookiesLocked(access, refresh string) {
+func (s *Store) setCookiesLocked(access, refresh, api string) {
 	s.cookies = map[string]string{}
 	if access != "" {
 		s.cookies[accessCookie] = access
 	}
 	if refresh != "" {
 		s.cookies[refreshCookie] = refresh
+	}
+	if api != "" {
+		s.cookies[apiCookie] = api
 	}
 	s.token, s.tokenExp = "", time.Time{}
 	if access == "" {
@@ -156,29 +160,32 @@ func (s *Store) user() (int64, error) {
 	return s.userID, nil
 }
 
-// renew trades the refresh cookie for a new access token (POST /api/auth/refresh on the site,
-// the same call the webshop makes). A 4xx is errRefused. The cookies may be rotated, so the
-// session is saved again where it was found.
+// renew trades the cookies for a new access token (POST /api/auth/refresh on the site, the same
+// call the webshop makes). The call carries all three cookies. REMA answers with an empty body
+// and sets the cookies again, so they are read back from the jar. A 4xx is errRefused, and so is
+// any refusal of a session without api_session; a 5xx on a session that has one is a store error.
+// The call is never retried: a retried refresh could burn a rotated refresh token. The session is
+// saved again when any of the cookies changed.
 func (s *Store) renew(ctx context.Context, login store.Login) (string, error) {
+	s.mu.Lock()
+	hadAPI := s.cookies[apiCookie] != ""
+	s.mu.Unlock()
 	h := apiHeaders("")
 	h.Set("Origin", shopBase)
-	resp, err := s.sender.Send(ctx, store.Request{Method: "POST", URL: shopBase + "/api/auth/refresh", Header: h})
+	resp, err := s.sender.Send(ctx, store.Request{Method: "POST", URL: shopBase + "/api/auth/refresh", Header: h, NoRetry: true})
 	if err != nil {
 		return "", err
 	}
 	if resp.Status >= 300 {
 		slog.Info("REMA 1000 session could not be renewed", "status", resp.Status)
+		if resp.Status >= 500 && hadAPI {
+			return "", store.Errorf("REMA 1000 svarer %d ved fornyelse. Prøv igen senere.", resp.Status)
+		}
 		return "", errRefused
 	}
-	var body struct {
-		Tokens struct {
-			Access string `json:"access_token"`
-		} `json:"tokens"`
-	}
-	_ = json.Unmarshal(resp.Body, &body) // the cookie is the fallback
-	access, refresh := s.cookie(accessCookie), s.cookie(refreshCookie)
-	if body.Tokens.Access != "" {
-		access = body.Tokens.Access
+	access, refresh, api := s.cookie(accessCookie), s.cookie(refreshCookie), s.cookie(apiCookie)
+	if access == "" {
+		access = tokenInBody(resp.Body) // the fallback, used only when the answer has a token
 	}
 	if access == "" {
 		return "", errRefused
@@ -187,14 +194,28 @@ func (s *Store) renew(ctx context.Context, login store.Login) (string, error) {
 	if refresh == "" {
 		refresh = s.cookies[refreshCookie]
 	}
-	changed := s.cookies[accessCookie] != access || s.cookies[refreshCookie] != refresh
-	s.setCookiesLocked(access, refresh)
+	if api == "" {
+		api = s.cookies[apiCookie]
+	}
+	changed := s.cookies[accessCookie] != access || s.cookies[refreshCookie] != refresh || s.cookies[apiCookie] != api
+	s.setCookiesLocked(access, refresh, api)
 	tok, session := s.token, s.sessionLocked()
 	s.mu.Unlock()
 	if changed {
 		store.SaveSession(ctx, name, login.Email, session)
 	}
 	return tok, nil
+}
+
+// tokenInBody is the access token of a JSON answer ({"tokens":{"access_token":...}}), or "".
+func tokenInBody(b []byte) string {
+	var body struct {
+		Tokens struct {
+			Access string `json:"access_token"`
+		} `json:"tokens"`
+	}
+	_ = json.Unmarshal(b, &body)
+	return body.Tokens.Access
 }
 
 func (s *Store) sessionLocked() map[string]string {
@@ -218,7 +239,7 @@ func (s *Store) cookie(n string) string {
 	return ""
 }
 
-// fullLogin is the site's own login with email and password. Only the two cookies are kept.
+// fullLogin is the site's own login with email and password. Only the session cookies are kept.
 func (s *Store) fullLogin(ctx context.Context, login store.Login) (string, error) {
 	page, err := s.follow(ctx, shopBase+"/konto/auth?redirect_uri=%2Fkonto", func(*url.URL) bool { return false })
 	if err != nil {
@@ -261,12 +282,12 @@ func (s *Store) fullLogin(ctx context.Context, login store.Login) (string, error
 	if err != nil {
 		return "", err
 	}
-	access, refresh := s.cookie(accessCookie), s.cookie(refreshCookie)
+	access, refresh, api := s.cookie(accessCookie), s.cookie(refreshCookie), s.cookie(apiCookie)
 	if access == "" {
 		return "", store.Errorf("REMA 1000 login gav ingen adgangsnøgle. API'et kan have ændret sig.")
 	}
 	s.mu.Lock()
-	s.setCookiesLocked(access, refresh)
+	s.setCookiesLocked(access, refresh, api)
 	tok, session := s.token, s.sessionLocked()
 	s.mu.Unlock()
 	slog.Info("logged in to REMA 1000")

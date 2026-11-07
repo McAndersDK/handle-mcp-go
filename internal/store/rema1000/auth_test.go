@@ -21,7 +21,7 @@ func TestPasswordLoginFollowsTheOAuthHopsAndKeepsTwoCookies(t *testing.T) {
 		t.Fatal(err)
 	}
 	session := s.Session()
-	if session[accessCookie] != f.access || session[refreshCookie] != "refresh-login" || len(session) != 2 {
+	if session[accessCookie] != f.access || session[refreshCookie] != "refresh-login" || session[apiCookie] != "api-login" || len(session) != 3 {
 		t.Errorf("session: %v", session)
 	}
 	var hosts []string
@@ -89,7 +89,7 @@ func TestEndedAccessTokenIsRenewedAndTheRotatedCookieSaved(t *testing.T) {
 	isolate(t)
 	f := newFake(t)
 	old := makeJWT(testNow.Add(-time.Minute), userID) // ended
-	saveSession(t, map[string]string{accessCookie: old, refreshCookie: "refresh-1", "store_id": "9100"})
+	saveSession(t, map[string]string{accessCookie: old, refreshCookie: "refresh-1", apiCookie: apiValue, "store_id": "9100"})
 	f.rotate = "refresh-2"
 	s := newStore(f)
 	if _, err := s.GetCart(context.Background()); err != nil {
@@ -129,6 +129,47 @@ func TestDeadSessionSaysLogInAgain(t *testing.T) {
 	_, err := s.GetCart(context.Background())
 	wantStoreError(t, err, "Login til rema1000 er udløbet")
 	wantStoreError(t, err, "handle-mcp login rema1000")
+}
+
+func TestRenewalSendsAllThreeCookiesAndSavesTheRotatedOnes(t *testing.T) {
+	isolate(t)
+	f := newFake(t)
+	old := makeJWT(testNow.Add(-time.Minute), userID) // ended
+	saveSession(t, map[string]string{accessCookie: old, refreshCookie: "refresh-1", apiCookie: apiValue, "store_id": "9100"})
+	f.rotate = "refresh-2"
+	f.rotateAPI = "api-2"
+	if _, err := newStore(f).GetCart(context.Background()); err != nil {
+		t.Fatal(err)
+	}
+	sent := ""
+	for _, r := range f.requests() {
+		if r.Path == "/api/auth/refresh" {
+			sent = r.Cookie
+		}
+	}
+	for _, want := range []string{accessCookie + "=" + old, refreshCookie + "=refresh-1", apiCookie + "=" + apiValue} {
+		if !strings.Contains(sent, want) {
+			t.Errorf("the refresh call sent %q, without %q", sent, want)
+		}
+	}
+	saved := savedSession(t)
+	if saved[accessCookie] != f.nextAccess || saved[refreshCookie] != "refresh-2" || saved[apiCookie] != "api-2" {
+		t.Errorf("saved session: %v", saved)
+	}
+}
+
+// An old session without api_session: the renewal is tried once, REMA refuses it (500), and the
+// human is told to log in again. The call is not retried.
+func TestOldSessionWithoutApiSessionSaysLogInAgain(t *testing.T) {
+	isolate(t)
+	f := newFake(t)
+	old := makeJWT(testNow.Add(-time.Minute), userID) // ended
+	saveSession(t, map[string]string{accessCookie: old, refreshCookie: "refresh-1", "store_id": "9100"})
+	_, err := newStore(f).GetCart(context.Background())
+	wantStoreError(t, err, "Login til rema1000 er udløbet")
+	if n := f.count("POST", "/api/auth/refresh"); n != 1 {
+		t.Errorf("refreshes: %d, want one", n)
+	}
 }
 
 func TestJWTClaims(t *testing.T) {

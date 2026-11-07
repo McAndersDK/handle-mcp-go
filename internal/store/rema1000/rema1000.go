@@ -3,8 +3,9 @@
 //
 // Login: the OAuth login page, one POST with email and password, and the site callback, which
 // sets the cookies access_token (a JWT, about an hour) and refresh_token. The session saved
-// after a login is those two cookies and the pickup store the human chose; the password is
-// forgotten. The access token is renewed with the refresh cookie (auth.go).
+// after a login is those cookies (access_token, refresh_token and api_session) and the pickup
+// store the human chose; the password is forgotten. The access token is renewed with the
+// cookies (auth.go).
 //
 // The adapter works only with a pickup store that has Køb & Hent, chosen on this machine with
 // `handle-mcp login rema1000` (gate.go). Nothing on REMA's side is ever set. The only lists it
@@ -126,7 +127,7 @@ func New(client *http.Client, opts ...Option) *Store {
 // Name is "rema1000".
 func (s *Store) Name() string { return name }
 
-// Session is what to save after a login: the two cookies and the chosen pickup store. Never the
+// Session is what to save after a login: the cookies and the chosen pickup store. Never the
 // password. nil before the first login.
 func (s *Store) Session() map[string]string {
 	s.mu.Lock()

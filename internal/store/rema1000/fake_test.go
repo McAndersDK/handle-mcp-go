@@ -72,7 +72,10 @@ func makeJWT(exp time.Time, sub int) string {
 	return enc(obj{"alg": "none"}) + "." + enc(obj{"exp": exp.Unix(), "sub": strconv.Itoa(sub)}) + ".sig"
 }
 
-type request struct{ Method, Host, Path, Query, Body, Auth string }
+type request struct{ Method, Host, Path, Query, Body, Auth, Cookie string }
+
+// apiValue is the api_session cookie of the fake's session.
+const apiValue = "api-1"
 
 // fakeItem and fakeList are the lists the fake keeps.
 type fakeItem struct {
@@ -102,6 +105,7 @@ type fake struct {
 	refreshCookie     string      // the refresh cookie the site holds; "" = refresh refuses
 	nextAccess        string      // what a refresh hands out
 	rotate            string      // a new refresh cookie a refresh sets
+	rotateAPI         string      // a new api_session cookie a refresh sets
 	loginOK           bool
 	queueOnLogin      bool
 	leak              bool              // add personal data to every JSON object (canary_test.go)
@@ -159,7 +163,7 @@ func (f *fake) RoundTrip(req *http.Request) (*http.Response, error) {
 		time.Sleep(f.listDelay)
 	}
 	f.mu.Lock()
-	f.log = append(f.log, request{req.Method, req.URL.Host, req.URL.Path, req.URL.RawQuery, string(body), req.Header.Get("Authorization")})
+	f.log = append(f.log, request{req.Method, req.URL.Host, req.URL.Path, req.URL.RawQuery, string(body), req.Header.Get("Authorization"), req.Header.Get("Cookie")})
 	r := reply{}
 	kind := ""
 	switch {
@@ -239,9 +243,15 @@ func (f *fake) route(req *http.Request, body []byte) reply {
 		h := http.Header{}
 		h.Add("Set-Cookie", "access_token="+f.access+"; Path=/")
 		h.Add("Set-Cookie", "refresh_token=refresh-login; Path=/")
+		h.Add("Set-Cookie", "api_session=api-login; Path=/")
 		h.Set("Location", "https://shop.rema1000.dk/konto")
 		return reply{status: 302, header: h}
 	case host == "shop.rema1000.dk" && path == "/api/auth/refresh":
+		// As the live site: 500 without api_session, otherwise 200 with an empty body and the
+		// cookies set again.
+		if c, _ := req.Cookie(apiCookie); c == nil {
+			return reply{status: 500}
+		}
 		cookie, _ := req.Cookie(refreshCookie)
 		if f.refreshCookie == "" || cookie == nil || cookie.Value != f.refreshCookie {
 			return reply{status: 401}
@@ -253,7 +263,10 @@ func (f *fake) route(req *http.Request, body []byte) reply {
 			f.refreshCookie = f.rotate
 			h.Add("Set-Cookie", "refresh_token="+f.rotate+"; Path=/")
 		}
-		return reply{body: obj{"tokens": obj{"access_token": f.access}}, header: h}
+		if f.rotateAPI != "" {
+			h.Add("Set-Cookie", "api_session="+f.rotateAPI+"; Path=/")
+		}
+		return reply{header: h}
 	case host != "api.digital.rema1000.dk":
 		f.tb.Errorf("request to an unexpected host: %s%s", host, path)
 		return reply{status: 599}
@@ -460,7 +473,7 @@ func harness(t *testing.T) (*fake, *Store) {
 	t.Helper()
 	isolate(t)
 	f := newFake(t)
-	saveSession(t, map[string]string{accessCookie: f.access, refreshCookie: f.refreshCookie, "store_id": strconv.Itoa(storeID)})
+	saveSession(t, map[string]string{accessCookie: f.access, refreshCookie: f.refreshCookie, apiCookie: apiValue, "store_id": strconv.Itoa(storeID)})
 	return f, newStore(f)
 }
 
