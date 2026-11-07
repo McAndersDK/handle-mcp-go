@@ -32,3 +32,15 @@ What it can **never** do: place an order, pay, read cards, choose a delivery tim
 
 
 Fields in each `compare_basket` candidate: [skills.md](skills.md).
+
+## Recipes across stores
+
+A recipe from one store can be bought in another. `add_recipe_to_cart` cannot do it: it reads the recipe again from the store you name and accepts only that store's own alternatives. Use the existing tools instead:
+
+1. `get_recipe(storeA, recipe)` for the ingredients.
+2. `compare_basket(lines, stores=[storeB])` with one line per ingredient: names with amounts, never storeA's product ids, which work only in storeA.
+3. The human picks a candidate per line.
+4. `get_cart(storeB)`, because `set_cart_quantities` is absolute and would overwrite what is already there.
+5. `set_cart_quantities(storeB, ids)` with the old counts plus the new ones.
+
+How to turn a recipe into `compare_basket` lines: [skills.md](skills.md).
