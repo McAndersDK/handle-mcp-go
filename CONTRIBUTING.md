@@ -26,7 +26,7 @@ No change to `server.py` or the tools. Store facts: [docs/research.md](docs/rese
 This repo is a permanent fork of `NJohansen/handle-mcp`. Normal work is pushed straight to `main` of the fork. A PR is used only to release a new version: `gh pr create --repo McAndersDK/handle-mcp-go`. Never open a PR or push to `upstream`.
 
 - Branches are not required. If you use one: `<type>/<slug>`, type is one of `feature`, `fix`, `hotfix`, `refactor`, `docs`, `test`, `chore`. One type per branch.
-- Commit messages and PR titles start with the matching gitmoji (✨ 🐛 🚑️ ♻️ 📝 ✅ 🔧).
+- Commit messages and PR titles are one short imperative sentence, with no emoji. No emoji anywhere in the repo.
 - Tests for new code. HTTP is mocked with `httpx.MockTransport`. Run them before each push.
 - Fixtures are real store answers with personal data replaced. Say so in `tests/fixtures/<store>/README.md`. Never commit a login, a cookie, a token or a real name, address, phone or email.
 

@@ -99,22 +99,23 @@ A PR inside the fork is used only to release a new version. Always `gh pr create
 3. Tag the merge commit on `main`: `git fetch origin main && git tag vX.Y.Z origin/main && git push origin vX.Y.Z`.
 4. Semver: a tool's args or answer shape changes in a way old skills notice → major. New tool or field → minor. Fix → patch.
 
-## Branches and commits (gitmoji)
+## Branches and commits
+
+No emoji anywhere: not in commits, PR titles, branch names, code, docs or tool answers.
 
 Branches are not required for normal work. When you use one (for a release PR or a long change), the name is type + short slug. The type says what the branch solves:
 
-| Type | Gitmoji | Use for |
-|---|---|---|
-| `feature/` | ✨ | new tool, store or behaviour |
-| `fix/` | 🐛 | bug fix |
-| `hotfix/` | 🚑️ | urgent fix on main |
-| `refactor/` | ♻️ | same behaviour, better code |
-| `docs/` | 📝 | docs only |
-| `test/` | ✅ | tests only |
-| `chore/` | 🔧 | config, CI, dependencies |
+| Type | Use for |
+|---|---|
+| `feature/` | new tool, store or behaviour |
+| `fix/` | bug fix |
+| `hotfix/` | urgent fix on main |
+| `refactor/` | same behaviour, better code |
+| `docs/` | docs only |
+| `test/` | tests only |
+| `chore/` | config, CI, dependencies |
 
-Example: branch `chore/release-v1.3.0`, PR title `🔧 Release v1.3.0`.
+Example: branch `chore/release-v1.3.0`, PR title `Release v1.3.0`.
 
-- Start every commit message and PR title with the gitmoji ([gitmoji.dev](https://gitmoji.dev)). The type table also tells which gitmoji fits a commit on `main`.
-- No emoji in branch names: they break shells and URLs. The prefix is enough.
+- A commit message or PR title is one short sentence in the imperative: "Port the nemlig store to Go".
 - One type per branch and per commit. Split mixed work in two.
