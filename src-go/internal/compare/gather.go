@@ -42,7 +42,8 @@ func Gather[T any](ctx context.Context, targets []Target, work func(context.Cont
 			defer wg.Done()
 			defer func() {
 				if r := recover(); r != nil {
-					slog.Error("store panicked", "store", t.Name, "panic", fmt.Sprint(r), "stack", string(debug.Stack()))
+					// The type only: a panic value's text can hold a URL with ids or tokens.
+					slog.Error("store panicked", "store", t.Name, "panic", fmt.Sprintf("%T", r), "stack", string(debug.Stack()))
 					results[i] = Result[T]{Name: t.Name, Err: &PanicError{Value: r}}
 				}
 			}()
