@@ -106,7 +106,7 @@ def scrub_cases() -> list[dict]:
         "stat": {"price": 12700},
         "uid": 123456,
         "tid": "abc",
-        "deliveryAddress": {"recipient_name": "Anders", "zip": "7100"},
+        "deliveryAddress": {"recipient_name": "Anders", "zip": "0000"},
         "orders": [{"order_pickup_code": "87654321", "phone_number": "12345678"}],
     }
     free = {
