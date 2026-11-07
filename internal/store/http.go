@@ -23,6 +23,10 @@ type Request struct {
 	URL    string
 	Header http.Header
 	Body   []byte
+	// NoRetry sends the request exactly once and returns every HTTP status as an answer, for a
+	// write that is not absolute (a POST that creates something). A transport failure is a
+	// StoreError with Unsure set; the caller must read the state before it tries again.
+	NoRetry bool
 }
 
 // Response is what the caller gets: the status, the final URL (after redirects the client
@@ -32,10 +36,15 @@ type Response struct {
 	URL    string
 	Header http.Header
 	Body   []byte
+	// NoRetry sends the request exactly once and returns every HTTP status as an answer, for a
+	// write that is not absolute (a POST that creates something). A transport failure is a
+	// StoreError with Unsure set; the caller must read the state before it tries again.
+	NoRetry bool
 }
 
 // Sender sends requests with the retries every store needs. Retry only on timeout, network
-// errors, 429 and 5xx. Safe because every write sets an absolute quantity (ADR 0005 keeps this).
+// errors, 429 and 5xx. Safe because every write sets an absolute quantity (ADR 0005 keeps this);
+// a request that is not absolute must set NoRetry.
 // The caller configures Client (timeout, cookie jar, redirects).
 type Sender struct {
 	Client *http.Client
@@ -48,6 +57,9 @@ type Sender struct {
 // never the Go error text, because a *url.Error holds the full URL with tokens and ids.
 // A cancelled ctx returns ctx's error.
 func (s *Sender) Send(ctx context.Context, r Request) (*Response, error) {
+	if r.NoRetry {
+		return s.sendOnce(ctx, r)
+	}
 	for attempt := 0; attempt <= Retries; attempt++ {
 		last := attempt == Retries
 		resp, err := s.once(ctx, r)
@@ -139,4 +151,20 @@ func classify(err error) (kind string, retry bool) {
 		return "network", true
 	}
 	return "other", false
+}
+
+// sendOnce is Send for a request that must not be repeated: one attempt, any status is an answer.
+func (s *Sender) sendOnce(ctx context.Context, r Request) (*Response, error) {
+	resp, err := s.once(ctx, r)
+	switch {
+	case err == nil:
+		return resp, nil
+	case errors.Is(err, context.Canceled):
+		return nil, context.Canceled
+	}
+	kind, _ := classify(err)
+	if kind == "request" {
+		return nil, Errorf("Kan ikke nå %s (%s).", s.Store, kind)
+	}
+	return nil, &StoreError{Msg: "Kan ikke være sikker på, om " + s.Store + " fik ændringen (" + kind + ").", Unsure: true}
 }

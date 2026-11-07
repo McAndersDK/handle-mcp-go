@@ -176,3 +176,26 @@ func TestCancelledContextStopsAtOnce(t *testing.T) {
 	}
 	_ = calls
 }
+
+func TestNoRetrySendsOnceAndReturnsEveryStatus(t *testing.T) {
+	for _, status := range []int{500, 503, 429} {
+		s, bodies, waits := answers(status, 200)
+		resp, err := s.Send(context.Background(), Request{Method: "POST", URL: "https://x.test/a", NoRetry: true})
+		if err != nil || resp.Status != status || len(*bodies) != 1 || len(*waits) != 0 {
+			t.Errorf("status %d: resp %v err %v attempts %d", status, resp, err, len(*bodies))
+		}
+	}
+}
+
+func TestNoRetryMarksATransportFailureUnsure(t *testing.T) {
+	s, bodies, _ := answers(timeoutErr{}, 200)
+	_, err := s.Send(context.Background(), Request{Method: "POST", URL: "https://x.test/a", NoRetry: true})
+	var se *StoreError
+	if !errors.As(err, &se) || !se.Unsure || len(*bodies) != 1 {
+		t.Fatalf("err %v, attempts %d", err, len(*bodies))
+	}
+	s, bodies, _ = answers(timeoutErr{}, 200)
+	if _, err := s.Send(context.Background(), get); err != nil || len(*bodies) != 2 {
+		t.Errorf("a normal request must still retry: err %v attempts %d", err, len(*bodies))
+	}
+}

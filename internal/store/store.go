@@ -15,7 +15,12 @@ import (
 
 // StoreError is a clear, user-facing failure from one store (login failed, API changed, ...).
 // The text is Danish and may be shown to the human.
-type StoreError struct{ Msg string }
+type StoreError struct {
+	Msg string
+	// Unsure is set only for a request sent with NoRetry that failed without a clear answer (a
+	// timeout or a network error): the store may or may not have acted on it.
+	Unsure bool
+}
 
 func (e *StoreError) Error() string { return e.Msg }
 
