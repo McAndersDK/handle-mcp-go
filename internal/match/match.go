@@ -62,8 +62,8 @@ func ParseSize(text string) *Size {
 
 func sizeOf(m sizeMatch) *Size {
 	u := unitByName[pystr.Lower(m.unit)]
-	amount, err := model.ParseMoney(strings.ReplaceAll(pystr.ASCIIDigits(m.amount), ",", "."))
-	if err != nil || u.name == "" {
+	amount := m.amount
+	if m.bad || u.name == "" {
 		return nil
 	}
 	amount = amount.Mul(u.factor)

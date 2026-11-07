@@ -4,6 +4,7 @@ import (
 	"strings"
 	"unicode"
 
+	"github.com/McAndersDK/handle-mcp-go/internal/model"
 	"github.com/McAndersDK/handle-mcp-go/internal/pystr"
 )
 
@@ -36,12 +37,14 @@ func unitFold(r, lit rune) bool {
 
 // sizeMatch is one match of SIZE_RE:
 // (?:(\d+)\s*[x×]\s*)?(\d+(?:[.,]\d+)?)\s*(g|gr|kg|...)\b
+// The amount is wider in Go: it may also be a fraction (fraction.go). That is a Go-only addition.
 type sizeMatch struct {
 	end      int
 	count    string // the "N x" before the amount; empty when there is none
 	hasCount bool
-	amount   string // "1,5"
-	unit     string // "kg", as written
+	amount   model.Money // 1.5 for "1,5"
+	bad      bool        // a fraction with denominator 0, or a number too large: no size
+	unit     string      // "kg", as written
 }
 
 func sizeAt(rs []rune, i int) (sizeMatch, bool) {
@@ -58,12 +61,12 @@ func sizeAt(rs []rune, i int) (sizeMatch, bool) {
 }
 
 func amountAt(rs []rune, i int) (sizeMatch, bool) {
-	j := digitsEnd(rs, i)
-	if j == i {
-		return sizeMatch{}, false
+	if i > 0 && rs[i-1] == '/' {
+		return sizeMatch{}, false // "/2 dl" has no numerator: not an amount
 	}
-	if j+1 < len(rs) && (rs[j] == '.' || rs[j] == ',') && pystr.IsDigit(rs[j+1]) {
-		j = digitsEnd(rs, j+1)
+	amount, j, bad, ok := amountNumber(rs, i)
+	if !ok {
+		return sizeMatch{}, false
 	}
 	u := spacesEnd(rs, j)
 	for _, unit := range units {
@@ -80,7 +83,7 @@ func amountAt(rs []rune, i int) (sizeMatch, bool) {
 		}
 		// \b after a letter: the next character must not be a word character
 		if ok && (end == len(rs) || !pystr.IsWord(rs[end])) {
-			return sizeMatch{end: end, amount: string(rs[i:j]), unit: string(rs[u:end])}, true
+			return sizeMatch{end: end, amount: amount, bad: bad, unit: string(rs[u:end])}, true
 		}
 	}
 	return sizeMatch{}, false

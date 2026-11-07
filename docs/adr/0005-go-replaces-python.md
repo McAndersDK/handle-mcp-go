@@ -31,6 +31,7 @@ Deliberate differences from Python 1.2.1:
 - Odd numeric strings are refused as integers (see Arguments).
 - A refused login during search (wrong email or password, or a dead saved session) is tried once, not twice, because repeated attempts can lock an account. Python swallowed the failure in the settings step and `search` logged in again. A network failure or a 5xx during login in that step is still tried once more by `search`.
 - A missing price in search, offers or recipes is a format-change error, not 0.00 kr, because that would read as a free product. An explicit price of 0 is still 0.00 kr.
+- Fractions (`1/2`, `2/3`, `½`, `1½`, `1 1/2`) are read as amounts, e.g. `1/2 dl` is 50 ml. Python read `1/2 dl` as 2 dl (the number after the slash won). A slash before an amount (`/2 dl`) and a denominator of 0 give no size.
 - nemlig hides a chosen delivery slot that has ended (`chosen_start`, `chosen_end` and `edit_deadline` are `null`, the note says no time is chosen), as BilkaToGo does, because a past delivery day would count expired offers as active. Python passed the stale slot through.
 - A missing unit price is `null`, not 0.00 kr per unit, which would sort the product first as the cheapest.
 - The BilkaToGo recipe page reader accepts a small subset of JavaScript literals. It never turns an unknown name into a string: a name, a function or a page nested deeper than 200 levels is the format-change error "BilkaToGo-siden har ændret format.".

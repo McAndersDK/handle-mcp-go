@@ -22,7 +22,6 @@ type recipeLine struct {
 // leading recipe amount ("500 g") becomes the size. The weak cases are known, not wanted:
 //   - fed, bdt., tsk. and spsk. are not units: the number and the unit stay in the words.
 //   - a parenthesised alternative stays in the words ("icebergsalat (alternativt hjertesalat)").
-//   - a fraction is misread: "2/3 dl mel" is 3 dl and "1/2 dl olie" is 2 dl; "½ dl" has no size.
 //   - a bare count ("1 æg", "2 æg") keeps the number as a word and has no size.
 //   - filler words stay ("eller", "til", "fra", "godt").
 var recipeLines = []recipeLine{
@@ -48,12 +47,12 @@ var recipeLines = []recipeLine{
 	{"1 æg", []string{"1", "æg"}, ""},
 	{"1 løg", []string{"1", "løg"}, ""},
 	{"Godt med salt og peber", []string{"godt", "salt", "peber"}, ""},
-	{"2/3 dl mel", []string{"2", "mel"}, "ml 300.00"},
+	{"2/3 dl mel", []string{"mel"}, "ml 66.67"},
 	{"1 dl mælk", []string{"mælk"}, "ml 100.00"},
 	{"2 æg", []string{"2", "æg"}, ""},
 	{"2 dl rasp", []string{"rasp"}, "ml 200.00"},
 	{"Salt, peber", []string{"salt", "peber"}, ""},
-	{"1/2 dl olie eller smør til stegning", []string{"1", "olie", "eller", "smør", "stegning"}, "ml 200.00"},
+	{"1/2 dl olie eller smør til stegning", []string{"olie", "eller", "smør", "stegning"}, "ml 50.00"},
 	{"300 g kartofler", []string{"kartofler"}, "g 300.00"},
 	{"1 spsk. smør", []string{"1", "spsk", "smør"}, ""},
 	{"1 spsk. mel", []string{"1", "spsk", "mel"}, ""},
@@ -66,7 +65,7 @@ var recipeLines = []recipeLine{
 	{"3 æggeblommer", []string{"3", "æggeblommer"}, ""},
 	{"70 g parmesanost", []string{"parmesanost"}, "g 70.00"},
 	{"1 dl fløde", []string{"fløde"}, "ml 100.00"},
-	{"½ dl kogevand fra pastaen", []string{"dl", "kogevand", "fra", "pastaen"}, ""},
+	{"½ dl kogevand fra pastaen", []string{"kogevand", "fra", "pastaen"}, "ml 50.00"},
 	{"Ekstra parmesan til servering", []string{"ekstra", "parmesan", "servering"}, ""},
 }
 
