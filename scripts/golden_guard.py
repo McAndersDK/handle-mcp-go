@@ -11,6 +11,7 @@ import os
 import socket
 import sys
 import tempfile
+from pathlib import Path
 
 
 def _refuse(*_args, **_kwargs):
@@ -30,6 +31,9 @@ def install() -> asyncio.AbstractEventLoop:
     os.environ["HANDLE_CONFIG_DIR"] = tempfile.mkdtemp(prefix="handle-golden-config-")
     if "handle_mcp" in sys.modules:
         sys.exit("golden export: handle_mcp was imported before the guards.")
+    # The Python code and its tests live in the upstream/ mirror: `tests` is upstream/tests.
+    upstream = Path(__file__).resolve().parents[1] / "upstream"
+    sys.path[:0] = [str(upstream), str(upstream / "src")]
     loop = asyncio.new_event_loop()
     block_sockets()
     return loop

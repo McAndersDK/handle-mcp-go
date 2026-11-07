@@ -181,7 +181,7 @@ NAMES = {"best_match", "brief", "parse_item", "parse_size", "query"}
 def test_compare_items() -> list[str]:
     """Every item string the tests pass to best_match, brief, parse_item, parse_size, query or
     compare_basket([...])."""
-    tree = ast.parse((ROOT / "tests" / "test_compare.py").read_text(encoding="utf-8"))
+    tree = ast.parse((ROOT / "upstream" / "tests" / "test_compare.py").read_text(encoding="utf-8"))
     found: list[str] = []
     for node in ast.walk(tree):
         if not isinstance(node, ast.Call):

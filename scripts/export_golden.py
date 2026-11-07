@@ -1,8 +1,10 @@
 """One-time export of what the Python code answers, as golden files for the Go port.
 
-    uv run --frozen python -m scripts.export_golden
+    uv run --frozen --project upstream python -m scripts.export_golden
 
-Safety guards run first, before handle_mcp is imported (golden_guard). See tests/golden/README.md.
+The Python code and its tests are the upstream/ mirror; its pyproject.toml and uv.lock give the
+environment. Safety guards run first, before handle_mcp is imported (golden_guard).
+See tests/golden/README.md.
 """
 
 from __future__ import annotations
@@ -19,7 +21,7 @@ from importlib.metadata import version
 
 from scripts import golden_io as io
 
-PYTHON = ("src", "tests", ":(exclude)tests/golden", "pyproject.toml", "uv.lock")
+PYTHON = ("upstream/src", "upstream/tests", "upstream/pyproject.toml", "upstream/uv.lock")
 
 
 def git(*args: str) -> str:
@@ -37,7 +39,7 @@ def manifest(counts: dict) -> dict:
     skip = ("manifest.json",)
     return {
         "made": "2026-11-05",
-        "command": "uv run --frozen python -m scripts.export_golden",
+        "command": "uv run --frozen --project upstream python -m scripts.export_golden",
         "git_head_at_export": git("rev-parse", "HEAD"),
         "python_commit": python_commit(),
         "python_files_changed_since_commit": bool(git("diff", "HEAD", "--stat", "--", *PYTHON)),
@@ -52,7 +54,7 @@ def manifest(counts: dict) -> dict:
             "tests/live_list.json": io.sha256(io.ROOT / "tests" / "live_list.json"),
             "tests/snapshots/tools.json": io.sha256(io.ROOT / "tests" / "snapshots" / "tools.json"),
         },
-        "python_sources": io.tree(io.ROOT / "src"),
+        "python_sources": io.tree(io.ROOT / "upstream" / "src"),
         "golden_files": io.tree(io.GOLDEN, skip),
     }
 
