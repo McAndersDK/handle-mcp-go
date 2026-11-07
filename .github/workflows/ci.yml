@@ -23,9 +23,9 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         shell: bash
         run: |
-          unformatted="$(gofmt -l src-go)"
+          unformatted="$(gofmt -l cmd internal)"
           if [ -n "$unformatted" ]; then
-            echo "These files are not gofmt-formatted. Run 'gofmt -w src-go':"
+            echo "These files are not gofmt-formatted. Run 'gofmt -w cmd internal':"
             echo "$unformatted"
             exit 1
           fi

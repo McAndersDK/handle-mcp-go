@@ -3,8 +3,8 @@
 handle-mcp-go is a permanent fork of NJohansen/handle-mcp. Go replaces Python. Upstream fixes are ported by hand.
 
 - Module path: `github.com/McAndersDK/handle-mcp-go`. The binary stays `handle-mcp`.
-- `go.mod` is at the repo root; the Go code is in `src-go/`. A nested module would need tags like `src-go/v1.0.0`, while a root module keeps plain `v1.0.0`.
-- Distribution: GoReleaser binaries on GitHub Releases, plus `go install github.com/McAndersDK/handle-mcp-go/src-go/cmd/handle-mcp@v1.0.0`.
+- `go.mod` is at the repo root and the Go code is in `cmd/` and `internal/`, so the module keeps plain tags like `v1.0.0`. The Python code lives on in `upstream/`, a mirror of upstream's tree.
+- Distribution: GoReleaser binaries on GitHub Releases, plus `go install github.com/McAndersDK/handle-mcp-go/cmd/handle-mcp@v1.0.0`.
 - The first release is `v1.0.0`, on a new numbering line. Origin had no tags when this was checked on 2026-11-05. From then on the semver rule in `CLAUDE.md` applies unchanged. A published tag is never moved.
 - The six rules in `CLAUDE.md` keep their content. `LICENSE` keeps the upstream copyright.
 
@@ -40,7 +40,7 @@ Deliberate differences from Python 1.2.1:
 
 ## Tools
 
-- `src-go/internal/server/tools.json` is embedded with `go:embed` and is the source of truth. It is a copy, because embed cannot reach `tests/`.
+- `internal/server/tools.json` is embedded with `go:embed` and is the source of truth. It is a copy, because embed cannot reach `tests/`.
 - `tests/snapshots/tools.json` stays as the wire contract. Until cutover it is not changed, because Python's tests read it. The Go test applies one named adjustment: add `idempotentHint: false` to tools with `readOnlyHint: true`.
 - At cutover the snapshot is regenerated from Go in its own commit, and the adjustment is deleted.
 - Tools are registered with the low-level `Server.AddTool` only.
@@ -106,8 +106,8 @@ There is no Python live baseline, because no logins exist for it. A side-by-side
 ## Layout and rule text
 
 ```
-src-go/cmd/handle-mcp
-src-go/internal/{model,privacy,match,pricing,candidates,compare,recipecart,
+cmd/handle-mcp
+internal/{model,privacy,match,pricing,candidates,compare,recipecart,
                  server,cli,store,store/nemlig,store/bilkatogo}
 ```
 
@@ -135,4 +135,4 @@ Old keychain entries are not read. Python's Windows entries use target `handle-m
 
 Not decided here.
 
-- Whether `src-go/` keeps that name after Python is deleted. Renaming it changes the `go install` path, so decide before `v1.0.0`.
+- Nothing about the folder name: `src-go/` was dropped before `v1.0.0`, so the `go install` path is `.../cmd/handle-mcp`.
