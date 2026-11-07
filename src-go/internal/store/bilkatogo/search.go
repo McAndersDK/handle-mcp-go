@@ -41,7 +41,7 @@ func (s *Store) algolia(ctx context.Context, query string, limit int, offers boo
 	}
 	addr := readAddress(data)
 	if addr.sid == "" {
-		return nil, store.Errorf("Ingen leveringsadresse valgt i BilkaToGo. Vælg hjemlevering på bilkatogo.dk.")
+		return nil, store.Errorf("%s", noAddress)
 	}
 	sid := addr.sid
 	filters := "isInAssortmentIn:" + sid + " AND nonsearchable:false"

@@ -37,8 +37,14 @@ const (
 	timeout        = 30 * time.Second
 )
 
-// notHome is the answer for a cart that is set to pickup (docs/adr/0001: the human changes it).
-const notHome = "Kurven er sat til afhentning, ikke hjemlevering. Vælg hjemlevering på bilkatogo.dk."
+// The human picks home delivery or a pickup store on bilkatogo.dk; handle-mcp never does
+// (docs/adr/0001, docs/adr/0006).
+const (
+	// notKnown: the cart's address does not say home or pickup (fail closed, docs/adr/0006).
+	notKnown = "BilkaToGo viser ikke, om kurven er sat til hjemlevering eller afhentning. Vælg det på bilkatogo.dk."
+	// noAddress: no store id at all, so there is no assortment to search.
+	noAddress = "Ingen leveringsadresse valgt i BilkaToGo. Vælg hjemlevering eller afhentning på bilkatogo.dk."
+)
 
 // Public search-only key from the website's own JavaScript. Spelled as the website sends it.
 var algoliaHeaders = [][2]string{

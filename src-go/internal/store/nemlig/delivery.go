@@ -28,6 +28,7 @@ func (s *Store) DeliveryInfo(ctx context.Context) (_ model.DeliveryInfo, err err
 		ChosenStart:  timeVal(slot["Start"]),
 		ChosenEnd:    timeVal(slot["End"]),
 		EditDeadline: timeVal(spot["EditDeadline"]),
+		DeliveryMode: strPtr(model.DeliveryHome),
 	}
 	// nemlig keeps the slot of the last order in the basket. A slot that has ended is no chosen
 	// slot: compare would price offers on a past day (docs/adr/0005). Unreadable is kept.

@@ -7,6 +7,7 @@ import (
 	"path/filepath"
 	"testing"
 
+	"github.com/McAndersDK/handle-mcp-go/src-go/internal/goldentest"
 	"github.com/McAndersDK/handle-mcp-go/src-go/internal/model"
 )
 
@@ -163,7 +164,7 @@ func sameJSON(t *testing.T, got any, want json.RawMessage) {
 			t.Fatal(err)
 		}
 	}
-	if canon(a) != canon(w) {
+	if canon(goldentest.DropAdded(a)) != canon(w) { // without the keys added after the golden (docs/adr/0006)
 		t.Errorf("got  %s\nwant %s", canon(a), canon(w))
 	}
 }

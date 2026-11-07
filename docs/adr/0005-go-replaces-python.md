@@ -36,6 +36,7 @@ Deliberate differences from Python 1.2.1:
 - The BilkaToGo recipe page reader accepts a small subset of JavaScript literals. It never turns an unknown name into a string: a name, a function or a page nested deeper than 200 levels is the format-change error "BilkaToGo-siden har ændret format.".
 - A recipe link to another host is refused, and Bilka item numbers go into an Algolia filter only as ASCII digits.
 - NaN money becomes a `StoreError`, because `shopspring/decimal` cannot represent it. This amends ADR 0002 ("shown as it is"). ADR 0002 itself is not edited.
+- BilkaToGo pickup carts are supported, with `delivery_mode` and `pickup_store` on four answers, a fail-closed mode rule and ten named golden exceptions. Python treats every non-home cart as `NOT_HOME`. See ADR 0006.
 
 ## Tools
 

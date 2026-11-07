@@ -375,22 +375,17 @@ func TestDeliveryModes(t *testing.T) {
 		addr string
 		want mode
 	}{
-		{`null`, modeUnknown}, {`{}`, modeUnknown}, {`{"sid": "1234"}`, modePickup},
+		{`null`, modeUnknown}, {`{}`, modeUnknown},
+		{`{"sid": "1234"}`, modeUnknown},                               // a store id alone says nothing
+		{`{"sid": "1234", "name": "Bilka Eksempelby"}`, modePickup},    // the pickup rule
+		{`{"sid": "1234", "name": "Kunde Eksempel"}`, modeUnknown},     // not a store name
+		{`{"name": "Bilka Eksempelby"}`, modeUnknown},                  // no store id
+		{`{"sid": "1", "name": "Bilka X", "dawa_uid": "x"}`, modeHome}, // a home marker wins
 		{`{"dawa_uid": "x"}`, modeHome}, {`{"recipient_name": "y", "sid": "1"}`, modeHome},
 	} {
 		if got := deliveryMode(readAddress(obj{"deliveryAddress": J(t, c.addr)})); got != c.want {
 			t.Errorf("%s: mode %d, want %d", c.addr, got, c.want)
 		}
-	}
-	pick := fixture(t, "cart_logged_in").(obj)
-	if got := deliveryMode(readAddress(pick)); got != modePickup {
-		t.Errorf("pickup cart fixture: mode %d", got)
-	}
-	// Today every mode but home gives NOT_HOME.
-	h := envLogin(t)
-	pickup(h)
-	if _, err := h.s.DeliverySlots(bg, 3); storeErr(t, err) != notHome {
-		t.Errorf("slots on a pickup cart: %v", err)
 	}
 }
 

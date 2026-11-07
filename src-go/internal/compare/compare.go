@@ -53,6 +53,8 @@ type BasketQuote struct {
 	MinimumOrder  *model.Money            `json:"minimum_order"`
 	MinimumMet    *bool                   `json:"minimum_met"`
 	Notes         model.List[string]      `json:"notes"`
+	DeliveryMode  *string                 `json:"delivery_mode"` // from the store's terms: "home", "pickup" or nil
+	PickupStore   *string                 `json:"pickup_store"`
 }
 
 func (l BasketLine) asLine() candidates.Line {

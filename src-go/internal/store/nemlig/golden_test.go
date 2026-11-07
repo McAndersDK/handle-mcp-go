@@ -436,7 +436,7 @@ func compareOutcome(t *testing.T, caseName string, step goldenStep, answer any, 
 	if derr != nil {
 		t.Fatalf("golden answer: %v", derr)
 	}
-	if !equalAnswer(want, toPlain(t, answer), caseName, ex) {
+	if !equalAnswer(want, goldentest.DropAdded(toPlain(t, answer)), caseName, ex) {
 		t.Errorf("answer differs:\n got  %s\n want %s", jsonText(toPlain(t, answer)), jsonText(want))
 	}
 }

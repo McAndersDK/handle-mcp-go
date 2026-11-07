@@ -18,9 +18,9 @@ package bilkatogo
 // the HTTP client refuses everything but GET (not ChangeLineCount, which is a GET that writes),
 // the login POSTs, the Algolia search POST and the order list POST, which only reads.
 //
-// The account the author tests with is pickup only. Until pickup is supported, delivery slots on
-// it answer NOT_HOME; the slots test accepts exactly that and logs that the home paths are not
-// proven by this run.
+// The account the author tests with is pickup only (docs/adr/0006): the slots test checks the pickup
+// slots and logs that the home paths are not proven by this run. The pickup store's name is never
+// logged, so pasted output holds no location: the logs say pickup_store_present instead.
 
 import (
 	"context"
@@ -161,20 +161,33 @@ func TestLiveCartTermsDelivery(t *testing.T) {
 		t.Fatal(err)
 	}
 	// Printed so a human can check the facts (no personal data in these fields).
-	t.Logf("hjemlevering=%v gebyrer=%v linjer=%d", terms.HomeDelivery, cart.Fees, len(cart.Lines))
+	t.Logf("hjemlevering=%v mode=%s pickup_store_present=%v gebyrer=%v linjer=%d", terms.HomeDelivery,
+		show(terms.DeliveryMode), terms.PickupStore != nil, cart.Fees, len(cart.Lines))
 	t.Logf("minimum=%s nået=%s advarsler=%v", show(cart.MinimumOrder), show(cart.MinimumMet), cart.Warnings)
 	t.Logf("valgt tid=%s-%s næste ledige=%s note=%s", show(info.ChosenStart), show(info.ChosenEnd),
 		show(info.NextAvailable), show(info.Note))
 }
 
-// GET only: lists slots, never chooses one. A pickup cart answers NOT_HOME (pickup is not
-// supported yet); that is accepted, and the run says the home paths were not proven.
+// GET only: lists slots, never chooses one. On a pickup cart it must list pickup slots with the
+// kind "Afhentning" and a pickup store (the name is never logged: only that it is there). On a home
+// cart it checks the home slots. On a cart whose mode BilkaToGo does not show, the clear error is
+// accepted. Only a home run proves the home-delivery slot paths; the log says which one ran.
 func TestLiveDeliverySlots(t *testing.T) {
 	s := liveStore(t)
-	slots, err := s.DeliverySlots(context.Background(), 3)
-	var se *store.StoreError
-	if errors.As(err, &se) && se.Msg == notHome {
-		t.Log("NOT_HOME: this account is on pickup, so the home-delivery slot paths are NOT proven by this run")
+	ctx := context.Background()
+	info, err := s.DeliveryInfo(ctx)
+	if err != nil {
+		t.Fatal(err)
+	}
+	mode := show(info.DeliveryMode)
+	t.Logf("delivery_mode=%s pickup_store_present=%v", mode, info.PickupStore != nil)
+	slots, err := s.DeliverySlots(ctx, 7)
+	if mode == "-" { // unknown: the clear error is the right answer
+		var se *store.StoreError
+		if !errors.As(err, &se) || se.Msg != notKnown {
+			t.Fatalf("an unknown mode must answer %q, got %v", notKnown, err)
+		}
+		t.Log("mode unknown: neither the pickup nor the home-delivery slot paths are proven by this run")
 		return
 	}
 	if err != nil {
@@ -193,9 +206,21 @@ func TestLiveDeliverySlots(t *testing.T) {
 		if !sl.End.Time().After(sl.Start.Time()) {
 			t.Errorf("slot ends before it starts: %v-%v", sl.Start, sl.End)
 		}
+		if mode == "pickup" && (show(sl.Kind) != "Afhentning" || sl.PickupStore == nil) {
+			t.Errorf("a pickup slot must have kind Afhentning and a pickup store: kind %s, store present %v",
+				show(sl.Kind), sl.PickupStore != nil)
+		}
+		if mode == "home" && sl.PickupStore != nil {
+			t.Error("a home slot must have no pickup store")
+		}
+	}
+	if mode == "home" {
+		t.Log("home mode: the home-delivery slot paths are proven by this run")
+	} else {
+		t.Log("pickup mode: the home-delivery slot paths are NOT proven by this run")
 	}
 	for _, sl := range free[:min(12, len(free))] {
-		t.Logf("%v-%v %s %s kr", sl.Start, sl.End, show(sl.Kind), show(sl.Price))
+		t.Logf("%v-%v %s %s kr pickup_store_present=%v", sl.Start, sl.End, show(sl.Kind), show(sl.Price), sl.PickupStore != nil)
 	}
 }
 

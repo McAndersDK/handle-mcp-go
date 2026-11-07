@@ -124,7 +124,14 @@ type CartLine struct {
 	LineTotal Money  `json:"line_total"`
 }
 
-// Cart is what is in the store's cart now.
+// How the groceries arrive (docs/adr/0006). A store that cannot tell says nil, never a guess.
+const (
+	DeliveryHome   = "home"
+	DeliveryPickup = "pickup"
+)
+
+// Cart is what is in the store's cart now. DeliveryMode is "home", "pickup" or nil; PickupStore is
+// the store's name and is set only when the mode is "pickup".
 type Cart struct {
 	Store         string         `json:"store"`
 	Lines         List[CartLine] `json:"lines"`
@@ -135,6 +142,8 @@ type Cart struct {
 	MinimumMet    *bool          `json:"minimum_met"`
 	Delivery      *string        `json:"delivery"` // chosen delivery time as text
 	Warnings      List[string]   `json:"warnings"`
+	DeliveryMode  *string        `json:"delivery_mode"`
+	PickupStore   *string        `json:"pickup_store"`
 }
 
 // QuantityResult is the outcome of one absolute cart quantity.
@@ -154,6 +163,8 @@ type StoreTerms struct {
 	OtherFees    Dict[Money] `json:"other_fees"`
 	MinimumOrder *Money      `json:"minimum_order"`
 	Source       string      `json:"source"` // "api" or "config"
+	DeliveryMode *string     `json:"delivery_mode"`
+	PickupStore  *string     `json:"pickup_store"`
 }
 
 // NewStoreTerms returns terms with Python's default source, "api".
@@ -169,6 +180,8 @@ type DeliveryInfo struct {
 	EditDeadline  *DateTime `json:"edit_deadline"`
 	NextAvailable *Date     `json:"next_available"`
 	Note          *string   `json:"note"`
+	DeliveryMode  *string   `json:"delivery_mode"`
+	PickupStore   *string   `json:"pickup_store"`
 }
 
 // DeliverySlot is a delivery time the store offers. Read only: handle-mcp never chooses one.
@@ -178,8 +191,10 @@ type DeliverySlot struct {
 	End       DateTime `json:"end"`
 	Price     *Money   `json:"price"` // delivery fee for this slot; nil when the store does not say
 	Available bool     `json:"available"`
-	Kind      *string  `json:"kind"` // the store's type of delivery, e.g. "Fleksibel"
+	Kind      *string  `json:"kind"` // the store's type of delivery, e.g. "Fleksibel" or "Afhentning"
 	Note      *string  `json:"note"`
+	// PickupStore is where a pickup slot is collected; nil for a delivery slot.
+	PickupStore *string `json:"pickup_store"`
 }
 
 // NewDeliverySlot returns a slot that is available, like Python's default.

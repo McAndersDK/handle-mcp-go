@@ -41,8 +41,8 @@ func (s *Store) cartOf(data obj) model.Cart {
 		delivery = nil // the slot of a past order is no choice
 	}
 	warnings := model.List[string]{}
-	if deliveryMode(addr) != modeHome {
-		warnings = append(warnings, notHome)
+	if deliveryMode(addr) == modeUnknown {
+		warnings = append(warnings, notKnown)
 	}
 	if text := stat["minimum_left_text"]; truthy(text) {
 		warnings = append(warnings, htmlTag.ReplaceAllString(mustText(text), ""))
@@ -62,6 +62,7 @@ func (s *Store) cartOf(data obj) model.Cart {
 	cart := model.Cart{
 		Store: name, Lines: lines, ProductsTotal: total, Fees: fees, Total: kr(stat["price"]),
 		MinimumMet: &met, Delivery: delivery, Warnings: warnings,
+		DeliveryMode: modeLabel(deliveryMode(addr)), PickupStore: storeOf(addr),
 	}
 	if truthy(addr.minimumBuy) {
 		m := kr(addr.minimumBuy)

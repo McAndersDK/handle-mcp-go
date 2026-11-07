@@ -49,6 +49,30 @@ func Corpus(t testing.TB, name string) []model.Product {
 	return out
 }
 
+// addedKeys are the answer keys that did not exist when the goldens were recorded (docs/adr/0006).
+var addedKeys = []string{"delivery_mode", "pickup_store"}
+
+// DropAdded removes exactly the keys delivery_mode and pickup_store from a decoded answer, at any
+// depth, and returns it. Use it on the ACTUAL output before comparing with a golden, so the golden
+// still proves every other key and value. A case whose answer changes because of pickup is a named
+// exception with a hand-written answer that includes these keys; it must not go through here.
+func DropAdded(v any) any {
+	switch x := v.(type) {
+	case map[string]any:
+		for _, k := range addedKeys {
+			delete(x, k)
+		}
+		for _, e := range x {
+			DropAdded(e)
+		}
+	case []any:
+		for _, e := range x {
+			DropAdded(e)
+		}
+	}
+	return v
+}
+
 // Money parses a golden number; a bad one fails the test.
 func Money(t testing.TB, s string) model.Money {
 	t.Helper()

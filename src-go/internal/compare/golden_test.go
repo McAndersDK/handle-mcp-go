@@ -212,7 +212,7 @@ func TestGoldenQuote(t *testing.T) {
 		if !slices.Equal(c.s.searches, want.Searches) {
 			t.Errorf("%s: searches %q, want %q", c.name, c.s.searches, want.Searches)
 		}
-		if d := diff("", out(t, q), decode(t, want.Quote)); d != "" {
+		if d := diff("", goldentest.DropAdded(out(t, q)), decode(t, want.Quote)); d != "" {
 			t.Errorf("%s: %s", c.name, d)
 		}
 	}
@@ -317,7 +317,7 @@ func TestGoldenVerdict(t *testing.T) {
 				Stores map[string]any `json:"stores"`
 				compare.VerdictAnswer
 			}{stores, compare.Verdict(results)}
-			if d := diff("", out(t, answer), decode(t, want.Answer)); d != "" {
+			if d := diff("", goldentest.DropAdded(out(t, answer)), decode(t, want.Answer)); d != "" {
 				t.Errorf("%s: %s", want.Name, d)
 			}
 			run++

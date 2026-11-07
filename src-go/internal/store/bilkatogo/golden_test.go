@@ -92,8 +92,8 @@ type goldenCase struct {
 
 // exceptions counts the named exceptions that really happened.
 type exceptions struct {
-	dst, sender map[string]bool
-	dstValues   int // the times in those cases that differ
+	dst, sender, pickup map[string]bool
+	dstValues           int // the times in those cases that differ
 }
 
 func setSecret(tb testing.TB, text string) {
@@ -140,7 +140,7 @@ func TestGoldenBilkatogo(t *testing.T) {
 	if len(cases) != wantCases {
 		t.Fatalf("the case table has %d entries, want %d", len(cases), wantCases)
 	}
-	ex := &exceptions{dst: map[string]bool{}, sender: map[string]bool{}}
+	ex := &exceptions{dst: map[string]bool{}, sender: map[string]bool{}, pickup: map[string]bool{}}
 	ran := 0
 	for _, file := range files {
 		rel := "stores/bilkatogo/" + filepath.Base(file)
@@ -157,12 +157,12 @@ func TestGoldenBilkatogo(t *testing.T) {
 	if ran != wantCases || len(cases) != 0 {
 		t.Fatalf("ran %d cases, %d table entries unused", ran, len(cases))
 	}
-	if len(ex.dst) != wantDSTGapCases || ex.dstValues != wantDSTGapTimes || len(ex.sender) != wantSenderWordCases {
-		t.Errorf("named exceptions: dst gap %v (%d times), sender words %v",
-			keys(ex.dst), ex.dstValues, keys(ex.sender))
+	if len(ex.dst) != wantDSTGapCases || ex.dstValues != wantDSTGapTimes || len(ex.sender) != wantSenderWordCases || len(ex.pickup) != wantPickupCases {
+		t.Errorf("named exceptions: dst gap %v (%d times), sender words %v, pickup %v",
+			keys(ex.dst), ex.dstValues, keys(ex.sender), keys(ex.pickup))
 	}
-	t.Logf("golden cases run: %d, skipped: 0; named exceptions: dst gap %d case(s) / %d time(s), sender words %d, missing price 0",
-		ran, len(ex.dst), ex.dstValues, len(ex.sender))
+	t.Logf("golden cases run: %d, skipped: 0; named exceptions: dst gap %d case(s) / %d time(s), sender words %d, pickup %d, missing price 0",
+		ran, len(ex.dst), ex.dstValues, len(ex.sender), len(ex.pickup))
 }
 
 func keys(m map[string]bool) []string {
@@ -369,6 +369,9 @@ func itemsInRequestOrder(t *testing.T, items obj, reqs []goldenReq) []store.Cart
 
 func compareOutcome(t *testing.T, caseName string, step goldenStep, answer any, err error, ex *exceptions) {
 	t.Helper()
+	if checkPickupException(t, caseName, step, answer, err, ex) {
+		return // a named pickup exception (docs/adr/0006), compared with the new keys
+	}
 	if step.Error != nil {
 		if step.Error.Type == "NotImplementedError" {
 			if !errors.Is(err, store.ErrNotImplemented) {
@@ -399,7 +402,7 @@ func compareOutcome(t *testing.T, caseName string, step goldenStep, answer any, 
 	if derr != nil {
 		t.Fatalf("golden answer: %v", derr)
 	}
-	if !equalAnswer(want, toPlain(t, answer), caseName, ex) {
+	if !equalAnswer(want, goldentest.DropAdded(toPlain(t, answer)), caseName, ex) {
 		t.Errorf("answer differs:\n got  %s\n want %s", jsonText(toPlain(t, answer)), jsonText(want))
 	}
 }

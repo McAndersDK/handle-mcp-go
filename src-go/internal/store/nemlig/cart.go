@@ -100,7 +100,7 @@ func cartOf(b obj) model.Cart {
 	cart := model.Cart{
 		Store: name, Lines: lines, ProductsTotal: *products, Fees: fees, Total: *total,
 		MinimumOrder: money(b["MinimumOrderTotal"]), Delivery: optStr(b["FormattedDeliveryTime"]),
-		Warnings: warnings,
+		Warnings: warnings, DeliveryMode: strPtr(model.DeliveryHome),
 	}
 	if v := b["IsMinTotalValid"]; v != nil {
 		met := truthy(v)
@@ -164,6 +164,7 @@ func (s *Store) Terms(ctx context.Context) (_ model.StoreTerms, err error) {
 		}
 	}
 	t := model.NewStoreTerms(name, true)
+	t.DeliveryMode = strPtr(model.DeliveryHome)
 	t.DeliveryFee = money(b["DeliveryPrice"])
 	t.MinimumOrder = money(b["MinimumOrderTotal"])
 	t.OtherFees = model.Dict[model.Money]{}

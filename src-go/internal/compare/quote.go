@@ -112,7 +112,10 @@ func Quote(ctx context.Context, s store.Store, items []string) (BasketQuote, err
 	if hasNote {
 		notes = append(notes, *note)
 	}
-	if !terms.HomeDelivery && !hasNote {
+	switch {
+	case terms.DeliveryMode != nil && *terms.DeliveryMode == model.DeliveryPickup:
+		notes = append(notes, pickupNote(terms.PickupStore))
+	case terms.DeliveryMode == nil && !terms.HomeDelivery && !hasNote: // the old note, only when the mode is unknown
 		notes = append(notes, "Kurven er ikke sat til hjemlevering.")
 	}
 	minimum := terms.MinimumOrder
@@ -122,6 +125,7 @@ func Quote(ctx context.Context, s store.Store, items []string) (BasketQuote, err
 	q := BasketQuote{
 		Store: terms.Store, Lines: found, Missing: missing, ProductsTotal: productsTotal,
 		Fees: fees, Total: total, MinimumOrder: minimum, Notes: notes,
+		DeliveryMode: terms.DeliveryMode, PickupStore: terms.PickupStore,
 	}
 	if minimum != nil {
 		met := productsTotal.Cmp(*minimum) >= 0
@@ -237,5 +241,6 @@ func Verdict(results []Result[BasketQuote]) VerdictAnswer {
 	if failed != "" {
 		summary += fmt.Sprintf(" Fejl: %s.", failed)
 	}
+	summary += modeSentence(ok, totals)
 	return VerdictAnswer{Cheapest: &cheapest, ComparableTotals: totals, Summary: summary}
 }

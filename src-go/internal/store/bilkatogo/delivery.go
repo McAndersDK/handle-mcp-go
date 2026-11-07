@@ -25,6 +25,7 @@ const (
 type address struct {
 	home          bool // a DAWA id or a recipient: home addresses have one, pickup points do not
 	sid           string
+	pickupStore   string // the store's name; set only in the pickup case, empty otherwise (docs/adr/0006)
 	minimumBuy    any
 	nextAvailable any
 }
@@ -39,20 +40,57 @@ func readAddress(data obj) address {
 	if truthy(a["sid"]) {
 		out.sid = pyStr(a["sid"])
 	}
+	// `name` is the customer's name on a home cart, so it is read only when nothing says home and
+	// it reads as a store. A home cart with its markers blanked stays unknown, and the name is dropped.
+	if !out.home && out.sid != "" {
+		if n, ok := a["name"].(string); ok && strings.HasPrefix(strings.TrimSpace(n), "Bilka") {
+			out.pickupStore = strings.TrimSpace(n)
+		}
+	}
 	return out
 }
 
-// deliveryMode is the one place that decides. Today only home is told apart from the rest: every
-// mode but home gives NOT_HOME, as Python did (_is_home). The pickup rule (a store id and no home
-// marker) is provisional and nothing depends on it yet.
+// deliveryMode is the one place that decides, and it fails closed (docs/adr/0006): home needs a
+// DAWA id or a recipient; pickup needs a store id, no home marker and a store name that starts
+// with "Bilka"; anything else is unknown.
 func deliveryMode(a address) mode {
 	switch {
 	case a.home:
 		return modeHome
-	case a.sid != "":
+	case a.sid != "" && a.pickupStore != "":
 		return modePickup
 	}
 	return modeUnknown
+}
+
+// modeLabel is the model's delivery_mode: "home", "pickup" or nil.
+func modeLabel(m mode) *string {
+	switch m {
+	case modeHome:
+		return strPtr(model.DeliveryHome)
+	case modePickup:
+		return strPtr(model.DeliveryPickup)
+	}
+	return nil
+}
+
+// storeOf is the model's pickup_store: the store's name in the pickup case, nil otherwise.
+func storeOf(a address) *string {
+	if deliveryMode(a) != modePickup {
+		return nil
+	}
+	return strPtr(a.pickupStore)
+}
+
+// pickupFee is the pickup cart's delivery_price, 0 included: Bilka says "0" for pickup and leaves
+// the key out when the cart cannot tell. nil means unknown.
+func pickupFee(data obj) *model.Money {
+	v := objOrEmpty(data["stat"])["delivery_price"]
+	if v == nil {
+		return nil
+	}
+	fee := kr(v)
+	return &fee
 }
 
 // Terms are the delivery fee, other fees and minimum order, from the cart.
@@ -64,6 +102,7 @@ func (s *Store) Terms(ctx context.Context) (_ model.StoreTerms, err error) {
 	}
 	cart, addr := s.cartOf(data), readAddress(data)
 	t := model.NewStoreTerms(name, deliveryMode(addr) == modeHome)
+	t.DeliveryMode, t.PickupStore = modeLabel(deliveryMode(addr)), storeOf(addr)
 	t.OtherFees = model.Dict[model.Money]{}
 	for k, v := range cart.Fees {
 		if k == "levering" {
@@ -72,6 +111,9 @@ func (s *Store) Terms(ctx context.Context) (_ model.StoreTerms, err error) {
 		} else {
 			t.OtherFees[k] = v
 		}
+	}
+	if deliveryMode(addr) == modePickup {
+		t.DeliveryFee = pickupFee(data) // a pickup fee of 0 is known, not missing
 	}
 	t.MinimumOrder = cart.MinimumOrder
 	return t, nil
@@ -85,7 +127,7 @@ func (s *Store) DeliveryInfo(ctx context.Context) (_ model.DeliveryInfo, err err
 		return model.DeliveryInfo{}, err
 	}
 	addr := readAddress(data)
-	info := model.DeliveryInfo{Store: name}
+	info := model.DeliveryInfo{Store: name, DeliveryMode: modeLabel(deliveryMode(addr)), PickupStore: storeOf(addr)}
 	info.ChosenStart, info.ChosenEnd = s.chosenSlot(data)
 	if truthy(addr.nextAvailable) {
 		d, err := model.ParseDate(mustText(addr.nextAvailable))
@@ -94,14 +136,15 @@ func (s *Store) DeliveryInfo(ctx context.Context) (_ model.DeliveryInfo, err err
 		}
 		info.NextAvailable = &d
 	}
-	if deliveryMode(addr) != modeHome {
-		info.Note = strPtr(notHome)
+	if deliveryMode(addr) == modeUnknown {
+		info.Note = strPtr(notKnown)
 	}
 	return info, nil
 }
 
-// DeliverySlots is the list of delivery times for the cart's address (GET). Bilka has no price
-// per slot: the fee is the cart's flat delivery price. Never choose a slot here (docs/adr/0001).
+// DeliverySlots is the list of delivery or pickup times for the cart's address (GET). Bilka has no
+// price per slot: the fee is the cart's flat delivery price. Never choose a slot, a store or a
+// mode here (docs/adr/0001, docs/adr/0006).
 func (s *Store) DeliverySlots(ctx context.Context, days int) (_ []model.DeliverySlot, err error) {
 	defer guard(&err)
 	// Python asked for both at once; so do we. Both are waited for, so a failure of one leaves
@@ -127,11 +170,15 @@ func (s *Store) DeliverySlots(ctx context.Context, days int) (_ []model.Delivery
 	if errCart != nil {
 		return nil, errCart
 	}
-	if deliveryMode(readAddress(cartData)) != modeHome {
-		return nil, store.Errorf("%s", notHome)
+	addr := readAddress(cartData)
+	md := deliveryMode(addr)
+	if md == modeUnknown {
+		return nil, store.Errorf("%s", notKnown)
 	}
 	var fee *model.Money
-	if f, ok := s.cartOf(cartData).Fees["levering"]; ok {
+	if md == modePickup {
+		fee = pickupFee(cartData)
+	} else if f, ok := s.cartOf(cartData).Fees["levering"]; ok {
 		fee = &f
 	}
 	unknown := ""
@@ -165,7 +212,9 @@ func (s *Store) DeliverySlots(ctx context.Context, days int) (_ []model.Delivery
 				sl.Price = &f
 			}
 			sl.Available = !truthy(iv["closed"]) && bit(iv["availability_bit"])&1 == 1
-			if times.a.h < 6 {
+			if md == modePickup {
+				sl.Kind, sl.PickupStore = strPtr("Afhentning"), storeOf(addr)
+			} else if times.a.h < 6 {
 				sl.Kind = strPtr("Nat")
 			}
 			if note := pystr.Strip(unknown + htmlTag.ReplaceAllString(strings.Join(infos, " "), "")); note != "" {
