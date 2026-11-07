@@ -1,6 +1,6 @@
 package nemlig
 
-// A fake nemlig.com: a Go port of FakeNemlig and ScenarioNemlig (tests/test_nemlig.py and
+// A fake nemlig.com: a Go port of FakeNemlig and ScenarioNemlig (upstream/tests/test_nemlig.py and
 // scripts/golden_fakes.py). It is an http.RoundTripper: no socket is ever opened, and every
 // request is recorded so a test can check the method, URL, params, body, headers and cookies.
 

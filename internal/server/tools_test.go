@@ -10,7 +10,7 @@ import (
 	"github.com/McAndersDK/handle-mcp-go/internal/store"
 )
 
-// Ports of tests/test_tools.py and the behaviour of server.py. The mapping table is in the report.
+// Ports of upstream/tests/test_tools.py and the behaviour of server.py. The mapping table is in the report.
 
 func obj(t testing.TB, text string) map[string]any {
 	t.Helper()

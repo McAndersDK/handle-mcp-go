@@ -1,6 +1,6 @@
 package bilkatogo
 
-// Read-only smoke tests against the real BilkaToGo: the BilkaToGo parts of tests/test_live.py.
+// Read-only smoke tests against the real BilkaToGo: the BilkaToGo parts of upstream/tests/test_live.py.
 //
 // Run, in PowerShell, from the repo root (the password is typed, never put in a file):
 //
@@ -315,7 +315,7 @@ func TestShowPrintsValuesNotAddresses(t *testing.T) {
 // BilkaToGo recipes: public GETs of bilkatogo.dk/inspiration/opskrifter/ and the page data
 // (/_nuxt/static/<build>/.../payload.js), and the Algolia search that prices the products. The
 // prices follow the address's store, so this needs the login too. Port of the two BilkaToGo
-// recipe tests of tests/test_live.py.
+// recipe tests of upstream/tests/test_live.py.
 //
 //	go test -count=1 -v -run 'LiveMadplan|LiveRecipesByCategory' ./internal/store/bilkatogo/
 func TestLiveMadplanRecipeHasProducts(t *testing.T) {

@@ -1,6 +1,6 @@
 package nemlig
 
-// Read-only smoke tests against the real nemlig.com: the nemlig parts of tests/test_live.py.
+// Read-only smoke tests against the real nemlig.com: the nemlig parts of upstream/tests/test_live.py.
 //
 // Run (needs a login, see below):
 //

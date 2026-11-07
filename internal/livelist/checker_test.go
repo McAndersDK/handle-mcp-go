@@ -1,7 +1,7 @@
 package livelist
 
 // Offline tests of the list and the checker (check_test.go): port of the offline half of
-// tests/test_live_list.py.
+// upstream/tests/test_live_list.py.
 
 import (
 	"strings"

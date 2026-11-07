@@ -39,7 +39,7 @@ for `""` (opskrifter), `madplaner` (week 46), `aftensmad`, `aftensmad/danske-ret
 `unknown-page.html` is what the site answers for a page it does not know
 (`/inspiration/opskrifter/nope/`): HTTP 200, the website's HTML with the build id.
 No personal data: the pages are public. The only name is the recipes' author.
-In `test_bilkatogo_recipes.py` the Algolia hits for the recipe's products are
+In `internal/store/bilkatogo/recipes_test.go` the Algolia hits for the recipe's products are
 `algolia_products.json` hits with `objectID` changed by hand to karbonader's item numbers.
 
 ## Store details

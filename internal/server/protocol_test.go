@@ -72,7 +72,7 @@ func TestToolSurface(t *testing.T) {
 	}
 }
 
-// writes is the allowlist of tools that change the cart (tests/test_tools.py).
+// writes is the allowlist of tools that change the cart (upstream/tests/test_tools.py).
 var writes = map[string]bool{"set_cart_quantities": true, "add_recipe_to_cart": true}
 
 var allTools = []string{
@@ -135,7 +135,7 @@ func TestWriteToolsAreMarkedAndNeverOrderOrPay(t *testing.T) {
 	}
 }
 
-// calls is CALLS of tests/test_privacy.py: every tool once.
+// calls is CALLS of upstream/tests/test_privacy.py: every tool once.
 var calls = []struct {
 	tool string
 	args map[string]any

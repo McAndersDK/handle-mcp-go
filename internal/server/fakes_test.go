@@ -11,7 +11,7 @@ import (
 	"github.com/McAndersDK/handle-mcp-go/internal/store"
 )
 
-// fakeStore answers from memory, like FakeStore in tests/conftest.py. The wire goldens were
+// fakeStore answers from memory, like FakeStore in upstream/tests/conftest.py. The wire goldens were
 // recorded against it. The hooks stand in for Python's monkeypatch.
 type fakeStore struct {
 	name   string

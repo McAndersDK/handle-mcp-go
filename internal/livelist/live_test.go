@@ -1,7 +1,7 @@
 package livelist
 
 // A fixed list of ~50 everyday items, priced live in every store: the port of
-// tests/test_live_list.py. The list itself stays in tests/live_list.json.
+// upstream/tests/test_live_list.py. The list itself stays in tests/live_list.json.
 //
 // The MCP finds and counts, the AI model picks. So an item fails only when no candidate fits: the
 // right product never reached the model. A wrong suggestion (or øko too dear) is a warning,

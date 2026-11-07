@@ -57,7 +57,7 @@ Krævede headers: `Platform: web`, `Device-Size: desktop`, `Version: <app-versio
 - Kun `GET /webapi/Order/DeliverySpot` er kendt. Den viser den **valgte** tid (`TimeSlot`, `EditDeadline`) for den åbne ordre. Den har også `CustomerName` → privacy-filter.
 - Ledige tider (fundet 2026-11-02 i `main.js`, kun GET): `GET /webapi/v2/Delivery/GetDeliveryDays?days=3&showForSubscriptions=false` (valgfri `startDate`; næste side = svarets `NextRangeStart`). Virker uden login, men så med standardzonens priser. Logget ind = husstandens priser.
 - Pr. tid i `DayRangeHours[].DayHours[]`: `Date` + `StartHour`/`EndHour` (lokal tid), `DeliveryPrice` (kr), `Type` (0 = Personlig, 1 = Fleksibel), `Availability` (0 ledig, 1 efter deadline, 2 udsolgt, 3 ikke aktiv), `Deadline`. Bekræftet: Fleksibel 14-21 = 25 kr, Personlig tir 14-21 = 19 kr, ons 14-21 = 0 kr.
-- Samme klasse har `UpdateDeliveryTime` / `TryUpdateDeliveryTime` (POST, vælger tid). Må aldrig kaldes: står i `tests/test_safety.py`.
+- Samme klasse har `UpdateDeliveryTime` / `TryUpdateDeliveryTime` (POST, vælger tid). Må aldrig kaldes: står i `internal/safety/safety_test.go`.
 - `list_delivery_slots` viser listen. `get_delivery_info` viser valgt tid + `EditDeadline`. Ingen valg af tid.
 
 ### Opskrifter og madplan (fundet 2026-11-06, kun GET, intet login)
@@ -116,7 +116,7 @@ Nyttige felter pr. hit: `objectID` (varenummer til kurven), `gtin` (**EAN findes
 - Næste ledige dag: `deliveryAddress.nextAvailableDeliveryDate`. Det er et læse-felt.
 - Ledige tider (fundet 2026-11-02, kun GET): `GET https://api.bilkatogo.dk/api/shop/v3/AvailableDeliveryDates?u=w`, logget ind. Følger kurvens leveringsadresse. `availableIntervals[].intervals[]`: `intervalStart`/`intervalEnd`, `closed` (1 = lukket), `availability_bit` (1 = ledig, 2 = udsolgt), `orderBeforeTime`, `info[].message` (HTML). Dagen har `closed_text` ("udsolgt").
 - Ingen pris pr. tid: gebyret er fast (`stat.delivery_price` i kurven, 39 kr). Hjemlevering er her kun nat (00-06, kommer mellem 20 og 06).
-- `SetDeliveryDate` (vælger tid) må aldrig kaldes: står i `tests/test_safety.py`.
+- `SetDeliveryDate` (vælger tid) må aldrig kaldes: står i `internal/safety/safety_test.go`.
 
 ### Ordrer
 `POST shop/v7/OrderHistory`, `GET shop/v7/OrderDetails`. Status-koder (`Bestilt`, `Leveret`, `Faktureret`) mappes til hjemmesidens ord (nickknissen ADR 0003). Ordrer kan have `home_delivery` og adresse → privacy-filter.

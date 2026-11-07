@@ -1,7 +1,7 @@
 package bilkatogo
 
 // BilkaToGo recipes: real pages from bilkatogo.dk/inspiration/opskrifter (fixtures, 2026-11-06).
-// The Go home of each test in tests/test_bilkatogo_recipes.py:
+// The Go home of each test in upstream/tests/test_bilkatogo_recipes.py:
 //
 //	test_payload_is_read_as_json                    TestPayloadIsReadAsJSON (payload_test.go)
 //	test_recipe_path_from_link_or_path              TestRecipePathFromLinkOrPath

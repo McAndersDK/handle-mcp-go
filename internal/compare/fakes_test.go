@@ -16,7 +16,7 @@ import (
 	"github.com/McAndersDK/handle-mcp-go/internal/store"
 )
 
-// These are the fakes and lists of tests/test_compare.py and scripts/golden_compare.py. The
+// These are the fakes and lists of upstream/tests/test_compare.py and scripts/golden_compare.py. The
 // goldens do not record the catalogs, so they are written out here.
 
 func money(s string) model.Money {

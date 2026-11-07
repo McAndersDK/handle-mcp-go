@@ -22,7 +22,7 @@ import (
 	"github.com/McAndersDK/handle-mcp-go/internal/store"
 )
 
-// leakMap is LEAK of tests/conftest.py: personal data a sloppy adapter could let through.
+// leakMap is LEAK of upstream/tests/conftest.py: personal data a sloppy adapter could let through.
 var leakMap = map[string]any{
 	"CustomerName":    "Anders And",
 	"Email":           "anders@example.com",

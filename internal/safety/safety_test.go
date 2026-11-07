@@ -11,7 +11,7 @@ import (
 	"testing"
 )
 
-// forbidden are endpoints and words that must never appear in the code (tests/test_safety.py).
+// forbidden are endpoints and words that must never appear in the code (upstream/tests/test_safety.py).
 var forbidden = []string{
 	`PlaceOrder`,
 	`Checkout/`,

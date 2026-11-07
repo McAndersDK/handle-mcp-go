@@ -1,6 +1,6 @@
 package bilkatogo
 
-// A fake BilkaToGo: a Go port of FakeBilka and ScenarioBilka (tests/test_bilkatogo.py and
+// A fake BilkaToGo: a Go port of FakeBilka and ScenarioBilka (upstream/tests/test_bilkatogo.py and
 // scripts/golden_fakes.py). It answers like Gigya, api.bilkatogo.dk and Algolia. It is an
 // http.RoundTripper: no socket is ever opened, and every request is recorded so a test can check
 // the method, URL, params, body, headers and cookies.

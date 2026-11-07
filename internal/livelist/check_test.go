@@ -1,6 +1,6 @@
 package livelist
 
-// The list and the checker: the port of the helpers in tests/test_live_list.py (items_for,
+// The list and the checker: the port of the helpers in upstream/tests/test_live_list.py (items_for,
 // problems, check, _fits, _any). The Python regex used a Unicode \b; Go's \b is ASCII only, so the
 // word rule is written out by hand in anyWord.
 

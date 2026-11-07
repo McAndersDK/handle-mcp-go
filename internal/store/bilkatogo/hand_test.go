@@ -1,7 +1,7 @@
 package bilkatogo
 
 // Tests written by hand for the traps of the port, and the Go home of each test in
-// tests/test_bilkatogo.py that the goldens do not already cover. The mapping:
+// upstream/tests/test_bilkatogo.py that the goldens do not already cover. The mapping:
 //
 //	test_login_flow_and_jwt_header               golden cart_home_password (requests, headers)
 //	test_saved_session_logs_in_without_password  golden cart_session

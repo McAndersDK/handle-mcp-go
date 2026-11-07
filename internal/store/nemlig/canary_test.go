@@ -1,7 +1,7 @@
 package nemlig
 
 // ADR 0005, privacy test 2: personal data an adapter could leak by mistake. A transport deep-merges
-// the LEAK map of tests/conftest.py into every JSON object of every answer (merging, not
+// the LEAK map of upstream/tests/conftest.py into every JSON object of every answer (merging, not
 // overwriting, so real values survive). The read methods run through the real adapter, the results
 // go through privacy.Out, and no LEAK value may be in the output.
 
@@ -17,7 +17,7 @@ import (
 	"github.com/McAndersDK/handle-mcp-go/internal/privacy"
 )
 
-// leak is LEAK in tests/conftest.py.
+// leak is LEAK in upstream/tests/conftest.py.
 func leak() obj {
 	return obj{
 		"CustomerName":    "Anders And",

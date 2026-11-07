@@ -1,6 +1,6 @@
 # 0001: The human always pays
 
-handle-mcp reads stores and changes cart quantities. It never places an order, pays, reads payment cards, chooses a delivery time or changes the address. Those endpoints do not exist in the code, and `tests/test_safety.py` fails if one appears.
+handle-mcp reads stores and changes cart quantities. It never places an order, pays, reads payment cards, chooses a delivery time or changes the address. Those endpoints do not exist in the code, and `internal/safety/safety_test.go` fails if one appears.
 
 ## Why
 

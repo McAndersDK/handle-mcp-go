@@ -1,6 +1,6 @@
 package nemlig
 
-// Hand tests: Go ports of the tests in tests/test_nemlig.py and tests/test_nemlig_recipes.py that
+// Hand tests: Go ports of the tests in upstream/tests/test_nemlig.py and upstream/tests/test_nemlig_recipes.py that
 // the golden files do not already cover, and tests for what Go adds (the traps of the port).
 // The list of which Python test lives where is in the report of the port.
 
@@ -108,7 +108,7 @@ func TestOnlyKnownEndpoints(t *testing.T) {
 
 func hit(t *testing.T, text string) obj { return J(t, text).(obj) }
 
-// The product tests of tests/test_nemlig.py (shapes seen live 2026-11-01, docs/research.md).
+// The product tests of upstream/tests/test_nemlig.py (shapes seen live 2026-11-01, docs/research.md).
 func TestProductReading(t *testing.T) {
 	t.Run("a discount campaign pays the campaign price", func(t *testing.T) {
 		p := product(hit(t, `{"Id": 1, "Name": "Laksefilet m. skind", "Price": 120.75, "UnitPriceCalc": 201.25,
