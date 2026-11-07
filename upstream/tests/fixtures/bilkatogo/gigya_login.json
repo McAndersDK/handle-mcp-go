@@ -1,0 +1,13 @@
+{
+  "callId": "fake0000000000000000000000000001",
+  "errorCode": 0,
+  "apiVersion": 2,
+  "statusCode": 200,
+  "statusReason": "OK",
+  "time": "2026-10-20T08:00:00.000Z",
+  "UID": "fake-uid-0001",
+  "sessionInfo": {
+    "cookieName": "glt_fake",
+    "cookieValue": "st2.fake-login-token"
+  }
+}

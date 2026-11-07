@@ -1,0 +1,113 @@
+{
+ "searchResult": {
+  "items": [
+   {
+    "id": "nem-kylling-i-karry-98003871",
+    "title": "Nem kylling i karry",
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/0gobp32n/850x478_nem-kylling-i-karry-98003871.jpg?crop=0.223197693106523,0.0000000000000003080944111697,0.46047877748171234,0&cropmode=percentage&width=513&height=912",
+     "accessibilityText": "To skåle med hvide ris og gul karrysauce med kylling, toppet med æbletern, hakkede nødder og grønne krydderurter. Ved siden af står salat og små skåle med topping."
+    },
+    "video": null,
+    "generalFilters": [
+     {
+      "title": "Under 30 min",
+      "path": "under-30",
+      "isActive": false
+     },
+     {
+      "title": "Familievenlig",
+      "path": "familievenlig",
+      "isActive": false
+     },
+     {
+      "title": "Populær",
+      "path": "populaer",
+      "isActive": false
+     }
+    ],
+    "highlightedFilters": []
+   },
+   {
+    "id": "kylling-i-kokos-karry-98000533",
+    "title": "Kylling i karry med kokosmælk",
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/jlebokhi/kylling-i-karry-ubeskaaret.jpg?mode=crop&anchor=center&width=513&height=912",
+     "accessibilityText": "Gul kyllingekarry med strimler af kylling og hvide ris i brun skål, toppet med æbletern og friske grønne urter."
+    },
+    "video": null,
+    "generalFilters": [
+     {
+      "title": "Familievenlig",
+      "path": "familievenlig",
+      "isActive": false
+     }
+    ],
+    "highlightedFilters": []
+   },
+   {
+    "id": "kylling-i-karry-98003870",
+    "title": "Klassisk kylling i karry",
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/xopcbrrr/camillas-klassisk-kylling-i-karry-februar-2022-16-9.jpg?crop=0.3400104315122351,0.18102132360738132,0.4392429783944412,0.12134382868120136&cropmode=percentage&width=513&height=912",
+     "accessibilityText": "Skål med hvide ris og kylling i gul karrysauce, toppet med hakket grøn persille og sort peber. Brødskiver og ekstra persille ligger ved siden af."
+    },
+    "video": null,
+    "generalFilters": [
+     {
+      "title": "Familievenlig",
+      "path": "familievenlig",
+      "isActive": false
+     }
+    ],
+    "highlightedFilters": []
+   },
+   {
+    "id": "one-pot-kylling-i-karry-98003427",
+    "title": "One pot kylling i karry",
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/mrunzike/ris-ret-ubeskaaret.jpg?mode=crop&anchor=center&width=513&height=912",
+     "accessibilityText": "Gul karryris med kyllingestykker, grønne bønner og gulerødder i blå gryde, toppet med koriander og lime. Låg og halve limefrugter ligger ved siden af."
+    },
+    "video": {
+     "thumbnail": "",
+     "videoFormat": "",
+     "source": "https://media.umbraco.io/nemlig3/bd0hqont/one-pot-kylling-i-karry-reel-v2.mp4",
+     "accessibilityText": ""
+    },
+    "generalFilters": [
+     {
+      "title": "Under 30 min",
+      "path": "under-30",
+      "isActive": false
+     },
+     {
+      "title": "Familievenlig",
+      "path": "familievenlig",
+      "isActive": false
+     }
+    ],
+    "highlightedFilters": []
+   },
+   {
+    "id": "kyllingewok-med-groen-karry-98000756",
+    "title": "Kylling i grøn karry",
+    "image": {
+     "source": "https://media.umbraco.io/nemlig3/4e3mshpg/mtk-uge-33-2020-livretter-wok-med-bacon-bluecheese-kylling-og-groent-mosaic.jpg?crop=0.368586619859396,0.1670066598668028,0.3461629163187116,0.09500809983800312&cropmode=percentage&width=513&height=912",
+     "accessibilityText": "Tallerken med lyse ægnudler toppet med cremet kylling i lys-grøn sauce, røde peberfrugtstrimler og friske grønne urter, serveret med spisepinde."
+    },
+    "video": null,
+    "generalFilters": [
+     {
+      "title": "Under 30 min",
+      "path": "under-30",
+      "isActive": false
+     }
+    ],
+    "highlightedFilters": []
+   }
+  ],
+  "recipesTotalCount": 15,
+  "productsTotalCount": 7
+ }
+}

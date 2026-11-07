@@ -1,0 +1,362 @@
+{
+ "id": "dcccaeb8-e6e3-41f4-8e31-44cb20a82cc3",
+ "pageType": "themePage",
+ "title": "Ugens udvalgte",
+ "description": null,
+ "seo": {
+  "title": "",
+  "description": "",
+  "content": "",
+  "noIndex": false
+ },
+ "pageContent": [
+  {
+   "contentType": "RecipeList",
+   "anchorId": "0-c81cfa6a-77e2-4aa4-b706-5f08a88d9cb5",
+   "recipes": [
+    {
+     "id": "hakkeboeffer-i-paprikafad-98004606",
+     "title": "Hakkebøffer i paprikafad med ovnfritter",
+     "image": {
+      "source": "https://media.umbraco.io/nemlig3/zqenaj22/maaltider-uge-18-2026-hakkeboeffer-i-paprikafad-med-ovnfritter-ubeskaaret.jpg?crop=0.6246483976084574,0.12309663802201117,0.15904941240514206,0.08217570157868671&cropmode=percentage&width=513&height=912",
+      "accessibilityText": "Hakkebøffer i paprikafad med ovnfritter"
+     },
+     "video": {
+      "thumbnail": "",
+      "videoFormat": "",
+      "source": "https://media.umbraco.io/nemlig3/hphb35n3/hakkeboeffer-v1.mp4",
+      "accessibilityText": ""
+     },
+     "generalFilters": [],
+     "highlightedFilters": []
+    },
+    {
+     "id": "kebabfad-med-fladbrod-98001303",
+     "title": "Kebabfad med fladbrød og hvidløgsdressing",
+     "image": {
+      "source": "https://media.umbraco.io/nemlig3/zu0cfnyn/kebabfad-med-fladbr-d-og-hvidl-gsdressing-opskrift-16x9.jpg?mode=crop&anchor=center&width=513&height=912",
+      "accessibilityText": "kebab ruller med kød grønt og dressing serveret på sølv fad"
+     },
+     "video": {
+      "thumbnail": "",
+      "videoFormat": "",
+      "source": "https://media.umbraco.io/nemlig3/tpxefkgt/kebabfad-med-fladbroed-og-hvidloegsdressing-v2.mp4",
+      "accessibilityText": ""
+     },
+     "generalFilters": [
+      {
+       "title": "Familievenlig",
+       "path": "familievenlig",
+       "isActive": false
+      }
+     ],
+     "highlightedFilters": []
+    },
+    {
+     "id": "roed-karry-laks-ris-i-et-fad-98004164",
+     "title": "Rød karry med laks og ris - i ét fad",
+     "image": {
+      "source": "https://media.umbraco.io/nemlig3/comknrxb/850x478_roed-karry-laks-ris-i-et-fad-98004164.jpg?mode=crop&anchor=center&width=513&height=912",
+      "accessibilityText": "Sort pande med gyldne ris, lyserøde laksefileter, grønne bønner og røde cherrytomater, toppet med frisk koriander."
+     },
+     "video": null,
+     "generalFilters": [
+      {
+       "title": "Under 30 min",
+       "path": "under-30",
+       "isActive": false
+      }
+     ],
+     "highlightedFilters": []
+    },
+    {
+     "id": "marry-me-chicken-lasagne-98001260",
+     "title": "Marry me chicken lasagne",
+     "image": {
+      "source": "https://media.umbraco.io/nemlig3/3dllueun/marry-me-chicken-lasagne-16x9.jpg?mode=crop&anchor=center&width=513&height=912",
+      "accessibilityText": "Marry Me Chicken lasagne"
+     },
+     "video": null,
+     "generalFilters": [
+      {
+       "title": "Familievenlig",
+       "path": "familievenlig",
+       "isActive": false
+      }
+     ],
+     "highlightedFilters": []
+    }
+   ],
+   "layout": "Showall",
+   "header": {
+    "title": "Mad i fad",
+    "subtitle": "Alt det gode i ét fad",
+    "image": null,
+    "button": null
+   }
+  },
+  {
+   "contentType": "RecipeList",
+   "anchorId": "1-e36e65ef-1656-4d5b-83c9-3bd300c2eb79",
+   "recipes": [
+    {
+     "id": "pappardelle-i-bacon-broccoli-floedesauce-98004607",
+     "title": "Pappardelle i bacon-broccoli flødesauce",
+     "image": {
+      "source": "https://media.umbraco.io/nemlig3/fujjt3uu/maaltider-uge-48-2025-pappardelle-i-bacon-broccoli-floedesauce-ubeskaaret.jpg?crop=0.5282032230980238,0.21989847631620374,0.22553117488973193,0.0871112424499356&cropmode=percentage&width=513&height=912",
+      "accessibilityText": "Pappardelle i bacon-broccoli flødesauce"
+     },
+     "video": null,
+     "generalFilters": [
+      {
+       "title": "Under 30 min",
+       "path": "under-30",
+       "isActive": false
+      }
+     ],
+     "highlightedFilters": []
+    },
+    {
+     "id": "salsiccia-pasta-98004316",
+     "title": "Cremet pasta med salsiccia",
+     "image": {
+      "source": "https://media.umbraco.io/nemlig3/kgepefxw/850x478_cremet-pasta-salsiccia-98004316.jpg?mode=crop&anchor=center&width=513&height=912",
+      "accessibilityText": "cremet pasta salsiccia i en skål"
+     },
+     "video": {
+      "thumbnail": "",
+      "videoFormat": "",
+      "source": "https://media.umbraco.io/nemlig3/gfbkdslk/salsiccia-pasta-ig.mp4",
+      "accessibilityText": ""
+     },
+     "generalFilters": [],
+     "highlightedFilters": []
+    },
+    {
+     "id": "mac-and-cheese-med-bacon-og-porrer-98004555",
+     "title": "Mac and cheese med bacon og porrer",
+     "image": {
+      "source": "https://media.umbraco.io/nemlig3/we4ldwux/mac-cheese-med-bacon-og-porrer-16x9.jpg?mode=crop&anchor=center&width=513&height=912",
+      "accessibilityText": "Gylden pastagratin med brunet ostetop, synlige porrer og bacon i et hvidt ovnfast fad med blå kant, pyntet med friske krydderurter og serveret med træske."
+     },
+     "video": null,
+     "generalFilters": [
+      {
+       "title": "Familievenlig",
+       "path": "familievenlig",
+       "isActive": false
+      },
+      {
+       "title": "Budgetvenlig",
+       "path": "budgetvenlig",
+       "isActive": false
+      }
+     ],
+     "highlightedFilters": []
+    },
+    {
+     "id": "ovnbagt-laks-med-frisk-pasta-i-citronsauce-98000860",
+     "title": "Ovnbagt laks med frisk pasta i citronsauce",
+     "image": {
+      "source": "https://media.umbraco.io/nemlig3/qyxprmle/maaltider-uge-18-2026-ovnbagt-laks-med-citronpasta.jpg?crop=0.5987060652411211,0,0.19077193869847187,0.0000000000000004621416167545&cropmode=percentage&width=513&height=912",
+      "accessibilityText": "Laksefilet med peber på cremet fettuccine, toppet med frisk dild og citronbåde på en turkis mønstret tallerken."
+     },
+     "video": null,
+     "generalFilters": [
+      {
+       "title": "Under 30 min",
+       "path": "under-30",
+       "isActive": false
+      }
+     ],
+     "highlightedFilters": []
+    }
+   ],
+   "layout": "Showall",
+   "header": {
+    "title": "Cremet pasta",
+    "subtitle": "Pasta er altid en god idé",
+    "image": null,
+    "button": null
+   }
+  },
+  {
+   "contentType": "RecipeList",
+   "anchorId": "2-8ad77c3e-e7d1-40d0-a650-f4f016855ae9",
+   "recipes": [
+    {
+     "id": "one-pot-enchilada-med-smeltet-ost-98004476",
+     "title": "One pot enchilada med smeltet ost",
+     "image": {
+      "source": "https://media.umbraco.io/nemlig3/kftnwyxq/one-pot-enchilada.jpg?crop=0.3938008130081301,0,0.23119918699186992,0&cropmode=percentage&width=513&height=912",
+      "accessibilityText": "Pande med gylden ost og sprøde tortillakanter over rød fyldning, toppet med avocadoskiver, koriander, jalapeño og lime."
+     },
+     "video": null,
+     "generalFilters": [],
+     "highlightedFilters": []
+    },
+    {
+     "id": "hotdog-salsa-boennesalat-98001348",
+     "title": "Hotdogs med salsa, guacamole og bønnesalat",
+     "image": {
+      "source": "https://media.umbraco.io/nemlig3/yzzliuml/hotdogs-m-salsa-og-boennesalat.jpg?crop=0.3883652974554086,0,0.23666356201819458,0&cropmode=percentage&width=513&height=912",
+      "accessibilityText": "Tre hotdogs i gyldne brød med pølser, rød salsa, grøn guacamole, pink syltede rødløg og koriander, serveret med bønnesalat med majs, mango og agurk."
+     },
+     "video": null,
+     "generalFilters": [
+      {
+       "title": "Under 30 min",
+       "path": "under-30",
+       "isActive": false
+      }
+     ],
+     "highlightedFilters": []
+    },
+    {
+     "id": "mexi-salat-krydret-oksekoed-98000937",
+     "title": "Mexisalat med krydret oksekød",
+     "image": {
+      "source": "https://media.umbraco.io/nemlig3/1funmok2/_35a0174.jpg?mode=crop&anchor=center&width=513&height=912",
+      "accessibilityText": "Skål med salat, krydret hakket oksekød, kidneybønner, grøntsager og rødløg, toppet med grøn guacamole og hakket koriander."
+     },
+     "video": null,
+     "generalFilters": [
+      {
+       "title": "Under 30 min",
+       "path": "under-30",
+       "isActive": false
+      },
+      {
+       "title": "Familievenlig",
+       "path": "familievenlig",
+       "isActive": false
+      }
+     ],
+     "highlightedFilters": []
+    },
+    {
+     "id": "lune-fajitas-med-kylling-og-avocado-98002880",
+     "title": "Lune fajitas med kylling og grønt",
+     "image": {
+      "source": "https://media.umbraco.io/nemlig3/5ftdtwvt/maaltider-uge-5-2026-portobello-fajitas-med-salsa-og-lime.jpg?crop=0.6282086406661457,0,0.16126603241366805,0.0000000000000003080944111697&cropmode=percentage&width=513&height=912",
+      "accessibilityText": "To fyldte tortillas med kylling, peberfrugt, rødkål og koriander på fad med tomatsalsa, limebåde og cherrytomater."
+     },
+     "video": null,
+     "generalFilters": [
+      {
+       "title": "Under 30 min",
+       "path": "under-30",
+       "isActive": false
+      },
+      {
+       "title": "Familievenlig",
+       "path": "familievenlig",
+       "isActive": false
+      }
+     ],
+     "highlightedFilters": []
+    }
+   ],
+   "layout": "Showall",
+   "header": {
+    "title": "Et mexi-twist",
+    "subtitle": "Giv hverdagen lidt ekstra krydderi",
+    "image": null,
+    "button": null
+   }
+  },
+  {
+   "contentType": "RecipeList",
+   "anchorId": "3-5b106dba-9ce6-498a-bdc9-6bb08c289cdd",
+   "recipes": [
+    {
+     "id": "groenkaalssuppe-med-bacon-og-bloede-loeg-98002658",
+     "title": "Grønkålssuppe",
+     "image": {
+      "source": "https://media.umbraco.io/nemlig3/ccccvinf/groenkaalssuppe-16x9.jpg?mode=crop&anchor=center&width=513&height=912",
+      "accessibilityText": "Grønkålssuppe"
+     },
+     "video": null,
+     "generalFilters": [
+      {
+       "title": "Under 30 min",
+       "path": "under-30",
+       "isActive": false
+      }
+     ],
+     "highlightedFilters": []
+    },
+    {
+     "id": "ingefaer-gulerodssuppe-98000576",
+     "title": "Gulerodssuppe med ingefær og chorizo",
+     "image": {
+      "source": "https://media.umbraco.io/nemlig3/3ppd5c3l/gulerodssuppe-med-ingefaer-og-chorizo-16x9.jpg?crop=0.053597978198620506,0,0.6666870430263643,0.11606180380883936&cropmode=percentage&width=513&height=912",
+      "accessibilityText": "Gul cremet suppe fordelt i to skåle. Toppet med sprødstegte tern af chorizo og lidt stegeolie derfra og et par små timiankviste. Serveret med skiver af baguettebrød"
+     },
+     "video": {
+      "thumbnail": "",
+      "videoFormat": "",
+      "source": "https://media.umbraco.io/nemlig3/lqdpjamw/gulerodssuppe-v1.mp4",
+      "accessibilityText": ""
+     },
+     "generalFilters": [
+      {
+       "title": "Under 30 min",
+       "path": "under-30",
+       "isActive": false
+      },
+      {
+       "title": "Budgetvenlig",
+       "path": "budgetvenlig",
+       "isActive": false
+      }
+     ],
+     "highlightedFilters": []
+    },
+    {
+     "id": "suppe-kylling-kartofler-roedbede-98004085",
+     "title": "Kyllingesuppe med rødbeder og kartofler",
+     "image": {
+      "source": "https://media.umbraco.io/nemlig3/jj2al2vw/kyllingesuppe-med-roedbeder-og-kartoffel-i-vinkel-ubeskaaret.jpg?mode=crop&anchor=center&width=513&height=912",
+      "accessibilityText": "Kyllingesuppe med rødbeder og kartofler"
+     },
+     "video": null,
+     "generalFilters": [],
+     "highlightedFilters": []
+    },
+    {
+     "id": "nem-gnocchi-suppe-98004613",
+     "title": "Nem gnocchisuppe",
+     "image": {
+      "source": "https://media.umbraco.io/nemlig3/py3mhcm5/nem-gnocci-brug-denne-suppe-16x9.jpg?crop=0.1414043975187003,0,0.5421320732169809,0&cropmode=percentage&width=513&height=912",
+      "accessibilityText": "Nem gnocchisuppe"
+     },
+     "video": null,
+     "generalFilters": [
+      {
+       "title": "Under 20 min",
+       "path": "under-20",
+       "isActive": false
+      }
+     ],
+     "highlightedFilters": []
+    }
+   ],
+   "layout": "Showall",
+   "header": {
+    "title": "Suppe",
+    "subtitle": "Find den store ske frem",
+    "image": null,
+    "button": null
+   }
+  }
+ ],
+ "topBanner": null,
+ "breadcrumbs": [
+  {
+   "title": "Ugens udvalgte",
+   "url": "/maaltider"
+  }
+ ],
+ "navigationItems": []
+}

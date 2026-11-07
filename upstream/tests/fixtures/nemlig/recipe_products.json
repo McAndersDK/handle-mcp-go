@@ -1,0 +1,2090 @@
+{
+ "id": "kebabfad-med-fladbrod-98001303",
+ "title": "Kebabfad med fladbrød og hvidløgsdressing",
+ "servings": 4,
+ "image": {
+  "source": "https://media.umbraco.io/nemlig3/zu0cfnyn/kebabfad-med-fladbr-d-og-hvidl-gsdressing-opskrift-16x9.jpg?mode=crop&anchor=center&width=912&height=513",
+  "accessibilityText": "kebab ruller med kød grønt og dressing serveret på sølv fad"
+ },
+ "includedProducts": [
+  {
+   "ingredientId": "rødløg",
+   "ingredientTitle": "Rødløg",
+   "item": {
+    "quantity": 1,
+    "product": {
+     "id": "2301108",
+     "url": "2301108",
+     "title": "Rødløg",
+     "description": "1 kg",
+     "price": 1600,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 1600,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": null,
+     "labelHighlighted": {
+      "type": "PriceMatch",
+      "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+     },
+     "certificates": [
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      }
+     ],
+     "campaignLines": [],
+     "campaignBadge": null,
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/2301108.webp",
+      "accessibilityText": "Billede af Rødløg"
+     }
+    }
+   },
+   "alternatives": [
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5042129",
+      "url": "5042129",
+      "title": "Rødløg øko.",
+      "description": "750 g",
+      "price": 2400,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 3199,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": null,
+      "labelHighlighted": {
+       "type": "PriceMatch",
+       "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+      },
+      "certificates": [
+       {
+        "type": "dkOrganic",
+        "text": "Øko (dansk)"
+       },
+       {
+        "type": "dkProduced",
+        "text": "Produceret i Danmark"
+       },
+       {
+        "type": "euOrganic",
+        "text": "Øko (europæisk)"
+       }
+      ],
+      "campaignLines": [],
+      "campaignBadge": null,
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5042129.webp",
+       "accessibilityText": "Billede af Rødløg øko."
+      }
+     }
+    }
+   ]
+  },
+  {
+   "ingredientId": "hvidløg",
+   "ingredientTitle": "Hvidløg",
+   "item": {
+    "quantity": 1,
+    "product": {
+     "id": "100160",
+     "url": "100160",
+     "title": "Hvidløg øko.",
+     "description": "1 stk.",
+     "price": 500,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 500,
+      "unitType": "Pieces"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": null,
+     "labelHighlighted": {
+      "type": "PriceMatch",
+      "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+     },
+     "certificates": [
+      {
+       "type": "euOrganic",
+       "text": "Øko (europæisk)"
+      }
+     ],
+     "campaignLines": [],
+     "campaignBadge": null,
+     "quantity": 0,
+     "unitOfMeasure": "Stk.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/100160.webp",
+      "accessibilityText": "Billede af Hvidløg øko."
+     }
+    }
+   },
+   "alternatives": [
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5053384",
+      "url": "5053384",
+      "title": "Hvidløg i net",
+      "description": "200 g",
+      "price": 1333,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 6665,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": null,
+      "labelHighlighted": {
+       "type": "PriceMatch",
+       "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+      },
+      "certificates": [],
+      "campaignLines": [],
+      "campaignBadge": null,
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5053384.webp",
+       "accessibilityText": "Billede af Hvidløg i net"
+      }
+     }
+    },
+    {
+     "quantity": 1,
+     "product": {
+      "id": "1101017",
+      "url": "1101017",
+      "title": "Hvidløg dansk øko.",
+      "description": "1 stk. / Stevns",
+      "price": 1200,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 1200,
+       "unitType": "Pieces"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": null,
+      "labelHighlighted": {
+       "type": "Premium",
+       "url": "/dagligvarer/nye-varer-inspiration/premium"
+      },
+      "certificates": [
+       {
+        "type": "dkOrganic",
+        "text": "Øko (dansk)"
+       },
+       {
+        "type": "dkProduced",
+        "text": "Produceret i Danmark"
+       },
+       {
+        "type": "euOrganic",
+        "text": "Øko (europæisk)"
+       }
+      ],
+      "campaignLines": [],
+      "campaignBadge": null,
+      "quantity": 0,
+      "unitOfMeasure": "Stk.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/1101017.webp",
+       "accessibilityText": "Billede af Hvidløg dansk øko."
+      }
+     }
+    }
+   ]
+  },
+  {
+   "ingredientId": "persille",
+   "ingredientTitle": "Persille",
+   "item": {
+    "quantity": 1,
+    "product": {
+     "id": "2301153",
+     "url": "2301153",
+     "title": "Persille krus",
+     "description": "7 cm pt.",
+     "price": 1000,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 1000,
+      "unitType": "Pieces"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": null,
+     "labelHighlighted": {
+      "type": "PriceMatch",
+      "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+     },
+     "certificates": [
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      }
+     ],
+     "campaignLines": [],
+     "campaignBadge": null,
+     "quantity": 0,
+     "unitOfMeasure": "Stk.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/2301153.webp",
+      "accessibilityText": "Billede af Persille krus"
+     }
+    }
+   },
+   "alternatives": [
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5016781",
+      "url": "5016781",
+      "title": "Persille bredbladet øko.",
+      "description": "10,5 cm pt.",
+      "price": 1500,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 1500,
+       "unitType": "Pieces"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": null,
+      "labelHighlighted": {
+       "type": "PriceMatch",
+       "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+      },
+      "certificates": [
+       {
+        "type": "dkOrganic",
+        "text": "Øko (dansk)"
+       },
+       {
+        "type": "dkProduced",
+        "text": "Produceret i Danmark"
+       },
+       {
+        "type": "euOrganic",
+        "text": "Øko (europæisk)"
+       }
+      ],
+      "campaignLines": [
+       {
+        "text": "Mix 3 stk. 40,-",
+        "accessibilityText": "Mix 3 styk 40 kroner",
+        "url": null,
+        "campaignType": "Mix"
+       }
+      ],
+      "campaignBadge": {
+       "primaryText": "Køb flere, spar mere",
+       "secondaryText": null,
+       "accessibilityText": "Køb flere, spar mere"
+      },
+      "quantity": 0,
+      "unitOfMeasure": "Stk.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5016781.webp",
+       "accessibilityText": "Billede af Persille bredbladet øko."
+      }
+     }
+    },
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5003207",
+      "url": "5003207",
+      "title": "Persille bredbladet",
+      "description": "180 g",
+      "price": 2500,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 13888,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": null,
+      "labelHighlighted": null,
+      "certificates": [],
+      "campaignLines": [],
+      "campaignBadge": null,
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5003207.webp",
+       "accessibilityText": "Billede af Persille bredbladet"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "ingredientId": "hakket grise- og kalvekød",
+   "ingredientTitle": "Hakket grise- og kalvekød",
+   "item": {
+    "quantity": 1,
+    "product": {
+     "id": "5026536",
+     "url": "5026536",
+     "title": "Hakket grise og kalvekød 8-12%",
+     "description": "500 g / Danish Crown",
+     "price": 2995,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 5990,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 3,
+     "labelHighlighted": {
+      "type": "PriceMatch",
+      "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+     },
+     "certificates": [
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      },
+      {
+       "type": "refrigerated",
+       "text": "Køl"
+      }
+     ],
+     "campaignLines": [],
+     "campaignBadge": null,
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5026536.webp",
+      "accessibilityText": "Billede af Hakket grise og kalvekød 8-12%"
+     }
+    }
+   },
+   "alternatives": [
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5026539",
+      "url": "5026539",
+      "title": "Hakket grise og kalvekød 8-12%",
+      "description": "1 kg / Danish Crown",
+      "price": 5903,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 5903,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": 3,
+      "labelHighlighted": null,
+      "certificates": [
+       {
+        "type": "dkProduced",
+        "text": "Produceret i Danmark"
+       },
+       {
+        "type": "refrigerated",
+        "text": "Køl"
+       }
+      ],
+      "campaignLines": [],
+      "campaignBadge": null,
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5026539.webp",
+       "accessibilityText": "Billede af Hakket grise og kalvekød 8-12%"
+      }
+     }
+    },
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5062387",
+      "url": "5062387",
+      "title": "Hakket grise og kalvekød 4-7%",
+      "description": "500 g / Danish Crown",
+      "price": 3744,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 7488,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": 3,
+      "labelHighlighted": {
+       "type": "PriceMatch",
+       "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+      },
+      "certificates": [
+       {
+        "type": "dkProduced",
+        "text": "Produceret i Danmark"
+       },
+       {
+        "type": "nordicKeyholeLabel",
+        "text": "Nøglehulsmærket"
+       },
+       {
+        "type": "refrigerated",
+        "text": "Køl"
+       }
+      ],
+      "campaignLines": [],
+      "campaignBadge": null,
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5062387.webp",
+       "accessibilityText": "Billede af Hakket grise og kalvekød 4-7%"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "ingredientId": "kebab krydderi",
+   "ingredientTitle": "Kebab krydderi",
+   "item": {
+    "quantity": 1,
+    "product": {
+     "id": "5066258",
+     "url": "5066258",
+     "title": "Kebab krydderi",
+     "description": "29 g / Santa Maria",
+     "price": 2475,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 84269,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 90,
+     "labelHighlighted": null,
+     "certificates": [],
+     "campaignLines": [
+      {
+       "text": "Mix 3 stk. 70,-",
+       "accessibilityText": "Mix 3 styk 70 kroner",
+       "url": null,
+       "campaignType": "Mix"
+      }
+     ],
+     "campaignBadge": {
+      "primaryText": "Køb flere, spar mere",
+      "secondaryText": null,
+      "accessibilityText": "Køb flere, spar mere"
+     },
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5066258.webp",
+      "accessibilityText": "Billede af Kebab krydderi"
+     }
+    }
+   },
+   "alternatives": [
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5066215",
+      "url": "5066215",
+      "title": "Kebab krydderi øko.",
+      "description": "10 g / Pure Garden",
+      "price": 895,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 89500,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": 7,
+      "labelHighlighted": null,
+      "certificates": [
+       {
+        "type": "dkOrganic",
+        "text": "Øko (dansk)"
+       }
+      ],
+      "campaignLines": [],
+      "campaignBadge": null,
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5066215.webp",
+       "accessibilityText": "Billede af Kebab krydderi øko."
+      }
+     }
+    }
+   ]
+  },
+  {
+   "ingredientId": "tomater",
+   "ingredientTitle": "Tomater",
+   "item": {
+    "quantity": 1,
+    "product": {
+     "id": "5006443",
+     "url": "5006443",
+     "title": "Tomater",
+     "description": "500 g",
+     "price": 2000,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 4000,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": null,
+     "labelHighlighted": {
+      "type": "PriceMatch",
+      "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+     },
+     "certificates": [
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      }
+     ],
+     "campaignLines": [],
+     "campaignBadge": null,
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5006443.webp",
+      "accessibilityText": "Billede af Tomater"
+     }
+    }
+   },
+   "alternatives": [
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5006127",
+      "url": "5006127",
+      "title": "Tomater øko.",
+      "description": "500 g",
+      "price": 2125,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 4250,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": null,
+      "labelHighlighted": {
+       "type": "PriceMatch",
+       "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+      },
+      "certificates": [
+       {
+        "type": "euOrganic",
+        "text": "Øko (europæisk)"
+       }
+      ],
+      "campaignLines": [],
+      "campaignBadge": null,
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5006127.webp",
+       "accessibilityText": "Billede af Tomater øko."
+      }
+     }
+    },
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5007510",
+      "url": "5007510",
+      "title": "Tomater øko.",
+      "description": "400 g",
+      "price": 2000,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 5000,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": null,
+      "labelHighlighted": {
+       "type": "PriceMatch",
+       "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+      },
+      "certificates": [
+       {
+        "type": "dkOrganic",
+        "text": "Øko (dansk)"
+       },
+       {
+        "type": "dkProduced",
+        "text": "Produceret i Danmark"
+       },
+       {
+        "type": "euOrganic",
+        "text": "Øko (europæisk)"
+       }
+      ],
+      "campaignLines": [],
+      "campaignBadge": null,
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5007510.webp",
+       "accessibilityText": "Billede af Tomater øko."
+      }
+     }
+    }
+   ]
+  },
+  {
+   "ingredientId": "agurk",
+   "ingredientTitle": "Agurk",
+   "item": {
+    "quantity": 1,
+    "product": {
+     "id": "106593",
+     "url": "106593",
+     "title": "Agurk øko.",
+     "description": "1 stk.",
+     "price": 1200,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 1200,
+      "unitType": "Pieces"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": null,
+     "labelHighlighted": null,
+     "certificates": [
+      {
+       "type": "euOrganic",
+       "text": "Øko (europæisk)"
+      }
+     ],
+     "campaignLines": [],
+     "campaignBadge": null,
+     "quantity": 0,
+     "unitOfMeasure": "Stk.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/106593.webp",
+      "accessibilityText": "Billede af Agurk øko."
+     }
+    }
+   },
+   "alternatives": [
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5057157",
+      "url": "5057157",
+      "title": "Agurk dansk",
+      "description": "1 stk.",
+      "price": 2000,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 2000,
+       "unitType": "Pieces"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": null,
+      "labelHighlighted": null,
+      "certificates": [
+       {
+        "type": "dkProduced",
+        "text": "Produceret i Danmark"
+       }
+      ],
+      "campaignLines": [],
+      "campaignBadge": null,
+      "quantity": 0,
+      "unitOfMeasure": "Stk.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5057157.webp",
+       "accessibilityText": "Billede af Agurk dansk"
+      }
+     }
+    },
+    {
+     "quantity": 1,
+     "product": {
+      "id": "2301199",
+      "url": "2301199",
+      "title": "Agurk",
+      "description": "1 stk.",
+      "price": 1000,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 1000,
+       "unitType": "Pieces"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": null,
+      "labelHighlighted": {
+       "type": "PriceMatch",
+       "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+      },
+      "certificates": [],
+      "campaignLines": [],
+      "campaignBadge": null,
+      "quantity": 0,
+      "unitOfMeasure": "Stk.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/2301199.webp",
+       "accessibilityText": "Billede af Agurk"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "ingredientId": "icebergsalat",
+   "ingredientTitle": "Icebergsalat",
+   "item": {
+    "quantity": 1,
+    "product": {
+     "id": "5004705",
+     "url": "5004705",
+     "title": "Iceberg salat",
+     "description": "1 stk. / Spanien / Klasse 1",
+     "price": 1200,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 1200,
+      "unitType": "Pieces"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": null,
+     "labelHighlighted": {
+      "type": "PriceMatch",
+      "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+     },
+     "certificates": [],
+     "campaignLines": [],
+     "campaignBadge": null,
+     "quantity": 0,
+     "unitOfMeasure": "Stk.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5004705.webp",
+      "accessibilityText": "Billede af Iceberg salat"
+     }
+    }
+   },
+   "alternatives": []
+  },
+  {
+   "ingredientId": "yoghurt naturel",
+   "ingredientTitle": "Yoghurt naturel",
+   "item": {
+    "quantity": 1,
+    "product": {
+     "id": "703017",
+     "url": "703017",
+     "title": "Yoghurt naturel 3,5%",
+     "description": "1 kg / Kløver",
+     "price": 995,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 995,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 8,
+     "labelHighlighted": {
+      "type": "PriceMatch",
+      "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+     },
+     "certificates": [
+      {
+       "type": "dkProduced",
+       "text": "Produceret i Danmark"
+      },
+      {
+       "type": "refrigerated",
+       "text": "Køl"
+      }
+     ],
+     "campaignLines": [],
+     "campaignBadge": null,
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/703017.webp",
+      "accessibilityText": "Billede af Yoghurt naturel 3,5%"
+     }
+    }
+   },
+   "alternatives": [
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5004336",
+      "url": "5004336",
+      "title": "Yoghurt naturel 0,5% øko.",
+      "description": "1 kg / Arla ØKO",
+      "price": 1995,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 1995,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": 8,
+      "labelHighlighted": {
+       "type": "PriceMatch",
+       "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+      },
+      "certificates": [
+       {
+        "type": "dkOrganic",
+        "text": "Øko (dansk)"
+       },
+       {
+        "type": "dkProduced",
+        "text": "Produceret i Danmark"
+       },
+       {
+        "type": "euOrganic",
+        "text": "Øko (europæisk)"
+       },
+       {
+        "type": "nordicKeyholeLabel",
+        "text": "Nøglehulsmærket"
+       },
+       {
+        "type": "animalWelfareHearts3",
+        "text": "Bedre dyrevelfærd (3 hjerter)"
+       },
+       {
+        "type": "refrigerated",
+        "text": "Køl"
+       }
+      ],
+      "campaignLines": [],
+      "campaignBadge": null,
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5004336.webp",
+       "accessibilityText": "Billede af Yoghurt naturel 0,5% øko."
+      }
+     }
+    },
+    {
+     "quantity": 1,
+     "product": {
+      "id": "102656",
+      "url": "102656",
+      "title": "Yoghurt naturel øko.",
+      "description": "1 l / Naturmælk",
+      "price": 2950,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 2950,
+       "unitType": "Volume"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": 6,
+      "labelHighlighted": null,
+      "certificates": [
+       {
+        "type": "dkOrganic",
+        "text": "Øko (dansk)"
+       },
+       {
+        "type": "dkProduced",
+        "text": "Produceret i Danmark"
+       },
+       {
+        "type": "euOrganic",
+        "text": "Øko (europæisk)"
+       },
+       {
+        "type": "animalWelfareHearts3",
+        "text": "Bedre dyrevelfærd (3 hjerter)"
+       },
+       {
+        "type": "recommendedByAnimalProtection",
+        "text": "Anbefalet af dyrenes beskyttelse"
+       },
+       {
+        "type": "refrigerated",
+        "text": "Køl"
+       }
+      ],
+      "campaignLines": [
+       {
+        "text": "Mix 3 stk. 83,-",
+        "accessibilityText": "Mix 3 styk 83 kroner",
+        "url": null,
+        "campaignType": "Mix"
+       }
+      ],
+      "campaignBadge": {
+       "primaryText": "Køb flere, spar mere",
+       "secondaryText": null,
+       "accessibilityText": "Køb flere, spar mere"
+      },
+      "quantity": 0,
+      "unitOfMeasure": "Ltr.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/102656.webp",
+       "accessibilityText": "Billede af Yoghurt naturel øko."
+      }
+     }
+    }
+   ]
+  },
+  {
+   "ingredientId": "fladbrød",
+   "ingredientTitle": "Fladbrød",
+   "item": {
+    "quantity": 1,
+    "product": {
+     "id": "5050643",
+     "url": "5050643",
+     "title": "Fladbrød",
+     "description": "6 stk. / 360 g / Ali Bageri",
+     "price": 1575,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 4375,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 4,
+     "labelHighlighted": null,
+     "certificates": [
+      {
+       "type": "refrigerated",
+       "text": "Køl"
+      }
+     ],
+     "campaignLines": [],
+     "campaignBadge": null,
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5050643.webp",
+      "accessibilityText": "Billede af Fladbrød"
+     }
+    }
+   },
+   "alternatives": [
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5065779",
+      "url": "5065779",
+      "title": "Fladbrød",
+      "description": "3 stk. / 330 g / frost / Orienten & Co",
+      "price": 2529,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 7663,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": 30,
+      "labelHighlighted": null,
+      "certificates": [
+       {
+        "type": "frozen",
+        "text": "Frost"
+       }
+      ],
+      "campaignLines": [
+       {
+        "text": "2 stk. 45,-",
+        "accessibilityText": "2 styk 45 kroner",
+        "url": null,
+        "campaignType": null
+       }
+      ],
+      "campaignBadge": {
+       "primaryText": "Køb flere, spar mere",
+       "secondaryText": null,
+       "accessibilityText": "Køb flere, spar mere"
+      },
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5065779.webp",
+       "accessibilityText": "Billede af Fladbrød"
+      }
+     }
+    },
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5068766",
+      "url": "5068766",
+      "title": "Tortilla wraps",
+      "description": "6 stk. / 370 g / Taste of Nature",
+      "price": 1070,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 2891,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": 30,
+      "labelHighlighted": {
+       "type": "PriceMatch",
+       "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+      },
+      "certificates": [],
+      "campaignLines": [
+       {
+        "text": "2 stk. 20,-",
+        "accessibilityText": "2 styk 20 kroner",
+        "url": null,
+        "campaignType": null
+       }
+      ],
+      "campaignBadge": {
+       "primaryText": "Køb flere, spar mere",
+       "secondaryText": null,
+       "accessibilityText": "Køb flere, spar mere"
+      },
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5068766.webp",
+       "accessibilityText": "Billede af Tortilla wraps"
+      }
+     }
+    }
+   ]
+  }
+ ],
+ "selfSuppliedProducts": [
+  {
+   "ingredientId": "neutral olie",
+   "ingredientTitle": "Neutral olie",
+   "item": {
+    "quantity": 1,
+    "product": {
+     "id": "5059176",
+     "url": "5059176",
+     "title": "Solsikkeolie",
+     "description": "1 l / Taste of Nature",
+     "price": 1909,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 1909,
+      "unitType": "Volume"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 90,
+     "labelHighlighted": {
+      "type": "PriceMatch",
+      "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+     },
+     "certificates": [],
+     "campaignLines": [],
+     "campaignBadge": null,
+     "quantity": 0,
+     "unitOfMeasure": "Ltr.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5059176.webp",
+      "accessibilityText": "Billede af Solsikkeolie"
+     }
+    }
+   },
+   "alternatives": [
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5602671",
+      "url": "5602671",
+      "title": "Rapsolie",
+      "description": "1 l / Taste of Nature",
+      "price": 1909,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 1909,
+       "unitType": "Volume"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": 90,
+      "labelHighlighted": {
+       "type": "PriceMatch",
+       "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+      },
+      "certificates": [],
+      "campaignLines": [
+       {
+        "text": "2 stk. 36,-",
+        "accessibilityText": "2 styk 36 kroner",
+        "url": null,
+        "campaignType": null
+       }
+      ],
+      "campaignBadge": {
+       "primaryText": "Køb flere, spar mere",
+       "secondaryText": null,
+       "accessibilityText": "Køb flere, spar mere"
+      },
+      "quantity": 0,
+      "unitOfMeasure": "Ltr.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5602671.webp",
+       "accessibilityText": "Billede af Rapsolie"
+      }
+     }
+    },
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5019577",
+      "url": "5019577",
+      "title": "Stegeolie øko.",
+      "description": "0,50 l / Urtekram",
+      "price": 4195,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 8390,
+       "unitType": "Volume"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": 90,
+      "labelHighlighted": null,
+      "certificates": [
+       {
+        "type": "euOrganic",
+        "text": "Øko (europæisk)"
+       },
+       {
+        "type": "nordicKeyholeLabel",
+        "text": "Nøglehulsmærket"
+       }
+      ],
+      "campaignLines": [
+       {
+        "text": "2 stk. 80,-",
+        "accessibilityText": "2 styk 80 kroner",
+        "url": null,
+        "campaignType": null
+       }
+      ],
+      "campaignBadge": {
+       "primaryText": "Køb flere, spar mere",
+       "secondaryText": null,
+       "accessibilityText": "Køb flere, spar mere"
+      },
+      "quantity": 0,
+      "unitOfMeasure": "Ltr.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5019577.webp",
+       "accessibilityText": "Billede af Stegeolie øko."
+      }
+     }
+    }
+   ]
+  },
+  {
+   "ingredientId": "salt",
+   "ingredientTitle": "Salt",
+   "item": {
+    "quantity": 1,
+    "product": {
+     "id": "5602504",
+     "url": "5602504",
+     "title": "Salt m. jod (fint)",
+     "description": "1 kg / Salina",
+     "price": 475,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 475,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 90,
+     "labelHighlighted": {
+      "type": "PriceMatch",
+      "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+     },
+     "certificates": [],
+     "campaignLines": [],
+     "campaignBadge": null,
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5602504.webp",
+      "accessibilityText": "Billede af Salt m. jod (fint)"
+     }
+    }
+   },
+   "alternatives": [
+    {
+     "quantity": 1,
+     "product": {
+      "id": "918009",
+      "url": "918009",
+      "title": "Fint bordsalt m. jod",
+      "description": "1 kg / Jozo",
+      "price": 895,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 895,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": 90,
+      "labelHighlighted": null,
+      "certificates": [],
+      "campaignLines": [
+       {
+        "text": "2 stk. 16,-",
+        "accessibilityText": "2 styk 16 kroner",
+        "url": null,
+        "campaignType": null
+       }
+      ],
+      "campaignBadge": {
+       "primaryText": "Køb flere, spar mere",
+       "secondaryText": null,
+       "accessibilityText": "Køb flere, spar mere"
+      },
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/918009.webp",
+       "accessibilityText": "Billede af Fint bordsalt m. jod"
+      }
+     }
+    },
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5015441",
+      "url": "5015441",
+      "title": "Atlanterhavssalt (fint)",
+      "description": "1 kg / Urtekram - Krydderier",
+      "price": 2675,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 2675,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": 90,
+      "labelHighlighted": null,
+      "certificates": [],
+      "campaignLines": [
+       {
+        "text": "2 stk. 50,-",
+        "accessibilityText": "2 styk 50 kroner",
+        "url": null,
+        "campaignType": null
+       }
+      ],
+      "campaignBadge": {
+       "primaryText": "Køb flere, spar mere",
+       "secondaryText": null,
+       "accessibilityText": "Køb flere, spar mere"
+      },
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5015441.webp",
+       "accessibilityText": "Billede af Atlanterhavssalt (fint)"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "ingredientId": "peber",
+   "ingredientTitle": "Peber",
+   "item": {
+    "quantity": 1,
+    "product": {
+     "id": "5051157",
+     "url": "5051157",
+     "title": "Sort peber (stødt)",
+     "description": "100 g / Krydderispecialisten",
+     "price": 750,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 7500,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 90,
+     "labelHighlighted": {
+      "type": "PriceMatch",
+      "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+     },
+     "certificates": [],
+     "campaignLines": [],
+     "campaignBadge": null,
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5051157.webp",
+      "accessibilityText": "Billede af Sort peber (stødt)"
+     }
+    }
+   },
+   "alternatives": [
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5602931",
+      "url": "5602931",
+      "title": "Sort peber (stødt) øko.",
+      "description": "60 g / Dava - krydderier",
+      "price": 2017,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 33616,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": 90,
+      "labelHighlighted": null,
+      "certificates": [
+       {
+        "type": "dkOrganic",
+        "text": "Øko (dansk)"
+       },
+       {
+        "type": "euOrganic",
+        "text": "Øko (europæisk)"
+       }
+      ],
+      "campaignLines": [
+       {
+        "text": "Mix 2 stk. 38,-",
+        "accessibilityText": "Mix 2 styk 38 kroner",
+        "url": null,
+        "campaignType": "Mix"
+       }
+      ],
+      "campaignBadge": {
+       "primaryText": "Køb flere, spar mere",
+       "secondaryText": null,
+       "accessibilityText": "Køb flere, spar mere"
+      },
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5602931.webp",
+       "accessibilityText": "Billede af Sort peber (stødt) øko."
+      }
+     }
+    },
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5601605",
+      "url": "5601605",
+      "title": "Sort peber (kværnet) øko.",
+      "description": "75 g / Urtekram - Krydderier",
+      "price": 6350,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 84666,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": 90,
+      "labelHighlighted": null,
+      "certificates": [
+       {
+        "type": "dkOrganic",
+        "text": "Øko (dansk)"
+       },
+       {
+        "type": "euOrganic",
+        "text": "Øko (europæisk)"
+       }
+      ],
+      "campaignLines": [
+       {
+        "text": "2 stk. 115,-",
+        "accessibilityText": "2 styk 115 kroner",
+        "url": null,
+        "campaignType": null
+       }
+      ],
+      "campaignBadge": {
+       "primaryText": "Køb flere, spar mere",
+       "secondaryText": null,
+       "accessibilityText": "Køb flere, spar mere"
+      },
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5601605.webp",
+       "accessibilityText": "Billede af Sort peber (kværnet) øko."
+      }
+     }
+    }
+   ]
+  },
+  {
+   "ingredientId": "olivenolie",
+   "ingredientTitle": "Olivenolie",
+   "item": {
+    "quantity": 1,
+    "product": {
+     "id": "5049714",
+     "url": "5049714",
+     "title": "Ekstra jomfru olivenolie",
+     "description": "0,50 l / koldpresset / Casaneo",
+     "price": 4130,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 8260,
+      "unitType": "Volume"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": 90,
+     "labelHighlighted": null,
+     "certificates": [
+      {
+       "type": "nordicKeyholeLabel",
+       "text": "Nøglehulsmærket"
+      }
+     ],
+     "campaignLines": [],
+     "campaignBadge": null,
+     "quantity": 0,
+     "unitOfMeasure": "Ltr.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/5049714.webp",
+      "accessibilityText": "Billede af Ekstra jomfru olivenolie"
+     }
+    }
+   },
+   "alternatives": [
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5058627",
+      "url": "5058627",
+      "title": "Ekstra jomfru olivenolie øko",
+      "description": "0,50 l / koldpresset / Casaneo",
+      "price": 4995,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 9990,
+       "unitType": "Volume"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": 90,
+      "labelHighlighted": {
+       "type": "PriceMatch",
+       "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+      },
+      "certificates": [
+       {
+        "type": "euOrganic",
+        "text": "Øko (europæisk)"
+       },
+       {
+        "type": "nordicKeyholeLabel",
+        "text": "Nøglehulsmærket"
+       }
+      ],
+      "campaignLines": [],
+      "campaignBadge": null,
+      "quantity": 0,
+      "unitOfMeasure": "Ltr.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5058627.webp",
+       "accessibilityText": "Billede af Ekstra jomfru olivenolie øko"
+      }
+     }
+    },
+    {
+     "quantity": 1,
+     "product": {
+      "id": "5062662",
+      "url": "5062662",
+      "title": "Olivenolie Pomace",
+      "description": "1 l / Le Terrazze",
+      "price": 8945,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 8945,
+       "unitType": "Volume"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": 90,
+      "labelHighlighted": null,
+      "certificates": [
+       {
+        "type": "nordicKeyholeLabel",
+        "text": "Nøglehulsmærket"
+       }
+      ],
+      "campaignLines": [],
+      "campaignBadge": null,
+      "quantity": 0,
+      "unitOfMeasure": "Ltr.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/5062662.webp",
+       "accessibilityText": "Billede af Olivenolie Pomace"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "ingredientId": "sukker",
+   "ingredientTitle": "Sukker",
+   "item": {
+    "quantity": 1,
+    "product": {
+     "id": "908032",
+     "url": "908032",
+     "title": "Sukker",
+     "description": "1 kg /",
+     "price": 750,
+     "priceOriginal": null,
+     "priceDiscount": null,
+     "pricePerUnit": {
+      "value": 750,
+      "unitType": "Weight"
+     },
+     "currency": "DKK",
+     "labelMaxQuantity": null,
+     "labelFreshnessDays": null,
+     "labelHighlighted": {
+      "type": "PriceMatch",
+      "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+     },
+     "certificates": [],
+     "campaignLines": [],
+     "campaignBadge": null,
+     "quantity": 0,
+     "unitOfMeasure": "Kg.",
+     "quantityLimit": null,
+     "isFavorite": false,
+     "isInShoppingList": false,
+     "availability": {
+      "type": "Available",
+      "nextAvailableDate": "0001-01-01T00:00:00Z",
+      "reasonMessage": []
+     },
+     "image": {
+      "source": "https://product-images.nemlig.io/908032.webp",
+      "accessibilityText": "Billede af Sukker"
+     }
+    }
+   },
+   "alternatives": [
+    {
+     "quantity": 1,
+     "product": {
+      "id": "908035",
+      "url": "908035",
+      "title": "Sukker",
+      "description": "2 kg / Dansukker",
+      "price": 2195,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 1097,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": null,
+      "labelHighlighted": {
+       "type": "PriceMatch",
+       "url": "/dagligvarer/nye-varer-inspiration/prismatch"
+      },
+      "certificates": [
+       {
+        "type": "dkProduced",
+        "text": "Produceret i Danmark"
+       }
+      ],
+      "campaignLines": [
+       {
+        "text": "2 stk. 40,-",
+        "accessibilityText": "2 styk 40 kroner",
+        "url": null,
+        "campaignType": null
+       }
+      ],
+      "campaignBadge": {
+       "primaryText": "Køb flere, spar mere",
+       "secondaryText": null,
+       "accessibilityText": "Køb flere, spar mere"
+      },
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/908035.webp",
+       "accessibilityText": "Billede af Sukker"
+      }
+     }
+    },
+    {
+     "quantity": 1,
+     "product": {
+      "id": "908053",
+      "url": "908053",
+      "title": "Sukker øko.",
+      "description": "1 kg / Dansukker",
+      "price": 2150,
+      "priceOriginal": null,
+      "priceDiscount": null,
+      "pricePerUnit": {
+       "value": 2150,
+       "unitType": "Weight"
+      },
+      "currency": "DKK",
+      "labelMaxQuantity": null,
+      "labelFreshnessDays": null,
+      "labelHighlighted": null,
+      "certificates": [
+       {
+        "type": "dkOrganic",
+        "text": "Øko (dansk)"
+       },
+       {
+        "type": "euOrganic",
+        "text": "Øko (europæisk)"
+       }
+      ],
+      "campaignLines": [
+       {
+        "text": "2 stk. 38,-",
+        "accessibilityText": "2 styk 38 kroner",
+        "url": null,
+        "campaignType": null
+       }
+      ],
+      "campaignBadge": {
+       "primaryText": "Køb flere, spar mere",
+       "secondaryText": null,
+       "accessibilityText": "Køb flere, spar mere"
+      },
+      "quantity": 0,
+      "unitOfMeasure": "Kg.",
+      "quantityLimit": null,
+      "isFavorite": false,
+      "isInShoppingList": false,
+      "availability": {
+       "type": "Available",
+       "nextAvailableDate": "0001-01-01T00:00:00Z",
+       "reasonMessage": []
+      },
+      "image": {
+       "source": "https://product-images.nemlig.io/908053.webp",
+       "accessibilityText": "Billede af Sukker øko."
+      }
+     }
+    }
+   ]
+  }
+ ],
+ "servingLimits": {
+  "minServings": 2,
+  "maxServings": 12
+ }
+}

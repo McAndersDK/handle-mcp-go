@@ -1,0 +1,60 @@
+{
+  "order": {
+    "orderId": "900000000002",
+    "status": "Bestilt",
+    "deliveryDate": "2026-11-03",
+    "deliveryInterval": {"start": "16:00:00", "end": "18:00:00"},
+    "deliveryAddress": {
+      "location": "Bilka Eksempelby",
+      "address": "Testvej 1",
+      "zipCode": "9999",
+      "city": "Eksempelby",
+      "order_pickup_code": "87654321",
+      "home_delivery": false
+    },
+    "price": 45600,
+    "stat": {"has_replacements": false, "oos": false},
+    "lines": [
+      {
+        "headline": "Frugt & grønt",
+        "type": "",
+        "lines": [
+          {
+            "orderlines": [
+              {
+                "quantity": 6,
+                "amount": 1800,
+                "product": {"objectID": 1001, "name": "Æbler"},
+                "unavailable_reason": "",
+                "replacement": null,
+                "strikethrough": null,
+                "tagline": null,
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "headline": "Kolonial",
+        "type": "",
+        "lines": [
+          {
+            "orderlines": [
+              {
+                "quantity": 1,
+                "amount": 2200,
+                "product": {"objectID": 1006, "name": "Havregryn"},
+                "unavailable_reason": "",
+                "replacement": null,
+                "strikethrough": null,
+                "tagline": null,
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

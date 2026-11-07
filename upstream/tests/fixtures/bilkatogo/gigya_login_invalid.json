@@ -1,0 +1,10 @@
+{
+  "callId": "fake0000000000000000000000000002",
+  "errorCode": 403042,
+  "errorDetails": "invalid loginID or password",
+  "errorMessage": "Invalid LoginID",
+  "apiVersion": 2,
+  "statusCode": 403,
+  "statusReason": "Forbidden",
+  "time": "2026-10-20T08:00:00.000Z"
+}
