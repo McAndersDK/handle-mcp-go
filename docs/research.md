@@ -8,7 +8,7 @@ Trin 1 af v1. Skrevet 2026-11-01.
 [nickknissen/bilkatogo](https://github.com/nickknissen/bilkatogo) (fixtures er rigtige, redigerede svar) og
 [stigvoss/bilkatogo-mcp](https://github.com/stigvoss/bilkatogo-mcp) (ingen licens: kun læst for fakta).
 
-Skrevet før de første live kald. Punkter markeret **⚠ live** er stadig ikke bekræftet med en rigtig konto; de står samlet under "Åbne spørgsmål" sidst. Det, der er bekræftet siden, står under "Bekræftet live".
+Skrevet før de første live kald. Punkter markeret **OBS live** er stadig ikke bekræftet med en rigtig konto; de står samlet under "Åbne spørgsmål" sidst. Det, der er bekræftet siden, står under "Bekræftet live".
 
 ## Kort svar
 
@@ -32,14 +32,14 @@ Skrevet før de første live kald. Punkter markeret **⚠ live** er stadig ikke 
 
 Konsekvens: gem kun cookies lokalt (`~/.config/handle-mcp/nemlig.json`, chmod 600). Hent ny Bearer ved 401. Log ind igen, kun hvis cookien er død.
 
-Krævede headers: `Platform: web`, `Device-Size: desktop`, `Version: <app-version>`, `X-Correlation-Id: <uuid4>`. Versionen kan ændre sig. **⚠ live:** hvad sker der med en gammel `Version`?
+Krævede headers: `Platform: web`, `Device-Size: desktop`, `Version: <app-version>`, `X-Correlation-Id: <uuid4>`. Versionen kan ændre sig. **OBS live:** hvad sker der med en gammel `Version`?
 
 ### Søgning
 `GET https://webapi.prod.knl.nemlig.it/searchgateway/api/search?query=…&take=…&timeslotUtc=…&deliveryZoneId=…`
 
 - `timeslotUtc` og `deliveryZoneId` kommer fra page settings. Pris og lager kan altså afhænge af tid og zone.
 - Svaret har `Id` (nemligs varenummer), navn, brand, pris, `UnitPriceLabel` (fx "kr./Kg."), kampagne (`ProductCampaignBuyXForY`, `ProductCampaignMixOffer`).
-- **Ingen EAN/GTIN** i de kendte svar. **⚠ live:** tjek produktsiden (`/webapi/…/product`) for EAN. Ellers: match på navn + mængde + brand i v1. EAN-match bliver kun muligt for Bilka.
+- **Ingen EAN/GTIN** i de kendte svar. **OBS live:** tjek produktsiden (`/webapi/…/product`) for EAN. Ellers: match på navn + mængde + brand i v1. EAN-match bliver kun muligt for Bilka.
 
 **Tilbud (set live 2026-11-01):**
 - `DiscountItem: true` uden `Campaign` er nemligs faste "Discount"-mærke (står også i `Labels`). Det er ikke et tilbud.
