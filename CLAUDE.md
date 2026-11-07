@@ -35,6 +35,7 @@ internal/
   livelist/           the live list: 50 fixed items priced in every store
   safety/             tests that keep rule 1 and the privacy rules
 scripts/              the golden export tool (Python, runs against upstream/)
+tools/release/        the release tool (prepare, finish); a developer tool, never shipped
 upstream/             upstream's Python tree, location data redacted; never built or edited
 tests/
   fixtures/<store>/   real captures with personal data replaced
@@ -120,11 +121,13 @@ Normal work is pushed straight to `main` of the fork. No PR, no release, and a b
 
 A PR inside the fork is used only to release a new version. The version comes from the tag (GoReleaser sets `main.version`); there is no version file to bump.
 
-1. Bump every `@v` pin: `grep -rn "@v" README.md docs/`.
-2. Open the release PR in the fork with `gh pr create --repo McAndersDK/handle-mcp-go` (`gh` in a fork can default to the parent). CI runs on it. The squash message is the PR title.
-3. Squash and merge.
-4. Tag the merge commit and push the tag: `git fetch origin main && git tag vX.Y.Z origin/main && git push origin vX.Y.Z`. GoReleaser builds and publishes the release (`.github/workflows/release.yml`). A published tag is never moved.
+1. `go run ./tools/release prepare vX.Y.Z`: checks the version, the tree and the code, bumps the pins in `README.md` and `docs/*.md` (not `docs/adr/`), commits `Pin the install commands to vX.Y.Z`, pushes `chore/release-vX.Y.Z`, opens the PR with `--repo McAndersDK/handle-mcp-go`, and waits for CI.
+2. The human squashes and merges the PR on GitHub.
+3. `go run ./tools/release finish vX.Y.Z`: tags the merge commit with an annotated tag, pushes only that tag, waits for the release workflow (GoReleaser), checks the 6 archives and `checksums.txt`, and deletes the release branch. A published tag is never moved.
+4. Add `--dry-run` to either command to print the commits, pushes, PR and tag instead of running them. Checks still run.
 5. Semver: a tool's args or answer shape changes in a way old skills notice -> major. New tool or field -> minor. Fix -> patch.
+
+The tool lives in `tools/release/`, outside `cmd/` and `internal/`, so it is never shipped. It refuses `--force`, `--tags` on push, a `gh` call without `--repo McAndersDK/handle-mcp-go`, and an `origin` that is not the fork.
 
 ## Branches and commits
 

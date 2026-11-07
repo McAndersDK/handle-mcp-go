@@ -23,7 +23,7 @@ No change to the server or the tools is needed. Store facts: [docs/research.md](
 
 ## Commits and pull requests
 
-This repo is a permanent fork of `NJohansen/handle-mcp`. Normal work is pushed straight to `main` of the fork. A PR is used only to release a new version: `gh pr create --repo McAndersDK/handle-mcp-go`. Never open a PR or push to `upstream`.
+This repo is a permanent fork of `NJohansen/handle-mcp`. Normal work is pushed straight to `main` of the fork. A PR is used only to release a new version, and the release tool does it: `go run ./tools/release prepare vX.Y.Z`, merge the PR on GitHub, then `go run ./tools/release finish vX.Y.Z`. Add `--dry-run` to see what it would write. See CLAUDE.md, Release. Never open a PR or push to `upstream`.
 
 - Branches are not required. If you use one: `<type>/<slug>`, type is one of `feature`, `fix`, `hotfix`, `refactor`, `docs`, `test`, `chore`. One type per branch.
 - Commit messages and PR titles are one short imperative sentence, with no emoji. No emoji anywhere in the repo.
