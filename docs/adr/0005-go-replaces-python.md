@@ -39,6 +39,7 @@ Deliberate differences from Python 1.2.1:
 - NaN money becomes a `StoreError`, because `shopspring/decimal` cannot represent it. This amends ADR 0002 ("shown as it is"). ADR 0002 itself is not edited.
 - BilkaToGo pickup carts are supported, with `delivery_mode` and `pickup_store` on four answers, a fail-closed mode rule and ten named golden exceptions. Python treats every non-home cart as `NOT_HOME`. See ADR 0006.
 - The matcher reads the name word `hk` as `hakket`, because REMA 1000 writes `HK. GRISEKØD`. A small abbreviation table in `internal/match` applies to whole words only and never changes a displayed name. No golden contains the word, so there are no golden exceptions.
+- The matcher finds a blend share (a number, `%`, a food word) anywhere in the name, not only after a flavour marker, so `HK. OKSEKØD, 35% GRØNT` is a blend for `hakket oksekød`. Nutrients, alcohol and `mælk fat` are skipped, and the item asking for that food cancels it. Python only looks after a marker. No golden changes, so there are no golden exceptions.
 
 ## Tools
 

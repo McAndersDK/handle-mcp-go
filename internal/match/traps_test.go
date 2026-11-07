@@ -219,7 +219,16 @@ func TestMixed(t *testing.T) {
 		{"Hakket oksekød m. 0,5% fedt", []string{"hakket"}, 0}, // fat is not a blend
 		{"Hakket oksekød m. 5% FEDT", []string{"hakket"}, 0},
 		{"Rugbrød m. kerner", []string{"rugbrød"}, 0},
-		{"Hakket oksekød 50% grønt", []string{"hakket"}, 0}, // no flavour part
+		{"Hakket oksekød 50% grønt", []string{"hakket"}, 1}, // a share anywhere in the name
+		{"HK. OKSEKØD, 35% GRØNT", []string{"hakket", "oksekød"}, 1},
+		{"Mix 50% grønt", []string{"grønt"}, 0},
+		{"HK. GRISEKØD 8-12%", []string{"hakket", "grisekød"}, 0},
+		{"Hakket oksekød 14-18%", []string{"hakket", "oksekød"}, 0},
+		{"Letmælk 1,5%", []string{"letmælk"}, 0},
+		{"Mørk chokolade 70% kakao", []string{"chokolade"}, 0},
+		{"Øl 4,6%", []string{"øl"}, 0},
+		{"Mælk 3,5% mælk fat", []string{"mælk"}, 0},
+		{"Hakket oksekød 4-7% fedt", []string{"hakket"}, 0},
 	}
 	for _, c := range cases {
 		if got := Mixed(c.words, product(c.name)); got != c.want {
@@ -260,9 +269,9 @@ func TestHkMeansHakket(t *testing.T) {
 	if got := Score([]string{"hakket", "grisekød"}, product("HK. GRISEKØD 8-12%"), nil); got <= 0.5 {
 		t.Errorf("HK. GRISEKØD should match hakket grisekød, score %v", got)
 	}
-	// The blend rule needs a flavour marker ("m."), so REMA's comma form is not flagged as a blend.
-	// Pinned so a change is noticed.
-	if got := Mixed([]string{"hakket", "oksekød"}, product("HK. OKSEKØD, 35% GRØNT")); got != 0 {
-		t.Errorf("Mixed = %d, want 0 (no flavour marker)", got)
+	// The comma form has no flavour marker, but a share of another food anywhere in the name is a blend.
+	// Pinned so a change is noticed (ADR 0005).
+	if got := Mixed([]string{"hakket", "oksekød"}, product("HK. OKSEKØD, 35% GRØNT")); got != 1 {
+		t.Errorf("Mixed = %d, want 1 (blend share in the name)", got)
 	}
 }

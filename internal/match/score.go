@@ -154,27 +154,56 @@ func stemHit(word string, tokens []string) bool {
 // another food ('50% grønt') means a mix. A share of fat or sugar ('m. 0,5% fedt') does not,
 // nor 'Rugbrød m. kerner' or 'Laks m. skind'.
 func Mixed(wordList []string, p *model.Product) int {
-	_, after, found := splitFlavour(p.Name)
-	if !found {
-		return 0
-	}
-	other := false
-	for _, w := range blendWords(after) {
-		if !nutrients[pystr.Lower(w)] {
-			other = true
-			break
-		}
-	}
-	if !other {
-		return 0
-	}
-	tail := words(after)
-	for _, w := range wordList {
-		if contains(tail, w) || stemHit(w, tail) {
+	if _, after, found := splitFlavour(p.Name); found {
+		if _, ok := blendTail(after, nutrients); ok {
+			if !asks(wordList, words(after)) {
+				return 1
+			}
 			return 0
 		}
 	}
-	return 1
+	// Go-only (ADR 0005): a share anywhere in the name, as in "HK. OKSEKØD, 35% GRØNT". The item's
+	// own words are looked for from the food word on, because the whole name always has them.
+	if tail, ok := blendTail(p.Name, wholeNameSkip); ok && !asks(wordList, words(tail)) {
+		return 1
+	}
+	return 0
+}
+
+// wholeNameSkip are words after a "%" that belong to the product itself, not to a blend:
+// "3,5% mælk fat", "4,6% vol", "80% kød" in a meat product.
+var wholeNameSkip = func() map[string]bool {
+	m := map[string]bool{}
+	for k := range nutrients {
+		m[k] = true
+	}
+	for _, k := range []string{"mælk", "mælkefedt", "vol", "alk", "fiber", "kød", "tørstof", "fedtstof", "vand"} {
+		m[k] = true
+	}
+	return m
+}()
+
+// blendTail returns the text from the first food word after a "%" that is not in skip.
+func blendTail(text string, skip map[string]bool) (string, bool) {
+	for _, w := range blendWords(text) {
+		if !skip[pystr.Lower(w)] {
+			if i := strings.Index(text, w); i >= 0 {
+				return text[i:], true
+			}
+			return text, true
+		}
+	}
+	return "", false
+}
+
+// asks is true when the item names a word of tail.
+func asks(wordList, tail []string) bool {
+	for _, w := range wordList {
+		if contains(tail, w) || stemHit(w, tail) {
+			return true
+		}
+	}
+	return false
 }
 
 // FlavourOnly is true when the item's words are only in the flavour part: 'Grøn te m. mandarin'.
