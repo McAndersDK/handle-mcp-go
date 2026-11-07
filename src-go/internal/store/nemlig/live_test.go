@@ -97,7 +97,7 @@ func TestLiveCheapestFirst(t *testing.T) {
 	}
 	var prev *model.Money
 	for _, p := range hits {
-		t.Logf("%v kr/%v | %s %v | %s kr", p.UnitPrice, p.Unit, p.Name, p.Size, p.Price)
+		t.Logf("%v kr/%v | %s %v | %s kr", show(p.UnitPrice), show(p.Unit), p.Name, show(p.Size), p.Price)
 		if p.UnitPrice == nil {
 			continue
 		}
@@ -125,8 +125,8 @@ func TestLiveCartTermsDelivery(t *testing.T) {
 	}
 	// Printed so a human can check the facts (no personal data in these fields).
 	t.Logf("hjemlevering=%v gebyrer=%v", terms.HomeDelivery, cart.Fees)
-	t.Logf("minimum=%v nået=%v advarsler=%v", cart.MinimumOrder, cart.MinimumMet, cart.Warnings)
-	t.Logf("valgt tid=%v-%v", info.ChosenStart, info.ChosenEnd)
+	t.Logf("minimum=%v nået=%v advarsler=%v", show(cart.MinimumOrder), show(cart.MinimumMet), cart.Warnings)
+	t.Logf("valgt tid=%v-%v", show(info.ChosenStart), show(info.ChosenEnd))
 }
 
 // GET only: lists slots, never chooses one.
@@ -151,7 +151,7 @@ func TestLiveDeliverySlots(t *testing.T) {
 		}
 	}
 	for _, sl := range free[:min(12, len(free))] {
-		t.Logf("%v-%v %v %v kr", sl.Start, sl.End, sl.Kind, sl.Price)
+		t.Logf("%v-%v %v %v kr", sl.Start, sl.End, show(sl.Kind), show(sl.Price))
 	}
 }
 
@@ -248,7 +248,7 @@ func TestLiveFeaturedRecipeHasProducts(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	t.Logf("%v: %s | %d pers. | %s kr", featured[0].Group, recipe.Name, recipe.Persons, recipe.Total)
+	t.Logf("%v: %s | %d pers. | %s kr", show(featured[0].Group), recipe.Name, recipe.Persons, recipe.Total)
 	for _, it := range recipe.Items {
 		t.Logf("  home=%v %s: %s x%d", it.HaveAtHome, it.Ingredient, it.Product.Name, it.Product.Quantity)
 	}
@@ -281,7 +281,7 @@ func TestLiveRecipesByTag(t *testing.T) {
 		t.Fatalf("by tag: %v (%d)", err, len(recipes))
 	}
 	for _, r := range recipes {
-		t.Logf("%v: %s | %s", r.Group, r.Name, r.URL)
+		t.Logf("%v: %s | %s", show(r.Group), r.Name, r.URL)
 		if !strings.HasPrefix(r.URL, "https://www.nemlig.com/maaltider/") {
 			t.Errorf("odd link %s", r.URL)
 		}
@@ -329,5 +329,21 @@ func TestLiveGuardsStopWrites(t *testing.T) {
 	}
 	if len(probe.reports) < 4 { // three writes through the transport, one through the store
 		t.Errorf("the guards must report every write as a test failure: %v", probe.reports)
+	}
+}
+
+// show prints the value a pointer points to, and "-" for nil. A pointer given to %v prints as a
+// hex address, which tells the reader nothing.
+func show[T any](p *T) string {
+	if p == nil {
+		return "-"
+	}
+	return fmt.Sprint(*p)
+}
+
+func TestShowPrintsValuesNotAddresses(t *testing.T) {
+	s, b := "kg", true
+	if got := show(&s) + show(&b) + show[string](nil); got != "kgtrue-" {
+		t.Errorf("show = %q", got)
 	}
 }
