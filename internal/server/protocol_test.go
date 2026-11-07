@@ -33,63 +33,6 @@ func toolsOnTheWire(t testing.TB, s *session) []map[string]any {
 	return out
 }
 
-// The four descriptions that change for pickup (ADR 0006), written out here so the test does not
-// read them from tools.json.
-const (
-	cartAddition = " `delivery_mode` is \"home\", \"pickup\" or\nnull (the store does not say); " +
-		"`pickup_store` is the store's name, only for pickup."
-	compareAddition = "Each store has `delivery_mode` and `pickup_store`; a pickup store is noted, and when one store\n" +
-		"delivers and another is pickup, the summary names the cheapest of each (the trip to the store\n" +
-		"is not counted). "
-	deliveryInfoText = "Show the chosen delivery or pickup time, edit deadline and next free day, plus fees and\n" +
-		"minimum order. `delivery_mode` is \"home\", \"pickup\" or null (the store does not say: the human\n" +
-		"chooses on the store's website); `pickup_store` is set only for pickup. Only reads: it never\n" +
-		"chooses a time, a pickup store or home delivery or pickup."
-	slotsText = "List free delivery or pickup times for the next `days` days with the fee per slot, in time\n" +
-		"order, plus the 3 cheapest per store. nemlig: \"Personlig\" (you are home) or \"Fleksibel\"\n" +
-		"(left at the door). BilkaToGo: home delivery has one flat fee and night delivery; a pickup\n" +
-		"cart gives pickup times with kind \"Afhentning\", `pickup_store` and the fee (\"0.00\" when free).\n" +
-		"Only reads: it never chooses a time, a pickup store or home delivery or pickup. The human\n" +
-		"chooses on the store's website."
-)
-
-// adjusted is the Python snapshot with exactly the named adjustments of ADR 0005 and 0006:
-// idempotentHint false on READ tools, and the four pickup descriptions. Until cutover the
-// snapshot file stays as Python wrote it.
-func adjusted(t testing.TB, snapshot []map[string]any) []map[string]any {
-	t.Helper()
-	changed := map[string]bool{}
-	for _, tool := range snapshot {
-		name := tool["name"].(string)
-		ann := tool["annotations"].(map[string]any)
-		if ann["readOnlyHint"] == true {
-			ann["idempotentHint"] = false
-		}
-		desc := tool["description"].(string)
-		switch name {
-		case "get_cart":
-			tool["description"] = desc + cartAddition
-		case "compare_basket":
-			const marker = "Only reads: use set_cart_quantities"
-			if !strings.Contains(desc, marker) {
-				t.Fatal("compare_basket has no 'Only reads' sentence to insert before")
-			}
-			tool["description"] = strings.Replace(desc, marker, compareAddition+marker, 1)
-		case "get_delivery_info":
-			tool["description"] = deliveryInfoText
-		case "list_delivery_slots":
-			tool["description"] = slotsText
-		default:
-			continue
-		}
-		changed[name] = true
-	}
-	if len(changed) != 4 {
-		t.Fatalf("%d descriptions adjusted, want 4", len(changed))
-	}
-	return snapshot
-}
-
 func TestToolSurface(t *testing.T) {
 	factories, _, _ := standard()
 	actual := toolsOnTheWire(t, connect(t, factories))
@@ -116,7 +59,7 @@ func TestToolSurface(t *testing.T) {
 	if err := dec.Decode(&snapshot); err != nil {
 		t.Fatal(err)
 	}
-	want := adjusted(t, snapshot)
+	want := snapshot
 	if len(actual) != len(want) {
 		t.Fatalf("%d tools, snapshot has %d", len(actual), len(want))
 	}
@@ -124,7 +67,7 @@ func TestToolSurface(t *testing.T) {
 		if !reflect.DeepEqual(actual[i], want[i]) {
 			a, _ := json.MarshalIndent(actual[i], "", " ")
 			w, _ := json.MarshalIndent(want[i], "", " ")
-			t.Errorf("tool %v differs from the snapshot with the named adjustments\ngot:\n%s\nwant:\n%s", want[i]["name"], a, w)
+			t.Errorf("tool %v differs from the snapshot\ngot:\n%s\nwant:\n%s", want[i]["name"], a, w)
 		}
 	}
 }
